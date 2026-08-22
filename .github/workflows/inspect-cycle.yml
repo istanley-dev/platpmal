@@ -1,0 +1,27 @@
+name: Inspect new cycle flow
+
+on:
+  push:
+    paths:
+      - 'scripts/inspect_cycle.py'
+      - '.github/workflows/inspect-cycle.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect cycle flow
+        run: python3 scripts/inspect_cycle.py
+      - name: Commit diagnostic report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cycle-debug-report.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: refresh cycle diagnostic"
+          git push
