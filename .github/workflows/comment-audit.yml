@@ -3,7 +3,14 @@ name: Audit technical comments
 on:
   push:
     paths:
+      - 'index.html'
+      - 'comment-fixes/**'
       - '.github/workflows/comment-audit.yml'
+      - 'scripts/audit_comments.py'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'comment-fixes/**'
       - 'scripts/audit_comments.py'
   workflow_dispatch:
 
@@ -22,7 +29,22 @@ jobs:
       - name: Run comment audit
         run: python3 scripts/audit_comments.py
 
+      - name: Require zero weak technical comments
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('comment-audit-report.json').read_text(encoding='utf-8'))
+          total=report.get('total_suspeitos', -1)
+          print('Comentários técnicos suspeitos:', total)
+          if total != 0:
+              for q in report.get('questoes', [])[:20]:
+                  print('-', q.get('id'), '|', q.get('materia'), '|', '; '.join(q.get('motivos_auditoria', [])))
+              raise SystemExit('Falha: o banco contém comentário técnico ausente, curto ou genérico.')
+          PY
+
       - name: Commit audit report
+        if: github.event_name != 'pull_request'
         run: |
           if git diff --quiet -- comment-audit-report.json comment-audit-report.jsonl \
              && git ls-files --error-unmatch comment-audit-report.json >/dev/null 2>&1 \
