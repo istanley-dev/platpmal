@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-import re
+import re, json
 from pathlib import Path
 
-src = Path('index.html').read_text(encoding='utf-8')
+src=Path('index.html').read_text(encoding='utf-8')
 
-def clean(s):
-    return re.sub(r'\s+', ' ', s).strip()
-
-def balanced_from(start, op='{', cl='}'):
+def balanced(start,op='{',cl='}'):
     p=src.find(op,start)
     if p<0:return ''
     depth=0; quote=None; esc=False
@@ -18,8 +15,7 @@ def balanced_from(start, op='{', cl='}'):
             elif ch=='\\':esc=True
             elif ch==quote:quote=None
             continue
-        if ch in ('"',"'",'`'):
-            quote=ch;continue
+        if ch in ('"',"'",'`'):quote=ch;continue
         if ch==op:depth+=1
         elif ch==cl:
             depth-=1
@@ -28,62 +24,63 @@ def balanced_from(start, op='{', cl='}'):
 
 def var_block(name):
     m=re.search(r'\b(?:var|let|const)\s+'+re.escape(name)+r'\s*=',src)
-    return balanced_from(m.end()) if m else ''
+    return balanced(m.end()) if m else ''
 
 def func_block(name):
     m=re.search(r'function\s+'+re.escape(name)+r'\s*\([^)]*\)\s*\{',src)
     if not m:return ''
-    body=balanced_from(m.start())
-    return src[m.start():src.find('{',m.start())]+body
+    b=balanced(m.start())
+    return src[m.start():src.find('{',m.start())]+b
 
-out=[]
-out.append('=== LAW BANK: DISP ===\n')
-disp=var_block('DISP')
-out.append(disp+'\n')
-out.append('\n=== BIB_ORDER ===\n'+var_block('BIB_ORDER')+'\n')
-out.append('\n=== BIB_COLORS ===\n'+var_block('BIB_COLORS')+'\n')
-for fn in ['buildKeyToQids','readingOrder','readingPlanInfo','startLeituraQuiz','renderBiblio','ldRead']:
-    out.append('\n=== FUNCTION '+fn+' ===\n'+func_block(fn)+'\n')
-
-out.append('\n=== DECLARACOES RELACIONADAS A LEI/BIB/MAP/QID ===\n')
-for m in re.finditer(r'\b(?:var|let|const)\s+([A-Za-z_$][\w$]*)\s*=',src):
-    name=m.group(1)
-    if re.search(r'LAW|LEI|ART|BIB|DISP|KEY|MAP|QID|READ',name,re.I):
-        out.append(f'-- {name} pos={m.start()} --\n{clean(src[m.start():min(len(src),m.start()+5000)])}\n')
-
-# Snippets de todos os usos do mapa/dispositivos, para identificar a regra de vínculo.
-out.append('\n=== USOS DE buildKeyToQids / DISP ===\n')
-for pat in [r'buildKeyToQids\s*\(',r'\bDISP\s*\[',r'Object\.keys\(DISP\)']:
-    for m in re.finditer(pat,src):
-        out.append(f'pos={m.start()} {clean(src[max(0,m.start()-700):min(len(src),m.end()+1800)])}\n')
-
-# Extrai objetos de questão que mencionam explicitamente art./lei/decreto/CF/CP/CPP/CPM/CPPM.
-out.append('\n=== QUESTOES COM REFERENCIA LEGAL EXPLICITA ===\n')
-# O banco usa objetos compactos {"id":"...",...}; capturamos os que cabem numa janela razoável.
-qpat=re.compile(r'\{\s*"id"\s*:\s*"([^"]+)"')
-count=0
-for m in qpat.finditer(src):
-    # busca fim simples do objeto respeitando strings
-    start=m.start(); depth=0; quote=False; esc=False; end=None
-    for i in range(start,min(len(src),start+18000)):
-        ch=src[i]
+def split_props(obj):
+    s=obj.strip()
+    if s.startswith('{') and s.endswith('}'):s=s[1:-1]
+    parts=[];start=0;depth=0;quote=None;esc=False
+    for i,ch in enumerate(s):
         if quote:
             if esc:esc=False
             elif ch=='\\':esc=True
-            elif ch=='"':quote=False
+            elif ch==quote:quote=None
             continue
-        if ch=='"':quote=True;continue
-        if ch=='{':depth+=1
-        elif ch=='}':
-            depth-=1
-            if depth==0:
-                end=i+1;break
-    if not end:continue
-    obj=src[start:end]
-    if re.search(r'Lei\s*(?:n[ºo°.]*)?\s*\d|Decreto\s*(?:n[ºo°.]*)?\s*\d|art\.?\s*\d|CF/88|Constitui[cç][aã]o Federal|\bCPPM\b|\bCPP\b|\bCPM\b|C[oó]digo Penal',obj,re.I):
-        count+=1
-        out.append(obj+'\n')
-out.append(f'\nTOTAL_QUESTOES_LEGAIS_EXPLICITAS={count}\n')
+        if ch in ('"',"'",'`'):quote=ch;continue
+        if ch in '{[(':depth+=1
+        elif ch in '}])':depth-=1
+        elif ch==',' and depth==0:
+            parts.append(s[start:i].strip());start=i+1
+    tail=s[start:].strip()
+    if tail:parts.append(tail)
+    return parts
 
-Path('cycle-debug-report.txt').write_text(''.join(out),encoding='utf-8')
-print('Auditoria do Banco de Leis gravada em cycle-debug-report.txt')
+def prop_key(p):
+    m=re.match(r'\s*(["\'])(.*?)\1\s*:',p,re.S)
+    if m:return m.group(2)
+    m=re.match(r'\s*([A-Za-z_$][\w$]*)\s*:',p)
+    return m.group(1) if m else None
+
+DISP=var_block('DISP')
+props=split_props(DISP) if DISP else []
+entries=[]
+for p in props:
+    k=prop_key(p)
+    if k:
+        v=p[p.find(':')+1:].strip()
+        entries.append({'key':k,'raw':v[:5000]})
+
+q_ids=set(re.findall(r'"id"\s*:\s*"([^"]+)"',src))
+fn_names=['buildKeyToQids','readingOrder','readingPlanInfo','startLeituraQuiz','renderBiblio','ldRead']
+funcs={n:func_block(n) for n in fn_names}
+linkfn=funcs.get('buildKeyToQids','')
+quoted=re.findall(r'["\']([^"\']+)["\']',linkfn)
+explicit_qids=sorted(set(x for x in quoted if x in q_ids))
+missing_qid_like=sorted(set(x for x in quoted if re.match(r'^(?:q|c|r|ai_|chat_|adm|pen|const|cpp|cpm|lei|l)[A-Za-z0-9_\-]+$',x,re.I) and x not in q_ids))
+summary={
+ 'source_chars':len(src),'device_count':len(entries),'device_keys':[e['key'] for e in entries],
+ 'question_id_count':len(q_ids),'link_function_found':bool(linkfn),
+ 'explicit_linked_qids_count':len(explicit_qids),'explicit_linked_qids':explicit_qids,
+ 'possible_missing_qids':missing_qid_like,'functions_found':{n:bool(v) for n,v in funcs.items()}
+}
+Path('law-bank-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
+Path('law-bank-devices.json').write_text(json.dumps(entries,ensure_ascii=False,indent=2),encoding='utf-8')
+Path('law-bank-linking.txt').write_text('\n\n'.join('=== '+n+' ===\n'+v for n,v in funcs.items()),encoding='utf-8')
+Path('cycle-debug-report.txt').write_text('Banco de Leis auditado. Veja law-bank-summary.json, law-bank-devices.json e law-bank-linking.txt.\n',encoding='utf-8')
+print(json.dumps(summary,ensure_ascii=False))
