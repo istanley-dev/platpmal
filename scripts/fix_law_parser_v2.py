@@ -33,7 +33,7 @@ function parseRefs(f){
   if(!f)return [];
   const refs=[],seen={};
   function normArtToken(v){
-    v=String(v||'').trim().replace(/\s+/g,'').replace(/[‐‑–—]/g,'-').replace(/[º°]/g,'');
+    v=String(v||'').trim().replace(/\s+/g,'').replace(/[‐‑–—]/g,'-').replace(/\./g,'').replace(/[º°]/g,'');
     v=v.replace(/^(\d+)[oO]$/,'$1');
     let m=v.match(/^(\d+)(?:-?([A-Fa-f]))?$/);
     return m?(m[1]+(m[2]?m[2].toUpperCase():'')):'';
@@ -99,7 +99,7 @@ function parseRefs(f){
       seg=seg.split('§')[0].split(/\.\s/)[0];
       let cut=seg.search(/\b(?:Lei|CF(?:\/88)?|CPPM|CPP|CPM|CP|CADH|ECA|CTB|LMP|LEP|JECRIM|JEF|Decreto)\b/i);
       if(cut>=0)seg=seg.slice(0,cut);
-      let nums=[],nr=/\d+[A-Fa-f]\b|\d+(?:\s*[º°oO]\.?)?(?:\s*[-‐‑–—]\s*[A-Fa-f])?/g,nm;
+      let nums=[],nr=/\d+[A-Fa-f]\b|\d+(?:\s*\.?\s*[º°oO]\.?)?(?:\s*[-‐‑–—]\s*[A-Fa-f])?/g,nm;
       while((nm=nr.exec(seg))!==null){let a=normArtToken(nm[0]);if(a&&nums.indexOf(a)<0)nums.push(a);}
       if(nums.length)arts.push({start:am.index,nums:nums});
     }
