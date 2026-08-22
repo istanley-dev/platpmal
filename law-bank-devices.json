@@ -1,0 +1,1702 @@
+[
+  {
+    "key": "CF 5",
+    "raw": "\"Art. 5º, CF — Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade.\\nIncisos-chave: II — ninguém será obrigado a fazer ou deixar de fazer algo senão em virtude de lei (legalidade); XXXIX — não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal; XL — a lei penal não retroagirá, salvo para beneficiar o réu; XLVII — não haverá penas: de morte (salvo guerra declarada), perpétuas, de trabalhos forçados, de banimento, cruéis; LIV — devido processo legal; LV — contraditório e ampla defesa; LVII — presunção de inocência (até o trânsito em julgado); LXIII — o preso tem direito de permanecer calado.\""
+  },
+  {
+    "key": "CF 37",
+    "raw": "\"Art. 37, caput, CF — A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do DF e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência (LIMPE).\""
+  },
+  {
+    "key": "CF 42",
+    "raw": "\"Art. 42, CF — Os membros das Polícias Militares e Corpos de Bombeiros Militares, instituições organizadas com base na hierarquia e disciplina, são militares dos Estados, do DF e dos Territórios. §1º — aplicam-se a eles, além do que vier a ser fixado em lei, diversas disposições do art. 142.\""
+  },
+  {
+    "key": "CF 142",
+    "raw": "\"Art. 142, CF — As Forças Armadas, constituídas pela Marinha, pelo Exército e pela Aeronáutica, são instituições nacionais permanentes e regulares, organizadas com base na hierarquia e na disciplina. §2º — não caberá habeas corpus em relação a punições disciplinares militares.\""
+  },
+  {
+    "key": "CF 144",
+    "raw": "\"Art. 144, CF — A segurança pública, dever do Estado, direito e responsabilidade de todos, é exercida para a preservação da ordem pública e da incolumidade das pessoas e do patrimônio, pelos órgãos: polícia federal; polícia rodoviária federal; polícia ferroviária federal; polícias civis; polícias militares e corpos de bombeiros militares; polícias penais. §5º — às polícias militares cabem a polícia ostensiva e a preservação da ordem pública. §6º — as polícias militares e os corpos de bombeiros militares são forças auxiliares e reserva do Exército, subordinando-se aos Governadores.\""
+  },
+  {
+    "key": "CP 1",
+    "raw": "\"Art. 1º, CP — Não há crime sem lei anterior que o defina. Não há pena sem prévia cominação legal. (legalidade / anterioridade)\""
+  },
+  {
+    "key": "CP 5",
+    "raw": "\"Art. 5º, CP — Aplica-se a lei brasileira, sem prejuízo de convenções, tratados e regras de direito internacional, ao crime cometido no território nacional (territorialidade temperada).\""
+  },
+  {
+    "key": "CP 14",
+    "raw": "\"Art. 14, CP — Diz-se o crime: I — consumado, quando nele se reúnem todos os elementos de sua definição legal; II — tentado, quando, iniciada a execução, não se consuma por circunstâncias alheias à vontade do agente. Parágrafo único — pune-se a tentativa com a pena do crime consumado, diminuída de um a dois terços.\""
+  },
+  {
+    "key": "CPM 9",
+    "raw": "\"Art. 9º, CPM — Consideram-se crimes militares, em tempo de paz: os previstos só no CPM; os previstos no CPM e na lei comum, quando praticados em circunstâncias militares (por militar em atividade, contra o patrimônio sob administração militar, em lugar sujeito à administração militar etc.). Crimes dolosos contra a vida de civil vão ao Tribunal do Júri.\""
+  },
+  {
+    "key": "CPM 42",
+    "raw": "\"Art. 42, CPM — Não há crime quando o agente pratica o fato: I — em estado de necessidade; II — em legítima defesa; III — em estrito cumprimento do dever legal; IV — em exercício regular de direito.\""
+  },
+  {
+    "key": "CPM 44",
+    "raw": "\"Art. 44, CPM — Entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem.\""
+  },
+  {
+    "key": "CPM 48",
+    "raw": "\"Art. 48, CPM — Não é imputável quem, no momento da ação ou omissão, não possui a capacidade de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento, em virtude de doença mental ou de desenvolvimento mental incompleto ou retardado.\""
+  },
+  {
+    "key": "CPM 50",
+    "raw": "\"Art. 50, CPM — Trata da menoridade penal militar. Por força do art. 228 da CF, é inimputável o menor de dezoito anos, sujeito às normas da legislação especial.\""
+  },
+  {
+    "key": "CPM 55",
+    "raw": "\"Art. 55, CPM — As penas principais são: morte; reclusão; detenção; prisão; impedimento; suspensão do exercício do posto, graduação, cargo ou função; reforma.\""
+  },
+  {
+    "key": "CPM 187",
+    "raw": "\"Art. 187, CPM — Deserção: ausentar-se o militar, sem licença, da unidade em que serve, ou do lugar em que deve permanecer, por mais de oito dias. Pena: detenção, de seis meses a dois anos; se oficial, a pena é agravada.\""
+  },
+  {
+    "key": "CPM 203",
+    "raw": "\"Art. 203, CPM — Dormir em serviço: dormir o militar em serviço (como oficial de quarto/ronda ou, não sendo oficial, em serviço de sentinela, vigia, plantão). É crime de perigo: consuma-se independentemente de dano. Pena: detenção.\""
+  },
+  {
+    "key": "CPPM 7",
+    "raw": "\"Art. 7º, CPPM — A polícia judiciária militar é exercida pelas autoridades militares (comandantes, chefes, diretores), a quem compete apurar as infrações penais militares e instaurar o inquérito policial militar, podendo delegar a oficial.\""
+  },
+  {
+    "key": "CPPM 20",
+    "raw": "\"Art. 20, CPPM — O IPM termina em vinte dias se o indiciado estiver preso (contados da prisão), ou em quarenta dias se estiver solto (contados da instauração). §1º — o prazo do indiciado solto pode ser prorrogado por mais vinte dias, mediante justificativa.\""
+  },
+  {
+    "key": "CPPM 29",
+    "raw": "\"Art. 29, CPPM — A ação penal é pública e somente pode ser promovida por denúncia do Ministério Público Militar (não há ação penal privada no processo penal militar).\""
+  },
+  {
+    "key": "CPPM 30",
+    "raw": "\"Art. 30, CPPM — A denúncia deve conter a exposição do fato criminoso e suas circunstâncias, a qualificação do acusado, a classificação do crime e, quando necessário, o rol de testemunhas.\""
+  },
+  {
+    "key": "CP 2",
+    "raw": "\"Art. 2º, CP — Ninguém pode ser punido por fato que lei posterior deixa de considerar crime, cessando, em virtude dela, a execução e os efeitos penais da sentença condenatória (abolitio criminis). A lei posterior que de qualquer modo favorecer o agente aplica-se aos fatos anteriores, ainda que decididos por sentença transitada em julgado (retroatividade da lei mais benéfica).\""
+  },
+  {
+    "key": "CP 4",
+    "raw": "\"Art. 4º, CP — Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado (teoria da atividade).\""
+  },
+  {
+    "key": "CP 6",
+    "raw": "\"Art. 6º, CP — Considera-se praticado o crime no lugar em que ocorreu a ação ou omissão, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o resultado (teoria da ubiquidade).\""
+  },
+  {
+    "key": "CP 13",
+    "raw": "\"Art. 13, CP — O resultado de que depende a existência do crime somente é imputável a quem lhe deu causa. Considera-se causa a ação ou omissão sem a qual o resultado não teria ocorrido. §2º — a omissão é penalmente relevante quando o omitente devia e podia agir para evitar o resultado (dever de garantidor).\""
+  },
+  {
+    "key": "CP 16",
+    "raw": "\"Art. 16, CP — Arrependimento posterior: nos crimes cometidos sem violência ou grave ameaça à pessoa, reparado o dano ou restituída a coisa até o recebimento da denúncia ou queixa, por ato voluntário do agente, a pena é reduzida de um a dois terços.\""
+  },
+  {
+    "key": "CP 18",
+    "raw": "\"Art. 18, CP — Diz-se o crime: I — doloso, quando o agente quis o resultado ou assumiu o risco de produzi-lo; II — culposo, quando deu causa ao resultado por imprudência, negligência ou imperícia. Parágrafo único — pune-se o crime culposo somente quando a lei expressamente o prevê.\""
+  },
+  {
+    "key": "CP 20",
+    "raw": "\"Art. 20, CP — Erro de tipo: o erro sobre elemento constitutivo do tipo legal de crime exclui o dolo, mas permite a punição por crime culposo, se previsto em lei.\""
+  },
+  {
+    "key": "CP 21",
+    "raw": "\"Art. 21, CP — O desconhecimento da lei é inescusável. O erro sobre a ilicitude do fato (erro de proibição), se inevitável, isenta de pena; se evitável, pode diminuí-la de um sexto a um terço.\""
+  },
+  {
+    "key": "CP 22",
+    "raw": "\"Art. 22, CP — Se o fato é cometido sob coação irresistível ou em estrita obediência a ordem, não manifestamente ilegal, de superior hierárquico, só é punível o autor da coação ou da ordem.\""
+  },
+  {
+    "key": "CP 23",
+    "raw": "\"Art. 23, CP — Não há crime quando o agente pratica o fato: I — em estado de necessidade; II — em legítima defesa; III — em estrito cumprimento de dever legal ou no exercício regular de direito. Parágrafo único — o agente responde pelo excesso doloso ou culposo.\""
+  },
+  {
+    "key": "CP 24",
+    "raw": "\"Art. 24, CP — Estado de necessidade: considera-se em estado de necessidade quem pratica o fato para salvar de perigo atual, que não provocou por sua vontade nem podia de outro modo evitar, direito próprio ou alheio, cujo sacrifício, nas circunstâncias, não era razoável exigir-se.\""
+  },
+  {
+    "key": "CP 25",
+    "raw": "\"Art. 25, CP — Legítima defesa: entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem.\""
+  },
+  {
+    "key": "CP 28",
+    "raw": "\"Art. 28, CP — Não excluem a imputabilidade penal: I — a emoção ou a paixão; II — a embriaguez voluntária ou culposa, pelo álcool ou substância de efeitos análogos. Só exclui quando a embriaguez for proveniente de caso fortuito ou força maior.\""
+  },
+  {
+    "key": "CF 1",
+    "raw": "\"Art. 1º, CF — A República Federativa do Brasil, formada pela união indissolúvel dos Estados, Municípios e DF, constitui-se em Estado Democrático de Direito e tem como fundamentos: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, pluralismo político. Parágrafo único — todo o poder emana do povo.\""
+  },
+  {
+    "key": "CF 2",
+    "raw": "\"Art. 2º, CF — São Poderes da União, independentes e harmônicos entre si, o Legislativo, o Executivo e o Judiciário.\""
+  },
+  {
+    "key": "CF 3",
+    "raw": "\"Art. 3º, CF — Constituem objetivos fundamentais: construir uma sociedade livre, justa e solidária; garantir o desenvolvimento nacional; erradicar a pobreza e a marginalização e reduzir as desigualdades; promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade.\""
+  },
+  {
+    "key": "CF 6",
+    "raw": "\"Art. 6º, CF — São direitos sociais: educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados.\""
+  },
+  {
+    "key": "CF 7",
+    "raw": "\"Art. 7º, CF — Direitos dos trabalhadores urbanos e rurais, entre outros: salário mínimo, irredutibilidade salarial, 13º salário, FGTS, jornada não superior a 8 horas diárias e 44 semanais, repouso semanal remunerado, férias com adicional de um terço.\""
+  },
+  {
+    "key": "CF 12",
+    "raw": "\"Art. 12, CF — Da nacionalidade: são brasileiros natos (jus soli e jus sanguinis, conforme os critérios constitucionais) e naturalizados. §3º — são privativos de brasileiro nato, entre outros, os cargos de Presidente, da carreira diplomática e de oficial das Forças Armadas.\""
+  },
+  {
+    "key": "CF 14",
+    "raw": "\"Art. 14, CF — A soberania popular é exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, por plebiscito, referendo e iniciativa popular. §1º — o alistamento e o voto são obrigatórios para os maiores de 18 anos e facultativos para analfabetos, maiores de 70 anos e maiores de 16 e menores de 18 anos.\""
+  },
+  {
+    "key": "CF 18",
+    "raw": "\"Art. 18, CF — A organização político-administrativa da República compreende a União, os Estados, o DF e os Municípios, todos autônomos, nos termos da Constituição.\""
+  },
+  {
+    "key": "CF 22",
+    "raw": "\"Art. 22, CF — Compete privativamente à União legislar sobre direito penal, processual, civil, eleitoral, do trabalho, entre outros, e sobre normas gerais de organização das polícias militares e dos corpos de bombeiros militares (inciso XXI). Lei complementar pode autorizar os Estados a legislar sobre questões específicas.\""
+  },
+  {
+    "key": "CF 41",
+    "raw": "\"Art. 41, CF — São estáveis, após três anos de efetivo exercício, os servidores nomeados para cargo de provimento efetivo em virtude de concurso público. O servidor estável só perde o cargo por sentença judicial transitada em julgado, processo administrativo com ampla defesa, ou avaliação periódica de desempenho.\""
+  },
+  {
+    "key": "CF 136",
+    "raw": "\"Art. 136, CF — O Presidente pode, ouvidos o Conselho da República e o de Defesa Nacional, decretar estado de defesa para preservar ou restabelecer, em locais restritos e determinados, a ordem pública ou a paz social ameaçadas por grave e iminente instabilidade institucional ou por calamidades de grandes proporções na natureza.\""
+  },
+  {
+    "key": "CF 137",
+    "raw": "\"Art. 137, CF — O Presidente pode solicitar ao Congresso autorização para decretar o estado de sítio nos casos de comoção grave de repercussão nacional, ineficácia do estado de defesa, ou declaração de estado de guerra/resposta a agressão armada estrangeira.\""
+  },
+  {
+    "key": "CPP 4",
+    "raw": "\"Art. 4º, CPP — A polícia judiciária será exercida pelas autoridades policiais no território de suas circunscrições e terá por fim a apuração das infrações penais e da sua autoria.\""
+  },
+  {
+    "key": "CPP 5",
+    "raw": "\"Art. 5º, CPP — Nos crimes de ação pública, o inquérito policial será iniciado: I — de ofício; II — mediante requisição da autoridade judiciária ou do Ministério Público, ou a requerimento do ofendido. Na ação pública condicionada, o inquérito depende de representação do ofendido.\""
+  },
+  {
+    "key": "CPP 10",
+    "raw": "\"Art. 10, CPP — O inquérito deve terminar em 10 dias se o indiciado estiver preso (contados da prisão), ou em 30 dias quando estiver solto.\""
+  },
+  {
+    "key": "CPP 17",
+    "raw": "\"Art. 17, CPP — A autoridade policial não poderá mandar arquivar autos de inquérito.\""
+  },
+  {
+    "key": "CPP 155",
+    "raw": "\"Art. 155, CPP — O juiz formará sua convicção pela livre apreciação da prova produzida em contraditório judicial, não podendo fundamentar sua decisão exclusivamente nos elementos informativos colhidos na investigação.\""
+  },
+  {
+    "key": "CPP 302",
+    "raw": "\"Art. 302, CPP — Considera-se em flagrante delito quem: I — está cometendo a infração; II — acaba de cometê-la; III — é perseguido, logo após, em situação que faça presumir ser autor; IV — é encontrado, logo depois, com instrumentos, armas, objetos ou papéis que façam presumir ser ele o autor.\""
+  },
+  {
+    "key": "CPP 310",
+    "raw": "\"Art. 310, CPP — Recebido o auto de prisão em flagrante, em até 24 horas o juiz realiza audiência de custódia e deve: relaxar a prisão ilegal; converter o flagrante em prisão preventiva quando presentes os requisitos; ou conceder liberdade provisória, com ou sem fiança.\""
+  },
+  {
+    "key": "CPP 312",
+    "raw": "\"Art. 312, CPP — A prisão preventiva pode ser decretada como garantia da ordem pública, da ordem econômica, por conveniência da instrução criminal ou para assegurar a aplicação da lei penal, quando houver prova da existência do crime e indício suficiente de autoria e de perigo gerado pelo estado de liberdade do imputado.\""
+  },
+  {
+    "key": "CF 9",
+    "raw": "\"Art. 9º É assegurado o direito de greve, competindo aos trabalhadores decidir sobre a oportunidade de exercê-lo e sobre os interesses que devam por meio dele defender. § 1º A lei definirá os serviços ou atividades essenciais e disporá sobre o atendimento das necessidades inadiáveis da comunidade. § 2º Os abusos cometidos sujeitam os responsáveis às penas da lei.\""
+  },
+  {
+    "key": "CF 4",
+    "raw": "\"Art. 4º A República Federativa do Brasil rege-se nas suas relações internacionais pelos seguintes princípios: I - independência nacional; II - prevalência dos direitos humanos; III - autodeterminação dos povos; IV - não-intervenção; V - igualdade entre os Estados; VI - defesa da paz; VII - solução pacífica dos conflitos; VIII - repúdio ao terrorismo e ao racismo; IX - cooperação entre os povos para o progresso da humanidade; X - concessão de asilo político. Parágrafo único. A República Federativa do Brasil buscará a integração econômica, política, social e cultural dos povos da América Latina, visando à formação de uma comunidade latino-americana de nações.\""
+  },
+  {
+    "key": "CF 34",
+    "raw": "\"Art. 34. A União não intervirá nos Estados nem no Distrito Federal, exceto para: I - manter a integridade nacional; II - repelir invasão estrangeira ou de uma unidade da Federação em outra; III - pôr termo a grave comprometimento da ordem pública; IV - garantir o livre exercício de qualquer dos Poderes nas unidades da Federação; V - reorganizar as finanças da unidade da Federação que: _a)_ suspender o pagamento da dívida fundada por mais de dois anos consecutivos, salvo motivo de força maior; _b)_ deixar de entregar aos Municípios receitas tributárias fixadas nesta Constituição dentro dos prazos estabelecidos em lei; VI - prover a execução de lei federal, ordem ou decisão judicial; VII - assegurar a observância dos seguintes princípios constitucionais:\""
+  },
+  {
+    "key": "CF 23",
+    "raw": "\"Art. 23. É competência comum da União, dos Estados, do Distrito Federal e dos Municípios: I - zelar pela guarda da Constituição, das leis e das instituições democráticas e conservar o patrimônio público; II - cuidar da saúde e assistência pública, da proteção e garantia das pessoas portadoras de deficiência; III - proteger os documentos, as obras e outros bens de valor histórico, artístico e cultural, os monumentos, as paisagens naturais notáveis e os sítios arqueológicos; IV - impedir a evasão, a destruição e a descaracterização de obras de arte e de outros bens de valor histórico, artístico ou cultural; V - proporcionar os meios de acesso à cultura, à educação, à ciência, à tecnologia, à pesquisa e à inovação;\""
+  },
+  {
+    "key": "CF 24",
+    "raw": "\"Art. 24. Compete à União, aos Estados e ao Distrito Federal legislar concorrentemente sobre: I - direito tributário, financeiro, penitenciário, econômico e urbanístico; II - orçamento; III - juntas comerciais; IV - custas dos serviços forenses; V - produção e consumo; VI - florestas, caça, pesca, fauna, conservação da natureza, defesa do solo e dos recursos naturais, proteção do meio ambiente e controle da poluição; VII - proteção ao patrimônio histórico, cultural, artístico, turístico e paisagístico; VIII - responsabilidade por dano ao meio ambiente, ao consumidor, a bens e direitos de valor artístico, estético, histórico, turístico e paisagístico; IX - educação, cultura, ensino, desporto, ciência, tecnologia, pesquisa, desenvolvimento e inovação;\""
+  },
+  {
+    "key": "CF 143",
+    "raw": "\"Art. 143. O serviço militar é obrigatório nos termos da lei. § 1º Às Forças Armadas compete, na forma da lei, atribuir serviço alternativo aos que, em tempo de paz, após alistados, alegarem imperativo de consciência, entendendo-se como tal o decorrente de crença religiosa e de convicção filosófica ou política, para se eximirem de atividades de caráter essencialmente militar. § 2º As mulheres e os eclesiásticos ficam isentos do serviço militar obrigatório em tempo de paz, sujeitos, porém, a outros encargos que a lei lhes atribuir.\""
+  },
+  {
+    "key": "CF 20",
+    "raw": "\"Art. 20. São bens da União: I - os que atualmente lhe pertencem e os que lhe vierem a ser atribuídos; II - as terras devolutas indispensáveis à defesa das fronteiras, das fortificações e construções militares, das vias federais de comunicação e à preservação ambiental, definidas em lei; III - os lagos, rios e quaisquer correntes de água em terrenos de seu domínio, ou que banhem mais de um Estado, sirvam de limites com outros países, ou se estendam a território estrangeiro ou dele provenham, bem como os terrenos marginais e as praias fluviais; IV - as ilhas fluviais e lacustres nas zonas limítrofes com outros países; as praias marítimas; as ilhas oceânicas e as costeiras, excluídas, destas, as que contenham a sede de Municípios, exceto aquelas áreas afetadas ao serviç...\""
+  },
+  {
+    "key": "CF 15",
+    "raw": "\"Art. 15. É vedada a cassação de direitos políticos, cuja perda ou suspensão só se dará nos casos de: I - cancelamento da naturalização por sentença transitada em julgado; II - incapacidade civil absoluta; III - condenação criminal transitada em julgado, enquanto durarem seus efeitos; IV - recusa de cumprir obrigação a todos imposta ou prestação alternativa, nos termos do art. 5º, VIII; V - improbidade administrativa, nos termos do art. 37, § 4º.\""
+  },
+  {
+    "key": "CF 30",
+    "raw": "\"Art. 30. Compete aos Municípios: I - legislar sobre assuntos de interesse local; II - suplementar a legislação federal e a estadual no que couber; III - instituir e arrecadar os tributos de sua competência, bem como aplicar suas rendas, sem prejuízo da obrigatoriedade de prestar contas e publicar balancetes nos prazos fixados em lei; IV - criar, organizar e suprimir Distritos, observada a legislação estadual; V - organizar e prestar, diretamente ou sob regime de concessão ou permissão, os serviços públicos de interesse local, incluído o de transporte coletivo, que tem caráter essencial; VI - manter, com a cooperação técnica e financeira da União e do Estado, programas de educação infantil e de ensino fundamental;\""
+  },
+  {
+    "key": "CF 19",
+    "raw": "\"Art. 19. É vedado à União, aos Estados, ao Distrito Federal e aos Municípios: I - estabelecer cultos religiosos ou igrejas, subvencioná-los, embaraçar-lhes o funcionamento ou manter com eles ou seus representantes relações de dependência ou aliança, ressalvada, na forma da lei, a colaboração de interesse público; II - recusar fé aos documentos públicos; III - criar distinções entre brasileiros ou preferências entre si.\""
+  },
+  {
+    "key": "CF 17",
+    "raw": "\"Art. 17. É livre a criação, fusão, incorporação e extinção de partidos políticos, resguardados a soberania nacional, o regime democrático, o pluripartidarismo, os direitos fundamentais da pessoa humana e observados os seguintes preceitos: I - caráter nacional; II - proibição de recebimento de recursos financeiros de entidade ou governo estrangeiros ou de subordinação a estes; III - prestação de contas à Justiça Eleitoral; IV - funcionamento parlamentar de acordo com a lei. § 1º É assegurada aos partidos políticos autonomia para definir sua estrutura interna e estabelecer regras sobre escolha, formação e duração de seus órgãos permanentes e provisórios e sobre sua organização e funcionamento e para adotar os critérios de escolha e o regime de suas coligações nas eleiç...\""
+  },
+  {
+    "key": "CF 35",
+    "raw": "\"Art. 35. O Estado não intervirá em seus Municípios, nem a União nos Municípios localizados em Território Federal, exceto quando: I - deixar de ser paga, sem motivo de força maior, por dois anos consecutivos, a dívida fundada; II - não forem prestadas contas devidas, na forma da lei; III - não tiver sido aplicado o mínimo exigido da receita municipal na manutenção e desenvolvimento do ensino e nas ações e serviços públicos de saúde; IV - o Tribunal de Justiça der provimento a representação para assegurar a observância de princípios indicados na Constituição estadual, ou para prover a execução de lei, de ordem ou de decisão judicial.\""
+  },
+  {
+    "key": "CPM 2",
+    "raw": "\"Art. 2º, CPM — Ninguém pode ser punido por fato que lei posterior deixa de considerar crime, cessando em virtude dela a execução e os efeitos penais da sentença condenatória. §1º A lei posterior que, de qualquer outro modo, favorece o agente, aplica-se retroativamente. (redação da Lei 14.688/2023)\""
+  },
+  {
+    "key": "CPM 5",
+    "raw": "\"Art. 5º, CPM — Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o do resultado (teoria da atividade).\""
+  },
+  {
+    "key": "CPM 6",
+    "raw": "\"Art. 6º, CPM — Considera-se praticado o fato no lugar em que se desenvolveu a atividade criminosa, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o resultado. Nos crimes omissivos, no lugar em que deveria realizar-se a ação omitida (teoria da ubiquidade).\""
+  },
+  {
+    "key": "CPM 7",
+    "raw": "\"Art. 7º, CPM — Aplica-se a lei penal militar, sem prejuízo de convenções, tratados e regras de direito internacional, ao crime cometido, no todo ou em parte, no território nacional, ou fora dele, ainda que, neste caso, o agente esteja sendo processado ou tenha sido julgado pela justiça estrangeira.\""
+  },
+  {
+    "key": "CPM 17",
+    "raw": "\"Art. 17, CPM — As regras gerais deste Código aplicam-se aos fatos incriminados por lei penal militar especial, se esta não dispõe de modo diverso.\""
+  },
+  {
+    "key": "CPM 30",
+    "raw": "\"Art. 30, CPM — Diz-se o crime: I — consumado, quando nele se reúnem todos os elementos de sua definição legal; II — tentado, quando, iniciada a execução, não se consuma por circunstâncias alheias à vontade do agente. Parágrafo único — pune-se a tentativa com a pena do crime, diminuída de um a dois terços, podendo o juiz, em caso de excepcional gravidade, aplicar a do crime consumado.\""
+  },
+  {
+    "key": "CPM 33",
+    "raw": "\"Art. 33, CPM — Diz-se o crime: I — doloso, quando o agente quis o resultado ou assumiu o risco de produzi-lo; II — culposo, quando, deixando de empregar a cautela, atenção ou diligência a que estava obrigado, não prevê o resultado previsível ou, prevendo-o, supõe levianamente que não se realizaria. Parágrafo único — salvo casos expressos em lei, ninguém é punido por fato previsto como crime senão quando o pratica dolosamente.\""
+  },
+  {
+    "key": "CPM 36",
+    "raw": "\"Art. 36, CPM — Erro de fato: é isento de pena quem, ao praticar o crime, supõe, por erro plenamente escusável, a inexistência de circunstância de fato que o constitui ou a existência de situação de fato que tornaria a ação legítima.\""
+  },
+  {
+    "key": "CPM 38",
+    "raw": "\"Art. 38, CPM — Não é culpado quem comete o crime: a) sob coação irresistível ou que lhe suprima a faculdade de agir segundo a própria vontade; b) em estrita obediência a ordem direta de superior hierárquico, em matéria de serviço. §1º Responde pelo crime o autor da coação ou da ordem. §2º Se a ordem do superior tem por objeto a prática de ato manifestamente criminoso, ou há excesso na execução, é punível também o inferior.\""
+  },
+  {
+    "key": "CPM 39",
+    "raw": "\"Art. 39, CPM — Estado de necessidade exculpante: não é igualmente culpado quem, para proteger direito próprio ou de pessoa a quem está ligado por estreitas relações de parentesco ou afeição, contra perigo certo e atual que não provocou nem podia de outro modo evitar, sacrifica direito alheio, ainda quando superior ao protegido, desde que não lhe era razoavelmente exigível conduta diversa.\""
+  },
+  {
+    "key": "CPM 49",
+    "raw": "\"Art. 49, CPM — Embriaguez: não é imputável o agente que, por embriaguez completa proveniente de caso fortuito ou força maior, era, ao tempo da ação ou omissão, inteiramente incapaz de entender o caráter criminoso do fato ou de determinar-se. Parágrafo único — a pena pode ser reduzida de um a dois terços se a incapacidade era apenas parcial.\""
+  },
+  {
+    "key": "CPM 53",
+    "raw": "\"Art. 53, CPM — Coautoria: quem, de qualquer modo, concorre para o crime incide nas penas a este cominadas. §1º A punibilidade de cada concorrente é independente; não se comunicam as condições ou circunstâncias de caráter pessoal, salvo quando elementares do crime. §4º/§5º — reputam-se cabeças os que dirigem, instigam ou excitam a ação; quando o crime é cometido por inferiores e oficiais, estes são considerados cabeças.\""
+  },
+  {
+    "key": "CPM 71",
+    "raw": "\"Art. 71, CPM — Reincidência: verifica-se quando o agente comete novo crime depois de transitar em julgado a sentença que, no país ou no estrangeiro, o tenha condenado por crime anterior. §1º Não se toma em conta a condenação anterior se entre o cumprimento ou extinção da pena e o novo crime decorreu período superior a cinco anos.\""
+  },
+  {
+    "key": "CPM 80",
+    "raw": "\"Art. 80, CPM — Crime continuado: quando o agente, mediante mais de uma ação ou omissão, pratica dois ou mais crimes da mesma espécie e, pelas condições de tempo, lugar, maneira de execução e outras semelhantes, os subsequentes devem ser havidos como continuação do primeiro; aplica-se a pena de um só dos crimes (se idênticas) ou a mais grave (se diversas), aumentada de um sexto a dois terços. (redação da Lei 14.688/2023)\""
+  },
+  {
+    "key": "CPM 84",
+    "raw": "\"Art. 84, CPM — Suspensão condicional da pena (sursis): a execução da pena privativa de liberdade não superior a 2 anos pode ser suspensa por 3 a 5 anos (reclusão) ou por 2 a 4 anos (detenção), desde que o sentenciado não tenha condenação irrecorrível anterior e seus antecedentes, conduta e personalidade autorizem o benefício. (redação da Lei 14.688/2023)\""
+  },
+  {
+    "key": "CPM 98",
+    "raw": "\"Art. 98, CPM — São penas acessórias: I — perda de posto e patente; II — indignidade para o oficialato; III — incompatibilidade com o oficialato; IV — exclusão das forças armadas; V — perda da função pública; VI — inabilitação para o exercício de função pública; VII — incapacidade para o exercício do poder familiar, tutela ou curatela; VIII — suspensão dos direitos políticos.\""
+  },
+  {
+    "key": "CPM 125",
+    "raw": "\"Art. 125, CPM — Prescrição da pretensão punitiva: regula-se pelo máximo da pena privativa de liberdade cominada, verificando-se em 30 anos (se a pena é de morte); 20 (máx. superior a 12); 16 (superior a 8 e não excede 12); 12 (superior a 4 e não excede 8); 8 (superior a 2 e não excede 4); 4 (igual a 1 ano ou, sendo superior, não excede 2); e 3 anos (inferior a 1 ano — redação da Lei 14.688/2023).\""
+  },
+  {
+    "key": "CPM 149",
+    "raw": "\"Art. 149, CPM — Motim: reunirem-se militares agindo contra ordem de superior ou negando-se a cumpri-la; recusando obediência a superior, quando agindo sem ordem ou praticando violência; ou ocupando quartel, fortaleza, navio, aeronave ou viatura militar para ação militar ou prática de violência, em desobediência a ordem ou detrimento da disciplina. Pena: reclusão, de 4 a 8 anos, com aumento de um terço para os cabeças. Parágrafo único (Revolta): se os agentes estavam armados, reclusão de 8 a 20 anos.\""
+  },
+  {
+    "key": "CPM 157",
+    "raw": "\"Art. 157, CPM — Violência contra superior: praticar violência contra superior. Pena: detenção, de 3 meses a 2 anos. §1º Se o superior é comandante da unidade ou oficial-general: reclusão de 3 a 9 anos. §4º Se da violência resulta morte: reclusão de 12 a 30 anos.\""
+  },
+  {
+    "key": "CPM 163",
+    "raw": "\"Art. 163, CPM — Recusa de obediência: recusar obedecer a ordem do superior sobre assunto ou matéria de serviço, ou relativamente a dever imposto em lei, regulamento ou instrução. Pena: detenção, de 1 a 2 anos, se o fato não constitui crime mais grave.\""
+  },
+  {
+    "key": "CPM 183",
+    "raw": "\"Art. 183, CPM — Insubmissão: deixar de apresentar-se o convocado à incorporação, dentro do prazo que lhe foi marcado, ou, apresentando-se, ausentar-se antes do ato oficial de incorporação. Pena: impedimento, de 3 meses a 1 ano.\""
+  },
+  {
+    "key": "CPM 195",
+    "raw": "\"Art. 195, CPM — Abandono de posto: abandonar, sem ordem superior, o posto ou lugar de serviço que lhe tenha sido designado, ou o serviço que lhe cumpria, antes de terminá-lo. Pena: detenção, de 3 meses a 1 ano.\""
+  },
+  {
+    "key": "CPM 202",
+    "raw": "\"Art. 202, CPM — Embriaguez em serviço: embriagar-se o militar quando em serviço, ou apresentar-se embriagado para prestá-lo. Pena: detenção, de 6 meses a 2 anos.\""
+  },
+  {
+    "key": "CPM 206",
+    "raw": "\"Art. 206, CPM — Homicídio culposo: se o homicídio é culposo. Pena: detenção, de 1 a 4 anos. §1º A pena é aumentada de um terço se o crime resulta de inobservância de regra técnica de profissão, arte ou ofício, ou se o agente deixa de prestar imediato socorro à vítima, não procura diminuir as consequências do ato, ou foge para evitar prisão em flagrante (redação da Lei 14.688/2023).\""
+  },
+  {
+    "key": "CPM 303",
+    "raw": "\"Art. 303, CPM — Peculato: apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse ou detenção em razão do cargo ou comissão, ou desviá-lo em proveito próprio ou alheio. Pena: reclusão, de 3 a 15 anos. §2º Peculato-furto: aplica-se a mesma pena a quem, embora sem a posse, subtrai o bem valendo-se da facilidade da qualidade de militar. §3º Peculato culposo: detenção, de 3 meses a 1 ano (a reparação do dano antes da sentença irrecorrível extingue a punibilidade).\""
+  },
+  {
+    "key": "Lei 5.346",
+    "raw": "\"Lei Estadual nº 5.346, de 26 de maio de 1992 — Estatuto dos Policiais Militares do Estado de Alagoas (já alterada por diversas leis posteriores, entre elas a Lei 6.803/2007 e a Lei 7.657/2014). Regula a situação, os deveres, os direitos e as prerrogativas dos servidores públicos militares estaduais. Estrutura-se em títulos que tratam de: generalidades e conceituação; ingresso, hierarquia e disciplina; cargo, função, comando e subordinação; direitos, deveres e ética; ausente/desertor/desaparecido/extraviado; exclusão do serviço ativo (reserva remunerada, reforma, demissão — só oficiais, licenciamento — só praças, e anulação de incorporação); remuneração, promoção e uniformes; agregação, reversão e excedente; afastamentos temporários, licenças e recompensas; e tempo de serviço. Atenção: o art. 122 da redação original foi declarado INCONSTITUCIONAL pelo STF (ADI 2.620), não produzindo mais efeitos.\""
+  },
+  {
+    "key": "CPPM 5",
+    "raw": "\"Art. 5º, CPPM — Aplicação intertemporal: as normas deste Código aplicar-se-ão a partir da sua vigência, inclusive nos processos pendentes (tempus regit actum).\""
+  },
+  {
+    "key": "CPPM 28",
+    "raw": "\"Art. 28, CPPM — Dispensa de inquérito: o IPM poderá ser dispensado quando o fato e a autoria já estiverem esclarecidos por documentos ou outras provas materiais.\""
+  },
+  {
+    "key": "CPPM 121",
+    "raw": "\"Art. 121, CPPM — A decisão de conflito entre a autoridade judiciária da Justiça Militar e a da Justiça comum será atribuída ao Supremo Tribunal Federal.\""
+  },
+  {
+    "key": "CPPM 125",
+    "raw": "\"Art. 125, CPPM — A competência para resolver a questão prejudicial caberá ao auditor, ao Conselho de Justiça ou ao relator, conforme a fase do processo.\""
+  },
+  {
+    "key": "CPPM 243",
+    "raw": "\"Art. 243, CPPM — Pessoas que efetuam prisão em flagrante: qualquer pessoa poderá e os militares deverão prender quem for encontrado em flagrante delito.\""
+  },
+  {
+    "key": "CPPM 254",
+    "raw": "\"Art. 254, CPPM — Prisão preventiva: pode ser decretada pelo auditor ou pelo Conselho de Justiça, concorrendo os requisitos legais.\""
+  },
+  {
+    "key": "CPPM 263",
+    "raw": "\"Art. 263, CPPM — Menagem: pode ser concedida pelo juiz, nos crimes cujo máximo da pena não exceda a 4 anos, sendo o acusado recolhido a residência ou local determinado.\""
+  },
+  {
+    "key": "CPPM 277",
+    "raw": "\"Art. 277, CPPM — Formas de citação: por mandado, precatória, requisição, carta rogatória ou edital, conforme o caso.\""
+  },
+  {
+    "key": "CPPM 328",
+    "raw": "\"Art. 328, CPPM — Exame de corpo de delito: nos crimes que deixam vestígios, o exame de corpo de delito é indispensável para a condenação.\""
+  },
+  {
+    "key": "CP 7",
+    "raw": "\"Art. 7º, CP — Extraterritorialidade: ficam sujeitos à lei brasileira, embora cometidos no estrangeiro, crimes contra a vida do Presidente, contra o patrimônio da União, genocídio (incondicionada) e crimes que o Brasil se obrigou a reprimir por tratado (condicionada).\""
+  },
+  {
+    "key": "CP 15",
+    "raw": "\"Art. 15, CP — Desistência voluntária e arrependimento eficaz: o agente que, voluntariamente, desiste de prosseguir na execução ou impede o resultado, só responde pelos atos já praticados.\""
+  },
+  {
+    "key": "CP 26",
+    "raw": "\"Art. 26, CP — Inimputabilidade: é isento de pena o agente que, por doença mental, era inteiramente incapaz de entender o caráter ilícito do fato. Parágrafo único — semi-imputável: pena reduzida de 1/3 a 2/3.\""
+  },
+  {
+    "key": "CP 27",
+    "raw": "\"Art. 27, CP — Os menores de 18 anos são penalmente inimputáveis, sujeitos às normas da legislação especial (ECA).\""
+  },
+  {
+    "key": "CPP 3",
+    "raw": "\"Art. 3º, CPP — A lei processual penal admitirá interpretação extensiva e aplicação analógica, bem como suplemento dos princípios gerais de direito.\""
+  },
+  {
+    "key": "CPP 14",
+    "raw": "\"Art. 14, CPP — O ofendido e o indiciado poderão requerer qualquer diligência, que será realizada, ou não, a juízo da autoridade policial.\""
+  },
+  {
+    "key": "CPP 20",
+    "raw": "\"Art. 20, CPP — A autoridade assegurará no inquérito o sigilo necessário à elucidação do fato.\""
+  },
+  {
+    "key": "CPP 24",
+    "raw": "\"Art. 24, CPP — Nos crimes de ação pública, esta será promovida por denúncia do MP, dependendo, quando a lei exigir, de requisição do Ministro da Justiça ou representação do ofendido.\""
+  },
+  {
+    "key": "CPP 26",
+    "raw": "\"Art. 26, CPP — Dispositivo tido como não recepcionado pela CF/88: hoje toda ação penal pública inicia-se por denúncia do MP.\""
+  },
+  {
+    "key": "CPP 28",
+    "raw": "\"Art. 28, CPP — Arquivamento do inquérito: ordenado pelo Ministério Público, com revisão interna do próprio MP (redação da Lei 13.964/2019).\""
+  },
+  {
+    "key": "CPP 29",
+    "raw": "\"Art. 29, CPP — Ação penal privada subsidiária da pública: admitida se o MP não oferecer denúncia no prazo legal.\""
+  },
+  {
+    "key": "CPP 30",
+    "raw": "\"Art. 30, CPP — Ao ofendido caberá intentar a ação penal privada.\""
+  },
+  {
+    "key": "CPP 38",
+    "raw": "\"Art. 38, CPP — Decadência: o ofendido decai do direito de queixa se não o exerce em 6 meses, contados do conhecimento da autoria.\""
+  },
+  {
+    "key": "CPP 39",
+    "raw": "\"Art. 39, CPP — A representação será feita ao juiz, MP ou autoridade policial, por escrito ou oralmente.\""
+  },
+  {
+    "key": "CPP 41",
+    "raw": "\"Art. 41, CPP — A denúncia conterá a exposição do fato, com circunstâncias, qualificação do acusado, classificação do crime e rol de testemunhas.\""
+  },
+  {
+    "key": "CPP 42",
+    "raw": "\"Art. 42, CPP — O Ministério Público não poderá desistir da ação penal.\""
+  },
+  {
+    "key": "CPP 306",
+    "raw": "\"Art. 306, CPP — A prisão será comunicada imediatamente ao juiz, MP e família do preso. Em 24h, o auto será remetido ao juiz.\""
+  },
+  {
+    "key": "CPP 311",
+    "raw": "\"Art. 311, CPP — A prisão preventiva poderá ser decretada a requerimento do MP, querelante, assistente, ou representação policial (não mais de ofício).\""
+  },
+  {
+    "key": "CPP 322",
+    "raw": "\"Art. 322, CPP — A autoridade policial poderá conceder fiança se a pena máxima não superar 4 anos.\""
+  },
+  {
+    "key": "CPP 395",
+    "raw": "\"Art. 395, CPP — A denúncia será rejeitada quando manifestamente inepta, faltar pressuposto processual ou justa causa.\""
+  },
+  {
+    "key": "Lei5346 1",
+    "raw": "\"Art. 1º, Estatuto PM/AL — O presente Estatuto tem o fim de regular a situação, deveres, direitos e prerrogativas dos servidores públicos militares do Estado de Alagoas.\""
+  },
+  {
+    "key": "Lei5346 2",
+    "raw": "\"Art. 2º, Estatuto PM/AL — A Polícia Militar do Estado de Alagoas, Força Auxiliar e Reserva do Exército, é instituição permanente, organizada com base na hierarquia e na disciplina, subordinada administrativa e operacionalmente ao Governador do Estado, incumbida da polícia ostensiva e da preservação da ordem pública. Parágrafo único — para fins de defesa interna, subordina-se diretamente ao Exército Brasileiro.\""
+  },
+  {
+    "key": "Lei5346 3",
+    "raw": "\"Art. 3º, Estatuto PM/AL — Os integrantes da PM/AL, de ambos os sexos, constituem categoria especial de servidores públicos, denominados \\\"policiais militares\\\", posicionando-se na ativa ou na inatividade (reserva remunerada ou reformados).\""
+  },
+  {
+    "key": "Lei5346 5",
+    "raw": "\"Art. 5º, Estatuto PM/AL — A carreira Policial Militar é caracterizada pela atividade continuada e devotada às finalidades da Corporação. §1º — a carreira é privativa do pessoal da ativa. §2º — é privativa de brasileiro nato a carreira de oficial da Polícia Militar.\""
+  },
+  {
+    "key": "Lei5346 7",
+    "raw": "\"Art. 7º, Estatuto PM/AL — O ingresso é facultado a todos os brasileiros, sem distinção de raça, sexo, cor ou credo religioso, mediante matrícula ou nomeação, após concurso público de provas ou provas e títulos, observados grau de instrução, idade, altura mínima (1,65 m masculino / 1,60 m feminino), aptidão física/intelectual, sanidade, idoneidade moral e não exercício de atividade prejudicial à Segurança Nacional.\""
+  },
+  {
+    "key": "Lei5346 9",
+    "raw": "\"Art. 9º, Estatuto PM/AL — A hierarquia e a disciplina são a base institucional da Polícia Militar. §1º — a hierarquia é estabelecida por postos e por graduações. §2º — a autoridade e a responsabilidade crescem com o grau hierárquico. §4º — a disciplina e o respeito à hierarquia devem ser mantidos em todas as circunstâncias entre os PM da ativa, da reserva remunerada e reformados.\""
+  },
+  {
+    "key": "Lei5346 10",
+    "raw": "\"Art. 10, Estatuto PM/AL — Os círculos hierárquicos são âmbitos de convivência entre Policiais Militares de uma mesma categoria, com a finalidade de desenvolver o espírito de camaradagem em ambiente de estima e confiança, sem prejuízo do respeito mútuo.\""
+  },
+  {
+    "key": "Lei5346 11",
+    "raw": "\"Art. 11, Estatuto PM/AL — A escala hierárquica agrupa-se em círculos: de oficiais (superiores: Coronel, Tenente-Coronel, Major; intermediário: Capitão; subalternos: 1º e 2º Tenente) e de praças (subtenentes/sargentos: Subtenente, 1º, 2º e 3º Sargento; cabos e soldados: Cabo, Soldado). Aspirante a oficial e cadetes são \\\"Praças Especiais\\\".\""
+  },
+  {
+    "key": "Lei5346 12",
+    "raw": "\"Art. 12, Estatuto PM/AL — A precedência entre os PM da ativa no mesmo grau hierárquico é assegurada pela antiguidade no posto ou graduação, ressalvados os casos de precedência funcional estabelecidos em lei ou regulamento.\""
+  },
+  {
+    "key": "Lei5346 13",
+    "raw": "\"Art. 13, Estatuto PM/AL — A antiguidade em cada posto ou graduação é contada a partir da data da publicação do ato de promoção, declaração, nomeação ou inclusão. Em igualdade de posto/graduação, os PM da ativa têm precedência sobre os da inatividade.\""
+  },
+  {
+    "key": "Lei5346 30",
+    "raw": "\"Art. 30, Estatuto PM/AL — Direitos e prerrogativas do PM, entre outros: plenitude da patente dos oficiais; uso de título e designação hierárquica; prisão especial em quartel, à disposição da autoridade judiciária, antes de condenação irrecorrível; assistência jurídica integral e gratuita do Estado quando indiciado/processado por crime em ato de serviço; estabilidade das praças com mais de 10 anos de efetivo serviço. §2º — só em flagrante delito o PM pode ser preso por autoridade policial civil, que deve entregá-lo imediatamente à autoridade PM mais próxima.\""
+  },
+  {
+    "key": "Lei5346 31",
+    "raw": "\"Art. 31, Estatuto PM/AL — São deveres do PM: dedicação integral ao serviço; fidelidade à instituição, mesmo com risco da própria vida; culto aos símbolos nacionais e estaduais; probidade e lealdade; disciplina e respeito à hierarquia; rigoroso cumprimento das obrigações e ordens; tratar o subordinado com dignidade e urbanidade.\""
+  },
+  {
+    "key": "Lei5346 33",
+    "raw": "\"Art. 33, Estatuto PM/AL — Constituem violação dos deveres e obrigações: a prática de crime, de contravenção e de transgressão disciplinar. §1º — a violação é tão mais grave quanto mais elevado o grau hierárquico de quem a cometer. §2º — no concurso de crime militar e transgressão disciplinar, considera-se a mais grave.\""
+  },
+  {
+    "key": "Lei5346 35",
+    "raw": "\"Art. 35, Estatuto PM/AL — As transgressões disciplinares são especificadas no regulamento disciplinar da PM/AL. §2º — as punições disciplinares de detenção ou prisão não poderão ultrapassar trinta (30) dias.\""
+  },
+  {
+    "key": "Lei5346 37",
+    "raw": "\"Art. 37, Estatuto PM/AL — O Oficial presumivelmente incapaz de permanecer como PM da ativa será submetido a Conselho de Justificação. §1º — ao ser submetido, será automaticamente afastado do exercício de suas funções. §2º/§3º — também aplicável a oficiais da reserva.\""
+  },
+  {
+    "key": "Lei5346 38",
+    "raw": "\"Art. 38, Estatuto PM/AL — O Aspirante a Oficial e as Praças com estabilidade assegurada, presumivelmente incapazes de permanecer na ativa, serão submetidos a Conselho de Disciplina. §1º — será afastado da atividade que exercia. §2º — também aplicável a praça da reserva.\""
+  },
+  {
+    "key": "Lei5346 39",
+    "raw": "\"Art. 39, Estatuto PM/AL — A ética Policial Militar é estabelecida pelo sentimento do dever, pundonor militar e decoro de classe, impondo, entre outros preceitos: amar a verdade; respeitar a dignidade da pessoa humana; cumprir e fazer cumprir leis e ordens; ser justo e imparcial; zelar pelo bom nome da corporação; conduzir-se de modo a não prejudicar a disciplina mesmo fora do serviço ou na inatividade.\""
+  },
+  {
+    "key": "Lei5346 40",
+    "raw": "\"Art. 40, Estatuto PM/AL — É considerado ausente o Policial Militar que, por mais de vinte e quatro (24) horas consecutivas, deixe de comparecer à sua OPM sem comunicar o motivo, ou se afaste sem licença do local onde deva permanecer.\""
+  },
+  {
+    "key": "Lei5346 41",
+    "raw": "\"Art. 41, Estatuto PM/AL — É considerado desertor o Policial Militar que, por mais de oito (08) dias consecutivos, deixe de comparecer à sua OPM sem comunicar o motivo, ou se afaste sem licença do local onde deva permanecer.\""
+  },
+  {
+    "key": "Lei5346 42",
+    "raw": "\"Art. 42, Estatuto PM/AL — A deserção acarreta interrupção do serviço ativo. §1º — o desertor é posto na condição de agregado. §2º — a demissão do Oficial ou exclusão da Praça com estabilidade se processa após seis meses de agregação, se não houver captura ou apresentação voluntária antes desse prazo. §3º — a praça sem estabilidade é automaticamente excluída após declarada desertora.\""
+  },
+  {
+    "key": "Lei5346 47",
+    "raw": "\"Art. 47, Estatuto PM/AL — A exclusão do serviço ativo se dá mediante: transferência para a reserva remunerada; reforma; demissão; licenciamento; anulação de incorporação. §1º — as três primeiras hipóteses são processadas por ato do Governador. §2º — licenciamento e anulação de incorporação, por ato do Comandante Geral.\""
+  },
+  {
+    "key": "Lei5346 49",
+    "raw": "\"Art. 49, Estatuto PM/AL — A transferência para a reserva remunerada se efetua a pedido ou ex-offício. Parágrafo único — não será concedida a pedido ao PM que estiver respondendo inquérito/processo em qualquer jurisdição, ou cumprindo pena de qualquer natureza.\""
+  },
+  {
+    "key": "Lei5346 50",
+    "raw": "\"Art. 50, Estatuto PM/AL — A transferência para a reserva remunerada, a pedido, será concedida mediante requerimento ao PM que contar, no mínimo, vinte e cinco (25) anos de serviço, se do sexo feminino, e trinta (30), se do masculino.\""
+  },
+  {
+    "key": "Lei5346 53",
+    "raw": "\"Art. 53, Estatuto PM/AL — A passagem do Policial Militar para a inatividade, mediante reforma, se efetua ex-offício.\""
+  },
+  {
+    "key": "Lei5346 55",
+    "raw": "\"Art. 55, Estatuto PM/AL — A incapacidade definitiva pode decorrer de: ferimento/enfermidade na manutenção da ordem pública; acidente em serviço; doença com relação de causa e efeito com o serviço; doenças graves elencadas em lei (tuberculose ativa, alienação mental, neoplasia maligna, cegueira, hanseníase, entre outras); ou acidente/doença sem relação com o serviço.\""
+  },
+  {
+    "key": "Lei5346 60",
+    "raw": "\"Art. 60, Estatuto PM/AL — A demissão da Polícia Militar aplica-se EXCLUSIVAMENTE aos Oficiais, efetuando-se a pedido ou ex-offício.\""
+  },
+  {
+    "key": "Lei5346 61",
+    "raw": "\"Art. 61, Estatuto PM/AL — A demissão a pedido será concedida mediante requerimento: sem indenização, se o oficial contar mais de cinco (05) anos de oficialato; com indenização das despesas de preparação/formação, se contar menos de cinco (05) anos de oficialato.\""
+  },
+  {
+    "key": "Lei5346 62",
+    "raw": "\"Art. 62, Estatuto PM/AL — O Oficial será demitido ex-offício quando: for empossado em cargo público permanente estranho à carreira; alistar-se candidato a cargo eletivo com menos de dez (10) anos de serviço na época; falecer ou for considerado falecido; for considerado desertor.\""
+  },
+  {
+    "key": "Lei5346 64",
+    "raw": "\"Art. 64, Estatuto PM/AL — O Oficial só perderá o Posto e a Patente quando: condenado (Justiça Comum ou Militar) a pena restritiva de liberdade superior a dois (02) anos, com trânsito em julgado e decisão do Conselho de Justiça pela perda; ou julgado indigno/incompatível com o oficialato por Conselho de Justiça ou por Conselho de Justificação.\""
+  },
+  {
+    "key": "Lei5346 65",
+    "raw": "\"Art. 65, Estatuto PM/AL — O licenciamento do serviço ativo aplica-se SOMENTE às Praças, efetuando-se a pedido ou ex-offício.\""
+  },
+  {
+    "key": "Lei5346 68",
+    "raw": "\"Art. 68, Estatuto PM/AL — O licenciamento ex-offício do Aspirante a Oficial e da Praça com estabilidade assegurada, a bem da disciplina, ocorre quando: submetido a Conselho de Disciplina e julgado culpado (decisão do Comandante Geral); ou perder/houver perdido a nacionalidade brasileira, se Aspirante a Oficial.\""
+  },
+  {
+    "key": "Lei5346 74",
+    "raw": "\"Art. 74, Estatuto PM/AL — A anulação de incorporação de voluntário selecionado será aplicada ao PM que: tenha prestado declarações falsas por escrito durante o recrutamento; tenha usado documentos falsificados ou de outrem; responda processo criminal na Justiça Comum antes ou durante a formação.\""
+  },
+  {
+    "key": "Lei5346 76",
+    "raw": "\"Art. 76, Estatuto PM/AL — O acesso na hierarquia é seletivo, gradual, sucessivo, mediante promoção. §3º — a promoção dos oficiais é por ato do Governador, mediante proposta do Comandante Geral; a das praças, por ato do Comandante Geral, mediante proposta da Comissão de Promoção de Praças.\""
+  },
+  {
+    "key": "Lei5346 80",
+    "raw": "\"Art. 80, Estatuto PM/AL — Agregação é a situação em que o Policial Militar da ativa fica temporariamente afastado do exercício do cargo, permanecendo no lugar que lhe compete na escala hierárquica de seu quadro (redação dada pela Lei 6.150/2000). Parágrafo único — a agregação NÃO abre vaga para fins de promoção — diferente da redação original de 1992, que previa abertura de vaga.\""
+  },
+  {
+    "key": "Lei5346 86",
+    "raw": "\"Art. 86, Estatuto PM/AL — Reversão é o ato pelo qual o Policial Militar, cessado o motivo que determinou sua agregação, readquire o direito ao exercício do cargo próprio do quadro ou qualificação a que pertence (redação dada pela Lei 6.150/2000).\""
+  },
+  {
+    "key": "Lei5346 88",
+    "raw": "\"Art. 88, Estatuto PM/AL — Excedente é a situação transitória do Policial Militar que, revertido, encontra o efetivo do quadro completo, ou que é promovido por bravura sem haver vaga. O excedente é considerado, para todos os efeitos, em serviço, concorrendo em igualdade de condições a cargo e a promoção.\""
+  },
+  {
+    "key": "Lei5346 98",
+    "raw": "\"Art. 98, Estatuto PM/AL — A licença especial é o afastamento relativo a cada quinquênio de efetivo serviço, com duração de três (03) meses, gozada de uma só vez, sem restrição para a carreira. §2º — não interrompe a contagem do tempo de efetivo serviço.\""
+  },
+  {
+    "key": "Lei5346 99",
+    "raw": "\"Art. 99, Estatuto PM/AL — A licença para trato de interesse particular é concedida ao PM com dez (10) anos ou mais de efetivo serviço, sempre com prejuízo da remuneração e do tempo de serviço. §3º — o período máximo é de dois (02) anos, contínuos ou não.\""
+  },
+  {
+    "key": "Lei5346 100",
+    "raw": "\"Art. 100, Estatuto PM/AL — Licença para acompanhar tratamento de saúde de pessoa da família: duração inicial de trinta (30) dias, prorrogável; prazo máximo de vinte e quatro (24) meses. §4º — remuneração integral até doze (12) meses ininterruptos; 2/3 se exceder esse prazo.\""
+  },
+  {
+    "key": "Lei5346 102",
+    "raw": "\"Art. 102, Estatuto PM/AL — A PM feminina gestante tem direito a licença-maternidade de cento e vinte (120) dias, a partir do 8º mês de gestação ou da data do parto, sem prejuízo da remuneração e da contagem do tempo de efetivo serviço.\""
+  },
+  {
+    "key": "Lei5346 103",
+    "raw": "\"Art. 103, Estatuto PM/AL — O Policial Militar tem direito a licença-paternidade de cinco (05) dias, a contar da data do nascimento do filho, mediante requerimento.\""
+  },
+  {
+    "key": "Lei5346 122",
+    "raw": "\"Art. 122, Estatuto PM/AL — DECLARADO INCONSTITUCIONAL pelo Supremo Tribunal Federal, em controle concentrado, por meio da ADI nº 2.620. Na redação original (hoje sem efeito), o dispositivo tratava da reinclusão do PM licenciado a pedido, mediante requisitos como existência de vaga, sanidade e limite de afastamento.\""
+  },
+  {
+    "key": "Lei5346 127",
+    "raw": "\"Art. 127, Estatuto PM/AL — O PM que se julgar prejudicado por ato administrativo pode recorrer, interpor queixa, reconsideração ou representação. §1º — o direito de recorrer prescreve em quinze (15) dias corridos (composição de Quadro de Acesso para promoção) ou em cento e vinte (120) dias, nos demais casos.\""
+  },
+  {
+    "key": "Lei5346 131",
+    "raw": "\"Art. 131, Estatuto PM/AL — O Policial Militar indiciado ou processado por crime, comum ou militar, será apresentado à autoridade policial ou judiciária, sempre que intimado, notificado ou citado, devidamente fardado, desarmado e escoltado, até o trânsito em julgado da sentença. §2º — a escolta deve ser comandada por militar de posto/graduação superior ao do envolvido.\""
+  },
+  {
+    "key": "CADH 1",
+    "raw": "\"Art. 1, CADH — Os Estados-partes comprometem-se a respeitar os direitos e liberdades reconhecidos na Convenção e a garantir seu livre e pleno exercício a toda pessoa sujeita à sua jurisdição, sem discriminação por motivo de raça, cor, sexo, idioma, religião, opiniões políticas, origem nacional ou social, posição econômica, nascimento ou qualquer outra condição social.\""
+  },
+  {
+    "key": "CADH 2",
+    "raw": "\"Art. 2, CADH — Se o exercício dos direitos e liberdades da Convenção ainda não estiver garantido por disposições legislativas ou de outra natureza, os Estados-partes comprometem-se a adotar, de acordo com suas normas constitucionais, as medidas legislativas ou de outra natureza que forem necessárias para tornar efetivos tais direitos e liberdades.\""
+  },
+  {
+    "key": "CADH 4",
+    "raw": "\"Art. 4, CADH — Toda pessoa tem direito de que se respeite sua vida, direito esse protegido pela lei, em geral, desde o momento da concepção. Ninguém pode ser privado da vida arbitrariamente. Nos países que não houverem abolido a pena de morte, esta só poderá ser imposta pelos delitos mais graves, mediante sentença transitada em julgado, não podendo ser restabelecida nos Estados que a hajam abolido, nem aplicada a delitos políticos, nem estendida a pessoas que, no momento da perpetração do delito, forem menores de 18 anos ou maiores de 70, nem a mulheres em estado de gravidez.\""
+  },
+  {
+    "key": "CADH 5",
+    "raw": "\"Art. 5, CADH — Toda pessoa tem direito a que se respeite sua integridade física, psíquica e moral. Ninguém deve ser submetido a torturas, nem a penas ou tratos cruéis, desumanos ou degradantes. Toda pessoa privada de liberdade deve ser tratada com o respeito devido à dignidade inerente ao ser humano.\""
+  },
+  {
+    "key": "CADH 6",
+    "raw": "\"Art. 6, CADH — Ninguém pode ser submetido a escravidão ou servidão, proibidas em todas as suas formas, assim como o tráfico de escravos e o tráfico de mulheres. §3º, 'a' — não constitui trabalho forçado, para os efeitos deste artigo, o trabalho ou serviço exigido normalmente de um recluso em cumprimento de sentença ou resolução formal expedida pela autoridade judiciária competente.\""
+  },
+  {
+    "key": "CADH 7",
+    "raw": "\"Art. 7, CADH — Toda pessoa tem direito à liberdade e à segurança pessoais. Ninguém pode ser privado de sua liberdade física, salvo pelas causas e nas condições fixadas de antemão pelas Constituições ou pelas leis de acordo com elas promulgadas. §4 — toda pessoa detida ou retida deve ser informada das razões da detenção e notificada, sem demora, da acusação formulada. §5 — toda pessoa detida deve ser conduzida, sem demora, à presença de um juiz, tendo direito a ser julgada em prazo razoável ou posta em liberdade.\""
+  },
+  {
+    "key": "CADH 8",
+    "raw": "\"Art. 8, CADH — Toda pessoa acusada de delito tem direito a que se presuma sua inocência enquanto não se comprove legalmente sua culpa, com garantias mínimas como comunicação prévia e pormenorizada da acusação, tempo e meios adequados para preparação da defesa, e direito de ser assistida por defensor de sua escolha ou, gratuitamente, por defensor proporcionado pelo Estado.\""
+  },
+  {
+    "key": "CADH 10",
+    "raw": "\"Art. 10, CADH — Toda pessoa tem direito de ser indenizada conforme a lei no caso de ter sido condenada em sentença transitada em julgado por erro judiciário.\""
+  },
+  {
+    "key": "CADH 11",
+    "raw": "\"Art. 11, CADH — Toda pessoa tem direito ao respeito de sua honra e ao reconhecimento de sua dignidade, não podendo ser objeto de ingerências arbitrárias ou abusivas em sua vida privada, familiar, domicílio ou correspondência, nem de ataques ilegais à sua honra ou reputação, tendo direito à proteção da lei contra tais ingerências ou ataques.\""
+  },
+  {
+    "key": "CADH 13",
+    "raw": "\"Art. 13, CADH — Toda pessoa tem direito à liberdade de pensamento e de expressão, o que compreende a liberdade de buscar, receber e difundir informações e ideias de toda natureza. O exercício desse direito não pode estar sujeito a censura prévia, mas a responsabilidades ulteriores, expressamente fixadas em lei, na medida do necessário para assegurar o respeito aos direitos ou à reputação das demais pessoas, ou a proteção da segurança nacional, da ordem pública, ou da saúde/moral públicas.\""
+  },
+  {
+    "key": "CADH 16",
+    "raw": "\"Art. 16, CADH — Todas as pessoas têm o direito de associar-se livremente com fins ideológicos, religiosos, políticos, econômicos, trabalhistas, sociais, culturais, desportivos ou de qualquer outra natureza. O exercício desse direito só pode estar sujeito às restrições previstas em lei, necessárias em uma sociedade democrática, no interesse da segurança nacional, da ordem, saúde ou moral públicas, ou dos direitos e liberdades das demais pessoas.\""
+  },
+  {
+    "key": "CADH 21",
+    "raw": "\"Art. 21, CADH — Toda pessoa tem direito ao uso e gozo de seus bens, podendo a lei subordinar esse uso e gozo ao interesse social. §2 — nenhuma pessoa pode ser privada de seus bens, exceto mediante o pagamento de indenização justa, por razões de utilidade pública ou de interesse social, e nos casos e formas estabelecidos pela lei. §3 — tanto a usura quanto qualquer outra forma de exploração do homem pelo homem devem ser reprimidas pela lei.\""
+  },
+  {
+    "key": "CADH 22",
+    "raw": "\"Art. 22, CADH — Toda pessoa que se ache legalmente no território de um Estado-parte tem direito de nele circular e de nele residir, em conformidade com as disposições legais. Ninguém pode ser expulso do território do Estado do qual for nacional, nem ser privado do direito de nele entrar.\""
+  },
+  {
+    "key": "CADH 23",
+    "raw": "\"Art. 23, CADH — Todos os cidadãos devem gozar dos direitos políticos: de votar e ser eleitos em eleições periódicas autênticas, por sufrágio universal e igual, e por voto secreto que garanta a livre expressão da vontade dos eleitores, e de ter acesso, em condições gerais de igualdade, às funções públicas de seu país.\""
+  },
+  {
+    "key": "CADH 25",
+    "raw": "\"Art. 25, CADH — Toda pessoa tem direito a um recurso simples e rápido, ou a qualquer outro recurso efetivo, perante os juízes ou tribunais competentes, que a proteja contra atos que violem seus direitos fundamentais reconhecidos pela Constituição, pela lei ou pela própria Convenção, mesmo quando tal violação seja cometida por pessoas que estejam atuando no exercício de suas funções oficiais.\""
+  },
+  {
+    "key": "CADH 27",
+    "raw": "\"Art. 27, CADH — Em caso de guerra, de perigo público, ou de outra emergência que ameace a independência ou segurança do Estado-parte, este pode adotar disposições que suspendam as obrigações da Convenção, na medida e pelo tempo estritamente limitados às exigências da situação, sendo vedada a suspensão de determinados direitos considerados inderrogáveis, entre eles o direito à vida (art. 4), a proibição de tortura (art. 5), a proibição de escravidão (art. 6), e o princípio da legalidade e retroatividade.\""
+  },
+  {
+    "key": "CADH 37",
+    "raw": "\"Art. 37, CADH — Os membros da Comissão Interamericana de Direitos Humanos serão eleitos por quatro anos e só poderão ser reeleitos uma vez, não podendo, porém, o mandato de três dos sete membros designados na primeira eleição expirar ao final de dois anos, sorteados imediatamente após a eleição.\""
+  },
+  {
+    "key": "CADH 44",
+    "raw": "\"Art. 44, CADH — Qualquer pessoa ou grupo de pessoas, ou entidade não governamental legalmente reconhecida em um ou mais Estados-membros da Organização, pode apresentar à Comissão petições que contenham denúncias ou queixas de violação da Convenção por um Estado-parte, não sendo necessário que o peticionário seja a própria vítima.\""
+  },
+  {
+    "key": "CADH 46",
+    "raw": "\"Art. 46, CADH — Para que uma petição seja admitida pela Comissão, será necessário: que hajam sido interpostos e esgotados os recursos da jurisdição interna; que seja apresentada dentro do prazo de 6 meses, a partir da data em que o suposto lesado for notificado da decisão definitiva interna. §2 — as disposições sobre esgotamento de recursos internos NÃO se aplicam quando: não existir, na legislação interna, o devido processo legal; não se houver permitido ao suposto lesado o acesso aos recursos internos; ou houver demora injustificada na decisão sobre os mencionados recursos.\""
+  },
+  {
+    "key": "CADH 47",
+    "raw": "\"Art. 47, CADH — A Comissão declarará inadmissível toda petição quando, entre outras hipóteses: faltar algum dos requisitos do art. 46; não expuser fatos que caracterizem violação dos direitos garantidos pela Convenção; a petição for manifestamente infundada; ou for substancialmente reprodução de petição anterior já examinada pela Comissão ou por outro organismo internacional (alínea 'd').\""
+  },
+  {
+    "key": "CADH 61",
+    "raw": "\"Art. 61, CADH — Só os Estados-partes e a Comissão têm direito de submeter caso à decisão da Corte Interamericana de Direitos Humanos. Para que a Corte possa conhecer de qualquer caso, é necessário que sejam esgotados os processos previstos nos artigos 48 a 50 (trâmite perante a Comissão).\""
+  },
+  {
+    "key": "CADH 63",
+    "raw": "\"Art. 63, CADH — Quando decidir que houve violação de um direito ou liberdade protegidos pela Convenção, a Corte determinará que se assegure ao lesado o gozo do seu direito violado, e, se for procedente, que sejam reparadas as consequências e paga indenização justa à parte lesada. §2 — em casos de extrema gravidade e urgência, e quando necessário para evitar danos irreparáveis, a Corte pode determinar medidas provisórias, mesmo em assuntos ainda não submetidos ao seu conhecimento, a pedido da Comissão.\""
+  },
+  {
+    "key": "CADH 67",
+    "raw": "\"Art. 67, CADH — A sentença da Corte será definitiva e inapelável. Em caso de divergência sobre o sentido ou alcance da sentença, a Corte a interpretará, a pedido de qualquer das partes, desde que o pedido seja apresentado dentro de 90 dias a partir da data da notificação da sentença.\""
+  },
+  {
+    "key": "CADH 68",
+    "raw": "\"Art. 68, CADH — Os Estados-partes comprometem-se a cumprir a decisão da Corte em todo caso em que forem partes. §2 — a parte da sentença que determinar indenização compensatória poderá ser executada no país respectivo pelo processo interno vigente para a execução de sentenças contra o Estado.\""
+  },
+  {
+    "key": "RD 5",
+    "raw": "\"Art. 5º, Regulamento Disciplinar PM/AL — A hierarquia e a disciplina constituem a base institucional da Polícia Militar, devendo ser mantidas, permanentemente, pelos policiais militares na ativa e na inatividade. §3º — são manifestações essenciais de disciplina: correção de atitudes; obediência pronta às ordens dos superiores; colaboração espontânea; consciência das responsabilidades; observância das prescrições regulamentares; respeito à ética policial militar.\""
+  },
+  {
+    "key": "RD 6",
+    "raw": "\"Art. 6º, Regulamento Disciplinar PM/AL — As ordens, quando emanadas de autoridade competente, devem ser prontamente obedecidas, cabendo inteira responsabilidade à autoridade que a determinar. §3º — cabe ao executante que exorbitar no cumprimento da ordem recebida a responsabilidade pelos excessos e abusos que cometer. §4º — ainda que não se trate de ato de serviço, deve o policial militar obediência aos seus superiores hierárquicos.\""
+  },
+  {
+    "key": "RD 8",
+    "raw": "\"Art. 8º, Regulamento Disciplinar PM/AL — A honra, o sentimento do dever, o pundonor policial militar e o decoro da classe impõem, a cada integrante da PM, conduta moral e profissional irrepreensíveis, com preceitos como: amar a verdade; respeitar a dignidade da pessoa humana; cumprir e fazer cumprir leis e ordens; ser justo e imparcial; e conduzir-se, mesmo fora do serviço ou já na inatividade, de modo que não sejam prejudicados os princípios da disciplina, do respeito e do decoro militar.\""
+  },
+  {
+    "key": "RD 26",
+    "raw": "\"Art. 26, Regulamento Disciplinar PM/AL — Transgressão disciplinar é a violação, por ação ou omissão, dos princípios da ética, dos deveres e das obrigações policiais militares, estatuídos em leis, regulamentos, normas ou disposições, na sua manifestação elementar e simples. Distingue-se do crime militar, que consiste na ofensa aos bens juridicamente tutelados pelo Código Penal Militar.\""
+  },
+  {
+    "key": "RD 28",
+    "raw": "\"Art. 28, Regulamento Disciplinar PM/AL — A instância criminal e administrativa são independentes e podem ser concomitantes. A instauração de inquérito ou ação criminal não impede a imposição imediata, na esfera administrativa, de penalidade cabível pela transgressão disciplinar residual ou subjacente ao mesmo fato.\""
+  },
+  {
+    "key": "RD 29",
+    "raw": "\"Art. 29, Regulamento Disciplinar PM/AL — As transgressões disciplinares se classificam, segundo sua intensidade, em: leves; médias; graves.\""
+  },
+  {
+    "key": "RD 33",
+    "raw": "\"Art. 33, Regulamento Disciplinar PM/AL — Serão ainda classificadas como graves as transgressões praticadas contra símbolos nacionais/estaduais e contra a honra/pundonor policial militar (art. 27, II, 'a' e 'b'), bem como as demais transgressões não especificadas (art. 27, II, 'c') quando forem de natureza desonrosa, ofensivas à dignidade profissional, atentatórias às instituições ou ao Estado, ou que atinjam gravemente o prestígio da corporação.\""
+  },
+  {
+    "key": "RD 35",
+    "raw": "\"Art. 35, Regulamento Disciplinar PM/AL — São causas de justificação: ação meritória no interesse do serviço/segurança pública; legítima defesa própria ou de outrem; coação irresistível ou obediência a ordem não manifestamente ilegal; uso imperativo de força necessária em caso de perigo/calamidade; erro plenamente justificado; e necessidade de livrar de perigo atual direito próprio ou alheio. §1º — não haverá punição quando reconhecida qualquer causa de justificação. §3º — em qualquer hipótese, o agente responde pelos excessos praticados.\""
+  },
+  {
+    "key": "RD 36",
+    "raw": "\"Art. 36, Regulamento Disciplinar PM/AL — São circunstâncias atenuantes: comportamento bom/ótimo/excepcional; relevância de serviços prestados; falta de prática no serviço; ter cometido o ato por relevante valor social/moral; ter procurado, espontaneamente, evitar/diminuir as consequências ou reparado o dano; coação resistível ou violenta emoção por ato injusto de terceiro; confissão espontânea; e mais de 70 anos de idade na data do fato.\""
+  },
+  {
+    "key": "RD 37",
+    "raw": "\"Art. 37, Regulamento Disciplinar PM/AL — São circunstâncias agravantes: mau comportamento; prática/conexão de duas ou mais transgressões; reincidência; conluio; embriaguez preordenada; premeditação; presença de tropa/público/subordinado; abuso de autoridade hierárquica; entre outras. §2º — para efeito de reincidência, não prevalece a transgressão anterior se, entre o cumprimento da punição e o ato posterior, decorreu período superior a 5 anos.\""
+  },
+  {
+    "key": "RD 38",
+    "raw": "\"Art. 38, Regulamento Disciplinar PM/AL — É isento de punição o transgressor que, ao tempo da transgressão, era inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento, por: doença mental; embriaguez acidental completa (caso fortuito ou força maior); ou embriaguez patológica completa. §2º — não há isenção quando o erro decorrer de culpa do transgressor.\""
+  },
+  {
+    "key": "RD 39",
+    "raw": "\"Art. 39, Regulamento Disciplinar PM/AL — A punição disciplinar visa o benefício educativo ao punido e o fortalecimento da disciplina da Corporação.\""
+  },
+  {
+    "key": "RD 40",
+    "raw": "\"Art. 40, Regulamento Disciplinar PM/AL — As punições disciplinares, em ordem de gravidade crescente, são: advertência; repreensão; detenção; prisão; licenciamento a bem da disciplina.\""
+  },
+  {
+    "key": "RD 41",
+    "raw": "\"Art. 41, Regulamento Disciplinar PM/AL — Advertência é a forma mais branda de punir: admoestação verbal ao transgressor, em caráter particular ou ostensivo. §2º — por ser verbal, não consta das alterações do punido, mas deve ser registrada em sua ficha disciplinar para efeito de reincidência.\""
+  },
+  {
+    "key": "RD 43",
+    "raw": "\"Art. 43, Regulamento Disciplinar PM/AL — Detenção consiste no cerceamento da liberdade do punido, que deve permanecer no quartel da OPM onde serve, sem ficar confinado, sujeito a atos de instrução/serviço e retorno às dependências nas horas de repouso.\""
+  },
+  {
+    "key": "RD 44",
+    "raw": "\"Art. 44, Regulamento Disciplinar PM/AL — Prisão consiste em manter o transgressor circunscrito às dependências do alojamento de seus pares, ou em local determinado e adaptado, sem grades, na própria OPM.\""
+  },
+  {
+    "key": "RD 47",
+    "raw": "\"Art. 47, Regulamento Disciplinar PM/AL — A prisão de qualquer transgressor, sem nota de punição publicada em Boletim, só pode ocorrer por ordem das autoridades referidas nos incisos I a V do art. 11 (Governador/Comandante Geral; Chefe do EMG; Chefes de Gabinete/Assessorias; Comandantes Intermediários/Diretores/Ajudante Geral; Subchefe do EMG e Comandantes de OPM).\""
+  },
+  {
+    "key": "RD 48",
+    "raw": "\"Art. 48, Regulamento Disciplinar PM/AL — Licenciamento a bem da disciplina consiste no afastamento ex-offício do policial militar das fileiras da Corporação. §1º — aplicável à praça sem estabilidade assegurada, mediante análise pelo Comandante. §2º — à praça com estabilidade, apenas quando julgada culpada por Conselho de Disciplina, se assim decidir o Comandante Geral. §4º — o ato é da competência exclusiva do Comandante Geral.\""
+  },
+  {
+    "key": "RD 49",
+    "raw": "\"Art. 49, Regulamento Disciplinar PM/AL — A perda do posto e da patente dos oficiais, assim como a perda da graduação das praças, pode resultar de condenação na justiça comum ou militar a pena privativa de liberdade por sentença transitada em julgado, na conformidade do estabelecido na Constituição Federal, Constituição Estadual e Estatuto dos Policiais Militares.\""
+  },
+  {
+    "key": "RD 57",
+    "raw": "\"Art. 57, Regulamento Disciplinar PM/AL — A punição deve ser proporcional à gravidade da transgressão: advertência/repreensão para leves; de 4 a 20 dias de detenção para médias; de 4 a 20 dias de prisão para graves. §4º — por uma única transgressão não deve ser aplicada mais de uma punição. §6º — a unificação de punições por fatos posteriores respeita o limite máximo de 30 dias.\""
+  },
+  {
+    "key": "RD 60",
+    "raw": "\"Art. 60, Regulamento Disciplinar PM/AL — Enquadramento é a caracterização da transgressão acrescida de detalhes do comportamento do transgressor, cumprimento da punição, justificação ou isenção — deve mencionar necessariamente a transgressão cometida, os artigos implicados, atenuantes/agravantes, a classificação, a punição imposta e o esclarecimento quanto ao direito de defesa.\""
+  },
+  {
+    "key": "RD 67",
+    "raw": "\"Art. 67, Regulamento Disciplinar PM/AL — A modificação da aplicação de punição pode ser feita pela autoridade que a aplicou, ou por outra superior e competente. São modificações: anulação; relevação; atenuação; agravação.\""
+  },
+  {
+    "key": "RD 68",
+    "raw": "\"Art. 68, Regulamento Disciplinar PM/AL — A anulação da punição consiste em tornar sem efeito a sua aplicação, devendo ser concedida quando comprovada injustiça ou ilegalidade, com direito ao dobro de dias de dispensa em que o punido esteve sancionado. §2º — prazo: em qualquer tempo pelas autoridades do inciso I do art.11; em 60 dias pelas demais autoridades.\""
+  },
+  {
+    "key": "RD 71",
+    "raw": "\"Art. 71, Regulamento Disciplinar PM/AL — A relevação de punição consiste na suspensão do cumprimento da punição imposta, podendo ser concedida quando já cumprida ao menos metade da punição, se comprovado terem sido atingidos os objetivos da punição, ou por motivo de passagem de comando ou data comemorativa.\""
+  },
+  {
+    "key": "RD 75",
+    "raw": "\"Art. 75, Regulamento Disciplinar PM/AL — O comportamento das praças deve ser classificado nas categorias: excepcional; ótimo; bom; insuficiente; mau. §1º — ao ser incluída na Corporação, a praça é classificada no comportamento 'bom'. §3º — a punição de advertência não é considerada para efeito de classificação de comportamento.\""
+  },
+  {
+    "key": "RD 76",
+    "raw": "\"Art. 76, Regulamento Disciplinar PM/AL — A melhoria de comportamento é automática, sem que a praça sofra qualquer punição, nos prazos: do mau para o insuficiente, 1 ano; do insuficiente para o bom, 1 ano; do bom para o ótimo, 4 anos; do ótimo para o excepcional, 4 anos.\""
+  },
+  {
+    "key": "RD 78",
+    "raw": "\"Art. 78, Regulamento Disciplinar PM/AL — Ninguém será punido sem que lhe seja assegurado o direito de defesa, sob pena de nulidade do ato administrativo.\""
+  },
+  {
+    "key": "RD 79",
+    "raw": "\"Art. 79, Regulamento Disciplinar PM/AL — O policial notificado tem prazo máximo de três dias úteis para apresentar defesa por escrito, podendo arrolar até três testemunhas e juntar demais provas pertinentes. §4º — decorrido o prazo sem apresentação de defesa, os fatos constantes do documento disciplinar serão tidos como verdadeiros.\""
+  },
+  {
+    "key": "RD 82",
+    "raw": "\"Art. 82, Regulamento Disciplinar PM/AL — Interpor recurso disciplinar é direito do policial militar que se julgue (ou julgue subordinado seu) prejudicado, ofendido ou injustiçado por superior hierárquico. São recursos disciplinares: pedido de reconsideração de ato; queixa; representação.\""
+  },
+  {
+    "key": "RD 86",
+    "raw": "\"Art. 86, Regulamento Disciplinar PM/AL — Da solução de recurso só caberá interposição de novos recursos às autoridades superiores até o Comandante Geral, última instância na esfera recursal. Parágrafo único — quando a punição tiver sido imposta pelo Comandante Geral, caberá recurso ao Governador do Estado.\""
+  },
+  {
+    "key": "RD 95",
+    "raw": "\"Art. 95, Regulamento Disciplinar PM/AL — Cancelamento de punição é o direito de ter cancelada a averbação de punição e notas relacionadas, conferido, mediante requerimento, ao policial militar que tenha completado cinco anos de efetivo serviço sem qualquer punição disciplinar, inclusive advertência.\""
+  },
+  {
+    "key": "RD",
+    "raw": "\"Decreto Estadual nº 37.042, de 06/11/1996 — Regulamento Disciplinar da Polícia Militar de Alagoas. Define, especifica e classifica as transgressões disciplinares (leves/médias/graves); estabelece as punições cabíveis (advertência, repreensão, detenção, prisão, licenciamento a bem da disciplina) e seus limites (4 a 20 dias para detenção/prisão, máximo 30 dias na unificação); disciplina causas de justificação, atenuantes e agravantes; direito de defesa (3 dias úteis); recursos disciplinares (reconsideração, queixa, representação); classificação de comportamento (mau/insuficiente/bom/ótimo/excepcional); e cancelamento de punição após 5 anos sem nova infração.\""
+  },
+  {
+    "key": "RD 11",
+    "raw": "\"Art. 11, Regulamento Disciplinar PM/AL — A competência para aplicar as prescrições do Regulamento é conferida ao CARGO, e não ao grau hierárquico. São competentes: Governador/Comandante Geral (a todos); Chefe do EMG (a todos os subordinados, como Subcomandante); Chefes de Gabinete/Assessorias; Comandantes Intermediários/Diretores/Ajudante Geral; Subchefe do EMG e Comandantes de OPM; Chefes de Seções do EMG; demais Chefes de Seções até Batalhão. Parágrafo único — a apuração/punição de atos do próprio Comandante Geral é exclusiva do Governador.\""
+  },
+  {
+    "key": "LO 1",
+    "raw": "\"Art. 1º, Lei 14.751/2023 — Esta Lei institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares dos Estados, do Distrito Federal e dos Territórios.\""
+  },
+  {
+    "key": "LO 2",
+    "raw": "\"Art. 2º, Lei 14.751/2023 — As polícias militares e os corpos de bombeiros militares são instituições militares permanentes, exclusivas e típicas de Estado, essenciais à Justiça Militar, na condição de forças auxiliares e reserva do Exército (art. 144, §6º, CF), organizadas com base na hierarquia e disciplina militares e comandadas por oficial da ativa do último posto, integrante do Quadro de Oficiais de Estado-Maior (QOEM).\""
+  },
+  {
+    "key": "LO 3",
+    "raw": "\"Art. 3º, Lei 14.751/2023 — São princípios básicos das PMs e CBMs: hierarquia; disciplina; proteção/promoção/respeito aos direitos humanos (inclusive decorrentes de compromissos internacionais); legalidade; impessoalidade; publicidade com transparência; moralidade; eficiência; efetividade; razoabilidade e proporcionalidade; universalidade na prestação do serviço; participação e interação comunitária.\""
+  },
+  {
+    "key": "LO 4",
+    "raw": "\"Art. 4º, Lei 14.751/2023 — São diretrizes das PMs e CBMs, entre outras: atendimento permanente ao cidadão; planejamento estratégico; integração com a comunidade/Judiciário/demais órgãos; uso racional da força e uso progressivo dos meios (inciso XIV); capacitação profissional continuada; utilização de meios tecnológicos; integração ao sistema de segurança pública.\""
+  },
+  {
+    "key": "LO 7",
+    "raw": "\"Art. 7º, Lei 14.751/2023 — As polícias militares e os corpos de bombeiros militares, instituições militares permanentes, subordinam-se aos governadores dos Estados, do Distrito Federal e dos Territórios.\""
+  },
+  {
+    "key": "LO 9",
+    "raw": "\"Art. 9º, Lei 14.751/2023 — A organização das PMs e CBMs será fixada em lei de iniciativa PRIVATIVA do governador, observadas as normas gerais desta Lei e os fundamentos de organização das Forças Armadas.\""
+  },
+  {
+    "key": "LO 12",
+    "raw": "\"Art. 12, Lei 14.751/2023 — A hierarquia nas PMs e CBMs deve observar a estrutura básica: oficiais (superiores: coronel/tenente-coronel/major; intermediário: capitão; subalternos: 1º/2º tenente); praças especiais (aspirante a oficial, cadete, aluno-oficial); praças (subtenente, 1º/2º/3º sargento, aluno-sargento, cabo, soldado, aluno-soldado). Parágrafo único — acrescenta-se a designação 'PM' ou 'BM' a todos os postos/graduações.\""
+  },
+  {
+    "key": "LO 13",
+    "raw": "\"Art. 13, Lei 14.751/2023 — São condições básicas para ingresso nas PMs/CBMs: ser brasileiro; estar quite com obrigações militares/eleitorais; não ter antecedentes penais dolosos incompatíveis; estar no gozo dos direitos políticos; aprovação em concurso público; idoneidade moral apurada por investigação; capacitação física/psicológica; exame de saúde e toxicológico com larga janela de detecção; grau de escolaridade superior; não possuir tatuagens visíveis de suásticas, obscenidades, ideologias terroristas ou apologia à violência/drogas/discriminação.\""
+  },
+  {
+    "key": "LO 14",
+    "raw": "\"Art. 14, Lei 14.751/2023 — A progressão na hierarquia militar será fundamentada no valor moral e profissional, de forma seletiva, gradual e sucessiva, mediante promoções pelos critérios de antiguidade e merecimento (com parâmetros objetivos). Parágrafo único — são admitidas promoções por bravura, post mortem, e por completar requisitos para transferência à inatividade.\""
+  },
+  {
+    "key": "LO 17",
+    "raw": "\"Art. 17, Lei 14.751/2023 — O material de segurança pública das instituições militares, com as mesmas prerrogativas legais de material bélico, constitui-se de frotas operacionais/administrativas, armas, munições e equipamentos — incluindo armamentos, munições, explosivos/propelentes, blindagens balísticas, e equipamentos/armas/munições menos letais.\""
+  },
+  {
+    "key": "LO 18",
+    "raw": "\"Art. 18, Lei 14.751/2023 — São garantias das PMs/CBMs e de seus membros, entre outras: uso de títulos/designações hierárquicas; prisão criminal/civil em unidade prisional militar antes do trânsito em julgado; perda do posto/patente/graduação SOMENTE por decisão do Tribunal de Justiça Militar (onde existir) ou do Tribunal de Justiça, mediante representação (inciso XVI); estabilidade dos militares de carreira APÓS 3 (TRÊS) ANOS de efetivo serviço (inciso XXVI); regime disciplinar em código de ética com devido processo legal, ampla defesa e contraditório (inciso XXXIII).\""
+  },
+  {
+    "key": "LO 19",
+    "raw": "\"Art. 19, Lei 14.751/2023 — É vedado aos militares, enquanto em atividade, entre outras vedações: participar de sociedade comercial (salvo como cotista/acionista/comanditário, sem gerência); e divulgar imagens de pessoas sob sua custódia sem prévia autorização judicial.\""
+  },
+  {
+    "key": "LO 22",
+    "raw": "\"Art. 22, Lei 14.751/2023 — O militar alistável é elegível: se tiver MENOS de 10 anos de serviço e for candidato, será AFASTADO do serviço ativo no dia posterior ao pedido de registro da candidatura; se tiver MAIS de 10 anos, será AGREGADO (com remuneração) enquanto durar o pleito, passando, se eleito, à reserva remunerada na diplomação.\""
+  },
+  {
+    "key": "LO 23",
+    "raw": "\"Art. 23, Lei 14.751/2023 — A precedência entre militares observará o previsto nos arts. 17 a 19 da Lei nº 6.880/1980 (Estatuto dos Militares das Forças Armadas), salvo os casos de precedência funcional estabelecida em lei.\""
+  },
+  {
+    "key": "LO 24",
+    "raw": "\"Art. 24, Lei 14.751/2023 — As PMs e CBMs são titulares da polícia ostensiva/preservação da ordem pública e da defesa civil, respectivamente, subordinados aos governadores, podendo, em situações extraordinárias (art. 144, §6º, CF), ser convocados/mobilizados pela União, no todo ou em parte, nos casos de: intervenção federal/estado de defesa/estado de sítio; ou apoio a órgãos federais mediante convênio ou anuência do governador.\""
+  },
+  {
+    "key": "LO 25",
+    "raw": "\"Art. 25, Lei 14.751/2023 — As PMs e CBMs poderão ser mobilizados pela União no caso de GUERRA, integrando a força terrestre designada, que delimitará os aspectos operacionais/táticos de seu emprego, obedecidas suas missões específicas e constitucionais.\""
+  },
+  {
+    "key": "LO 26",
+    "raw": "\"Art. 26, Lei 14.751/2023 — Nas hipóteses de convocação/mobilização: o ato fixará prazo/local/condições; o militar que responder inquérito/processo por atuação no período será representado judicialmente pela Advocacia-Geral da União; a competência para julgar os crimes militares imputados será da Justiça Militar do ente federado a que o militar pertencer.\""
+  },
+  {
+    "key": "LO 33",
+    "raw": "\"Art. 33, Lei 14.751/2023 — No cumprimento de sua missão constitucional, ressalvadas atividades sigilosas, as PMs e CBMs atuarão de forma OSTENSIVA, visivelmente identificados por meio de uniforme, armamento, viatura e equipamentos próprios autorizados em lei.\""
+  },
+  {
+    "key": "LO 35",
+    "raw": "\"Art. 35, Lei 14.751/2023 — É assegurada exclusividade da utilização das denominações 'brigada militar' e 'força pública' para a polícia militar, e 'bombeiros militares'/'corpo de bombeiros' para o corpo de bombeiros militar. §1º — datas comemorativas nacionais: 21 de abril (PMs) e 2 de julho (CBMs). §2º — é vedado, sob responsabilização administrativa/judicial, o uso de uniformes/símbolos/cores por qualquer instituição ou pessoa física alheia à corporação.\""
+  },
+  {
+    "key": "LO 42",
+    "raw": "\"Art. 42, Lei 14.751/2023 — Altera a Lei 13.675/2018 para incluir, entre os princípios da segurança pública, o USO COMEDIDO E PROPORCIONAL DA FORÇA pelos agentes, pautado em documentos internacionais de proteção aos direitos humanos de que o Brasil seja signatário; e para exigir, como critério de ingresso, aprovação em exame de saúde e exame toxicológico com larga janela de detecção, inclusive de forma aleatória.\""
+  },
+  {
+    "key": "LO",
+    "raw": "\"Lei nº 14.751, de 12/12/2023 — Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares dos Estados, DF e Territórios, editada pela União com base no art. 22, XXI, CF. Estabelece normas gerais de organização, princípios/diretrizes (incluindo uso comedido e progressivo da força), efetivos, hierarquia, condições de ingresso, garantias (estabilidade após 3 anos; perda de posto/patente só por decisão de Tribunal de Justiça Militar/TJ), vedações, convocação/mobilização pela União, e uso exclusivo de denominações/símbolos institucionais — sem alterar a subordinação das corporações aos Governadores estaduais (art. 144, §6º, CF).\""
+  },
+  {
+    "key": "L14133",
+    "raw": "\"Lei nº 14.133/2021 — Nova Lei de Licitações e Contratos Administrativos, substituindo progressivamente a Lei 8.666/1993. Modalidades: pregão, concorrência, concurso, leilão e diálogo competitivo (novidade). Critérios de julgamento: menor preço, maior desconto, melhor técnica/conteúdo artístico, técnica e preço, maior lance/oferta, maior retorno econômico (contratos de eficiência). Traz o Portal Nacional de Contratações Públicas (PNCP), o cadastro de sanções, e a matriz de risco em contratos de obras.\""
+  },
+  {
+    "key": "L14133 14",
+    "raw": "\"Art. 14, Lei 14.133/2021 — É vedada a participação, direta ou indireta, na licitação ou na execução do contrato, do autor do anteprojeto ou projeto básico/executivo, pessoa física ou jurídica, salvo hipóteses excepcionais expressamente previstas em lei (como participação apenas na fase de elaboração de estudos preliminares em certos regimes).\""
+  },
+  {
+    "key": "L14133 28",
+    "raw": "\"Art. 28, Lei 14.133/2021 — São modalidades de licitação: pregão; concorrência; concurso; leilão; e diálogo competitivo — este último, novidade em relação à Lei 8.666/93, destinado a contratações de maior complexidade técnica, inovação tecnológica ou impossibilidade de especificação precisa pela Administração.\""
+  },
+  {
+    "key": "L14133 33",
+    "raw": "\"Art. 33, Lei 14.133/2021 — São critérios de julgamento das propostas: menor preço; maior desconto; melhor técnica ou conteúdo artístico; técnica e preço; maior lance (leilão); maior retorno econômico (contratos de eficiência, remunerados pela economia gerada à Administração).\""
+  },
+  {
+    "key": "L11343",
+    "raw": "\"Lei nº 11.343/2006 — Lei de Drogas. Distingue porte para uso pessoal (art. 28 — não gera pena privativa de liberdade, apenas advertência/prestação de serviços/medida educativa) de tráfico (art. 33 — reclusão de 5 a 15 anos). Critério do art. 28, §2º para diferenciar usuário de traficante é multifatorial (natureza/quantidade da droga, local, circunstâncias, conduta e antecedentes do agente). Prevê associação para o tráfico (art. 35, crime autônomo) e o tráfico privilegiado (art. 33, §4º — STF/STJ: não é hediondo).\""
+  },
+  {
+    "key": "L11343 28",
+    "raw": "\"Art. 28, Lei 11.343/2006 — Quem adquire, guarda, tem em depósito, transporta ou traz consigo drogas para consumo pessoal está sujeito a advertência sobre os efeitos, prestação de serviços à comunidade e medida educativa — sem pena privativa de liberdade. §2º — para determinar se é para consumo pessoal, o juiz atenderá à natureza e quantidade da substância, ao local/condições da ação, às circunstâncias sociais/pessoais e à conduta/antecedentes do agente.\""
+  },
+  {
+    "key": "L11343 33",
+    "raw": "\"Art. 33, Lei 11.343/2006 — Tráfico de drogas: importar, exportar, remeter, preparar, produzir, fabricar, adquirir, vender, expor à venda, oferecer, ter em depósito, transportar, trazer consigo, guardar, prescrever, ministrar, entregar a consumo ou fornecer drogas, sem autorização ou em desacordo com determinação legal/regulamentar. Pena: reclusão de 5 a 15 anos e multa. §4º — tráfico privilegiado: réu primário, bons antecedentes, não se dedique a atividades criminosas nem integre organização criminosa — pena reduzida de 1/6 a 2/3 (STF/STJ: não é crime hediondo).\""
+  },
+  {
+    "key": "L11343 35",
+    "raw": "\"Art. 35, Lei 11.343/2006 — Associação para o tráfico: duas ou mais pessoas associadas para praticar, reiteradamente ou não, os crimes do art. 33, caput/§1º, e do art. 34. Parágrafo único: mesma pena para associação destinada à prática reiterada do financiamento/custeio do art. 36.\\n\\n⚠ CEBRASPE — O caput NÃO põe o art. 36 junto com 33/34; o art. 36 aparece no parágrafo único e exige prática reiterada. Associação para o tráfico não é, por si, crime hediondo.\""
+  },
+  {
+    "key": "L8069",
+    "raw": "\"Lei nº 8.069/1990 — Estatuto da Criança e do Adolescente. Adota a doutrina da proteção integral (superando a antiga 'situação irregular'), reconhecendo crianças/adolescentes como sujeitos de direitos com prioridade absoluta. Ato infracional (art.103): conduta descrita como crime/contravenção, praticada por criança OU adolescente — mas só o adolescente recebe medida socioeducativa; a criança, apenas medida de proteção.\""
+  },
+  {
+    "key": "L8069 1",
+    "raw": "\"Art. 1º, ECA — Esta Lei dispõe sobre a proteção integral à criança e ao adolescente.\""
+  },
+  {
+    "key": "L8069 2",
+    "raw": "\"Art. 2º, ECA — Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade.\""
+  },
+  {
+    "key": "L8069 103",
+    "raw": "\"Art. 103, ECA — Considera-se ato infracional a conduta descrita como crime ou contravenção penal.\""
+  },
+  {
+    "key": "L8069 105",
+    "raw": "\"Art. 105, ECA — Ao ato infracional praticado por criança corresponderão as medidas previstas no art. 101 (medidas de proteção) — nunca medida socioeducativa, exclusiva do adolescente.\""
+  },
+  {
+    "key": "L8069 121",
+    "raw": "\"Art. 121, ECA — A internação constitui medida privativa de liberdade, sujeita aos princípios de brevidade, excepcionalidade e respeito à condição peculiar de pessoa em desenvolvimento. §3º — o período máximo de internação não excederá a três anos, findo o qual o adolescente deve ser liberado, colocado em semiliberdade ou em liberdade assistida.\""
+  },
+  {
+    "key": "L8069 18",
+    "raw": "\"Art. 18, ECA — É dever de todos velar pela dignidade da criança e do adolescente, pondo-os a salvo de qualquer tratamento desumano, violento, aterrorizante, vexatório ou constrangedor.\""
+  },
+  {
+    "key": "L8072",
+    "raw": "\"Lei nº 8.072/1990 — Crimes Hediondos. Rol taxativo (art.1º): homicídio qualificado, latrocínio, extorsão qualificada pela morte, extorsão mediante sequestro, estupro, estupro de vulnerável, epidemia com resultado morte, falsificação de medicamentos, favorecimento da prostituição de vulnerável, genocídio, posse/porte de arma de fogo de uso proibido. Equipara-se a hediondo: tráfico de drogas, tortura, terrorismo. Regime inicial fechado (STF já flexibilizou a vedação absoluta à progressão). Vedados: anistia, graça, indulto, fiança.\""
+  },
+  {
+    "key": "L8072 1",
+    "raw": "\"Art. 1º, Lei 8.072/1990 — Rol legal de crimes hediondos, consumados ou tentados. Entre os pontos de alta cobrança: homicídio em atividade típica de grupo de extermínio ainda que por um só agente; homicídio qualificado; lesões gravíssima/seguida de morte em hipóteses funcionais protegidas; latrocínio; extorsões previstas; estupro e estupro de vulnerável; epidemia com morte; crimes sexuais/exploração de vulneráveis; tráfico de pessoas contra criança/adolescente. O parágrafo único inclui, entre outros, genocídio, delitos de armas previstos na lei, organização criminosa voltada a hediondo/equiparado, equivalentes do CPM e crimes sexuais do ECA, com alterações recentes de 2026.\\n\\n⚠ CEBRASPE — Hediondez depende do rol legal; não torne imprescritível o crime só por ser hediondo. Confira atualizações legislativas recentes antes da prova.\""
+  },
+  {
+    "key": "L8072 2",
+    "raw": "\"Art. 2º, Lei 8.072/1990 — Crimes hediondos, tortura, tráfico ilícito de drogas e terrorismo são insuscetíveis de anistia, graça, indulto e fiança. §3º: na sentença condenatória, o juiz decide fundamentadamente se o réu poderá apelar em liberdade. §4º: prisão temporária nos crimes abrangidos tem prazo legal especial de 30 dias, prorrogável por igual período em extrema e comprovada necessidade.\\n\\n⚠ CEBRASPE — Hediondo não significa imprescritível. Tortura, tráfico e terrorismo são equiparados para os efeitos legais; tráfico privilegiado não é hediondo/equiparado.\""
+  },
+  {
+    "key": "L13869",
+    "raw": "\"Lei nº 13.869/2019 — Lei de Abuso de Autoridade. Sujeito ativo: qualquer agente público, servidor ou não, que exerça parcela de poder do Estado (inclusive membros do Judiciário/MP/Tribunais de Contas). Exige dolo específico ('finalidade específica de prejudicar outrem, beneficiar a si mesmo ou terceiro, ou por mero capricho ou satisfação pessoal' — art.1º, §1º), não bastando divergência de interpretação jurídica ou de avaliação de fatos/provas de decisão não teratológica (art.1º, §2º).\""
+  },
+  {
+    "key": "L13869 1",
+    "raw": "\"Art. 1º, Lei 13.869/2019 — Sujeito ativo: qualquer agente público que exerça parcela de poder do Estado, servidor ou não. §1º — exige-se a finalidade específica de prejudicar outrem, beneficiar-se ou a terceiro, ou por mero capricho/satisfação pessoal. §2º — não configura abuso de autoridade a divergência na interpretação de lei ou na avaliação de fatos e provas, quando a decisão não for teratológica.\""
+  },
+  {
+    "key": "L13869 9",
+    "raw": "\"Art. 9º, Lei 13.869/2019 — Constitui crime decretar prisão em manifesta desconformidade com as hipóteses legais, ou deixar de relaxar prisão manifestamente ilegal.\""
+  },
+  {
+    "key": "L11340",
+    "raw": "\"Lei nº 11.340/2006 — Lei Maria da Penha. Cria mecanismos para coibir violência doméstica/familiar contra a mulher (art.226, §8º, CF; CADH; CEDAW). Formas de violência (art.7º): física, psicológica, sexual, patrimonial, moral. Medidas protetivas de urgência (art.22-24): afastamento do agressor do lar, proibição de aproximação/contato, entre outras — podem ser concedidas pelo juiz independentemente de audiência das partes ou manifestação do MP. Não se aplica a Lei 9.099/95 (JECRIM) aos crimes praticados com violência doméstica (art.41).\""
+  },
+  {
+    "key": "L11340 5",
+    "raw": "\"Art. 5º, Lei 11.340/2006 — Configura violência doméstica e familiar contra a mulher qualquer ação/omissão baseada no gênero que cause morte, lesão, sofrimento físico/sexual/psicológico e dano moral/patrimonial, no âmbito da unidade doméstica, da família, ou em qualquer relação íntima de afeto (independentemente de coabitação).\""
+  },
+  {
+    "key": "L11340 7",
+    "raw": "\"Art. 7º, Lei 11.340/2006 — São formas de violência doméstica e familiar contra a mulher: violência física; psicológica; sexual; patrimonial; moral.\""
+  },
+  {
+    "key": "L11340 41",
+    "raw": "\"Art. 41, Lei 11.340/2006 — Aos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista, não se aplica a Lei 9.099/1995 (Juizados Especiais Criminais).\""
+  },
+  {
+    "key": "L10826",
+    "raw": "\"Lei nº 10.826/2003 — Estatuto do Desarmamento. Distingue posse (registro, permanência no interior de residência/local de trabalho — art.12) de porte (autorização para portar fora de casa — art.14). Porte ilegal de arma de uso permitido: crime afiançável, embora inafiançável se for arma de uso restrito/proibido (art.16, com penas mais graves). Policiais militares, em regra, têm direito a porte de arma como prerrogativa funcional.\""
+  },
+  {
+    "key": "L10826 12",
+    "raw": "\"Art. 12, Lei 10.826/2003 — Posse irregular de arma de fogo de uso permitido: ter em depósito, sob guarda ou posse, no interior de residência ou dependência desta, ou no local de trabalho, arma de fogo de uso permitido sem autorização e em desacordo com determinação legal/regulamentar.\""
+  },
+  {
+    "key": "L10826 14",
+    "raw": "\"Art. 14, Lei 10.826/2003 — Porte ilegal de arma de fogo de uso permitido: portar, deter, adquirir, fornecer, receber, ter em depósito, transportar, ceder, emprestar, remeter, empregar, manter sob guarda ou ocultar arma de fogo de uso permitido, sem autorização e em desacordo com determinação legal/regulamentar, em local diverso de residência ou trabalho.\""
+  },
+  {
+    "key": "L10826 16",
+    "raw": "\"Art. 16, Lei 10.826/2003 — Posse ou porte ilegal de arma de fogo de uso RESTRITO ou PROIBIDO: pena de reclusão de 3 a 6 anos, mais grave que o porte de arma de uso permitido (art. 14, reclusão de 2 a 4 anos).\""
+  },
+  {
+    "key": "L9503",
+    "raw": "\"Lei nº 9.503/1997 — Código de Trânsito Brasileiro. Crimes de trânsito (arts.302-312): homicídio culposo (art.302, com majorantes do §1º: falta de habilitação, faixa de pedestres/calçada, omissão de socorro, transporte remunerado); lesão corporal culposa (art.303, majorantes por remissão ao art.302,§1º); omissão de socorro (art.304); embriaguez ao volante (art.306 — prova por qualquer meio desde a Lei 12.760/2012); participação em racha (art.308 — crime de perigo abstrato).\""
+  },
+  {
+    "key": "L9503 302",
+    "raw": "\"Art. 302, CTB — Homicídio culposo na direção de veículo automotor: pena detenção de 2 a 4 anos. §1º — aumenta-se a pena de 1/3 à metade se o agente: não possui CNH/PPD; pratica o crime em faixa de pedestres/calçada; deixa de prestar socorro; ou dirige em transporte remunerado.\""
+  },
+  {
+    "key": "L9503 306",
+    "raw": "\"Art. 306, CTB — Conduzir veículo com capacidade psicomotora alterada em razão de álcool ou outra substância psicoativa: a comprovação pode se dar por qualquer meio de prova em direito admitido (sinais clínicos, vídeo, testemunhas), não exigindo exclusivamente o teste do etilômetro (redação dada pela Lei 12.760/2012).\""
+  },
+  {
+    "key": "L9503 308",
+    "raw": "\"Art. 308, CTB — Participar de corrida, disputa ou competição automobilística, exibição ou demonstração de perícia em manobra não autorizada, gerando situação de risco à incolumidade pública ou privada: crime de perigo abstrato, dispensa lesão ou perigo concreto a pessoa determinada.\""
+  },
+  {
+    "key": "L12850",
+    "raw": "\"Lei nº 12.850/2013 — Define organização criminosa: associação de 4+ pessoas, estruturalmente ordenada, com divisão de tarefas (ainda que informal), para obter vantagem de qualquer natureza, mediante infrações com pena máxima >4 anos ou de caráter transnacional. Meios de obtenção de prova: colaboração premiada (art.4º — pode gerar perdão judicial, redução de pena ou substituição por restritiva de direitos), infiltração de agentes (art.10 — exige SEMPRE autorização judicial), ação controlada, acesso a registros/dados.\""
+  },
+  {
+    "key": "L12850 1",
+    "raw": "\"Art. 1º, §1º, Lei 12.850/2013 — Considera-se organização criminosa a associação de 4 (quatro) ou mais pessoas estruturalmente ordenada e caracterizada pela divisão de tarefas, ainda que informalmente, com objetivo de obter vantagem de qualquer natureza, mediante prática de infrações penais cujas penas máximas sejam superiores a 4 anos, ou que sejam de caráter transnacional.\""
+  },
+  {
+    "key": "L12850 4",
+    "raw": "\"Art. 4º, Lei 12.850/2013 — O juiz poderá, a depender da relevância/efetividade da colaboração premiada, conceder o perdão judicial, reduzir a pena (até 2/3) ou substituir a pena privativa de liberdade por restritiva de direitos ao colaborador.\""
+  },
+  {
+    "key": "L12850 10",
+    "raw": "\"Art. 10, Lei 12.850/2013 — A infiltração de agentes de polícia em tarefas de investigação exige autorização judicial, precedida de manifestação do Ministério Público quando requerida pela autoridade policial — não pode ser determinada apenas por ordem da própria autoridade policial.\""
+  },
+  {
+    "key": "L9455",
+    "raw": "\"Lei nº 9.455/1997 — Lei de Tortura. Modalidades: constranger com violência/grave ameaça causando sofrimento físico/mental com finalidade específica (obter informação/confissão, aplicar castigo, discriminação — art.1º,I); submeter alguém sob guarda/poder/autoridade a sofrimento (art.1º,II). Omissão do agente que tinha dever de evitar/apurar: pena mais BRANDA (detenção 1-4 anos) que a modalidade ativa (reclusão 2-8 anos). Equiparado a hediondo: regime inicial fechado, veda fiança/graça/anistia (mas não indulto).\""
+  },
+  {
+    "key": "L9455 1",
+    "raw": "\"Art. 1º, Lei 9.455/1997 — Tortura inclui: constrangimento com violência/grave ameaça e sofrimento físico ou mental para obter informação/confissão, provocar ação/omissão criminosa ou por discriminação racial/religiosa; castigo/prevenção contra pessoa sob guarda, poder ou autoridade; e, desde a Lei 15.410/2026, submissão reiterada da mulher a intenso sofrimento físico ou mental em contexto de violência doméstica e familiar. Há ainda a modalidade contra pessoa presa por ato não previsto em lei e a omissão de quem tinha dever de evitar ou apurar.\\n\\n⚠ CEBRASPE — A nova modalidade de 2026 exige mulher + reiteração + intenso sofrimento + contexto doméstico/familiar. Não invente majorante por período noturno.\""
+  },
+  {
+    "key": "L9455 2",
+    "raw": "\"Art. 1º, §§4º a 7º, Lei 9.455/1997 — A pena aumenta de 1/6 a 1/3, entre outras hipóteses, quando o autor é agente público e quando a vítima integra grupos especialmente protegidos pela lei. A condenação acarreta perda do cargo, função ou emprego público e interdição para seu exercício pelo dobro do prazo da pena aplicada. O crime é inafiançável e insuscetível de graça ou anistia; a Lei 8.072/1990 também veda indulto aos equiparados.\\n\\n⚠ CEBRASPE — Interdição = DOBRO do prazo da pena, não prazo igual. Agente público é majorante, não elementar geral do crime.\""
+  },
+  {
+    "key": "L7716",
+    "raw": "\"Lei nº 7.716/1989 — Define os crimes resultantes de preconceito de raça ou de cor (e, por extensão, etnia, religião, procedência nacional). Ação penal pública incondicionada (não depende de queixa/representação da vítima, dada a gravidade constitucional do racismo — art.5º,XLII,CF: inafiançável e imprescritível). A injúria racial (ofensa à honra subjetiva com elementos raciais/étnicos) foi equiparada a racismo pela Lei 14.532/2023, alterando o art.140,§3º,CP.\""
+  },
+  {
+    "key": "L7716 20",
+    "raw": "\"Art. 20, Lei 7.716/1989 — Praticar, induzir ou incitar a discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional: reclusão de 1 a 3 anos e multa.\""
+  },
+  {
+    "key": "L9605",
+    "raw": "\"Lei nº 9.605/1998 — Lei de Crimes Ambientais. Prevê responsabilidade penal da pessoa jurídica (art.3º), cumulável com a de dirigentes/administradores que concorreram para a infração, sem excluir a responsabilidade destes. Institui sanções penais e administrativas para condutas lesivas ao meio ambiente (poluição, destruição de vegetação, maus-tratos a animais, entre outras).\""
+  },
+  {
+    "key": "L9605 3",
+    "raw": "\"Art. 3º, Lei 9.605/1998 — As pessoas jurídicas serão responsabilizadas administrativa, civil e penalmente, nos casos em que a infração seja cometida por decisão de seu representante legal/contratual, ou de seu órgão colegiado, no interesse ou benefício da entidade. Parágrafo único — a responsabilidade da pessoa jurídica não exclui a das pessoas físicas autoras/coautoras/partícipes do mesmo fato.\""
+  },
+  {
+    "key": "L7960",
+    "raw": "\"Lei nº 7.960/1989 — Prisão Temporária, cabível APENAS na fase de inquérito policial (nunca durante ação penal já iniciada, quando cabe preventiva). Prazo geral: 5 dias, prorrogável por igual período em caso de extrema/comprovada necessidade. Nos crimes hediondos/equiparados (Lei 8.072/90), o prazo é de 30 dias, prorrogável por igual período.\""
+  },
+  {
+    "key": "L7960 2",
+    "raw": "\"Art. 2º, Lei 7.960/1989 — Prisão temporária é decretada pelo juiz diante de representação da autoridade policial ou requerimento do Ministério Público. Na representação policial, o juiz deve ouvir previamente o MP. Prazo geral: 5 dias, prorrogável por igual período em extrema e comprovada necessidade; para crimes abrangidos pela Lei 8.072/1990, o prazo especial é 30 dias, prorrogável por igual período.\\n\\n⚠ CEBRASPE — Representação do delegado → oitiva prévia do MP. Não confunda 5 + 5 da regra geral com 30 + 30 dos crimes abrangidos pela Lei dos Hediondos.\""
+  },
+  {
+    "key": "L9099",
+    "raw": "\"Lei nº 9.099/1995 — Juizados Especiais Cíveis e Criminais (estaduais). Infrações de menor potencial ofensivo: contravenções penais e crimes com pena máxima não superior a 2 anos, cumulada ou não com multa. Institui a transação penal (proposta do MP, antes do oferecimento da denúncia, sem necessidade de confissão de culpa) e a composição civil dos danos. Não se aplica aos crimes com violência doméstica (art.41, Lei Maria da Penha).\""
+  },
+  {
+    "key": "L9099 61",
+    "raw": "\"Art. 61, Lei 9.099/1995 — Consideram-se infrações penais de menor potencial ofensivo, para os efeitos desta Lei, as contravenções penais e os crimes a que a lei comine pena máxima não superior a 2 (dois) anos, cumulada ou não com multa (redação dada pela Lei 11.313/2006).\""
+  },
+  {
+    "key": "L10259",
+    "raw": "\"Lei nº 10.259/2001 — Institui os Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal. Competência para infrações de menor potencial ofensivo (mesmo teto de pena do art.61, Lei 9.099/95: até 2 anos) praticadas em detrimento de bens/serviços/interesses da União, autarquias ou empresas públicas federais. Aplicam-se subsidiariamente as disposições da Lei 9.099/95 (incluindo transação penal e suspensão condicional do processo) no que não conflitarem com esta lei.\""
+  },
+  {
+    "key": "L8429",
+    "raw": "\"Lei nº 8.429/1992 — Lei de Improbidade Administrativa, com ampla reforma pela Lei 14.230/2021. Modalidades: enriquecimento ilícito (art.9º — vantagem patrimonial indevida em razão do cargo, independente de prejuízo ao erário); dano ao erário (art.10); atentado contra princípios da Administração (art.11). A reforma de 2021 passou a EXIGIR DOLO para todas as modalidades, eliminando a antiga modalidade CULPOSA que era admitida para dano ao erário na redação original.\""
+  },
+  {
+    "key": "L8429 9",
+    "raw": "\"Art. 9º, Lei 8.429/1992 — Constitui ato de improbidade administrativa que importa enriquecimento ilícito auferir, mediante ação ou omissão DOLOSA, qualquer tipo de vantagem patrimonial indevida em razão do exercício de cargo/mandato/função/emprego, independentemente de haver, nessa modalidade, prejuízo direto ao erário.\""
+  },
+  {
+    "key": "L8429 10",
+    "raw": "\"Art. 10, Lei 8.429/1992 — Constitui ato de improbidade administrativa que causa prejuízo ao erário qualquer ação ou omissão DOLOSA que enseje perda patrimonial, desvio, apropriação, malbaratamento ou dilapidação de bens/valores públicos (redação da Lei 14.230/2021 eliminou a modalidade culposa antes admitida).\""
+  },
+  {
+    "key": "L8987",
+    "raw": "\"Lei nº 8.987/1995 — Regime de concessão e permissão de serviços públicos. Concessão: exige licitação na modalidade concorrência, formaliza-se por CONTRATO administrativo. Permissão: também exige licitação prévia (qualquer modalidade compatível), formaliza-se por CONTRATO DE ADESÃO, com natureza PRECÁRIA, revogável unilateralmente pelo poder concedente a qualquer tempo. Princípio da continuidade do serviço admite interrupção em caso de inadimplemento do usuário (após aviso prévio) ou razões técnicas/segurança.\""
+  },
+  {
+    "key": "L8987 2",
+    "raw": "\"Art. 2º, Lei 8.987/1995 — Define concessão de serviço público (delegação, mediante licitação na modalidade concorrência, à pessoa jurídica ou consórcio que demonstre capacidade para seu desempenho) e permissão de serviço público (delegação, mediante licitação, à pessoa física ou jurídica que demonstre capacidade, formalizada por contrato de adesão).\""
+  },
+  {
+    "key": "L8987 6",
+    "raw": "\"Art. 6º, Lei 8.987/1995 — Toda concessão/permissão pressupõe a prestação de serviço adequado, que satisfaça as condições de regularidade, continuidade, eficiência, segurança, atualidade, generalidade, cortesia e modicidade das tarifas. §3º — não se caracteriza descontinuidade do serviço a interrupção em situação de emergência ou após prévio aviso, por razões técnicas/segurança das instalações, ou por inadimplemento do usuário, considerado o interesse da coletividade.\""
+  },
+  {
+    "key": "L9784",
+    "raw": "\"Lei nº 9.784/1999 — Regula o processo administrativo no âmbito da Administração Pública Federal, aplicável subsidiariamente aos demais entes federativos na ausência de lei própria. Consagra os princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência (art. 2º). Adota o princípio do formalismo moderado: a forma serve ao atingimento da finalidade do ato, não é um fim em si mesma.\""
+  },
+  {
+    "key": "L9784 2",
+    "raw": "\"Art. 2º, Lei 9.784/1999 — A Administração Pública obedecerá, entre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência.\""
+  },
+  {
+    "key": "L9784 54",
+    "raw": "\"Art. 54, Lei 9.784/1999 — O direito da Administração de anular os atos administrativos de que decorram efeitos favoráveis para os destinatários decai em 5 (cinco) anos, contados da data em que foram praticados, salvo comprovada má-fé.\""
+  },
+  {
+    "key": "L9784 59",
+    "raw": "\"Art. 59, Lei 9.784/1999 — Salvo disposição legal específica, é de 10 (dez) dias o prazo para interposição de recurso administrativo, contado a partir da ciência ou divulgação oficial da decisão recorrida.\""
+  },
+  {
+    "key": "L9784 64",
+    "raw": "\"Art. 64, Lei 9.784/1999 — O órgão competente para decidir o recurso poderá confirmar, modificar, anular ou revogar, total ou parcialmente, a decisão recorrida, se a matéria for de sua competência. Parágrafo único — se, da aplicação do disposto neste artigo, puder decorrer gravame à situação do recorrente, este deverá ser cientificado para que formule suas alegações antes da decisão (proibição da reformatio in pejus sem contraditório prévio).\""
+  },
+  {
+    "key": "L8112",
+    "raw": "\"Lei nº 8.112/1990 — Regime Jurídico dos Servidores Públicos Civis da União, autarquias e fundações públicas federais. Disciplina provimento (nomeação, promoção, readaptação, reversão, aproveitamento, reintegração, recondução), vacância, estágio probatório (3 anos), estabilidade, direitos e vantagens, regime disciplinar (deveres, proibições, penalidades: advertência, suspensão, demissão, cassação de aposentadoria, destituição de cargo em comissão/função) e processo administrativo disciplinar (sindicância e PAD).\""
+  },
+  {
+    "key": "L8112 41",
+    "raw": "\"Art. 41, Lei 8.112/1990 — Estágio probatório de 24 meses (interpretação atual: 3 anos, por força do art. 41 c/c a exigência constitucional de estágio probatório compatível com a estabilidade trienal), durante o qual o servidor é avaliado quanto a assiduidade, disciplina, capacidade de iniciativa, produtividade e responsabilidade.\""
+  },
+  {
+    "key": "L8112 132",
+    "raw": "\"Art. 132, Lei 8.112/1990 — A demissão será aplicada nos casos de: crime contra a administração pública; abandono de cargo; inassiduidade habitual; improbidade administrativa; incontinência pública e conduta escandalosa na repartição; insubordinação grave em serviço; ofensa física em serviço; aplicação irregular de dinheiros públicos; revelação de segredo apreciado; lesão aos cofres públicos; corrupção; acumulação ilegal de cargos; transgressão de vedações relativas a atividade privada.\""
+  },
+  {
+    "key": "L8112 137",
+    "raw": "\"Art. 137, Lei 8.112/1990 — A demissão ou a destituição de cargo em comissão, por infringência do art. 117, incisos IX e XI (crime contra a administração pública; improbidade administrativa), incompatibiliza o ex-servidor para nova investidura em cargo público federal pelo prazo de 5 anos.\""
+  },
+  {
+    "key": "L4717",
+    "raw": "\"Lei nº 4.717/1965 — Regula a ação popular, instrumento constitucional (art. 5º, LXXIII, CF) pelo qual qualquer cidadão pode pleitear a anulação de atos lesivos ao patrimônio público (da União, Estados, Municípios, entidades autárquicas e paraestatais), à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural. Legitimidade ativa: apenas o cidadão (comprovado por título de eleitor), não pessoa jurídica. Autor vencido de má-fé responde por custas e honorários.\""
+  },
+  {
+    "key": "L4717 1",
+    "raw": "\"Art. 1º, Lei 4.717/1965 — Qualquer cidadão será parte legítima para pleitear a anulação ou a declaração de nulidade de atos lesivos ao patrimônio da União, do Distrito Federal, dos Estados, dos Municípios, de entidades autárquicas, de sociedades de economia mista, de empresas públicas, de fundações instituídas ou mantidas pelo Poder Público e de quaisquer pessoas jurídicas subvencionadas com dinheiros públicos.\""
+  },
+  {
+    "key": "L4717 6",
+    "raw": "\"Art. 6º, §5º, Lei 4.717/1965 — Se o autor desistir da ação ou der motivo à absolvição da instância, poderá o Ministério Público ou qualquer cidadão dar-lhe prosseguimento, assumindo o polo ativo.\""
+  },
+  {
+    "key": "L13300",
+    "raw": "\"Lei nº 13.300/2016 — Disciplina o processo e o julgamento dos mandados de injunção individual e coletivo, cabíveis sempre que a falta de norma regulamentadora torne inviável o exercício de direitos e liberdades constitucionais e das prerrogativas inerentes à nacionalidade, à soberania e à cidadania. O STF adota, majoritariamente, a teoria CONCRETISTA: reconhecida a mora legislativa, o Judiciário estabelece as condições para o exercício do direito enquanto não sobrevier a norma regulamentadora, e não apenas declara a mora (teoria não concretista).\""
+  },
+  {
+    "key": "L13300 8",
+    "raw": "\"Art. 8º, Lei 13.300/2016 — Reconhecido o estado de mora legislativa, será deferida a injunção para determinar prazo razoável para que o impetrado promova a edição da norma regulamentadora, e, uma vez transcorrido o prazo, sem que seja editada a norma, estabelecer as condições em que se dará o exercício dos direitos, das liberdades ou das prerrogativas reclamados, ou, se for o caso, as condições para que o interessado promova ação de reparação.\""
+  },
+  {
+    "key": "LEP 112",
+    "raw": "\"Art. 112, LEP (redação da Lei 13.964/2019, Pacote Anticrime) — A progressão de regime de cumprimento de pena depende do cumprimento de percentual da pena no regime anterior: 16% (primário, crime sem violência/grave ameaça), 20% (reincidente, crime sem violência/grave ameaça), 25% (primário, crime com violência/grave ameaça), 30% (reincidente, crime com violência/grave ameaça), 40% (primário em hediondo/equiparado), 50% (primário em hediondo com morte, ou reincidente em hediondo/equiparado, ou comandante de organização criminosa, ou milícia com resultado morte), 60% (reincidente específico em hediondo/equiparado), 70% (reincidente específico em hediondo/equiparado com resultado morte). Exige ainda bom comportamento carcerário.\""
+  },
+  {
+    "key": "LEP 41",
+    "raw": "\"Art. 41, LEP — Constituem direitos do preso, entre outros: alimentação/vestuário/alojamento adequados; atribuição de trabalho remunerado; previdência social; proporcionalidade na distribuição do tempo de trabalho/descanso/recreação; exercício de atividades profissionais/intelectuais/esportivas/religiosas; assistência material/à saúde/jurídica/educacional/social/religiosa; visita do cônjuge/família/amigos; entrevista pessoal e reservada com o advogado.\""
+  },
+  {
+    "key": "L12016",
+    "raw": "\"Lei nº 12.016/2009 — Disciplina o mandado de segurança individual e coletivo, remédio constitucional cabível para proteger direito líquido e certo, não amparado por habeas corpus ou habeas data, quando o responsável pela ilegalidade/abuso de poder for autoridade pública ou agente de pessoa jurídica no exercício de atribuições do Poder Público.\""
+  },
+  {
+    "key": "L12016 23",
+    "raw": "\"Art. 23, Lei 12.016/2009 — O direito de requerer mandado de segurança extinguir-se-á decorridos 120 (cento e vinte) dias, contados da ciência, pelo interessado, do ato impugnado. Trata-se de prazo de natureza decadencial, e não prescricional.\""
+  },
+  {
+    "key": "L9474",
+    "raw": "\"Lei nº 9.474/1997 — Define mecanismos para implementação do Estatuto dos Refugiados de 1951 no Brasil. Será reconhecido como refugiado todo indivíduo que, devido a fundados temores de perseguição por motivos de raça, religião, nacionalidade, grupo social ou opiniões políticas, encontre-se fora de seu país de nacionalidade; ou que, não tendo nacionalidade, esteja fora do país onde antes teve residência habitual; ou devido a grave e generalizada violação de direitos humanos, seja obrigado a deixar seu país de nacionalidade para buscar refúgio em outro país (ampliação brasileira ao conceito clássico de 1951).\""
+  },
+  {
+    "key": "L9474 1",
+    "raw": "\"Art. 1º, Lei 9.474/1997 — Será reconhecido como refugiado todo indivíduo que, em razão de fundados temores de perseguição por motivos de raça, religião, nacionalidade, grupo social ou opiniões políticas, encontre-se fora de seu país de nacionalidade e não possa ou não queira acolher-se à proteção de tal país; ou, devido a grave e generalizada violação de direitos humanos, seja obrigado a deixar seu país de nacionalidade para buscar refúgio em outro país (inciso III, ampliação da causal em relação à Convenção de 1951).\""
+  },
+  {
+    "key": "L9474 7",
+    "raw": "\"Art. 7º, §1º, Lei 9.474/1997 — O ingresso irregular no território nacional não constitui impedimento para o estrangeiro solicitar refúgio às autoridades competentes (princípio do non-refoulement/não devolução em sua vertente processual).\""
+  },
+  {
+    "key": "L12830",
+    "raw": "\"Lei nº 12.830/2013 — Dispõe sobre a investigação criminal conduzida pelo delegado de polícia. Estabelece que a função de polícia judiciária e a apuração de infrações penais exercidas pelo delegado de polícia são de natureza jurídica, essenciais e exclusivas de Estado. O indiciamento é ato privativo do delegado, mediante análise técnico-jurídica do fato, e deve ser sempre fundamentado.\""
+  },
+  {
+    "key": "L12830 2",
+    "raw": "\"Art. 2º, §§4º e 6º, Lei 12.830/2013 — Ao delegado de polícia, na qualidade de autoridade policial, cabe a condução da investigação criminal. O indiciamento, privativo do delegado de polícia, dar-se-á por ato fundamentado, mediante análise técnico-jurídica do fato, que deverá indicar a autoria, materialidade e suas circunstâncias.\""
+  },
+  {
+    "key": "L12037",
+    "raw": "\"Lei nº 12.037/2009 — Disciplina a identificação criminal do civilmente identificado (art. 5º, LVIII, CF). A regra é que quem já possui identificação civil não será submetido à identificação criminal (datiloscópica/fotográfica), ressalvadas hipóteses legais específicas (documento de identificação com rasura/dúvida quanto à identidade; indícios de falsidade documental; necessária para investigação de outros crimes; constar em registros criminais a identificação de outra pessoa; identidade não permitir aferir sua idade; entre outras).\""
+  },
+  {
+    "key": "L12037 3",
+    "raw": "\"Art. 3º, Lei 12.037/2009 — Mesmo apresentando documento de identificação, o civilmente identificado poderá, ainda assim, ser submetido à identificação criminal quando: o documento apresentar rasura ou tiver indício de falsificação; o documento apresentado for insuficiente para identificar cabalmente o indiciado; o indiciado portar documentos de identidade distintos, com informações conflitantes entre si; a identificação criminal for essencial às investigações policiais; constar de registros policiais o uso de outros nomes ou diferentes qualificações; houver registro de extravio do documento de identidade; o estado de conservação ou a distância temporal da expedição do documento apresentado impossibilite a completa identificação dos caracteres essenciais.\""
+  },
+  {
+    "key": "L9507",
+    "raw": "\"Lei nº 9.507/1997 — Regula o direito de acesso a informações e disciplina o habeas data (art. 5º, LXXII, CF), cabível para: assegurar conhecimento de informações relativas à pessoa do impetrante, constantes de registro/banco de dados de entidades governamentais ou de caráter público; retificação de dados, quando não se prefira fazê-lo por processo sigiloso, judicial ou administrativo; anotação nos assentamentos do interessado de contestação/explicação sobre dado verdadeiro mas justificável, sob pendência judicial ou amigável.\""
+  },
+  {
+    "key": "L9507 8",
+    "raw": "\"Art. 8º, Lei 9.507/1997 — A petição inicial de habeas data será instruída com prova da recusa ao acesso às informações, ou da recusa em fazer-se a retificação, ou da recusa em fazer-se a anotação de contestação/explicação, comprovada por decurso de mais de 10 dias sem decisão, ou de 15 dias sem decisão em caso de retificação/anotação — condição de procedibilidade (esgotamento da via administrativa) exigida pela jurisprudência.\""
+  },
+  {
+    "key": "L9296",
+    "raw": "\"Lei nº 9.296/1996 — Regulamenta a interceptação de comunicações telefônicas para prova em investigação criminal e instrução processual penal (exceção do art. 5º, XII, CF). Exige autorização judicial, de ofício ou a requerimento (autoridade policial ou MP), em investigação criminal ou instrução processual penal, quando houver indícios razoáveis de autoria/participação, a prova não puder ser feita por outros meios disponíveis, e o fato investigado constituir infração penal punida com reclusão. Prazo: não superior a 15 dias, renovável por igual período, comprovada a indispensabilidade.\""
+  },
+  {
+    "key": "L9296 2",
+    "raw": "\"Art. 2º, Lei 9.296/1996 — Não será admitida a interceptação de comunicações telefônicas quando: não houver indícios razoáveis da autoria ou participação em infração penal; a prova puder ser feita por outros meios disponíveis; o fato investigado constituir infração penal punida, no máximo, com pena de detenção.\""
+  },
+  {
+    "key": "L9296 10",
+    "raw": "\"Art. 10, Lei 9.296/1996 — Constitui crime realizar interceptação de comunicações telefônicas, de informática ou telemática, ou quebrar segredo de Justiça, sem autorização judicial ou com objetivos não autorizados em lei: pena de reclusão, de 2 a 4 anos, e multa.\""
+  },
+  {
+    "key": "CPP 158",
+    "raw": "\"Art. 158, CPP — Quando a infração deixar vestígios, será indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado. Arts. 158-A a 158-F (incluídos pela Lei 13.964/2019) disciplinam a CADEIA DE CUSTÓDIA da prova: conjunto de procedimentos para preservar a integridade dos vestígios desde a coleta até o descarte, com registro de reconhecimento, isolamento, fixação, coleta, acondicionamento, transporte, recebimento, processamento, armazenamento e descarte — a quebra da cadeia de custódia pode comprometer o valor probatório do vestígio.\""
+  },
+  {
+    "key": "CPP 282",
+    "raw": "\"Art. 282, CPP — As medidas cautelares diversas da prisão (art. 319) e a prisão preventiva deverão ser aplicadas observando-se a necessidade para aplicação da lei penal, para investigação/instrução criminal, e, nos casos expressos, para evitar a prática de infrações penais, bem como a adequação da medida à gravidade do crime, circunstâncias do fato e condições do agente. §4º — descumprida qualquer obrigação, o juiz poderá substituir a medida, impor outra em cumulação, ou, em último caso, decretar a prisão preventiva.\""
+  },
+  {
+    "key": "CPP 21",
+    "raw": "\"Art. 21, CPP — A incomunicabilidade do indiciado durante o inquérito, prevista neste artigo, não foi recepcionada pela Constituição de 1988, que veda expressamente a incomunicabilidade do preso (art. 5º, LXIII, c/c a vedação a tratamento desumano) — dispositivo, portanto, tido por não recepcionado pela doutrina e jurisprudência majoritárias.\""
+  },
+  {
+    "key": "CPP 25",
+    "raw": "\"Art. 25, CPP — A representação, nos crimes de ação penal pública condicionada, será irretratável depois de oferecida a denúncia. Antes desse marco, a representação é livremente retratável pelo ofendido ou seu representante legal.\""
+  },
+  {
+    "key": "CPP 46",
+    "raw": "\"Art. 46, CPP — O prazo para oferecimento da denúncia, estando o réu preso, será de 5 dias, contado da data em que o órgão do Ministério Público receber os autos do inquérito policial; estando solto, o prazo será de 15 dias.\""
+  },
+  {
+    "key": "CPP 49",
+    "raw": "\"Art. 49, CPP — A renúncia ao exercício do direito de queixa, por parte de um dos ofendidos, não impedirá que os demais a intentem — a renúncia é ato unilateral que não se estende automaticamente aos demais titulares do direito de queixa.\""
+  },
+  {
+    "key": "CPP 51",
+    "raw": "\"Art. 51, CPP — O perdão concedido a um dos querelados (nos crimes de ação penal privada) aproveitará a todos, sem que produza, todavia, efeito em relação ao querelado que o recusar — reflexo do princípio da indivisibilidade da ação penal privada.\""
+  },
+  {
+    "key": "CPP 55",
+    "raw": "\"Arts. 55 a 59, CPP — Disciplinam a perempção, causa de extinção da punibilidade exclusiva da ação penal privada, decorrente da inércia processual do querelante (ex.: deixar de promover andamento do processo durante 30 dias seguidos, ou faltar a atos processuais sem motivo justificado) — instituto que não se aplica à ação penal pública.\""
+  },
+  {
+    "key": "CPP 60",
+    "raw": "\"Art. 60, CPP — Relaciona as hipóteses de perempção da ação penal privada: inércia do querelante em promover o andamento do processo por 30 dias seguidos; falecimento do querelante sem que os sucessores deem prosseguimento no prazo legal; ausência do querelante a ato do processo a que deva estar presente; entre outras.\""
+  },
+  {
+    "key": "CPP 74",
+    "raw": "\"Art. 74, CPP — A competência pela natureza da infração é, em regra, do júri, para os crimes dolosos contra a vida. §1º — o foro especial por prerrogativa de função prevalece sobre a competência do júri, quando previsto na própria Constituição.\""
+  },
+  {
+    "key": "CPP 100",
+    "raw": "\"Art. 100, CPP — A decadência do direito de queixa ou de representação, nos crimes de ação penal privada ou pública condicionada, opera-se no prazo de 6 meses, contado do dia em que se veio a saber quem é o autor do crime, extinguindo a punibilidade.\""
+  },
+  {
+    "key": "CPP 152",
+    "raw": "\"Art. 149 e ss., CPP (incidente de insanidade mental) — Quando houver dúvida sobre a integridade mental do acusado, o juiz ordenará, de ofício ou a requerimento, exame médico-legal. Art. 152, CPP — enquanto não cessar a insanidade constatada, ficará suspenso o processo, salvo quanto às diligências que possam ser prejudicadas pelo adiamento.\""
+  },
+  {
+    "key": "CPP 186",
+    "raw": "\"Art. 186, CPP — Antes de iniciar o interrogatório, o juiz informará ao réu seu direito de permanecer calado e de não responder perguntas que lhe forem formuladas, sem que isso importe em confissão ou possa ser interpretado em prejuízo da defesa (direito ao silêncio).\""
+  },
+  {
+    "key": "CPP 245",
+    "raw": "\"Art. 245, CPP — As buscas domiciliares serão executadas de dia, salvo se o morador consentir que se realizem à noite, e, respeitados os requisitos legais, exigem mandado judicial, em harmonia com a inviolabilidade domiciliar prevista no art. 5º, XI, CF/88.\""
+  },
+  {
+    "key": "CPP 303",
+    "raw": "\"Art. 303, CPP — Nos crimes permanentes, entende-se o agente em flagrante delito enquanto não cessar a permanência, autorizando a prisão em flagrante (inclusive com ingresso em domicílio, se necessário) a qualquer momento enquanto durar a situação de flagrância.\""
+  },
+  {
+    "key": "CPP 319",
+    "raw": "\"Art. 319, CPP — Relaciona as medidas cautelares diversas da prisão: comparecimento periódico em juízo; proibição de acesso/frequência a determinados lugares; proibição de contato com pessoa determinada; proibição de ausentar-se da comarca; recolhimento domiciliar noturno; suspensão do exercício de função pública; internação provisória; fiança; monitoração eletrônica — podendo ser aplicadas isoladamente ou cumulativamente entre si.\""
+  },
+  {
+    "key": "CPP 384",
+    "raw": "\"Art. 384, CPP — Encerrada a instrução probatória, se entender cabível nova definição jurídica do fato, em decorrência de circunstância elementar não contida na acusação (mutatio libelli), o Ministério Público deverá aditar a denúncia, abrindo-se prazo para manifestação da defesa e, se necessário, produção de provas.\""
+  },
+  {
+    "key": "CPP 385",
+    "raw": "\"Art. 385, CPP — Nos crimes de ação pública, o juiz poderá proferir sentença condenatória, ainda que o Ministério Público tenha opinado pela absolvição, bem como reconhecer agravantes, embora nenhuma tenha sido alegada — dispositivo que reflete o princípio do livre convencimento motivado do juiz nesses casos específicos.\""
+  },
+  {
+    "key": "CPP 576",
+    "raw": "\"Art. 576, CPP — O Ministério Público não poderá desistir de recurso que haja interposto, mas pode recorrer em favor do réu, refletindo sua condição de fiscal da correta aplicação da lei, e não apenas de órgão acusador.\""
+  },
+  {
+    "key": "CPP 647",
+    "raw": "\"Art. 647, CPP — Dispõe que se conceder-se-á habeas corpus sempre que alguém sofrer ou se achar na iminência de sofrer violência ou coação ilegal na sua liberdade de locomoção, disposição infraconstitucional que precede e é complementada pela garantia equivalente do art. 5º, LXVIII, CF/88.\""
+  },
+  {
+    "key": "CPP 798",
+    "raw": "\"Art. 798, CPP — Regra geral sobre prazos no processo penal: contam-se os prazos incluindo o dia do começo, salvo disposição em contrário, e todos os prazos correrão em cartório, salvo os que a lei determinar que corram em outro lugar.\""
+  },
+  {
+    "key": "CF 228",
+    "raw": "\"Art. 228, CF/88 — São penalmente inimputáveis os menores de dezoito anos, sujeitos às normas da legislação especial (Estatuto da Criança e do Adolescente). É a base constitucional da inimputabilidade penal absoluta do menor de 18 anos, aplicável tanto ao direito penal comum quanto ao direito penal militar.\""
+  },
+  {
+    "key": "CF 124",
+    "raw": "\"Art. 124, CF/88 — À Justiça Militar compete processar e julgar os crimes militares definidos em lei. Parágrafo único — a lei disporá sobre a organização, o funcionamento e a competência da Justiça Militar. É o fundamento constitucional da jurisdição penal militar da União (JMU), distinta da Justiça Militar estadual (art. 125, §4º, CF).\""
+  },
+  {
+    "key": "CP 71",
+    "raw": "\"Art. 71, CP — Crime continuado: quando o agente, mediante mais de uma ação ou omissão, pratica dois ou mais crimes da mesma espécie, e, pelas condições de tempo, lugar, maneira de execução e outras semelhantes, devem os subsequentes ser havidos como continuação do primeiro, aplica-se a pena de um só dos crimes (a mais grave, se diversas), aumentada de 1/6 a 2/3.\""
+  },
+  {
+    "key": "CP 65",
+    "raw": "\"Art. 65, CP — São circunstâncias que sempre atenuam a pena: ser o agente menor de 21 anos na data do fato ou maior de 70 na data da sentença; o desconhecimento da lei; ter o agente cometido o crime por motivo de relevante valor social ou moral, ou sob a influência de violenta emoção provocada por ato injusto da vítima; ter confessado espontaneamente a autoria do crime; ter cometido o crime sob a influência de multidão em tumulto, se não o provocou.\""
+  },
+  {
+    "key": "CP 109",
+    "raw": "\"Art. 109, CP — Estabelece os prazos de prescrição da pretensão punitiva, regulados pelo máximo da pena privativa de liberdade cominada ao crime, em escala que vai de 3 anos (pena inferior a 1 ano) até 20 anos (pena superior a 12 anos).\""
+  },
+  {
+    "key": "CP 312",
+    "raw": "\"Art. 312, CP — Peculato: apropriar-se o funcionário público de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo, ou desviá-lo, em proveito próprio ou alheio. §2º — se o funcionário concorre culposamente para o crime de outrem: peculato culposo, com pena bem mais branda (detenção de 3 meses a 1 ano).\""
+  },
+  {
+    "key": "CPM 72",
+    "raw": "\"Art. 72, CPM — São circunstâncias atenuantes, entre outras: ser o agente menor de 21 anos na data do fato ou maior de 70 anos na data da sentença; o desconhecimento da lei; ter o agente cometido o crime por motivo de relevante valor social ou moral; ter procurado, por sua espontânea vontade e com eficiência, logo após o crime, evitar-lhe ou minorar-lhe as consequências.\""
+  },
+  {
+    "key": "CPM 211",
+    "raw": "\"Art. 211, CPM — Rixa: participar de rixa, salvo para separar os contendores, entre três ou mais militares. A rixa entre militares, em local sob administração militar, ou em serviço, constitui crime militar próprio por extensão das condições do art. 9º, CPM.\""
+  },
+  {
+    "key": "LEP 122",
+    "raw": "\"Art. 122, LEP — No regime semiaberto, a saída temporária sem vigilância direta ficou restrita à frequência a curso profissionalizante, ensino médio ou superior na comarca da execução. Os antigos incisos de visita à família e atividade de retorno ao convívio social foram revogados pela Lei 14.843/2024. §2º: não há saída temporária nem trabalho externo sem vigilância direta para condenado por crime hediondo ou com violência/grave ameaça.\\n\\n⚠ CEBRASPE — Não use a redação anterior a 2024. Visita à família deixou de ser hipótese legal do art. 122.\""
+  },
+  {
+    "key": "CPPM 1",
+    "raw": "\"Art. 1º, CPPM — O processo penal militar segue o CPPM em paz e guerra, salvo legislação especial estritamente aplicável. §1º: no caso concreto, se houver divergência com convenção ou tratado de que o Brasil seja signatário, prevalece a norma internacional. §2º: o CPPM aplica-se subsidiariamente a processos regidos por leis especiais.\\n\\n⚠ CEBRASPE — Em conflito concreto, não prevalece o CPPM sobre tratado; a banca troca a hierarquia.\""
+  },
+  {
+    "key": "CPPM 2",
+    "raw": "\"Art. 2º, CPPM — Regra: interpretação literal, com termos técnicos na acepção especial. Admite interpretação extensiva ou restritiva quando a letra for mais estreita ou mais ampla que a intenção legal, mas não quando houver cerceamento da defesa, prejuízo/alteração do curso normal ou desfiguração dos fundamentos da acusação.\\n\\n⚠ CEBRASPE — ‘Só interpretação literal, sem exceção’ é falso; ‘extensiva mesmo contra a defesa’ também é falso.\""
+  },
+  {
+    "key": "CPPM 3",
+    "raw": "\"Art. 3º, CPPM — Omissões são supridas por: processo penal comum quando aplicável e sem prejuízo da índole militar; jurisprudência; usos e costumes militares; princípios gerais de Direito; analogia.\\n\\n⚠ CEBRASPE — CPP comum não entra automaticamente nem simultaneamente: é suprimento de omissão e deve respeitar a índole do processo militar.\""
+  },
+  {
+    "key": "CPPM 4",
+    "raw": "\"Art. 4º, CPPM — Traz hipóteses de aplicação espacial do Código em paz e guerra, inclusive fora do território nacional ou em local de extraterritorialidade brasileira nas situações legais, sempre sem prejuízo de convenções, tratados e regras de direito internacional.\\n\\n⚠ CEBRASPE — O CPPM pode alcançar fatos/processos fora do território nacional; não confunda com territorialidade absoluta.\""
+  },
+  {
+    "key": "CPPM 6",
+    "raw": "\"Art. 6º, CPPM — A Justiça Militar Estadual observa as normas processuais do CPPM no que forem aplicáveis, ressalvadas organização da Justiça, recursos e execução de sentença.\\n\\n⚠ CEBRASPE — A aplicação estadual não é irrestrita: há ressalvas expressas.\""
+  },
+  {
+    "key": "CPPM 8",
+    "raw": "\"Art. 8º, CPPM — A polícia judiciária militar apura crimes militares e sua autoria, presta informações à Justiça Militar, cumpre mandados e determinações, representa por medidas legais e pratica outros atos de investigação previstos no Código.\\n\\n⚠ CEBRASPE — Polícia judiciária militar investiga; quem promove a ação penal pública é o Ministério Público.\""
+  },
+  {
+    "key": "CPPM 9",
+    "raw": "\"Art. 9º, CPPM — IPM é a apuração sumária de fato que, em tese, constitua crime militar e de sua autoria; tem caráter de instrução provisória destinada a fornecer elementos à ação penal.\\n\\n⚠ CEBRASPE — IPM não julga e não é condição absoluta para denúncia quando já houver elementos suficientes.\""
+  },
+  {
+    "key": "CPPM 10",
+    "raw": "\"Art. 10, CPPM — A instauração do IPM decorre das hipóteses legais, como portaria da autoridade competente diante de conhecimento de infração militar, determinação/requisição nos casos previstos e requerimento/representação admitidos.\\n\\n⚠ CEBRASPE — Atenção à autoridade competente e à forma de início; não importe mecanicamente regras do inquérito comum.\""
+  },
+  {
+    "key": "CPPM 16A",
+    "raw": "\"Art. 16-A, CPPM — Em investigação de uso de força letal por policiais militares ou bombeiros militares no exercício profissional, o investigado pode constituir defensor; há prazos legais para constituição e, na ausência, indicação institucional.\\n\\n⚠ CEBRASPE — O dispositivo garante defesa técnica em investigação específica; não transforma o IPM inteiro em processo contraditório pleno.\""
+  },
+  {
+    "key": "CPM 4",
+    "raw": "\"Art. 4º, CPM — A lei excepcional ou temporária aplica-se ao fato praticado durante sua vigência mesmo depois de encerrado seu prazo ou cessadas as circunstâncias que a determinaram.\\n\\n⚠ CEBRASPE — É ultratividade da lei excepcional/temporária. Não confunda com a retroatividade benigna geral do art. 2º.\""
+  },
+  {
+    "key": "L11343 32",
+    "raw": "\"Art. 32, Lei 11.343/2006 — Plantações ilícitas são destruídas imediatamente pelo delegado, com recolhimento de quantidade suficiente para perícia e lavratura de auto, preservando-se a prova necessária.\\n\\n⚠ CEBRASPE — A destruição não exige aguardar sentença; deve preservar amostra/prova.\""
+  },
+  {
+    "key": "L11343 34",
+    "raw": "\"Art. 34, Lei 11.343/2006 — Criminaliza maquinário, aparelho, instrumento ou objeto destinado à fabricação/preparação/produção/transformação de drogas, sem autorização ou em desacordo com norma.\\n\\n⚠ CEBRASPE — O objeto precisa ter destinação ligada à produção de drogas; não é qualquer equipamento genérico.\""
+  },
+  {
+    "key": "L11343 36",
+    "raw": "\"Art. 36, Lei 11.343/2006 — Financiar ou custear a prática dos crimes do art. 33, caput/§1º, e art. 34 constitui crime autônomo, com pena superior à associação do art. 35.\\n\\n⚠ CEBRASPE — Financiamento habitual/episódico e concurso com tráfico exigem atenção ao caso concreto; não confunda art. 36 com o art. 35, parágrafo único.\""
+  },
+  {
+    "key": "L11343 37",
+    "raw": "\"Art. 37, Lei 11.343/2006 — Colaborar como informante com grupo, organização ou associação destinados aos crimes do art. 33, caput/§1º, e art. 34 é crime autônomo.\\n\\n⚠ CEBRASPE — Informante não é automaticamente integrante estável da associação do art. 35.\""
+  },
+  {
+    "key": "L11343 40",
+    "raw": "\"Art. 40, Lei 11.343/2006 — As penas dos arts. 33 a 37 aumentam de 1/6 a 2/3 em hipóteses como transnacionalidade, prevalecimento de função pública, determinados locais (inclusive unidades militares/policiais e transportes públicos), violência/grave ameaça/arma de fogo, tráfico interestadual, envolvimento de criança/adolescente ou pessoa com capacidade reduzida e financiamento/custeio.\\n\\n⚠ CEBRASPE — A majorante alcança arts. 33 a 37; não exija efetiva transposição de fronteira quando as circunstâncias evidenciarem transnacionalidade.\""
+  },
+  {
+    "key": "L11343 41",
+    "raw": "\"Art. 41, Lei 11.343/2006 — Colaboração voluntária que identifique demais coautores/partícipes e contribua para recuperação total ou parcial do produto do crime pode reduzir a pena de 1/3 a 2/3, no caso de condenação.\\n\\n⚠ CEBRASPE — A lei exige colaboração voluntária e resultados legalmente descritos; não confunda com o tráfico privilegiado do art. 33, §4º.\""
+  },
+  {
+    "key": "L11343 42",
+    "raw": "\"Art. 42, Lei 11.343/2006 — Na fixação da pena, natureza e quantidade da droga, personalidade e conduta social do agente têm preponderância sobre as circunstâncias gerais do art. 59 do CP.\\n\\n⚠ CEBRASPE — Natureza e quantidade são expressamente relevantes; cuidado com dupla valoração do mesmo dado em fases distintas.\""
+  },
+  {
+    "key": "L11343 50",
+    "raw": "\"Art. 50, Lei 11.343/2006 — No flagrante, a polícia comunica imediatamente ao juiz e dá vista ao MP em 24h. Para o auto e materialidade inicial basta laudo de constatação da natureza e quantidade, por perito oficial ou, na falta, pessoa idônea; quem fez o laudo preliminar não fica impedido de fazer o definitivo.\\n\\n⚠ CEBRASPE — Laudo preliminar basta para o flagrante; não há impedimento automático do mesmo perito no laudo definitivo.\""
+  },
+  {
+    "key": "L11343 51",
+    "raw": "\"Art. 51, Lei 11.343/2006 — Inquérito: 30 dias com indiciado preso e 90 dias se solto; os prazos podem ser duplicados pelo juiz, ouvido o MP, mediante pedido justificado da autoridade policial.\\n\\n⚠ CEBRASPE — 30/90 e possibilidade de duplicação; não troque por prazos do CPP comum.\""
+  },
+  {
+    "key": "L11343 52",
+    "raw": "\"Art. 52, Lei 11.343/2006 — Ao fim do inquérito, a autoridade policial remete os autos com relatório sumário e classificação fundamentada ou requer devolução para diligências; diligências complementares podem continuar sem impedir a remessa.\\n\\n⚠ CEBRASPE — Delegado relata/classifica provisoriamente, mas não denuncia nem arquiva.\""
+  },
+  {
+    "key": "L11343 53",
+    "raw": "\"Art. 53, Lei 11.343/2006 — Infiltração policial e não atuação policial controlada, nos termos legais, dependem de autorização judicial e prévia oitiva do Ministério Público. Na não atuação, devem ser conhecidos itinerário provável e identificação dos agentes do delito ou colaboradores.\\n\\n⚠ CEBRASPE — Autorização judicial + oitiva prévia do MP são pontos clássicos de prova.\""
+  },
+  {
+    "key": "L11343 54",
+    "raw": "\"Art. 54, Lei 11.343/2006 — Recebidos os autos ou peças de informação, o MP tem 10 dias para requerer arquivamento, requisitar diligências ou oferecer denúncia, podendo arrolar até 5 testemunhas.\\n\\n⚠ CEBRASPE — Prazo de 10 dias e limite de 5 testemunhas na denúncia são detalhes literais frequentes.\""
+  },
+  {
+    "key": "LEP 50",
+    "raw": "\"Art. 50, LEP — Enumera faltas graves do condenado à pena privativa de liberdade, incluindo condutas como incitar movimento para subverter ordem/disciplina, fuga, posse indevida de instrumento capaz de ofender, descumprimentos relevantes e, nas hipóteses legais, recusa à identificação do perfil genético.\\n\\n⚠ CEBRASPE — Falta grave tem consequências executórias próprias; não transforme toda infração disciplinar em falta grave.\""
+  },
+  {
+    "key": "LEP 52",
+    "raw": "\"Art. 52, LEP — Prática de fato previsto como crime doloso constitui falta grave e, quando ocasiona subversão da ordem/disciplina internas, pode sujeitar o preso ao regime disciplinar diferenciado nas condições legais.\\n\\n⚠ CEBRASPE — RDD não é regime inicial de cumprimento da pena; é regime disciplinar sujeito a requisitos.\""
+  },
+  {
+    "key": "LEP 123",
+    "raw": "\"Art. 123, LEP — Saída temporária é autorizada por ato motivado do juiz da execução, ouvidos MP e administração penitenciária, e depende de comportamento adequado, cumprimento mínimo de 1/6 da pena pelo primário ou 1/4 pelo reincidente e compatibilidade com objetivos da pena.\\n\\n⚠ CEBRASPE — Autoridade competente é o juiz; os requisitos são cumulativos.\""
+  },
+  {
+    "key": "LEP 126",
+    "raw": "\"Art. 126, LEP — Preso em regime fechado ou semiaberto pode remir parte da pena por trabalho ou estudo, segundo as proporções legais.\\n\\n⚠ CEBRASPE — Remição não se confunde com detração; a lei disciplina estudo e trabalho separadamente.\""
+  },
+  {
+    "key": "L14133 17",
+    "raw": "\"Art. 17, Lei 14.133/2021 — Regra de fases: preparatória; divulgação do edital; propostas/lances; julgamento; habilitação; recursal; homologação. A habilitação pode anteceder propostas/julgamento mediante ato motivado e previsão expressa no edital.\\n\\n⚠ CEBRASPE — A inversão de fases é possível, mas não automática: exige motivação e previsão no edital.\""
+  },
+  {
+    "key": "L14133 71",
+    "raw": "\"Art. 71, Lei 14.133/2021 — Após julgamento, habilitação e recursos, a autoridade superior pode sanear, revogar por conveniência/oportunidade fundada em fato superveniente comprovado, anular por ilegalidade insanável ou adjudicar e homologar.\\n\\n⚠ CEBRASPE — Revogação = mérito + fato superveniente; anulação = ilegalidade insanável. Deve-se assegurar manifestação prévia nos casos legais.\""
+  },
+  {
+    "key": "L14133 72",
+    "raw": "\"Art. 72, Lei 14.133/2021 — Contratação direta (dispensa/inexigibilidade) exige processo instruído com elementos como demanda, estimativa, parecer quando cabível, compatibilidade orçamentária, habilitação mínima, razão da escolha, justificativa de preço e autorização competente.\\n\\n⚠ CEBRASPE — Contratação direta não significa contratação sem processo ou sem motivação.\""
+  },
+  {
+    "key": "L14133 74",
+    "raw": "\"Art. 74, Lei 14.133/2021 — Inexigibilidade ocorre quando inviável a competição, com hipóteses exemplificativas como fornecedor exclusivo, artista consagrado por crítica/opinião pública via empresário exclusivo e serviços técnicos intelectuais com notória especialização, observados requisitos legais.\\n\\n⚠ CEBRASPE — Inexigibilidade = inviabilidade de competição; rol é exemplificativo. Publicidade/divulgação não entra na hipótese de serviço técnico do inciso III.\""
+  },
+  {
+    "key": "L14133 75",
+    "raw": "\"Art. 75, Lei 14.133/2021 — Dispensa é hipótese em que a competição seria possível, mas a lei autoriza contratar diretamente em casos taxativos. Há hipóteses por valor e por situação/objeto; os valores são atualizados por decreto.\\n\\n⚠ CEBRASPE — Não decore valor antigo sem conferir atualização anual; diferencie DISPENSA (competição possível) de INEXIGIBILIDADE (inviável).\""
+  },
+  {
+    "key": "L14133 92",
+    "raw": "\"Art. 92, Lei 14.133/2021 — Todo contrato deve conter cláusulas necessárias sobre objeto, vinculação ao edital/proposta ou ato de contratação direta, legislação aplicável, regime/forma de fornecimento, preço/pagamento/reajuste, prazos, crédito orçamentário e demais elementos legais.\\n\\n⚠ CEBRASPE — A banca troca cláusula necessária por faculdade ou leva regra do edital para o contrato.\""
+  },
+  {
+    "key": "L14133 94",
+    "raw": "\"Art. 94, Lei 14.133/2021 — Divulgação no PNCP é condição indispensável para eficácia do contrato e aditamentos, nos prazos legais contados da assinatura.\\n\\n⚠ CEBRASPE — Publicidade no PNCP é condição de eficácia, não de existência do contrato.\""
+  },
+  {
+    "key": "L14133 104",
+    "raw": "\"Art. 104, Lei 14.133/2021 — A Administração possui prerrogativas contratuais, como modificar/rescindir unilateralmente nos casos legais, fiscalizar, aplicar sanções e ocupar provisoriamente bens/meios em situações previstas.\\n\\n⚠ CEBRASPE — Prerrogativas não são ilimitadas e devem respeitar lei, contraditório e equilíbrio econômico-financeiro quando cabível.\""
+  },
+  {
+    "key": "L14133 124",
+    "raw": "\"Art. 124, Lei 14.133/2021 — Contratos podem ser alterados unilateralmente pela Administração nas hipóteses legais ou por acordo entre as partes em situações previstas, preservando-se limites e equilíbrio econômico-financeiro.\\n\\n⚠ CEBRASPE — Nem toda alteração depende de concordância do contratado; nem toda alteração pode ser unilateral.\""
+  },
+  {
+    "key": "L14133 156",
+    "raw": "\"Art. 156, Lei 14.133/2021 — Sanções administrativas: advertência, multa, impedimento de licitar/contratar e declaração de inidoneidade, conforme infração e processo legal.\\n\\n⚠ CEBRASPE — Não trate sanções como automáticas; gravidade, contraditório/defesa e competência importam.\""
+  },
+  {
+    "key": "L13869 13",
+    "raw": "\"Art. 13, Lei 13.869/2019 — É crime constranger preso/detento, mediante violência, grave ameaça ou redução da capacidade de resistência, a exibir-se à curiosidade pública, submeter-se a situação vexatória não autorizada ou produzir prova contra si ou terceiro.\\n\\n⚠ CEBRASPE — Exige os meios de constrangimento previstos; nemo tenetur aparece expressamente no inciso III.\""
+  },
+  {
+    "key": "L13869 15",
+    "raw": "\"Art. 15, Lei 13.869/2019 — Criminaliza constranger, sob ameaça de prisão, pessoa obrigada a guardar segredo/sigilo a depor. Também alcança prosseguir interrogatório de quem exerceu silêncio ou escolheu assistência de advogado/defensor sem a presença do patrono.\\n\\n⚠ CEBRASPE — Direito ao silêncio e assistência técnica são gatilhos literais do parágrafo único.\""
+  },
+  {
+    "key": "L13869 22",
+    "raw": "\"Art. 22, Lei 13.869/2019 — Crime de ingresso/permanência em imóvel alheio sem determinação judicial ou fora das condições legais, nas modalidades descritas. Cumprir busca domiciliar após 21h ou antes de 5h integra a hipótese legal; há excludentes para socorro, flagrante ou desastre com fundados indícios.\\n\\n⚠ CEBRASPE — Decore a janela 5h–21h do dispositivo e as exceções legais.\""
+  },
+  {
+    "key": "L13869 25",
+    "raw": "\"Art. 25, Lei 13.869/2019 — Obter prova, em procedimento de investigação/fiscalização, por meio manifestamente ilícito ou fazer uso de prova sabendo-a ilícita pode configurar abuso nas condições legais.\\n\\n⚠ CEBRASPE — A lei exige elemento subjetivo especial geral do art. 1º; ilegalidade isolada não basta para todo crime de abuso.\""
+  },
+  {
+    "key": "L13869 30",
+    "raw": "\"Art. 30, Lei 13.869/2019 — Dar início ou proceder à persecução penal, civil ou administrativa sem justa causa fundamentada ou contra quem sabe inocente configura crime nas condições legais.\\n\\n⚠ CEBRASPE — O núcleo envolve ausência de justa causa ou ciência da inocência; não é mera derrota posterior da acusação.\""
+  },
+  {
+    "key": "L13869 33",
+    "raw": "\"Art. 33, Lei 13.869/2019 — Exigir informação ou cumprimento de obrigação de fazer/não fazer sem expresso amparo legal é crime. Também responde quem usa cargo/função para se eximir de obrigação legal ou obter vantagem/privilégio indevido.\\n\\n⚠ CEBRASPE — ‘Sem expresso amparo legal’ é expressão-chave.\""
+  },
+  {
+    "key": "L13869 38",
+    "raw": "\"Art. 38, Lei 13.869/2019 — Antecipar, por comunicação inclusive em rede social, atribuição de culpa antes de concluídas as apurações e formalizada a acusação é crime nas condições legais.\\n\\n⚠ CEBRASPE — A lei pune antecipação de culpa, não toda comunicação institucional sobre investigação.\""
+  },
+  {
+    "key": "L9605 7",
+    "raw": "\"Art. 7º, Lei 9.605/1998 — Pena privativa de liberdade pode ser substituída por restritiva de direitos quando se tratar de crime culposo ou pena aplicada inferior a 4 anos e as circunstâncias pessoais/judiciais indicarem suficiência da substituição.\\n\\n⚠ CEBRASPE — Requisitos ambientais específicos não são idênticos, palavra por palavra, aos do CP.\""
+  },
+  {
+    "key": "L9605 15",
+    "raw": "\"Art. 15, Lei 9.605/1998 — Circunstâncias que agravam a pena quando não constituem/qualificam o crime incluem reincidência ambiental e várias situações, como infração em períodos/condições legalmente descritos.\\n\\n⚠ CEBRASPE — Período noturno aparece na lei ambiental em contexto de agravantes; não transporte isso para a Lei de Tortura.\""
+  },
+  {
+    "key": "L9605 18",
+    "raw": "\"Art. 18, Lei 9.605/1998 — A multa é calculada segundo o Código Penal; se se revelar ineficaz, ainda que aplicada no máximo, pode ser aumentada até 3 vezes, considerando o valor da vantagem econômica auferida.\\n\\n⚠ CEBRASPE — Até TRÊS vezes; a banca troca o multiplicador ou ignora a vantagem econômica.\""
+  },
+  {
+    "key": "L9605 46",
+    "raw": "\"Art. 46, Lei 9.605/1998 — Receber/adquirir madeira, lenha, carvão e outros produtos vegetais para fins comerciais/industriais sem licença exigida, ou munir-se sem documento válido, pode configurar crime.\\n\\n⚠ CEBRASPE — Atenção ao fim comercial/industrial e à documentação/licença.\""
+  },
+  {
+    "key": "L9605 48",
+    "raw": "\"Art. 48, Lei 9.605/1998 — Impedir ou dificultar a regeneração natural de florestas e demais formas de vegetação constitui crime.\\n\\n⚠ CEBRASPE — Não confunda o crime da lei penal com a multa administrativa do Decreto 6.514/2008.\""
+  },
+  {
+    "key": "L9605 53",
+    "raw": "\"Art. 53, Lei 9.605/1998 — Nos crimes contra a flora, a pena é aumentada em hipóteses legais, inclusive quando o fato ocorre em época de seca ou inundação, entre outras.\\n\\n⚠ CEBRASPE — ‘Época de seca’ é majorante clássica e já foi ponto de erro recorrente.\""
+  },
+  {
+    "key": "L9605 54",
+    "raw": "\"Art. 54, Lei 9.605/1998 — Causar poluição em níveis que resultem ou possam resultar em danos à saúde humana, mortandade de animais ou destruição significativa da flora é crime, com formas qualificadas e culposa.\\n\\n⚠ CEBRASPE — O tipo admite perigo/dano nas formas legais; não exija sempre resultado lesivo consumado à pessoa.\""
+  },
+  {
+    "key": "L11340 12C",
+    "raw": "\"Art. 12-C, Lei 11.340/2006 — Diante de risco atual ou iminente à vida ou à integridade física, sexual, psicológica, moral ou patrimonial da mulher ou de seus dependentes, o agressor será imediatamente afastado do lar/local de convivência pelas autoridades previstas na lei, conforme a disponibilidade judicial e a hipótese legal. Redação ampliada em 2026.\\n\\n⚠ CEBRASPE — Desde a Lei 15.411/2026, o caput explicita riscos sexual, psicológica, moral e patrimonial além da vida/integridade física.\""
+  },
+  {
+    "key": "L11340 18",
+    "raw": "\"Art. 18, Lei 11.340/2006 — Recebido o expediente com pedido da ofendida, o juiz deve conhecer e decidir medidas protetivas no prazo legal, além das providências correlatas previstas.\\n\\n⚠ CEBRASPE — Medida protetiva não depende de condenação criminal e tem rito próprio.\""
+  },
+  {
+    "key": "L11340 19",
+    "raw": "\"Art. 19, Lei 11.340/2006 — Medidas protetivas podem ser concedidas pelo juiz a requerimento do MP ou a pedido da ofendida, independentemente de audiência das partes e manifestação prévia do MP nas hipóteses legais, com comunicação posterior.\\n\\n⚠ CEBRASPE — A urgência afasta a ideia de contraditório prévio obrigatório em toda hipótese.\""
+  },
+  {
+    "key": "L11340 22",
+    "raw": "\"Art. 22, Lei 11.340/2006 — Medidas que obrigam o agressor incluem suspensão/restrição de armas, afastamento do lar, proibição de aproximação/contato/frequência a lugares e restrições/suspensão de visitas, entre outras providências legais.\\n\\n⚠ CEBRASPE — O rol permite cumulação e outras medidas; não exige sentença definitiva.\""
+  },
+  {
+    "key": "L11340 23",
+    "raw": "\"Art. 23, Lei 11.340/2006 — O juiz pode adotar medidas protetivas em favor da ofendida e dependentes, como encaminhamento a programa de proteção, recondução ao domicílio após afastamento do agressor e afastamento da própria ofendida sem prejuízo de direitos.\\n\\n⚠ CEBRASPE — Afastar a ofendida não significa perda de direitos sobre bens, guarda ou alimentos.\""
+  },
+  {
+    "key": "L11340 24",
+    "raw": "\"Art. 24, Lei 11.340/2006 — Há medidas patrimoniais de urgência para proteção dos bens da sociedade conjugal ou particulares da mulher, como restituição, proibição temporária de atos e suspensão de procurações, nas hipóteses legais.\\n\\n⚠ CEBRASPE — Lei Maria da Penha não se limita a medidas físicas/pessoais; há proteção patrimonial.\""
+  },
+  {
+    "key": "L10826 6",
+    "raw": "\"Art. 6º, Lei 10.826/2003 — Porte de arma de fogo é proibido em todo o território nacional, salvo hipóteses legais expressamente previstas para categorias/situações específicas.\\n\\n⚠ CEBRASPE — Regra é proibição; exceções são legais e não se ampliam por analogia.\""
+  },
+  {
+    "key": "L10826 15",
+    "raw": "\"Art. 15, Lei 10.826/2003 — Disparo de arma de fogo ou acionamento de munição em lugar habitado/adjacências, via pública ou em direção a ela, desde que a conduta não tenha finalidade de praticar outro crime, constitui delito.\\n\\n⚠ CEBRASPE — É tipo subsidiário: a finalidade de outro crime pode afastar sua aplicação autônoma.\""
+  },
+  {
+    "key": "L10826 17",
+    "raw": "\"Art. 17, Lei 10.826/2003 — Comércio ilegal de arma, acessório ou munição, sem autorização ou em desacordo com norma, abrange diversas condutas relacionadas a atividade comercial/industrial.\\n\\n⚠ CEBRASPE — O crime integra o rol de hediondos da Lei 8.072.\""
+  },
+  {
+    "key": "L10826 18",
+    "raw": "\"Art. 18, Lei 10.826/2003 — Tráfico internacional de arma, acessório ou munição envolve importar, exportar ou favorecer entrada/saída do território nacional sem autorização, nas condições legais.\\n\\n⚠ CEBRASPE — Também integra o rol de hediondos; não confunda com comércio ilegal interno do art. 17.\""
+  },
+  {
+    "key": "L12850 2",
+    "raw": "\"Art. 2º, Lei 12.850/2013 — Promover, constituir, financiar ou integrar organização criminosa é crime; a lei prevê causas de aumento/agravamento e efeitos específicos nas hipóteses legais.\\n\\n⚠ CEBRASPE — Organização criminosa exige os requisitos conceituais do art. 1º; mera reunião eventual não basta.\""
+  },
+  {
+    "key": "L12850 3",
+    "raw": "\"Art. 3º, Lei 12.850/2013 — Meios de obtenção de prova incluem colaboração premiada, captação ambiental, ação controlada, acesso a registros/dados, interceptações, afastamentos de sigilo, infiltração e cooperação entre instituições, conforme legislação aplicável.\\n\\n⚠ CEBRASPE — Cada técnica tem requisitos próprios; o artigo não elimina reserva de jurisdição quando exigida.\""
+  },
+  {
+    "key": "L12850 8",
+    "raw": "\"Art. 8º, Lei 12.850/2013 — Ação controlada consiste em retardar intervenção policial/administrativa relativa à ação de organização criminosa ou a ela vinculada, mantendo observação e acompanhamento para concretizar medida mais eficaz.\\n\\n⚠ CEBRASPE — Não é autorização genérica para inércia; depende do regime legal e controle competente.\""
+  },
+  {
+    "key": "L7960 1",
+    "raw": "\"Art. 1º, Lei 7.960/1989 — Prisão temporária depende das hipóteses legais: imprescindibilidade às investigações, falta de residência/identidade segura e fundadas razões de autoria/participação em crimes taxativamente listados, conforme interpretação constitucional e requisitos cumulativos definidos pela jurisprudência.\\n\\n⚠ CEBRASPE — Não é prisão automática pela natureza do delito; exige fundamentação concreta e requisitos legais.\""
+  },
+  {
+    "key": "L8069 108",
+    "raw": "\"Art. 108, ECA — Internação antes da sentença pode ser determinada pelo prazo máximo legal, mediante decisão fundamentada e baseada em indícios suficientes de autoria/materialidade e necessidade imperiosa.\\n\\n⚠ CEBRASPE — Internação provisória é excepcional e tem prazo máximo próprio.\""
+  },
+  {
+    "key": "L8069 112",
+    "raw": "\"Art. 112, ECA — Verificada prática de ato infracional, podem ser aplicadas medidas socioeducativas previstas, de advertência a internação, além das medidas protetivas cabíveis.\\n\\n⚠ CEBRASPE — Medida socioeducativa não é pena criminal; escolha considera capacidade, circunstâncias e gravidade.\""
+  },
+  {
+    "key": "L8069 122",
+    "raw": "\"Art. 122, ECA — Internação socioeducativa só cabe nas hipóteses taxativas: ato com grave ameaça/violência, reiteração em infrações graves ou descumprimento reiterado e injustificável de medida anterior, observados limites legais.\\n\\n⚠ CEBRASPE — Internação é excepcional; gravidade abstrata isolada não autoriza fora das hipóteses legais.\""
+  },
+  {
+    "key": "L8069 244B",
+    "raw": "\"Art. 244-B, ECA — Corromper ou facilitar corrupção de menor de 18 anos com ele praticando infração penal ou induzindo-o a praticá-la constitui crime.\\n\\n⚠ CEBRASPE — É crime formal segundo jurisprudência consolidada: não exige prova de corrupção efetiva prévia do menor.\""
+  }
+]

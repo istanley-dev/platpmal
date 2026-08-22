@@ -1,0 +1,60 @@
+=== buildKeyToQids ===
+function buildKeyToQids(){
+  if(KEY_TO_QIDS)return KEY_TO_QIDS;
+  KEY_TO_QIDS={};
+  QQ.forEach(function(q){var r=parseRef(q.f);if(r&&DISP[r.key]){if(!KEY_TO_QIDS[r.key])KEY_TO_QIDS[r.key]=[];KEY_TO_QIDS[r.key].push(q.id);}});
+  return KEY_TO_QIDS;
+}
+
+=== readingOrder ===
+function readingOrder(){
+  var keys=Object.keys(DISP);
+  keys.sort(function(a,b){
+    var da=a.split(' ')[0], db=b.split(' ')[0];
+    var ia=(BIB_ORDER[da]!==undefined?BIB_ORDER[da]:9), ib=(BIB_ORDER[db]!==undefined?BIB_ORDER[db]:9);
+    if(ia!==ib)return ia-ib;
+    return (parseInt(a.split(' ')[1])||0)-(parseInt(b.split(' ')[1])||0);
+  });
+  return keys;
+}
+
+=== readingPlanInfo ===
+function readingPlanInfo(){
+  touchLeituraDia();var keys=readingOrder();var N=keys.length;var lidos=Object.keys(S.bibLidos).filter(function(k){return DISP[k];}).length;
+  return {N:N,lidos:lidos,todays:S.leituraDia.keys||[],inReview:S.leituraDia.inReview};
+}
+
+=== startLeituraQuiz ===
+function startLeituraQuiz(){
+  if(pendingWeekReview()){startWeekReviewGated('startLeituraQuiz');return;}
+  if(pendingYesterdayReview()){startYesterdayReview('startLeituraQuiz');return;}
+  if(pendingLawReview()){startLawReviewGated('startLeituraQuiz');return;}
+  touchLeituraDia();
+  var todaysKeys=S.leituraDia.keys||[];
+  if(!todaysKeys.length){toast('Nenhum artigo novo hoje — você está em dia ou na fase de revisão. Treine pela Biblioteca Legal!');return;}
+  var map=buildKeyToQids();
+  var idSet={};
+  todaysKeys.forEach(function(k){(map[k]||[]).forEach(function(id){idSet[id]=1;});});
+  var ids=Object.keys(idSet);
+  if(!ids.length){toast('Esses artigos ainda não têm questão específica vinculada no banco — marque como lidos e treine por matéria.');return;}
+  var pool=QQ.filter(function(q){return idSet[q.id];});
+  pool.sort(function(){return Math.random()-.5;});
+  S.round++;
+  S.sq=pool.slice(0,Math.min(pool.length,20));S.ci=0;S.sa=[];
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📖 '+pool.length+' questão(ões) dos artigos de hoje!');
+}
+
+=== renderBiblio ===
+function renderBiblio()
+
+=== ldRead ===
+function ldRead(key){
+  bibRead(key);
+  var safeId='ld-'+key.replace(/[^a-zA-Z0-9]/g,'');
+  var badge=document.getElementById(safeId+'-badge');
+  if(badge){badge.textContent='✓ lido';badge.style.color='#166534';}
+  renderLeituraSub(); // atualiza contagem/barra sem recriar a lista (preserva os <details> abertos)
+}
