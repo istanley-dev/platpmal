@@ -1,0 +1,1448 @@
+{
+  "schema": 1,
+  "runtime_marker": "PMAL_LAW_LINK_FALLBACK_V1",
+  "device_count": 432,
+  "exact_linked_device_count": 253,
+  "effective_linked_device_count": 261,
+  "exact_orphan_device_count": 179,
+  "effective_orphan_device_count": 171,
+  "exact_linked_question_count": 929,
+  "effective_linked_question_count": 1000,
+  "fallback_question_count": 71,
+  "fallback_target_base_count": 25,
+  "newly_covered_generic_devices": [
+    "L10259",
+    "L11343",
+    "L12016",
+    "L12850",
+    "L9296",
+    "L9503",
+    "L9507",
+    "L9605"
+  ],
+  "fallback_links": [
+    {
+      "id": "leg_abuso_003",
+      "requested": "L13869 3",
+      "fallback": "L13869",
+      "f": "Lei 13.869/2019, art. 3.º: ação pública incondicionada, admite subsidiária da pública."
+    },
+    {
+      "id": "leg_abuso_006",
+      "requested": "L13869 2",
+      "fallback": "L13869",
+      "f": "Lei 13.869/2019, art. 2.º, parágrafo único: agente público = definição ampla."
+    },
+    {
+      "id": "leg_racismo_002",
+      "requested": "L7716 5",
+      "fallback": "L7716",
+      "f": "Lei 7.716/1989, art. 5.º: recusar acesso/atendimento por discriminação racial = crime."
+    },
+    {
+      "id": "lpe3_rac01",
+      "requested": "L7716 5",
+      "fallback": "L7716",
+      "f": "Art. 5º, XLII, CF/88; Lei 7.716/1989."
+    },
+    {
+      "id": "leg_racismo_003",
+      "requested": "L7716 2",
+      "fallback": "L7716",
+      "f": "STF (2023) + Lei 14.532/2023: injúria racial passou a integrar a Lei 7.716/89 (art. 2.º-A), com os mesmos efeitos do racismo."
+    },
+    {
+      "id": "leg_ambiental_002",
+      "requested": "L9605 41",
+      "fallback": "L9605",
+      "f": "Lei 9.605/1998, art. 41: incêndio em mata/floresta = crime ambiental."
+    },
+    {
+      "id": "leg_ambiental_003",
+      "requested": "L9605 29",
+      "fallback": "L9605",
+      "f": "Lei 9.605/1998, art. 29, §1.º, III: manter fauna silvestre em cativeiro sem autorização = crime."
+    },
+    {
+      "id": "leg_ctb_003",
+      "requested": "L9503 305",
+      "fallback": "L9503",
+      "f": "CTB, art. 305: fuga do local para fugir à responsabilidade = crime autônomo."
+    },
+    {
+      "id": "leg_juizados_002",
+      "requested": "L9099 76",
+      "fallback": "L9099",
+      "f": "Lei 9.099/95, art. 76, §4.º: transação penal não gera reincidência."
+    },
+    {
+      "id": "leg_juizados_003",
+      "requested": "L10259 3",
+      "fallback": "L10259",
+      "f": "Lei 10.259/2001, art. 3.º: alçada de 60 salários mínimos para causas cíveis federais."
+    },
+    {
+      "id": "rp_pcal2012_086",
+      "requested": "L11340 12",
+      "fallback": "L11340",
+      "f": "LMP, arts. 12 e 19: 48 horas para remeter ao juiz; medidas protetivas podem ser deferidas sem audiência do MP."
+    },
+    {
+      "id": "q2_da021",
+      "requested": "L14133 5",
+      "fallback": "L14133",
+      "f": "Lei 14.133/2021, art. 5.º: princípios da licitação, incluindo desenvolvimento sustentável."
+    },
+    {
+      "id": "c1_62",
+      "requested": "L14133 5",
+      "fallback": "L14133",
+      "f": "Lei 14.133/2021, art. 5º."
+    },
+    {
+      "id": "pm1",
+      "requested": "Lei5346 142",
+      "fallback": "Lei 5.346",
+      "f": "Lei 5.346/1992 (Estatuto PM/AL). CF/88, art. 142, §3° (aplicável analogicamente por força do art. 42, §1°). Caráter permanente das obrigações militares."
+    },
+    {
+      "id": "c3_46",
+      "requested": "Lei5346 142",
+      "fallback": "Lei 5.346",
+      "f": "Lei 5.346/1992. Art. 142, CF."
+    },
+    {
+      "id": "d3_59",
+      "requested": "Lei5346 142",
+      "fallback": "Lei 5.346",
+      "f": "Lei 5.346/1992. Art. 142, CF."
+    },
+    {
+      "id": "b_9",
+      "requested": "L9296 5",
+      "fallback": "L9296",
+      "f": "CF/88, art. 5º, XII; Lei 9.296/1996."
+    },
+    {
+      "id": "b_12",
+      "requested": "L12016 5",
+      "fallback": "L12016",
+      "f": "Art. 5º, LXIX. Lei 12.016/2009."
+    },
+    {
+      "id": "b_13",
+      "requested": "L9507 5",
+      "fallback": "L9507",
+      "f": "CF/88, art. 5º, LXXII; Lei 9.507/1997."
+    },
+    {
+      "id": "b_20",
+      "requested": "L4717 5",
+      "fallback": "L4717",
+      "f": "CF/88, art. 5º, LXXIII; Lei 4.717/1965."
+    },
+    {
+      "id": "b_24",
+      "requested": "L13300 5",
+      "fallback": "L13300",
+      "f": "Art. 5º, LXXI, CF/88. Lei 13.300/2016."
+    },
+    {
+      "id": "b_28",
+      "requested": "L9784 11",
+      "fallback": "L9784",
+      "f": "Doutrina administrativista; Lei 9.784/1999, arts. 11 a 15, quanto a delegação e avocação."
+    },
+    {
+      "id": "b_32",
+      "requested": "L4717 2",
+      "fallback": "L4717",
+      "f": "Lei 4.717/1965, art. 2º; doutrina administrativista."
+    },
+    {
+      "id": "b_33",
+      "requested": "L9784 55",
+      "fallback": "L9784",
+      "f": "Art. 55, Lei 9.784/1999."
+    },
+    {
+      "id": "d2_24",
+      "requested": "L9784 55",
+      "fallback": "L9784",
+      "f": "Art. 55, Lei 9.784/1999."
+    },
+    {
+      "id": "b_40",
+      "requested": "L9784 5",
+      "fallback": "L9784",
+      "f": "CF/88, art. 5º, LV; Lei 9.784/1999."
+    },
+    {
+      "id": "b_71",
+      "requested": "L11343 44",
+      "fallback": "L11343",
+      "f": "CF/88, art. 5º, XLIII; Lei 11.343/2006, art. 44."
+    },
+    {
+      "id": "rp18_80",
+      "requested": "L8429 37",
+      "fallback": "L8429",
+      "f": "Art. 37, §4º, CF/88. Lei 8.429/1992. Sanções da improbidade. Prova CEBRASPE PMAL 2018, item 80."
+    },
+    {
+      "id": "c1_30",
+      "requested": "L12037 5",
+      "fallback": "L12037",
+      "f": "Art. 5º, LVIII, CF/88. Lei 12.037/2009."
+    },
+    {
+      "id": "c1_65",
+      "requested": "L14133 105",
+      "fallback": "L14133",
+      "f": "Lei 14.133/2021, arts. 105-114."
+    },
+    {
+      "id": "c1_69",
+      "requested": "L8429 3",
+      "fallback": "L8429",
+      "f": "Lei 8.429/1992, art. 3º (Lei 14.230/2021)."
+    },
+    {
+      "id": "nx26_da08",
+      "requested": "L8429 3",
+      "fallback": "L8429",
+      "f": "Lei 8.429/92, art. 3º: extensão da responsabilidade ao terceiro."
+    },
+    {
+      "id": "c2_35",
+      "requested": "L8069 27",
+      "fallback": "L8069",
+      "f": "Art. 27, CP; art. 228, CF; ECA."
+    },
+    {
+      "id": "c3_21",
+      "requested": "L7716 5O",
+      "fallback": "L7716",
+      "f": "Art. 5o, XLII, CF/88. Lei 7.716/1989."
+    },
+    {
+      "id": "c3_30",
+      "requested": "L11340 5O",
+      "fallback": "L11340",
+      "f": "Art. 5o, Lei 11.340/2006."
+    },
+    {
+      "id": "c3_31",
+      "requested": "L11340 7O",
+      "fallback": "L11340",
+      "f": "Art. 7o, Lei 11.340/2006."
+    },
+    {
+      "id": "c3_32",
+      "requested": "L8072 1O",
+      "fallback": "L8072",
+      "f": "Art. 1o, Lei 8.072/1990."
+    },
+    {
+      "id": "d3_55",
+      "requested": "L8072 1O",
+      "fallback": "L8072",
+      "f": "Art. 1o, Lei 8.072/1990."
+    },
+    {
+      "id": "c3_33",
+      "requested": "L8072 5O",
+      "fallback": "L8072",
+      "f": "Art. 2o, Lei 8.072/1990. Art. 5o, XLIII, CF."
+    },
+    {
+      "id": "c3_34",
+      "requested": "L9455 1O",
+      "fallback": "L9455",
+      "f": "Art. 1o, par. 5o, Lei 9.455/1997."
+    },
+    {
+      "id": "c3_35",
+      "requested": "L13869 2O",
+      "fallback": "L13869",
+      "f": "Art. 2o, Lei 13.869/2019."
+    },
+    {
+      "id": "c3_36",
+      "requested": "L13869 10",
+      "fallback": "L13869",
+      "f": "Art. 10, Lei 13.869/2019."
+    },
+    {
+      "id": "c3_38",
+      "requested": "L9605 225",
+      "fallback": "L9605",
+      "f": "Art. 3o, Lei 9.605/1998. Art. 225, par. 3o, CF."
+    },
+    {
+      "id": "c3_39",
+      "requested": "L8069 232",
+      "fallback": "L8069",
+      "f": "Art. 232, Lei 8.069/1990 (ECA)."
+    },
+    {
+      "id": "c3_41",
+      "requested": "L12850 1O",
+      "fallback": "L12850",
+      "f": "Art. 1o, Lei 12.850/2013."
+    },
+    {
+      "id": "c3_42",
+      "requested": "L12850 4O",
+      "fallback": "L12850",
+      "f": "Lei 12.850/2013, arts. 4o a 7o."
+    },
+    {
+      "id": "c3_60",
+      "requested": "Lei5346 144",
+      "fallback": "Lei 5.346",
+      "f": "Art. 144, CF. Lei 5.346/1992."
+    },
+    {
+      "id": "d1_1",
+      "requested": "L13300 12",
+      "fallback": "L13300",
+      "f": "Lei 13.300/2016, art. 12."
+    },
+    {
+      "id": "d1_31",
+      "requested": "L8429 20",
+      "fallback": "L8429",
+      "f": "Art. 20, Lei 8.429/1992."
+    },
+    {
+      "id": "d2_4",
+      "requested": "L9784 13",
+      "fallback": "L9784",
+      "f": "Art. 13, Lei 9.784/1999."
+    },
+    {
+      "id": "d2_6",
+      "requested": "L14133 5O",
+      "fallback": "L14133",
+      "f": "Art. 5o, Lei 14.133/2021."
+    },
+    {
+      "id": "d2_9",
+      "requested": "L8987 6O",
+      "fallback": "L8987",
+      "f": "Art. 6o, Lei 8.987/1995."
+    },
+    {
+      "id": "d2_10",
+      "requested": "L8112 8O",
+      "fallback": "L8112",
+      "f": "Art. 8o, Lei 8.112/1990."
+    },
+    {
+      "id": "d2_11",
+      "requested": "L8112 28",
+      "fallback": "L8112",
+      "f": "Art. 28, Lei 8.112/1990."
+    },
+    {
+      "id": "d2_14",
+      "requested": "L8429 9O",
+      "fallback": "L8429",
+      "f": "Arts. 9o, 10 e 11, Lei 8.429/1992."
+    },
+    {
+      "id": "d3_47",
+      "requested": "L11340 24A",
+      "fallback": "L11340",
+      "f": "Art. 24-A, Lei 11.340/2006."
+    },
+    {
+      "id": "sit28_lpe01",
+      "requested": "L11340 24A",
+      "fallback": "L11340",
+      "f": "Art. 24-A, Lei 11.340/2006 — crime autônomo de descumprimento de medida protetiva."
+    },
+    {
+      "id": "d3_50",
+      "requested": "L13869 1O",
+      "fallback": "L13869",
+      "f": "Art. 1o, Lei 13.869/2019."
+    },
+    {
+      "id": "d3_63",
+      "requested": "RD 5O",
+      "fallback": "RD",
+      "f": "Decreto 37.042/1996; art. 5o, LV, CF."
+    },
+    {
+      "id": "nx26_lpe13",
+      "requested": "L8069 101",
+      "fallback": "L8069",
+      "f": "ECA, arts. 101 (criança), 103 e 112 (adolescente)."
+    },
+    {
+      "id": "nx26_lpe15",
+      "requested": "L8069 104",
+      "fallback": "L8069",
+      "f": "CF, art. 228 + ECA, art. 104."
+    },
+    {
+      "id": "nx26_lpe16",
+      "requested": "L12850 13",
+      "fallback": "L12850",
+      "f": "Lei 12.850/2013, art. 13: excludente de punibilidade do agente infiltrado."
+    },
+    {
+      "id": "nx26_da04",
+      "requested": "L14133 76",
+      "fallback": "L14133",
+      "f": "Lei 14.133/2021, art. 76: licitação dispensada é vinculada, não discricionária."
+    },
+    {
+      "id": "nx26_da06",
+      "requested": "L8429 1",
+      "fallback": "L8429",
+      "f": "Lei 8.429/92, art. 1º, §2º (redação Lei 14.230/2021)."
+    },
+    {
+      "id": "lpe3_ctb04",
+      "requested": "L9503 303",
+      "fallback": "L9503",
+      "f": "Art. 303, parágrafo único, c/c art. 302, §1º, CTB."
+    },
+    {
+      "id": "lpe3_ctb05",
+      "requested": "L9503 304",
+      "fallback": "L9503",
+      "f": "Art. 304, CTB."
+    },
+    {
+      "id": "lpe3_eca01",
+      "requested": "L8069 227",
+      "fallback": "L8069",
+      "f": "Art. 1º, ECA; art. 227, CF/88."
+    },
+    {
+      "id": "lpe3_eca04",
+      "requested": "L8069 172",
+      "fallback": "L8069",
+      "f": "Art. 172 e seguintes, ECA."
+    },
+    {
+      "id": "lpe3_tort04",
+      "requested": "L9455 136",
+      "fallback": "L9455",
+      "f": "Art. 1º, Lei 9.455/1997; art. 136, CP."
+    },
+    {
+      "id": "lpe3_rac02",
+      "requested": "L7716 140",
+      "fallback": "L7716",
+      "f": "Art. 140, §3º, CP (redação da Lei 14.532/2023); Lei 7.716/1989."
+    },
+    {
+      "id": "lpe3_jef01",
+      "requested": "L10259 2",
+      "fallback": "L10259",
+      "f": "Art. 2º, parágrafo único, Lei 10.259/2001."
+    }
+  ],
+  "unresolved_exact_reference_count": 164,
+  "unresolved_exact_references": [
+    {
+      "id": "rf_dppm_004",
+      "requested": "CPPM 15",
+      "f": "CPPM, art. 15: encarregado do IPM = preferencialmente posto não inferior a Capitão; vedado ao Aspirante a Oficial."
+    },
+    {
+      "id": "rp_pf2025_046",
+      "requested": "CF 71",
+      "f": "CF, art. 71, §3.º: TCU = título executivo quando há imputação de débito ou multa."
+    },
+    {
+      "id": "q2_da031",
+      "requested": "CF 71",
+      "f": "CF, art. 71: TCU auxilia o Congresso. Controle externo das contas públicas."
+    },
+    {
+      "id": "d2_15",
+      "requested": "CF 71",
+      "f": "Art. 71, I, CF/88."
+    },
+    {
+      "id": "d2_16",
+      "requested": "CF 71",
+      "f": "Art. 71, par. 3o, CF/88."
+    },
+    {
+      "id": "nx29_da06",
+      "requested": "CF 71",
+      "f": "CF, arts. 71 e 74: controle externo (TCU) x controle interno (cada Poder)."
+    },
+    {
+      "id": "adm3_ctrl01",
+      "requested": "CF 71",
+      "f": "Art. 71, II, CF/88; doutrina administrativista."
+    },
+    {
+      "id": "rp_pmal2018_102",
+      "requested": "CADH",
+      "f": "CADH: CIDH = 7 membros, máximo 1 nacional por Estado, título pessoal."
+    },
+    {
+      "id": "q2_dh012",
+      "requested": "CADH",
+      "f": "CIDH: criada 1959 (antes da CADH). CORTE IDH: criada pela CADH 1969."
+    },
+    {
+      "id": "q2_dh019",
+      "requested": "CADH",
+      "f": "CADH: sentenças da Corte = definitivas + inapeláveis. Estados devem cumprir."
+    },
+    {
+      "id": "q2_dh041",
+      "requested": "CADH",
+      "f": "PIDCP/CADH: derrogação possível em emergência. Mas há inderrogáveis."
+    },
+    {
+      "id": "q2_dh043",
+      "requested": "CADH",
+      "f": "Corte IDH, Gomes Lund (2010): Lei de Anistia brasileira incompatível com a CADH em relação às violações graves."
+    },
+    {
+      "id": "r2021_119",
+      "requested": "CADH",
+      "f": "Convenção Americana. Comissão: recebe petições, investiga, recomenda, encaminha à Corte (não julga). Corte: órgão jurisdicional (julga). Prova CEBRASPE PMAL 2021, item 119."
+    },
+    {
+      "id": "c3_7",
+      "requested": "CADH",
+      "f": "Convenção Americana (1969)."
+    },
+    {
+      "id": "cx_dpm001",
+      "requested": "CF 125",
+      "f": "CF, art. 125, §4.º: crime doloso contra a vida de CIVIL praticado por militar estadual → JÚRI."
+    },
+    {
+      "id": "q2_dppm005",
+      "requested": "CF 125",
+      "f": "EC 45/2004 + art. 125, §4º, CF: JME = só militares estaduais. JMU = pode julgar civis."
+    },
+    {
+      "id": "q2_dppm017",
+      "requested": "CF 125",
+      "f": "Art. 125, §3º, CF: JME nos estados. TJM só em SP, MG e RS. Demais = juiz de direito com competência militar."
+    },
+    {
+      "id": "d3_64",
+      "requested": "CF 125",
+      "f": "Art. 125, par. 4o, CF/88."
+    },
+    {
+      "id": "ppmil_30",
+      "requested": "CF 125",
+      "f": "Art. 125, par. 4o, CF."
+    },
+    {
+      "id": "ppmil_31",
+      "requested": "CF 125",
+      "f": "Art. 125, par. 5o, CF; Lei 13.491/2017."
+    },
+    {
+      "id": "ppmil_39",
+      "requested": "CF 125",
+      "f": "Art. 125, par. 3o, CF."
+    },
+    {
+      "id": "ppmil2_42",
+      "requested": "CF 125",
+      "f": "CF, art. 125, par. 4o; STF."
+    },
+    {
+      "id": "ppmil2_44",
+      "requested": "CF 125",
+      "f": "Art. 125, par. 4o, CF."
+    },
+    {
+      "id": "ext_pmro22_q69",
+      "requested": "CF 125",
+      "f": "CF, art. 125, § 4.º, e disciplina constitucional militar."
+    },
+    {
+      "id": "q2_dpm009",
+      "requested": "CPM 25",
+      "f": "Art. 44, CPM x art. 25, CP: requisitos idênticos. Diferença: o CPM é específico para o âmbito militar."
+    },
+    {
+      "id": "q2_dpm010",
+      "requested": "CPM 228",
+      "f": "Art. 50, CPM + art. 228, CF/88: menor de 18 anos = inimputável no âmbito penal militar também."
+    },
+    {
+      "id": "pmil_8",
+      "requested": "CPM 228",
+      "f": "Art. 50, CPM; art. 228, CF."
+    },
+    {
+      "id": "q2_dpm015",
+      "requested": "CPM 43",
+      "f": "Art. 43, CPM: estado de necessidade — perigo atual, não provocado, inevitável de outro modo, proporcional."
+    },
+    {
+      "id": "q2_dpm017",
+      "requested": "CPM 79",
+      "f": "Arts. 79-80, CPM: concurso material (soma) e formal (exasperação no perfeito, cumulação no imperfeito)."
+    },
+    {
+      "id": "dpm3_crime05",
+      "requested": "CPM 79",
+      "f": "Art. 79 e 80, CPM."
+    },
+    {
+      "id": "q2_dpm018",
+      "requested": "CPM 81",
+      "f": "Art. 81, CPM: crime continuado. Aumento de 1/6 a 2/3 — igual ao CP (art. 71)."
+    },
+    {
+      "id": "q2_dpm019",
+      "requested": "CPM 70",
+      "f": "Art. 363, CPM: covardia. Agravante: presença do inimigo (art. 70, II, CPM)."
+    },
+    {
+      "id": "q2_dpm020",
+      "requested": "CPM 312",
+      "f": "Art. 303, §2º, CPM: peculato culposo (negligência). Previsto no CPM, assim como no CP (art. 312, §2º)."
+    },
+    {
+      "id": "q2_dpm022",
+      "requested": "CPM 160",
+      "f": "Art. 160, CPM: desrespeito a superior. Não há requisito de publicidade — basta o ato de desrespeito."
+    },
+    {
+      "id": "q2_dpm048",
+      "requested": "CPM 160",
+      "f": "Art. 160, CPM: DESACATO = ato, palavra ou gesto ofensivo à dignidade/decoro do superior."
+    },
+    {
+      "id": "q2_dpm023",
+      "requested": "CPM 164",
+      "f": "Art. 149, CPM (motim): violência/ameaça. Art. 164, CPM (insubordinação coletiva): sem violência."
+    },
+    {
+      "id": "q2_dpm026",
+      "requested": "CPM 240",
+      "f": "Art. 240, §4º e §5º, CPM: furto qualificado em campanha/inimigo."
+    },
+    {
+      "id": "q2_dpm029",
+      "requested": "CPM 10",
+      "f": "Art. 10, CPM: equiparação do militar da reserva. Reserva + serviço ativo = pode ser sujeito ativo de crime militar."
+    },
+    {
+      "id": "q2_dpm051",
+      "requested": "CPM 10",
+      "f": "CPM, art. 10: MILITAR DA RESERVA sujeita-se ao CPM em hipóteses específicas, inclusive quando o crime se relaciona ao serviço."
+    },
+    {
+      "id": "q2_dppm011",
+      "requested": "CPPM 53",
+      "f": "Art. 53, CPPM: denúncia = 5 dias (preso) / 15 dias (solto). Igual ao CPP (art. 46)."
+    },
+    {
+      "id": "q2_dppm012",
+      "requested": "CPPM 283",
+      "f": "Art. 283, CPPM: citação do militar da ativa = via chefe da repartição ou comandante."
+    },
+    {
+      "id": "q2_dppm014",
+      "requested": "CPPM 598",
+      "f": "Art. 598, CPPM: revisão criminal = pós-trânsito em julgado, somente pro reo."
+    },
+    {
+      "id": "q2_dppm018",
+      "requested": "CF 122",
+      "f": "Art. 122-124, CF: Justiça Militar da União. STM = cúpula recursal das decisões das Auditorias."
+    },
+    {
+      "id": "q2_dppm019",
+      "requested": "CPPM 525",
+      "f": "Art. 525, CPPM: apelação = 10 dias."
+    },
+    {
+      "id": "q2_dp009",
+      "requested": "CP 17",
+      "f": "Art. 17, CP: crime impossível = meio absolutamente ineficaz ou objeto absolutamente impróprio."
+    },
+    {
+      "id": "nx29_dp16",
+      "requested": "CP 17",
+      "f": "CP, art. 17: crime impossível, teoria objetiva temperada."
+    },
+    {
+      "id": "dp3_tii05",
+      "requested": "CP 17",
+      "f": "Art. 17, CP."
+    },
+    {
+      "id": "q2_dpm050",
+      "requested": "CPM 209",
+      "f": "Art. 209, CPM: RIXA = participação em briga coletiva. Crime de perigo."
+    },
+    {
+      "id": "q2_dppm067",
+      "requested": "CF 93",
+      "f": "SENTENÇA SEM FUNDAMENTAÇÃO: nulidade absoluta. CF, art. 93, IX."
+    },
+    {
+      "id": "q2_dpp038",
+      "requested": "CPP 28A",
+      "f": "CPP, art. 28-A: ANPP = sem violência + pena mín. < 4 anos + confissão."
+    },
+    {
+      "id": "c2_60",
+      "requested": "CPP 28A",
+      "f": "Art. 28-A, CPP (Lei 13.964/2019)."
+    },
+    {
+      "id": "dpp4_ap07",
+      "requested": "CPP 28A",
+      "f": "Art. 28-A, CPP (Lei 13.964/2019)."
+    },
+    {
+      "id": "q2_da029",
+      "requested": "CF 84",
+      "f": "CF, art. 84, VI: decreto autônomo = exceção. Organização administrativa + extinção de cargos vagos."
+    },
+    {
+      "id": "b_30",
+      "requested": "CF 84",
+      "f": "Art. 84, IV, CF/88."
+    },
+    {
+      "id": "c1_86",
+      "requested": "CF 84",
+      "f": "Art. 84, VI, CF/88 (EC 32/2001)."
+    },
+    {
+      "id": "d2_26",
+      "requested": "CF 84",
+      "f": "Art. 84, IV, CF/88."
+    },
+    {
+      "id": "ext_pmro22_q04",
+      "requested": "CF 84",
+      "f": "CF, art. 84, VI."
+    },
+    {
+      "id": "q2_dh046",
+      "requested": "CP 149",
+      "f": "Conv. de Escravidão (1926) + CP, art. 149: proibição. Fiscalização: Ministério do Trabalho."
+    },
+    {
+      "id": "dpp4",
+      "requested": "CPP 107",
+      "f": "Art. 38, CPP. Decadência: extinção da punibilidade (art. 107, IV, CP). Prazo: 6 meses a partir do CONHECIMENTO DA AUTORIA."
+    },
+    {
+      "id": "rp18_92",
+      "requested": "CPP 107",
+      "f": "Art. 38, CPP. Art. 107, IV, CP. Decadência: 6 meses do conhecimento da autoria. Prova CEBRASPE PMAL 2018, item 92."
+    },
+    {
+      "id": "rp18_70",
+      "requested": "CF 70",
+      "f": "Art. 70 e 71, CF/88. Controle externo: Congresso Nacional + auxílio do TCU. Prova CEBRASPE PMAL 2018, item 70."
+    },
+    {
+      "id": "c1_33",
+      "requested": "CF 134",
+      "f": "Art. 5º, LXXIV, CF/88. Defensoria Pública (art. 134)."
+    },
+    {
+      "id": "al5_org02",
+      "requested": "CF 134",
+      "f": "Edital: organização político-administrativa (item 4.3); art. 134, CF/88."
+    },
+    {
+      "id": "c1_68",
+      "requested": "CF 173",
+      "f": "Art. 173, §1º, CF/88. Lei 13.303/2016."
+    },
+    {
+      "id": "c2_61",
+      "requested": "CPP 158A",
+      "f": "Arts. 158-A a 158-F, CPP (Lei 13.964/2019)."
+    },
+    {
+      "id": "nx28_pp01",
+      "requested": "CPP 158A",
+      "f": "CPP, arts. 158-A a 158-F (Lei 13.964/2019)."
+    },
+    {
+      "id": "c3_10",
+      "requested": "CF 5O",
+      "f": "STF, RE 466.343. Art. 5o, par. 3o, CF."
+    },
+    {
+      "id": "c3_17",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XLIX, CF/88. LEP."
+    },
+    {
+      "id": "d1_2",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XXXIV, CF/88."
+    },
+    {
+      "id": "d1_9",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XIII, CF/88."
+    },
+    {
+      "id": "d1_11",
+      "requested": "CF 5O",
+      "f": "Art. 5o, LII, CF/88."
+    },
+    {
+      "id": "d1_14",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XIV, CF/88."
+    },
+    {
+      "id": "d1_17",
+      "requested": "CF 5O",
+      "f": "Art. 5o, par. 3o, CF/88."
+    },
+    {
+      "id": "d1_24",
+      "requested": "CF 5O",
+      "f": "Art. 5o, LXXVII, CF/88."
+    },
+    {
+      "id": "d1_28",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XV, CF/88."
+    },
+    {
+      "id": "d1_32",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XXXVIII, CF/88."
+    },
+    {
+      "id": "d1_34",
+      "requested": "CF 5O",
+      "f": "Art. 5o, V, CF/88. Sumula 37/STJ."
+    },
+    {
+      "id": "d1_36",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XXXVI, CF/88."
+    },
+    {
+      "id": "d1_38",
+      "requested": "CF 5O",
+      "f": "Art. 5o, LI, CF/88."
+    },
+    {
+      "id": "d1_42",
+      "requested": "CF 5O",
+      "f": "Art. 5o, LXIV, CF/88."
+    },
+    {
+      "id": "d2_20",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XXV, CF/88."
+    },
+    {
+      "id": "d3_20",
+      "requested": "CF 5O",
+      "f": "Art. 5o, LXIX, CF."
+    },
+    {
+      "id": "d3_31",
+      "requested": "CF 5O",
+      "f": "Decreto 6.949/2009. Art. 5o, par. 3o, CF."
+    },
+    {
+      "id": "d3_38",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XLVII, CF/88."
+    },
+    {
+      "id": "rp18_73",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XI, CF/88."
+    },
+    {
+      "id": "rp18_74",
+      "requested": "CF 5O",
+      "f": "Art. 5o, XXXVIII, CF/88."
+    },
+    {
+      "id": "rp18_75",
+      "requested": "CF 5O",
+      "f": "Art. 5o, LXIII, CF/88."
+    },
+    {
+      "id": "rp17_65",
+      "requested": "CF 5O",
+      "f": "Art. 5o, par. 1o, CF/88."
+    },
+    {
+      "id": "lpmal_60",
+      "requested": "CF 5O",
+      "f": "Art. 5o, LV, CF; Estatuto PM/AL."
+    },
+    {
+      "id": "c3_11",
+      "requested": "CADH 7O",
+      "f": "Sumula Vinculante 25/STF. Art. 7o, 7, CADH."
+    },
+    {
+      "id": "c3_13",
+      "requested": "CF 1O",
+      "f": "Art. 1o, III, CF/88. Dignidade humana."
+    },
+    {
+      "id": "d1_19",
+      "requested": "CF 7O",
+      "f": "Art. 7o, XVIII e XIX, CF/88."
+    },
+    {
+      "id": "d1_21",
+      "requested": "CP 5O",
+      "f": "Art. 5o, XI, CF. STF. Art. 150, par. 4o, CP."
+    },
+    {
+      "id": "d2_32",
+      "requested": "CP 5O",
+      "f": "Art. 1o, CP; art. 5o, XXXIX, CF."
+    },
+    {
+      "id": "d2_33",
+      "requested": "CP 5O",
+      "f": "Art. 2o, par. único, CP; art. 5o, XL, CF."
+    },
+    {
+      "id": "d2_21",
+      "requested": "CF 182",
+      "f": "Art. 182, par. 4o, III, CF/88."
+    },
+    {
+      "id": "d2_34",
+      "requested": "CP 4O",
+      "f": "Art. 4o, CP."
+    },
+    {
+      "id": "rp18_111",
+      "requested": "CP 4O",
+      "f": "Art. 4o, CP — teoria da atividade."
+    },
+    {
+      "id": "d2_35",
+      "requested": "CP 6O",
+      "f": "Art. 6o, CP."
+    },
+    {
+      "id": "rp17_56",
+      "requested": "CP 6O",
+      "f": "Art. 6o, CP — teoria da ubiquidade."
+    },
+    {
+      "id": "d3_1",
+      "requested": "CPP 4O",
+      "f": "Arts. 4o e ss., CPP."
+    },
+    {
+      "id": "d3_19",
+      "requested": "CPP 5O",
+      "f": "Art. 5o, LXVIII, CF; art. 647, CPP."
+    },
+    {
+      "id": "rp18_88",
+      "requested": "CPP 5O",
+      "f": "Arts. 5o, par. 4o, e 39, CPP."
+    },
+    {
+      "id": "d3_29",
+      "requested": "CADH 41",
+      "f": "CADH, arts. 41 e ss."
+    },
+    {
+      "id": "rp18_89",
+      "requested": "CP 51",
+      "f": "Arts. 51 e 105, CP."
+    },
+    {
+      "id": "rp18_100",
+      "requested": "CADH 48",
+      "f": "CADH, arts. 48-50."
+    },
+    {
+      "id": "rp18_101",
+      "requested": "CADH 1O",
+      "f": "CADH, art. 1o."
+    },
+    {
+      "id": "rp17_70",
+      "requested": "CADH 5O",
+      "f": "Art. 5o, LXVII, CF; SV 25; CADH."
+    },
+    {
+      "id": "rp17_100",
+      "requested": "CF 74",
+      "f": "Art. 74, par. 2o, CF/88."
+    },
+    {
+      "id": "pmil_1",
+      "requested": "CPM 5O",
+      "f": "Art. 5o, CPM."
+    },
+    {
+      "id": "pmil_3",
+      "requested": "CPM 5O",
+      "f": "Art. 2o, par. único, CPM; art. 5o, XL, CF."
+    },
+    {
+      "id": "pmil_6",
+      "requested": "CPM 5O",
+      "f": "Art. 55 e 56, CPM; art. 5o, XLVII, CF."
+    },
+    {
+      "id": "pmil2_25",
+      "requested": "CPM 5O",
+      "f": "Livro II, CPM; art. 5o, XLVII, CF."
+    },
+    {
+      "id": "pmil_2",
+      "requested": "CPM 6O",
+      "f": "Art. 6o, CPM."
+    },
+    {
+      "id": "pmil_4",
+      "requested": "CPM 9O",
+      "f": "Art. 9o, II, CPM."
+    },
+    {
+      "id": "pmil_20",
+      "requested": "CPM 7O",
+      "f": "Art. 7o, CPM."
+    },
+    {
+      "id": "ppmil_26",
+      "requested": "CPPM 7O",
+      "f": "Art. 7o, CPPM."
+    },
+    {
+      "id": "ppmil_29",
+      "requested": "CPPM 7O",
+      "f": "Art. 7o, CPPM."
+    },
+    {
+      "id": "ppmil_36",
+      "requested": "CPPM 451",
+      "f": "Arts. 451 e ss., CPPM."
+    },
+    {
+      "id": "dppm3_desert01",
+      "requested": "CPPM 451",
+      "f": "Art. 451 e ss., CPPM."
+    },
+    {
+      "id": "ppmil_37",
+      "requested": "CPPM 129",
+      "f": "Art. 121, CPPM; art. 129, I, CF."
+    },
+    {
+      "id": "ppmil_40",
+      "requested": "CPPM 463",
+      "f": "Arts. 463 e ss., CPPM."
+    },
+    {
+      "id": "dppm3_insub01",
+      "requested": "CPPM 463",
+      "f": "Art. 463 e ss., CPPM."
+    },
+    {
+      "id": "ppmil2_38",
+      "requested": "CPPM 499",
+      "f": "Art. 499 e ss., CPPM."
+    },
+    {
+      "id": "ppmil2_40",
+      "requested": "CPPM 5O",
+      "f": "Art. 5o, LXIII, CF; CPPM."
+    },
+    {
+      "id": "nx26_dppm06",
+      "requested": "CPM 123",
+      "f": "CPM, arts. 123 e ss — sistema próprio de prescrição."
+    },
+    {
+      "id": "dpm3_ext01",
+      "requested": "CPM 123",
+      "f": "Art. 123 e seguintes, CPM."
+    },
+    {
+      "id": "nx27_dpm01",
+      "requested": "CPM 290",
+      "f": "STF: art. 290, CPM, prevalece por especialidade; sem insignificância."
+    },
+    {
+      "id": "nx27_dpm02",
+      "requested": "CPM 290",
+      "f": "CPM, art. 290, §5º (incluído pela Lei 14.688/2023): diferenciação recente do tráfico."
+    },
+    {
+      "id": "nx28_dh02",
+      "requested": "CF 129",
+      "f": "CF, art. 129, VII: controle externo da atividade policial cabe ao MP."
+    },
+    {
+      "id": "dp3_ti04",
+      "requested": "CP 3",
+      "f": "Art. 3º, CP."
+    },
+    {
+      "id": "dp3_ti08",
+      "requested": "CP 8",
+      "f": "Art. 8º, CP."
+    },
+    {
+      "id": "dp3_ti09",
+      "requested": "CP 10",
+      "f": "Art. 10, CP."
+    },
+    {
+      "id": "dp3_ti10",
+      "requested": "CP 11",
+      "f": "Art. 11, CP."
+    },
+    {
+      "id": "dp3_tii08",
+      "requested": "CP 19",
+      "f": "Art. 19, CP."
+    },
+    {
+      "id": "dp3_tiii03",
+      "requested": "CP 228",
+      "f": "Art. 27, CP; art. 228, CF/88."
+    },
+    {
+      "id": "dc3_eo01",
+      "requested": "CF 25",
+      "f": "Art. 25, §1º, CF/88."
+    },
+    {
+      "id": "dc3_eo02",
+      "requested": "CF 36",
+      "f": "Art. 36, §§1º e 3º, CF/88."
+    },
+    {
+      "id": "dp4_tii10",
+      "requested": "CP 150",
+      "f": "Doutrina — classificação dos crimes; art. 150, CP como exemplo clássico."
+    },
+    {
+      "id": "dc4_eo04",
+      "requested": "CF 26",
+      "f": "Art. 26, I e III, CF/88."
+    },
+    {
+      "id": "dc4_de02",
+      "requested": "CF 138",
+      "f": "Art. 138, caput, CF/88."
+    },
+    {
+      "id": "dc4_de03",
+      "requested": "CF 138",
+      "f": "Art. 138, §3º, CF/88."
+    },
+    {
+      "id": "dc4_de04",
+      "requested": "CF 91",
+      "f": "Art. 91, caput e §1º, III, CF/88."
+    },
+    {
+      "id": "dc4_de05",
+      "requested": "CF 89",
+      "f": "Art. 89, CF/88."
+    },
+    {
+      "id": "dc4_eo07",
+      "requested": "CF 33",
+      "f": "Art. 33, caput e §1º, CF/88."
+    },
+    {
+      "id": "dpp4_ap04",
+      "requested": "CPP 102",
+      "f": "Art. 25, CPP; art. 102, CP."
+    },
+    {
+      "id": "adm3_bens02",
+      "requested": "CF 183",
+      "f": "Art. 183, §3º, e art. 191, parágrafo único, CF/88; Código Civil."
+    },
+    {
+      "id": "dpm3_apl02",
+      "requested": "CPM 8",
+      "f": "Art. 8º e ss., CPM (aplicação subsidiária do CP comum)."
+    },
+    {
+      "id": "dpm3_crime01",
+      "requested": "CPM 29",
+      "f": "Art. 29, CPM."
+    },
+    {
+      "id": "dpm3_ext02",
+      "requested": "CPM 128",
+      "f": "Art. 128 e ss., CPM; doutrina sobre causas extintivas da punibilidade."
+    },
+    {
+      "id": "dppm3_ipm04",
+      "requested": "CPPM 22",
+      "f": "Art. 22 e ss., CPPM."
+    },
+    {
+      "id": "dppm3_ap01",
+      "requested": "CPPM 77",
+      "f": "Art. 77 e ss., CPPM."
+    },
+    {
+      "id": "dppm3_liblib01",
+      "requested": "CPPM 270",
+      "f": "Art. 270 e ss., CPPM."
+    },
+    {
+      "id": "dppm3_cj01",
+      "requested": "CPPM 396",
+      "f": "Art. 396 e ss., CPPM; doutrina sobre organização da Justiça Militar."
+    },
+    {
+      "id": "dppm3_cj02",
+      "requested": "CPPM 400",
+      "f": "Art. 400 e ss., CPPM."
+    },
+    {
+      "id": "al5_org01",
+      "requested": "CF 127",
+      "f": "Edital: organização político-administrativa (item 4.3); art. 127, CF/88."
+    },
+    {
+      "id": "al5_org03",
+      "requested": "CF 27",
+      "f": "Art. 27, CF/88."
+    },
+    {
+      "id": "rev_20260803_dpm06",
+      "requested": "CPM 61",
+      "f": "CPM, art. 61."
+    },
+    {
+      "id": "rev_20260803_dpm09",
+      "requested": "CPM 57",
+      "f": "CPM, art. 57, parágrafo único."
+    },
+    {
+      "id": "ext_pmro22_q15",
+      "requested": "CP 29",
+      "f": "CP, arts. 29 a 31; teoria do concurso de pessoas."
+    },
+    {
+      "id": "ext_pmsc23_q11",
+      "requested": "CP 29",
+      "f": "CP, art. 29, § 2.º."
+    },
+    {
+      "id": "ext_pmro22_q78b",
+      "requested": "CPPM 79",
+      "f": "CPPM, art. 79."
+    },
+    {
+      "id": "ext_pmsc23_q17",
+      "requested": "CPP 2",
+      "f": "CPP, art. 2.º."
+    },
+    {
+      "id": "ext_pmsc23_q22",
+      "requested": "CPP 18",
+      "f": "CPP, art. 18; Súmula 524 do STF."
+    }
+  ],
+  "effective_orphan_devices": [
+    "CADH 1",
+    "CADH 2",
+    "CADH 68",
+    "CF 124",
+    "CF 228",
+    "CF 9",
+    "CP 109",
+    "CP 312",
+    "CPM 2",
+    "CPM 4",
+    "CPP 152",
+    "CPP 158",
+    "CPP 186",
+    "CPP 245",
+    "CPP 29",
+    "CPP 303",
+    "CPP 313",
+    "CPP 46",
+    "CPP 55",
+    "CPP 647",
+    "CPP 74",
+    "CPP 798",
+    "CPPM 1",
+    "CPPM 10",
+    "CPPM 16A",
+    "CPPM 2",
+    "CPPM 3",
+    "CPPM 30",
+    "CPPM 4",
+    "CPPM 5",
+    "CPPM 6",
+    "CPPM 8",
+    "L10826 16",
+    "L10826 17",
+    "L10826 18",
+    "L10826 21A",
+    "L11340 12C",
+    "L11340 12D",
+    "L11340 16A",
+    "L11340 18",
+    "L11340 19",
+    "L11340 23",
+    "L11340 24",
+    "L11343 32",
+    "L11343 34",
+    "L11343 36",
+    "L11343 37",
+    "L11343 40",
+    "L11343 40A",
+    "L11343 41",
+    "L11343 42",
+    "L11343 50",
+    "L11343 51",
+    "L11343 52",
+    "L11343 53",
+    "L11343 54",
+    "L12037 3",
+    "L12830",
+    "L12850 2",
+    "L12850 3",
+    "L12850 8",
+    "L13300 8",
+    "L13869 13",
+    "L13869 15",
+    "L13869 22",
+    "L13869 25",
+    "L13869 30",
+    "L13869 33",
+    "L13869 38",
+    "L13869 9",
+    "L14133 124",
+    "L14133 156",
+    "L14133 17",
+    "L14133 71",
+    "L14133 72",
+    "L14133 92",
+    "L14133 94",
+    "L4717 1",
+    "L4717 6",
+    "L7716 20",
+    "L7960 1",
+    "L8069 1",
+    "L8069 105",
+    "L8069 108",
+    "L8069 112",
+    "L8069 11A",
+    "L8069 122",
+    "L8069 2",
+    "L8112 132",
+    "L8112 137",
+    "L8112 20",
+    "L8112 41",
+    "L9296 10",
+    "L9296 2",
+    "L9455 2",
+    "L9474 1",
+    "L9474 7",
+    "L9507 8",
+    "L9605 15",
+    "L9605 18",
+    "L9605 46",
+    "L9605 48",
+    "L9605 53",
+    "L9605 54",
+    "L9605 7",
+    "L9784 59",
+    "L9784 64",
+    "LEP 112",
+    "LEP 122",
+    "LEP 123",
+    "LEP 126",
+    "LEP 41",
+    "LEP 50",
+    "LEP 52",
+    "LO 1",
+    "LO 12",
+    "LO 14",
+    "LO 17",
+    "LO 19",
+    "LO 23",
+    "LO 24",
+    "LO 26",
+    "LO 33",
+    "LO 35",
+    "LO 42",
+    "Lei5346 1",
+    "Lei5346 100",
+    "Lei5346 11",
+    "Lei5346 13",
+    "Lei5346 2",
+    "Lei5346 3",
+    "Lei5346 31",
+    "Lei5346 33",
+    "Lei5346 38",
+    "Lei5346 39",
+    "Lei5346 41",
+    "Lei5346 47",
+    "Lei5346 50",
+    "Lei5346 53",
+    "Lei5346 55",
+    "Lei5346 62",
+    "Lei5346 65",
+    "Lei5346 68",
+    "Lei5346 76",
+    "Lei5346 9",
+    "RD 33",
+    "RD 35",
+    "RD 36",
+    "RD 37",
+    "RD 38",
+    "RD 39",
+    "RD 41",
+    "RD 43",
+    "RD 44",
+    "RD 47",
+    "RD 48",
+    "RD 49",
+    "RD 5",
+    "RD 57",
+    "RD 6",
+    "RD 60",
+    "RD 67",
+    "RD 68",
+    "RD 71",
+    "RD 75",
+    "RD 76",
+    "RD 79",
+    "RD 8",
+    "RD 82",
+    "RD 86",
+    "RD 95"
+  ],
+  "nota": "Fallback somente para o cartão geral da MESMA lei quando o artigo específico citado não existe em DISP. CF/CP/CPP/CPM/CPPM não recebem fallback genérico."
+}

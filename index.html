@@ -3799,10 +3799,19 @@ function readingOrder(){
   return keys;
 }
 var KEY_TO_QIDS=null;
+/* PMAL_LAW_LINK_FALLBACK_V1 — vínculo exato primeiro; fallback só para cartão genérico da mesma lei */
 function buildKeyToQids(){
   if(KEY_TO_QIDS)return KEY_TO_QIDS;
   KEY_TO_QIDS={};
-  QQ.forEach(function(q){var r=parseRef(q.f);if(r&&DISP[r.key]){if(!KEY_TO_QIDS[r.key])KEY_TO_QIDS[r.key]=[];KEY_TO_QIDS[r.key].push(q.id);}});
+  QQ.forEach(function(q){
+    var r=parseRef(q.f);if(!r)return;
+    var key=null;
+    if(DISP[r.key])key=r.key;
+    else if(r.baseKey&&DISP[r.baseKey])key=r.baseKey;
+    if(!key)return;
+    if(!KEY_TO_QIDS[key])KEY_TO_QIDS[key]=[];
+    if(KEY_TO_QIDS[key].indexOf(q.id)<0)KEY_TO_QIDS[key].push(q.id);
+  });
   return KEY_TO_QIDS;
 }
 var LAW_HOT_DIPL={CF:6,CP:5,CPM:6,CPPM:6,CPP:6,Lei:6,Lei5346:6,RD:5,LO:5,L14133:6,L11343:6,L8072:6,L9455:6,L13869:5,L11340:5,L10826:5,L12850:5,L9605:5,L7960:5,LEP:5,L8069:4,CADH:4};
