@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'scripts/inspect_cycle.py'
+      - 'scripts/fix_law_link_fallback.py'
+      - 'scripts/audit_law_fallback.py'
       - '.github/workflows/inspect-cycle.yml'
   workflow_dispatch:
 
@@ -15,13 +17,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Apply fix and inspect law bank
+      - name: Apply safe law-link fallback
+        run: python3 scripts/fix_law_link_fallback.py
+      - name: Inspect law bank
         run: python3 scripts/inspect_cycle.py
+      - name: Measure effective links
+        run: python3 scripts/audit_law_fallback.py
       - name: Commit platform and diagnostic reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html law-bank-fix-20260822.txt cycle-debug-report.txt law-bank-summary.json law-bank-structural.json law-bank-devices.json law-bank-linking.txt
+          git add index.html cycle-debug-report.txt law-bank-summary.json law-bank-structural.json law-bank-devices.json law-bank-linking.txt law-bank-effective-links.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "fix: audit law bank against current 2026 legislation"
+          git commit -m "fix: apply safe fallback for law question links"
           git push
