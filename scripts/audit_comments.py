@@ -5,6 +5,7 @@ from pathlib import Path
 
 INDEX = Path("index.html")
 REPORT = Path("comment-audit-report.json")
+REPORT_LINES = Path("comment-audit-report.jsonl")
 
 # O campo "c" é o comentário técnico principal. O campo "d" é apenas o resumo/bizu curto,
 # então um "d" curto NÃO torna a questão deficiente.
@@ -94,6 +95,7 @@ def main():
         "questoes": questions,
     }
     REPORT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    REPORT_LINES.write_text("".join(json.dumps(q, ensure_ascii=False, separators=(",", ":")) + "\n" for q in questions), encoding="utf-8")
     print(f"Auditoria concluída: {len(questions)} questão(ões) com comentário principal suspeito.")
     for matter, count in payload["por_materia"].items():
         print(f"  {matter}: {count}")
