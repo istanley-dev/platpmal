@@ -6,7 +6,8 @@ from pathlib import Path
 INDEX = Path("index.html")
 REPORT = Path("comment-audit-report.json")
 
-# Padrões que indicam placeholder/instrução de estudo no lugar de explicação técnica.
+# O campo "c" é o comentário técnico principal. O campo "d" é apenas o resumo/bizu curto,
+# então um "d" curto NÃO torna a questão deficiente.
 WEAK_PATTERNS = {
     "manda consultar/revisar comentário externo": re.compile(r"(?:revise|revisar|consulte|consultar|verifique|verificar).{0,90}(?:coment[aá]rio|banca|material|fonte)", re.I),
     "placeholder jurisprudencial": re.compile(r"quest[aã]o jurisprudencial espec[ií]fica|mantenha a literalidade do gabarito", re.I),
@@ -20,11 +21,12 @@ GENERIC_ONLY = re.compile(
     re.I,
 )
 
+
 def iter_json_objects(text):
     decoder = json.JSONDecoder()
     for m in re.finditer(r'\{"id"\s*:', text):
         try:
-            obj, size = decoder.raw_decode(text[m.start():])
+            obj, _ = decoder.raw_decode(text[m.start():])
         except Exception:
             continue
         if isinstance(obj, dict):
@@ -34,31 +36,18 @@ def iter_json_objects(text):
 def reasons_for(q):
     reasons = []
     c = str(q.get("c") or "").strip()
-    d = str(q.get("d") or "").strip()
-    combined = f"{c}\n{d}"
 
     if not c:
-        reasons.append("comentário c ausente")
+        reasons.append("comentário técnico c ausente")
     elif len(c) < 45:
-        reasons.append("comentário c curto demais")
-    if not d:
-        reasons.append("detalhamento d ausente")
-    elif len(d) < 45:
-        reasons.append("detalhamento d curto demais")
+        reasons.append("comentário técnico c curto demais")
 
     for label, rx in WEAK_PATTERNS.items():
-        if rx.search(combined):
+        if rx.search(c):
             reasons.append(label)
 
-    if GENERIC_ONLY.search(c) and len(c) < 280:
-        reasons.append("comentário inicia como orientação genérica")
-
-    # Se c e d são praticamente a mesma frase e ela é genérica, não há camada explicativa real.
-    norm_c = re.sub(r"\s+", " ", c).lower()
-    norm_d = re.sub(r"\s+", " ", d).lower()
-    if norm_c and norm_d and (norm_c == norm_d or norm_c.endswith(norm_d) or norm_d.endswith(norm_c)):
-        if any(rx.search(combined) for rx in WEAK_PATTERNS.values()):
-            reasons.append("c e d repetem o mesmo placeholder")
+    if GENERIC_ONLY.search(c) and len(c) < 320:
+        reasons.append("comentário é orientação genérica, não explicação")
 
     return list(dict.fromkeys(reasons))
 
@@ -69,7 +58,6 @@ def main():
     seen = set()
 
     for pos, q in iter_json_objects(text):
-        # Filtra objetos que têm a estrutura real de questão do banco.
         if not {"id", "m", "a", "e", "g"}.issubset(q):
             continue
         key = (q.get("id"), q.get("e"), q.get("g"))
@@ -99,14 +87,14 @@ def main():
         by_matter[q["materia"]] = by_matter.get(q["materia"], 0) + 1
 
     payload = {
-        "schema": 1,
-        "descricao": "Auditoria automática de comentários técnicos potencialmente insuficientes. Nenhum gabarito é alterado.",
+        "schema": 2,
+        "descricao": "Auditoria do campo c (comentário técnico principal). O campo d é resumo curto e não é penalizado. Nenhum gabarito é alterado.",
         "total_suspeitos": len(questions),
         "por_materia": dict(sorted(by_matter.items(), key=lambda kv: (-kv[1], kv[0] or ""))),
         "questoes": questions,
     }
     REPORT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Auditoria concluída: {len(questions)} questão(ões) suspeita(s).")
+    print(f"Auditoria concluída: {len(questions)} questão(ões) com comentário principal suspeito.")
     for matter, count in payload["por_materia"].items():
         print(f"  {matter}: {count}")
 
