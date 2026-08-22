@@ -11,6 +11,7 @@ on:
       - 'scripts/summarize_orphan_candidates.py'
       - 'scripts/classify_law_orphans.py'
       - 'scripts/inspect_question_lookup_usage.py'
+      - 'scripts/inspect_law_review_functions.py'
       - '.github/workflows/inspect-cycle.yml'
   pull_request:
     paths:
@@ -22,6 +23,7 @@ on:
       - 'scripts/summarize_orphan_candidates.py'
       - 'scripts/classify_law_orphans.py'
       - 'scripts/inspect_question_lookup_usage.py'
+      - 'scripts/inspect_law_review_functions.py'
       - '.github/workflows/inspect-cycle.yml'
   workflow_dispatch:
 
@@ -51,12 +53,14 @@ jobs:
         run: python3 scripts/classify_law_orphans.py
       - name: Inspect question lookup paths
         run: python3 scripts/inspect_question_lookup_usage.py
+      - name: Inspect law-review retrieval
+        run: python3 scripts/inspect_law_review_functions.py
       - name: Commit platform and diagnostic reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html law-bank-runtime-audit.json law-bank-orphan-candidates.json law-bank-strong-candidates.json law-bank-gap-classification.json question-lookup-usage.txt
+          git add index.html law-bank-runtime-audit.json law-bank-orphan-candidates.json law-bank-strong-candidates.json law-bank-gap-classification.json question-lookup-usage.txt law-review-functions.txt
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "audit: inspect question lookup paths for law coverage"
+          git commit -m "audit: inspect law-review retrieval for coverage layer"
           BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           git push origin HEAD:"$BRANCH"
