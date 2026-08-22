@@ -6,6 +6,11 @@ on:
       - 'scripts/fix_law_link_fallback.py'
       - 'scripts/audit_law_fallback.py'
       - '.github/workflows/inspect-cycle.yml'
+  pull_request:
+    paths:
+      - 'scripts/fix_law_link_fallback.py'
+      - 'scripts/audit_law_fallback.py'
+      - '.github/workflows/inspect-cycle.yml'
   workflow_dispatch:
 
 permissions:
@@ -16,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       - name: Apply safe law-link fallback
         run: python3 scripts/fix_law_link_fallback.py
       - name: Measure effective links
@@ -27,4 +34,5 @@ jobs:
           git add index.html law-bank-effective-links.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "fix: apply safe fallback for law question links"
-          git push
+          BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+          git push origin HEAD:"$BRANCH"
