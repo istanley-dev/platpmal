@@ -2,6 +2,7 @@
 from pathlib import Path
 import re
 
+# PMAL: fallback seguro auditável; alteração de comentário também dispara o workflow.
 p=Path('index.html')
 s=p.read_text(encoding='utf-8')
 marker='PMAL_LAW_LINK_FALLBACK_V1'
