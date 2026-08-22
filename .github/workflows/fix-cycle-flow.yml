@@ -1,0 +1,66 @@
+name: Fix new cycle flow
+
+on:
+  push:
+    paths:
+      - 'scripts/fix_cycle_flow.py'
+      - '.github/workflows/fix-cycle-flow.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply cycle fix
+        run: python3 scripts/fix_cycle_flow.py
+
+      - name: Static verification
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          checks={
+            'marker':'PMAL_CYCLE_FIX_V1',
+            'manual function':'function startNewCycleManual()',
+            'quota fallback':'saveFullOrCompactCycleArchive',
+            'cycle survives reload':"if(localStorage.getItem(flag)==='1')return;",
+            'persist verification':'saved.cycleId!==newCycleId',
+          }
+          missing=[name for name,tok in checks.items() if tok not in s]
+          if missing: raise SystemExit('Falha nas verificações: '+', '.join(missing))
+          # A versão corrigida não pode conter a atribuição antiga no early return.
+          bad="if(localStorage.getItem(flag)==='1'){S.cycleId='ciclo2_20260821';return;}"
+          if bad in s: raise SystemExit('Regressão: inicializador ainda sobrescreve o novo cycleId.')
+          print('Verificação estática do novo ciclo: OK')
+          PY
+
+      - name: Audit comments remain clean
+        run: |
+          python3 scripts/audit_comments.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('comment-audit-report.json').read_text(encoding='utf-8'))
+          if r.get('total_suspeitos') != 0:
+              raise SystemExit('A alteração de ciclo afetou indevidamente a auditoria de comentários.')
+          print('Auditoria de comentários: 0 suspeitos')
+          PY
+
+      - name: Commit corrected platform
+        run: |
+          if git diff --quiet -- index.html comment-audit-report.json comment-audit-report.jsonl; then
+            echo "Fluxo já corrigido."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html comment-audit-report.json comment-audit-report.jsonl
+          git commit -m "fix: make new cycle robust and preserve history"
+          git push
