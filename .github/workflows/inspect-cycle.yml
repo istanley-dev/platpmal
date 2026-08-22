@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect cycle flow
+      - name: Inspect cycle flow and law bank
         run: python3 scripts/inspect_cycle.py
-      - name: Commit diagnostic report
+      - name: Commit diagnostic reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cycle-debug-report.txt
+          git add cycle-debug-report.txt law-bank-summary.json law-bank-devices.json law-bank-linking.txt
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "chore: refresh cycle diagnostic"
+          git commit -m "chore: refresh law bank diagnostics"
           git push
