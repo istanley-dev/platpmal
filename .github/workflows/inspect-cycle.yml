@@ -5,11 +5,15 @@ on:
     paths:
       - 'scripts/fix_law_link_fallback.py'
       - 'scripts/audit_law_fallback.py'
+      - 'scripts/fix_law_parser_v2.py'
+      - 'scripts/audit_law_parser_v2.py'
       - '.github/workflows/inspect-cycle.yml'
   pull_request:
     paths:
       - 'scripts/fix_law_link_fallback.py'
       - 'scripts/audit_law_fallback.py'
+      - 'scripts/fix_law_parser_v2.py'
+      - 'scripts/audit_law_parser_v2.py'
       - '.github/workflows/inspect-cycle.yml'
   workflow_dispatch:
 
@@ -25,14 +29,42 @@ jobs:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       - name: Apply safe law-link fallback
         run: python3 scripts/fix_law_link_fallback.py
-      - name: Measure effective links
-        run: python3 scripts/audit_law_fallback.py
+      - name: Apply multi-reference legal parser v2
+        run: python3 scripts/fix_law_parser_v2.py
+      - name: Check parser JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          def fn(name):
+              m=re.search(r'function\s+'+re.escape(name)+r'\s*\([^)]*\)\s*\{',s)
+              if not m: raise SystemExit('função ausente: '+name)
+              st=m.start(); b=s.find('{',m.start()); d=0; q=None; esc=False
+              for i in range(b,len(s)):
+                  ch=s[i]
+                  if q:
+                      if esc: esc=False
+                      elif ch=='\\': esc=True
+                      elif ch==q:q=None
+                      continue
+                  if ch in ('"',"'",'`'):q=ch;continue
+                  if ch=='{':d+=1
+                  elif ch=='}':
+                      d-=1
+                      if d==0:return s[st:i+1]
+              raise SystemExit('função sem fechamento: '+name)
+          Path('/tmp/law-parser-v2.js').write_text(fn('parseRefs')+'\n'+fn('parseRef')+'\n'+fn('buildKeyToQids')+'\n',encoding='utf-8')
+          PY
+          node --check /tmp/law-parser-v2.js
+      - name: Audit parser v2 links
+        run: python3 scripts/audit_law_parser_v2.py
       - name: Commit platform and diagnostic report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html law-bank-effective-links.json
+          git add index.html law-bank-parser-v2-audit.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "fix: apply safe fallback for law question links"
+          git commit -m "fix: use safe multi-reference links in law bank"
           BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           git push origin HEAD:"$BRANCH"
