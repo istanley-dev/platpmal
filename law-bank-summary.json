@@ -429,7 +429,6 @@
     "L8069 244B"
   ],
   "question_id_count": 3183,
-  "link_function_found": true,
   "functions_found": {
     "parseRef": true,
     "buildKeyToQids": true,

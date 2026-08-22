@@ -1,1 +1,1 @@
-Banco de Leis auditado. Veja law-bank-summary.json, law-bank-devices.json e law-bank-linking.txt.
+Banco de Leis auditado. Veja law-bank-summary.json, law-bank-structural.json, law-bank-devices.json e law-bank-linking.txt.
