@@ -2,6 +2,7 @@
 from pathlib import Path
 import re
 
+# Execução final auditada do parser legal v2.
 P=Path('index.html')
 s=P.read_text(encoding='utf-8')
 MARK='PMAL_LAW_REF_V2'
