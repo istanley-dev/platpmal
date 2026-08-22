@@ -1,0 +1,55 @@
+name: Apply audited technical comments
+
+on:
+  push:
+    paths:
+      - 'comment-fixes/**'
+      - 'scripts/apply_comment_fixes.py'
+      - '.github/workflows/apply-comment-fixes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-comment-fixes-main
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply audited fixes
+        run: python3 scripts/apply_comment_fixes.py
+
+      - name: Re-audit comments
+        run: python3 scripts/audit_comments.py
+
+      - name: Require zero weak technical comments
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('comment-audit-report.json').read_text(encoding='utf-8'))
+          total=report.get('total_suspeitos')
+          print('Comentários técnicos suspeitos após correção:', total)
+          if total != 0:
+              raise SystemExit('Falha: a auditoria ainda encontrou comentários técnicos fracos.')
+          PY
+
+      - name: Commit corrected platform
+        run: |
+          if git diff --quiet -- index.html comment-audit-report.json comment-audit-report.jsonl; then
+            echo "Plataforma já está corrigida."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html comment-audit-report.json comment-audit-report.jsonl
+          git commit -m "fix: complete technical comments and enforce AI quality gate"
+          git push
