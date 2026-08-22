@@ -1,0 +1,383 @@
+{
+  "count": 18,
+  "devices": [
+    {
+      "key": "CADH 68",
+      "device": "Art. 68, CADH — Os Estados-partes comprometem-se a cumprir a decisão da Corte em todo caso em que forem partes. §2 — a parte da sentença que determinar indenização compensatória poderá ser executada no país respectivo pelo processo interno vigente para a execução de sentenças contra o Estado.",
+      "candidates": [
+        {
+          "score": 0.783,
+          "id": "dh3_sist07",
+          "g": "CERTO",
+          "m": "Direitos Humanos",
+          "a": "Sistema Interamericano de Direitos Humanos — força vinculante das sentenças da Corte IDH",
+          "f": "CADH, art. 67 e 68.2.",
+          "e": "Julgue o item. As sentenças da Corte Interamericana de Direitos Humanos são definitivas e inapeláveis, obrigando o Estado condenado a cumprir suas determinações, sendo a parte da sentença que determinar indenização compensatória executável no respectivo Estado pelo processo interno vigente para execução de sentenças proferidas contra o Estado.",
+          "c": "O art. 67 da CADH estabelece que as sentenças da Corte IDH são definitivas e inapeláveis; o art. 68.2 determina que a parte da sentença relativa à indenização compensatória pode ser executada no país respectivo pelo processo interno vigente para execução de sentenças contra o Estado — reforçando a força vinculante e a executoriedade das decisões da Corte no âmbito doméstico."
+        }
+      ]
+    },
+    {
+      "key": "CPM 4",
+      "device": "Art. 4º, CPM — A lei excepcional ou temporária aplica-se ao fato praticado durante sua vigência mesmo depois de encerrado seu prazo ou cessadas as circunstâncias que a determinaram.\n\n⚠ CEBRASPE — É ultratividade da lei excepcional/temporária. Não confunda com a retroatividade benigna geral do art. 2º.",
+      "candidates": [
+        {
+          "score": 0.555,
+          "id": "dp3_ti04",
+          "g": "CERTO",
+          "m": "Direito Penal",
+          "a": "Aplicação da Lei Penal no Tempo e no Espaço — Lei excepcional ou temporária",
+          "f": "Art. 3º, CP.",
+          "e": "Julgue o item. As leis excepcionais ou temporárias aplicam-se ao fato praticado durante sua vigência, ainda que decorrido o período de sua duração ou cessadas as circunstâncias que as determinaram, sendo, nesse ponto, ultrativas.",
+          "c": "O art. 3º do CP estabelece a ultratividade das leis excepcionais e temporárias: elas continuam a ser aplicadas aos fatos cometidos durante sua vigência mesmo depois de expirado o prazo ou cessada a situação que as motivou."
+        }
+      ]
+    },
+    {
+      "key": "CPP 158",
+      "device": "Art. 158, CPP — Quando a infração deixar vestígios, será indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado. Arts. 158-A a 158-F (incluídos pela Lei 13.964/2019) disciplinam a CADEIA DE CUSTÓDIA da prova: conjunto de procedimentos para preservar a integridade dos vestígios desde a coleta até o descarte, com registro de reconhecimento, isolamento, fixação, coleta, acondicionamento, transporte, recebimento, processamento, armazenamento e descarte — a quebra da cadeia de custódia pode comprometer o valor probatório do vestígio.",
+      "candidates": [
+        {
+          "score": 0.518,
+          "id": "nx28_pp01",
+          "g": "CERTO",
+          "m": "Direito Processual Penal",
+          "a": "Provas e Cadeia de Custódia — etapas legais",
+          "f": "CPP, arts. 158-A a 158-F (Lei 13.964/2019).",
+          "e": "Considerando o primeiro parágrafo do texto CB2A1, julgue o item. A conduta dos policiais de identificar, descrever, coletar, acondicionar e catalogar os objetos apreendidos configura observância das etapas da cadeia de custódia da prova, exigidas pelo Código de Processo Penal desde a alteração promovida pelo Pacote Anticrime.",
+          "c": "O CPP (arts. 158-A a 158-F, incluídos pela Lei 13.964/2019 — Pacote Anticrime) disciplina a cadeia de custódia da prova, com etapas como reconhecimento, isolamento, fixação, coleta, acondicionamento, transporte, recebimento, processamento, armazenamento e descarte. O texto descreve exatamente esse cuidado formal com os vestígios/objetos apreendidos."
+        },
+        {
+          "score": 0.44,
+          "id": "c2_61",
+          "g": "CERTO",
+          "m": "Direito Processual Penal",
+          "a": "Provas e Cadeia de Custódia",
+          "f": "Arts. 158-A a 158-F, CPP (Lei 13.964/2019).",
+          "e": "A cadeia de custódia consiste no conjunto de procedimentos para manter e documentar a história cronológica do vestígio coletado, desde o reconhecimento até o descarte, assegurando a integridade da prova.",
+          "c": "Arts. 158-A a 158-F, CPP (Lei 13.964/2019): a cadeia de custódia documenta o rastreamento do vestígio (reconhecimento, coleta, acondicionamento, transporte, análise, descarte), preservando a confiabilidade da prova."
+        }
+      ]
+    },
+    {
+      "key": "CPP 303",
+      "device": "Art. 303, CPP — Nos crimes permanentes, entende-se o agente em flagrante delito enquanto não cessar a permanência, autorizando a prisão em flagrante (inclusive com ingresso em domicílio, se necessário) a qualquer momento enquanto durar a situação de flagrância.",
+      "candidates": [
+        {
+          "score": 0.757,
+          "id": "dpp4_pr01",
+          "g": "CERTO",
+          "m": "Direito Processual Penal",
+          "a": "Prisão em Flagrante — flagrante em crime permanente",
+          "f": "Art. 5º, XI, CF/88 c/c art. 303, CPP; jurisprudência do STF.",
+          "e": "Julgue o item. Nos crimes permanentes, cuja consumação se prolonga no tempo por vontade do agente, considera-se em flagrante delito quem está cometendo a infração enquanto não cessada a permanência, sendo lícito o ingresso em domicílio, a qualquer hora do dia ou da noite, para efetuar a prisão em flagrante, sem necessidade de mandado judicial.",
+          "c": "Nos crimes PERMANENTES (como o cárcere privado ou o tráfico de drogas na modalidade 'ter em depósito'), a situação de flagrância se PROLONGA enquanto não cessar a permanência — o STF já reconheceu a licitude do ingresso em domicílio, a qualquer hora, para efetuar a prisão em flagrante nesses casos, dispensando mandado judicial, justamente por se tratar de flagrante delito em curso."
+        }
+      ]
+    },
+    {
+      "key": "CPP 49",
+      "device": "Art. 49, CPP — A renúncia ao exercício do direito de queixa, EM RELAÇÃO A UM DOS AUTORES DO CRIME, a todos se estenderá. É consequência da indivisibilidade da ação penal privada. Não confunda autor do crime (querelado) com ofendido/titular do direito de queixa.",
+      "candidates": [
+        {
+          "score": 0.583,
+          "id": "dpp3_ap05",
+          "g": "CERTO",
+          "m": "Direito Processual Penal",
+          "a": "Ação Penal — renúncia e perdão",
+          "f": "Art. 49, 51 e 107, V, CP; art. 55-59, CPP.",
+          "e": "Julgue o item. A renúncia ao direito de queixa, que somente é cabível antes do início da ação penal privada, e o perdão do ofendido, cabível após seu início, são institutos que, uma vez aceitos ou operados seus efeitos, extinguem a punibilidade, mas somente em relação à ação penal privada, não afetando a ação penal pública pelo mesmo fato.",
+          "c": "A renúncia (antes do exercício do direito de queixa) e o perdão do ofendido (após o início da ação, exigindo aceitação do querelado para produzir efeitos) são causas extintivas da punibilidade específicas da ação penal PRIVADA, não tendo qualquer efeito sobre eventual ação penal pública que viesse a ser cabível para o mesmo fato."
+        }
+      ]
+    },
+    {
+      "key": "CPPM 5",
+      "device": "Art. 5º, CPPM — Aplicação intertemporal: as normas deste Código aplicar-se-ão a partir da sua vigência, inclusive nos processos pendentes (tempus regit actum).",
+      "candidates": [
+        {
+          "score": 0.432,
+          "id": "ext_pmsc23_q17",
+          "g": "CERTO",
+          "m": "Direito Processual Penal",
+          "a": "Lei processual penal no tempo",
+          "f": "CPP, art. 2.º.",
+          "e": "Julgue o item. A lei processual penal tem aplicação imediata aos processos em andamento, sem invalidar os atos regularmente praticados sob a vigência da lei anterior.",
+          "c": "Aplica-se o princípio tempus regit actum: a lei nova rege os atos futuros, preservando os já realizados."
+        }
+      ]
+    },
+    {
+      "key": "L10826 17",
+      "device": "Art. 17, Lei 10.826/2003 — Comércio ilegal de arma, acessório ou munição, sem autorização ou em desacordo com norma, abrange diversas condutas relacionadas a atividade comercial/industrial.\n\n⚠ CEBRASPE — O crime integra o rol de hediondos da Lei 8.072.",
+      "candidates": [
+        {
+          "score": 0.484,
+          "id": "nx26_lpe09",
+          "g": "CERTO",
+          "m": "Legislação Penal Especial",
+          "a": "Lei de Drogas (Lei 11.343/2006) — comércio e tráfico internacional de armas",
+          "f": "Lei 8.072/90, art. 1º, § único, III e IV.",
+          "e": "Julgue o item. O comércio ilegal de arma de fogo e o tráfico internacional de arma de fogo, acessório ou munição, previstos no Estatuto do Desarmamento, integram o rol de crimes hediondos desde a reforma promovida pelo Pacote Anticrime.",
+          "c": "Art. 1.º, parágrafo único, III e IV, Lei 8.072/1990 (redação da Lei 13.964/2019): incluem expressamente o comércio ilegal de arma de fogo (art. 17, Lei 10.826/2003) e o tráfico internacional de arma de fogo, acessório ou munição (art. 18, Lei 10.826/2003) no rol de equiparados a hediondos."
+        }
+      ]
+    },
+    {
+      "key": "L10826 18",
+      "device": "Art. 18, Lei 10.826/2003 — Tráfico internacional de arma, acessório ou munição envolve importar, exportar ou favorecer entrada/saída do território nacional sem autorização, nas condições legais.\n\n⚠ CEBRASPE — Também integra o rol de hediondos; não confunda com comércio ilegal interno do art. 17.",
+      "candidates": [
+        {
+          "score": 0.438,
+          "id": "nx26_lpe09",
+          "g": "CERTO",
+          "m": "Legislação Penal Especial",
+          "a": "Lei de Drogas (Lei 11.343/2006) — comércio e tráfico internacional de armas",
+          "f": "Lei 8.072/90, art. 1º, § único, III e IV.",
+          "e": "Julgue o item. O comércio ilegal de arma de fogo e o tráfico internacional de arma de fogo, acessório ou munição, previstos no Estatuto do Desarmamento, integram o rol de crimes hediondos desde a reforma promovida pelo Pacote Anticrime.",
+          "c": "Art. 1.º, parágrafo único, III e IV, Lei 8.072/1990 (redação da Lei 13.964/2019): incluem expressamente o comércio ilegal de arma de fogo (art. 17, Lei 10.826/2003) e o tráfico internacional de arma de fogo, acessório ou munição (art. 18, Lei 10.826/2003) no rol de equiparados a hediondos."
+        }
+      ]
+    },
+    {
+      "key": "L12830",
+      "device": "Lei nº 12.830/2013 — Dispõe sobre a investigação criminal conduzida pelo delegado de polícia. Estabelece que a função de polícia judiciária e a apuração de infrações penais exercidas pelo delegado de polícia são de natureza jurídica, essenciais e exclusivas de Estado. O indiciamento é ato privativo do delegado, mediante análise técnico-jurídica do fato, e deve ser sempre fundamentado.",
+      "candidates": [
+        {
+          "score": 0.433,
+          "id": "dpp4_ip04",
+          "g": "CERTO",
+          "m": "Direito Processual Penal",
+          "a": "Inquérito Policial — indiciamento",
+          "f": "Art. 2º, §6º, Lei 12.830/2013.",
+          "e": "Julgue o item. O indiciamento, ato privativo da autoridade policial, consiste na atribuição formal, a determinada pessoa, da condição de provável autor do fato investigado, com base em fundadas razões, não podendo o delegado de polícia indiciar sem motivação idônea, ainda que o Ministério Público ou o juiz solicite tal providência.",
+          "c": "A Lei 12.830/2013 estabelece que o indiciamento é ato PRIVATIVO da autoridade policial, mediante análise técnico-jurídica do fato, exigindo fundadas razões quanto à autoria e materialidade — mesmo que solicitado por outra autoridade (MP ou juiz), a decisão sobre indiciar cabe exclusivamente ao delegado, que deve fazê-lo de forma motivada, não podendo ser uma decisão automática ou arbitrária."
+        }
+      ]
+    },
+    {
+      "key": "L7716 20",
+      "device": "Art. 20, Lei 7.716/1989 — Praticar, induzir ou incitar a discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional: reclusão de 1 a 3 anos e multa.",
+      "candidates": [
+        {
+          "score": 0.565,
+          "id": "leg_racismo_001",
+          "g": "CERTO",
+          "m": "Legislação Penal Especial",
+          "a": "Racismo e Crimes Ambientais — racismo é crime inafiançável e imprescritível",
+          "f": "CF, art. 5.º, XLII: racismo = inafiançável e imprescritível.",
+          "e": "Com base na Lei n.º 7.716/1989, julgue o item. Os crimes resultantes de discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional são inafiançáveis e imprescritíveis, nos termos da Constituição Federal.",
+          "c": "CF, art. 5.º, XLII c/c Lei 7.716/1989: o racismo é crime inafiançável e imprescritível. Essa é uma das duas hipóteses constitucionais de imprescritibilidade penal (a outra é a ação de grupos armados contra a ordem constitucional, art. 5.º, XLIV)."
+        },
+        {
+          "score": 0.565,
+          "id": "lpe3_rac03",
+          "g": "ERRADO",
+          "m": "Legislação Penal Especial",
+          "a": "Racismo e Crimes Ambientais — ação penal",
+          "f": "Lei 7.716/1989 (interpretação sistemática com a gravidade constitucional atribuída ao racismo).",
+          "e": "Julgue o item. Os crimes resultantes de discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional, previstos na Lei 7.716/1989, processam-se mediante ação penal privada, dependendo de queixa oferecida pela vítima.",
+          "c": "Os crimes previstos na Lei 7.716/1989 são de AÇÃO PENAL PÚBLICA INCONDICIONADA, processando-se independentemente de qualquer manifestação de vontade da vítima — não dependem de queixa nem de representação, tendo em vista a gravidade e a repercussão social desses crimes."
+        },
+        {
+          "score": 0.55,
+          "id": "leg_racismo_002",
+          "g": "CERTO",
+          "m": "Legislação Penal Especial",
+          "a": "Racismo e Crimes Ambientais — recusa de acesso a estabelecimento",
+          "f": "Lei 7.716/1989, art. 5.º: recusar acesso/atendimento por discriminação racial = crime.",
+          "e": "Com base na Lei n.º 7.716/1989, julgue o item. Constitui crime previsto nessa lei a recusa, por preconceito de raça ou de cor, de acesso a estabelecimento comercial, negando-se a servir, atender ou receber cliente em razão de sua etnia.",
+          "c": "Lei 7.716/1989, art. 5.º: recusar ou impedir acesso, ou recusar atendimento, em estabelecimentos comerciais por preconceito de raça/cor é crime previsto na lei, com pena de reclusão de 1 a 3 anos."
+        }
+      ]
+    },
+    {
+      "key": "L8069 105",
+      "device": "Art. 105, ECA — Ao ato infracional praticado por criança corresponderão as medidas previstas no art. 101 (medidas de proteção) — nunca medida socioeducativa, exclusiva do adolescente.",
+      "candidates": [
+        {
+          "score": 0.726,
+          "id": "lpe3_eca02",
+          "g": "CERTO",
+          "m": "Legislação Penal Especial",
+          "a": "Estatuto da Criança e do Adolescente (ECA) — ato infracional e medida socioeducativa",
+          "f": "Art. 103 e 105, ECA.",
+          "e": "Julgue o item. Ato infracional, na sistemática do ECA, é a conduta descrita como crime ou contravenção penal praticada por criança ou adolescente, sendo aplicável ao adolescente (não à criança) medida socioeducativa, e à criança, medida de proteção.",
+          "c": "O art. 103, ECA define ato infracional como a conduta descrita como crime ou contravenção penal, praticada por criança OU adolescente; contudo, apenas ao ADOLESCENTE (12 a 18 anos incompletos) aplica-se medida socioeducativa, ao passo que à CRIANÇA (até 12 anos incompletos) que praticar ato infracional aplicam-se apenas medidas de proteção, nunca medidas socioeducativas."
+        },
+        {
+          "score": 0.494,
+          "id": "nx26_lpe15",
+          "g": "CERTO",
+          "m": "Legislação Penal Especial",
+          "a": "Estatuto da Criança e do Adolescente (ECA) — inimputabilidade e ato infracional análogo a hediondo",
+          "f": "CF, art. 228 + ECA, art. 104.",
+          "e": "Julgue o item. Em razão da inimputabilidade penal absoluta dos menores de dezoito anos, prevista na Constituição Federal e reproduzida no ECA, o adolescente que pratica ato infracional análogo a crime hediondo está sujeito a medida socioeducativa, jamais a pena privativa de liberdade prevista no Código Penal.",
+          "c": "Art. 228, CF, e art. 104, ECA: os menores de 18 anos são penalmente inimputáveis, sujeitos às normas da legislação especial (ECA). Ainda que o ato infracional seja análogo a crime hediondo, a consequência jurídica é sempre medida socioeducativa (art. 112, ECA), nunca pena do Código Penal."
+        },
+        {
+          "score": 0.484,
+          "id": "nx26_lpe13",
+          "g": "ERRADO",
+          "m": "Legislação Penal Especial",
+          "a": "Estatuto da Criança e do Adolescente (ECA) — ato infracional e criança x adolescente",
+          "f": "ECA, arts. 101 (criança), 103 e 112 (adolescente).",
+          "e": "Acerca do Estatuto da Criança e do Adolescente, julgue o item. Ato infracional é a conduta descrita como crime ou contravenção penal praticada por criança ou adolescente; contudo, ao adolescente autor de ato infracional aplicam-se apenas medidas de proteção, sendo as medidas socioeducativas exclusivas da criança até doze anos de idade incompletos.",
+          "c": "É o contrário: à CRIANÇA (até 12 anos incompletos) aplicam-se apenas as medidas de proteção do art. 101, ECA; ao ADOLESCENTE (12 a 18 anos incompletos) aplicam-se as medidas socioeducativas do art. 112, ECA. O item inverteu os destinatários."
+        }
+      ]
+    },
+    {
+      "key": "L8069 2",
+      "device": "Art. 2º, ECA — Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade.",
+      "candidates": [
+        {
+          "score": 0.553,
+          "id": "nx26_lpe13",
+          "g": "ERRADO",
+          "m": "Legislação Penal Especial",
+          "a": "Estatuto da Criança e do Adolescente (ECA) — ato infracional e criança x adolescente",
+          "f": "ECA, arts. 101 (criança), 103 e 112 (adolescente).",
+          "e": "Acerca do Estatuto da Criança e do Adolescente, julgue o item. Ato infracional é a conduta descrita como crime ou contravenção penal praticada por criança ou adolescente; contudo, ao adolescente autor de ato infracional aplicam-se apenas medidas de proteção, sendo as medidas socioeducativas exclusivas da criança até doze anos de idade incompletos.",
+          "c": "É o contrário: à CRIANÇA (até 12 anos incompletos) aplicam-se apenas as medidas de proteção do art. 101, ECA; ao ADOLESCENTE (12 a 18 anos incompletos) aplicam-se as medidas socioeducativas do art. 112, ECA. O item inverteu os destinatários."
+        }
+      ]
+    },
+    {
+      "key": "L9474 7",
+      "device": "Art. 7º, §1º, Lei 9.474/1997 — O ingresso irregular no território nacional não constitui impedimento para o estrangeiro solicitar refúgio às autoridades competentes (princípio do non-refoulement/não devolução em sua vertente processual).",
+      "candidates": [
+        {
+          "score": 0.485,
+          "id": "sit29_dh02",
+          "g": "CERTO",
+          "m": "Direitos Humanos",
+          "a": "Grupos Vulneráveis e Convenções Específicas",
+          "f": "Princípio do non-refoulement e sua aplicação durante a análise do pedido de refúgio.",
+          "e": "Julgue o item. Situação hipotética: Um estrangeiro, fugindo de perseguição política em seu país de origem, ingressou no Brasil e solicitou reconhecimento da condição de refugiado. Enquanto seu pedido ainda estava em análise, houve tentativa de determinar sua devolução ao país de origem, sob a justificativa de irregularidade em sua entrada no território nacional. Assertiva: Essa devolução, se efetivada antes da conclusão da análise do pedido de refúgio, violaria o princípio do non-refoulement, que veda a devolução d",
+          "c": "O princípio do non-refoulement (não devolução), previsto na Lei Brasileira de Refúgio (Lei 9.474/1997) e em instrumentos internacionais, veda a devolução do solicitante de refúgio a território onde sua vida ou liberdade estejam ameaçadas — essa vedação se aplica mesmo diante de irregularidade na entrada migratória, especialmente enquanto o pedido de refúgio ainda está em análise, corretamente descrito na situação."
+        }
+      ]
+    },
+    {
+      "key": "LO 1",
+      "device": "Art. 1º, Lei 14.751/2023 — Esta Lei institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares dos Estados, do Distrito Federal e dos Territórios.",
+      "candidates": [
+        {
+          "score": 0.894,
+          "id": "li3_lo01",
+          "g": "CERTO",
+          "m": "Legislação Institucional PMAL",
+          "a": "Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023) — natureza",
+          "f": "Lei nº 14.751/2023, art. 2º.",
+          "e": "Julgue o item. A Lei nº 14.751/2023, ao instituir a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares, estabelece normas gerais de organização, efetivos, garantias, convocação e mobilização dessas instituições, aplicáveis a todos os Estados, ao Distrito Federal e aos Territórios, sem prejuízo da competência estadual para legislar sobre aspectos específicos de organização.",
+          "c": "A Lei nº 14.751/2023 institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares, estabelecendo normas gerais nacionalmente aplicáveis (organização básica, efetivos, garantias, mobilização), preservando, contudo, a competência dos Estados para editar legislação própria sobre aspectos específicos de organização de suas corporações, dentro dos limites das normas gerais federais."
+        },
+        {
+          "score": 0.789,
+          "id": "li3_lo02",
+          "g": "ERRADO",
+          "m": "Legislação Institucional PMAL",
+          "a": "Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023) — subordinação aos governadores",
+          "f": "Art. 144, §6º, CF/88; Lei nº 14.751/2023, art. 7º.",
+          "e": "Julgue o item. A instituição da Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares, pela Lei nº 14.751/2023, alterou o vínculo constitucional de subordinação dessas corporações, que passaram a se subordinar diretamente à União para fins de organização e emprego em atividades de segurança pública, afastando a competência dos Governadores estaduais nesse tema.",
+          "c": "A Lei nº 14.751/2023 não alterou o vínculo constitucional de subordinação previsto no art. 144, §6º, CF: as polícias militares e corpos de bombeiros militares continuam subordinados aos Governadores dos Estados, do Distrito Federal e dos Territórios para fins de organização e emprego em atividades de segurança pública — a lei nacional estabelece normas gerais, sem retirar essa subordinação estadual."
+        },
+        {
+          "score": 0.789,
+          "id": "li4_lo01",
+          "g": "CERTO",
+          "m": "Legislação Institucional PMAL",
+          "a": "Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023) — objetivo geral",
+          "f": "Art. 22, XXI, CF/88; Lei nº 14.751/2023, art. 9º.",
+          "e": "Julgue o item. A Lei nº 14.751/2023 tem por objetivo estabelecer normas gerais de organização, efetivos, material bélico, garantias, convocação, mobilização, inatividade e pensões das Polícias Militares e dos Corpos de Bombeiros Militares, aplicáveis à União, aos Estados, ao Distrito Federal e aos Territórios.",
+          "c": "O art. 22, XXI, CF atribui à União a competência para legislar sobre normas gerais de organização, efetivos, material bélico, garantias, convocação, mobilização, inatividade e pensões das polícias militares e corpos de bombeiros militares — competência exercida por meio da edição da Lei nº 14.751/2023, que instituiu a Lei Orgânica Nacional dessas corporações."
+        }
+      ]
+    },
+    {
+      "key": "Lei5346 1",
+      "device": "Art. 1º, Estatuto PM/AL — O presente Estatuto tem o fim de regular a situação, deveres, direitos e prerrogativas dos servidores públicos militares do Estado de Alagoas.",
+      "candidates": [
+        {
+          "score": 0.444,
+          "id": "sit29_li04",
+          "g": "ERRADO",
+          "m": "Legislação Institucional PMAL",
+          "a": "Direitos, Deveres e Vedações do Militar Estadual",
+          "f": "Extensão da licença-paternidade aos militares estaduais.",
+          "e": "Julgue o item. Situação hipotética: O soldado Mendes, casado, teve um filho, e pretende se afastar de suas funções para acompanhar os primeiros cuidados com o recém-nascido. Assertiva: Mendes, na condição de pai, não possui direito assegurado a qualquer licença específica para esse fim, uma vez que a licença-paternidade é benefício previsto apenas para servidores civis, não se estendendo aos militares estaduais.",
+          "c": "A licença-paternidade é direito assegurado também aos militares estaduais, prevista nos estatutos e regulamentos próprios de cada Corporação — o item erra ao afirmar que se trata de benefício exclusivo de servidores civis, sem extensão aos militares, quando, na realidade, os militares também têm esse direito assegurado."
+        }
+      ]
+    },
+    {
+      "key": "Lei5346 13",
+      "device": "Art. 13, Estatuto PM/AL — A antiguidade em cada posto ou graduação é contada a partir da data da publicação do ato de promoção, declaração, nomeação ou inclusão. Em igualdade de posto/graduação, os PM da ativa têm precedência sobre os da inatividade.",
+      "candidates": [
+        {
+          "score": 0.923,
+          "id": "li4_est12",
+          "g": "CERTO",
+          "m": "Legislação Institucional PMAL",
+          "a": "Estatuto dos Policiais Militares de Alagoas (Lei 5.346/1992) — hierarquia e antiguidade",
+          "f": "Lei nº 5.346/1992, art. 12 e 13.",
+          "e": "Julgue o item. A antiguidade em cada posto ou graduação é contada a partir da data da publicação do ato de promoção, declaração, nomeação ou inclusão, sendo esse critério o que assegura a precedência entre os policiais militares da ativa de mesmo grau hierárquico, ressalvados os casos de precedência funcional previstos em lei ou regulamento.",
+          "c": "O art. 13 do Estatuto estabelece que a antiguidade em cada posto/graduação é contada a partir da publicação do ato correspondente (promoção, declaração, nomeação ou inclusão), sendo esse o critério geral de precedência entre PMs da ativa de mesmo grau, ressalvados os casos de precedência FUNCIONAL (vinculados ao cargo/função exercida, e não apenas à antiguidade cronológica)."
+        }
+      ]
+    },
+    {
+      "key": "RD 38",
+      "device": "Art. 38, Regulamento Disciplinar PM/AL — É isento de punição o transgressor que, ao tempo da transgressão, era inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento, por: doença mental; embriaguez acidental completa (caso fortuito ou força maior); ou embriaguez patológica completa. §2º — não há isenção quando o erro decorrer de culpa do transgressor.",
+      "candidates": [
+        {
+          "score": 0.635,
+          "id": "dp3_tiii06",
+          "g": "CERTO",
+          "m": "Direito Penal",
+          "a": "Imputabilidade e Culpabilidade — Embriaguez fortuita completa",
+          "f": "Art. 28, §1º, CP.",
+          "e": "Julgue o item. É isento de pena o agente que, por embriaguez completa, proveniente de caso fortuito ou força maior, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento.",
+          "c": "Embora não conste como artigo autônomo expresso com essa redação exata, é entendimento pacífico — decorrente da combinação do art. 28, §1º, do CP com a doutrina — que a embriaguez FORTUITA (acidental, por caso fortuito ou força maior) completa exclui a imputabilidade, por analogia ao tratamento dado à doença mental, já que o agente não teve controle algum sobre embriagar-se."
+        },
+        {
+          "score": 0.442,
+          "id": "dpm3_imp01",
+          "g": "CERTO",
+          "m": "Direito Penal Militar",
+          "a": "Conceito de Crime Militar — doença mental",
+          "f": "Art. 48, CPM.",
+          "e": "Julgue o item. Isento de pena é o agente que, em razão de doença mental, de desenvolvimento mental incompleto ou retardado, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento, aplicando-se, nesse caso, medida de segurança.",
+          "c": "O CPM prevê, de forma similar ao CP comum, a inimputabilidade por doença mental/desenvolvimento incompleto ou retardado que retire, ao tempo do fato, a capacidade de entendimento/autodeterminação do agente, aplicando-se, nessa hipótese, medida de segurança em vez de pena."
+        },
+        {
+          "score": 0.423,
+          "id": "dp3_tiii01",
+          "g": "CERTO",
+          "m": "Direito Penal",
+          "a": "Imputabilidade e Culpabilidade — Inimputabilidade por doença mental",
+          "f": "Art. 26, caput, CP.",
+          "e": "Julgue o item. É isento de pena o agente que, por doença mental ou desenvolvimento mental incompleto ou retardado, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento.",
+          "c": "É a redação literal do art. 26, caput, do CP, que adota o critério biopsicológico: exige-se tanto a causa (doença mental, desenvolvimento incompleto ou retardado) quanto o efeito, no momento do fato, de incapacidade total de entendimento ou de autodeterminação."
+        }
+      ]
+    },
+    {
+      "key": "RD 49",
+      "device": "Art. 49, Regulamento Disciplinar PM/AL — A perda do posto e da patente dos oficiais, assim como a perda da graduação das praças, pode resultar de condenação na justiça comum ou militar a pena privativa de liberdade por sentença transitada em julgado, na conformidade do estabelecido na Constituição Federal, Constituição Estadual e Estatuto dos Policiais Militares.",
+      "candidates": [
+        {
+          "score": 0.445,
+          "id": "nx30_pmal16",
+          "g": "CERTO",
+          "m": "Legislação Institucional PMAL",
+          "a": "Movimentação na Carreira: Promoção, Agregação e Situações — exigências para o Oficial",
+          "f": "Lei 5.346/92, art. 64.",
+          "e": "Julgue o item. O Oficial da Polícia Militar de Alagoas só perderá o posto e a patente quando condenado, na Justiça Comum ou Militar, a pena restritiva de liberdade individual superior a dois anos, em decorrência de sentença transitada em julgado, desde que o Conselho de Justiça decida sobre a sua perda, ou quando julgado indigno ou incompatível com o oficialato por decisão de Conselho de Justiça ou de Conselho de Justificação.",
+          "c": "Art. 64, Estatuto: a perda do posto e da patente do Oficial exige condenação (Justiça Comum ou Militar) a pena restritiva de liberdade superior a 2 anos, com trânsito em julgado, e decisão do Conselho de Justiça sobre a perda; ou julgamento de indignidade/incompatibilidade com o oficialato por Conselho de Justiça ou de Justificação — não decorre automaticamente da condenação."
+        }
+      ]
+    }
+  ]
+}
