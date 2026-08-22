@@ -1,0 +1,41 @@
+name: Fix audited law bank 2026-08-22
+
+on:
+  push:
+    paths:
+      - 'scripts/fix_law_bank_20260822.py'
+      - '.github/workflows/fix-law-bank-20260822.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply audited corrections
+        run: python3 scripts/fix_law_bank_20260822.py
+      - name: Basic JavaScript integrity checks
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          assert 'function parseRef(f)' in s
+          assert 'L11340 16A' in s
+          assert 'L11343 40A' in s
+          assert 'L10826 21A' in s
+          assert 'CPP 313' in s
+          assert 'PERIGO CONCRETO' in s
+          assert '85% (oitenta e cinco por cento)' in s
+          print('integrity ok')
+          PY
+      - name: Commit platform fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html law-bank-fix-20260822.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "fix: audit law bank against current 2026 legislation"
+          git push
