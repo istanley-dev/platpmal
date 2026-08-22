@@ -3269,14 +3269,25 @@ function parseRefs(f){
     let cr=/\b(CPPM|CPP|CPM|CP|CF)(?:\/88)?\b/gi,cm;
     while((cm=cr.exec(clause))!==null){let d=cm[1].toUpperCase();toks.push({start:cm.index,end:cr.lastIndex,dipl:d,base:d,nome:(DIPL_NOME[d]||d),special:false,used:false});}
     toks.sort(function(a,b){return a.start-b.start;});
-    let arts=[],ar=/\b[Aa]rts?\.?\s*([^:;]{1,60})/g,am;
+    /* PMAL_LAW_REF_V21 — art. singular = um artigo; arts. plural = lista/range somente por conectores explícitos */
+    let arts=[],ar=/\b([Aa]rts?)\.?\s*/g,am;
+    const artTokSrc='(\\d+[A-Fa-f]\\b|\\d+(?:\\s*\\.?\\s*[º°oO]\\.?)?(?:\\s*[-‐‑–—]\\s*[A-Fa-f])?)';
     while((am=ar.exec(clause))!==null){
-      let seg=am[1];
-      seg=seg.split('§')[0].split(/\.\s/)[0];
-      let cut=seg.search(/\b(?:Lei|CF(?:\/88)?|CPPM|CPP|CPM|CP|CADH|ECA|CTB|LMP|LEP|JECRIM|JEF|Decreto)\b/i);
-      if(cut>=0)seg=seg.slice(0,cut);
-      let nums=[],nr=/\d+[A-Fa-f]\b|\d+(?:\s*\.?\s*[º°oO]\.?)?(?:\s*[-‐‑–—]\s*[A-Fa-f])?/g,nm;
-      while((nm=nr.exec(seg))!==null){let a=normArtToken(nm[0]);if(a&&nums.indexOf(a)<0)nums.push(a);}
+      let rest=clause.slice(ar.lastIndex),first=new RegExp('^\\s*'+artTokSrc).exec(rest);
+      if(!first)continue;
+      let nums=[],a0=normArtToken(first[1]);
+      if(a0)nums.push(a0);
+      if(/s$/i.test(am[1])){
+        let pos=first[0].length;
+        while(true){
+          let tail=rest.slice(pos);
+          let nx=new RegExp('^\\s*(?:,|e|ou|a|até|[-‐‑–—])\\s*'+artTokSrc,'i').exec(tail);
+          if(!nx)break;
+          let an=normArtToken(nx[1]);
+          if(an&&nums.indexOf(an)<0)nums.push(an);
+          pos+=nx[0].length;
+        }
+      }
       if(nums.length)arts.push({start:am.index,nums:nums});
     }
     arts.forEach(function(a){
