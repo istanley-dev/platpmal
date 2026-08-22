@@ -430,10 +430,8 @@
   ],
   "question_id_count": 3183,
   "link_function_found": true,
-  "explicit_linked_qids_count": 0,
-  "explicit_linked_qids": [],
-  "possible_missing_qids": [],
   "functions_found": {
+    "parseRef": true,
     "buildKeyToQids": true,
     "readingOrder": true,
     "readingPlanInfo": true,

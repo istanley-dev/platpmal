@@ -1,3 +1,103 @@
+=== parseRef ===
+function parseRef(f){
+  if(!f)return null;
+  const leiM=f.match(/Lei\s*n?º?\.?\s*5\.?346/i);
+  if(leiM){
+    // se o artigo do Estatuto vier logo colado à citação da lei (ex.: "Lei 5.346/92, art. 41"), usa entrada por artigo
+    const artLeiM=f.match(/5\.?346\/?\d{0,4}[,:\s]{0,4}[Aa]rts?\.?\s*(\d+)/);
+    if(artLeiM){
+      const art=artLeiM[1];
+      return {key:'Lei5346 '+art,label:'art. '+art+' do Estatuto dos PM de Alagoas (Lei 5.346/92)',dipl:'Lei5346',art:art};
+    }
+    return {key:'Lei 5.346',label:'Lei 5.346/92 (Estatuto PM/AL)',dipl:'Lei',art:''};
+  }
+  const cadhM=f.match(/CADH|Pacto de S[ãa]o Jos[ée]|Conven[çc][ãa]o Americana/i);
+  if(cadhM){
+    const artCadhM=f.match(/(?:CADH|S[ãa]o Jos[ée]|Americana)\D{0,12}[Aa]rts?\.?\s*(\d+)/i);
+    if(artCadhM){
+      const art=artCadhM[1];
+      return {key:'CADH '+art,label:'art. '+art+' da CADH (Pacto de São José)',dipl:'CADH',art:art};
+    }
+    return {key:'CADH','label':'CADH — Convenção Americana sobre Direitos Humanos (Pacto de São José)',dipl:'CADH',art:''};
+  }
+  const rdM=f.match(/37\.?042/);
+  if(rdM){
+    const artRdM=f.match(/37\.?042\/?\d{0,4}[,:\s]{0,4}[Aa]rts?\.?\s*(\d+)/);
+    if(artRdM){
+      const art=artRdM[1];
+      return {key:'RD '+art,label:'art. '+art+' do Regulamento Disciplinar da PM/AL (Dec. 37.042/96)',dipl:'RD',art:art};
+    }
+    return {key:'RD','label':'Regulamento Disciplinar da PM/AL (Decreto 37.042/1996)',dipl:'RD',art:''};
+  }
+  const loM=f.match(/14\.?751/);
+  if(loM){
+    const artLoM=f.match(/14\.?751\/?\d{0,4}[,:\s]{0,4}[Aa]rts?\.?\s*(\d+)/);
+    if(artLoM){
+      const art=artLoM[1];
+      return {key:'LO '+art,label:'art. '+art+' da Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023)',dipl:'LO',art:art};
+    }
+    return {key:'LO','label':'Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023)',dipl:'LO',art:''};
+  }
+  // leis penais especiais e correlatas: deteccao generica por numero da lei
+  const LEIS_ESP=[
+    {num:'14\\.?133',pfx:'L14133',nome:'Lei de Licitações (Lei 14.133/2021)'},
+    {num:'11\\.?343',pfx:'L11343',nome:'Lei de Drogas (Lei 11.343/2006)'},
+    {num:'8\\.?069',pfx:'L8069',nome:'ECA (Lei 8.069/1990)',alt:'\\bECA\\b'},
+    {num:'8\\.?072',pfx:'L8072',nome:'Lei de Crimes Hediondos (Lei 8.072/1990)',alt:'11\\.?464'},
+    {num:'13\\.?869',pfx:'L13869',nome:'Lei de Abuso de Autoridade (Lei 13.869/2019)'},
+    {num:'11\\.?340',pfx:'L11340',nome:'Lei Maria da Penha (Lei 11.340/2006)',alt:'\\bLMP\\b|Lei Maria da Penha'},
+    {num:'10\\.?826',pfx:'L10826',nome:'Estatuto do Desarmamento (Lei 10.826/2003)'},
+    {num:'9\\.?503',pfx:'L9503',nome:'Código de Trânsito Brasileiro (Lei 9.503/1997)',alt:'\\bCTB\\b'},
+    {num:'12\\.?850',pfx:'L12850',nome:'Lei de Organização Criminosa (Lei 12.850/2013)'},
+    {num:'9\\.?455',pfx:'L9455',nome:'Lei de Tortura (Lei 9.455/1997)'},
+    {num:'7\\.?716',pfx:'L7716',nome:'Lei do Racismo (Lei 7.716/1989)'},
+    {num:'9\\.?605',pfx:'L9605',nome:'Lei de Crimes Ambientais (Lei 9.605/1998)'},
+    {num:'7\\.?960',pfx:'L7960',nome:'Lei da Prisão Temporária (Lei 7.960/1989)'},
+    {num:'9\\.?099',pfx:'L9099',nome:'Lei dos Juizados Especiais (Lei 9.099/1995)',alt:'\\bJECRIM\\b'},
+    {num:'10\\.?259',pfx:'L10259',nome:'Lei dos Juizados Especiais Federais (Lei 10.259/2001)',alt:'\\bJEF\\b'},
+    {num:'8\\.?429',pfx:'L8429',nome:'Lei de Improbidade Administrativa (Lei 8.429/1992)',alt:'14\\.?230'},
+    {num:'8\\.?987',pfx:'L8987',nome:'Lei de Concessões e Permissões (Lei 8.987/1995)'},
+    {num:'9\\.?784',pfx:'L9784',nome:'Lei do Processo Administrativo Federal (Lei 9.784/1999)'},
+    {num:'8\\.?112',pfx:'L8112',nome:'Regime Jurídico dos Servidores Públicos Federais (Lei 8.112/1990)'},
+    {num:'4\\.?717',pfx:'L4717',nome:'Lei da Ação Popular (Lei 4.717/1965)'},
+    {num:'13\\.?300',pfx:'L13300',nome:'Lei do Mandado de Injunção (Lei 13.300/2016)'},
+    {num:'7\\.?210',pfx:'LEP',nome:'Lei de Execução Penal (Lei 7.210/1984)'},
+    {num:'12\\.?016',pfx:'L12016',nome:'Lei do Mandado de Segurança (Lei 12.016/2009)'},
+    {num:'9\\.?474',pfx:'L9474',nome:'Lei do Refúgio (Lei 9.474/1997)'},
+    {num:'12\\.?830',pfx:'L12830',nome:'Lei da Investigação Criminal pelo Delegado (Lei 12.830/2013)'},
+    {num:'12\\.?037',pfx:'L12037',nome:'Lei de Identificação Criminal (Lei 12.037/2009)'},
+    {num:'9\\.?507',pfx:'L9507',nome:'Lei do Habeas Data (Lei 9.507/1997)'},
+    {num:'9\\.?296',pfx:'L9296',nome:'Lei da Interceptação Telefônica (Lei 9.296/1996)'},
+  ];
+  for(let idx=0;idx<LEIS_ESP.length;idx++){
+    const le=LEIS_ESP[idx];
+    const fullPat=le.alt?('('+le.num+'|'+le.alt+')'):('('+le.num+')');
+    const leM=new RegExp(fullPat,'i').exec(f);
+    if(leM){
+      const artLeM=new RegExp(fullPat+'\\/?\\d{0,4}[,:\\s]{0,4}[Aa]rts?\\.?\\s*(\\d+)','i').exec(f);
+      if(artLeM){
+        const art=artLeM[artLeM.length-1];
+        return {key:le.pfx+' '+art,label:'art. '+art+' da '+le.nome,dipl:le.pfx,art:art};
+      }
+      return {key:le.pfx,label:le.nome,dipl:le.pfx,art:''};
+    }
+  }
+  // diploma: prioridade CPPM > CPP > CPM > CP > CF
+  let dipl=null;
+  if(/\bCPPM\b/.test(f))dipl='CPPM';
+  else if(/\bCPP\b/.test(f))dipl='CPP';
+  else if(/\bCPM\b/.test(f))dipl='CPM';
+  else if(/\bCP\b/.test(f))dipl='CP';
+  else if(/\bCF\b/.test(f))dipl='CF';
+  if(!dipl)return null;
+  const artM=f.match(/[Aa]rts?\.?\s*(\d+)/);
+  if(!artM)return null;
+  const art=artM[1];
+  const nome=DIPL_NOME[dipl]||dipl;
+  const prep=(dipl==='CF')?'da ':'do ';
+  return {key:dipl+' '+art,label:'art. '+art+' '+prep+nome,dipl:dipl,art:art};
+}
+
 === buildKeyToQids ===
 function buildKeyToQids(){
   if(KEY_TO_QIDS)return KEY_TO_QIDS;
