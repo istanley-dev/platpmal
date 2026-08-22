@@ -1,0 +1,28 @@
+CORREÇÕES APLICADAS: 27
+- parser legal robusto
+- Lei 14.133 geral
+- Lei 14.133 art14
+- Lei 8.987 geral
+- Lei 8.987 art2
+- CTB art308
+- CPP art38 2026
+- CPP art49
+- CPP art55
+- CPP art74
+- CPP art100
+- CPP art798
+- Lei Drogas geral Tema506
+- Lei Drogas art28 Tema506
+- Lei Tortura geral
+- Hediondos geral 2026
+- LEP art112 2026
+- Lei 8.112 art41
+- Lei 8.112 art137
+- Maria Penha geral 2026
+- Maria Penha art22 2026
+- adiciona Lei 8.112 art20
+- adiciona LMP arts12D e16A
+- adiciona Drogas art40A
+- adiciona Desarmamento art21A
+- adiciona ECA art11A
+- adiciona CPP art313 2026
