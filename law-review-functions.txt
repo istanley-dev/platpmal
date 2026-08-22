@@ -1,0 +1,286 @@
+
+=== pendingLawReview ===
+function pendingLawReview(){
+  if(S.daily.leisFeitas)return false; // já fez uma rodada hoje — o resto do estoque fica pra amanhã
+  return dueLawReviewCards().length>0;
+}
+
+=== startLawReviewGated ===
+function startLawReviewGated(resumeFn){
+  var deck=dueLawReviewCards();
+  if(!deck.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
+  S._flashQueue=deck;S._flashIdx=0;S._flashSessionType='leis';S._pendingAfterReview=resumeFn||null;
+  sv('flash');renderFlashCard();
+  toast('📖 Revisão de leis já lidas — obrigatória antes de seguir.');
+}
+
+=== startYesterdayReview ===
+function startYesterdayReview(resumeFn){
+  const deck=buildYesterdayReviewDeck();
+  if(!deck.length){toast('Nada registrado ontem para revisar.');if(resumeFn)window[resumeFn]();return;}
+  S._flashQueue=deck;S._flashIdx=0;S._flashSessionType='ontem';S._pendingAfterReview=resumeFn||null;
+  sv('flash');renderFlashCard();
+  toast('📅 Revisão do dia anterior — obrigatória antes de seguir com a missão de hoje.');
+}
+
+=== startWeekReviewGated ===
+function startWeekReviewGated(resumeFn){
+  const topics=weekTopics();
+  if(!topics.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
+  const matsSeen=new Set(topics.map(function(t){return t.mat;}));
+  const chaves=new Set(topics.map(function(t){return t.mat+'▸'+t.topico;}));
+  let pool=QQ.filter(function(q){return chaves.has(q.m+'▸'+topico(q.a));});
+  if(!pool.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
+  pool=getSmartPool(pool);
+  pool=[...pool].sort(()=>Math.random()-.5);
+  const n=Math.min(20,pool.length);
+  S.mode='materia';S.subs=[...matsSeen];S.niv='all';S.round++;
+  S.sq=pool.slice(0,n);S.ci=0;S.sa=[];
+  S._afterQuizContinue='semana';S._pendingAfterReview=resumeFn||null;
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+  toast('📆 Revisão semanal obrigatória — '+n+' questões de '+topics.length+' tópico(s) antes de seguir.');
+}
+
+=== trackAnswer ===
+function trackAnswer(q,a,ok,conf){
+  const k=asKey(q), rec=asGet(k,q.m,q.a);
+  const prev=rec.hist[rec.hist.length-1];
+  // streak de acertos imediatamente anteriores
+  let streak=0;for(let i=rec.hist.length-1;i>=0;i--){if(rec.hist[i].ok)streak++;else break;}
+  rec.hist.push({ok:ok,ce:q.ce,nv:q.n,ts:Date.now(),round:S.round,ans:a,g:q.g,id:q.id,conf:conf||null});
+  // Registro obrigatório por questão (11 campos)
+  S.log.push({m:q.m,a:q.a,sub:q.a,peg:q.p||'',ans:a,gab:q.g,res:ok?'acerto':'erro',erro:ok?'':q.ce,nv:q.n,round:S.round,ts:Date.now(),status:'',conf:conf||null});
+  let alert=null;
+  const h=rec.hist, errRec=h.slice(-4).filter(x=>!x.ok).length;
+  // FALSA CONFIANÇA: acertou mas chutando — alerta específico, prioridade alta (mesmo sem erro)
+  if(ok&&conf==='chute'){
+    const chutesRec=h.slice(-3).filter(x=>x.ok&&x.conf==='chute').length;
+    if(chutesRec>=2){
+      agenda(rec,'instavel');
+      alert={tipo:'falsaconfianca',cls:'amarelo',titulo:'🎲 ACERTO NO CHUTE — ATENÇÃO',rec:rec,q:q,
+             msg:'Você acertou <b>'+q.a+'</b>, mas marcou que chutou — e isso já aconteceu outras vezes nesse assunto. O placar parece bom, mas o domínio real ainda <b>não existe</b>. Esse é o tipo de lacuna que custa caro na prova real (pontuação líquida).'};
+      rec.status=statusOf(rec);
+      if(S.log.length)S.log[S.log.length-1].status=rec.status;
+      return alert;
+    }
+  }
+  // TÓPICO FRACO: erro recorrente no mesmo tópico-raiz, mesmo espalhado entre vários rótulos de assunto
+  // (ex.: "Crase — horas do dia" + "Crase — locução" + "Crase — pronome" contam juntos como "Crase").
+  if(!ok){
+    const top=topico(q.a);
+    const topH=topicHist(q.m,top);
+    const topErrRec=topH.slice(-6).filter(x=>!x.ok).length;
+    if(topErrRec>=3){
+      const jaAlertado=S.topAlerted&&S.topAlerted[q.m+'▸'+top];
+      const passou1Dia=!jaAlertado||(Date.now()-jaAlertado)>DIA_MS;
+      if(passou1Dia){
+        if(!S.topAlerted)S.topAlerted={};
+        S.topAlerted[q.m+'▸'+top]=Date.now();
+        alert={tipo:'topico_fraco',cls:'vermelho',titulo:'📚 TÓPICO INTEIRO EM RISCO',rec:rec,q:q,
+               mat:q.m,topico:top,n:topErrRec,
+               msg:'Você já errou <b>'+topErrRec+' questões de '+esc(top)+'</b> ('+q.m+') — contando as variações desse mesmo assunto, não só esta exata. Vale reforçar o tópico inteiro agora, não só esta questão.'};
+        rec.status=statusOf(rec);
+        if(S.log.length)S.log[S.log.length-1].status=rec.status;
+        return alert;
+      }
+    }
+  }
+  if(!ok){
+    if(errRec>=2){ // 1) ERRO RECORRENTE
+      rec.crit=true; agenda(rec,'recorrente');
+      alert={tipo:'recorrente',cls:'vermelho',titulo:'🚨 ALERTA DE ERRO RECORRENTE',rec:rec,q:q,
+             msg:'Você errou novamente questões de <b>'+q.a+'</b> ('+q.m+'). Esse assunto precisa entrar em <b>revisão imediata</b>.'};
+    }else if(streak>=3){ // 3) ERRO APÓS VÁRIOS ACERTOS = QUEDA (não grave)
+      agenda(rec,'medio');
+      const causa={'atenção':'leitura apressada / desatenção','pegadinha':'pegadinha da banca','interpretação':'interpretação do enunciado','lei seca':'esquecimento da letra da lei','jurisprudência':'jurisprudência específica','conteúdo':'lacuna pontual de conteúdo'}[q.ce]||'causa pontual';
+      alert={tipo:'queda',cls:'amarelo',titulo:'📉 QUEDA DE DESEMPENHO DETECTADA',rec:rec,q:q,
+             msg:'Você vinha acertando <b>'+q.a+'</b> ('+streak+' seguidas), mas errou esta. Não é fraqueza grave. Possível causa: <b>'+causa+'</b>.'};
+    }else if(prev && prev.ok){ // 2) ACERTO SEGUIDO DE ERRO = INSTÁVEL
+      agenda(rec,'instavel');
+      const ant=[...h].reverse().find(x=>x.ok); // última acertada do mesmo assunto
+      alert={tipo:'instavel',cls:'amarelo',titulo:'⚠️ CONHECIMENTO INSTÁVEL',rec:rec,q:q,antId:ant?ant.id:null,
+             msg:'Você acertou uma questão de <b>'+q.a+'</b>, mas errou outra logo em seguida. O assunto ainda <b>não está consolidado</b>.'};
+    }else{ agenda(rec,'leve'); }
+  }else{
+    // acerto: se dominado, agenda manutenção espaçada
+    if(statusOf(rec)==='verde')agenda(rec,'manutencao');
+  }
+  rec.status=statusOf(rec);
+  if(S.log.length)S.log[S.log.length-1].status=rec.status;
+  return alert;
+}
+
+=== ans ===
+function ans(a){
+  document.getElementById('btn-c').disabled=true;
+  document.getElementById('btn-e').disabled=true;
+  const q=S.sq[S.ci];const ok=a===q.g;
+  // Etapa 1: guarda a resposta pendente e pede o nível de confiança ANTES de revelar o resultado
+  S._pend={q:q,a:a,ok:ok};
+  document.getElementById('ar-resp').style.display='none';
+  document.getElementById('ar-conf').style.display='block';
+}
+
+=== renderQ ===
+function renderQ(){
+  const q=S.sq[S.ci],tot=S.sq.length,pct=Math.round(S.ci/tot*100);
+  document.getElementById('qprog').style.width=pct+'%';
+  document.getElementById('qcnt').textContent=(S.ci+1)+'/'+tot;
+  document.getElementById('qmat').textContent=q.m;
+  document.getElementById('qass').innerHTML='📖 '+esc(q.a)+questionSourceBadge(q);
+  const ne=document.getElementById('qniv');
+  const nm={medio:'⭐ Médio',dificil:'⭐⭐ Difícil',muito_dificil:'⭐⭐⭐ Muito Difícil',cruel:'☠️ Cruel'};
+  const nc={medio:'nm',dificil:'nd',muito_dificil:'nmd',cruel:'nc'};
+  const isAi=q.id&&q.id.startsWith('ai_');
+  const isReal=isOfficialQuestion(q);
+  const isRecent=isRecentAdapted(q);
+  const ano=isReal?officialQuestionYear(q):(isRecent?q.src:'');
+  const pfx=isAi?'✨ IA: ':((isReal||isRecent)?('📋 '+ano+': '):'');
+  ne.textContent=pfx+(nm[q.n]||q.n);
+  ne.className='qniv '+(isAi?'nai':((isReal||isRecent)?'nreal':(nc[q.n]||'nm')));
+  // Texto-base: exibir quando q.tx existe
+  const qtxEl=document.getElementById('qtx');
+  const qtxTt=document.getElementById('qtx-tt');
+  const qtxBody=document.getElementById('qtx-body');
+  if(q.tx&&q.tx.trim()){
+    qtxTt.textContent=q.tt||'Texto de referência';
+    qtxBody.textContent=q.tx;
+    qtxEl.style.display='block';
+  } else {
+    qtxEl.style.display='none';
+    qtxBody.textContent='';
+  }
+  document.getElementById('qtxt').textContent=q.e;
+  const ok=S.sa.filter(a=>a.ok).length;
+  const hsc=document.getElementById('hsc');
+  if(S.sa.length>0){hsc.style.display='block';hsc.textContent=ok+'/'+S.sa.length+' ✓';}
+  document.getElementById('btn-c').disabled=false;
+  document.getElementById('btn-e').disabled=false;
+  // Garante que o seletor de confiança volte ao estado inicial ao trocar de questão
+  const arConf=document.getElementById('ar-conf'),arResp=document.getElementById('ar-resp');
+  if(arConf)arConf.style.display='none';
+  if(arResp)arResp.style.display='';
+  S._pend=null;
+}
+
+=== showRes ===
+function showRes(){
+  const sa=S.sa,tot=sa.length,ok=sa.filter(a=>a.ok).length,err=tot-ok,pct=tot>0?Math.round(ok/tot*100):0;
+  document.getElementById('rring').className='sr '+scCls(pct);
+  document.getElementById('rpct').textContent=pct+'%';
+  document.getElementById('rok').textContent=ok;
+  document.getElementById('rnok').textContent=err;
+  document.getElementById('rtot').textContent=tot;
+  const rks=['🏆 Excelente — Continue assim!','👍 Bom — Foque nos pontos fracos','⚠️ Regular — Revise com atenção','🚨 Crítico — Revisão urgente'];
+  document.getElementById('rnk').textContent=rks[pct>=80?0:pct>=60?1:pct>=40?2:3];
+  const bySub={};
+  sa.forEach(function(a){if(!bySub[a.m])bySub[a.m]={c:0,t:0};bySub[a.m].t++;if(a.ok)bySub[a.m].c++;});
+  const entries=Object.entries(bySub).sort((a,b)=>(b[1].c/b[1].t)-(a[1].c/a[1].t));
+  document.getElementById('rperf').innerHTML=entries.map(function(e){
+    const mat=e[0],v=e[1],p=Math.round(v.c/v.t*100);
+    const cl=p>=70?'fe':p>=50?'fb2':p>=30?'fr':'fcc';
+    const pc=p>=70?'var(--sg)':p>=50?'var(--blue)':p>=30?'var(--gold)':'var(--dr)';
+    return '<div class="pbr"><div class="pbt"><span class="pbn">'+mat+'</span><span class="pbpc" style="color:'+pc+'">'+p+'% ('+v.c+'/'+v.t+')</span></div><div class="pbtr"><div class="pbfi '+cl+'" style="width:'+p+'%"></div></div></div>';
+  }).join('');
+  const fortes=entries.filter(e=>Math.round(e[1].c/e[1].t*100)>=70).map(e=>'✓ '+e[0]).join('<br>');
+  const criticos=entries.filter(e=>Math.round(e[1].c/e[1].t*100)<50).map(e=>'✗ '+e[0]).join('<br>');
+  document.getElementById('rfor').innerHTML=fortes||'Nenhum destaque nesta sessão';
+  document.getElementById('rcri').innerHTML=criticos||'Nenhum ponto crítico! 🎉';
+  const errs=sa.filter(a=>!a.ok);
+  const ec=document.getElementById('recard');
+  if(errs.length>0){
+    ec.style.display='block';
+    document.getElementById('reli').innerHTML=errs.map(a=>{const q=QQ.find(x=>x.id===a.id);return q?'<div class="eli"><div class="em">'+q.m+'</div><div class="et">'+q.e+'</div></div>':'';}).join('');
+  }else ec.style.display='none';
+  const weak=entries.filter(e=>Math.round(e[1].c/e[1].t*100)<50).map(e=>e[0]);
+  let plano='';
+  if(err===0)plano='<strong>🎉 Desempenho perfeito!</strong> Revise os fundamentos para consolidar.';
+  else{if(weak.length)plano+='<strong>🚨 Revisão urgente:</strong> '+weak.join(', ')+'<br><br>';plano+='<strong>💡 Para amanhã:</strong> Releia os artigos das questões erradas. Use o prompt abaixo ou clique em "Novo Simulado" para continuar — se o banco acabar, a IA gera mais automaticamente.';}
+  document.getElementById('rpla').innerHTML=plano;
+  const errAs=errs.map(a=>{const q=QQ.find(x=>x.id===a.id);return q?q.a:'';}).filter(Boolean);
+  document.getElementById('rpro').textContent=buildPrompt(entries,ok,tot,errAs,pct);
+  document.getElementById('btn-cp').onclick=function(){
+    navigator.clipboard.writeText(document.getElementById('rpro').textContent)
+      .then(()=>toast('✅ Prompt copiado!'))
+      .catch(()=>toast('Selecione e copie manualmente.'));
+  };
+  document.getElementById('btn-re').onclick=function(){S.mode='erros';startQ();};
+  // ── Nível médio respondido ──
+  var nvW={medio:1,dificil:2,muito_dificil:3,cruel:4},nvN=['—','⭐ Médio','⭐⭐ Difícil','⭐⭐⭐ Muito Difícil','☠️ Cruel'];
+  var nvSum=0,nvCt=0;sa.forEach(function(a){if(a.nv&&nvW[a.nv]){nvSum+=nvW[a.nv];nvCt++;}});
+  var nvAvg=nvCt?Math.round(nvSum/nvCt):0;
+  document.getElementById('rnivel').innerHTML=(nvN[nvAvg]||'—')+' <span class="tmut" style="font-size:12px">(média de '+tot+' questões)</span>';
+  // ── Erros por tipo (classificação CEBRASPE) ──
+  var ceLbl={'atenção':['🎯','Atenção'],'conteúdo':['📚','Conteúdo'],'interpretação':['🔍','Interpretação'],'lei seca':['📜','Lei seca'],'jurisprudência':['⚖️','Jurisprudência'],'pegadinha':['🪤','Pegadinha']};
+  var byCe={};sa.forEach(function(a){var k=a.ce||'conteúdo';if(!byCe[k])byCe[k]={t:0,er:0};byCe[k].t++;if(!a.ok)byCe[k].er++;});
+  var ceEnt=Object.entries(byCe).sort(function(a,b){return b[1].er-a[1].er;});
+  document.getElementById('rtipo').innerHTML=ceEnt.map(function(en){
+    var k=en[0],v=en[1],lb=ceLbl[k]||['•',k],ep=v.t?Math.round(v.er/v.t*100):0;
+    var col=ep>=50?'var(--dr)':ep>=25?'var(--gold)':'var(--sg)';
+    return '<div class="pbr"><div class="pbt"><span class="pbn">'+lb[0]+' '+lb[1]+'</span><span class="pbpc" style="color:'+col+'">'+v.er+' erro(s) em '+v.t+'</span></div><div class="pbtr"><div class="pbfi" style="width:'+ep+'%;background:'+col+'"></div></div></div>';
+  }).join('')||'<div class="tmut ts">Sem dados.</div>';
+  // ── Próximos blocos sugeridos ──
+  var fracas=entries.filter(function(e){return Math.round(e[1].c/e[1].t*100)<50;}).map(function(e){return e[0];});
+  var piorCe=ceEnt.filter(function(en){return en[1].er>0;})[0];
+  var prox=[];
+  if(fracas.length)prox.push('1) Bloco focado em <strong>'+fracas.slice(0,2).join(' e ')+'</strong>');
+  if(piorCe)prox.push((prox.length+1)+') Treino do tipo <strong>'+(ceLbl[piorCe[0]]?ceLbl[piorCe[0]][1]:piorCe[0])+'</strong>');
+  prox.push((prox.length+1)+') Revisar erros + misturar ~30% de temas já dominados');
+  if(nvAvg&&nvAvg<3)prox.push((prox.length+1)+') Subir o nível: priorize <strong>Muito Difícil/Cruel</strong>');
+  document.getElementById('rprox').innerHTML=prox.join('<br>');
+  document.getElementById('btn-nv').onclick=function(){
+    sv('home');document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+    document.querySelector('.nb[data-n="home"]').classList.add('act');
+    updHS();document.getElementById('hsc').style.display='none';
+  };
+  sv('res');document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+  document.querySelector('.nb[data-n="res"]').classList.add('act');
+  const ontemB=document.getElementById('ontem-banner');
+  if(S._afterQuizContinue==='ontem'){
+    ontemB.innerHTML=
+      '<div class="card mb12" style="border-color:#3f8257"><div class="cb tc">'+
+      '<div style="font-size:30px;margin-bottom:6px">✅</div>'+
+      '<div style="font-weight:800;font-size:15px;margin-bottom:4px">Revisão do dia anterior concluída!</div>'+
+      '<div style="color:var(--mut);font-size:12.5px;margin-bottom:12px">Flashcards + questões de ontem, feitos. Agora sim, siga com a missão de hoje.</div>'+
+      '<button class="bp" onclick="continuarAposRevisaoOntem()">Continuar →</button>'+
+      '</div></div>';
+    S._afterQuizContinue=null;
+  }else if(S._afterQuizContinue==='semana'){
+    ontemB.innerHTML=
+      '<div class="card mb12" style="border-color:#3f6f82"><div class="cb tc">'+
+      '<div style="font-size:30px;margin-bottom:6px">📆</div>'+
+      '<div style="font-weight:800;font-size:15px;margin-bottom:4px">Revisão semanal concluída!</div>'+
+      '<div style="color:var(--mut);font-size:12.5px;margin-bottom:12px">Fechou os últimos 7 dias. Essa obrigação some por mais uma semana — pode seguir.</div>'+
+      '<button class="bp" onclick="continuarAposRevisaoSemanal()">Continuar →</button>'+
+      '</div></div>';
+    S._afterQuizContinue=null;
+  }else{
+    ontemB.innerHTML='';
+  }
+}
+
+=== startQ ===
+function startQ(){
+  // Sempre lê direto do DOM — garante o valor atual independente de eventos
+  S.qty=parseInt(document.getElementById('sel-qty').value)||10;
+  S.niv=document.getElementById('sel-niv').value;
+  let pool;
+  if(S.mode==='incidencia')pool=buildIncidenceMission(S.qty);
+  else pool=getSmartPool(getPool());
+  if(!pool.length){pool=getPool();}
+  if(!pool.length){
+    if(S.mode==='erros'){toast('Sem erros registrados! Parabéns.');return;}
+    if(S.mode==='acertos'){toast('Sem acertos registrados ainda!');return;}
+    // Pool empty for simulado/materia → generate with AI
+    generateQuestionsAI(false);
+    return;
+  }
+  pool.sort(()=>Math.random()-.5);
+  S.round++;
+  S.sq=pool.slice(0,Math.min(S.qty,pool.length));S.ci=0;S.sa=[];
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+}
