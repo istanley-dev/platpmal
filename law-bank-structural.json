@@ -1,29 +1,30 @@
 {
-  "devices": 425,
+  "devices": 432,
   "questions_extracted": 3183,
   "questions_with_legal_hint": 1273,
-  "linked_questions_unique": 1025,
-  "linked_device_count": 248,
-  "orphan_device_count": 177,
+  "linked_questions_unique": 929,
+  "linked_device_count": 253,
+  "orphan_device_count": 179,
   "orphan_devices": [
-    "CADH 16",
+    "CADH 1",
     "CADH 2",
     "CADH 68",
     "CF 124",
     "CF 228",
+    "CF 9",
     "CP 109",
     "CP 312",
-    "CPM 211",
+    "CPM 2",
     "CPM 4",
-    "CPP 100",
     "CPP 152",
+    "CPP 158",
     "CPP 186",
     "CPP 245",
+    "CPP 29",
     "CPP 303",
-    "CPP 385",
+    "CPP 313",
     "CPP 46",
     "CPP 55",
-    "CPP 576",
     "CPP 647",
     "CPP 74",
     "CPP 798",
@@ -34,25 +35,28 @@
     "CPPM 3",
     "CPPM 30",
     "CPPM 4",
+    "CPPM 5",
     "CPPM 6",
     "CPPM 8",
-    "L10826 15",
+    "L10259",
     "L10826 16",
     "L10826 17",
     "L10826 18",
-    "L10826 6",
+    "L10826 21A",
     "L11340 12C",
+    "L11340 12D",
+    "L11340 16A",
     "L11340 18",
     "L11340 19",
     "L11340 23",
     "L11340 24",
-    "L11340 41",
-    "L11340 5",
+    "L11343",
     "L11343 32",
     "L11343 34",
     "L11343 36",
     "L11343 37",
     "L11343 40",
+    "L11343 40A",
     "L11343 41",
     "L11343 42",
     "L11343 50",
@@ -60,10 +64,10 @@
     "L11343 52",
     "L11343 53",
     "L11343 54",
-    "L12016 23",
+    "L12016",
     "L12037 3",
-    "L12850 1",
-    "L12850 10",
+    "L12830",
+    "L12850",
     "L12850 2",
     "L12850 3",
     "L12850 8",
@@ -77,10 +81,8 @@
     "L13869 38",
     "L13869 9",
     "L14133 124",
-    "L14133 14",
     "L14133 156",
     "L14133 17",
-    "L14133 33",
     "L14133 71",
     "L14133 72",
     "L14133 92",
@@ -90,25 +92,26 @@
     "L7716 20",
     "L7960 1",
     "L8069 1",
-    "L8069 103",
     "L8069 105",
     "L8069 108",
     "L8069 112",
+    "L8069 11A",
     "L8069 122",
-    "L8069 18",
     "L8069 2",
-    "L8069 244B",
     "L8112 132",
     "L8112 137",
+    "L8112 20",
     "L8112 41",
-    "L8429 10",
+    "L9296",
     "L9296 10",
     "L9296 2",
     "L9455 2",
     "L9474 1",
     "L9474 7",
-    "L9503 308",
+    "L9503",
+    "L9507",
     "L9507 8",
+    "L9605",
     "L9605 15",
     "L9605 18",
     "L9605 46",
@@ -130,7 +133,6 @@
     "LO 14",
     "LO 17",
     "LO 19",
-    "LO 22",
     "LO 23",
     "LO 24",
     "LO 26",
@@ -184,7 +186,7 @@
     "RD 86",
     "RD 95"
   ],
-  "missing_device_key_count": 89,
+  "missing_device_key_count": 155,
   "missing_device_keys": {
     "CPPM 15": [
       {
@@ -208,6 +210,16 @@
       {
         "id": "leg_racismo_002",
         "f": "Lei 7.716/1989, art. 5.º: recusar acesso/atendimento por discriminação racial = crime."
+      },
+      {
+        "id": "lpe3_rac01",
+        "f": "Art. 5º, XLII, CF/88; Lei 7.716/1989."
+      }
+    ],
+    "L7716 2": [
+      {
+        "id": "leg_racismo_003",
+        "f": "STF (2023) + Lei 14.532/2023: injúria racial passou a integrar a Lei 7.716/89 (art. 2.º-A), com os mesmos efeitos do racismo."
       }
     ],
     "L9605 41": [
@@ -238,12 +250,6 @@
       {
         "id": "leg_juizados_003",
         "f": "Lei 10.259/2001, art. 3.º: alçada de 60 salários mínimos para causas cíveis federais."
-      }
-    ],
-    "L8069 244": [
-      {
-        "id": "rp_pcal2012_082",
-        "f": "Furto qualificado: art. 155, §4.º, IV CP (concurso de pessoas, incluindo menores). Corrupção de menores: ECA art. 244-B."
       }
     ],
     "L11340 12": [
@@ -284,20 +290,12 @@
         "f": "CADH: CIDH = 7 membros, máximo 1 nacional por Estado, título pessoal."
       },
       {
-        "id": "q2_dh005",
-        "f": "Art. 7º, §7º, CADH: proibição de prisão por dívida, com exceção do inadimplemento de OBRIGAÇÃO ALIMENTAR."
-      },
-      {
         "id": "q2_dh012",
         "f": "CIDH: criada 1959 (antes da CADH). CORTE IDH: criada pela CADH 1969."
       },
       {
         "id": "q2_dh019",
         "f": "CADH: sentenças da Corte = definitivas + inapeláveis. Estados devem cumprir."
-      },
-      {
-        "id": "q2_dh033",
-        "f": "CADH: duplo grau de jurisdição penal (art. 8.2.h)."
       },
       {
         "id": "q2_dh041",
@@ -308,52 +306,12 @@
         "f": "Corte IDH, Gomes Lund (2010): Lei de Anistia brasileira incompatível com a CADH em relação às violações graves."
       },
       {
-        "id": "dh1",
-        "f": "Art. 7°, §7°, Convenção Americana: proibição de prisão por dívida. Exceção: inadimplemento de obrigação alimentar. SV 25/STF: afastou prisão do depositário infiel."
-      },
-      {
-        "id": "dh4",
-        "f": "Art. 27, CADH (cláusula de suspensão). Direitos inderrogáveis: personalidade jurídica, vida, integridade pessoal, proibição de escravidão, legalidade penal, consciência e religião."
-      },
-      {
-        "id": "r2021_118",
-        "f": "Art. 16 da Convenção Americana (Pacto de São José). Direito de associação admite restrições legais e proporcionais. Prova CEBRASPE PMAL 2021, item 118."
-      },
-      {
         "id": "r2021_119",
         "f": "Convenção Americana. Comissão: recebe petições, investiga, recomenda, encaminha à Corte (não julga). Corte: órgão jurisdicional (julga). Prova CEBRASPE PMAL 2021, item 119."
       },
       {
-        "id": "b_83",
-        "f": "Convenção Americana sobre Direitos Humanos, art. 7.7; STF, SV 25."
-      },
-      {
         "id": "c3_7",
         "f": "Convenção Americana (1969)."
-      },
-      {
-        "id": "c3_9",
-        "f": "Art. 44, CADH."
-      },
-      {
-        "id": "c3_11",
-        "f": "Sumula Vinculante 25/STF. Art. 7o, 7, CADH."
-      },
-      {
-        "id": "rp17_70",
-        "f": "Art. 5o, LXVII, CF; SV 25; CADH."
-      },
-      {
-        "id": "dh8_sit01",
-        "f": "Art. 46.1.b, CADH — prazo de 6 meses para peticionar à Comissão Interamericana."
-      },
-      {
-        "id": "dh8_sit02",
-        "f": "Art. 46.1.a, CADH — esgotamento dos recursos internos como requisito de admissibilidade."
-      },
-      {
-        "id": "sit28_dh01",
-        "f": "Art. 46.1.a, CADH — esgotamento dos recursos internos como requisito de admissibilidade."
       }
     ],
     "CF 125": [
@@ -398,6 +356,22 @@
         "f": "CF, art. 125, § 4.º, e disciplina constitucional militar."
       }
     ],
+    "CPM 25": [
+      {
+        "id": "q2_dpm009",
+        "f": "Art. 44, CPM x art. 25, CP: requisitos idênticos. Diferença: o CPM é específico para o âmbito militar."
+      }
+    ],
+    "CPM 228": [
+      {
+        "id": "q2_dpm010",
+        "f": "Art. 50, CPM + art. 228, CF/88: menor de 18 anos = inimputável no âmbito penal militar também."
+      },
+      {
+        "id": "pmil_8",
+        "f": "Art. 50, CPM; art. 228, CF."
+      }
+    ],
     "CPM 43": [
       {
         "id": "q2_dpm015",
@@ -420,10 +394,16 @@
         "f": "Art. 81, CPM: crime continuado. Aumento de 1/6 a 2/3 — igual ao CP (art. 71)."
       }
     ],
-    "CPM 363": [
+    "CPM 70": [
       {
         "id": "q2_dpm019",
         "f": "Art. 363, CPM: covardia. Agravante: presença do inimigo (art. 70, II, CPM)."
+      }
+    ],
+    "CPM 312": [
+      {
+        "id": "q2_dpm020",
+        "f": "Art. 303, §2º, CPM: peculato culposo (negligência). Previsto no CPM, assim como no CP (art. 312, §2º)."
       }
     ],
     "CPM 160": [
@@ -434,6 +414,12 @@
       {
         "id": "q2_dpm048",
         "f": "Art. 160, CPM: DESACATO = ato, palavra ou gesto ofensivo à dignidade/decoro do superior."
+      }
+    ],
+    "CPM 164": [
+      {
+        "id": "q2_dpm023",
+        "f": "Art. 149, CPM (motim): violência/ameaça. Art. 164, CPM (insubordinação coletiva): sem violência."
       }
     ],
     "CPM 240": [
@@ -508,10 +494,18 @@
         "f": "SENTENÇA SEM FUNDAMENTAÇÃO: nulidade absoluta. CF, art. 93, IX."
       }
     ],
-    "CP 228": [
+    "CPP 28A": [
       {
-        "id": "q2_dp024",
-        "f": "CF, art. 228 + CP, art. 27: menor de 18 = inimputável. Absoluto. Sem exceção."
+        "id": "q2_dpp038",
+        "f": "CPP, art. 28-A: ANPP = sem violência + pena mín. < 4 anos + confissão."
+      },
+      {
+        "id": "c2_60",
+        "f": "Art. 28-A, CPP (Lei 13.964/2019)."
+      },
+      {
+        "id": "dpp4_ap07",
+        "f": "Art. 28-A, CPP (Lei 13.964/2019)."
       }
     ],
     "L14133 5": [
@@ -552,6 +546,60 @@
         "f": "Conv. de Escravidão (1926) + CP, art. 149: proibição. Fiscalização: Ministério do Trabalho."
       }
     ],
+    "CPP 107": [
+      {
+        "id": "dpp4",
+        "f": "Art. 38, CPP. Decadência: extinção da punibilidade (art. 107, IV, CP). Prazo: 6 meses a partir do CONHECIMENTO DA AUTORIA."
+      },
+      {
+        "id": "rp18_92",
+        "f": "Art. 38, CPP. Art. 107, IV, CP. Decadência: 6 meses do conhecimento da autoria. Prova CEBRASPE PMAL 2018, item 92."
+      }
+    ],
+    "Lei5346 142": [
+      {
+        "id": "pm1",
+        "f": "Lei 5.346/1992 (Estatuto PM/AL). CF/88, art. 142, §3° (aplicável analogicamente por força do art. 42, §1°). Caráter permanente das obrigações militares."
+      },
+      {
+        "id": "c3_46",
+        "f": "Lei 5.346/1992. Art. 142, CF."
+      },
+      {
+        "id": "d3_59",
+        "f": "Lei 5.346/1992. Art. 142, CF."
+      }
+    ],
+    "L9296 5": [
+      {
+        "id": "b_9",
+        "f": "CF/88, art. 5º, XII; Lei 9.296/1996."
+      }
+    ],
+    "L12016 5": [
+      {
+        "id": "b_12",
+        "f": "Art. 5º, LXIX. Lei 12.016/2009."
+      }
+    ],
+    "L9507 5": [
+      {
+        "id": "b_13",
+        "f": "CF/88, art. 5º, LXXII; Lei 9.507/1997."
+      }
+    ],
+    "L4717 5": [
+      {
+        "id": "b_20",
+        "f": "CF/88, art. 5º, LXXIII; Lei 4.717/1965."
+      }
+    ],
+    "L13300 5": [
+      {
+        "id": "b_24",
+        "f": "Art. 5º, LXXI, CF/88. Lei 13.300/2016."
+      }
+    ],
     "L9784 11": [
       {
         "id": "b_28",
@@ -564,6 +612,22 @@
         "f": "Lei 4.717/1965, art. 2º; doutrina administrativista."
       }
     ],
+    "L9784 55": [
+      {
+        "id": "b_33",
+        "f": "Art. 55, Lei 9.784/1999."
+      },
+      {
+        "id": "d2_24",
+        "f": "Art. 55, Lei 9.784/1999."
+      }
+    ],
+    "L9784 5": [
+      {
+        "id": "b_40",
+        "f": "CF/88, art. 5º, LV; Lei 9.784/1999."
+      }
+    ],
     "L11343 44": [
       {
         "id": "b_71",
@@ -574,6 +638,28 @@
       {
         "id": "rp18_70",
         "f": "Art. 70 e 71, CF/88. Controle externo: Congresso Nacional + auxílio do TCU. Prova CEBRASPE PMAL 2018, item 70."
+      }
+    ],
+    "L8429 37": [
+      {
+        "id": "rp18_80",
+        "f": "Art. 37, §4º, CF/88. Lei 8.429/1992. Sanções da improbidade. Prova CEBRASPE PMAL 2018, item 80."
+      }
+    ],
+    "L12037 5": [
+      {
+        "id": "c1_30",
+        "f": "Art. 5º, LVIII, CF/88. Lei 12.037/2009."
+      }
+    ],
+    "CF 134": [
+      {
+        "id": "c1_33",
+        "f": "Art. 5º, LXXIV, CF/88. Defensoria Pública (art. 134)."
+      },
+      {
+        "id": "al5_org02",
+        "f": "Edital: organização político-administrativa (item 4.3); art. 134, CF/88."
       }
     ],
     "L14133 105": [
@@ -598,10 +684,276 @@
         "f": "Lei 8.429/92, art. 3º: extensão da responsabilidade ao terceiro."
       }
     ],
+    "L8069 27": [
+      {
+        "id": "c2_35",
+        "f": "Art. 27, CP; art. 228, CF; ECA."
+      }
+    ],
+    "CPP 158A": [
+      {
+        "id": "c2_61",
+        "f": "Arts. 158-A a 158-F, CPP (Lei 13.964/2019)."
+      },
+      {
+        "id": "nx28_pp01",
+        "f": "CPP, arts. 158-A a 158-F (Lei 13.964/2019)."
+      }
+    ],
+    "CF 5O": [
+      {
+        "id": "c3_10",
+        "f": "STF, RE 466.343. Art. 5o, par. 3o, CF."
+      },
+      {
+        "id": "c3_17",
+        "f": "Art. 5o, XLIX, CF/88. LEP."
+      },
+      {
+        "id": "d1_2",
+        "f": "Art. 5o, XXXIV, CF/88."
+      },
+      {
+        "id": "d1_9",
+        "f": "Art. 5o, XIII, CF/88."
+      },
+      {
+        "id": "d1_11",
+        "f": "Art. 5o, LII, CF/88."
+      },
+      {
+        "id": "d1_14",
+        "f": "Art. 5o, XIV, CF/88."
+      },
+      {
+        "id": "d1_17",
+        "f": "Art. 5o, par. 3o, CF/88."
+      },
+      {
+        "id": "d1_24",
+        "f": "Art. 5o, LXXVII, CF/88."
+      },
+      {
+        "id": "d1_28",
+        "f": "Art. 5o, XV, CF/88."
+      },
+      {
+        "id": "d1_32",
+        "f": "Art. 5o, XXXVIII, CF/88."
+      },
+      {
+        "id": "d1_34",
+        "f": "Art. 5o, V, CF/88. Sumula 37/STJ."
+      },
+      {
+        "id": "d1_36",
+        "f": "Art. 5o, XXXVI, CF/88."
+      },
+      {
+        "id": "d1_38",
+        "f": "Art. 5o, LI, CF/88."
+      },
+      {
+        "id": "d1_42",
+        "f": "Art. 5o, LXIV, CF/88."
+      },
+      {
+        "id": "d2_20",
+        "f": "Art. 5o, XXV, CF/88."
+      },
+      {
+        "id": "d3_20",
+        "f": "Art. 5o, LXIX, CF."
+      },
+      {
+        "id": "d3_31",
+        "f": "Decreto 6.949/2009. Art. 5o, par. 3o, CF."
+      },
+      {
+        "id": "d3_38",
+        "f": "Art. 5o, XLVII, CF/88."
+      },
+      {
+        "id": "rp18_73",
+        "f": "Art. 5o, XI, CF/88."
+      },
+      {
+        "id": "rp18_74",
+        "f": "Art. 5o, XXXVIII, CF/88."
+      },
+      {
+        "id": "rp18_75",
+        "f": "Art. 5o, LXIII, CF/88."
+      },
+      {
+        "id": "rp17_65",
+        "f": "Art. 5o, par. 1o, CF/88."
+      },
+      {
+        "id": "lpmal_60",
+        "f": "Art. 5o, LV, CF; Estatuto PM/AL."
+      }
+    ],
+    "CADH 7O": [
+      {
+        "id": "c3_11",
+        "f": "Sumula Vinculante 25/STF. Art. 7o, 7, CADH."
+      }
+    ],
+    "CF 1O": [
+      {
+        "id": "c3_13",
+        "f": "Art. 1o, III, CF/88. Dignidade humana."
+      }
+    ],
+    "L7716 5O": [
+      {
+        "id": "c3_21",
+        "f": "Art. 5o, XLII, CF/88. Lei 7.716/1989."
+      }
+    ],
+    "L11340 5O": [
+      {
+        "id": "c3_30",
+        "f": "Art. 5o, Lei 11.340/2006."
+      }
+    ],
+    "L11340 7O": [
+      {
+        "id": "c3_31",
+        "f": "Art. 7o, Lei 11.340/2006."
+      }
+    ],
+    "L8072 1O": [
+      {
+        "id": "c3_32",
+        "f": "Art. 1o, Lei 8.072/1990."
+      },
+      {
+        "id": "d3_55",
+        "f": "Art. 1o, Lei 8.072/1990."
+      }
+    ],
+    "L8072 5O": [
+      {
+        "id": "c3_33",
+        "f": "Art. 2o, Lei 8.072/1990. Art. 5o, XLIII, CF."
+      }
+    ],
+    "L9455 1O": [
+      {
+        "id": "c3_34",
+        "f": "Art. 1o, par. 5o, Lei 9.455/1997."
+      }
+    ],
+    "L13869 2O": [
+      {
+        "id": "c3_35",
+        "f": "Art. 2o, Lei 13.869/2019."
+      }
+    ],
+    "L13869 10": [
+      {
+        "id": "c3_36",
+        "f": "Art. 10, Lei 13.869/2019."
+      }
+    ],
+    "L9605 225": [
+      {
+        "id": "c3_38",
+        "f": "Art. 3o, Lei 9.605/1998. Art. 225, par. 3o, CF."
+      }
+    ],
+    "L8069 232": [
+      {
+        "id": "c3_39",
+        "f": "Art. 232, Lei 8.069/1990 (ECA)."
+      }
+    ],
+    "L12850 1O": [
+      {
+        "id": "c3_41",
+        "f": "Art. 1o, Lei 12.850/2013."
+      }
+    ],
+    "L12850 4O": [
+      {
+        "id": "c3_42",
+        "f": "Lei 12.850/2013, arts. 4o a 7o."
+      }
+    ],
+    "Lei5346 144": [
+      {
+        "id": "c3_60",
+        "f": "Art. 144, CF. Lei 5.346/1992."
+      }
+    ],
     "L13300 12": [
       {
         "id": "d1_1",
         "f": "Lei 13.300/2016, art. 12."
+      }
+    ],
+    "CF 7O": [
+      {
+        "id": "d1_19",
+        "f": "Art. 7o, XVIII e XIX, CF/88."
+      }
+    ],
+    "CP 5O": [
+      {
+        "id": "d1_21",
+        "f": "Art. 5o, XI, CF. STF. Art. 150, par. 4o, CP."
+      },
+      {
+        "id": "d2_32",
+        "f": "Art. 1o, CP; art. 5o, XXXIX, CF."
+      },
+      {
+        "id": "d2_33",
+        "f": "Art. 2o, par. único, CP; art. 5o, XL, CF."
+      }
+    ],
+    "L8429 20": [
+      {
+        "id": "d1_31",
+        "f": "Art. 20, Lei 8.429/1992."
+      }
+    ],
+    "L9784 13": [
+      {
+        "id": "d2_4",
+        "f": "Art. 13, Lei 9.784/1999."
+      }
+    ],
+    "L14133 5O": [
+      {
+        "id": "d2_6",
+        "f": "Art. 5o, Lei 14.133/2021."
+      }
+    ],
+    "L8987 6O": [
+      {
+        "id": "d2_9",
+        "f": "Art. 6o, Lei 8.987/1995."
+      }
+    ],
+    "L8112 8O": [
+      {
+        "id": "d2_10",
+        "f": "Art. 8o, Lei 8.112/1990."
+      }
+    ],
+    "L8112 28": [
+      {
+        "id": "d2_11",
+        "f": "Art. 28, Lei 8.112/1990."
+      }
+    ],
+    "L8429 9O": [
+      {
+        "id": "d2_14",
+        "f": "Arts. 9o, 10 e 11, Lei 8.429/1992."
       }
     ],
     "CF 182": [
@@ -610,10 +962,68 @@
         "f": "Art. 182, par. 4o, III, CF/88."
       }
     ],
+    "CP 4O": [
+      {
+        "id": "d2_34",
+        "f": "Art. 4o, CP."
+      },
+      {
+        "id": "rp18_111",
+        "f": "Art. 4o, CP — teoria da atividade."
+      }
+    ],
+    "CP 6O": [
+      {
+        "id": "d2_35",
+        "f": "Art. 6o, CP."
+      },
+      {
+        "id": "rp17_56",
+        "f": "Art. 6o, CP — teoria da ubiquidade."
+      }
+    ],
+    "CPP 4O": [
+      {
+        "id": "d3_1",
+        "f": "Arts. 4o e ss., CPP."
+      }
+    ],
+    "CPP 5O": [
+      {
+        "id": "d3_19",
+        "f": "Art. 5o, LXVIII, CF; art. 647, CPP."
+      },
+      {
+        "id": "rp18_88",
+        "f": "Arts. 5o, par. 4o, e 39, CPP."
+      }
+    ],
     "CADH 41": [
       {
         "id": "d3_29",
         "f": "CADH, arts. 41 e ss."
+      }
+    ],
+    "L11340 24A": [
+      {
+        "id": "d3_47",
+        "f": "Art. 24-A, Lei 11.340/2006."
+      },
+      {
+        "id": "sit28_lpe01",
+        "f": "Art. 24-A, Lei 11.340/2006 — crime autônomo de descumprimento de medida protetiva."
+      }
+    ],
+    "L13869 1O": [
+      {
+        "id": "d3_50",
+        "f": "Art. 1o, Lei 13.869/2019."
+      }
+    ],
+    "RD 5O": [
+      {
+        "id": "d3_63",
+        "f": "Decreto 37.042/1996; art. 5o, LV, CF."
       }
     ],
     "CP 51": [
@@ -628,10 +1038,68 @@
         "f": "CADH, arts. 48-50."
       }
     ],
+    "CADH 1O": [
+      {
+        "id": "rp18_101",
+        "f": "CADH, art. 1o."
+      }
+    ],
+    "CADH 5O": [
+      {
+        "id": "rp17_70",
+        "f": "Art. 5o, LXVII, CF; SV 25; CADH."
+      }
+    ],
     "CF 74": [
       {
         "id": "rp17_100",
         "f": "Art. 74, par. 2o, CF/88."
+      }
+    ],
+    "CPM 5O": [
+      {
+        "id": "pmil_1",
+        "f": "Art. 5o, CPM."
+      },
+      {
+        "id": "pmil_3",
+        "f": "Art. 2o, par. único, CPM; art. 5o, XL, CF."
+      },
+      {
+        "id": "pmil_6",
+        "f": "Art. 55 e 56, CPM; art. 5o, XLVII, CF."
+      },
+      {
+        "id": "pmil2_25",
+        "f": "Livro II, CPM; art. 5o, XLVII, CF."
+      }
+    ],
+    "CPM 6O": [
+      {
+        "id": "pmil_2",
+        "f": "Art. 6o, CPM."
+      }
+    ],
+    "CPM 9O": [
+      {
+        "id": "pmil_4",
+        "f": "Art. 9o, II, CPM."
+      }
+    ],
+    "CPM 7O": [
+      {
+        "id": "pmil_20",
+        "f": "Art. 7o, CPM."
+      }
+    ],
+    "CPPM 7O": [
+      {
+        "id": "ppmil_26",
+        "f": "Art. 7o, CPPM."
+      },
+      {
+        "id": "ppmil_29",
+        "f": "Art. 7o, CPPM."
       }
     ],
     "CPPM 451": [
@@ -642,6 +1110,12 @@
       {
         "id": "dppm3_desert01",
         "f": "Art. 451 e ss., CPPM."
+      }
+    ],
+    "CPPM 129": [
+      {
+        "id": "ppmil_37",
+        "f": "Art. 121, CPPM; art. 129, I, CF."
       }
     ],
     "CPPM 463": [
@@ -660,6 +1134,12 @@
         "f": "Art. 499 e ss., CPPM."
       }
     ],
+    "CPPM 5O": [
+      {
+        "id": "ppmil2_40",
+        "f": "Art. 5o, LXIII, CF; CPPM."
+      }
+    ],
     "L8069 101": [
       {
         "id": "nx26_lpe13",
@@ -676,12 +1156,6 @@
       {
         "id": "nx26_lpe16",
         "f": "Lei 12.850/2013, art. 13: excludente de punibilidade do agente infiltrado."
-      }
-    ],
-    "CPM 124": [
-      {
-        "id": "nx26_dpm05",
-        "f": "CF, art. 124 + CPM, art. 9º."
       }
     ],
     "CPM 123": [
@@ -752,6 +1226,12 @@
         "f": "Art. 19, CP."
       }
     ],
+    "CP 228": [
+      {
+        "id": "dp3_tiii03",
+        "f": "Art. 27, CP; art. 228, CF/88."
+      }
+    ],
     "CF 25": [
       {
         "id": "dc3_eo01",
@@ -762,6 +1242,48 @@
       {
         "id": "dc3_eo02",
         "f": "Art. 36, §§1º e 3º, CF/88."
+      }
+    ],
+    "L9503 303": [
+      {
+        "id": "lpe3_ctb04",
+        "f": "Art. 303, parágrafo único, c/c art. 302, §1º, CTB."
+      }
+    ],
+    "L9503 304": [
+      {
+        "id": "lpe3_ctb05",
+        "f": "Art. 304, CTB."
+      }
+    ],
+    "L8069 227": [
+      {
+        "id": "lpe3_eca01",
+        "f": "Art. 1º, ECA; art. 227, CF/88."
+      }
+    ],
+    "L8069 172": [
+      {
+        "id": "lpe3_eca04",
+        "f": "Art. 172 e seguintes, ECA."
+      }
+    ],
+    "L9455 136": [
+      {
+        "id": "lpe3_tort04",
+        "f": "Art. 1º, Lei 9.455/1997; art. 136, CP."
+      }
+    ],
+    "L7716 140": [
+      {
+        "id": "lpe3_rac02",
+        "f": "Art. 140, §3º, CP (redação da Lei 14.532/2023); Lei 7.716/1989."
+      }
+    ],
+    "L10259 2": [
+      {
+        "id": "lpe3_jef01",
+        "f": "Art. 2º, parágrafo único, Lei 10.259/2001."
       }
     ],
     "CP 150": [
@@ -802,6 +1324,12 @@
       {
         "id": "dc4_eo07",
         "f": "Art. 33, caput e §1º, CF/88."
+      }
+    ],
+    "CPP 102": [
+      {
+        "id": "dpp4_ap04",
+        "f": "Art. 25, CPP; art. 102, CP."
       }
     ],
     "CF 183": [
@@ -864,12 +1392,6 @@
         "f": "Edital: organização político-administrativa (item 4.3); art. 127, CF/88."
       }
     ],
-    "CF 134": [
-      {
-        "id": "al5_org02",
-        "f": "Edital: organização político-administrativa (item 4.3); art. 134, CF/88."
-      }
-    ],
     "CF 27": [
       {
         "id": "al5_org03",
@@ -917,7 +1439,7 @@
       }
     ]
   },
-  "unparsed_legal_reference_count": 118,
+  "unparsed_legal_reference_count": 117,
   "unparsed_legal_references": [
     {
       "id": "rf_dh_005",
@@ -1094,10 +1616,6 @@
     {
       "id": "q2_dppm066",
       "f": "PROVA ILÍCITA: CF veda em TODOS os processos. Processo MILITAR não é exceção."
-    },
-    {
-      "id": "q2_dppm068",
-      "f": "ART. 202 CPM: embriaguez em serviço = CRIME MILITAR. Flagrante cabível."
     },
     {
       "id": "q2_dppm075",
@@ -1394,21 +1912,21 @@
   ],
   "duplicate_device_content_groups": [],
   "links_per_device": {
-    "CADH 1": 1,
+    "CADH 1": 0,
     "CADH 10": 1,
     "CADH 11": 2,
     "CADH 13": 2,
-    "CADH 16": 0,
+    "CADH 16": 1,
     "CADH 2": 0,
     "CADH 21": 1,
     "CADH 22": 1,
     "CADH 23": 1,
     "CADH 25": 1,
-    "CADH 27": 2,
+    "CADH 27": 3,
     "CADH 37": 1,
     "CADH 4": 2,
-    "CADH 44": 5,
-    "CADH 46": 2,
+    "CADH 44": 6,
+    "CADH 46": 5,
     "CADH 47": 1,
     "CADH 5": 1,
     "CADH 6": 2,
@@ -1416,9 +1934,9 @@
     "CADH 63": 1,
     "CADH 67": 1,
     "CADH 68": 0,
-    "CADH 7": 3,
-    "CADH 8": 1,
-    "CF 1": 10,
+    "CADH 7": 6,
+    "CADH 8": 2,
+    "CF 1": 9,
     "CF 12": 4,
     "CF 124": 0,
     "CF 136": 11,
@@ -1441,122 +1959,123 @@
     "CF 30": 1,
     "CF 34": 6,
     "CF 35": 2,
-    "CF 37": 46,
+    "CF 37": 47,
     "CF 4": 1,
     "CF 41": 6,
     "CF 42": 7,
-    "CF 5": 125,
+    "CF 5": 101,
     "CF 6": 4,
-    "CF 7": 2,
-    "CF 9": 1,
-    "CP 1": 3,
+    "CF 7": 1,
+    "CF 9": 0,
+    "CP 1": 2,
     "CP 109": 0,
     "CP 13": 9,
     "CP 14": 5,
     "CP 15": 5,
     "CP 16": 5,
     "CP 18": 9,
-    "CP 2": 5,
+    "CP 2": 3,
     "CP 20": 11,
     "CP 21": 3,
     "CP 22": 4,
     "CP 23": 8,
-    "CP 24": 8,
-    "CP 25": 8,
-    "CP 26": 8,
-    "CP 27": 1,
+    "CP 24": 7,
+    "CP 25": 9,
+    "CP 26": 7,
+    "CP 27": 2,
     "CP 28": 9,
     "CP 312": 0,
-    "CP 4": 9,
+    "CP 4": 6,
     "CP 5": 7,
-    "CP 6": 5,
+    "CP 6": 4,
     "CP 65": 1,
     "CP 7": 3,
     "CP 71": 1,
-    "CPM 125": 2,
-    "CPM 149": 6,
+    "CPM 125": 3,
+    "CPM 149": 5,
     "CPM 157": 4,
     "CPM 163": 3,
     "CPM 17": 1,
     "CPM 183": 2,
-    "CPM 187": 13,
+    "CPM 187": 12,
     "CPM 195": 4,
-    "CPM 2": 2,
-    "CPM 202": 2,
+    "CPM 2": 0,
+    "CPM 202": 3,
     "CPM 203": 3,
     "CPM 206": 1,
-    "CPM 211": 0,
+    "CPM 211": 1,
     "CPM 30": 2,
-    "CPM 303": 3,
+    "CPM 303": 2,
     "CPM 33": 2,
     "CPM 36": 2,
     "CPM 38": 2,
     "CPM 39": 1,
     "CPM 4": 0,
     "CPM 42": 4,
-    "CPM 44": 3,
+    "CPM 44": 2,
     "CPM 48": 2,
     "CPM 49": 1,
-    "CPM 5": 7,
-    "CPM 50": 3,
+    "CPM 5": 8,
+    "CPM 50": 1,
     "CPM 53": 5,
-    "CPM 55": 8,
-    "CPM 6": 2,
-    "CPM 7": 2,
+    "CPM 55": 5,
+    "CPM 6": 1,
+    "CPM 7": 1,
     "CPM 71": 1,
     "CPM 72": 1,
     "CPM 80": 1,
     "CPM 84": 1,
-    "CPM 9": 11,
+    "CPM 9": 10,
     "CPM 98": 1,
     "CPP 10": 5,
-    "CPP 100": 0,
+    "CPP 100": 1,
     "CPP 14": 3,
     "CPP 152": 0,
     "CPP 155": 4,
-    "CPP 158": 2,
-    "CPP 17": 5,
+    "CPP 158": 0,
+    "CPP 17": 4,
     "CPP 186": 0,
     "CPP 20": 1,
-    "CPP 21": 1,
-    "CPP 24": 2,
+    "CPP 21": 2,
+    "CPP 24": 1,
     "CPP 245": 0,
-    "CPP 25": 2,
+    "CPP 25": 1,
     "CPP 26": 1,
-    "CPP 28": 7,
+    "CPP 28": 5,
     "CPP 282": 3,
-    "CPP 29": 3,
+    "CPP 29": 0,
     "CPP 3": 3,
     "CPP 30": 1,
     "CPP 302": 6,
     "CPP 303": 0,
-    "CPP 306": 4,
+    "CPP 306": 3,
     "CPP 310": 5,
     "CPP 311": 6,
     "CPP 312": 3,
+    "CPP 313": 0,
     "CPP 319": 1,
     "CPP 322": 1,
-    "CPP 38": 7,
+    "CPP 38": 5,
     "CPP 384": 1,
-    "CPP 385": 0,
+    "CPP 385": 1,
     "CPP 39": 4,
     "CPP 395": 4,
-    "CPP 4": 5,
+    "CPP 4": 4,
     "CPP 41": 1,
-    "CPP 42": 3,
+    "CPP 42": 1,
     "CPP 46": 0,
     "CPP 49": 1,
-    "CPP 5": 13,
+    "CPP 5": 14,
     "CPP 51": 2,
     "CPP 55": 0,
-    "CPP 576": 0,
+    "CPP 576": 1,
     "CPP 60": 3,
     "CPP 647": 0,
     "CPP 74": 0,
     "CPP 798": 0,
     "CPPM 1": 0,
     "CPPM 10": 0,
-    "CPPM 121": 2,
+    "CPPM 121": 1,
     "CPPM 125": 2,
     "CPPM 16A": 0,
     "CPPM 2": 0,
@@ -1571,39 +2090,43 @@
     "CPPM 30": 0,
     "CPPM 328": 1,
     "CPPM 4": 0,
-    "CPPM 5": 1,
+    "CPPM 5": 0,
     "CPPM 6": 0,
-    "CPPM 7": 5,
+    "CPPM 7": 3,
     "CPPM 8": 0,
     "CPPM 9": 2,
-    "L10259": 1,
-    "L10826": 7,
-    "L10826 12": 2,
-    "L10826 14": 1,
-    "L10826 15": 0,
+    "L10259": 0,
+    "L10826": 2,
+    "L10826 12": 4,
+    "L10826 14": 2,
+    "L10826 15": 1,
     "L10826 16": 0,
     "L10826 17": 0,
     "L10826 18": 0,
-    "L10826 6": 0,
-    "L11340": 10,
+    "L10826 21A": 0,
+    "L10826 6": 1,
+    "L11340": 2,
     "L11340 12C": 0,
+    "L11340 12D": 0,
+    "L11340 16A": 0,
     "L11340 18": 0,
     "L11340 19": 0,
-    "L11340 22": 2,
+    "L11340 22": 3,
     "L11340 23": 0,
     "L11340 24": 0,
-    "L11340 41": 0,
-    "L11340 5": 0,
+    "L11340 41": 2,
+    "L11340 5": 1,
     "L11340 7": 1,
-    "L11343": 12,
-    "L11343 28": 2,
+    "L11343": 0,
+    "L11343 28": 10,
     "L11343 32": 0,
-    "L11343 33": 3,
+    "L11343 33": 6,
     "L11343 34": 0,
-    "L11343 35": 1,
+    "L11343 35": 2,
     "L11343 36": 0,
     "L11343 37": 0,
     "L11343 40": 0,
+    "L11343 40A": 0,
     "L11343 41": 0,
     "L11343 42": 0,
     "L11343 50": 0,
@@ -1611,23 +2134,23 @@
     "L11343 52": 0,
     "L11343 53": 0,
     "L11343 54": 0,
-    "L12016": 2,
-    "L12016 23": 0,
-    "L12037": 2,
+    "L12016": 0,
+    "L12016 23": 1,
+    "L12037": 1,
     "L12037 3": 0,
-    "L12830": 1,
-    "L12830 2": 1,
-    "L12850": 6,
-    "L12850 1": 0,
-    "L12850 10": 0,
+    "L12830": 0,
+    "L12830 2": 2,
+    "L12850": 0,
+    "L12850 1": 2,
+    "L12850 10": 2,
     "L12850 2": 0,
     "L12850 3": 0,
     "L12850 4": 1,
     "L12850 8": 0,
-    "L13300": 2,
+    "L13300": 1,
     "L13300 8": 0,
-    "L13869": 7,
-    "L13869 1": 4,
+    "L13869": 2,
+    "L13869 1": 6,
     "L13869 13": 0,
     "L13869 15": 0,
     "L13869 22": 0,
@@ -1636,70 +2159,72 @@
     "L13869 33": 0,
     "L13869 38": 0,
     "L13869 9": 0,
-    "L14133": 17,
-    "L14133 104": 1,
+    "L14133": 8,
+    "L14133 104": 2,
     "L14133 124": 0,
-    "L14133 14": 0,
+    "L14133 14": 1,
     "L14133 156": 0,
     "L14133 17": 0,
-    "L14133 28": 1,
-    "L14133 33": 0,
+    "L14133 28": 2,
+    "L14133 33": 1,
     "L14133 71": 0,
     "L14133 72": 0,
-    "L14133 74": 3,
-    "L14133 75": 1,
+    "L14133 74": 6,
+    "L14133 75": 2,
     "L14133 92": 0,
     "L14133 94": 0,
-    "L4717": 3,
+    "L4717": 2,
     "L4717 1": 0,
     "L4717 6": 0,
-    "L7716": 5,
+    "L7716": 1,
     "L7716 20": 0,
     "L7960": 2,
     "L7960 1": 0,
     "L7960 2": 3,
-    "L8069": 11,
+    "L8069": 4,
     "L8069 1": 0,
-    "L8069 103": 0,
+    "L8069 103": 1,
     "L8069 105": 0,
     "L8069 108": 0,
     "L8069 112": 0,
-    "L8069 121": 2,
+    "L8069 11A": 0,
+    "L8069 121": 3,
     "L8069 122": 0,
-    "L8069 18": 0,
+    "L8069 18": 1,
     "L8069 2": 0,
-    "L8069 244B": 0,
-    "L8072": 8,
+    "L8069 244B": 1,
+    "L8072": 5,
     "L8072 1": 7,
     "L8072 2": 2,
-    "L8112": 4,
+    "L8112": 2,
     "L8112 132": 0,
     "L8112 137": 0,
+    "L8112 20": 0,
     "L8112 41": 0,
-    "L8429": 12,
-    "L8429 10": 0,
-    "L8429 9": 2,
-    "L8987": 4,
+    "L8429": 7,
+    "L8429 10": 1,
+    "L8429 9": 3,
+    "L8987": 2,
     "L8987 2": 1,
-    "L8987 6": 2,
-    "L9099": 5,
-    "L9099 61": 1,
-    "L9296": 1,
+    "L8987 6": 3,
+    "L9099": 4,
+    "L9099 61": 2,
+    "L9296": 0,
     "L9296 10": 0,
     "L9296 2": 0,
-    "L9455": 7,
-    "L9455 1": 4,
+    "L9455": 2,
+    "L9455 1": 7,
     "L9455 2": 0,
     "L9474": 2,
     "L9474 1": 0,
     "L9474 7": 0,
-    "L9503": 7,
-    "L9503 302": 1,
-    "L9503 306": 1,
-    "L9503 308": 0,
-    "L9507": 1,
+    "L9503": 0,
+    "L9503 302": 3,
+    "L9503 306": 3,
+    "L9503 308": 1,
+    "L9507": 0,
     "L9507 8": 0,
-    "L9605": 1,
+    "L9605": 0,
     "L9605 15": 0,
     "L9605 18": 0,
     "L9605 3": 1,
@@ -1708,9 +2233,9 @@
     "L9605 53": 0,
     "L9605 54": 0,
     "L9605 7": 0,
-    "L9784": 9,
+    "L9784": 2,
     "L9784 2": 1,
-    "L9784 54": 1,
+    "L9784 54": 4,
     "L9784 59": 0,
     "L9784 64": 0,
     "LEP 112": 0,
@@ -1720,7 +2245,7 @@
     "LEP 41": 0,
     "LEP 50": 0,
     "LEP 52": 0,
-    "LO": 7,
+    "LO": 6,
     "LO 1": 0,
     "LO 12": 0,
     "LO 13": 1,
@@ -1729,7 +2254,7 @@
     "LO 18": 1,
     "LO 19": 0,
     "LO 2": 2,
-    "LO 22": 0,
+    "LO 22": 1,
     "LO 23": 0,
     "LO 24": 0,
     "LO 25": 2,
@@ -1741,7 +2266,7 @@
     "LO 42": 0,
     "LO 7": 1,
     "LO 9": 1,
-    "Lei 5.346": 31,
+    "Lei 5.346": 25,
     "Lei5346 1": 0,
     "Lei5346 10": 1,
     "Lei5346 100": 0,
@@ -1759,12 +2284,12 @@
     "Lei5346 31": 0,
     "Lei5346 33": 0,
     "Lei5346 35": 2,
-    "Lei5346 37": 1,
+    "Lei5346 37": 2,
     "Lei5346 38": 0,
     "Lei5346 39": 0,
     "Lei5346 40": 1,
     "Lei5346 41": 0,
-    "Lei5346 42": 1,
+    "Lei5346 42": 2,
     "Lei5346 47": 0,
     "Lei5346 49": 1,
     "Lei5346 5": 1,
@@ -1786,7 +2311,7 @@
     "Lei5346 9": 0,
     "Lei5346 98": 1,
     "Lei5346 99": 1,
-    "RD": 8,
+    "RD": 7,
     "RD 11": 1,
     "RD 26": 1,
     "RD 28": 2,

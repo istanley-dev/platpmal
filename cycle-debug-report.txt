@@ -1,1 +1,1 @@
-Banco de Leis auditado. Veja law-bank-summary.json, law-bank-structural.json, law-bank-devices.json e law-bank-linking.txt.
+Banco de Leis corrigido e auditado em 22/08/2026. Veja law-bank-structural.json e law-bank-fix-20260822.txt.

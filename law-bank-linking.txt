@@ -1,44 +1,37 @@
 === parseRef ===
 function parseRef(f){
   if(!f)return null;
+  function normArt(a){return String(a||'').replace(/[\-‐‑–—]/g,'').toUpperCase();}
+  function artNear(pattern){
+    var a=new RegExp(pattern+'[\\s\\S]{0,45}?[Aa]rts?\\.?\\s*(\\d+(?:[\\-‐‑–—]?[A-Za-z])?)','i').exec(f);
+    if(a)return normArt(a[a.length-1]);
+    var b=new RegExp('[Aa]rts?\\.?\\s*(\\d+(?:[\\-‐‑–—]?[A-Za-z])?)[\\s\\S]{0,45}?'+pattern,'i').exec(f);
+    return b?normArt(b[1]):'';
+  }
   const leiM=f.match(/Lei\s*n?º?\.?\s*5\.?346/i);
   if(leiM){
-    // se o artigo do Estatuto vier logo colado à citação da lei (ex.: "Lei 5.346/92, art. 41"), usa entrada por artigo
-    const artLeiM=f.match(/5\.?346\/?\d{0,4}[,:\s]{0,4}[Aa]rts?\.?\s*(\d+)/);
-    if(artLeiM){
-      const art=artLeiM[1];
-      return {key:'Lei5346 '+art,label:'art. '+art+' do Estatuto dos PM de Alagoas (Lei 5.346/92)',dipl:'Lei5346',art:art};
-    }
-    return {key:'Lei 5.346',label:'Lei 5.346/92 (Estatuto PM/AL)',dipl:'Lei',art:''};
+    const art=artNear('5\\.?346(?:\\/\\d{2,4})?');
+    if(art)return {key:'Lei5346 '+art,label:'art. '+art+' do Estatuto dos PM de Alagoas (Lei 5.346/92)',dipl:'Lei5346',art:art,baseKey:'Lei 5.346'};
+    return {key:'Lei 5.346',label:'Lei 5.346/92 (Estatuto PM/AL)',dipl:'Lei5346',art:'',baseKey:'Lei 5.346'};
   }
   const cadhM=f.match(/CADH|Pacto de S[ãa]o Jos[ée]|Conven[çc][ãa]o Americana/i);
   if(cadhM){
-    const artCadhM=f.match(/(?:CADH|S[ãa]o Jos[ée]|Americana)\D{0,12}[Aa]rts?\.?\s*(\d+)/i);
-    if(artCadhM){
-      const art=artCadhM[1];
-      return {key:'CADH '+art,label:'art. '+art+' da CADH (Pacto de São José)',dipl:'CADH',art:art};
-    }
-    return {key:'CADH','label':'CADH — Convenção Americana sobre Direitos Humanos (Pacto de São José)',dipl:'CADH',art:''};
+    const art=artNear('(?:CADH|Pacto de S[ãa]o Jos[ée]|Conven[çc][ãa]o Americana)');
+    if(art)return {key:'CADH '+art,label:'art. '+art+' da CADH (Pacto de São José)',dipl:'CADH',art:art,baseKey:'CADH'};
+    return {key:'CADH',label:'CADH — Convenção Americana sobre Direitos Humanos (Pacto de São José)',dipl:'CADH',art:'',baseKey:'CADH'};
   }
   const rdM=f.match(/37\.?042/);
   if(rdM){
-    const artRdM=f.match(/37\.?042\/?\d{0,4}[,:\s]{0,4}[Aa]rts?\.?\s*(\d+)/);
-    if(artRdM){
-      const art=artRdM[1];
-      return {key:'RD '+art,label:'art. '+art+' do Regulamento Disciplinar da PM/AL (Dec. 37.042/96)',dipl:'RD',art:art};
-    }
-    return {key:'RD','label':'Regulamento Disciplinar da PM/AL (Decreto 37.042/1996)',dipl:'RD',art:''};
+    const art=artNear('37\\.?042(?:\\/\\d{2,4})?');
+    if(art)return {key:'RD '+art,label:'art. '+art+' do Regulamento Disciplinar da PM/AL (Dec. 37.042/96)',dipl:'RD',art:art,baseKey:'RD'};
+    return {key:'RD',label:'Regulamento Disciplinar da PM/AL (Decreto 37.042/1996)',dipl:'RD',art:'',baseKey:'RD'};
   }
   const loM=f.match(/14\.?751/);
   if(loM){
-    const artLoM=f.match(/14\.?751\/?\d{0,4}[,:\s]{0,4}[Aa]rts?\.?\s*(\d+)/);
-    if(artLoM){
-      const art=artLoM[1];
-      return {key:'LO '+art,label:'art. '+art+' da Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023)',dipl:'LO',art:art};
-    }
-    return {key:'LO','label':'Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023)',dipl:'LO',art:''};
+    const art=artNear('14\\.?751(?:\\/\\d{2,4})?');
+    if(art)return {key:'LO '+art,label:'art. '+art+' da Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023)',dipl:'LO',art:art,baseKey:'LO'};
+    return {key:'LO',label:'Lei Orgânica Nacional das PMs/CBMs (Lei 14.751/2023)',dipl:'LO',art:'',baseKey:'LO'};
   }
-  // leis penais especiais e correlatas: deteccao generica por numero da lei
   const LEIS_ESP=[
     {num:'14\\.?133',pfx:'L14133',nome:'Lei de Licitações (Lei 14.133/2021)'},
     {num:'11\\.?343',pfx:'L11343',nome:'Lei de Drogas (Lei 11.343/2006)'},
@@ -67,35 +60,27 @@ function parseRef(f){
     {num:'12\\.?830',pfx:'L12830',nome:'Lei da Investigação Criminal pelo Delegado (Lei 12.830/2013)'},
     {num:'12\\.?037',pfx:'L12037',nome:'Lei de Identificação Criminal (Lei 12.037/2009)'},
     {num:'9\\.?507',pfx:'L9507',nome:'Lei do Habeas Data (Lei 9.507/1997)'},
-    {num:'9\\.?296',pfx:'L9296',nome:'Lei da Interceptação Telefônica (Lei 9.296/1996)'},
+    {num:'9\\.?296',pfx:'L9296',nome:'Lei da Interceptação Telefônica (Lei 9.296/1996)'}
   ];
   for(let idx=0;idx<LEIS_ESP.length;idx++){
-    const le=LEIS_ESP[idx];
-    const fullPat=le.alt?('('+le.num+'|'+le.alt+')'):('('+le.num+')');
-    const leM=new RegExp(fullPat,'i').exec(f);
-    if(leM){
-      const artLeM=new RegExp(fullPat+'\\/?\\d{0,4}[,:\\s]{0,4}[Aa]rts?\\.?\\s*(\\d+)','i').exec(f);
-      if(artLeM){
-        const art=artLeM[artLeM.length-1];
-        return {key:le.pfx+' '+art,label:'art. '+art+' da '+le.nome,dipl:le.pfx,art:art};
-      }
-      return {key:le.pfx,label:le.nome,dipl:le.pfx,art:''};
+    const le=LEIS_ESP[idx],fullPat=le.alt?('(?:'+le.num+'|'+le.alt+')'):('(?:'+le.num+')');
+    if(new RegExp(fullPat,'i').test(f)){
+      const art=artNear(fullPat+'(?:\\/\\d{2,4})?');
+      if(art)return {key:le.pfx+' '+art,label:'art. '+art+' da '+le.nome,dipl:le.pfx,art:art,baseKey:le.pfx};
+      return {key:le.pfx,label:le.nome,dipl:le.pfx,art:'',baseKey:le.pfx};
     }
   }
-  // diploma: prioridade CPPM > CPP > CPM > CP > CF
   let dipl=null;
-  if(/\bCPPM\b/.test(f))dipl='CPPM';
-  else if(/\bCPP\b/.test(f))dipl='CPP';
-  else if(/\bCPM\b/.test(f))dipl='CPM';
-  else if(/\bCP\b/.test(f))dipl='CP';
-  else if(/\bCF\b/.test(f))dipl='CF';
+  if(/\bCPPM\b/.test(f))dipl='CPPM'; else if(/\bCPP\b/.test(f))dipl='CPP'; else if(/\bCPM\b/.test(f))dipl='CPM'; else if(/\bCP\b/.test(f))dipl='CP'; else if(/\bCF\b/.test(f))dipl='CF';
   if(!dipl)return null;
-  const artM=f.match(/[Aa]rts?\.?\s*(\d+)/);
-  if(!artM)return null;
-  const art=artM[1];
-  const nome=DIPL_NOME[dipl]||dipl;
-  const prep=(dipl==='CF')?'da ':'do ';
-  return {key:dipl+' '+art,label:'art. '+art+' '+prep+nome,dipl:dipl,art:art};
+  let art='';
+  var after=new RegExp('(?:'+dipl+')[\\s\\S]{0,45}?[Aa]rts?\\.?\\s*(\\d+(?:[\\-‐‑–—]?[A-Za-z])?)').exec(f);
+  if(after)art=normArt(after[1]);
+  if(!art){var before=new RegExp('[Aa]rts?\\.?\\s*(\\d+(?:[\\-‐‑–—]?[A-Za-z])?)[\\s\\S]{0,45}?(?:'+dipl+')').exec(f);if(before)art=normArt(before[1]);}
+  if(!art){var any=f.match(/[Aa]rts?\.?\s*(\d+(?:[\-‐‑–—]?[A-Za-z])?)/);if(any)art=normArt(any[1]);}
+  if(!art)return null;
+  const nome=DIPL_NOME[dipl]||dipl,prep=(dipl==='CF')?'da ':'do ';
+  return {key:dipl+' '+art,label:'art. '+art+' '+prep+nome,dipl:dipl,art:art,baseKey:dipl};
 }
 
 === buildKeyToQids ===
