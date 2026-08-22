@@ -7,37 +7,83 @@ src = Path('index.html').read_text(encoding='utf-8')
 def clean(s):
     return re.sub(r'\s+', ' ', s).strip()
 
-out = []
+def balanced_from(start, op='{', cl='}'):
+    p=src.find(op,start)
+    if p<0:return ''
+    depth=0; quote=None; esc=False
+    for i in range(p,len(src)):
+        ch=src[i]
+        if quote:
+            if esc:esc=False
+            elif ch=='\\':esc=True
+            elif ch==quote:quote=None
+            continue
+        if ch in ('"',"'",'`'):
+            quote=ch;continue
+        if ch==op:depth+=1
+        elif ch==cl:
+            depth-=1
+            if depth==0:return src[p:i+1]
+    return ''
 
-# 1) Todos os contextos compactos de ciclo/cycle.
-out.append('=== OCORRENCIAS CICLO/CYCLE ===\n')
-for i, m in enumerate(re.finditer(r'ciclo|cycle', src, re.I), 1):
-    a=max(0,m.start()-260); b=min(len(src),m.end()+420)
-    out.append(f'{i:03d} pos={m.start()}: {clean(src[a:b])}\n')
+def var_block(name):
+    m=re.search(r'\b(?:var|let|const)\s+'+re.escape(name)+r'\s*=',src)
+    return balanced_from(m.end()) if m else ''
 
-# 2) Mensagens de falha/erro e toasts próximas de novo/reset/ciclo.
-out.append('\n=== MENSAGENS DE FALHA POSSIVEIS ===\n')
-for i, m in enumerate(re.finditer(r'n[aã]o foi poss[ií]vel|n[aã]o foi|imposs[ií]vel|falh|erro|toast\s*\(', src, re.I), 1):
-    a=max(0,m.start()-220); b=min(len(src),m.end()+360)
-    chunk=clean(src[a:b])
-    if re.search(r'ciclo|cycle|reset|hist[oó]r|progres|miss[aã]o|cron', chunk, re.I):
-        out.append(f'{i:03d} pos={m.start()}: {chunk}\n')
+def func_block(name):
+    m=re.search(r'function\s+'+re.escape(name)+r'\s*\([^)]*\)\s*\{',src)
+    if not m:return ''
+    body=balanced_from(m.start())
+    return src[m.start():src.find('{',m.start())]+body
 
-# 3) IDs/classes/botoes contendo ciclo/reset/recomeçar/novo.
-out.append('\n=== ELEMENTOS HTML RELACIONADOS ===\n')
-for i, m in enumerate(re.finditer(r'<(?:button|div|a)[^>]{0,500}(?:ciclo|cycle|reset|recome|reinici|novo)[^>]{0,500}>', src, re.I), 1):
-    out.append(f'{i:03d} pos={m.start()}: {clean(m.group(0))}\n')
+out=[]
+out.append('=== LAW BANK: DISP ===\n')
+disp=var_block('DISP')
+out.append(disp+'\n')
+out.append('\n=== BIB_ORDER ===\n'+var_block('BIB_ORDER')+'\n')
+out.append('\n=== BIB_COLORS ===\n'+var_block('BIB_COLORS')+'\n')
+for fn in ['buildKeyToQids','readingOrder','readingPlanInfo','startLeituraQuiz','renderBiblio','ldRead']:
+    out.append('\n=== FUNCTION '+fn+' ===\n'+func_block(fn)+'\n')
 
-# 4) Funções nomeadas e listeners cujo corpo inicial menciona ciclo/reset/histórico.
-out.append('\n=== FUNCOES/LISTENERS RELACIONADOS ===\n')
-for m in re.finditer(r'function\s+([A-Za-z_$][\w$]*)\s*\([^)]*\)\s*\{', src):
-    start=m.start(); chunk=src[start:min(len(src), start+2400)]
-    if re.search(r'ciclo|cycle|reset|hist[oó]r|progresso|progress', chunk, re.I):
-        out.append(f'function {m.group(1)} pos={start}: {clean(chunk[:1800])}\n')
-for m in re.finditer(r'getElementById\(["\']([^"\']+)["\']\)\.addEventListener\([^;]{0,3000}', src):
-    chunk=m.group(0)
-    if re.search(r'ciclo|cycle|reset|recome|reinici|hist[oó]r', chunk, re.I):
-        out.append(f'listener #{m.group(1)} pos={m.start()}: {clean(chunk[:1800])}\n')
+out.append('\n=== DECLARACOES RELACIONADAS A LEI/BIB/MAP/QID ===\n')
+for m in re.finditer(r'\b(?:var|let|const)\s+([A-Za-z_$][\w$]*)\s*=',src):
+    name=m.group(1)
+    if re.search(r'LAW|LEI|ART|BIB|DISP|KEY|MAP|QID|READ',name,re.I):
+        out.append(f'-- {name} pos={m.start()} --\n{clean(src[m.start():min(len(src),m.start()+5000)])}\n')
 
-Path('cycle-debug-report.txt').write_text(''.join(out), encoding='utf-8')
-print('Relatório compacto de ciclo gravado.')
+# Snippets de todos os usos do mapa/dispositivos, para identificar a regra de vínculo.
+out.append('\n=== USOS DE buildKeyToQids / DISP ===\n')
+for pat in [r'buildKeyToQids\s*\(',r'\bDISP\s*\[',r'Object\.keys\(DISP\)']:
+    for m in re.finditer(pat,src):
+        out.append(f'pos={m.start()} {clean(src[max(0,m.start()-700):min(len(src),m.end()+1800)])}\n')
+
+# Extrai objetos de questão que mencionam explicitamente art./lei/decreto/CF/CP/CPP/CPM/CPPM.
+out.append('\n=== QUESTOES COM REFERENCIA LEGAL EXPLICITA ===\n')
+# O banco usa objetos compactos {"id":"...",...}; capturamos os que cabem numa janela razoável.
+qpat=re.compile(r'\{\s*"id"\s*:\s*"([^"]+)"')
+count=0
+for m in qpat.finditer(src):
+    # busca fim simples do objeto respeitando strings
+    start=m.start(); depth=0; quote=False; esc=False; end=None
+    for i in range(start,min(len(src),start+18000)):
+        ch=src[i]
+        if quote:
+            if esc:esc=False
+            elif ch=='\\':esc=True
+            elif ch=='"':quote=False
+            continue
+        if ch=='"':quote=True;continue
+        if ch=='{':depth+=1
+        elif ch=='}':
+            depth-=1
+            if depth==0:
+                end=i+1;break
+    if not end:continue
+    obj=src[start:end]
+    if re.search(r'Lei\s*(?:n[ºo°.]*)?\s*\d|Decreto\s*(?:n[ºo°.]*)?\s*\d|art\.?\s*\d|CF/88|Constitui[cç][aã]o Federal|\bCPPM\b|\bCPP\b|\bCPM\b|C[oó]digo Penal',obj,re.I):
+        count+=1
+        out.append(obj+'\n')
+out.append(f'\nTOTAL_QUESTOES_LEGAIS_EXPLICITAS={count}\n')
+
+Path('cycle-debug-report.txt').write_text(''.join(out),encoding='utf-8')
+print('Auditoria do Banco de Leis gravada em cycle-debug-report.txt')
