@@ -7,6 +7,7 @@ on:
       - 'scripts/fix_law_parser_v2.py'
       - 'scripts/fix_law_parser_v21.py'
       - 'scripts/audit_law_runtime.py'
+      - 'scripts/find_orphan_question_candidates.py'
       - '.github/workflows/inspect-cycle.yml'
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - 'scripts/fix_law_parser_v2.py'
       - 'scripts/fix_law_parser_v21.py'
       - 'scripts/audit_law_runtime.py'
+      - 'scripts/find_orphan_question_candidates.py'
       - '.github/workflows/inspect-cycle.yml'
   workflow_dispatch:
 
@@ -35,12 +37,14 @@ jobs:
         run: python3 scripts/fix_law_parser_v21.py
       - name: Runtime-audit actual parser against full bank
         run: python3 scripts/audit_law_runtime.py
-      - name: Commit platform and runtime audit
+      - name: Find existing questions for orphan law cards
+        run: python3 scripts/find_orphan_question_candidates.py
+      - name: Commit platform and diagnostic reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html law-bank-runtime-audit.json
+          git add index.html law-bank-runtime-audit.json law-bank-orphan-candidates.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "fix: harden law-bank article links to parser v2.1"
+          git commit -m "audit: map remaining law cards to existing questions"
           BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           git push origin HEAD:"$BRANCH"
