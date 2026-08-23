@@ -474,6 +474,18 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
   </div>
   <div class="gam" id="home-gam"></div>
 
+  <div class="card mb12" style="border:2px solid var(--gold)">
+    <div class="cb">
+      <div class="slbl" style="margin-bottom:8px;color:var(--wg)">💾 Migração segura do progresso</div>
+      <div class="ts tmut" style="margin-bottom:12px">Ao mudar do Netlify para o GitHub Pages, exporte o backup no endereço antigo e importe-o no novo. O arquivo inclui todo o progresso da plataforma, mas nunca inclui sua chave de API.</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="bgold bsm" onclick="exportProgress()" style="flex:1;min-width:140px">💾 Exportar backup</button>
+        <button type="button" class="bo bsm" onclick="document.getElementById('home-imp-file').click()" style="flex:1;min-width:140px">📥 Importar backup</button>
+      </div>
+      <input type="file" id="home-imp-file" accept="application/json,.json" style="display:none" onchange="importProgressFile(this)">
+    </div>
+  </div>
+
   <div class="sec-k">Configurar missão</div>
   <div class="card mb8">
     <div class="cb">
@@ -4693,45 +4705,71 @@ function buildStats(){
 }
 
 // ── BACKUP: EXPORTAR / IMPORTAR PROGRESSO ──
-function exportProgress(){
+const BACKUP_APP='PMAL-CEBRASPE';
+const BACKUP_VERSION=3;
+const BACKUP_SECRET_KEYS=new Set(['pmal26_key']);
+function collectProgressStorage(){
+  const data={};
+  for(let i=0;i<localStorage.length;i++){
+    const key=localStorage.key(i);
+    if(key&&key.indexOf('pmal26')===0&&!BACKUP_SECRET_KEYS.has(key))data[key]=localStorage.getItem(key);
+  }
+  if(!Object.prototype.hasOwnProperty.call(data,'pmal26')){
+    data.pmal26=JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId});
+  }
+  return data;
+}
+function downloadProgressDump(dump,suffix){
+  const blob=new Blob([JSON.stringify(dump,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a'),d=new Date();
+  const stamp=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')+'-'+String(d.getHours()).padStart(2,'0')+String(d.getMinutes()).padStart(2,'0');
+  a.href=url;a.download='pmal-backup-'+stamp+(suffix||'')+'.json';
+  document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},500);
+}
+function exportProgress(suffix){
   try{
-    const dump={
-      _app:'PMAL-CEBRASPE',
-      _v:2,
-      _exportedAt:new Date().toISOString(),
-      pmal26:localStorage.getItem('pmal26')||JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia}),
-      pmal26_gen:localStorage.getItem('pmal26_gen')||'',
-      pmal26_red_txt:localStorage.getItem('pmal26_red_txt')||'',
-      pmal26_red_tema:localStorage.getItem('pmal26_red_tema')||''
-    };
-    const blob=new Blob([JSON.stringify(dump,null,2)],{type:'application/json'});
-    const url=URL.createObjectURL(blob);
-    const a=document.createElement('a');
-    const d=new Date();
-    const stamp=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-    a.href=url;a.download='pmal-progresso-'+stamp+'.json';
-    document.body.appendChild(a);a.click();
-    setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},500);
-    toast('💾 Progresso exportado! Guarde esse arquivo.');
-  }catch(e){toast('Não foi possível exportar: '+(e.message||e));}
+    const dump={_app:BACKUP_APP,_v:BACKUP_VERSION,_exportedAt:new Date().toISOString(),storage:collectProgressStorage()};
+    downloadProgressDump(dump,suffix);
+    toast('💾 Backup completo exportado! Guarde esse arquivo.');
+    return true;
+  }catch(e){toast('Não foi possível exportar: '+(e.message||e));return false;}
+}
+function normalizeProgressDump(dump){
+  if(!dump||dump._app!==BACKUP_APP)throw new Error('Arquivo não reconhecido pela plataforma.');
+  let data=dump.storage;
+  if(!data&&dump.pmal26){
+    data={pmal26:dump.pmal26};
+    ['pmal26_gen','pmal26_red_txt','pmal26_red_tema'].forEach(function(k){if(Object.prototype.hasOwnProperty.call(dump,k))data[k]=dump[k];});
+  }
+  if(!data||Object.prototype.toString.call(data)!=='[object Object]'||typeof data.pmal26!=='string')throw new Error('Backup sem dados de progresso.');
+  const keys=Object.keys(data);
+  if(!keys.length||keys.some(function(k){return k.indexOf('pmal26')!==0||BACKUP_SECRET_KEYS.has(k)||typeof data[k]!=='string';}))throw new Error('Backup contém chaves inválidas.');
+  const main=JSON.parse(data.pmal26);
+  if(!main||Object.prototype.toString.call(main)!=='[object Object]')throw new Error('Progresso principal inválido.');
+  if(data.pmal26_gen)JSON.parse(data.pmal26_gen);
+  return data;
 }
 function importProgressFile(input){
   const file=input.files&&input.files[0];
   if(!file)return;
+  if(file.size>10*1024*1024){toast('❌ O arquivo excede o limite de 10 MB.');input.value='';return;}
   const reader=new FileReader();
   reader.onload=function(ev){
     try{
       const dump=JSON.parse(ev.target.result);
-      if(!dump||dump._app!=='PMAL-CEBRASPE'||!dump.pmal26){
-        toast('❌ Arquivo inválido. Use um backup exportado aqui.');input.value='';return;
+      const data=normalizeProgressDump(dump);
+      if(!confirm('Importar este backup validado? As chaves presentes nele substituirão as equivalentes neste navegador. Nenhum outro dado será apagado e uma cópia do progresso atual será baixada antes.')){input.value='';return;}
+      if(!exportProgress('-antes-da-importacao'))throw new Error('A cópia de segurança atual não pôde ser criada. A importação foi cancelada.');
+      const previous={};
+      Object.keys(data).forEach(function(k){previous[k]=localStorage.getItem(k);});
+      try{Object.keys(data).forEach(function(k){localStorage.setItem(k,data[k]);});}
+      catch(writeError){
+        Object.keys(previous).forEach(function(k){if(previous[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,previous[k]);});
+        throw new Error('Não houve espaço para concluir a importação; o progresso anterior foi restaurado.');
       }
-      if(!confirm('Importar este progresso? Isso vai SUBSTITUIR o progresso atual neste dispositivo.')){input.value='';return;}
-      localStorage.setItem('pmal26',dump.pmal26);
-      if(dump.pmal26_gen)localStorage.setItem('pmal26_gen',dump.pmal26_gen);
-      if(dump.pmal26_red_txt)localStorage.setItem('pmal26_red_txt',dump.pmal26_red_txt);
-      if(dump.pmal26_red_tema)localStorage.setItem('pmal26_red_tema',dump.pmal26_red_tema);
       input.value='';
-      toast('✅ Progresso importado! Recarregando…');
+      toast('✅ Backup importado com segurança! Recarregando…');
       setTimeout(()=>location.reload(),900);
     }catch(e){toast('❌ Erro ao ler o arquivo: '+(e.message||e));input.value='';}
   };
