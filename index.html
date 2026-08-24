@@ -553,6 +553,7 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
 
   <div class="sec-k">Operações</div>
   <div class="tiles mb8">
+    <button class="tile t-vio" id="btn-review-20260823" onclick="startReview20260823()"><span class="ic">📚</span><span class="tt">Revisão 23/08/2026</span><span class="tsub">Simulado antigo · 120 no total · 65 itens revisáveis · 24 erros + 4 em branco</span></button>
     <button class="tile t-grn" id="btn-crono" onclick="gN('crono')"><span class="ic">🎯</span><span class="tt">Operação do Dia</span><span class="tsub" id="btn-crono-sub">Missão diária: questões das matérias de hoje + revisão + leituras</span></button>
     <button class="tile t-grn" id="btn-smart" onclick="revisaoInteligente()"><span class="ic">🧠</span><span class="tt">Patrulha de Revisão</span><span class="tsub">50% críticos · 30% instáveis · 20% manutenção</span></button>
     <button class="tile t-gold" id="btn-sim" onclick="openSimuladoSelector()"><span class="ic">🎖️</span><span class="tt">Simulado Real</span><span class="tsub">Estratégico, equilibrado ou adaptativo · P1 50 + P2 70</span></button>
@@ -1272,20 +1273,20 @@ function startIncidenceMission(){
 }
 
 // ── STATE ──
-var S={mode:'simulado',subs:[],niv:'all',qty:5,sq:[],ci:0,sa:[],ha:[],eids:new Set(),legacyEids:new Set(),legacyTopics:{},legacySummary:null,cycleId:'ciclo2_20260821',AS:{},round:0,log:[],metas:{},xp:0,streak:0,lastDay:'',plan:{examDate:''},daily:{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false},bibLidos:{},leituraDia:{d:'',keys:[],inReview:false},flash:{cards:{}},weekly:{lastDone:0}};
+var S={mode:'simulado',subs:[],niv:'all',qty:5,sq:[],ci:0,sa:[],ha:[],eids:new Set(),legacyEids:new Set(),legacyTopics:{},legacySummary:null,cycleId:'ciclo2_20260821',AS:{},round:0,log:[],metas:{},xp:0,streak:0,lastDay:'',plan:{examDate:''},daily:{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false},bibLidos:{},leituraDia:{d:'',keys:[],inReview:false},flash:{cards:{}},weekly:{lastDone:0},reviewSessions:{}};
 var apiKey='';
 
 function LS(){
   try{
     const d=localStorage.getItem('pmal26');
-    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:''};S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
+    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:''};S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.reviewSessions=p.reviewSessions||{};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
     apiKey=localStorage.getItem('pmal26_key')||'';
     if(apiKey)document.getElementById('inp-key').value=apiKey;
     loadGenQs();
   }catch(e){}
 }
 function SS(){
-  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
+  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions,legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
 }
 
 // ══════════ SISTEMA INTELIGENTE DE ALERTA / REVISÃO / REFORÇO ══════════
@@ -1306,6 +1307,10 @@ function topicHist(mat,top){
   h.sort((x,y)=>x.ts-y.ts);return h;
 }
 function topicStatus(mat,top){
+  const records=topicRecords(mat,top);
+  if(records.some(function(r){return r.personalizedClass==='erro_persistente';}))return 'vermelho';
+  if(records.some(function(r){return r.personalizedClass==='regressao'||r.personalizedClass==='chute_lacuna'||r.personalizedClass==='circunstancial';}))return 'amarelo';
+  if(records.some(function(r){return r.personalizedClass==='recuperado';}))return 'verde';
   const h=topicHist(mat,top);if(!h.length)return 'novo';
   const t=h.length,ok=h.filter(x=>x.ok).length,pct=ok/t;
   const rec4=h.slice(-4),errRec=rec4.filter(x=>!x.ok).length;
@@ -1729,10 +1734,11 @@ function getLessonContent(mat,top){
     'Conhecimentos de Alagoas': (typeof AL_RESUMOS!=='undefined'?AL_RESUMOS:null),
     'Matemática': (typeof MT_RESUMOS!=='undefined'?MT_RESUMOS:null),
   };
+  var custom=(typeof personalizedLesson20260823==='function')?personalizedLesson20260823(mat,top):null;
   var manual=flashFromPortCards(mat,top);
   var mapa=RESUMOS_POR_MATERIA[mat],resumo=(mapa&&mapa[top])?flashClassifySummary(mat,top,mapa[top]):null;
   var banco=buildTopicLesson(mat,top,{maxRegras:4,maxPeg:3,maxBizus:1});
-  return flashMergeLessons(flashMergeLessons(manual,resumo),banco);
+  return flashMergeLessons(custom,flashMergeLessons(flashMergeLessons(manual,resumo),banco));
 }
 function buildFlashDeck(){
   const buckets={};
@@ -1742,13 +1748,17 @@ function buildFlashDeck(){
   });
   let entries=Object.values(buckets);
   entries.forEach(function(e){e.status=topicStatus(e.mat,e.topico);});
-  entries=entries.filter(function(e){return e.status==='vermelho'||e.status==='amarelo';});
+  entries=entries.filter(function(e){
+    var custom=(typeof personalizedCard20260823==='function')?personalizedCard20260823(e.mat,e.topico):null;
+    return e.status==='vermelho'||e.status==='amarelo'||(custom&&custom.classification==='recuperado');
+  });
   const cards=[];
   entries.forEach(function(e){
     const lesson=getLessonContent(e.mat,e.topico);
     if(!lesson)return; // tópico sem f/p/d suficiente no banco pra montar carta
     const fk=flashKey(e.mat,e.topico), frec=flashGet(fk);
-    cards.push(Object.assign(lesson,{status:e.status,fkey:fk,due:frec.due}));
+    var custom=(typeof personalizedCard20260823==='function')?personalizedCard20260823(e.mat,e.topico):null;
+    cards.push(Object.assign(lesson,{status:(custom&&custom.classification==='recuperado')?'manutencao':e.status,fkey:fk,due:frec.due}));
   });
   return cards;
 }
@@ -2283,6 +2293,7 @@ function buildBlock(dist,Nblock,simNiv){
   return bq;
 }
 function startSimulado(){
+  S.reviewActive=null;
   const N=parseInt(document.getElementById('sel-qty').value)||120;
   const simNiv=document.getElementById('sel-niv').value;
   // Edital PMAL 2026 (item 7.1): P1 Conhecimentos Básicos (50) + P2 Conhecimentos Específicos (70)
@@ -4172,6 +4183,7 @@ function getPool(){
 }
 
 function startQ(){
+  S.reviewActive=null;
   // Sempre lê direto do DOM — garante o valor atual independente de eventos
   S.qty=parseInt(document.getElementById('sel-qty').value)||10;
   S.niv=document.getElementById('sel-niv').value;
@@ -4199,7 +4211,7 @@ function renderQ(){
   document.getElementById('qprog').style.width=pct+'%';
   document.getElementById('qcnt').textContent=(S.ci+1)+'/'+tot;
   document.getElementById('qmat').textContent=q.m;
-  document.getElementById('qass').innerHTML='📖 '+esc(q.a)+questionSourceBadge(q);
+  document.getElementById('qass').innerHTML='📖 '+esc(q.a)+questionSourceBadge(q)+(q.reviewOnly?' <span class="badge-ai">📚 REVISÃO EXCLUSIVA · '+esc((q.reviewClass||'').replace(/_/g,' '))+'</span>':'');
   const ne=document.getElementById('qniv');
   const nm={medio:'⭐ Médio',dificil:'⭐⭐ Difícil',muito_dificil:'⭐⭐⭐ Muito Difícil',cruel:'☠️ Cruel'};
   const nc={medio:'nm',dificil:'nd',muito_dificil:'nmd',cruel:'nc'};
@@ -4248,6 +4260,11 @@ function confirmConf(conf){
   const p=S._pend;if(!p)return;
   const q=p.q,a=p.a,ok=p.ok;
   S.sa.push({id:q.id,ans:a,ok:ok,m:q.m,ce:q.ce,nv:q.n,conf:conf});
+  if(q.reviewOnly||S.reviewActive){
+    saveReviewOnlyAnswer(q,a,ok,conf);S._pend=null;
+    document.getElementById('ar-conf').style.display='none';document.getElementById('ar-resp').style.display='';
+    showFB(q,ok,null,conf);return;
+  }
   S.ha.push({id:q.id,ok:ok,ts:Date.now(),conf:conf});
   if(ok)S.eids.delete(q.id);else S.eids.add(q.id);
   const al=trackAnswer(q,a,ok,conf);
@@ -4325,14 +4342,14 @@ function showRes(){
   const ec=document.getElementById('recard');
   if(errs.length>0){
     ec.style.display='block';
-    document.getElementById('reli').innerHTML=errs.map(a=>{const q=QQ.find(x=>x.id===a.id);return q?'<div class="eli"><div class="em">'+q.m+'</div><div class="et">'+q.e+'</div></div>':'';}).join('');
+    document.getElementById('reli').innerHTML=errs.map(a=>{const q=findQuestionById(a.id);return q?'<div class="eli"><div class="em">'+q.m+' · '+q.id+'</div><div class="et">'+q.e+'</div></div>':'';}).join('');
   }else ec.style.display='none';
   const weak=entries.filter(e=>Math.round(e[1].c/e[1].t*100)<50).map(e=>e[0]);
   let plano='';
   if(err===0)plano='<strong>🎉 Desempenho perfeito!</strong> Revise os fundamentos para consolidar.';
   else{if(weak.length)plano+='<strong>🚨 Revisão urgente:</strong> '+weak.join(', ')+'<br><br>';plano+='<strong>💡 Para amanhã:</strong> Releia os artigos das questões erradas. Use o prompt abaixo ou clique em "Novo Simulado" para continuar — se o banco acabar, a IA gera mais automaticamente.';}
   document.getElementById('rpla').innerHTML=plano;
-  const errAs=errs.map(a=>{const q=QQ.find(x=>x.id===a.id);return q?q.a:'';}).filter(Boolean);
+  const errAs=errs.map(a=>{const q=findQuestionById(a.id);return q?q.a:'';}).filter(Boolean);
   document.getElementById('rpro').textContent=buildPrompt(entries,ok,tot,errAs,pct);
   document.getElementById('btn-cp').onclick=function(){
     navigator.clipboard.writeText(document.getElementById('rpro').textContent)
@@ -4804,12 +4821,13 @@ SS=function(){
 // ── Fontes e sinalização ──
 function isAIQuestion(q){return !!(q&&q.id&&q.id.indexOf('ai_')===0);}
 function questionSourceInfo(q){
+  if(q&&q.reviewOnly)return {type:'review',label:'Simulado antigo — revisão exclusiva',detail:(q.originalNumber?'questão '+q.originalNumber+' · ':'')+'recebida em 23/08/2026 · fora das métricas gerais'};
   if(isOfficialQuestion(q))return {type:'oficial',label:'Oficial PMAL — texto de prova',detail:officialQuestionYear(q)+' · item oficial'};
   if(isRecentAdapted(q))return {type:'adaptada',label:'Outra PM/Cebraspe — adaptada para C/E',detail:q.src+' · questão '+q.srcq+' · conversão para Certo/Errado'};
   if(isAIQuestion(q))return {type:'ia',label:'Gerada por IA',detail:'Questão gerada na plataforma; confira o fundamento quando houver dúvida.'};
   return {type:'autoral',label:'Autoral baseada no padrão Cebraspe',detail:'Questão criada para treino, sem se apresentar como item oficial.'};
 }
-function questionSourceBadge(q){var x=questionSourceInfo(q);return '<div class="q-origin">'+(x.type==='oficial'?'📜':x.type==='adaptada'?'📋':x.type==='ia'?'✨':'✍️')+' '+esc(x.label)+(x.detail?' · '+esc(x.detail):'')+'</div>';}
+function questionSourceBadge(q){var x=questionSourceInfo(q);return '<div class="q-origin">'+(x.type==='review'?'📚':x.type==='oficial'?'📜':x.type==='adaptada'?'📋':x.type==='ia'?'✨':'✍️')+' '+esc(x.label)+(x.detail?' · '+esc(x.detail):'')+'</div>';}
 function isFlagged(q){return !!(q&&S.flagged&&S.flagged[q.id]);}
 function toggleFlagCurrentQuestion(){
   var q=S._lastFeedbackQuestion;if(!q)return;
@@ -5656,6 +5674,157 @@ function importAlagoas20260820(){
   }catch(e){console.warn('Falha na importação Alagoas 20/08/2026:',e);}
 }
 
+// ══════════ REVISÃO PERSONALIZADA — 23/08/2026 ══════════
+// Camada isolada: alimenta Radar e flashcards, mas não adiciona itens ao banco de simulados.
+var PERSONAL_REVIEW_20260823=[
+ {id:'rev2308_por_sem',m:'Língua Portuguesa',a:'Semântica e conectivos',classification:'chute_lacuna',central:'“Uma vez que” normalmente introduz causa; “à medida que”, proporção. Cotidianamente equivale, em contexto comum, a habitualmente.',rules:['Desconfie de generalizações como “sempre”: um absolutismo pode tornar o item errado.','“Em Foz” indica localização; “de Foz” tende a indicar vínculo, origem ou procedência.']},
+ {id:'rev2308_por_verb',m:'Língua Portuguesa',a:'Verbos e locuções verbais',classification:'chute_lacuna',central:'Intervir segue vir: ele interveio. “Estamos garantindo” forma uma locução verbal.',rules:['Beneficiar-se é forma pronominal válida.','“Haviam sido perdidos” é voz passiva e não equivale a “existiam”.']},
+ {id:'rev2308_por_sint',m:'Língua Portuguesa',a:'Sintaxe e funções',classification:'chute_lacuna',central:'O relativo “que” pode exercer função de sujeito; identifique o papel dentro da oração relativa.',rules:['Em “precisou de novos documentos”, o termo é objeto indireto; em “solicitação de registro civil”, complemento nominal.','Em “afirma a coordenadora”, o sujeito está posposto.','A vírgula depois de adjunto adverbial curto é, em regra, facultativa.','A referência de “referido projeto” deve ser resolvida pelo antecedente textual efetivo.']},
+ {id:'rev2308_inf_proc',m:'Noções de Informática',a:'Sistema operacional — processo e diagnóstico',classification:'circunstancial',central:'Programa em execução é processo.',rules:['SetupDiag diagnostica falhas de instalação ou upgrade do Windows; não é ferramenta do WSL.','ipconfig exibe a configuração TCP/IP e executa operações específicas; não é configurador genérico de rede.']},
+ {id:'rev2308_inf_office',m:'Noções de Informática',a:'Microsoft Office — comandos essenciais',classification:'chute_lacuna',central:'No Word, Sumário fica em Referências.',rules:['Converter Texto em Tabela: Inserir > Tabela > Converter Texto em Tabela.','No Excel, CONT.SE exige um critério; CONT.VALORES conta células não vazias.','No PowerPoint, Slide Mestre padroniza tema e layouts.']},
+ {id:'rev2308_mat_prop',m:'Matemática',a:'Razão, proporção e regra de três',classification:'chute_lacuna',central:'Na razão PMAL 3:8, um grupo de 55 corresponde a 15 e 40; novos convocados em 1:1 somam 10, levando o total a 65.',rules:['Regra de três composta: 6 policiais cobrem 3 km² em 10 dias; para 12 km² em 15 dias, são necessários 16 policiais.']},
+ {id:'rev2308_mat_fin',m:'Matemática',a:'Porcentagem e matemática financeira',classification:'chute_lacuna',central:'Porcentagem de porcentagem multiplica as taxas: 65% × 12% = 7,8%.',rules:['Em juros simples de 5% a.m., triplicar exige 1+0,05n=3, logo n=40 meses.','Taxa real exata: (1+i)/(1+inflação)-1; 32% nominal e 10% de inflação resultam em 20%.','Taxa efetiva anual de taxa diária x em ano bissexto: (1+x)^366-1.']},
+ {id:'rev2308_mat_matriz',m:'Matemática',a:'Matrizes — identidade',classification:'chute_lacuna',central:'A matriz identidade tem 1 na diagonal principal e 0 em todas as demais posições.',rules:[]},
+ {id:'rev2308_al_agreste',m:'Conhecimentos de Alagoas',a:'Geografia de Alagoas — Agreste',classification:'chute_lacuna',central:'O Agreste é faixa de transição entre Zona da Mata e Sertão.',rules:[]},
+ {id:'rev2308_al_1817',m:'Conhecimentos de Alagoas',a:'Formação Histórica de Alagoas — 1817 e 1821',classification:'chute_lacuna',central:'Em 1817 ocorreu a separação de Pernambuco e a criação da Capitania de Alagoas.',rules:['Em 1821, capitania passou a província; não confundir essa mudança com a emancipação de 1817.']},
+ {id:'rev2308_al_penedo',m:'Conhecimentos de Alagoas',a:'Formação Histórica de Alagoas — Penedo colonial',classification:'recuperado',central:'Penedo foi corretamente reconhecido como núcleo colonial relevante.',rules:['Manter o ponto em revisão de manutenção, sem tratá-lo como erro atual.']},
+ {id:'rev2308_li_retorno',m:'Legislação Institucional PMAL',a:'Lei 5.346 — incapacidade, incorporação e formação',classification:'chute_lacuna',central:'O reformado por incapacidade pode retornar se considerado apto em grau de recurso.',rules:['A anulação da incorporação por declaração falsa escrita durante o recrutamento é erro persistente.','A anulação pode ocorrer em qualquer fase do período de formação.']},
+ {id:'rev2308_li_falsa',m:'Legislação Institucional PMAL',a:'Lei 5.346 — declaração falsa no recrutamento',classification:'erro_persistente',central:'Declaração falsa escrita durante o recrutamento pode levar à anulação da incorporação.',rules:['A anulação não fica restrita ao início: pode ocorrer em qualquer fase do período de formação.']},
+ {id:'rev2308_lpe_drogas38',m:'Legislação Penal Especial',a:'Lei de Drogas — art. 38',classification:'chute_lacuna',central:'O art. 38 prevê modalidade culposa, com pena de 6 meses a 2 anos e multa.',rules:[]},
+ {id:'rev2308_lpe_abuso',m:'Legislação Penal Especial',a:'Abuso de Autoridade — repouso noturno',classification:'chute_lacuna',central:'O interrogatório durante o repouso noturno admite as exceções legais, como flagrante ou consentimento do interrogado devidamente assistido.',rules:['Não trate a proibição como absoluta.']},
+ {id:'rev2308_dpp_tco',m:'Direito Processual Penal',a:'Lei 9.099 — TCO e perícia',classification:'chute_lacuna',central:'A lavratura de TCO não dispensa perícia que seja necessária à apuração.',rules:[]},
+ {id:'rev2308_da_poderes',m:'Direito Administrativo',a:'Autotutela e poder de polícia',classification:'erro_persistente',central:'Autotutela: anular atos ilegais e revogar atos por conveniência e oportunidade.',rules:['Poder de polícia condiciona ou restringe bens, atividades e direitos em prol do interesse público.']},
+ {id:'rev2308_da_14133',m:'Direito Administrativo',a:'Lei 14.133 — encargos trabalhistas e previdenciários',classification:'regressao',central:'Encargos trabalhistas podem gerar responsabilidade subsidiária quando houver falha de fiscalização; encargos previdenciários geram responsabilidade solidária.',rules:[]},
+ {id:'rev2308_da_serv',m:'Direito Administrativo',a:'Serviços públicos — uti universi',classification:'erro_persistente',central:'Serviço uti universi é prestado à coletividade, com uso indireto e indivisível.',rules:[]},
+ {id:'rev2308_da_contrato',m:'Direito Administrativo',a:'Contratos administrativos — extinção e equilíbrio',classification:'chute_lacuna',central:'A extinção do contrato não prejudica o reconhecimento de desequilíbrio econômico-financeiro requerido durante sua vigência.',rules:[]},
+ {id:'rev2308_da_bens',m:'Direito Administrativo',a:'Bens públicos — regime jurídico',classification:'erro_persistente',central:'Os bens públicos não se submetem todos a um regime único e uniforme.',rules:[]},
+ {id:'rev2308_da_resp',m:'Direito Administrativo',a:'Responsabilidade civil do Estado — ato lícito',classification:'chute_lacuna',central:'A responsabilidade por ato lícito que cause dano anormal e específico apoia-se na isonomia perante os encargos públicos.',rules:[]},
+ {id:'rev2308_dc_resposta',m:'Direito Constitucional',a:'Direitos fundamentais — resposta e indenização',classification:'erro_persistente',central:'CF, art. 5º, V: direito de resposta e indenização por dano material, moral ou à imagem podem ser cumulados.',rules:[]},
+ {id:'rev2308_dc_nac',m:'Direito Constitucional',a:'Nacionalidade — EC 131/2023',classification:'regressao',central:'A perda por cancelamento judicial da naturalização exige fraude no processo ou atentado contra a ordem constitucional e o Estado Democrático.',rules:[]},
+ {id:'rev2308_dc_terr',m:'Direito Constitucional',a:'Organização do Estado — Territórios Federais',classification:'regressao',central:'Territórios Federais integram a União; criação, transformação em estado e reintegração ao estado de origem dependem de lei complementar.',rules:[]},
+ {id:'rev2308_dpp_ip',m:'Direito Processual Penal',a:'Inquérito policial — contraditório e presidência',classification:'recuperado',central:'No inquérito policial não há contraditório e ampla defesa plenos.',rules:['O MP pode investigar, mas não preside inquérito policial.']},
+ {id:'rev2308_dpp_mp',m:'Direito Processual Penal',a:'Investigação criminal — Ministério Público',classification:'regressao',central:'O Ministério Público pode realizar investigação própria, mas não preside o inquérito policial.',rules:[]},
+ {id:'rev2308_dpp_drogas',m:'Direito Processual Penal',a:'Lei de Drogas — prazo do inquérito',classification:'regressao',central:'Na Lei de Drogas, o inquérito tem prazo de 30 dias com indiciado preso e 90 dias solto; ambos podem ser duplicados judicialmente.',rules:[]},
+ {id:'rev2308_dpm_emb',m:'Direito Penal Militar',a:'CPM — embriaguez como agravante',classification:'erro_persistente',central:'A agravante da embriaguez aplica-se, como regra, ao militar; para o civil, somente quando preordenada.',rules:[]},
+ {id:'rev2308_dpm_crime',m:'Direito Penal Militar',a:'CPM — crime militar e aplicação da lei',classification:'chute_lacuna',central:'Após a Lei 13.491/2017, crime militar em tempo de paz pode abranger crimes da legislação penal comum nas hipóteses do art. 9º.',rules:['O CPM não regulamenta infrações disciplinares.','Tempo do crime no CPM segue a teoria da atividade.','Lei penal militar posterior mais benéfica retroage.']},
+ {id:'rev2308_dppm_acao',m:'Direito Processual Penal Militar',a:'CPPM — ação penal e art. 33',classification:'chute_lacuna',central:'Na ação penal militar, o Ministério Público não pode desistir.',rules:['Revisar especialmente as informações verbais e escritas previstas no art. 33 do CPPM, ponto ligado ao erro da questão 101.']},
+ {id:'rev2308_dppm_ipm',m:'Direito Processual Penal Militar',a:'IPM — prazo e instauração',classification:'chute_lacuna',central:'Com indiciado preso, o IPM tem prazo de 20 dias contado da prisão e é improrrogável.',rules:['O IPM pode ser instaurado de ofício e nas demais hipóteses legais; não apenas por requisição do MPM ou decisão do STM.']},
+ {id:'rev2308_dh_trat',m:'Direitos Humanos',a:'Tratados de direitos humanos — status constitucional',classification:'chute_lacuna',central:'Status constitucional exige aprovação em cada Casa, em dois turnos, por 3/5 dos votos — não 2/3.',rules:['O Tratado de Marraquexe possui status constitucional.']},
+ {id:'rev2308_dh_dim',m:'Direitos Humanos',a:'Teoria dos direitos humanos — características e gerações',classification:'chute_lacuna',central:'Direitos humanos são imprescritíveis como regra conceitual.',rules:['A 2ª geração reúne direitos sociais, econômicos e culturais; direitos políticos pertencem à 1ª geração.']}
+];
+// Questões recebidas nas capturas de 23/08. Este banco é deliberadamente separado de QQ.
+// Nunca concatenar com QQ: reviewOnly/scope existem como segunda barreira contra uso em simulados e métricas gerais.
+function rq23(n,m,a,e,g,c,p,classification,originalNumber){
+  return {id:'rev_20260823_'+String(n).padStart(3,'0'),m:m,a:a,n:classification==='erro_persistente'?'cruel':'dificil',e:e,g:g,c:c,p:p,f:'Revisão personalizada de 23/08/2026.',d:p,ce:'revisão exclusiva',src:'Simulado antigo — revisão 23/08/2026',scope:'review_only',reviewOnly:true,reviewDate:'2026-08-23',reviewClass:classification,originalNumber:originalNumber||null};
+}
+var REVIEW_QUESTIONS_20260823=[
+ rq23(1,'Língua Portuguesa','Semântica — conectivos','A substituição de “uma vez que” por “à medida que” preservaria o sentido e a correção do texto.','ERRADO','“Uma vez que” tem valor causal; “à medida que” exprime proporção ou progressão.','Não confunda “na medida em que”, que pode ser causal, com “à medida que”.', 'recuperado'),
+ rq23(2,'Língua Portuguesa','Semântica lexical','No contexto, o vocábulo “cotidianamente” poderia ser substituído por “habitualmente” sem prejuízo essencial do sentido.','CERTO','No contexto apresentado, ambos indicam algo que ocorre de modo costumeiro ou frequente.','Não rejeite sinônimos apenas porque não são idênticos em todos os contextos.', 'regressao'),
+ rq23(3,'Língua Portuguesa','Conjugação verbal','A forma “interviu” está corretamente empregada como pretérito perfeito do verbo intervir.','ERRADO','Intervir segue a conjugação de vir: ele veio; ele interveio.','Intervir → interveio, intervier, interviesse.', 'regressao'),
+ rq23(4,'Língua Portuguesa','Semântica das preposições','A troca de “Defensoria em Foz” por “Defensoria de Foz” manteria necessariamente o mesmo sentido.','ERRADO','“Em” marca localização; “de” pode indicar origem, vínculo ou pertencimento.','Preposições curtas podem alterar a relação semântica.', 'regressao'),
+ rq23(5,'Língua Portuguesa','Interpretação de textos','Do texto conclui-se que a providência indicada ocorre sempre que direitos são ameaçados.','ERRADO','O texto não autoriza a generalização absoluta criada pelo advérbio “sempre”.','Generalizações absolutas exigem apoio textual expresso.', 'recuperado'),
+ rq23(6,'Língua Portuguesa','Sintaxe — pronome relativo','Nas duas ocorrências analisadas, o pronome relativo “que” exerce a função sintática de sujeito das respectivas orações.','CERTO','A função do relativo é determinada dentro da oração que ele introduz; nos dois casos, ele ocupa a posição de sujeito.','Substitua o relativo pelo antecedente dentro da oração.', 'recuperado'),
+ rq23(7,'Língua Portuguesa','Pontuação','A inserção de vírgula depois da expressão inicial “Com esse trabalho” comprometeria a correção gramatical.','ERRADO','Adjunto adverbial curto deslocado pode ser isolado por vírgula; nesse caso, o sinal é facultativo.','Facultativo não significa proibido.', 'recuperado'),
+ rq23(8,'Língua Portuguesa','Colocação pronominal','A substituição de “se beneficiar” por “beneficiar-se” preserva a correção gramatical no contexto.','CERTO','A forma pronominal beneficiar-se admite a ênclise quando não há fator obrigatório de próclise.','Verifique primeiro se existe palavra atrativa.', 'recuperado'),
+ rq23(9,'Língua Portuguesa','Reescrita e equivalência','A forma verbal “haviam sido perdidos” poderia ser substituída por “existiam” sem alteração sintática ou semântica relevante.','ERRADO','“Haviam sido perdidos” é uma locução verbal na voz passiva; “existiam” altera a estrutura e o sentido.','Não trate o auxiliar haver como verbo impessoal de existência.', 'recuperado'),
+ rq23(10,'Língua Portuguesa','Locução verbal','Em “estamos garantindo”, a forma “garantindo” constitui uma oração reduzida de gerúndio independente.','ERRADO','As duas formas integram uma única locução verbal: estamos garantindo.','Gerúndio nem sempre introduz oração reduzida.', 'recuperado'),
+ rq23(11,'Língua Portuguesa','Sintaxe — complementos','Os segmentos “de novos documentos”, em “precisou de novos documentos”, e “de registro civil”, em “solicitação de registro civil”, exercem a mesma função sintática.','ERRADO','O primeiro completa o verbo precisar e é objeto indireto; o segundo completa o nome solicitação e é complemento nominal.','Veja se a preposição é exigida por verbo ou por nome.', 'regressao'),
+ rq23(12,'Língua Portuguesa','Sintaxe — sujeito posposto','No trecho “afirma a coordenadora”, o termo “a coordenadora” funciona como complemento do verbo.','ERRADO','Na ordem direta: “a coordenadora afirma”. O termo é sujeito posposto.','Reordene a oração e pergunte quem pratica a ação.', 'regressao'),
+ rq23(13,'Língua Portuguesa','Coesão referencial','A expressão “referido projeto” retoma necessariamente o projeto do Assentamento Noroeste mencionado no item.','ERRADO','O antecedente textual efetivo de “referido projeto” é outro; a retomada proposta extrapola a cadeia referencial.','Localize o antecedente compatível mais próximo, sem confiar apenas na repetição de “projeto”.', 'recuperado'),
+
+ rq23(14,'Noções de Informática','Sistemas operacionais — processos','Em um sistema operacional, um programa em execução é denominado processo.','CERTO','Processo é a instância ativa de um programa, com estado, memória e recursos associados.','Programa é arquivo/código; processo é programa em execução.', 'circunstancial',21),
+ rq23(15,'Noções de Informática','Windows — SetupDiag','O SetupDiag é destinado principalmente a diagnosticar problemas de inicialização do Subsistema do Windows para Linux (WSL).','ERRADO','SetupDiag analisa falhas ocorridas na instalação ou atualização do Windows.','SetupDiag → Windows Setup/upgrade, não WSL.', 'chute_lacuna',22),
+ rq23(16,'Noções de Informática','Redes — ipconfig','No Windows, ipconfig é uma ferramenta genérica para exibir e configurar todos os parâmetros da rede.','ERRADO','ipconfig exibe a configuração TCP/IP e oferece operações específicas, como release, renew e flushdns; não é configurador genérico.','O “config” no nome induz à ampliação indevida.', 'chute_lacuna',23),
+ rq23(17,'Noções de Informática','Word — sumário','No Microsoft Word, o comando para inserir sumário encontra-se na guia Referências.','CERTO','Sumário, notas de rodapé, citações e bibliografia ficam na guia Referências.','Nem tudo que é inserido está na guia Inserir.', 'recuperado',24),
+ rq23(18,'Noções de Informática','Word — tabelas','Para converter texto separado por tabulações em tabela no Word, basta selecionar o texto e clicar em Tabela, na guia Inserir.','ERRADO','É necessário escolher o comando específico Inserir > Tabela > Converter Texto em Tabela.','A palavra “basta” omite uma etapa necessária.', 'erro_persistente',25),
+ rq23(19,'Noções de Informática','Excel — funções de contagem','A função CONT.VALORES conta as células não vazias de um intervalo, sem exigir critério.','CERTO','CONT.VALORES conta células preenchidas; CONT.SE exige intervalo e critério.','CONT.SE = condição; CONT.VALORES = conte o que não está vazio.', 'recuperado',28),
+ rq23(20,'Noções de Informática','PowerPoint — Slide Mestre','Alterações no Slide Mestre podem padronizar tema, fontes, plano de fundo e layouts dos slides vinculados.','CERTO','O Slide Mestre centraliza a estrutura visual da apresentação e propaga alterações aos layouts associados.','Padronização global → Slide Mestre.', 'recuperado',30),
+
+ rq23(21,'Matemática','Matrizes — matriz identidade','Em uma matriz identidade, todos os elementos da matriz são iguais a 1.','ERRADO','Somente os elementos da diagonal principal são 1; os demais são 0.','Identidade: diagonal 1, resto 0.', 'chute_lacuna',31),
+ rq23(22,'Matemática','Razão e proporção','Em um grupo de 55 policiais, a razão entre mulheres e homens é 3:8. Se ingressarem homens e mulheres em quantidades iguais e a razão passar a 4:9, o novo total será 60.','ERRADO','Inicialmente são 15 mulheres e 40 homens. Entram 5 de cada sexo, e o total passa a 65.','Na entrada em partes iguais, some x aos dois termos antes de montar a nova razão.', 'recuperado',33),
+ rq23(23,'Matemática','Regra de três composta','Se 6 policiais cobrem 3 km² em 10 dias, então 8 policiais cobrirão 12 km² em 15 dias, mantida a produtividade.','ERRADO','A área quadruplica e o prazo aumenta de 10 para 15 dias: 6×4×10/15 = 16 policiais.','Área é direta; tempo disponível é inverso.', 'recuperado',34),
+ rq23(24,'Matemática','Porcentagem de porcentagem','Se 65% de um produto é liga metálica e 12% dessa liga é ferro, então o ferro representa menos de 7% do produto.','ERRADO','0,65×0,12 = 0,078: o ferro representa 7,8% do produto.','“x% de y%” → multiplique as taxas.', 'regressao',35),
+ rq23(25,'Matemática','Juros simples','Aplicado a juros simples de 5% ao mês, um capital levará mais de três anos para produzir montante igual ao triplo do capital inicial.','CERTO','3=1+0,05t, logo t=40 meses, ou 3 anos e 4 meses.','Para triplicar, os juros acumulados precisam chegar a 200%.', 'regressao',37),
+ rq23(26,'Matemática','Taxa real','Com taxa nominal de 32% e inflação de 10% no período, a taxa real é superior a 21%.','ERRADO','(1,32/1,10)-1 = 0,20, portanto a taxa real exata é 20%.','Taxa real exata não é a simples subtração das taxas.', 'chute_lacuna',38),
+ rq23(27,'Matemática','Equivalência de taxas','Se x é a taxa efetiva diária, a taxa efetiva anual em um ano bissexto é dada por (1+x)^366 - 1.','CERTO','Em capitalização composta, a equivalência para n períodos é (1+i)^n-1.','Ano bissexto tem 366 dias; não esqueça o -1 ao converter montante em taxa.', 'erro_persistente',39),
+
+ rq23(28,'Conhecimentos de Alagoas','Geografia — Agreste','O Agreste alagoano constitui faixa de transição entre a Zona da Mata, mais úmida, e o Sertão semiárido.','CERTO','O Agreste apresenta características intermediárias de clima, vegetação e uso do solo.','Agreste = transição.', 'recuperado'),
+ rq23(29,'Conhecimentos de Alagoas','História — emancipação de 1817','A separação administrativa de Alagoas em relação a Pernambuco e sua elevação a capitania ocorreram em 1817.','CERTO','D. João VI criou a Capitania de Alagoas separada de Pernambuco em 1817.','1817 = emancipação e capitania.', 'recuperado'),
+ rq23(30,'Conhecimentos de Alagoas','História — Penedo colonial','Penedo destacou-se, no período colonial, como importante núcleo de ocupação e circulação ligado ao rio São Francisco.','CERTO','A posição estratégica às margens do São Francisco deu relevância colonial a Penedo.','Associe Penedo ao Baixo São Francisco.', 'recuperado'),
+ rq23(31,'Conhecimentos de Alagoas','História — capitania e província','Em 1821, Alagoas passou da condição de capitania à de província, rompendo então sua vinculação administrativa com Pernambuco.','CERTO','O núcleo cobrado é a elevação de capitania a província em 1821; a separação de Pernambuco já ocorrera em 1817.','1817 = separação; 1821 = capitania → província.', 'regressao',49),
+
+ rq23(32,'Legislação Institucional PMAL','Estatuto PMAL — reforma','O policial militar reformado por incapacidade definitiva jamais poderá retornar à ativa, ainda que seja considerado apto em grau de recurso.','ERRADO','O Estatuto admite o retorno quando o reformado é julgado apto em grau de recurso, observadas as condições legais.','O absoluto “jamais” elimina a exceção legal.', 'recuperado',52),
+ rq23(33,'Legislação Institucional PMAL','Estatuto PMAL — anulação da incorporação','A declaração falsa prestada apenas oralmente pelo voluntário durante o recrutamento enquadra-se na hipótese literal de anulação da incorporação.','ERRADO','A hipótese legal exige declaração falsa prestada por escrito durante o recrutamento.','Declaração falsa escrita é o detalhe decisivo.', 'erro_persistente',54),
+ rq23(34,'Legislação Institucional PMAL','Estatuto PMAL — formação','A anulação da incorporação pode ocorrer em qualquer fase do período de formação, nas hipóteses legais.','CERTO','O Estatuto não restringe a medida apenas ao início do curso de formação.','Não crie limitação temporal ausente da lei.', 'recuperado',55),
+ rq23(35,'Legislação Penal Especial','Lei de Drogas — art. 38','A Lei de Drogas prevê modalidade culposa para quem prescreve ou ministra droga indevidamente, com pena de detenção de seis meses a dois anos e multa.','CERTO','O art. 38 da Lei 11.343/2006 tipifica expressamente a conduta culposa.','A existência de modalidade culposa é a literalidade cobrada.', 'recuperado',57),
+ rq23(36,'Legislação Penal Especial','Abuso de Autoridade — repouso noturno','Configura abuso de autoridade interrogar preso durante o repouso noturno mesmo quando ele, devidamente assistido, consente com o ato.','ERRADO','A lei ressalva o consentimento do preso devidamente assistido e a hipótese de flagrante.','A proibição não é absoluta.', 'recuperado'),
+ rq23(37,'Direito Processual Penal','Lei 9.099 — TCO e perícia','A informalidade do termo circunstanciado dispensa a requisição dos exames periciais necessários à apuração.','ERRADO','A Lei 9.099/1995 determina que sejam providenciadas as requisições dos exames periciais necessários.','Informalidade não elimina prova técnica necessária.', 'recuperado',60),
+ rq23(38,'Direito Administrativo','Autotutela','A Administração pode anular atos ilegais e revogar atos válidos por conveniência e oportunidade.','CERTO','A autotutela alcança o controle de legalidade e o controle de mérito, respeitados direitos adquiridos e o controle judicial.','Anular = ilegalidade; revogar = mérito.', 'recuperado',62),
+ rq23(39,'Direito Administrativo','Poder de polícia','A atividade administrativa que condiciona ou restringe direitos, bens e atividades individuais em benefício da coletividade decorre do poder disciplinar.','ERRADO','A descrição corresponde ao poder de polícia.','Restringir liberdade/propriedade em favor do interesse coletivo → poder de polícia.', 'erro_persistente',63),
+ rq23(40,'Direito Administrativo','Lei 14.133 — encargos','Nos serviços contínuos com dedicação exclusiva de mão de obra, a Administração responde subsidiariamente tanto pelos encargos trabalhistas quanto pelos previdenciários.','ERRADO','Encargos previdenciários geram responsabilidade solidária; os trabalhistas podem gerar responsabilidade subsidiária se houver falha de fiscalização.','PREVIDÊNCIA = solidária; TRABALHISTA = subsidiária, com falha.', 'regressao',65),
+ rq23(41,'Direito Administrativo','Serviços públicos — uti universi','Serviços uti universi são prestados a usuários determinados e permitem mensuração individual do consumo.','ERRADO','Uti universi são gerais, indivisíveis e fruídos indiretamente pela coletividade.','Universi = universo/coletividade; singuli = usuário identificável.', 'erro_persistente',66),
+ rq23(42,'Direito Administrativo','Contratos — equilíbrio econômico-financeiro','A extinção do contrato impede o reconhecimento posterior de desequilíbrio econômico-financeiro requerido durante a sua vigência.','ERRADO','Pedido formulado durante a vigência pode ser reconhecido mesmo após a extinção contratual.','Diferencie o momento do requerimento do momento da decisão.', 'recuperado',67),
+ rq23(43,'Direito Administrativo','Bens públicos','Todos os bens públicos submetem-se a regime jurídico único e de aplicação uniforme.','ERRADO','Bens de uso comum, de uso especial e dominicais possuem diferenças de afetação, utilização e alienabilidade.','Desconfie de “único” e “uniforme”.', 'erro_persistente',68),
+ rq23(44,'Direito Administrativo','Responsabilidade civil do Estado','A responsabilidade estatal por ato lícito que imponha dano anormal e específico fundamenta-se na igualdade perante os encargos públicos.','CERTO','A coletividade não deve impor a um indivíduo isolado sacrifício especial e anormal sem reparação.','Ato pode ser lícito e ainda gerar dever de indenizar.', 'recuperado',69),
+ rq23(45,'Direito Constitucional','Direitos fundamentais — resposta','O direito de resposta proporcional ao agravo não pode ser cumulado com indenização por dano material, moral ou à imagem, sob pena de bis in idem.','ERRADO','O art. 5º, V, assegura resposta, além da indenização; as medidas podem coexistir.','Grave a palavra constitucional “além”.', 'erro_persistente',71),
+ rq23(46,'Direito Constitucional','Nacionalidade — EC 131/2023','A naturalização pode ser cancelada por sentença judicial em razão de fraude no processo de naturalização ou de atentado contra a ordem constitucional e o Estado Democrático.','CERTO','A assertiva reproduz as hipóteses constitucionais após a EC 131/2023.','A aquisição de outra nacionalidade não produz mais perda automática.', 'regressao',75),
+ rq23(47,'Direito Constitucional','Organização do Estado — territórios','Os Territórios Federais integram a União, mas sua criação, transformação em Estado ou reintegração ao Estado de origem dependem de lei ordinária.','ERRADO','A Constituição exige lei complementar.','Território → LC.', 'regressao',76),
+ rq23(48,'Direito Processual Penal','Inquérito policial — contraditório','O inquérito policial é predominantemente inquisitivo, não incidindo contraditório e ampla defesa nos mesmos moldes do processo judicial.','CERTO','A investigação preliminar não é processo acusatório, embora existam direitos e garantias do investigado.','Inquisitivo não significa sem garantias.', 'recuperado',81),
+ rq23(49,'Direito Processual Penal','Inquérito policial — presidência','O Ministério Público pode investigar diretamente e também presidir inquérito policial.','ERRADO','O MP pode conduzir investigação criminal própria, mas o inquérito policial é presidido pela autoridade policial.','MP investiga: sim. MP preside IP: não.', 'regressao',82),
+ rq23(50,'Direito Processual Penal','Lei de Drogas — prazo do inquérito','No crime de tráfico de drogas, o inquérito deve terminar em dez dias quando o indiciado estiver preso.','ERRADO','A regra especial é de 30 dias para preso e 90 dias para solto, prazos duplicáveis pelo juiz.','CPP geral: 10/30; Lei de Drogas: 30/90.', 'regressao',85),
+ rq23(51,'Direito Penal Militar','CPM — embriaguez como agravante','A agravante comum ligada à embriaguez alcança indistintamente militares e civis sujeitos ao CPM, ainda que a embriaguez do civil não seja preordenada.','ERRADO','Em regra, a circunstância agrava quando o crime é praticado por militar; para o civil, ressalva-se a embriaguez preordenada.','Militar: regra; civil: somente preordenada.', 'erro_persistente',92),
+
+ rq23(52,'Direito Penal Militar','Crime militar em tempo de paz','Após a Lei 13.491/2017, crimes previstos na legislação penal comum podem ser considerados militares em tempo de paz quando presentes as hipóteses do art. 9º do CPM.','CERTO','A ampliação do art. 9º alcança crimes previstos na legislação penal, desde que exista o vínculo militar legalmente exigido.','Mera condição de militar não basta; é preciso enquadramento no art. 9º.', 'recuperado'),
+ rq23(53,'Direito Penal Militar','Âmbito do CPM','O Código Penal Militar prescreve os crimes militares e também regulamenta as infrações disciplinares.','ERRADO','Infrações disciplinares pertencem aos regulamentos disciplinares; o CPM disciplina matéria penal militar.','Crime militar ≠ transgressão disciplinar.', 'recuperado'),
+ rq23(54,'Direito Penal Militar','Tempo do crime','Quanto ao tempo do crime, o CPM adota a teoria da atividade, considerando-se praticado o delito no momento da ação ou omissão.','CERTO','A regra do art. 5º do CPM segue a teoria da atividade.','Tempo = atividade; lugar tem disciplina própria.', 'recuperado'),
+ rq23(55,'Direito Penal Militar','Retroatividade benéfica','O princípio da retroatividade autoriza a aplicação de lei penal militar posterior ao fato quando ela favorece o agente.','CERTO','A lei penal posterior mais benéfica retroage e alcança fatos anteriores, inclusive processos em curso.','Lex mitior retroage.', 'regressao',100),
+ rq23(56,'Direito Processual Penal Militar','Ação penal militar — informações','As informações, se verbais, deverão estar autenticadas; se escritas, serão tomadas por termo perante o juiz, a pedido do Ministério Público e na presença deste.','ERRADO','O item inverte as formas do art. 33 do CPPM: as informações escritas devem estar autenticadas; as verbais são tomadas por termo.','Escritas = autenticadas; verbais = reduzidas a termo.', 'chute_lacuna',101),
+ rq23(57,'Direito Processual Penal Militar','Ação penal militar — indisponibilidade','Uma vez apresentada a denúncia, o Ministério Público Militar não pode desistir da ação penal.','CERTO','Vigora o princípio da indisponibilidade da ação penal pública.','MP não desiste da ação penal.', 'recuperado',102),
+ rq23(58,'Direito Processual Penal Militar','IPM — prazo','Estando o indiciado preso, o IPM deve terminar em 20 dias contados da instauração, e esse prazo pode ser prorrogado por igual período.','ERRADO','O prazo de 20 dias conta-se da prisão e é improrrogável quando o indiciado está preso.','Preso: 20 dias da prisão, sem prorrogação.', 'erro_persistente',103),
+ rq23(59,'Direito Processual Penal Militar','IPM — instauração','O inquérito policial militar somente pode ser instaurado por requisição do Ministério Público Militar ou decisão do STM.','ERRADO','O IPM pode ser instaurado de ofício e nas demais hipóteses previstas no CPPM.','A palavra “somente” exclui indevidamente outras formas legais.', 'recuperado',105),
+ rq23(60,'Direitos Humanos','Tratados de direitos humanos — quórum','Tratados de direitos humanos aprovados em cada Casa do Congresso, em dois turnos, por dois terços dos votos, equivalem a emendas constitucionais.','ERRADO','O quórum do art. 5º, §3º, é de três quintos em cada Casa, em dois turnos.','É o rito de emenda: 3/5, não 2/3.', 'regressao',111),
+ rq23(61,'Direitos Humanos','Tratados de direitos humanos — Marraquexe','Um dos tratados internacionais de direitos humanos com status constitucional no Brasil é o Tratado de Marraquexe.','CERTO','O Tratado de Marraquexe foi aprovado pelo rito do art. 5º, §3º, e tem equivalência de emenda constitucional.','Marraquexe é exemplo de tratado com status constitucional.', 'recuperado',112),
+ rq23(62,'Direitos Humanos','Características dos direitos humanos','Como regra, os direitos humanos são prescritíveis, garantindo que as vítimas de violações possam buscar justiça.','ERRADO','A imprescritibilidade é apontada pela teoria geral como característica dos direitos humanos.','A justificativa positiva não salva o termo técnico errado.', 'recuperado',114),
+ rq23(63,'Direitos Humanos','Dimensões dos direitos fundamentais','Os direitos de segunda geração compreendem direitos sociais, políticos e culturais.','ERRADO','A segunda dimensão reúne direitos sociais, econômicos e culturais; direitos políticos pertencem à primeira.','SEC = sociais, econômicos e culturais.', 'regressao',119),
+ rq23(64,'Direito Penal Militar','Lei penal militar — extraterritorialidade','A lei penal militar pode incidir sobre crime militar praticado fora do território nacional, independentemente da nacionalidade do agente ou da vítima, ressalvados tratados e regras internacionais.','CERTO','O CPM adota regra ampla de extraterritorialidade para crimes militares.','Não importe automaticamente os limites do Código Penal comum.', 'recuperado'),
+ rq23(65,'Direito Penal Militar','Lugar do crime','Nos crimes militares comissivos, considera-se lugar do crime tanto onde se desenvolveu a atividade quanto onde ocorreu ou deveria ocorrer o resultado.','CERTO','Para os crimes comissivos, o CPM adota critério de ubiquidade; na omissão, considera-se o lugar onde deveria ocorrer a ação omitida.','LUATA: lugar-ubiquidade; tempo-atividade.', 'chute_lacuna')
+];
+function personalizedCard20260823(mat,top){return PERSONAL_REVIEW_20260823.find(function(x){return x.m===mat&&x.a===top;})||null;}
+function personalizedLesson20260823(mat,top){
+  var x=personalizedCard20260823(mat,top);if(!x)return null;
+  return {mat:mat,topico:top,pergunta:flashQuestion(top),regraCentral:x.central,regras:x.rules||[],prazos:[],comparacoes:[],pegadinhas:['Classificação de 23/08/2026: '+x.classification.replace(/_/g,' ')+'.'],referencias:['Revisão personalizada de 23/08/2026'],fixacao:'Explique a regra sem consultar e crie um exemplo de pegadinha CEBRASPE.',bizus:[]};
+}
+function findQuestionById(id){return QQ.find(function(x){return x.id===id;})||REVIEW_QUESTIONS_20260823.find(function(x){return x.id===id;})||null;}
+function startReview20260823(){
+  S.reviewActive='2026-08-23';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260823.slice();S.ci=0;S.sa=[];S.round++;
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📚 Revisão exclusiva: 65 itens recebidos. O saldo original permanece 92 C / 24 E / 4 B / 68 líquidos.');
+}
+function saveReviewOnlyAnswer(q,a,ok,conf){
+  S.reviewSessions=S.reviewSessions||{};
+  var session=S.reviewSessions['2026-08-23']||{};session.attempts=session.attempts||[];
+  session.attempts.push({id:q.id,answer:a,ok:ok,conf:conf,ts:Date.now(),originalNumber:q.originalNumber||null,reviewClass:q.reviewClass});
+  session.lastAttemptAt=Date.now();session.reviewableCount=REVIEW_QUESTIONS_20260823.length;
+  S.reviewSessions['2026-08-23']=session;SS();
+}
+function importPersonalReview20260823(){
+  try{
+    var key='pmal26_import_revisao_20260823_v2';if(localStorage.getItem(key)==='ok')return;
+    var now=new Date('2026-08-23T20:00:00-03:00').getTime(),counts={erro_persistente:0,regressao:0,recuperado:0,chute_lacuna:0,circunstancial:0};
+    PERSONAL_REVIEW_20260823.forEach(function(x,idx){
+      var rec=asGet(x.m+' ▸ '+x.a,x.m,x.a),tag='revisao_20260823_'+x.id;
+      if(!(rec.hist||[]).some(function(h){return h&&h.importTag===tag;}))rec.hist.push({id:x.id,ok:x.classification==='recuperado',branco:x.classification==='chute_lacuna',instavel:x.classification==='regressao',ts:now+idx,round:S.round,conf:x.classification==='chute_lacuna'?'duvida':'certeza',ce:'revisão personalizada',nv:x.classification==='erro_persistente'?'cruel':'dificil',reviewClass:x.classification,importTag:tag});
+      rec.personalizedClass=x.classification;rec.personalizedAt='2026-08-23';rec.personalizedId=x.id;rec.ivIdx=0;rec.crit=x.classification==='erro_persistente';rec.revLeft=Math.max(rec.revLeft||0,x.classification==='erro_persistente'?4:(x.classification==='recuperado'?1:2));rec.due=x.classification==='recuperado'?now+14*DIA_MS:now;rec.status=statusOf(rec);
+      var frec=flashGet(flashKey(x.m,x.a));frec.due=x.classification==='recuperado'?now+14*DIA_MS:0;counts[x.classification]++;
+    });
+    S.reviewSessions=S.reviewSessions||{};
+    var oldSession=S.reviewSessions['2026-08-23']||{};
+    S.reviewSessions['2026-08-23']=Object.assign(oldSession,{date:'2026-08-23',title:'Revisão 23/08/2026',mode:'review_only',scope:'review_only',total:120,reviewableCount:65,correct:92,errors:24,blank:4,net:68,scoring:'CEBRASPE',questionIds:REVIEW_QUESTIONS_20260823.map(function(q){return q.id;}),breakdown:{'Língua Portuguesa':{correct:8,errors:5},'Noções de Informática':{correct:3,errors:3,doubts:1},'Matemática':{correct:2,errors:3,doubts:2},'Conhecimentos de Alagoas':{correct:3,errors:1},'Direito — bloco 1':{correct:9,errors:11},'DPM/PPM/DH — bloco final':{correct:7,errors:7}},classificationCounts:counts,source:'questões enviadas pelo usuário em 23/08/2026'});
+    SS();localStorage.setItem(key,'ok');localStorage.setItem(key+'_summary',JSON.stringify({cards:PERSONAL_REVIEW_20260823.length,counts:counts}));
+  }catch(e){console.warn('Falha na importação da revisão de 23/08/2026:',e);}
+}
+
 // ══════════ CICLO 2 — RESET LÓGICO, HISTÓRICO PRESERVADO ══════════
 function collectLegacySignals(snapshot){
   var eids=new Set(snapshot.eids||[]),topics={};
@@ -5791,7 +5960,7 @@ function refreshLawBankLabels(){var f=document.getElementById('law-bank-foot');i
 // ── INIT ──
 document.getElementById('btn-c').addEventListener('click',()=>ans('CERTO'));
 document.getElementById('btn-e').addEventListener('click',()=>ans('ERRADO'));
-LS();ensureV4State();importErros20260803();importHistorico20260805();importAdmin20260805();importLote20260806();importLote20260813();importLotePenal20260814();importLoteConsolidado20260817();importAtualizacao20260819();importAlagoas20260820();activateCycle2IfNeeded();refreshLawBankLabels();initHome();
+LS();ensureV4State();importErros20260803();importHistorico20260805();importAdmin20260805();importLote20260806();importLote20260813();importLotePenal20260814();importLoteConsolidado20260817();importAtualizacao20260819();importAlagoas20260820();activateCycle2IfNeeded();importPersonalReview20260823();refreshLawBankLabels();initHome();
 </script>
 </body>
 </html>
