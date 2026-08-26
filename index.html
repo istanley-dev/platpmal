@@ -441,6 +441,19 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
 .law-peg{margin-top:8px;background:#2b2312;border-left:4px solid var(--wg);border-radius:8px;padding:9px 11px;font-size:12px;line-height:1.55;color:var(--ink)}
 .law-peg b{color:#e8bd5e}
 .cycle-note{background:#12283a;border:1px solid #28527a;border-radius:9px;padding:10px 12px;color:#a8d2f3;font-size:12px;margin-bottom:12px}
+/* ── Cronograma híbrido: plano principal + revisões do estudo real ── */
+.adaptive-shell{display:grid;gap:10px}
+.adaptive-group{min-width:0}
+.adaptive-label{font-size:9.5px;font-weight:900;letter-spacing:1.35px;text-transform:uppercase;color:var(--mut);margin:0 2px 6px}
+.adaptive-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.adaptive-item{min-width:0;background:var(--cardb);border:1px solid var(--bd);border-left:3px solid #4d7659;border-radius:11px;padding:10px;display:flex;align-items:flex-start;gap:8px}
+.adaptive-item.future{border-left-color:#80662c}.adaptive-item.port{border-left-color:#4d68a1}.adaptive-item.math{border-left-color:#8a5ca3}
+.adaptive-main{min-width:0;flex:1}.adaptive-title{font-size:12.5px;font-weight:850;color:var(--ink);line-height:1.3;overflow-wrap:anywhere}.adaptive-desc{font-size:10.5px;color:var(--mut);line-height:1.42;margin-top:3px;overflow-wrap:anywhere}
+.adaptive-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}.adaptive-tag{font-size:9px;font-weight:850;color:#9bd9aa;background:#17261b;border:1px solid #31543a;border-radius:999px;padding:2px 6px}.adaptive-tag.theory{color:#d8b3eb;background:#291b31;border-color:#573365}
+.adaptive-btn{flex-shrink:0;border:1px solid #3f6f50;background:#183022;color:#9ee4b2;border-radius:8px;padding:7px 8px;font-size:10px;font-weight:850;cursor:pointer;white-space:nowrap}.adaptive-btn.done{background:#1b2a20;color:#6e9278;border-color:#314237}
+.adaptive-empty{font-size:10.5px;color:var(--mut);padding:7px 9px;border:1px dashed var(--bd);border-radius:9px}
+.theory-note{font-size:12px;line-height:1.6;color:var(--ink);background:var(--cardb);border:1px solid var(--bd);border-radius:11px;padding:12px;margin-top:8px}
+@media(max-width:430px){.adaptive-list{grid-template-columns:1fr}.adaptive-item{padding:9px}.adaptive-btn{padding:7px}.adaptive-shell{gap:9px}}
 </style>
 </head>
 <body>
@@ -553,6 +566,8 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
 
   <div class="sec-k">Operações</div>
   <div class="tiles mb8">
+    <button class="tile t-vio" id="btn-review-20260825" onclick="startReview20260825()"><span class="ic">📚</span><span class="tt">Revisão 25/08/2026</span><span class="tsub">Administrativo: 52 questões · 45 acertos · 7 erros · Matemática teórica</span></button>
+    <button class="tile t-vio" id="btn-review-20260824" onclick="startReview20260824()"><span class="ic">📚</span><span class="tt">Revisão 24/08/2026</span><span class="tsub">73 questões · 54 acertos · 19 erros · 74,0%</span></button>
     <button class="tile t-vio" id="btn-review-20260823" onclick="startReview20260823()"><span class="ic">📚</span><span class="tt">Revisão 23/08/2026</span><span class="tsub">Simulado antigo · 120 no total · 65 itens revisáveis · 24 erros + 4 em branco</span></button>
     <button class="tile t-grn" id="btn-crono" onclick="gN('crono')"><span class="ic">🎯</span><span class="tt">Operação do Dia</span><span class="tsub" id="btn-crono-sub">Missão diária: questões das matérias de hoje + revisão + leituras</span></button>
     <button class="tile t-grn" id="btn-smart" onclick="revisaoInteligente()"><span class="ic">🧠</span><span class="tt">Patrulha de Revisão</span><span class="tsub">50% críticos · 30% instáveis · 20% manutenção</span></button>
@@ -820,6 +835,11 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
     <div class="dgring"><div class="dgr" id="crono-ring"></div><div id="crono-ringtx" style="font-size:13px;line-height:1.5"></div></div>
     <div id="crono-tasks"></div>
   </div></div>
+  <div class="card mb12" id="adaptive-card"><div class="cb">
+    <div class="cb-t">🧭 Cronograma híbrido</div>
+    <div style="font-size:11px;color:var(--mut);line-height:1.45;margin-bottom:10px">O plano principal continua abaixo. Esta camada acrescenta apenas o que foi realmente estudado e evita blocos duplicados.</div>
+    <div class="adaptive-shell" id="adaptive-schedule"></div>
+  </div></div>
   <div class="card mb12" id="leitura-card"><div class="cb">
     <div class="cb-t">📖 Plano de Leitura Diário — Banco de Leis</div>
     <div id="leitura-sub" style="font-size:12px;color:var(--mut);margin-bottom:8px"></div>
@@ -843,6 +863,16 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
     <div class="cb-t">🧭 As 3 fases até a prova</div>
     <div class="phaseplan" id="crono-phases"></div>
   </div></div>
+</div>
+
+<div id="v-adaptive-theory" class="view">
+  <div class="hcard">
+    <h2>🧮 Matemática — Revisão teórica</h2>
+    <p>Revisão curta para o celular, sem exigir cálculo manual.</p>
+  </div>
+  <div class="card mb12"><div class="cb" id="adaptive-theory-body"></div></div>
+  <button class="bp" style="width:100%" onclick="completeTheoryReview()">✓ Concluir revisão teórica</button>
+  <button class="bo mt8" style="width:100%" onclick="gN('crono')">Voltar ao cronograma</button>
 </div>
 
 <!-- MINI-AULA (revisão rápida antes das questões do dia) -->
@@ -1273,20 +1303,20 @@ function startIncidenceMission(){
 }
 
 // ── STATE ──
-var S={mode:'simulado',subs:[],niv:'all',qty:5,sq:[],ci:0,sa:[],ha:[],eids:new Set(),legacyEids:new Set(),legacyTopics:{},legacySummary:null,cycleId:'ciclo2_20260821',AS:{},round:0,log:[],metas:{},xp:0,streak:0,lastDay:'',plan:{examDate:''},daily:{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false},bibLidos:{},leituraDia:{d:'',keys:[],inReview:false},flash:{cards:{}},weekly:{lastDone:0},reviewSessions:{}};
+var S={mode:'simulado',subs:[],niv:'all',qty:5,sq:[],ci:0,sa:[],ha:[],eids:new Set(),legacyEids:new Set(),legacyTopics:{},legacySummary:null,cycleId:'ciclo2_20260821',AS:{},round:0,log:[],metas:{},xp:0,streak:0,lastDay:'',plan:{examDate:''},daily:{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false},bibLidos:{},leituraDia:{d:'',keys:[],inReview:false},flash:{cards:{}},weekly:{lastDone:0},reviewSessions:{},studyHistory:{},adaptiveReview:{completed:{}}};
 var apiKey='';
 
 function LS(){
   try{
     const d=localStorage.getItem('pmal26');
-    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:''};S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.reviewSessions=p.reviewSessions||{};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
+    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:''};S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.reviewSessions=p.reviewSessions||{};S.studyHistory=p.studyHistory||{};S.adaptiveReview=p.adaptiveReview||{completed:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
     apiKey=localStorage.getItem('pmal26_key')||'';
     if(apiKey)document.getElementById('inp-key').value=apiKey;
     loadGenQs();
   }catch(e){}
 }
 function SS(){
-  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions,legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
+  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions,studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{}},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
 }
 
 // ══════════ SISTEMA INTELIGENTE DE ALERTA / REVISÃO / REFORÇO ══════════
@@ -1480,6 +1510,7 @@ function trackAnswer(q,a,ok,conf){
   rec.hist.push({ok:ok,ce:q.ce,nv:q.n,ts:Date.now(),round:S.round,ans:a,g:q.g,id:q.id,conf:conf||null});
   // Registro obrigatório por questão (11 campos)
   S.log.push({m:q.m,a:q.a,sub:q.a,peg:q.p||'',ans:a,gab:q.g,res:ok?'acerto':'erro',erro:ok?'':q.ce,nv:q.n,round:S.round,ts:Date.now(),status:'',conf:conf||null});
+  registerQuestionStudy(q,ok,conf);
   let alert=null;
   const h=rec.hist, errRec=h.slice(-4).filter(x=>!x.ok).length;
   // FALSA CONFIANÇA: acertou mas chutando — alerta específico, prioridade alta (mesmo sem erro)
@@ -1734,11 +1765,12 @@ function getLessonContent(mat,top){
     'Conhecimentos de Alagoas': (typeof AL_RESUMOS!=='undefined'?AL_RESUMOS:null),
     'Matemática': (typeof MT_RESUMOS!=='undefined'?MT_RESUMOS:null),
   };
-  var custom=(typeof personalizedLesson20260823==='function')?personalizedLesson20260823(mat,top):null;
+  var custom25=(typeof personalizedLesson20260825==='function')?personalizedLesson20260825(mat,top):null;
+  var custom23=(typeof personalizedLesson20260823==='function')?personalizedLesson20260823(mat,top):null;
   var manual=flashFromPortCards(mat,top);
   var mapa=RESUMOS_POR_MATERIA[mat],resumo=(mapa&&mapa[top])?flashClassifySummary(mat,top,mapa[top]):null;
   var banco=buildTopicLesson(mat,top,{maxRegras:4,maxPeg:3,maxBizus:1});
-  return flashMergeLessons(custom,flashMergeLessons(flashMergeLessons(manual,resumo),banco));
+  return flashMergeLessons(custom25,flashMergeLessons(custom23,flashMergeLessons(flashMergeLessons(manual,resumo),banco)));
 }
 function buildFlashDeck(){
   const buckets={};
@@ -1749,16 +1781,18 @@ function buildFlashDeck(){
   let entries=Object.values(buckets);
   entries.forEach(function(e){e.status=topicStatus(e.mat,e.topico);});
   entries=entries.filter(function(e){
-    var custom=(typeof personalizedCard20260823==='function')?personalizedCard20260823(e.mat,e.topico):null;
-    return e.status==='vermelho'||e.status==='amarelo'||(custom&&custom.classification==='recuperado');
+    var custom25=(typeof personalizedCard20260825==='function')?personalizedCard20260825(e.mat,e.topico):null;
+    var custom23=(typeof personalizedCard20260823==='function')?personalizedCard20260823(e.mat,e.topico):null;
+    return e.status==='vermelho'||e.status==='amarelo'||!!custom25||(custom23&&custom23.classification==='recuperado');
   });
   const cards=[];
   entries.forEach(function(e){
     const lesson=getLessonContent(e.mat,e.topico);
     if(!lesson)return; // tópico sem f/p/d suficiente no banco pra montar carta
     const fk=flashKey(e.mat,e.topico), frec=flashGet(fk);
-    var custom=(typeof personalizedCard20260823==='function')?personalizedCard20260823(e.mat,e.topico):null;
-    cards.push(Object.assign(lesson,{status:(custom&&custom.classification==='recuperado')?'manutencao':e.status,fkey:fk,due:frec.due}));
+    var custom25=(typeof personalizedCard20260825==='function')?personalizedCard20260825(e.mat,e.topico):null;
+    var custom23=(typeof personalizedCard20260823==='function')?personalizedCard20260823(e.mat,e.topico):null;
+    cards.push(Object.assign(lesson,{status:(custom25&&custom25.reviewClass!=='erro')||(custom23&&custom23.classification==='recuperado')?'manutencao':e.status,fkey:fk,due:frec.due}));
   });
   return cards;
 }
@@ -1983,8 +2017,16 @@ function buildYesterdayReviewDeck(){
   const y=new Date();y.setDate(y.getDate()-1);y.setHours(0,0,0,0);
   const yStart=y.getTime();const yEnd=yStart+DIA_MS-1;
   const seen={};
+  // Fonte principal: histórico real (inclui teoria e estudos feitos fora da plataforma).
+  // Matemática aparece na camada adaptativa como teoria e nunca entra neste baralho de questões.
+  studySubjects(localDateKey(y)).forEach(function(rec){
+    if(rec.subject==='Matemática')return;
+    var tops=(rec.topics||[]).length?rec.topics:['Revisão geral'];
+    tops.forEach(function(t){var k=rec.subject+'▸'+t;seen[k]={mat:rec.subject,topico:t,teveErro:(rec.errors||0)>0||(rec.insecure||0)>0};});
+  });
+  // Compatibilidade com o histórico antigo, anterior ao campo studyHistory.
   (S.log||[]).forEach(function(entry){
-    if(entry.ts>=yStart&&entry.ts<=yEnd){
+    if(entry.ts>=yStart&&entry.ts<=yEnd&&entry.m!=='Matemática'){
       const top=topico(entry.a),k=entry.m+'▸'+top;
       if(!seen[k])seen[k]={mat:entry.m,topico:top,teveErro:false};
       if(entry.res==='erro')seen[k].teveErro=true;
@@ -2010,7 +2052,7 @@ function pendingYesterdayReview(){
 }
 function startYesterdayReview(resumeFn){
   const deck=buildYesterdayReviewDeck();
-  if(!deck.length){toast('Nada registrado ontem para revisar.');if(resumeFn)window[resumeFn]();return;}
+  if(!deck.length){toast('Nada registrado ontem para revisar por cartões. Matemática, quando houver, fica na revisão teórica.');if(resumeFn)window[resumeFn]();return;}
   S._flashQueue=deck;S._flashIdx=0;S._flashSessionType='ontem';S._pendingAfterReview=resumeFn||null;
   sv('flash');renderFlashCard();
   toast('📅 Revisão do dia anterior — obrigatória antes de seguir com a missão de hoje.');
@@ -3472,6 +3514,89 @@ var WDN=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 var WDFULL=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
 var ABBR={'Língua Portuguesa':'Português','Matemática':'Matemática','Noções de Informática':'Informática','Direito Constitucional':'Const.','Direito Administrativo':'D. Adm.','Direitos Humanos':'D. Humanos','Direito Penal':'Penal','Direito Processual Penal':'Proc. Penal','Direito Penal Militar':'Penal Mil.','Direito Processual Penal Militar':'P.P. Militar','Legislação Penal Especial':'Leg. Penal','Legislação Institucional PMAL':'Leg. PMAL','Conhecimentos de Alagoas':'Alagoas'};
 function abbr(s){return ABBR[s]||s;}
+function localDateKey(d){d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function dateFromKey(k){var p=String(k||'').split('-').map(Number);return new Date(p[0],(p[1]||1)-1,p[2]||1,12,0,0,0);}
+function shiftDateKey(k,n){var d=dateFromKey(k);d.setDate(d.getDate()+n);return localDateKey(d);}
+function ensureStudyState(){if(!S.studyHistory||typeof S.studyHistory!=='object')S.studyHistory={};if(!S.adaptiveReview||typeof S.adaptiveReview!=='object')S.adaptiveReview={completed:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};}
+function studyDay(k){ensureStudyState();if(!S.studyHistory[k])S.studyHistory[k]={date:k,subjects:[],updatedAt:Date.now()};if(!Array.isArray(S.studyHistory[k].subjects))S.studyHistory[k].subjects=[];return S.studyHistory[k];}
+function mergeUnique(a,b){var out=(a||[]).slice();(b||[]).forEach(function(x){if(x&&out.indexOf(x)<0)out.push(x);});return out;}
+function registerStudySubject(k,data){
+  var day=studyDay(k),old=day.subjects.find(function(x){return x.subject===data.subject;});
+  if(!old){old={subject:data.subject,mode:data.mode||'questions',topics:[],sources:[]};day.subjects.push(old);}
+  old.mode=(old.subject==='Matemática'||data.mode==='theory')?'theory':(data.mode||old.mode||'questions');
+  old.topics=mergeUnique(old.topics,data.topics||[]);old.sources=mergeUnique(old.sources,data.sources||[]);
+  ['total','correct','errors','net','accuracy'].forEach(function(k2){if(data[k2]!==undefined)old[k2]=data[k2];});
+  if(data.note)old.note=data.note;if(data.reviewQuestionIds)old.reviewQuestionIds=mergeUnique(old.reviewQuestionIds,data.reviewQuestionIds);
+  day.updatedAt=Date.now();return old;
+}
+function registerQuestionStudy(q,ok,conf){
+  if(!q||q.reviewOnly||q.scope==='review_only')return;
+  var key=localDateKey(new Date()),day=studyDay(key),rec=day.subjects.find(function(x){return x.subject===q.m;});
+  if(!rec){rec={subject:q.m,mode:q.m==='Matemática'?'theory':'questions',topics:[],sources:['plataforma'],total:0,correct:0,errors:0,insecure:0};day.subjects.push(rec);}
+  rec.topics=mergeUnique(rec.topics,[topico(q.a)]);rec.total=(rec.total||0)+1;if(ok)rec.correct=(rec.correct||0)+1;else rec.errors=(rec.errors||0)+1;if(conf==='chute'||conf==='duvida')rec.insecure=(rec.insecure||0)+1;rec.accuracy=rec.total?Math.round(rec.correct/rec.total*1000)/10:null;day.updatedAt=Date.now();
+}
+function studySubjects(k){var d=S.studyHistory&&S.studyHistory[k];return d&&Array.isArray(d.subjects)?d.subjects:[];}
+function adaptiveDoneKey(target,kind,source,subject){return [target,kind,source||'',subject].join('|');}
+function isAdaptiveDone(item,target){ensureStudyState();return !!S.adaptiveReview.completed[adaptiveDoneKey(target,item.kind,item.sourceDate,item.subject)];}
+function markAdaptiveDone(item,target){ensureStudyState();S.adaptiveReview.completed[adaptiveDoneKey(target||localDateKey(new Date()),item.kind,item.sourceDate,item.subject)]={ts:Date.now()};SS();}
+function adaptivePriority(rec){if(!rec)return 'manutenção';if((rec.errors||0)>0||(rec.insecure||0)>0||(rec.accuracy!==undefined&&rec.accuracy!==null&&rec.accuracy<80))return 'prioridade alta';if(rec.accuracy!==undefined&&rec.accuracy!==null&&rec.accuracy>=90)return 'prioridade reduzida';return 'manutenção';}
+function buildAdaptiveDay(targetKey){
+  ensureStudyState();targetKey=targetKey||localDateKey(new Date());var wd=dateFromKey(targetKey).getDay(),plan=(targetKey===localDateKey(new Date())?dayPlan():{subs:(WEEK[wd].subs||[]).slice()}),bySubject={};
+  function add(subject,kind,sourceDate,rec,reason){
+    if(!subject)return;var x=bySubject[subject];if(!x)x=bySubject[subject]={subject:subject,kind:kind,sourceDate:sourceDate||null,study:rec||null,reasons:[]};
+    x.reasons=mergeUnique(x.reasons,[reason]);if(kind==='d1'){x.kind='d1';x.sourceDate=sourceDate;x.study=rec||x.study;}else if(kind==='future'&&x.kind==='study'){x.kind='future';x.sourceDate=sourceDate;x.study=rec||x.study;}
+  }
+  var actualToday=studySubjects(targetKey);
+  if(actualToday.length)actualToday.forEach(function(r){add(r.subject,'study',targetKey,r,'Estudo real registrado');});
+  else (plan.subs||[]).forEach(function(m){add(m,'study',null,null,'Cronograma principal');});
+  studySubjects(shiftDateKey(targetKey,-1)).forEach(function(r){add(r.subject,'d1',shiftDateKey(targetKey,-1),r,'Revisão D+1');});
+  studySubjects(shiftDateKey(targetKey,-7)).forEach(function(r){add(r.subject,'future',shiftDateKey(targetKey,-7),r,'Revisão futura D+7 · '+adaptivePriority(r));});
+  var fixed=[1,3,5].indexOf(wd)>=0;
+  if(fixed)add('Língua Portuguesa','port',null,null,'Português fixo 3x/semana');
+  var groups={study:[],d1:[],future:[],port:[]};
+  Object.keys(bySubject).forEach(function(m){var x=bySubject[m];if(m==='Língua Portuguesa'&&fixed)x.kind='port';if(x.kind==='study'&&x.reasons.some(function(r){return r.indexOf('D+1')>=0;}))x.kind='d1';if(x.kind==='port')groups.port.push(x);else if(x.kind==='d1')groups.d1.push(x);else if(x.kind==='future')groups.future.push(x);else groups.study.push(x);});
+  return {date:targetKey,groups:groups};
+}
+function adaptiveItemDesc(item){
+  var r=item.study||{},perf=r.total?(' · '+(r.correct||0)+'/'+r.total+(r.accuracy!==undefined?' · '+String(r.accuracy).replace('.',',')+'%':'')) : '';
+  if(item.subject==='Matemática'&&item.kind==='study')return r.note||'Estudo teórico realizado. Nenhuma estatística de questões foi registrada.';
+  if(item.subject==='Matemática')return 'Revisão teórica · fórmulas, conceitos e erros. Questões práticas: resolver quando estiver com papel/caneta.';
+  if(item.kind==='study')return item.reasons.join(' + ')+perf;
+  return item.reasons.join(' + ')+perf;
+}
+function adaptiveItemHTML(item,idx,target){
+  var done=isAdaptiveDone(item,target),math=item.subject==='Matemática',cls=math?' math':item.kind==='future'?' future':item.kind==='port'?' port':'';
+  var tags=item.reasons.map(function(x){return '<span class="adaptive-tag">'+esc(x)+'</span>';}).join('')+(math?'<span class="adaptive-tag theory">revisão teórica</span>':'');
+  var actionable=item.kind!=='study'||item.kind==='port',button=actionable?'<button class="adaptive-btn'+(done?' done':'')+'" onclick="runAdaptiveItem('+idx+')">'+(done?'Refazer':'Revisar')+'</button>':'';
+  return '<div class="adaptive-item'+cls+'"><div class="adaptive-main"><div class="adaptive-title">'+(math?'🧮 ':item.kind==='port'?'📝 ':'')+esc(abbr(item.subject))+'</div><div class="adaptive-desc">'+esc(adaptiveItemDesc(item))+'</div><div class="adaptive-tags">'+tags+'</div></div>'+button+'</div>';
+}
+function renderAdaptiveSchedule(targetKey){
+  var el=document.getElementById('adaptive-schedule');if(!el)return;var data=buildAdaptiveDay(targetKey),defs=[['study','ESTUDO DO DIA'],['d1','REVISÃO D+1'],['future','REVISÃO FUTURA'],['port','PORTUGUÊS FIXO']],flat=[];
+  defs.forEach(function(d){data.groups[d[0]].forEach(function(x){x._idx=flat.length;flat.push(x);});});S._adaptiveDisplay={date:data.date,items:flat};
+  el.innerHTML=defs.map(function(d){var arr=data.groups[d[0]],body=arr.length?'<div class="adaptive-list">'+arr.map(function(x){return adaptiveItemHTML(x,x._idx,data.date);}).join('')+'</div>':'<div class="adaptive-empty">Nenhum bloco nesta categoria hoje.</div>';return '<div class="adaptive-group"><div class="adaptive-label">'+d[1]+'</div>'+body+'</div>';}).join('');
+}
+function adaptiveReviewQuestions(item){
+  var ids=[],session=S.reviewSessions&&S.reviewSessions[item.sourceDate];if(session&&Array.isArray(session.questionIds))ids=session.questionIds.slice();if(item.study&&item.study.reviewQuestionIds)ids=mergeUnique(ids,item.study.reviewQuestionIds);
+  var qs=ids.map(findQuestionById).filter(function(q){return q&&q.m===item.subject&&q.reviewOnly;});
+  if(item.kind==='future'){
+    var attempts=session&&session.attempts||[];
+    function score(q){var own=attempts.filter(function(a){return a.id===q.id;}),last=own[own.length-1];if(last&&!last.ok)return 0;if(last&&(last.conf==='duvida'||last.conf==='chute'))return 1;if(!last&&(q.reviewClass==='erro'||q.reviewClass==='inseguro'))return 2;if(!last)return 3;return 4;}
+    qs.sort(function(a,b){return score(a)-score(b);});
+    var urgent=qs.filter(function(q){return score(q)<4;}),stable=qs.filter(function(q){return score(q)>=4;}),maintenanceSlots=urgent.length?Math.max(2,12-Math.min(10,urgent.length)):2;
+    qs=urgent.slice(0,10).concat(stable.slice(0,maintenanceSlots)).slice(0,12);
+  }
+  return qs;
+}
+function startAdaptiveQuestionPool(item,pool){
+  if(!pool.length){toast('Sem questões disponíveis para este bloco.');return;}S._adaptiveContext={item:item,target:S._adaptiveDisplay?S._adaptiveDisplay.date:localDateKey(new Date())};S.reviewActive=pool[0].reviewOnly?item.sourceDate:null;S.mode=pool[0].reviewOnly?'review_only':'materia';S.sim=false;S.subs=[item.subject];S.sq=pool.slice();S.ci=0;S.sa=[];S.round++;var h=document.getElementById('hsc');if(h)h.style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+}
+function startPortugueseMaintenance(item){var pool=adaptiveReviewQuestions(item);if(!pool.length){pool=getSmartPool(QQ.filter(function(q){return q.m==='Língua Portuguesa';})).slice(0,12);}else pool=pool.slice(0,12);startAdaptiveQuestionPool(item,pool);}
+function startMathTheory(item){S._theoryContext={item:item,target:S._adaptiveDisplay?S._adaptiveDisplay.date:localDateKey(new Date())};var rec=item.study||{},topics=(rec.topics||[]).length?rec.topics:['Frações','Razão e proporção','Divisão proporcional'];document.getElementById('adaptive-theory-body').innerHTML='<div class="adaptive-label">TÓPICOS DO ESTUDO REAL</div><div class="adaptive-tags">'+topics.map(function(t){return '<span class="adaptive-tag theory">'+esc(t)+'</span>';}).join('')+'</div><div class="theory-note"><b>Roteiro curto:</b><br>• relembre as fórmulas e o significado de cada termo;<br>• refaça mentalmente um exemplo simples;<br>• reveja os erros e atalhos de raciocínio já registrados.<br><br><b>Questões práticas:</b> resolver quando estiver com papel/caneta.</div>';sv('adaptive-theory');}
+function completeTheoryReview(){if(S._theoryContext){markAdaptiveDone(S._theoryContext.item,S._theoryContext.target);S._theoryContext=null;}toast('🧮 Revisão teórica concluída.');gN('crono');}
+function runAdaptiveItem(idx){
+  var item=S._adaptiveDisplay&&S._adaptiveDisplay.items[idx];if(!item)return;if(item.subject==='Matemática'){startMathTheory(item);return;}if(item.kind==='port'){startPortugueseMaintenance(item);return;}
+  var pool=adaptiveReviewQuestions(item);if(!pool.length){var topics=item.study&&item.study.topics||[];pool=getSmartPool(QQ.filter(function(q){return q.m===item.subject&&(!topics.length||topics.indexOf(topico(q.a))>=0);})).slice(0,item.kind==='future'?10:12);}startAdaptiveQuestionPool(item,pool);
+}
 function daysLeft(){
   if(!S.plan||!S.plan.examDate)return null;
   const ex=new Date(S.plan.examDate+'T00:00:00');const now=new Date();now.setHours(0,0,0,0);
@@ -3517,7 +3642,9 @@ function startSet(subs,qty){
 // (não vistas > erradas > resto) — a mesma que o modo "Por Matéria" já usa.
 function buildDailyPool(){
   const p=dayPlan(),N=p.target,used=new Set();
-  const all=QQ.filter(function(q){return p.subs.indexOf(q.m)>=0;});
+  // Matemática continua no plano de estudo, mas não é empurrada para a bateria automática mobile.
+  const questionSubs=p.subs.filter(function(m){return m!=='Matemática';});
+  const all=QQ.filter(function(q){return questionSubs.indexOf(q.m)>=0;});
   const nInc=Math.round(N*.50),nErr=Math.round(N*.30);
   let sq=[];
   sq=sq.concat(priorityPick(all.filter(function(q){return incidenceScore(q)>=5;}),nInc,used));
@@ -3527,7 +3654,7 @@ function buildDailyPool(){
   sq=diversifyMission(sq,N);
   sq=ensureOfficialQuota(sq,all,.20);
   sq=sq.slice(0,N).sort(function(){return Math.random()-.5;});
-  return {subs:p.subs,target:N,pool:sq,primary:p.primary,maintenance:p.maintenance,weak:p.weak};
+  return {subs:questionSubs,target:N,pool:sq,primary:p.primary.filter(function(m){return m!=='Matemática';}),maintenance:p.maintenance.filter(function(m){return m!=='Matemática';}),weak:p.weak};
 }
 // Decide quais tópicos viram card de mini-aula hoje. Teto varia por fase (reta final = mais enxuto,
 // e só entra tópico realmente fraco — não vale reler o que já está verde faltando poucos dias).
@@ -3685,9 +3812,10 @@ function renderWeekReview(){
 function startWeekReview(){
   const topics=weekTopics();
   if(!topics.length){toast('Sem atividade registrada nos últimos 7 dias ainda.');return;}
-  const matsSeen=new Set(topics.map(function(t){return t.mat;}));
-  const chaves=new Set(topics.map(function(t){return t.mat+'▸'+t.topico;}));
-  let pool=QQ.filter(function(q){return chaves.has(q.m+'▸'+topico(q.a));});
+  const questionTopics=topics.filter(function(t){return t.mat!=='Matemática';});
+  const matsSeen=new Set(questionTopics.map(function(t){return t.mat;}));
+  const chaves=new Set(questionTopics.map(function(t){return t.mat+'▸'+t.topico;}));
+  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a));});
   if(!pool.length){toast('Sem questões suficientes para revisar esses tópicos agora.');return;}
   pool=getSmartPool(pool);
   pool=[...pool].sort(()=>Math.random()-.5);
@@ -3705,14 +3833,14 @@ function startWeekReview(){
 function pendingWeekReview(){
   if(!S.weekly)S.weekly={lastDone:0};
   if(Date.now()-S.weekly.lastDone<7*DIA_MS)return false;
-  return weekTopics().length>0;
+  return weekTopics().some(function(t){return t.mat!=='Matemática';});
 }
 function startWeekReviewGated(resumeFn){
-  const topics=weekTopics();
+  const topics=weekTopics().filter(function(t){return t.mat!=='Matemática';});
   if(!topics.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
   const matsSeen=new Set(topics.map(function(t){return t.mat;}));
   const chaves=new Set(topics.map(function(t){return t.mat+'▸'+t.topico;}));
-  let pool=QQ.filter(function(q){return chaves.has(q.m+'▸'+topico(q.a));});
+  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a));});
   if(!pool.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
   pool=getSmartPool(pool);
   pool=[...pool].sort(()=>Math.random()-.5);
@@ -3984,7 +4112,7 @@ function renderCrono(){
   document.getElementById('crono-ringtx').innerHTML=full?'<b>Missão de hoje concluída!</b> 🎉 Streak garantido — pode seguir treinando à vontade.':'Conclua as tarefas abaixo para fechar o dia e ganhar +20 XP.';
   const pend=pendingMetas();let rows='';
   if(st.temRevisaoSemanal)rows+=taskRow(false,'📆 Revisão semanal obrigatória','A cada 7 dias — libera tudo o mais até você fazer','Revisar','startWeekReviewGated(null)');
-  if(st.temRevisaoOntem)rows+=taskRow(S.daily.diaAnterior,'📅 Revisão do dia anterior','Obrigatória — libera as demais tarefas de hoje','Revisar','startYesterdayReview()');
+  if(st.temRevisaoOntem)rows+=taskRow(S.daily.diaAnterior,'📅 Revisão D+1','Baseada no estudo real de ontem; Matemática fica no cartão teórico','Revisar','startYesterdayReview()');
   if(st.temRevisaoLeis)rows+=taskRow(false,'📖 Revisão de leis já lidas','Flashcard dos artigos que você já leu antes — obrigatória','Revisar','startLawReviewGated(null)');
   const bloqueado=st.temRevisaoSemanal||(st.temRevisaoOntem&&!S.daily.diaAnterior)||st.temRevisaoLeis;
   const distTxt='50% incidência · 30% erros/instáveis · 20% manutenção';
@@ -3998,6 +4126,7 @@ function renderCrono(){
   if(ph.extra==='sim')rows+=taskRow(S.daily.sim,'Simulado CEBRASPE','Treino cronometrado, nota líquida (acertos − erros)','Iniciar','startSimulado()');
   if(ph.extra==='red')rows+=taskRow(S.daily.red,'Redação','Discursiva de Atualidades — escreva e salve','Treinar',"gN('redacao')");
   document.getElementById('crono-tasks').innerHTML=rows;
+  renderAdaptiveSchedule(localDateKey(new Date()));
   renderLeituraDia();
   const wd=new Date().getDay();
   document.getElementById('crono-week').innerHTML=WEEK.map((w,i)=>{
@@ -4317,6 +4446,7 @@ function nextQ(){S.ci++;sv('quiz');renderQ();}
 function scCls(p){return p>=80?'re':p>=60?'rb':p>=40?'rr':'rc';}
 
 function showRes(){
+  if(S._adaptiveContext){markAdaptiveDone(S._adaptiveContext.item,S._adaptiveContext.target);S._adaptiveContext=null;}
   const sa=S.sa,tot=sa.length,ok=sa.filter(a=>a.ok).length,err=tot-ok,pct=tot>0?Math.round(ok/tot*100):0;
   document.getElementById('rring').className='sr '+scCls(pct);
   document.getElementById('rpct').textContent=pct+'%';
@@ -4732,7 +4862,7 @@ function collectProgressStorage(){
     if(key&&key.indexOf('pmal26')===0&&!BACKUP_SECRET_KEYS.has(key))data[key]=localStorage.getItem(key);
   }
   if(!Object.prototype.hasOwnProperty.call(data,'pmal26')){
-    data.pmal26=JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId});
+    data.pmal26=JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions||{},studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{}},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId});
   }
   return data;
 }
@@ -4811,17 +4941,20 @@ function ensureV4State(){
     if(!Array.isArray(S.redacao.history))S.redacao.history=[];
     S.simProfile=p.simProfile||'estrategico';
     S.weeklyAdjust=p.weeklyAdjust||[];
-  }catch(e){S.flagged={};S.coverageQueue=[];S.redacao={history:[]};S.simProfile='estrategico';S.weeklyAdjust=[];}
+    S.studyHistory=p.studyHistory||S.studyHistory||{};
+    S.adaptiveReview=p.adaptiveReview||S.adaptiveReview||{completed:{}};
+    if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};
+  }catch(e){S.flagged={};S.coverageQueue=[];S.redacao={history:[]};S.simProfile='estrategico';S.weeklyAdjust=[];S.studyHistory=S.studyHistory||{};S.adaptiveReview=S.adaptiveReview||{completed:{}};}
 }
 // Substitui a persistência antiga sem perder nenhum campo já utilizado.
 SS=function(){
-  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,flagged:S.flagged||{},coverageQueue:S.coverageQueue||[],redacao:S.redacao||{history:[]},simProfile:S.simProfile||'estrategico',weeklyAdjust:S.weeklyAdjust||[],legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics||{},legacySummary:S.legacySummary||null,cycleId:S.cycleId||'ciclo2_20260821'}));}catch(e){}
+  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions||{},studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{}},flagged:S.flagged||{},coverageQueue:S.coverageQueue||[],redacao:S.redacao||{history:[]},simProfile:S.simProfile||'estrategico',weeklyAdjust:S.weeklyAdjust||[],legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics||{},legacySummary:S.legacySummary||null,cycleId:S.cycleId||'ciclo2_20260821'}));}catch(e){}
 };
 
 // ── Fontes e sinalização ──
 function isAIQuestion(q){return !!(q&&q.id&&q.id.indexOf('ai_')===0);}
 function questionSourceInfo(q){
-  if(q&&q.reviewOnly)return {type:'review',label:'Simulado antigo — revisão exclusiva',detail:(q.originalNumber?'questão '+q.originalNumber+' · ':'')+'recebida em 23/08/2026 · fora das métricas gerais'};
+  if(q&&q.reviewOnly){var rd=q.reviewDate?q.reviewDate.split('-').reverse().join('/'):'data preservada';return {type:'review',label:'Revisão exclusiva',detail:(q.originalNumber?'questão '+q.originalNumber+' · ':'')+'recebida em '+rd+' · fora das métricas gerais'};}
   if(isOfficialQuestion(q))return {type:'oficial',label:'Oficial PMAL — texto de prova',detail:officialQuestionYear(q)+' · item oficial'};
   if(isRecentAdapted(q))return {type:'adaptada',label:'Outra PM/Cebraspe — adaptada para C/E',detail:q.src+' · questão '+q.srcq+' · conversão para Certo/Errado'};
   if(isAIQuestion(q))return {type:'ia',label:'Gerada por IA',detail:'Questão gerada na plataforma; confira o fundamento quando houver dúvida.'};
@@ -5794,7 +5927,7 @@ function personalizedLesson20260823(mat,top){
   var x=personalizedCard20260823(mat,top);if(!x)return null;
   return {mat:mat,topico:top,pergunta:flashQuestion(top),regraCentral:x.central,regras:x.rules||[],prazos:[],comparacoes:[],pegadinhas:['Classificação de 23/08/2026: '+x.classification.replace(/_/g,' ')+'.'],referencias:['Revisão personalizada de 23/08/2026'],fixacao:'Explique a regra sem consultar e crie um exemplo de pegadinha CEBRASPE.',bizus:[]};
 }
-function findQuestionById(id){return QQ.find(function(x){return x.id===id;})||REVIEW_QUESTIONS_20260823.find(function(x){return x.id===id;})||null;}
+function findQuestionById(id){return QQ.find(function(x){return x.id===id;})||REVIEW_QUESTIONS_20260823.find(function(x){return x.id===id;})||(typeof REVIEW_QUESTIONS_20260824!=='undefined'?REVIEW_QUESTIONS_20260824.find(function(x){return x.id===id;}):null)||(typeof REVIEW_QUESTIONS_20260825!=='undefined'?REVIEW_QUESTIONS_20260825.find(function(x){return x.id===id;}):null)||null;}
 function startReview20260823(){
   S.reviewActive='2026-08-23';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260823.slice();S.ci=0;S.sa=[];S.round++;
   document.getElementById('hsc').style.display='none';
@@ -5803,10 +5936,17 @@ function startReview20260823(){
 }
 function saveReviewOnlyAnswer(q,a,ok,conf){
   S.reviewSessions=S.reviewSessions||{};
-  var session=S.reviewSessions['2026-08-23']||{};session.attempts=session.attempts||[];
+  var reviewDate=q.reviewDate||S.reviewActive||'2026-08-23';
+  var session=S.reviewSessions[reviewDate]||{};session.attempts=session.attempts||[];
   session.attempts.push({id:q.id,answer:a,ok:ok,conf:conf,ts:Date.now(),originalNumber:q.originalNumber||null,reviewClass:q.reviewClass});
-  session.lastAttemptAt=Date.now();session.reviewableCount=REVIEW_QUESTIONS_20260823.length;
-  S.reviewSessions['2026-08-23']=session;SS();
+  // Mantém o espaçamento adaptativo sem registrar a tentativa nas métricas gerais.
+  var rec=asGet(asKey(q),q.m,q.a);rec.hist.push({id:q.id,ok:ok,ans:a,g:q.g,conf:conf,ts:Date.now(),round:S.round,ce:q.ce,nv:q.n,scope:'review_only',excludeFromMetrics:true});
+  if(ok&&conf==='certeza')agenda(rec,'manutencao');else agenda(rec,ok?'instavel':'recorrente');rec.status=statusOf(rec);
+  session.lastAttemptAt=Date.now();
+  if(reviewDate==='2026-08-25')session.reviewableCount=REVIEW_QUESTIONS_20260825.length;
+  else if(reviewDate==='2026-08-24')session.reviewableCount=REVIEW_QUESTIONS_20260824.length;
+  else session.reviewableCount=REVIEW_QUESTIONS_20260823.length;
+  S.reviewSessions[reviewDate]=session;SS();
 }
 function importPersonalReview20260823(){
   try{
@@ -5823,6 +5963,131 @@ function importPersonalReview20260823(){
     S.reviewSessions['2026-08-23']=Object.assign(oldSession,{date:'2026-08-23',title:'Revisão 23/08/2026',mode:'review_only',scope:'review_only',total:120,reviewableCount:65,correct:92,errors:24,blank:4,net:68,scoring:'CEBRASPE',questionIds:REVIEW_QUESTIONS_20260823.map(function(q){return q.id;}),breakdown:{'Língua Portuguesa':{correct:8,errors:5},'Noções de Informática':{correct:3,errors:3,doubts:1},'Matemática':{correct:2,errors:3,doubts:2},'Conhecimentos de Alagoas':{correct:3,errors:1},'Direito — bloco 1':{correct:9,errors:11},'DPM/PPM/DH — bloco final':{correct:7,errors:7}},classificationCounts:counts,source:'questões enviadas pelo usuário em 23/08/2026'});
     SS();localStorage.setItem(key,'ok');localStorage.setItem(key+'_summary',JSON.stringify({cards:PERSONAL_REVIEW_20260823.length,counts:counts}));
   }catch(e){console.warn('Falha na importação da revisão de 23/08/2026:',e);}
+}
+
+// ══════════ REVISÃO DIÁRIA — 24/08/2026 ══════════
+// Banco deliberadamente separado de QQ. Estes itens nunca participam de simulado ou métricas gerais.
+function rq24(n,m,a,e,g,c,p,reviewClass){
+  return {id:'rev_20260824_'+String(n).padStart(3,'0'),m:m,a:a,n:reviewClass==='erro'?'cruel':'dificil',e:e,g:g,c:c,p:p,f:'Sessão diária de estudo de 24/08/2026.',d:p,ce:'revisão exclusiva',src:'Questões/capturas enviadas pelo usuário em 24/08/2026',scope:'review_only',reviewOnly:true,reviewDate:'2026-08-24',reviewClass:reviewClass||'manutencao'};
+}
+var REVIEW_QUESTIONS_20260824=[
+ rq24(1,'Direito Constitucional','Direitos fundamentais — prisão','A prisão em flagrante depende de determinação judicial prévia.','ERRADO','A CF admite prisão em flagrante independentemente de ordem judicial prévia; o controle judicial ocorre depois.','Flagrante é hipótese autônoma: não confunda prisão com o posterior controle de legalidade.','erro'),
+ rq24(2,'Direito Constitucional','Direitos fundamentais — sigilo','O sigilo de correspondência e de dados pode ser afastado por ordem judicial para apurar infração administrativa.','ERRADO','A exceção expressa do art. 5º, XII, alcança comunicações telefônicas, por ordem judicial, para investigação criminal ou instrução processual penal.','“No último caso” = comunicações telefônicas; finalidade penal, não administrativa.','erro'),
+ rq24(3,'Direito Constitucional','Direitos fundamentais — aplicabilidade','As normas definidoras dos direitos e garantias fundamentais dependem sempre de regulamentação para produzir efeitos.','ERRADO','O art. 5º, §1º, determina aplicação imediata.','Aplicação imediata não significa que toda norma tenha eficácia plena.','erro'),
+ rq24(4,'Direito Constitucional','Direitos fundamentais — profissão','A liberdade profissional impede que a lei estabeleça qualificações para o exercício de ofício ou profissão.','ERRADO','O art. 5º, XIII, ressalva as qualificações profissionais estabelecidas em lei.','A liberdade é a regra, mas admite qualificação legal.','erro'),
+ rq24(5,'Direito Constitucional','Direitos fundamentais — intranscendência','A intranscendência impede que reparação do dano ou perdimento de bens alcancem os sucessores.','ERRADO','A pena não passa do condenado, mas reparação e perdimento podem alcançar sucessores até o limite do patrimônio transferido.','Pena não passa; efeitos patrimoniais podem passar, limitadamente.','erro'),
+ rq24(6,'Direito Constitucional','Mandado de segurança coletivo','Associação recém-criada pode impetrar mandado de segurança coletivo em defesa de seus membros.','ERRADO','A associação deve estar legalmente constituída e em funcionamento há pelo menos um ano.','MS coletivo por associação: constituição legal + funcionamento por 1 ano.','erro'),
+ rq24(7,'Direito Constitucional','Direitos fundamentais — associações','Tanto a dissolução compulsória quanto a suspensão das atividades de associação exigem decisão judicial transitada em julgado.','ERRADO','O trânsito em julgado é exigido para dissolução compulsória, não para mera suspensão.','Dissolução = trânsito em julgado; suspensão = decisão judicial.','dominado'),
+ rq24(8,'Direito Constitucional','Inviolabilidade domiciliar','A entrada em domicílio em situação de flagrante delito é vedada durante a noite.','ERRADO','O flagrante autoriza entrada a qualquer hora; a limitação diurna refere-se à determinação judicial.','Flagrante/desastre/socorro: dia ou noite. Ordem judicial: durante o dia.','dominado'),
+ rq24(9,'Direito Constitucional','Tratados de direitos humanos','Tratado de direitos humanos equivale a emenda constitucional quando aprovado por três quintos, em dois turnos, em cada Casa.','CERTO','Esse é o rito do art. 5º, §3º, da CF.','São quatro travas: DH + cada Casa + dois turnos + 3/5.','dominado'),
+ rq24(10,'Direito Constitucional','Crimes hediondos','Os crimes hediondos são imprescritíveis e insuscetíveis de graça ou anistia.','ERRADO','Hediondos são inafiançáveis e insuscetíveis de graça ou anistia, mas não imprescritíveis.','Imprescritíveis: racismo e ação de grupos armados contra a ordem constitucional/Estado democrático.','dominado'),
+ rq24(11,'Direito Constitucional','Individualização da pena','A individualização da pena pode considerar a natureza do delito praticado.','CERTO','A individualização admite critérios ligados ao delito e ao condenado, nos termos constitucionais e legais.','Não transforme individualização em tratamento idêntico para todos.','dominado'),
+
+ rq24(12,'Noções de Informática','Windows — Backup','O Backup do Windows pode guardar pastas e arquivos, mas não preferências como redes Wi-Fi e senhas.','ERRADO','O recurso pode salvaguardar arquivos/pastas e preferências, inclusive redes Wi-Fi e senhas associadas.','Backup do Windows é mais amplo que mera cópia de arquivos.','erro'),
+ rq24(13,'Noções de Informática','Windows — Modo Avião','O Modo Avião interrompe comunicações sem fio; em versões atuais, Wi-Fi ou Bluetooth podem ser reativados separadamente.','CERTO','A regra geral é desligar rádios sem fio, sem impedir reativação manual posterior de alguns deles.','Não trate Modo Avião como bloqueio irreversível de todos os rádios.','erro'),
+ rq24(14,'Noções de Informática','Windows — backup externo','Copiar arquivos pelo Explorador de Arquivos para dispositivo externo pode constituir uma forma de backup.','CERTO','Uma cópia em mídia externa é cópia de segurança, ainda que não use aplicativo especializado.','Backup é finalidade da cópia, não apenas nome de uma ferramenta.','erro'),
+ rq24(15,'Noções de Informática','Windows — caminho do Backup','No Windows 11, o Backup do Windows encontra-se em Configurações > Sistema > Backup do Windows.','ERRADO','O caminho atual é Configurações > Contas > Backup do Windows.','Função verdadeira + caminho errado torna o item errado.','erro'),
+ rq24(16,'Noções de Informática','Explorador de Arquivos — Compartilhar','O comando Compartilhar do Explorador de Arquivos pode encaminhar um arquivo por aplicativos instalados compatíveis.','CERTO','A folha de compartilhamento integra aplicativos instalados que suportem o recurso.','Não reduza Compartilhar a e-mail ou proximidade.','erro'),
+ rq24(17,'Noções de Informática','Windows — nomes de arquivo','Os caracteres asterisco, menor que e dois-pontos podem ser usados normalmente em nomes de arquivos do Windows.','ERRADO','Entre os caracteres inválidos estão *, < e :, além de outros reservados.','Caracteres com função em caminhos, curingas ou redirecionamento costumam ser reservados.','erro'),
+ rq24(18,'Noções de Informática','Microsoft Defender Antivírus','O Microsoft Defender Antivírus é ferramenta de backup destinada a restaurar arquivos perdidos por ransomware.','ERRADO','O Defender protege e faz varredura contra malware; backup/restauração não é sua função de antivírus.','Proteção antimalware não substitui cópia de segurança.','erro'),
+ rq24(19,'Noções de Informática','Windows — Smart App Control','O Smart App Control ajuda a bloquear aplicativos não confiáveis ou maliciosos.','CERTO','O recurso avalia a confiabilidade e pode impedir a execução de aplicativos potencialmente perigosos.','Desconfiança do recurso não é fundamento para marcar errado: ele existe no Windows atual.','erro'),
+ rq24(20,'Noções de Informática','Windows — Registro','O Registro do Windows armazena informações sobre hardware, software, drivers, perfis e configurações.','CERTO','O Registro é uma base hierárquica de configurações do sistema e dos usuários.','Registro não é simples lista de programas instalados.','dominado'),
+ rq24(21,'Noções de Informática','Windows — SFC','O comando sfc /scannow verifica a integridade e tenta substituir arquivos protegidos corrompidos.','CERTO','O System File Checker examina arquivos protegidos e repara os que puder.','SFC cuida de arquivos do sistema; não é antivírus nem backup.','dominado'),
+ rq24(22,'Noções de Informática','Microsoft Intune','O Microsoft Intune é serviço de nuvem capaz de coletar diagnósticos e logs de dispositivos corporativos gerenciados.','CERTO','Intune oferece gerenciamento de endpoints e recursos de diagnóstico em ambiente corporativo.','Não confunda serviço de gestão de dispositivos com antivírus local.','dominado'),
+ rq24(23,'Noções de Informática','Windows — Modo de Segurança','O Windows possui exatamente três versões universais e invariáveis de Modo de Segurança.','ERRADO','A formulação fechada “três versões” foi rejeitada; as opções e denominações dependem do contexto e da versão.','Evite decorar uma contagem absoluta sem conferir como a banca define as opções.','erro'),
+ rq24(24,'Noções de Informática','Windows — interface','A barra de tarefas é, por si só, o local direto e exclusivo para ligar ou desligar o computador.','ERRADO','Os comandos de energia ficam associados ao menu Iniciar/energia, não à barra como função exclusiva.','Área próxima não equivale ao comando pertencer à barra de tarefas.','dominado'),
+
+ rq24(25,'Língua Portuguesa','Orações relativas','Em “agente passivo que utilizará...”, a oração iniciada por “que” é explicativa.','ERRADO','Sem vírgulas, a oração relativa restringe/especifica o antecedente.','Explicativa vem isolada por vírgulas; restritiva seleciona o referente.','dominado'),
+ rq24(26,'Língua Portuguesa','Concordância — voz passiva','A construção “Deve-se considerar os riscos” pode ser aceita, e a troca por “Devem-se considerar” necessariamente preserva a mesma estrutura.','ERRADO','A análise do “se” e da estrutura verbal é decisiva; a simples flexão para o plural pode alterar a leitura sintática pretendida no item.','Não aplique concordância mecânica antes de classificar o “se”.','dominado'),
+ rq24(27,'Língua Portuguesa','Concordância — porcentagem','Com “mais de 68% da população”, a concordância pode admitir singular ou plural conforme o núcleo e o percentual no contexto.','CERTO','Construções percentuais podem atrair concordância pelo número ou pelo especificador.','Observe simultaneamente percentual e termo partitivo.','dominado'),
+ rq24(28,'Língua Portuguesa','Conectivos — concessão','A substituição pelo conectivo “conquanto” preserva uma relação de oposição/concessão no contexto apresentado.','CERTO','Conquanto é conjunção concessiva e pode manter a relação semântica indicada.','Confira o modo verbal exigido e não apenas o sentido geral.','dominado'),
+ rq24(29,'Língua Portuguesa','Pontuação — coordenação','A repetição da forma verbal entre duas orações coordenadas longas torna obrigatória a supressão da vírgula.','ERRADO','A repetição verbal não cria regra de supressão obrigatória; extensão, estrutura e relação entre orações importam.','“Obrigatoriamente” exige regra categórica que não existe aqui.','dominado'),
+ rq24(30,'Língua Portuguesa','Sintaxe — sujeito oracional','Em “é necessário que tenha legitimidade”, o sujeito é elíptico e corresponde a “um governo”.','ERRADO','A oração subordinada substantiva exerce a função sintática pertinente; não há sujeito elíptico “um governo”.','Transforme a oração inteira em “isso” para testar a função.','dominado'),
+ rq24(31,'Língua Portuguesa','Regência e sentido','“Ter implicações para” equivale integralmente a “implicar”, preservando sentido e regência em qualquer reescrita.','ERRADO','As construções podem apresentar sentidos e regimes distintos no contexto; equivalência automática é indevida.','Não troque locução por verbo isolado sem testar regência e sentido.','dominado'),
+ rq24(32,'Língua Portuguesa','Reescrita textual','A reescrita que une os períodos sobre gênero e inteligência artificial preserva o sentido original no contexto analisado.','CERTO','A união mantém as relações lógicas e os referentes do trecho.','Unir períodos é válido quando não cria nova causa, oposição ou ambiguidade.','dominado'),
+ rq24(33,'Língua Portuguesa','Conectivos — pois','No primeiro período do segundo parágrafo, “pois” é empregado com sentido conclusivo.','ERRADO','No trecho, “pois” introduz explicação/causa para a afirmação anterior.','Pois anteposto à oração explicativa tende a ser causal/explicativo; posição e contexto decidem.','dominado'),
+ rq24(34,'Língua Portuguesa','Semântica das preposições','Substituir “Com o rápido desenvolvimento...” por “Em que pese o rápido desenvolvimento...” preservaria o sentido.','ERRADO','“Com” estabelece circunstância associada; “em que pese” introduz concessão.','Troca gramaticalmente possível pode alterar a relação semântica.','dominado'),
+ rq24(35,'Língua Portuguesa','Orações reduzidas — gerúndio','Em “Reconhecendo o impacto da IA..., a UNESCO organizou, juntamente com outros organismos...”, o sujeito de “Reconhecendo” é composto por UNESCO e organismos.','ERRADO','O sujeito recuperado é a UNESCO; “com outros organismos” expressa companhia.','Termo acompanhado de “com” não vira automaticamente núcleo do sujeito composto.','dominado'),
+ rq24(36,'Língua Portuguesa','Paralelismo e foco','Reordenar os elementos de “não apenas... mas...” preserva necessariamente o foco e o sentido original.','ERRADO','A inversão dos termos focalizados altera a progressão informativa e o sentido destacado.','Estruturas correlativas ligam foco à ordem dos segmentos.','dominado'),
+ rq24(37,'Língua Portuguesa','Orações reduzidas — restrição','Em “a celeridade processual obtida por meio de robôs”, o trecho “obtida por meio de robôs” restringe/especifica “celeridade processual”.','CERTO','O particípio delimita qual celeridade processual está em análise.','Sem isolamento explicativo, o segmento seleciona o referente.','dominado'),
+ rq24(38,'Língua Portuguesa','Interpretação e retórica','Padre Antônio Vieira vale-se de uma oposição para explicar a invenção dos livros.','CERTO','O texto contrapõe permanência/memória a passagem/esquecimento para construir a explicação.','Identifique a relação retórica, não apenas palavras antônimas soltas.','dominado'),
+ rq24(39,'Língua Portuguesa','Concordância — haver','“Existem agora evidências significativas” pode ser reescrito como “Podem haver evidências significativas”.','ERRADO','Haver com sentido de existir é impessoal: o correto é “Pode haver evidências significativas”.','O auxiliar também fica no singular na locução com haver existencial.','erro'),
+ rq24(40,'Língua Portuguesa','Concordância — sujeito composto','Em “o uso e a aplicação da IA nunca foram tão grandes”, a flexão para “nunca foi tão grande” preserva a correção.','ERRADO','O sujeito tem dois núcleos — uso e aplicação — e exige verbo e predicativo no plural.','Não deixe o termo próximo “IA” esconder os núcleos do sujeito.','erro'),
+ rq24(41,'Língua Portuguesa','Regência — permitir','“A IA permite que a administração pública realize...” pode ser reescrito como “A IA permite à administração pública realizar...”.','CERTO','Permitir admite “permitir que alguém faça” e “permitir a alguém fazer”; a+a gera crase.','A oração desenvolvida pode virar infinitiva com ajuste de regência.','erro'),
+ rq24(42,'Língua Portuguesa','Reescrita — correlação','A reordenação para “não apenas como elemento transformador..., mas também como ferramenta de automação” mantém os sentidos originais.','ERRADO','Embora gramatical, a reordenação muda o foco criado pela correlação no texto original.','Correção gramatical não garante preservação de sentido.','dominado'),
+ rq24(43,'Língua Portuguesa','Concordância nominal e verbal','Em “A capacidade de processar..., agilizar..., realizar... e otimizar... é inquestionável”, o singular decorre da concordância com “capacidade”.','CERTO','O núcleo do sujeito é o substantivo singular “capacidade”; os infinitivos integram seu complemento.','Localize o núcleo antes de contar termos no interior do complemento.','dominado'),
+ rq24(44,'Língua Portuguesa','Domínio versus intuição','Acertar uma questão sem conseguir formular uma justificativa mínima comprova domínio consolidado do conteúdo.','ERRADO','O resultado pode ser um acerto intuitivo; domínio exige identificar a regra ou o ponto decisivo.','Antes de marcar, complete: “Estou marcando isso porque...”.','acerto_intuitivo')
+];
+function startReview20260824(){
+  S.reviewActive='2026-08-24';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260824.slice();S.ci=0;S.sa=[];S.round++;
+  document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📚 Revisão exclusiva de 24/08: 44 itens. O estudo do dia foi 73 questões, 54 acertos e 19 erros.');
+}
+function importDailyReview20260824(){
+  try{
+    var key='pmal26_import_revisao_20260824_v1';
+    S.reviewSessions=S.reviewSessions||{};
+    var old=S.reviewSessions['2026-08-24']||{};
+    S.reviewSessions['2026-08-24']=Object.assign(old,{date:'2026-08-24',title:'Revisão 24/08/2026',type:'daily_study',mode:'review_only',scope:'review_only',total:73,correct:54,errors:19,blank:0,accuracy:74,reviewableCount:REVIEW_QUESTIONS_20260824.length,questionIds:REVIEW_QUESTIONS_20260824.map(function(q){return q.id;}),breakdown:{'Direito Constitucional':{total:30,correct:23,errors:7},'Noções de Informática':{total:23,correct:14,errors:9},'Língua Portuguesa':{total:20,correct:17,errors:3,masteryNote:'Diferenciar acerto dominado de acerto intuitivo.'}},source:'sessão diária e capturas enviadas em 24/08/2026',excludedFromGeneralMetrics:true});
+    if(localStorage.getItem(key)!=='ok'){
+      var now=new Date('2026-08-24T09:00:00-03:00').getTime();
+      REVIEW_QUESTIONS_20260824.forEach(function(q,idx){
+        var rec=asGet(q.m+' ▸ '+q.a,q.m,q.a),tag='revisao_20260824_'+q.id;
+        if(!(rec.hist||[]).some(function(h){return h&&h.importTag===tag;}))rec.hist.push({id:q.id,ok:q.reviewClass==='dominado',branco:false,instavel:q.reviewClass==='acerto_intuitivo',ts:now+idx,round:S.round,conf:q.reviewClass==='dominado'?'certeza':'duvida',ce:'revisão exclusiva',nv:q.n,reviewClass:q.reviewClass,scope:'review_only',excludeFromMetrics:true,importTag:tag});
+        rec.personalizedAt='2026-08-24';rec.personalizedClass=q.reviewClass;rec.ivIdx=0;rec.crit=q.reviewClass==='erro';rec.revLeft=Math.max(rec.revLeft||0,q.reviewClass==='erro'?4:2);rec.due=q.reviewClass==='dominado'?now+14*DIA_MS:now;rec.status=statusOf(rec);
+        var frec=flashGet(flashKey(q.m,q.a));frec.due=q.reviewClass==='dominado'?now+14*DIA_MS:0;
+      });
+      localStorage.setItem(key,'ok');
+    }
+    SS();
+  }catch(e){console.warn('Falha na importação da revisão de 24/08/2026:',e);}
+}
+
+// ══════════ ESTUDO REAL + REVISÃO EXCLUSIVA — 25/08/2026 ══════════
+function rq25(n,a,e,g,c,p,reviewClass){
+  return {id:'rev_20260825_adm_'+String(n).padStart(3,'0'),m:'Direito Administrativo',a:a,n:reviewClass==='erro'?'cruel':'dificil',e:e,g:g,c:c,p:p,f:'Revisão personalizada de 25/08/2026 — Princípios e Regime Jurídico Administrativo.',d:p,ce:'revisão exclusiva',src:'Capturas enviadas pelo usuário — revisão de 25/08/2026',scope:'review_only',reviewOnly:true,reviewDate:'2026-08-25',reviewClass:reviewClass||'dominado'};
+}
+var REVIEW_QUESTIONS_20260825=[
+ rq25(1,'Processo administrativo disciplinar','A chamada verdade sabida permite que a autoridade aplique sanção disciplinar sem processo administrativo, desde que tenha conhecimento pessoal dos fatos.','ERRADO','A sanção disciplinar exige devido processo, contraditório e ampla defesa; conhecimento pessoal da autoridade não substitui o PAD.','“Eu já sei o que aconteceu” não elimina o procedimento nem as garantias do acusado.','erro'),
+ rq25(2,'Processo administrativo disciplinar','A notoriedade da infração não afasta, no processo administrativo disciplinar, o contraditório e a ampla defesa.','CERTO','As garantias do art. 5º, LV, alcançam os processos administrativos, inclusive disciplinares.','Verdade sabida e fato notório não são atalhos para punir.','dominado'),
+ rq25(3,'Regime jurídico-administrativo — pilares','O regime jurídico-administrativo brasileiro está fundamentado na supremacia do interesse público e na indisponibilidade do interesse público.','CERTO','A doutrina apresenta esses princípios como bases das prerrogativas e sujeições próprias da Administração.','Supremacia e indisponibilidade formam a dupla estrutural do regime.','erro'),
+ rq25(4,'Regime jurídico-administrativo — prerrogativas e restrições','Supremacia associa-se às prerrogativas administrativas, enquanto indisponibilidade associa-se às restrições e aos deveres impostos à Administração.','CERTO','A supremacia explica poderes instrumentais; a indisponibilidade limita o gestor, que atua em nome da coletividade.','Supremacia → prerrogativas. Indisponibilidade → deveres/restrições.','dominado'),
+ rq25(5,'Regime de direito público e privado','A Administração Pública pode submeter-se tanto a regime de direito público quanto, em determinadas relações, a regime de direito privado.','CERTO','Nem toda atuação administrativa possui o mesmo regime; estatais e negócios específicos podem receber maior incidência de direito privado, sem afastar princípios públicos.','Regime jurídico-administrativo não é sinônimo de toda relação jurídica da Administração.','erro'),
+ rq25(6,'Regime de direito público e privado','Toda relação jurídica da Administração Pública está submetida exclusivamente ao direito público.','ERRADO','A Administração também pode atuar sob regras de direito privado em hipóteses juridicamente admitidas.','O polo “Administração” não torna automaticamente toda a relação exclusivamente pública.','dominado'),
+ rq25(7,'Princípios administrativos — natureza normativa','De acordo com a doutrina, o regime jurídico-administrativo abrange regras e princípios, os quais são considerados recomendações para a atividade administrativa.','ERRADO','Princípios são normas jurídicas dotadas de força vinculante, e não meros conselhos.','A primeira parte é verdadeira; a palavra “recomendações” derruba o item.','erro'),
+ rq25(8,'Sindicabilidade','Sindicabilidade designa a possibilidade de controle da atuação administrativa, inclusive pelo Poder Judiciário.','CERTO','A atuação administrativa é controlável nas instâncias admitidas pelo ordenamento, inclusive judicialmente quanto à juridicidade.','Sindicabilidade vem de sindicar: examinar, fiscalizar, controlar.','erro'),
+ rq25(9,'Princípio da finalidade','Constituição estadual pode explicitar o princípio da finalidade ao lado dos princípios do art. 37 da Constituição Federal sem, por isso, contrariar a Constituição Federal.','CERTO','O rol expresso do caput do art. 37 não impede a explicitação de princípio compatível na ordem estadual.','Não estar na sigla LIMPE não torna o princípio proibido.','erro'),
+ rq25(10,'Autotutela','Pela autotutela, a Administração anula atos ilegais e pode revogar atos válidos por conveniência e oportunidade.','CERTO','Anulação é controle de legalidade; revogação é controle de mérito administrativo.','Anular = ilegalidade. Revogar = mérito.','dominado'),
+ rq25(11,'Proteção da confiança legítima e boa-fé','A proteção da confiança legítima e a boa-fé limitam mudanças estatais inesperadas que frustrem expectativas legítimas criadas pelo próprio poder público.','CERTO','Segurança jurídica, confiança e boa-fé protegem situações legitimamente constituídas, observados os requisitos do caso.','Não confunda proteção da confiança com direito adquirido à ilegalidade.','dominado'),
+ rq25(12,'Vedação ao comportamento contraditório','A vedação ao comportamento contraditório do poder público decorre da boa-fé e protege a confiança legitimamente criada.','CERTO','O venire contra factum proprium impede conduta estatal incompatível com comportamento anterior juridicamente relevante.','Mudança possível não significa contradição arbitrária.','dominado'),
+ rq25(13,'Igualdade administrativa','O princípio da igualdade administrativa exige tratamento absolutamente idêntico para todas as pessoas, independentemente de diferenças relevantes entre suas situações.','ERRADO','A igualdade admite tratamento distinto para situações distintas, desde que exista fundamento jurídico adequado.','Igualdade material não é uniformidade cega.','dominado'),
+ rq25(14,'Supremacia do interesse público','A supremacia do interesse público é absoluta e afasta, em qualquer situação, direitos individuais conflitantes.','ERRADO','A supremacia não é salvo-conduto; sua aplicação respeita direitos fundamentais, proporcionalidade e juridicidade.','Desconfie de “absoluta” e “em qualquer situação”.','dominado'),
+ rq25(15,'Anulação e contraditório','A Administração pode anular ato que afete interesses individuais sem oportunizar contraditório, pois a ilegalidade dispensa participação do interessado.','ERRADO','Quando a anulação repercute na esfera individual, devem ser respeitados contraditório e ampla defesa nas hipóteses aplicáveis.','Autotutela não apaga garantias processuais.','dominado'),
+ rq25(16,'Processo administrativo — verdade material','O processo administrativo orienta-se pela busca da verdade material, não se limitando à verdade formal produzida pelas partes.','CERTO','A Administração deve buscar o esclarecimento efetivo dos fatos, observando o devido processo.','Verdade material não autoriza prova ilícita nem abandono das garantias.','dominado'),
+ rq25(17,'Princípios expressos — LIMPE','A razoabilidade integra expressamente o rol do caput do art. 37 da Constituição Federal.','ERRADO','O caput explicita legalidade, impessoalidade, moralidade, publicidade e eficiência; razoabilidade é princípio aplicável, mas não integra textualmente o LIMPE.','Aplicável não significa expressamente escrito no art. 37.','dominado'),
+ rq25(18,'Administração Direta e Indireta','Existe hierarquia entre a Administração Direta e as entidades da Administração Indireta por ela supervisionadas.','ERRADO','Entre elas há vinculação e tutela/supervisão finalística nos limites legais, não subordinação hierárquica.','Hierarquia ocorre dentro da mesma pessoa jurídica; controle finalístico não é hierarquia.','dominado'),
+ rq25(19,'Indisponibilidade do interesse público','As restrições impostas à atividade administrativa, decorrentes de a Administração ser mera gestora de bens e interesses públicos, derivam da indisponibilidade do interesse público.','CERTO','O administrador gere interesses alheios, pertencentes à coletividade, e não pode dispor deles livremente.','Gestor, não proprietário.','dominado'),
+ rq25(20,'Poder-dever de agir','Assim como o administrador privado, o administrador público possui poder de agir que lhe faculta escolher livremente entre agir e não agir no exercício da função.','ERRADO','Quando a lei atribui competência para proteger o interesse público, há poder-dever de agir; a omissão não é livre escolha.','Competência administrativa é dever funcional, não faculdade privada.','dominado'),
+ rq25(21,'Princípios implícitos','A legalidade restrita impede a aplicação, na Administração Pública, de princípios implícitos não expressamente previstos na legislação.','ERRADO','Princípios implícitos reconhecidos pelo ordenamento são plenamente aplicáveis à Administração.','Ausência de menção textual expressa não equivale a inexistência normativa.','dominado'),
+ rq25(22,'Prerrogativas administrativas','A Administração não pode estabelecer unilateralmente obrigações aos particulares, mas apenas aos servidores e delegatários de serviços públicos.','ERRADO','Nas hipóteses admitidas pelo ordenamento, a Administração dispõe de prerrogativas para impor unilateralmente obrigações a particulares.','A unilateralidade exige fundamento jurídico, mas não se restringe a agentes vinculados.','dominado'),
+ rq25(23,'Empresas estatais — criação','A criação de empresas públicas e sociedades de economia mista prescinde de autorização legislativa específica quando o ente detém o controle acionário.','ERRADO','A criação de empresa pública e sociedade de economia mista depende de autorização legislativa específica.','“Prescinde” inverte a exigência constitucional.','dominado'),
+ rq25(24,'Moralidade administrativa — contratação temporária','A exigência de intervalo antes de nova contratação temporária de professor pode concretizar a moralidade administrativa ao impedir renovações sucessivas usadas para contornar o concurso público.','CERTO','A limitação temporal combate a perpetuação indevida de vínculos temporários e protege a moralidade e a regra do concurso.','Contratação temporária não pode virar vínculo permanente disfarçado.','erro')
+];
+function personalizedCard20260825(mat,top){return REVIEW_QUESTIONS_20260825.find(function(q){return q.m===mat&&topico(q.a)===top;})||null;}
+function personalizedLesson20260825(mat,top){var q=personalizedCard20260825(mat,top);if(!q)return null;return {mat:mat,topico:top,pergunta:flashQuestion(top),regraCentral:q.c,regras:[q.c],prazos:[],comparacoes:[],pegadinhas:[q.p],referencias:['Revisão de 25/08/2026'],fixacao:'Explique a regra em uma frase e identifique a palavra que mudaria o gabarito.',bizus:[q.d]};}
+function startReview20260825(){S.reviewActive='2026-08-25';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260825.slice();S.ci=0;S.sa=[];S.round++;document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});toast('📚 Revisão exclusiva de 25/08: Direito Administrativo, sem impacto nas métricas gerais.');}
+function importDailyReview20260825(){
+  try{
+    var key='pmal26_import_revisao_20260825_v1',now=new Date('2026-08-25T09:00:00-03:00').getTime();S.reviewSessions=S.reviewSessions||{};
+    var old=S.reviewSessions['2026-08-25']||{};
+    S.reviewSessions['2026-08-25']=Object.assign(old,{date:'2026-08-25',title:'Revisão 25/08/2026 — Direito Administrativo',type:'daily_study',mode:'review_only',scope:'review_only',total:52,correct:45,errors:7,blank:0,accuracy:86.5,net:38,scoring:'CEBRASPE +1/-1',filters:['Princípios','Regime Jurídico Administrativo'],reviewableCount:REVIEW_QUESTIONS_20260825.length,questionIds:REVIEW_QUESTIONS_20260825.map(function(q){return q.id;}),theoryStudies:[{subject:'Matemática',mode:'theory',note:'Matemática — estudo teórico realizado em 25/08/2026. Nenhuma quantidade ou desempenho em questões foi registrado.'}],source:'capturas e fechamento enviados pelo usuário em 25/08/2026',excludedFromGeneralMetrics:true});
+    registerStudySubject('2026-08-25',{subject:'Direito Administrativo',mode:'questions',topics:REVIEW_QUESTIONS_20260825.map(function(q){return topico(q.a);}),sources:['TEC/CEBRASPE — estudo externo'],total:52,correct:45,errors:7,accuracy:86.5,net:38,reviewQuestionIds:REVIEW_QUESTIONS_20260825.map(function(q){return q.id;})});
+    registerStudySubject('2026-08-25',{subject:'Matemática',mode:'theory',topics:['Frações','Razão e proporção','Divisão proporcional'],sources:['DSO — teoria'],note:'Matemática — estudo teórico realizado em 25/08/2026.'});
+    if(localStorage.getItem(key)!=='ok'){
+      REVIEW_QUESTIONS_20260825.forEach(function(q,idx){var rec=asGet(q.m+' ▸ '+q.a,q.m,q.a),tag='revisao_20260825_'+q.id;if(!(rec.hist||[]).some(function(h){return h&&h.importTag===tag;}))rec.hist.push({id:q.id,ok:q.reviewClass!=='erro',branco:false,instavel:q.reviewClass==='inseguro',ts:now+idx,round:S.round,conf:q.reviewClass==='erro'?'duvida':'certeza',ce:'revisão exclusiva',nv:q.n,reviewClass:q.reviewClass,scope:'review_only',excludeFromMetrics:true,importTag:tag});rec.personalizedAt='2026-08-25';rec.personalizedClass=q.reviewClass==='erro'?'chute_lacuna':'recuperado';rec.ivIdx=0;rec.crit=q.reviewClass==='erro';rec.revLeft=Math.max(rec.revLeft||0,q.reviewClass==='erro'?4:1);rec.due=q.reviewClass==='erro'?now:now+7*DIA_MS;rec.status=statusOf(rec);var frec=flashGet(flashKey(q.m,topico(q.a)));frec.due=q.reviewClass==='erro'?0:now+7*DIA_MS;});localStorage.setItem(key,'ok');
+    }
+    SS();
+  }catch(e){console.warn('Falha na importação da revisão de 25/08/2026:',e);}
 }
 
 // ══════════ CICLO 2 — RESET LÓGICO, HISTÓRICO PRESERVADO ══════════
@@ -5960,7 +6225,7 @@ function refreshLawBankLabels(){var f=document.getElementById('law-bank-foot');i
 // ── INIT ──
 document.getElementById('btn-c').addEventListener('click',()=>ans('CERTO'));
 document.getElementById('btn-e').addEventListener('click',()=>ans('ERRADO'));
-LS();ensureV4State();importErros20260803();importHistorico20260805();importAdmin20260805();importLote20260806();importLote20260813();importLotePenal20260814();importLoteConsolidado20260817();importAtualizacao20260819();importAlagoas20260820();activateCycle2IfNeeded();importPersonalReview20260823();refreshLawBankLabels();initHome();
+LS();ensureV4State();importErros20260803();importHistorico20260805();importAdmin20260805();importLote20260806();importLote20260813();importLotePenal20260814();importLoteConsolidado20260817();importAtualizacao20260819();importAlagoas20260820();activateCycle2IfNeeded();importPersonalReview20260823();importDailyReview20260824();importDailyReview20260825();refreshLawBankLabels();initHome();
 </script>
 </body>
 </html>
