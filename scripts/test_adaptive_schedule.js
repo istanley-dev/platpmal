@@ -51,7 +51,7 @@ function boot(storage) {
 ;globalThis.__app={S,QQ,WEEK,QUESTION_TEXTS,REVIEW_QUESTIONS_20260823,REVIEW_QUESTIONS_20260824,REVIEW_QUESTIONS_20260825,
 buildAdaptiveDay,adaptiveItemDesc,adaptiveReviewQuestions,buildDailyPool,startQ,startSimulado,startWeekReview,
 findQuestionById,SS,LS,registerStudySubject,localDateKey,studyClass,studySubjects,errorCombatItems,
-lawDailySelection,computeTodaysArticles,recordLawMemory,lawMemoryRec,prepareQuestionContexts,questionUsable,getPool,
+lawDailySelection,computeTodaysArticles,touchLeituraDia,recordLawMemory,lawMemoryRec,prepareQuestionContexts,questionUsable,getPool,
 phaseInfo,dayPlan,renderCrono,MAX_ADAPTIVE_ITEMS,DATA_ALVO_PROVA,
 testMathAutoPool:function(){var old=dayPlan;dayPlan=function(){return {subs:['Matemática','Direito Administrativo'],target:12,primary:['Matemática','Direito Administrativo'],maintenance:['Matemática'],weak:null};};try{return buildDailyPool();}finally{dayPlan=old;}}};`;
   new vm.Script(source + exportHook, { filename: 'index.inline.js' }).runInContext(context, { timeout: 20000 });
@@ -139,6 +139,11 @@ assert.equal(app.S.sq.some((q) => q.m === 'Matemática'), false);
 // Banco de Leis diário e memória espaçada.
 const weekdayLaw = app.computeTodaysArticles();
 assert(weekdayLaw.todays.length >= 5 && weekdayLaw.todays.length <= 8);
+const legacyFive = weekdayLaw.todays.slice(0, 5);
+app.S.leituraDia = { d: app.localDateKey(new Date()), keys: Array.from(legacyFive), inReview: false };
+app.touchLeituraDia();
+assert.equal(app.S.leituraDia.keys.length, 7, 'rotina antiga do mesmo dia deve migrar de 5 para 7 dispositivos');
+assert(legacyFive.every((key) => app.S.leituraDia.keys.includes(key)), 'migração deve preservar os dispositivos já exibidos');
 const law = app.lawDailySelection('2026-08-26');
 assert(law.deadlines.length > 0 && law.deadlines.length <= 5);
 assert(law.juris.length > 0 && law.juris.length <= 3);

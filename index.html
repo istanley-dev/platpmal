@@ -4080,8 +4080,9 @@ function computeTodaysArticles(){
   return {N:keys.length,remaining:keys.filter(function(k){return !S.bibLidos[k];}).length,perDay:todays.length,todays:todays.slice(0,qty),inReview:false};
 }
 function touchLeituraDia(){
-  var t=todayStr();
-  if(!S.leituraDia||S.leituraDia.d!==t){var info=computeTodaysArticles();S.leituraDia={d:t,keys:info.todays,inReview:info.inReview};SS();}
+  var t=todayStr(),expected=dateFromKey(t).getDay()===0?5:READ_DAILY_QTY;
+  if(!S.leituraDia||S.leituraDia.d!==t){var info=computeTodaysArticles();S.leituraDia={d:t,keys:info.todays,inReview:info.inReview,intensiveV1:true};SS();}
+  else if(!S.leituraDia.intensiveV1||(S.leituraDia.keys||[]).length<expected){var upgraded=computeTodaysArticles();S.leituraDia.keys=mergeUnique(S.leituraDia.keys,upgraded.todays).slice(0,expected);S.leituraDia.inReview=false;S.leituraDia.intensiveV1=true;SS();}
 }
 function readingPlanInfo(){
   touchLeituraDia();var keys=readingOrder();var N=keys.length;var lidos=Object.keys(S.bibLidos).filter(function(k){return DISP[k];}).length;
