@@ -447,13 +447,16 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
 .adaptive-label{font-size:9.5px;font-weight:900;letter-spacing:1.35px;text-transform:uppercase;color:var(--mut);margin:0 2px 6px}
 .adaptive-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 .adaptive-item{min-width:0;background:var(--cardb);border:1px solid var(--bd);border-left:3px solid #4d7659;border-radius:11px;padding:10px;display:flex;align-items:flex-start;gap:8px}
-.adaptive-item.future{border-left-color:#80662c}.adaptive-item.port{border-left-color:#4d68a1}.adaptive-item.math{border-left-color:#8a5ca3}
+.adaptive-item.future{border-left-color:#80662c}.adaptive-item.port{border-left-color:#4d68a1}.adaptive-item.math{border-left-color:#8a5ca3}.adaptive-item.combat{border-left-color:#c64f4f;background:#291719}
 .adaptive-main{min-width:0;flex:1}.adaptive-title{font-size:12.5px;font-weight:850;color:var(--ink);line-height:1.3;overflow-wrap:anywhere}.adaptive-desc{font-size:10.5px;color:var(--mut);line-height:1.42;margin-top:3px;overflow-wrap:anywhere}
 .adaptive-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}.adaptive-tag{font-size:9px;font-weight:850;color:#9bd9aa;background:#17261b;border:1px solid #31543a;border-radius:999px;padding:2px 6px}.adaptive-tag.theory{color:#d8b3eb;background:#291b31;border-color:#573365}
 .adaptive-btn{flex-shrink:0;border:1px solid #3f6f50;background:#183022;color:#9ee4b2;border-radius:8px;padding:7px 8px;font-size:10px;font-weight:850;cursor:pointer;white-space:nowrap}.adaptive-btn.done{background:#1b2a20;color:#6e9278;border-color:#314237}
 .adaptive-empty{font-size:10.5px;color:var(--mut);padding:7px 9px;border:1px dashed var(--bd);border-radius:9px}
 .theory-note{font-size:12px;line-height:1.6;color:var(--ink);background:var(--cardb);border:1px solid var(--bd);border-radius:11px;padding:12px;margin-top:8px}
-@media(max-width:430px){.adaptive-list{grid-template-columns:1fr}.adaptive-item{padding:9px}.adaptive-btn{padding:7px}.adaptive-shell{gap:9px}}
+.adaptive-summary{display:flex;align-items:center;gap:7px;flex-wrap:wrap;background:#122319;border:1px solid #31533d;border-radius:11px;padding:9px 11px;font-size:11px}.adaptive-summary b{font-size:14px;margin-right:auto}.adaptive-summary span{background:#1e3425;border-radius:999px;padding:4px 7px;color:#b8d8c0}
+.adaptive-group>summary{cursor:pointer;list-style:none;padding:5px 2px}.adaptive-group>summary::-webkit-details-marker{display:none}
+.law-memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.law-memory-card{border:1px solid var(--bd);background:var(--cardb);border-radius:10px;padding:10px;min-width:0}.law-memory-title{font-size:11.5px;font-weight:850;line-height:1.4}.law-memory-text{font-size:10.5px;color:var(--mut);line-height:1.5;margin-top:4px;overflow-wrap:anywhere}.law-memory-actions{display:flex;gap:5px;margin-top:8px}.law-memory-actions button{flex:1;min-height:34px;border-radius:7px;border:1px solid var(--bd);background:#202622;color:var(--ink);font-size:9px;font-weight:800}.law-subblock{margin-top:13px}.law-subtitle{font-size:10px;font-weight:900;letter-spacing:1px;color:var(--brand);margin-bottom:7px}.law-danger{border-color:#713638;background:#2b1819}
+@media(max-width:430px){.adaptive-list,.law-memory-grid{grid-template-columns:1fr}.adaptive-item{padding:9px}.adaptive-btn{padding:9px;min-height:40px}.adaptive-shell{gap:9px}.law-memory-actions button{min-height:40px}.cb{overflow-wrap:anywhere}}
 </style>
 </head>
 <body>
@@ -818,8 +821,8 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
 <!-- ASSUNTOS (status inteligente por cor) -->
 <div id="v-crono" class="view">
   <div class="hcard">
-    <h2>🎯 Operação do Dia — Cronograma</h2>
-    <p>Ciclo 2 voltado a revisão e fixação: seleção por incidência CEBRASPE, seus erros e manutenção. Português entra 3x por semana, sem ocupar todos os dias.</p>
+    <h2>🎯 Operação Intensiva PMAL</h2>
+    <p>DSO avança o conteúdo; o histórico real alimenta as revisões; a plataforma impede o esquecimento até a prova.</p>
   </div>
   <div class="cphead" id="crono-head"></div>
   <div class="card mb12"><div class="cb">
@@ -836,17 +839,23 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
     <div id="crono-tasks"></div>
   </div></div>
   <div class="card mb12" id="adaptive-card"><div class="cb">
-    <div class="cb-t">🧭 Cronograma híbrido</div>
-    <div style="font-size:11px;color:var(--mut);line-height:1.45;margin-bottom:10px">O plano principal continua abaixo. Esta camada acrescenta apenas o que foi realmente estudado e evita blocos duplicados.</div>
+    <div class="cb-t">🧭 Plano adaptativo de hoje</div>
+    <div style="font-size:11px;color:var(--mut);line-height:1.45;margin-bottom:10px">O DSO é a base. Revisões só nascem do que foi efetivamente registrado, com limite diário e fusão de blocos repetidos.</div>
     <div class="adaptive-shell" id="adaptive-schedule"></div>
   </div></div>
   <div class="card mb12" id="leitura-card"><div class="cb">
-    <div class="cb-t">📖 Plano de Leitura Diário — Banco de Leis</div>
+    <div class="cb-t">⚖️ Banco de Leis — rotina diária</div>
+    <div style="font-size:11px;color:var(--mut);line-height:1.45;margin-bottom:9px">25–35 min por dia · domingo 15–20 min · lei seca, prazos, jurisprudência e literalidade.</div>
     <div id="leitura-sub" style="font-size:12px;color:var(--mut);margin-bottom:8px"></div>
     <div class="pbtr" style="margin-bottom:12px"><div class="pbfi" id="leitura-bar" style="background:var(--sg);width:0%"></div></div>
+    <div class="law-subtitle">📖 LEI SECA DO DIA</div>
     <div id="leitura-hoje"></div>
+    <div class="law-subblock"><div class="law-subtitle">⏱️ PRAZOS EM COMBATE</div><div class="law-memory-grid" id="law-deadlines"></div></div>
+    <div class="law-subblock"><div class="law-subtitle">⚖️ JURISPRUDÊNCIA DO DIA</div><div class="law-memory-grid" id="law-juris"></div></div>
+    <div class="law-subblock"><div class="law-subtitle">🎯 PALAVRA QUE MUDA TUDO</div><div class="law-memory-grid" id="law-traps"></div></div>
+    <div class="law-subblock"><div class="law-subtitle">🔥 NÃO POSSO ERRAR ISSO NOVAMENTE</div><div class="law-memory-grid" id="law-never-again"></div></div>
     <button class="bp mt8" id="leitura-btn-quiz" onclick="startLeituraQuiz()" style="width:100%">📝 Responder questões destes artigos</button>
-    <div style="font-size:11px;color:var(--mut);margin-top:8px"><span id="law-bank-foot">Leitura fixa de 5 dispositivos/dia · seleção por incidência, seus erros e rotação do edital.</span></div>
+    <div style="font-size:11px;color:var(--mut);margin-top:8px"><span id="law-bank-foot">Rotação por DSO, incidência, erros e tempo sem revisão. Nenhuma lei estudada desaparece.</span></div>
   </div></div>
   <div class="card mb12"><div class="cb">
     <div class="cb-t">🔁 Plano da semana</div>
@@ -860,7 +869,7 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
     <button class="bp mt8" onclick="startWeekReview()" style="width:100%">📅 Revisar a semana (intercalado)</button>
   </div></div>
   <div class="card mb12"><div class="cb">
-    <div class="cb-t">🧭 As 3 fases até a prova</div>
+    <div class="cb-t">🧭 As 4 fases até a prova provável</div>
     <div class="phaseplan" id="crono-phases"></div>
   </div></div>
 </div>
@@ -1303,20 +1312,27 @@ function startIncidenceMission(){
 }
 
 // ── STATE ──
-var S={mode:'simulado',subs:[],niv:'all',qty:5,sq:[],ci:0,sa:[],ha:[],eids:new Set(),legacyEids:new Set(),legacyTopics:{},legacySummary:null,cycleId:'ciclo2_20260821',AS:{},round:0,log:[],metas:{},xp:0,streak:0,lastDay:'',plan:{examDate:''},daily:{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false},bibLidos:{},leituraDia:{d:'',keys:[],inReview:false},flash:{cards:{}},weekly:{lastDone:0},reviewSessions:{},studyHistory:{},adaptiveReview:{completed:{}}};
+var QUESTION_TEXTS={};
+function contextHash(text){var h=2166136261,s=String(text||'');for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(36);}
+function prepareQuestionContexts(list){(list||[]).forEach(function(q){if(q.m!=='Língua Portuguesa')return;if(q.tx&&q.tx.trim()){if(!q.textId)q.textId='revtxt_'+contextHash(q.tx);if(!QUESTION_TEXTS[q.textId])QUESTION_TEXTS[q.textId]=q.tx;q.tx='';}if(q.textId&&!QUESTION_TEXTS[q.textId]&&q.tx){QUESTION_TEXTS[q.textId]=q.tx;q.tx='';}if(q.textId&&!QUESTION_TEXTS[q.textId])q.missingContext=true;});}
+function questionContextText(q){if(!q)return '';return (q.textId&&QUESTION_TEXTS[q.textId])||q.tx||'';}
+function questionUsable(q){return !!q&&!q.missingContext&&(!q.textId||!!questionContextText(q));}
+prepareQuestionContexts(QQ);
+var DATA_ALVO_PROVA='2026-11-29';
+var S={mode:'simulado',subs:[],niv:'all',qty:5,sq:[],ci:0,sa:[],ha:[],eids:new Set(),legacyEids:new Set(),legacyTopics:{},legacySummary:null,cycleId:'ciclo2_20260821',AS:{},round:0,log:[],metas:{},xp:0,streak:0,lastDay:'',plan:{examDate:DATA_ALVO_PROVA},daily:{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false},bibLidos:{},leituraDia:{d:'',keys:[],inReview:false},flash:{cards:{}},weekly:{lastDone:0},reviewSessions:{},studyHistory:{},adaptiveReview:{completed:{},deferred:{}},lawMemory:{cards:{},daily:{}}};
 var apiKey='';
 
 function LS(){
   try{
     const d=localStorage.getItem('pmal26');
-    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:''};S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.reviewSessions=p.reviewSessions||{};S.studyHistory=p.studyHistory||{};S.adaptiveReview=p.adaptiveReview||{completed:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
+    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:DATA_ALVO_PROVA};if(!S.plan.examDate)S.plan.examDate=DATA_ALVO_PROVA;S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.reviewSessions=p.reviewSessions||{};S.studyHistory=p.studyHistory||{};S.adaptiveReview=p.adaptiveReview||{completed:{},deferred:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};if(!S.adaptiveReview.deferred)S.adaptiveReview.deferred={};S.lawMemory=p.lawMemory||{cards:{},daily:{}};if(!S.lawMemory.cards)S.lawMemory.cards={};if(!S.lawMemory.daily)S.lawMemory.daily={};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
     apiKey=localStorage.getItem('pmal26_key')||'';
     if(apiKey)document.getElementById('inp-key').value=apiKey;
     loadGenQs();
   }catch(e){}
 }
 function SS(){
-  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions,studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{}},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
+  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions,studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{},deferred:{}},lawMemory:S.lawMemory||{cards:{},daily:{}},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
 }
 
 // ══════════ SISTEMA INTELIGENTE DE ALERTA / REVISÃO / REFORÇO ══════════
@@ -2313,7 +2329,7 @@ function buildBlock(dist,Nblock,simNiv){
   let bq=[];
   for(const m in dist){
     const want=Math.max(1,Math.round(dist[m]*Nblock/base));
-    let pool=QQ.filter(q=>q.m===m);
+    let pool=QQ.filter(q=>q.m===m&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only');
     if(simNiv!=='all'){
       if(simNiv==='dificil')pool=pool.filter(q=>['dificil','muito_dificil','cruel'].includes(q.n));
       else if(simNiv==='muito_dificil')pool=pool.filter(q=>['muito_dificil','cruel'].includes(q.n));
@@ -2327,7 +2343,7 @@ function buildBlock(dist,Nblock,simNiv){
   else if(bq.length<Nblock){
     const matSet=new Set(Object.keys(dist));
     const used=new Set(bq.map(q=>q.id));
-    const resto=QQ.filter(q=>matSet.has(q.m)&&!used.has(q.id));
+    const resto=QQ.filter(q=>matSet.has(q.m)&&!used.has(q.id)&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only');
     resto.sort(()=>Math.random()-.5);
     bq=bq.concat(resto.slice(0,Nblock-bq.length));
   }
@@ -2391,9 +2407,10 @@ function renderSim(){
   // Texto-base no simulado
   const simTxEl=document.getElementById('sim-qtx');
   if(simTxEl){
-    if(q.tx&&q.tx.trim()){
+    const contextText=questionContextText(q);
+    if(contextText&&contextText.trim()){
       document.getElementById('sim-qtx-tt').textContent=q.tt||'Texto de referência';
-      document.getElementById('sim-qtx-body').textContent=q.tx;
+      document.getElementById('sim-qtx-body').textContent=contextText;
       simTxEl.style.display='block';
     } else {
       simTxEl.style.display='none';
@@ -3501,14 +3518,16 @@ function renderMetasCounts(){renderGam('metas-gam');const arr=Object.values(S.me
 function toggleDisp(btn,key){const id='dt-'+key.replace(/[^a-zA-Z0-9]/g,'');const t=document.getElementById(id);if(!t)return;t.classList.toggle('open');btn.textContent=t.classList.contains('open')?'📜 Ocultar':'📜 Ler dispositivo';}
 
 // ══════════ CRONOGRAMA + METAS DIÁRIAS ══════════
+// DSO é o trilho de avanço. Revisões só nascem do histórico realmente registrado.
+// A estrutura fica concentrada aqui para ser configurável sem reescrever o motor adaptativo.
 var WEEK=[
- {subs:['Direito Processual Penal','Direito Penal Militar'],primary:['Direito Processual Penal','Direito Penal Militar'],maintenance:[],extra:'sim',target:20,note:'Bateria mista curta + simulado completo'}, // Dom
- {subs:['Língua Portuguesa','Direito Processual Penal','Matemática'],primary:['Direito Processual Penal'],maintenance:['Língua Portuguesa','Matemática'],extra:null,note:'Português + Processo Penal + Matemática'}, // Seg
- {subs:['Direito Penal Militar','Direito Constitucional'],primary:['Direito Penal Militar'],maintenance:['Direito Constitucional'],extra:null,note:'Penal Militar + Constitucional'}, // Ter
- {subs:['Língua Portuguesa','Legislação Institucional PMAL','Noções de Informática'],primary:['Legislação Institucional PMAL'],maintenance:['Língua Portuguesa','Noções de Informática'],extra:'red',note:'Português + Estatuto/RDPM + Informática'}, // Qua
- {subs:['Direito Processual Penal Militar','Direito Administrativo','Matemática'],primary:['Direito Processual Penal Militar'],maintenance:['Direito Administrativo','Matemática'],extra:null,note:'DPPM + Administrativo + Matemática'}, // Qui
- {subs:['Língua Portuguesa','Legislação Penal Especial','Direito Penal'],primary:['Legislação Penal Especial'],maintenance:['Língua Portuguesa','Direito Penal'],extra:null,note:'Português + leis especiais + Penal'}, // Sex
- {subs:['Direitos Humanos','Conhecimentos de Alagoas'],primary:['Direitos Humanos','Conhecimentos de Alagoas'],maintenance:[],extra:'red',note:'Direitos Humanos + Alagoas + redação'} // Sáb
+ {subs:[],primary:[],maintenance:[],extra:'sim',target:0,note:'Revisão, correção de simulados, erros da semana e redação'}, // Dom
+ {subs:['Direito Constitucional','Noções de Informática'],primary:['Direito Constitucional','Noções de Informática'],maintenance:[],extra:null,target:30,note:'Direito Constitucional + Informática'}, // Seg
+ {subs:['Direito Administrativo','Matemática'],primary:['Direito Administrativo','Matemática'],maintenance:[],extra:null,target:25,note:'Direito Administrativo + Matemática'}, // Ter
+ {subs:['Direito Penal','Direito Processual Penal'],primary:['Direito Penal','Direito Processual Penal'],maintenance:[],extra:null,target:30,note:'Direito Penal + Processo Penal'}, // Qua
+ {subs:['Conhecimentos de Alagoas','Direitos Humanos'],primary:['Conhecimentos de Alagoas','Direitos Humanos'],maintenance:[],extra:null,target:30,note:'História/Geografia de Alagoas + Direitos Humanos'}, // Qui
+ {subs:['Direito Penal Militar','Legislação Penal Especial'],primary:['Direito Penal Militar','Legislação Penal Especial'],maintenance:[],extra:null,target:30,note:'Direito Penal Militar + Legislação Penal Especial'}, // Sex
+ {subs:['Direito Processual Penal Militar'],primary:['Direito Processual Penal Militar'],maintenance:[],extra:'red',target:25,note:'Direito Processual Penal Militar + redação'} // Sáb
 ];
 var WDN=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 var WDFULL=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
@@ -3517,7 +3536,9 @@ function abbr(s){return ABBR[s]||s;}
 function localDateKey(d){d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
 function dateFromKey(k){var p=String(k||'').split('-').map(Number);return new Date(p[0],(p[1]||1)-1,p[2]||1,12,0,0,0);}
 function shiftDateKey(k,n){var d=dateFromKey(k);d.setDate(d.getDate()+n);return localDateKey(d);}
-function ensureStudyState(){if(!S.studyHistory||typeof S.studyHistory!=='object')S.studyHistory={};if(!S.adaptiveReview||typeof S.adaptiveReview!=='object')S.adaptiveReview={completed:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};}
+var MAX_ADAPTIVE_ITEMS=12;
+var MAX_ADAPTIVE_QUESTIONS=12;
+function ensureStudyState(){if(!S.studyHistory||typeof S.studyHistory!=='object')S.studyHistory={};if(!S.adaptiveReview||typeof S.adaptiveReview!=='object')S.adaptiveReview={completed:{},deferred:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};if(!S.adaptiveReview.deferred)S.adaptiveReview.deferred={};}
 function studyDay(k){ensureStudyState();if(!S.studyHistory[k])S.studyHistory[k]={date:k,subjects:[],updatedAt:Date.now()};if(!Array.isArray(S.studyHistory[k].subjects))S.studyHistory[k].subjects=[];return S.studyHistory[k];}
 function mergeUnique(a,b){var out=(a||[]).slice();(b||[]).forEach(function(x){if(x&&out.indexOf(x)<0)out.push(x);});return out;}
 function registerStudySubject(k,data){
@@ -3536,77 +3557,109 @@ function registerQuestionStudy(q,ok,conf){
   rec.topics=mergeUnique(rec.topics,[topico(q.a)]);rec.total=(rec.total||0)+1;if(ok)rec.correct=(rec.correct||0)+1;else rec.errors=(rec.errors||0)+1;if(conf==='chute'||conf==='duvida')rec.insecure=(rec.insecure||0)+1;rec.accuracy=rec.total?Math.round(rec.correct/rec.total*1000)/10:null;day.updatedAt=Date.now();
 }
 function studySubjects(k){var d=S.studyHistory&&S.studyHistory[k];return d&&Array.isArray(d.subjects)?d.subjects:[];}
-function adaptiveDoneKey(target,kind,source,subject){return [target,kind,source||'',subject].join('|');}
-function isAdaptiveDone(item,target){ensureStudyState();return !!S.adaptiveReview.completed[adaptiveDoneKey(target,item.kind,item.sourceDate,item.subject)];}
-function markAdaptiveDone(item,target){ensureStudyState();S.adaptiveReview.completed[adaptiveDoneKey(target||localDateKey(new Date()),item.kind,item.sourceDate,item.subject)]={ts:Date.now()};SS();}
-function adaptivePriority(rec){if(!rec)return 'manutenção';if((rec.errors||0)>0||(rec.insecure||0)>0||(rec.accuracy!==undefined&&rec.accuracy!==null&&rec.accuracy<80))return 'prioridade alta';if(rec.accuracy!==undefined&&rec.accuracy!==null&&rec.accuracy>=90)return 'prioridade reduzida';return 'manutenção';}
+function adaptiveDoneKey(target,kind,source,subject,topic){return [target,kind,source||'',subject,topic||''].join('|');}
+function isAdaptiveDone(item,target){ensureStudyState();return !!S.adaptiveReview.completed[adaptiveDoneKey(target,item.kind,item.sourceDate,item.subject,item.topic)];}
+function markAdaptiveDone(item,target){ensureStudyState();S.adaptiveReview.completed[adaptiveDoneKey(target||localDateKey(new Date()),item.kind,item.sourceDate,item.subject,item.topic)]={ts:Date.now()};SS();}
+function studySignals(rec){
+  rec=rec||{};var topics=rec.topics||[],hist=[];
+  topics.forEach(function(t){hist=hist.concat(topicHist(rec.subject,t));});
+  var errors=Math.max(rec.errors||0,hist.filter(function(x){return !x.ok;}).length);
+  var insecure=(rec.insecure||0)+hist.filter(function(x){return x.ok&&(x.conf==='chute'||x.conf==='duvida');}).length;
+  var total=rec.total!==undefined?rec.total:hist.length,correct=rec.correct!==undefined?rec.correct:hist.filter(function(x){return x.ok;}).length;
+  var accuracy=rec.accuracy!==undefined&&rec.accuracy!==null?rec.accuracy:(total?Math.round(correct/total*1000)/10:null);
+  var recent=hist.slice(-6),recentErrors=recent.filter(function(x){return !x.ok;}).length;
+  return {total:total,correct:correct,errors:errors,insecure:insecure,accuracy:accuracy,recentErrors:recentErrors};
+}
+function studyClass(rec){
+  var s=studySignals(rec);
+  if(s.recentErrors>=3||s.errors>=3)return {key:'critico',label:'CRÍTICO',intervals:[1,3,7,21],priority:0};
+  if(s.accuracy!==null&&s.accuracy<70)return {key:'critico',label:'CRÍTICO',intervals:[1,3,7,21],priority:0};
+  if(s.insecure>=2||s.recentErrors>=2||(s.accuracy!==null&&s.accuracy<80))return {key:'fragil',label:'FRÁGIL',intervals:[1,3,7,14,21],priority:1};
+  if(s.insecure>0||s.errors>0||s.accuracy===null||s.accuracy<90)return {key:'razoavel',label:'RAZOÁVEL',intervals:[1,7,21],priority:2};
+  return {key:'manutencao',label:'MANUTENÇÃO',intervals:[1,14,30],priority:3};
+}
+function adaptivePriority(rec){return studyClass(rec).label;}
+function errorCombatItems(targetKey){
+  var byTopic={};Object.keys(S.AS||{}).forEach(function(k){var r=S.AS[k],t=topico(r.a),key=r.m+'▸'+t,h=topicHist(r.m,t);if(byTopic[key]||!h.length)return;var errs=h.filter(function(x){return !x.ok;});if(!errs.length)return;var secureTail=h.slice(-3).length===3&&h.slice(-3).every(function(x){return x.ok&&x.conf==='certeza';});if(secureTail)return;var last=errs[errs.length-1],level=errs.length>=3?'🔥 erro persistente':errs.length===2?'🔴 erro recorrente':'atenção';byTopic[key]={subject:r.m,topic:t,kind:'combat',sourceDate:null,study:null,reasons:[level],errorCount:errs.length,lastError:last.ts,priority:errs.length>=3?0:errs.length===2?1:2};});
+  return Object.values(byTopic).sort(function(a,b){return a.priority-b.priority||b.lastError-a.lastError;}).slice(0,3);
+}
+function advancedMaintenanceItems(targetKey,excluded){
+  var target=dateFromKey(targetKey).getTime(),latest={};Object.keys(S.studyHistory||{}).forEach(function(k){if(k>=targetKey)return;studySubjects(k).forEach(function(r){if(r.subject==='Matemática'||excluded[r.subject])return;(r.topics||['Revisão geral']).forEach(function(t){var key=r.subject+'▸'+t;if(!latest[key]||k>latest[key].sourceDate)latest[key]={subject:r.subject,topic:t,kind:'advanced',sourceDate:k,study:r,reasons:['Conteúdo antigo em manutenção']};});});});
+  return Object.values(latest).map(function(x){x.age=Math.floor((target-dateFromKey(x.sourceDate).getTime())/DIA_MS);x.priority=studyClass(x.study).priority;return x;}).filter(function(x){return x.age>=14;}).sort(function(a,b){return a.priority-b.priority||b.age-a.age||incidenceScore({m:a.subject,a:a.topic})-incidenceScore({m:b.subject,a:b.topic});}).slice(0,3);
+}
 function buildAdaptiveDay(targetKey){
-  ensureStudyState();targetKey=targetKey||localDateKey(new Date());var wd=dateFromKey(targetKey).getDay(),plan=(targetKey===localDateKey(new Date())?dayPlan():{subs:(WEEK[wd].subs||[]).slice()}),bySubject={};
-  function add(subject,kind,sourceDate,rec,reason){
-    if(!subject)return;var x=bySubject[subject];if(!x)x=bySubject[subject]={subject:subject,kind:kind,sourceDate:sourceDate||null,study:rec||null,reasons:[]};
-    x.reasons=mergeUnique(x.reasons,[reason]);if(kind==='d1'){x.kind='d1';x.sourceDate=sourceDate;x.study=rec||x.study;}else if(kind==='future'&&x.kind==='study'){x.kind='future';x.sourceDate=sourceDate;x.study=rec||x.study;}
+  ensureStudyState();targetKey=targetKey||localDateKey(new Date());var wd=dateFromKey(targetKey).getDay(),base=WEEK[wd],bySubject={};
+  function add(subject,kind,sourceDate,rec,reason,offset){
+    if(!subject)return;var x=bySubject[subject];if(!x)x=bySubject[subject]={subject:subject,kind:kind,sourceDate:sourceDate||null,sourceDates:[],study:rec||null,reasons:[],offsets:[]};
+    x.reasons=mergeUnique(x.reasons,[reason]);x.sourceDates=mergeUnique(x.sourceDates,sourceDate?[sourceDate]:[]);if(offset)x.offsets=mergeUnique(x.offsets,[offset]);
+    var rank={combat:0,d1:1,d3:2,dso:3,d7:4,d14:5,d21:6,d30:7,advanced:8};if(rank[kind]<rank[x.kind])x.kind=kind;if(rec&&(!x.study||studyClass(rec).priority<studyClass(x.study).priority)){x.study=rec;x.sourceDate=sourceDate;}
   }
-  var actualToday=studySubjects(targetKey);
-  if(actualToday.length)actualToday.forEach(function(r){add(r.subject,'study',targetKey,r,'Estudo real registrado');});
-  else (plan.subs||[]).forEach(function(m){add(m,'study',null,null,'Cronograma principal');});
-  studySubjects(shiftDateKey(targetKey,-1)).forEach(function(r){add(r.subject,'d1',shiftDateKey(targetKey,-1),r,'Revisão D+1');});
-  studySubjects(shiftDateKey(targetKey,-7)).forEach(function(r){add(r.subject,'future',shiftDateKey(targetKey,-7),r,'Revisão futura D+7 · '+adaptivePriority(r));});
-  var fixed=[1,3,5].indexOf(wd)>=0;
-  if(fixed)add('Língua Portuguesa','port',null,null,'Português fixo 3x/semana');
-  var groups={study:[],d1:[],future:[],port:[]};
-  Object.keys(bySubject).forEach(function(m){var x=bySubject[m];if(m==='Língua Portuguesa'&&fixed)x.kind='port';if(x.kind==='study'&&x.reasons.some(function(r){return r.indexOf('D+1')>=0;}))x.kind='d1';if(x.kind==='port')groups.port.push(x);else if(x.kind==='d1')groups.d1.push(x);else if(x.kind==='future')groups.future.push(x);else groups.study.push(x);});
-  return {date:targetKey,groups:groups};
+  (base.subs||[]).forEach(function(m){add(m,'dso',null,null,'Estudo DSO');});
+  [1,3,7,14,21,30].forEach(function(offset){var source=shiftDateKey(targetKey,-offset);studySubjects(source).forEach(function(r){var cls=studyClass(r);if(cls.intervals.indexOf(offset)<0)return;add(r.subject,'d'+offset,source,r,'Revisão D+'+offset+' · '+cls.label,offset);});});
+  var fixed=[1,3,5].indexOf(wd)>=0;if(fixed)add('Língua Portuguesa','port',null,null,'Português fixo 3x/semana');
+  var combat=errorCombatItems(targetKey),standaloneCombat=[];combat.forEach(function(c){var x=bySubject[c.subject];if(!x){standaloneCombat.push(c);return;}x.kind='combat';x.topic=x.topic||c.topic;x.combatTopics=mergeUnique(x.combatTopics,[c.topic]);x.errorCount=(x.errorCount||0)+c.errorCount;x.lastError=Math.max(x.lastError||0,c.lastError);x.reasons=mergeUnique(x.reasons,c.reasons);});
+  var groups={dso:[],recent:[],combat:standaloneCombat,maintenance:[],port:[],math:[]},excluded={};
+  Object.keys(bySubject).forEach(function(m){var x=bySubject[m];excluded[m]=true;if(m==='Matemática'){groups.math.push(x);return;}if(m==='Língua Portuguesa'&&fixed){x.kind='port';groups.port.push(x);return;}if(x.kind==='combat')groups.combat.push(x);else if(x.kind==='d1'||x.kind==='d3')groups.recent.push(x);else if(x.kind==='d7'||x.kind==='d14'||x.kind==='d21'||x.kind==='d30')groups.maintenance.push(x);else groups.dso.push(x);});
+  groups.maintenance=groups.maintenance.concat(advancedMaintenanceItems(targetKey,excluded));
+  var order=['combat','recent','dso','port','math','maintenance'],kept=0,deferred=0;order.forEach(function(g){var cap=g==='combat'?3:g==='recent'?4:g==='maintenance'?3:2;var room=Math.max(0,MAX_ADAPTIVE_ITEMS-kept),arr=groups[g],take=Math.min(arr.length,cap,room);deferred+=arr.length-take;groups[g]=arr.slice(0,take);kept+=take;});
+  S.adaptiveReview.deferred[targetKey]={count:deferred,ts:Date.now()};
+  return {date:targetKey,groups:groups,summary:{blocks:kept,deferred:deferred,minutes:kept*18+25}};
 }
 function adaptiveItemDesc(item){
-  var r=item.study||{},perf=r.total?(' · '+(r.correct||0)+'/'+r.total+(r.accuracy!==undefined?' · '+String(r.accuracy).replace('.',',')+'%':'')) : '';
-  if(item.subject==='Matemática'&&item.kind==='study')return r.note||'Estudo teórico realizado. Nenhuma estatística de questões foi registrada.';
+  var r=item.study||{},sig=studySignals(r),perf=sig.total?(' · '+sig.correct+'/'+sig.total+(sig.accuracy!==null?' · '+String(sig.accuracy).replace('.',',')+'%':'')) : '';
+  if(item.kind==='combat')return 'Errou '+item.errorCount+' '+(item.errorCount===1?'vez':'vezes')+' · última ocorrência '+new Date(item.lastError).toLocaleDateString('pt-BR')+' · próxima revisão: hoje';
+  if(item.kind==='advanced')return 'Conteúdo estudado há '+item.age+' dias · '+adaptivePriority(r);
+  if(item.subject==='Matemática'&&item.kind==='dso')return r.note||'Estudo teórico previsto pelo DSO. Só será registrado após a conclusão.';
   if(item.subject==='Matemática')return 'Revisão teórica · fórmulas, conceitos e erros. Questões práticas: resolver quando estiver com papel/caneta.';
-  if(item.kind==='study')return item.reasons.join(' + ')+perf;
   return item.reasons.join(' + ')+perf;
 }
 function adaptiveItemHTML(item,idx,target){
-  var done=isAdaptiveDone(item,target),math=item.subject==='Matemática',cls=math?' math':item.kind==='future'?' future':item.kind==='port'?' port':'';
+  var done=isAdaptiveDone(item,target),math=item.subject==='Matemática',cls=math?' math':item.kind==='combat'?' combat':item.kind==='advanced'?' future':item.kind==='port'?' port':'';
   var tags=item.reasons.map(function(x){return '<span class="adaptive-tag">'+esc(x)+'</span>';}).join('')+(math?'<span class="adaptive-tag theory">revisão teórica</span>':'');
-  var actionable=item.kind!=='study'||item.kind==='port',button=actionable?'<button class="adaptive-btn'+(done?' done':'')+'" onclick="runAdaptiveItem('+idx+')">'+(done?'Refazer':'Revisar')+'</button>':'';
-  return '<div class="adaptive-item'+cls+'"><div class="adaptive-main"><div class="adaptive-title">'+(math?'🧮 ':item.kind==='port'?'📝 ':'')+esc(abbr(item.subject))+'</div><div class="adaptive-desc">'+esc(adaptiveItemDesc(item))+'</div><div class="adaptive-tags">'+tags+'</div></div>'+button+'</div>';
+  var verb=item.kind==='dso'?'Estudar':'Revisar',button='<button class="adaptive-btn'+(done?' done':'')+'" onclick="runAdaptiveItem('+idx+')">'+(done?'Refazer':verb)+'</button>';
+  return '<div class="adaptive-item'+cls+'"><div class="adaptive-main"><div class="adaptive-title">'+(math?'🧮 ':item.kind==='port'?'🇵🇹 ':item.kind==='combat'?'🔥 ':'')+esc(abbr(item.subject))+(item.topic?' — '+esc(item.topic):'')+'</div><div class="adaptive-desc">'+esc(adaptiveItemDesc(item))+'</div><div class="adaptive-tags">'+tags+'</div></div>'+button+'</div>';
 }
 function renderAdaptiveSchedule(targetKey){
-  var el=document.getElementById('adaptive-schedule');if(!el)return;var data=buildAdaptiveDay(targetKey),defs=[['study','ESTUDO DO DIA'],['d1','REVISÃO D+1'],['future','REVISÃO FUTURA'],['port','PORTUGUÊS FIXO']],flat=[];
+  var el=document.getElementById('adaptive-schedule');if(!el)return;var data=buildAdaptiveDay(targetKey),defs=[['dso','📚 ESTUDO DSO'],['recent','🔁 REVISÃO RECENTE'],['combat','🔥 ERROS EM COMBATE'],['maintenance','🧠 MANUTENÇÃO AVANÇADA'],['port','🇵🇹 PORTUGUÊS FIXO'],['math','🧮 MATEMÁTICA TEÓRICA']],flat=[];
   defs.forEach(function(d){data.groups[d[0]].forEach(function(x){x._idx=flat.length;flat.push(x);});});S._adaptiveDisplay={date:data.date,items:flat};
-  el.innerHTML=defs.map(function(d){var arr=data.groups[d[0]],body=arr.length?'<div class="adaptive-list">'+arr.map(function(x){return adaptiveItemHTML(x,x._idx,data.date);}).join('')+'</div>':'<div class="adaptive-empty">Nenhum bloco nesta categoria hoje.</div>';return '<div class="adaptive-group"><div class="adaptive-label">'+d[1]+'</div>'+body+'</div>';}).join('');
+  var summary='<div class="adaptive-summary"><b>Hoje</b><span>'+data.summary.blocks+' blocos</span><span>~'+Math.floor(data.summary.minutes/60)+'h'+String(data.summary.minutes%60).padStart(2,'0')+'</span>'+(data.summary.deferred?'<span>'+data.summary.deferred+' redistribuído(s)</span>':'')+'</div>';
+  el.innerHTML=summary+defs.map(function(d){var arr=data.groups[d[0]];if(!arr.length)return '';var body='<div class="adaptive-list">'+arr.map(function(x){return adaptiveItemHTML(x,x._idx,data.date);}).join('')+'</div>';return '<details class="adaptive-group" open><summary class="adaptive-label">'+d[1]+' · '+arr.length+'</summary>'+body+'</details>';}).join('');
 }
 function adaptiveReviewQuestions(item){
-  var ids=[],session=S.reviewSessions&&S.reviewSessions[item.sourceDate];if(session&&Array.isArray(session.questionIds))ids=session.questionIds.slice();if(item.study&&item.study.reviewQuestionIds)ids=mergeUnique(ids,item.study.reviewQuestionIds);
-  var qs=ids.map(findQuestionById).filter(function(q){return q&&q.m===item.subject&&q.reviewOnly;});
-  if(item.kind==='future'){
+  var ids=[];(item.sourceDates||[item.sourceDate]).filter(Boolean).forEach(function(d){var session=S.reviewSessions&&S.reviewSessions[d];if(session&&Array.isArray(session.questionIds))ids=mergeUnique(ids,session.questionIds);});if(item.study&&item.study.reviewQuestionIds)ids=mergeUnique(ids,item.study.reviewQuestionIds);
+  if(item.kind==='combat'){Object.values(S.AS||{}).filter(function(r){return r.m===item.subject&&topico(r.a)===item.topic;}).forEach(function(r){(r.hist||[]).forEach(function(h){if(!h.ok&&h.id)ids=mergeUnique(ids,[h.id]);});});}
+  var qs=ids.map(findQuestionById).filter(function(q){return q&&q.m===item.subject&&!q.missingContext;});
+  if(item.kind!=='d1'&&item.kind!=='dso'){
+    var session=S.reviewSessions&&S.reviewSessions[item.sourceDate];
     var attempts=session&&session.attempts||[];
     function score(q){var own=attempts.filter(function(a){return a.id===q.id;}),last=own[own.length-1];if(last&&!last.ok)return 0;if(last&&(last.conf==='duvida'||last.conf==='chute'))return 1;if(!last&&(q.reviewClass==='erro'||q.reviewClass==='inseguro'))return 2;if(!last)return 3;return 4;}
     qs.sort(function(a,b){return score(a)-score(b);});
-    var urgent=qs.filter(function(q){return score(q)<4;}),stable=qs.filter(function(q){return score(q)>=4;}),maintenanceSlots=urgent.length?Math.max(2,12-Math.min(10,urgent.length)):2;
-    qs=urgent.slice(0,10).concat(stable.slice(0,maintenanceSlots)).slice(0,12);
+    var urgent=qs.filter(function(q){return score(q)<4;}),stable=qs.filter(function(q){return score(q)>=4;}),maintenanceSlots=urgent.length?Math.max(2,MAX_ADAPTIVE_QUESTIONS-Math.min(10,urgent.length)):2;
+    qs=urgent.slice(0,10).concat(stable.slice(0,maintenanceSlots));
   }
-  return qs;
+  return qs.slice(0,MAX_ADAPTIVE_QUESTIONS);
 }
 function startAdaptiveQuestionPool(item,pool){
   if(!pool.length){toast('Sem questões disponíveis para este bloco.');return;}S._adaptiveContext={item:item,target:S._adaptiveDisplay?S._adaptiveDisplay.date:localDateKey(new Date())};S.reviewActive=pool[0].reviewOnly?item.sourceDate:null;S.mode=pool[0].reviewOnly?'review_only':'materia';S.sim=false;S.subs=[item.subject];S.sq=pool.slice();S.ci=0;S.sa=[];S.round++;var h=document.getElementById('hsc');if(h)h.style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
 }
-function startPortugueseMaintenance(item){var pool=adaptiveReviewQuestions(item);if(!pool.length){pool=getSmartPool(QQ.filter(function(q){return q.m==='Língua Portuguesa';})).slice(0,12);}else pool=pool.slice(0,12);startAdaptiveQuestionPool(item,pool);}
+function startPortugueseMaintenance(item){var pool=adaptiveReviewQuestions(item);if(!pool.length){pool=getSmartPool(QQ.filter(function(q){return q.m==='Língua Portuguesa'&&!q.missingContext;})).slice(0,12);}else pool=pool.slice(0,12);startAdaptiveQuestionPool(item,pool);}
 function startMathTheory(item){S._theoryContext={item:item,target:S._adaptiveDisplay?S._adaptiveDisplay.date:localDateKey(new Date())};var rec=item.study||{},topics=(rec.topics||[]).length?rec.topics:['Frações','Razão e proporção','Divisão proporcional'];document.getElementById('adaptive-theory-body').innerHTML='<div class="adaptive-label">TÓPICOS DO ESTUDO REAL</div><div class="adaptive-tags">'+topics.map(function(t){return '<span class="adaptive-tag theory">'+esc(t)+'</span>';}).join('')+'</div><div class="theory-note"><b>Roteiro curto:</b><br>• relembre as fórmulas e o significado de cada termo;<br>• refaça mentalmente um exemplo simples;<br>• reveja os erros e atalhos de raciocínio já registrados.<br><br><b>Questões práticas:</b> resolver quando estiver com papel/caneta.</div>';sv('adaptive-theory');}
-function completeTheoryReview(){if(S._theoryContext){markAdaptiveDone(S._theoryContext.item,S._theoryContext.target);S._theoryContext=null;}toast('🧮 Revisão teórica concluída.');gN('crono');}
+function completeTheoryReview(){if(S._theoryContext){if(S._theoryContext.item.kind==='dso')registerStudySubject(S._theoryContext.target,{subject:'Matemática',mode:'theory',topics:(S._theoryContext.item.study&&S._theoryContext.item.study.topics)||[],sources:['DSO'],note:'Matemática — estudo teórico concluído.'});markAdaptiveDone(S._theoryContext.item,S._theoryContext.target);SS();S._theoryContext=null;}toast('🧮 Revisão teórica concluída.');gN('crono');}
 function runAdaptiveItem(idx){
   var item=S._adaptiveDisplay&&S._adaptiveDisplay.items[idx];if(!item)return;if(item.subject==='Matemática'){startMathTheory(item);return;}if(item.kind==='port'){startPortugueseMaintenance(item);return;}
-  var pool=adaptiveReviewQuestions(item);if(!pool.length){var topics=item.study&&item.study.topics||[];pool=getSmartPool(QQ.filter(function(q){return q.m===item.subject&&(!topics.length||topics.indexOf(topico(q.a))>=0);})).slice(0,item.kind==='future'?10:12);}startAdaptiveQuestionPool(item,pool);
+  var pool=adaptiveReviewQuestions(item);if(!pool.length){var topics=item.topic?[item.topic]:(item.study&&item.study.topics||[]);pool=getSmartPool(QQ.filter(function(q){return q.m===item.subject&&!q.missingContext&&(!topics.length||topics.indexOf(topico(q.a))>=0);})).slice(0,item.kind==='advanced'?8:12);}startAdaptiveQuestionPool(item,pool);
 }
-function daysLeft(){
+function daysLeft(refKey){
   if(!S.plan||!S.plan.examDate)return null;
-  const ex=new Date(S.plan.examDate+'T00:00:00');const now=new Date();now.setHours(0,0,0,0);
+  const ex=dateFromKey(S.plan.examDate);const now=refKey?dateFromKey(refKey):new Date();ex.setHours(0,0,0,0);now.setHours(0,0,0,0);
   return Math.round((ex-now)/86400000);
 }
-function phaseInfo(){
-  const d=daysLeft();let ph,name,color,target;
-  if(d===null||d>35){ph=1;name='Fase 1 · Cobertura ampla';color='f1';target=40;}
-  else if(d>=15){ph=2;name='Fase 2 · Reforço + simulados';color='f2';target=45;}
-  else{ph=3;name='Fase 3 · Reta final';color='f3';target=30;}
+function phaseInfo(refKey){
+  const d=daysLeft(refKey);let ph,name,color,target;
+  if(d===null||d>=63){ph=1;name='Fase 1 · Avanço + base de memória';color='f1';target=30;}
+  else if(d>=35){ph=2;name='Fase 2 · Questões + D+7/D+21';color='f2';target=35;}
+  else if(d>=14){ph=3;name='Fase 3 · Modo prova';color='f3';target=35;}
+  else{ph=4;name='Fase 4 · Reta final controlada';color='f3';target=25;}
   return {ph:ph,name:name,color:color,target:target,d:d};
 }
 function weakSubjects(){
@@ -3614,8 +3667,8 @@ function weakSubjects(){
   Object.values(S.AS).forEach(rec=>{const s=statusOf(rec);if(s==='vermelho')sc[rec.m]=(sc[rec.m]||0)+2;else if(s==='amarelo')sc[rec.m]=(sc[rec.m]||0)+1;});
   return Object.entries(sc).sort((a,b)=>b[1]-a[1]).map(e=>e[0]);
 }
-function dayPlan(){
-  const wd=new Date().getDay(),base=WEEK[wd],ph=phaseInfo();
+function dayPlan(refKey){
+  const ref=refKey?dateFromKey(refKey):new Date(),wd=ref.getDay(),base=WEEK[wd],ph=phaseInfo(refKey);
   let subs=base.subs.slice(),weak=null;
   if(ph.ph>=2){
     const w=weakSubjects();
@@ -3644,7 +3697,7 @@ function buildDailyPool(){
   const p=dayPlan(),N=p.target,used=new Set();
   // Matemática continua no plano de estudo, mas não é empurrada para a bateria automática mobile.
   const questionSubs=p.subs.filter(function(m){return m!=='Matemática';});
-  const all=QQ.filter(function(q){return questionSubs.indexOf(q.m)>=0;});
+  const all=QQ.filter(function(q){return questionSubs.indexOf(q.m)>=0&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
   const nInc=Math.round(N*.50),nErr=Math.round(N*.30);
   let sq=[];
   sq=sq.concat(priorityPick(all.filter(function(q){return incidenceScore(q)>=5;}),nInc,used));
@@ -3815,7 +3868,7 @@ function startWeekReview(){
   const questionTopics=topics.filter(function(t){return t.mat!=='Matemática';});
   const matsSeen=new Set(questionTopics.map(function(t){return t.mat;}));
   const chaves=new Set(questionTopics.map(function(t){return t.mat+'▸'+t.topico;}));
-  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a));});
+  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a))&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
   if(!pool.length){toast('Sem questões suficientes para revisar esses tópicos agora.');return;}
   pool=getSmartPool(pool);
   pool=[...pool].sort(()=>Math.random()-.5);
@@ -3840,7 +3893,7 @@ function startWeekReviewGated(resumeFn){
   if(!topics.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
   const matsSeen=new Set(topics.map(function(t){return t.mat;}));
   const chaves=new Set(topics.map(function(t){return t.mat+'▸'+t.topico;}));
-  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a));});
+  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a))&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
   if(!pool.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
   pool=getSmartPool(pool);
   pool=[...pool].sort(()=>Math.random()-.5);
@@ -3907,9 +3960,6 @@ function continuarAposRevisaoLeis(){
   else gN('home');
 }
 function startDailyQ(){
-  if(pendingWeekReview()){startWeekReviewGated('startDailyQ');return;}
-  if(pendingYesterdayReview()){startYesterdayReview('startDailyQ');return;}
-  if(pendingLawReview()){startLawReviewGated('startDailyQ');return;}
   const built=buildDailyPool();
   if(!built.pool.length){toast('Sem questões dessas matérias agora.');return;}
   S._dailyPending=built;
@@ -3951,8 +4001,8 @@ function toggleMaCard(i){
   body.style.display=abrir?'block':'none';
   if(chev)chev.textContent=abrir?'▴':'▾';
 }
-// ══════════ PLANO DE LEITURA DIÁRIO — CICLO 2: 5 dispositivos/dia, sem depender de data de prova ══════════
-var READ_DAILY_QTY=5;
+// ══════════ BANCO DE LEIS DIÁRIO — lei seca + prazos + jurisprudência + pegadinhas ══════════
+var READ_DAILY_QTY=7;
 function readingOrder(){
   var keys=Object.keys(DISP);
   keys.sort(function(a,b){
@@ -3989,17 +4039,45 @@ function lawErrorKeys(){
   Object.keys(map).forEach(function(k){if((map[k]||[]).some(function(id){return idset[id];}))out[k]=1;});
   return out;
 }
+function lawKeysForSubjects(subs){
+  var out={},map=buildKeyToQids(),wanted={};(subs||[]).forEach(function(m){wanted[m]=1;});
+  Object.keys(map).forEach(function(k){if((map[k]||[]).some(function(id){var q=findQuestionById(id);return q&&wanted[q.m];}))out[k]=1;});
+  return out;
+}
+function lawMemoryRec(id){if(!S.lawMemory)S.lawMemory={cards:{},daily:{}};if(!S.lawMemory.cards[id])S.lawMemory.cards[id]={id:id,due:0,stage:0,errors:0,history:[]};return S.lawMemory.cards[id];}
+function recordLawMemory(id,outcome){
+  var r=lawMemoryRec(id),ladders={safe:[7,21,45],insecure:[3,10,21],error:[1,3,7,14]},lad=ladders[outcome]||ladders.insecure,idx=r.outcome===outcome?(r.stage||0):0;
+  if(outcome==='error')r.errors=(r.errors||0)+1;r.due=Date.now()+lad[Math.min(idx,lad.length-1)]*DIA_MS;r.stage=Math.min(idx+1,lad.length-1);r.last=Date.now();r.outcome=outcome;r.history=(r.history||[]).concat([{ts:r.last,outcome:outcome}]).slice(-20);SS();toast(outcome==='safe'?'✅ Volta no intervalo de domínio.':outcome==='error'?'🔥 Volta mais cedo até fixar.':'🟡 Marcado para revisão antecipada.');renderLawMemoryBlocks();
+}
+var LAW_TIME_RE=/\b(?:\d+|um|uma|dez|doze|quinze|vinte|trinta|quarenta|quarenta e cinco|noventa)\s+(?:dias?|meses?|anos?|horas?)\b/i;
+var LAW_DEADLINE_CONTEXT_RE=/\b(prazo|termina|terminar|conclusão|contad[oa]|prorrog|decai|preso|solto|apresentação|intervenção|inquérito|IPM|IP\b|até)\b/i;
+function deadlineSnippet(q){var fields=[q.c,q.p,q.e,q.f].filter(Boolean);return fields.find(function(x){return LAW_TIME_RE.test(x)&&LAW_DEADLINE_CONTEXT_RE.test((q.a||'')+' '+x);})||'';}
+function lawQuestionCandidates(kind){
+  return QQ.filter(function(q){if(q.missingContext||q.m==='Matemática'||q.m==='Língua Portuguesa')return false;if(kind==='deadline')return !!deadlineSnippet(q);if(kind==='juris')return q.ce==='jurisprudência'||/\b(STF|STJ|STM|súmula|jurisprudên|tribunal)\b/i.test(q.f||'');return /\b(pode|deve|somente|qualquer|obrigat|facultat|solidári|subsidiári|antes|depois|autorização|comunicação|preferencialmente)\b/i.test(q.p||q.e||'');});
+}
+function deterministicRank(id,key){var s=String(id)+'|'+key,h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function dueLawQuestions(kind,n,key){
+  var errors=new Set(Array.from(S.eids||[]));return lawQuestionCandidates(kind).filter(function(q){var r=lawMemoryRec(kind+':'+q.id);return !r.due||r.due<=dateFromKey(key).getTime()+DIA_MS-1;}).sort(function(a,b){var ea=errors.has(a.id)?0:1,eb=errors.has(b.id)?0:1;if(ea!==eb)return ea-eb;return deterministicRank(a.id,key)-deterministicRank(b.id,key);}).slice(0,n);
+}
+function lawDailySelection(key){
+  key=key||localDateKey(new Date());var daily=S.lawMemory.daily[key];if(daily)return daily;
+  daily={deadlines:dueLawQuestions('deadline',5,key).map(function(q){return q.id;}),juris:dueLawQuestions('juris',3,key).map(function(q){return q.id;}),traps:dueLawQuestions('trap',4,key).map(function(q){return q.id;})};S.lawMemory.daily[key]=daily;SS();return daily;
+}
+function lawCardHTML(q,kind,danger){
+  if(!q)return '';var id=kind+':'+q.id,title=kind==='deadline'?'⏱️ '+q.a:kind==='juris'?'⚖️ '+q.a:'🎯 '+q.a,text=kind==='juris'?q.e+' — '+q.g+'. '+q.c:kind==='deadline'?deadlineSnippet(q):(q.p||q.c||q.e),r=lawMemoryRec(id);
+  return '<div class="law-memory-card'+(danger?' law-danger':'')+'"><div class="law-memory-title">'+esc(title)+'</div><div class="law-memory-text">'+esc(truncar(text,230))+'</div>'+(r.errors?'<div class="adaptive-tag" style="margin-top:6px">Errou '+r.errors+'x</div>':'')+'<div class="law-memory-actions"><button onclick="recordLawMemory(\''+esc(id)+'\',\'safe\')">✅ Seguro</button><button onclick="recordLawMemory(\''+esc(id)+'\',\'insecure\')">🟡 Inseguro</button><button onclick="recordLawMemory(\''+esc(id)+'\',\'error\')">🔴 Errei</button></div></div>';
+}
+function renderLawMemoryBlocks(){
+  var sel=lawDailySelection(localDateKey(new Date())),defs=[['law-deadlines','deadline',sel.deadlines],['law-juris','juris',sel.juris],['law-traps','trap',sel.traps]];
+  defs.forEach(function(d){var el=document.getElementById(d[0]);if(!el)return;var qs=d[2].map(findQuestionById).filter(Boolean);el.innerHTML=qs.length?qs.map(function(q){return lawCardHTML(q,d[1],false);}).join(''):'<div class="adaptive-empty">Nenhum cartão validado venceu hoje.</div>';});
+  var never=document.getElementById('law-never-again');if(never){var items=errorCombatItems(localDateKey(new Date())).filter(function(x){return /^(Direito|Legislação)/.test(x.subject)||x.subject==='Direitos Humanos';});never.innerHTML=items.length?items.map(function(x){var q=QQ.find(function(z){return z.m===x.subject&&topico(z.a)===x.topic;});return q?lawCardHTML(q,'trap',true):'';}).join(''):'<div class="adaptive-empty">Nenhum erro jurídico persistente ativo. Continue assim.</div>';}
+}
 function computeTodaysArticles(){
-  var keys=readingOrder(),unread=keys.filter(function(k){return !S.bibLidos[k];});
-  if(!unread.length)return {N:keys.length,remaining:0,perDay:0,todays:[],inReview:true};
-  var err=lawErrorKeys(),used={},todays=[];
-  // Alternância diária aproxima a média 50% incidência / 30% erros / 20% rotação em lotes de 5.
-  var even=(new Date().getDate()%2===0),nInc=even?2:3,nErr=even?2:1,nRot=1;
-  function take(arr,n){arr.forEach(function(k){if(n>0&&!used[k]&&!S.bibLidos[k]){used[k]=1;todays.push(k);n--;}});return n;}
-  var errList=unread.filter(function(k){return err[k];}).sort(function(a,b){return lawScore(b)-lawScore(a);});
-  var incList=unread.slice().sort(function(a,b){return lawScore(b)-lawScore(a);});
-  take(incList,nInc);take(errList,nErr);take(unread,nRot);take(incList,READ_DAILY_QTY-todays.length);take(unread,READ_DAILY_QTY-todays.length);
-  return {N:keys.length,remaining:unread.length,perDay:todays.length,todays:todays.slice(0,READ_DAILY_QTY),inReview:false};
+  var keys=readingOrder(),key=localDateKey(new Date()),qty=dateFromKey(key).getDay()===0?5:READ_DAILY_QTY,err=lawErrorKeys(),dso=lawKeysForSubjects(WEEK[dateFromKey(key).getDay()].subs),used={},todays=[];
+  function take(arr,n){arr.forEach(function(k){if(n>0&&!used[k]){used[k]=1;todays.push(k);n--;}});}
+  function stale(a,b){var ta=S.bibLidos[a]&&S.bibLidos[a].ts||0,tb=S.bibLidos[b]&&S.bibLidos[b].ts||0;return ta-tb||lawScore(b)-lawScore(a);}
+  take(keys.filter(function(k){return dso[k];}).sort(stale),3);take(keys.filter(function(k){return err[k];}).sort(stale),2);take(keys.slice().sort(stale),qty-todays.length);
+  return {N:keys.length,remaining:keys.filter(function(k){return !S.bibLidos[k];}).length,perDay:todays.length,todays:todays.slice(0,qty),inReview:false};
 }
 function touchLeituraDia(){
   var t=todayStr();
@@ -4011,9 +4089,6 @@ function readingPlanInfo(){
 }
 function leituraDoDiaFeita(){touchLeituraDia();var ks=S.leituraDia.keys||[];if(!ks.length)return true;return ks.every(function(k){return !!S.bibLidos[k];});}
 function startLeituraQuiz(){
-  if(pendingWeekReview()){startWeekReviewGated('startLeituraQuiz');return;}
-  if(pendingYesterdayReview()){startYesterdayReview('startLeituraQuiz');return;}
-  if(pendingLawReview()){startLawReviewGated('startLeituraQuiz');return;}
   touchLeituraDia();
   var todaysKeys=S.leituraDia.keys||[];
   if(!todaysKeys.length){toast('Nenhum artigo novo hoje — você está em dia ou na fase de revisão. Treine pela Biblioteca Legal!');return;}
@@ -4058,6 +4133,7 @@ function renderLeituraDia(){
       '</details>';
     }).join('');
   }
+  renderLawMemoryBlocks();
 }
 function ldRead(key){
   bibRead(key);
@@ -4067,19 +4143,12 @@ function ldRead(key){
   renderLeituraSub(); // atualiza contagem/barra sem recriar a lista (preserva os <details> abertos)
 }
 function dailyStatus(){
-  touchDaily();const p=dayPlan();const tasks=[];
-  const temRevisaoSemanal=pendingWeekReview();
-  const temRevisaoOntem=buildYesterdayReviewDeck().length>0;
-  const temRevisaoLeis=pendingLawReview();
-  if(temRevisaoSemanal)tasks.push({done:false});
-  if(temRevisaoOntem)tasks.push({done:S.daily.diaAnterior});
-  if(temRevisaoLeis)tasks.push({done:false});
-  tasks.push({done:S.daily.q>=p.target});
-  tasks.push({done:S.daily.rev});
+  touchDaily();const p=dayPlan(),data=buildAdaptiveDay(localDateKey(new Date())),items=Object.values(data.groups).flat(),tasks=[];
+  items.forEach(function(item){var done=isAdaptiveDone(item,data.date)||(item.kind==='dso'&&studySubjects(data.date).some(function(r){return r.subject===item.subject;}));tasks.push({done:done});});
   tasks.push({done:leituraDoDiaFeita()});
   if(p.extra==='sim')tasks.push({done:S.daily.sim});
   if(p.extra==='red')tasks.push({done:S.daily.red});
-  return {p:p,done:tasks.filter(t=>t.done).length,total:tasks.length,temRevisaoOntem:temRevisaoOntem,temRevisaoSemanal:temRevisaoSemanal,temRevisaoLeis:temRevisaoLeis};
+  return {p:p,done:tasks.filter(t=>t.done).length,total:tasks.length,adaptive:data,temRevisaoOntem:false,temRevisaoSemanal:false,temRevisaoLeis:false};
 }
 function checkDailyDone(){
   const st=dailyStatus();
@@ -4092,9 +4161,10 @@ function taskRow(done,title,desc,btn,fn){
 }
 function renderPhasePlan(cur){
   const ph=[
-   {t:'FASE 1',c:'#0d9488',n:'Cobertura orientada por incidência (a mais de 35 dias)',d:'50% incidência CEBRASPE; 30% erros/instáveis; 20% manutenção. Português entra seg/qua/sex.'},
-   {t:'FASE 2',c:'#d97706',n:'Reforço + incidência + simulados (35 a 15 dias)',d:'Mantém foco e manutenção; injeta uma fraqueza adicional sem retirar a matéria prevista. Simulado domingo e redação 2x/semana.'},
-   {t:'FASE 3',c:'#dc2626',n:'Reta final (últimos 15 dias)',d:'Questões dos assuntos mais incidentes e dos seus erros, mantendo o rodízio mínimo de todas as disciplinas.'}
+   {t:'FASE 1',c:'#0d9488',n:'Agora até cerca de 27/09',d:'60% avanço/conteúdo, 30% revisão e 10% redação/manutenção.'},
+   {t:'FASE 2',c:'#d97706',n:'Aproximadamente 28/09 a 25/10',d:'Mais questões, simulado semanal e forte atuação das revisões D+7/D+21.'},
+   {t:'FASE 3',c:'#dc2626',n:'Aproximadamente 26/10 a 15/11',d:'Modo prova: simulados, correção, mini-simulados mistos e erros recorrentes.'},
+   {t:'FASE 4',c:'#7c3aed',n:'Últimos 14 dias',d:'Lei seca, erros antigos, Português, fórmulas, legislação PMAL e simulados controlados.'}
   ];
   return ph.map((p,i)=>'<div class="pp'+(i+1===cur?' cur':'')+'"><span class="tag" style="background:'+p.c+'">'+p.t+'</span>'+p.n+(i+1===cur?' — <b>você está aqui</b>':'')+'<div style="font-size:12px;color:var(--mut);font-weight:400;margin-top:2px">'+p.d+'</div></div>').join('');
 }
@@ -4111,16 +4181,11 @@ function renderCrono(){
   ring.textContent=st.done+'/'+st.total;
   document.getElementById('crono-ringtx').innerHTML=full?'<b>Missão de hoje concluída!</b> 🎉 Streak garantido — pode seguir treinando à vontade.':'Conclua as tarefas abaixo para fechar o dia e ganhar +20 XP.';
   const pend=pendingMetas();let rows='';
-  if(st.temRevisaoSemanal)rows+=taskRow(false,'📆 Revisão semanal obrigatória','A cada 7 dias — libera tudo o mais até você fazer','Revisar','startWeekReviewGated(null)');
-  if(st.temRevisaoOntem)rows+=taskRow(S.daily.diaAnterior,'📅 Revisão D+1','Baseada no estudo real de ontem; Matemática fica no cartão teórico','Revisar','startYesterdayReview()');
-  if(st.temRevisaoLeis)rows+=taskRow(false,'📖 Revisão de leis já lidas','Flashcard dos artigos que você já leu antes — obrigatória','Revisar','startLawReviewGated(null)');
-  const bloqueado=st.temRevisaoSemanal||(st.temRevisaoOntem&&!S.daily.diaAnterior)||st.temRevisaoLeis;
-  const distTxt='50% incidência · 30% erros/instáveis · 20% manutenção';
-  rows+=taskRow(S.daily.q>=ph.target,'Questões do dia ('+Math.min(S.daily.q,ph.target)+'/'+ph.target+')'+(bloqueado?' 🔒':''),distTxt+' — '+ph.subs.map(abbr).join(', '),'Começar','startDailyQ()');
-  rows+=taskRow(S.daily.rev,'Revisão diária','Bloco misto: críticos, instáveis e manutenção','Revisar','revisaoInteligente()');
+  const adaptiveItems=Object.values(st.adaptive.groups).flat(),adaptiveDone=adaptiveItems.filter(function(x){return isAdaptiveDone(x,st.adaptive.date)||(x.kind==='dso'&&studySubjects(st.adaptive.date).some(function(r){return r.subject===x.subject;}));}).length;
+  rows+=taskRow(adaptiveItems.length>0&&adaptiveDone===adaptiveItems.length,'Plano adaptativo ('+adaptiveDone+'/'+adaptiveItems.length+')','DSO + revisões reais + erros + manutenção, com carga limitada','Ver blocos',"document.getElementById('adaptive-card').scrollIntoView({behavior:'smooth'})");
   (function(){
     const linfo=readingPlanInfo();
-    if(linfo.todays.length)rows+=taskRow(leituraDoDiaFeita(),'Leitura do dia ('+linfo.todays.filter(k=>!!S.bibLidos[k]).length+'/'+linfo.todays.length+')'+(bloqueado?' 🔒':''),'Banco de leis: '+linfo.todays.join(', '),'Ver abaixo',"document.getElementById('leitura-card').scrollIntoView({behavior:'smooth'})");
+    if(linfo.todays.length)rows+=taskRow(leituraDoDiaFeita(),'Banco de Leis ('+linfo.todays.filter(k=>!!S.bibLidos[k]).length+'/'+linfo.todays.length+')','Lei seca + prazos + jurisprudência + pegadinhas','Ver abaixo',"document.getElementById('leitura-card').scrollIntoView({behavior:'smooth'})");
   })();
   if(pend>0)rows+=taskRow(S.daily.metas>0,'Metas de leitura','📖 '+pend+' dispositivo(s) pendente(s) dos seus erros','Abrir',"gN('metas')");
   if(ph.extra==='sim')rows+=taskRow(S.daily.sim,'Simulado CEBRASPE','Treino cronometrado, nota líquida (acertos − erros)','Iniciar','startSimulado()');
@@ -4241,7 +4306,7 @@ function updHS(){
 // ── QUIZ ──
 // ── MODO CEBRASPE CRUEL ──
 function startCruel(){
-  const pool=QQ.filter(q=>q.n==='cruel'||q.n==='muito_dificil');
+  const pool=QQ.filter(q=>(q.n==='cruel'||q.n==='muito_dificil')&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only');
   if(!pool.length){toast('Sem questões cruéis/muito difíceis no banco.');return;}
   const aviso=document.createElement('div');
   aviso.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,#12100f,#241215);color:#e8cfd0;border:1px solid #4a2328;border-radius:16px;padding:24px;max-width:340px;z-index:999;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.7)';
@@ -4259,7 +4324,7 @@ function startCruel(){
   document.body.appendChild(aviso);
 }
 function iniciarCruel(){
-  const pool=QQ.filter(q=>q.n==='cruel'||q.n==='muito_dificil');
+  const pool=QQ.filter(q=>(q.n==='cruel'||q.n==='muito_dificil')&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only');
   // Priorizar não vistas, depois erradas
   const vistas=new Set(S.ha.map(a=>a.id));
   const erradas=new Set([...S.eids]);
@@ -4292,7 +4357,7 @@ function getSmartPool(pool){
   return pool; // tudo disponível
 }
 function getPool(){
-  let p=[...QQ];
+  let p=QQ.filter(function(q){return questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
   if(S.mode==='erros')p=QQ.filter(q=>S.eids.has(q.id));
   else if(S.mode==='acertos'){const ok=new Set(S.ha.filter(a=>a.ok).map(a=>a.id));p=QQ.filter(q=>ok.has(q.id));}
   else if(S.mode==='oficiais')p=QQ.filter(isOfficialQuestion);
@@ -4351,13 +4416,14 @@ function renderQ(){
   const pfx=isAi?'✨ IA: ':((isReal||isRecent)?('📋 '+ano+': '):'');
   ne.textContent=pfx+(nm[q.n]||q.n);
   ne.className='qniv '+(isAi?'nai':((isReal||isRecent)?'nreal':(nc[q.n]||'nm')));
-  // Texto-base: exibir quando q.tx existe
+  // Texto-base: resolvido uma vez pelo textId, com compatibilidade para q.tx antigo.
   const qtxEl=document.getElementById('qtx');
   const qtxTt=document.getElementById('qtx-tt');
   const qtxBody=document.getElementById('qtx-body');
-  if(q.tx&&q.tx.trim()){
+  const contextText=questionContextText(q);
+  if(contextText&&contextText.trim()){
     qtxTt.textContent=q.tt||'Texto de referência';
-    qtxBody.textContent=q.tx;
+    qtxBody.textContent=contextText;
     qtxEl.style.display='block';
   } else {
     qtxEl.style.display='none';
@@ -4420,9 +4486,10 @@ function showFB(q,ok,al){
   // Texto-base no feedback
   const fbTxEl=document.getElementById('fb-qtx');
   if(fbTxEl){
-    if(q.tx&&q.tx.trim()){
+    const contextText=questionContextText(q);
+    if(contextText&&contextText.trim()){
       document.getElementById('fb-qtx-tt').textContent=q.tt||'Texto de referência';
-      document.getElementById('fb-qtx-body').textContent=q.tx;
+      document.getElementById('fb-qtx-body').textContent=contextText;
       fbTxEl.style.display='block';
     } else {
       fbTxEl.style.display='none';
@@ -4862,7 +4929,7 @@ function collectProgressStorage(){
     if(key&&key.indexOf('pmal26')===0&&!BACKUP_SECRET_KEYS.has(key))data[key]=localStorage.getItem(key);
   }
   if(!Object.prototype.hasOwnProperty.call(data,'pmal26')){
-    data.pmal26=JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions||{},studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{}},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId});
+    data.pmal26=JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions||{},studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{},deferred:{}},lawMemory:S.lawMemory||{cards:{},daily:{}},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId});
   }
   return data;
 }
@@ -4942,13 +5009,15 @@ function ensureV4State(){
     S.simProfile=p.simProfile||'estrategico';
     S.weeklyAdjust=p.weeklyAdjust||[];
     S.studyHistory=p.studyHistory||S.studyHistory||{};
-    S.adaptiveReview=p.adaptiveReview||S.adaptiveReview||{completed:{}};
+    S.adaptiveReview=p.adaptiveReview||S.adaptiveReview||{completed:{},deferred:{}};
     if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};
-  }catch(e){S.flagged={};S.coverageQueue=[];S.redacao={history:[]};S.simProfile='estrategico';S.weeklyAdjust=[];S.studyHistory=S.studyHistory||{};S.adaptiveReview=S.adaptiveReview||{completed:{}};}
+    if(!S.adaptiveReview.deferred)S.adaptiveReview.deferred={};
+    S.lawMemory=p.lawMemory||S.lawMemory||{cards:{},daily:{}};if(!S.lawMemory.cards)S.lawMemory.cards={};if(!S.lawMemory.daily)S.lawMemory.daily={};
+  }catch(e){S.flagged={};S.coverageQueue=[];S.redacao={history:[]};S.simProfile='estrategico';S.weeklyAdjust=[];S.studyHistory=S.studyHistory||{};S.adaptiveReview=S.adaptiveReview||{completed:{},deferred:{}};S.lawMemory=S.lawMemory||{cards:{},daily:{}};}
 }
 // Substitui a persistência antiga sem perder nenhum campo já utilizado.
 SS=function(){
-  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions||{},studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{}},flagged:S.flagged||{},coverageQueue:S.coverageQueue||[],redacao:S.redacao||{history:[]},simProfile:S.simProfile||'estrategico',weeklyAdjust:S.weeklyAdjust||[],legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics||{},legacySummary:S.legacySummary||null,cycleId:S.cycleId||'ciclo2_20260821'}));}catch(e){}
+  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions||{},studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{},deferred:{}},lawMemory:S.lawMemory||{cards:{},daily:{}},flagged:S.flagged||{},coverageQueue:S.coverageQueue||[],redacao:S.redacao||{history:[]},simProfile:S.simProfile||'estrategico',weeklyAdjust:S.weeklyAdjust||[],legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics||{},legacySummary:S.legacySummary||null,cycleId:S.cycleId||'ciclo2_20260821'}));}catch(e){}
 };
 
 // ── Fontes e sinalização ──
@@ -4976,7 +5045,7 @@ function renderFeedbackSource(q){
   if(b)b.textContent=isFlagged(q)?'↩ Reativar questão':'⚠️ Sinalizar possível erro';
 }
 function applyQuestionFilters(pool){
-  pool=(pool||[]).filter(function(q){return !isFlagged(q);});
+  pool=(pool||[]).filter(function(q){return !isFlagged(q)&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
   var sel=document.getElementById('sel-source'),f=sel?sel.value:'all';
   if(f==='pmal')pool=pool.filter(isOfficialQuestion);
   else if(f==='provas')pool=pool.filter(isSourceQuestion);
@@ -5043,7 +5112,7 @@ startSimulado=function(profile){
   var sqP1=buildBlock(d.p1,nP1,simNiv).filter(function(q){return !isFlagged(q);});
   var sqP2=buildBlock(d.p2,nP2,simNiv).filter(function(q){return !isFlagged(q);});
   // completa eventuais lacunas causadas por questões sinalizadas
-  function fill(arr,mats,want){var used=new Set(arr.map(function(q){return q.id;}));var rest=QQ.filter(function(q){return mats.indexOf(q.m)>=0&&!used.has(q.id)&&!isFlagged(q);}).sort(function(){return Math.random()-.5;});return arr.concat(rest.slice(0,Math.max(0,want-arr.length))).slice(0,want);}
+  function fill(arr,mats,want){var used=new Set(arr.map(function(q){return q.id;}));var rest=QQ.filter(function(q){return mats.indexOf(q.m)>=0&&!used.has(q.id)&&!isFlagged(q)&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';}).sort(function(){return Math.random()-.5;});return arr.concat(rest.slice(0,Math.max(0,want-arr.length))).slice(0,want);}
   sqP1=fill(sqP1,Object.keys(d.p1),nP1);sqP2=fill(sqP2,Object.keys(d.p2),nP2);
   S.sim=true;S.mode='cebraspe';S.sq=sqP1.concat(sqP2);S.ci=0;S.sa=[];S.simStart=Date.now();S.simP1Count=sqP1.length;S.simDeadline=Date.now()+4.5*3600*1000;
   if(simTimer)clearInterval(simTimer);simTimer=setInterval(tickSim,1000);tickSim();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});sv('sim');renderSim();
@@ -5927,9 +5996,9 @@ function personalizedLesson20260823(mat,top){
   var x=personalizedCard20260823(mat,top);if(!x)return null;
   return {mat:mat,topico:top,pergunta:flashQuestion(top),regraCentral:x.central,regras:x.rules||[],prazos:[],comparacoes:[],pegadinhas:['Classificação de 23/08/2026: '+x.classification.replace(/_/g,' ')+'.'],referencias:['Revisão personalizada de 23/08/2026'],fixacao:'Explique a regra sem consultar e crie um exemplo de pegadinha CEBRASPE.',bizus:[]};
 }
-function findQuestionById(id){return QQ.find(function(x){return x.id===id;})||REVIEW_QUESTIONS_20260823.find(function(x){return x.id===id;})||(typeof REVIEW_QUESTIONS_20260824!=='undefined'?REVIEW_QUESTIONS_20260824.find(function(x){return x.id===id;}):null)||(typeof REVIEW_QUESTIONS_20260825!=='undefined'?REVIEW_QUESTIONS_20260825.find(function(x){return x.id===id;}):null)||null;}
+function findQuestionById(id){var q=QQ.find(function(x){return x.id===id;})||REVIEW_QUESTIONS_20260823.find(function(x){return x.id===id;})||(typeof REVIEW_QUESTIONS_20260824!=='undefined'?REVIEW_QUESTIONS_20260824.find(function(x){return x.id===id;}):null)||(typeof REVIEW_QUESTIONS_20260825!=='undefined'?REVIEW_QUESTIONS_20260825.find(function(x){return x.id===id;}):null)||null;if(q)prepareQuestionContexts([q]);return q;}
 function startReview20260823(){
-  S.reviewActive='2026-08-23';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260823.slice();S.ci=0;S.sa=[];S.round++;
+  prepareQuestionContexts(REVIEW_QUESTIONS_20260823);S.reviewActive='2026-08-23';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260823.filter(questionUsable);S.ci=0;S.sa=[];S.round++;
   document.getElementById('hsc').style.display='none';
   sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
   toast('📚 Revisão exclusiva: 65 itens recebidos. O saldo original permanece 92 C / 24 E / 4 B / 68 líquidos.');
@@ -6019,7 +6088,7 @@ var REVIEW_QUESTIONS_20260824=[
  rq24(44,'Língua Portuguesa','Domínio versus intuição','Acertar uma questão sem conseguir formular uma justificativa mínima comprova domínio consolidado do conteúdo.','ERRADO','O resultado pode ser um acerto intuitivo; domínio exige identificar a regra ou o ponto decisivo.','Antes de marcar, complete: “Estou marcando isso porque...”.','acerto_intuitivo')
 ];
 function startReview20260824(){
-  S.reviewActive='2026-08-24';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260824.slice();S.ci=0;S.sa=[];S.round++;
+  prepareQuestionContexts(REVIEW_QUESTIONS_20260824);S.reviewActive='2026-08-24';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260824.filter(questionUsable);S.ci=0;S.sa=[];S.round++;
   document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
   toast('📚 Revisão exclusiva de 24/08: 44 itens. O estudo do dia foi 73 questões, 54 acertos e 19 erros.');
 }
@@ -6075,7 +6144,7 @@ var REVIEW_QUESTIONS_20260825=[
 ];
 function personalizedCard20260825(mat,top){return REVIEW_QUESTIONS_20260825.find(function(q){return q.m===mat&&topico(q.a)===top;})||null;}
 function personalizedLesson20260825(mat,top){var q=personalizedCard20260825(mat,top);if(!q)return null;return {mat:mat,topico:top,pergunta:flashQuestion(top),regraCentral:q.c,regras:[q.c],prazos:[],comparacoes:[],pegadinhas:[q.p],referencias:['Revisão de 25/08/2026'],fixacao:'Explique a regra em uma frase e identifique a palavra que mudaria o gabarito.',bizus:[q.d]};}
-function startReview20260825(){S.reviewActive='2026-08-25';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260825.slice();S.ci=0;S.sa=[];S.round++;document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});toast('📚 Revisão exclusiva de 25/08: Direito Administrativo, sem impacto nas métricas gerais.');}
+function startReview20260825(){prepareQuestionContexts(REVIEW_QUESTIONS_20260825);S.reviewActive='2026-08-25';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260825.filter(questionUsable);S.ci=0;S.sa=[];S.round++;document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});toast('📚 Revisão exclusiva de 25/08: Direito Administrativo, sem impacto nas métricas gerais.');}
 function importDailyReview20260825(){
   try{
     var key='pmal26_import_revisao_20260825_v1',now=new Date('2026-08-25T09:00:00-03:00').getTime();S.reviewSessions=S.reviewSessions||{};
@@ -6221,7 +6290,7 @@ function startNewCycleManual(){
   }
 }
 
-function refreshLawBankLabels(){var f=document.getElementById('law-bank-foot');if(f)f.textContent=Object.keys(DISP).length+' dispositivos auditados · 5/dia · 50% incidência / 30% erros / 20% rotação (média semanal).';}
+function refreshLawBankLabels(){var f=document.getElementById('law-bank-foot');if(f)f.textContent=Object.keys(DISP).length+' dispositivos auditados · 5 no domingo / 7 nos demais dias · DSO + incidência + erros + rotação.';}
 // ── INIT ──
 document.getElementById('btn-c').addEventListener('click',()=>ans('CERTO'));
 document.getElementById('btn-e').addEventListener('click',()=>ans('ERRADO'));
