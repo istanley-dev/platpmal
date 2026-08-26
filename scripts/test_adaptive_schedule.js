@@ -51,7 +51,8 @@ function boot(storage) {
 ;globalThis.__app={S,QQ,WEEK,QUESTION_TEXTS,REVIEW_QUESTIONS_20260823,REVIEW_QUESTIONS_20260824,REVIEW_QUESTIONS_20260825,
 buildAdaptiveDay,adaptiveItemDesc,adaptiveReviewQuestions,buildDailyPool,startQ,startSimulado,startWeekReview,
 findQuestionById,SS,LS,registerStudySubject,localDateKey,studyClass,studySubjects,errorCombatItems,
-lawDailySelection,computeTodaysArticles,touchLeituraDia,recordLawMemory,lawMemoryRec,prepareQuestionContexts,questionUsable,getPool,
+lawDailySelection,computeTodaysArticles,touchLeituraDia,recordLawMemory,lawMemoryRec,prepareQuestionContexts,questionContextText,questionUsable,getPool,
+PORTUGUESE_CONTEXT_GROUPS,extractEmbeddedPortugueseContext,
 phaseInfo,dayPlan,renderCrono,MAX_ADAPTIVE_ITEMS,DATA_ALVO_PROVA,
 testMathAutoPool:function(){var old=dayPlan;dayPlan=function(){return {subs:['Matemática','Direito Administrativo'],target:12,primary:['Matemática','Direito Administrativo'],maintenance:['Matemática'],weak:null};};try{return buildDailyPool();}finally{dayPlan=old;}}};`;
   new vm.Script(source + exportHook, { filename: 'index.inline.js' }).runInContext(context, { timeout: 20000 });
@@ -168,6 +169,44 @@ assert.equal(p1.textId, p2.textId);
 assert.equal(app.QUESTION_TEXTS[p1.textId], 'Texto-base compartilhado.');
 assert.equal(missing.missingContext, true);
 assert.equal(app.questionUsable(missing), false);
+
+// Contextos recuperados: textos antigos saem do enunciado e revisões incompletas recebem texto autoral identificado.
+const embeddedContexts = app.QQ.filter((q) => q.m === 'Língua Portuguesa' && q.contextOrigin === 'extraido_do_enunciado');
+assert.equal(embeddedContexts.length, 85, 'todos os textos legados embutidos devem virar bloco de leitura');
+const cb1 = app.QQ.find((q) => q.id === 'c4_1');
+assert(app.questionContextText(cb1).startsWith('A segurança publica'));
+assert(!cb1.e.startsWith('Texto CB1A1'), 'o texto-base não deve continuar duplicado no enunciado');
+
+const contextualMainIds = [
+  'rp_pcal2012_025', 'ext20_009', 'ext20_010', 'ext20_016', 'ext20_019',
+  'chat_prev_001', 'chat_prev_004', 'chat_prev_007', 'chat_prev_008', 'chat_prev_009', 'chat_prev_013',
+  'chat_prev_015', 'chat_prev_016', 'chat_prev_017', 'chat_prev_018'
+];
+for (const id of contextualMainIds) {
+  const q = app.QQ.find((item) => item.id === id);
+  assert(q, `questão contextualizada ausente: ${id}`);
+  assert(app.questionContextText(q).length > 100, `texto-base insuficiente: ${id}`);
+  assert.match(q.tt, /autoral|adaptação autoral/);
+  assert.equal(app.questionUsable(q), true);
+}
+
+app.prepareQuestionContexts(app.REVIEW_QUESTIONS_20260823);
+app.prepareQuestionContexts(app.REVIEW_QUESTIONS_20260824);
+const contextualReviewIds = [
+  ...Array.from({ length: 13 }, (_, i) => `rev_20260823_${String(i + 1).padStart(3, '0')}`),
+  ...Array.from({ length: 19 }, (_, i) => `rev_20260824_${String(i + 25).padStart(3, '0')}`)
+];
+for (const id of contextualReviewIds) {
+  const q = app.findQuestionById(id);
+  assert(q, `revisão contextualizada ausente: ${id}`);
+  assert(app.questionContextText(q).length > 100, `revisão sem texto-base: ${id}`);
+  assert.match(q.tt, /autoral|adaptação autoral/);
+  assert.equal(app.questionUsable(q), true);
+}
+assert.equal(app.findQuestionById('rev_20260823_001').textId, app.findQuestionById('rev_20260823_007').textId);
+assert.notEqual(app.findQuestionById('rev_20260823_007').textId, app.findQuestionById('rev_20260823_008').textId);
+assert.match(app.findQuestionById('rev_20260823_003').e, /interveio.*interviu/);
+assert.match(app.findQuestionById('rev_20260824_032').e, /Pesquisas sobre gênero examinam/);
 
 // Fases simuladas e mobile-first.
 assert.equal(app.phaseInfo('2026-09-27').ph, 1);
