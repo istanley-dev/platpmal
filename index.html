@@ -65,7 +65,7 @@ input:focus{border-color:var(--brand);outline:none}
 .qass{font-size:12px;color:var(--mut);margin-bottom:14px}
 .qtx{background:#131c24;border-left:4px solid #3b6ea5;border-radius:10px;padding:12px 14px;margin-bottom:12px;display:none}
 .qtx-tt{font-size:11px;font-weight:800;color:#7db8e8;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
-.qtx-body{font-size:13px;line-height:1.65;color:#c3d4e4;font-style:italic}
+.qtx-body{font-size:13px;line-height:1.65;color:#c3d4e4;font-style:italic;white-space:pre-line}
 .qtxt{font-size:16px;line-height:1.75;color:var(--ink);border-left:3px solid var(--gold);padding-left:14px}
 .ar{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
 .bcerto{padding:18px;background:#1f5c38;color:#eafbef;border-radius:var(--r);font-size:17px;font-weight:800;letter-spacing:1.5px;border:1px solid #2e7d4f;cursor:pointer}
@@ -1313,8 +1313,130 @@ function startIncidenceMission(){
 
 // ── STATE ──
 var QUESTION_TEXTS={};
+// Textos autorais usados apenas para devolver contexto a itens cuja fonte chegou sem o texto-base.
+// O título deixa explícito que não se trata de transcrição da prova original.
+var PORTUGUESE_CONTEXT_GROUPS=[
+  {
+    ids:['rp_pcal2012_025'],
+    tt:'Texto PCAL-I · adaptação autoral para contextualização',
+    tx:[
+      'Durante muito tempo, o trabalho policial foi associado quase exclusivamente à força física e à disposição para o confronto.',
+      'A ampliação das atribuições das corporações e a participação crescente das mulheres contribuíram para rever essa imagem. Atualmente, valorizam-se competências mais adequadas à realidade social, como a inteligência, a capacidade de resolver conflitos, a inovação e o trabalho em equipe.'
+    ].join('\n\n')
+  },
+  {
+    ids:['ext20_009','ext20_010','ext20_016','ext20_019'],
+    tt:'Texto EXT20-I · adaptação autoral para contextualização',
+    tx:[
+      'O crescimento desordenado das cidades foi tratado, por décadas, como consequência inevitável do desenvolvimento econômico. Essa leitura, contudo, ocultou custos sociais e ambientais que hoje exigem planejamento público.',
+      'Em diversas regiões do país, consolidou-se um modelo de expansão urbana pouco atento à oferta de serviços essenciais. Antes de reproduzir esse modelo, é necessário avaliar os riscos a ele inerentes e as desigualdades que pode aprofundar.',
+      'A digitalização do debate público acrescentou outro desafio: a disseminação de deepfakes, isto é, conteúdos audiovisuais artificialmente manipulados para parecer autênticos. A expressão esclarece o fenômeno mencionado, sem corrigir a afirmação anterior.',
+      'Exatamente nesse ponto do debate é que se passou a observar uma transformação mais profunda. Trata-se de uma mudança na forma como a população avalia informações, instituições e decisões coletivas.'
+    ].join('\n\n')
+  },
+  {
+    ids:['chat_prev_001','chat_prev_004','chat_prev_007','chat_prev_008','chat_prev_009','chat_prev_013'],
+    tt:'Texto EEC-I · texto autoral para revisão de erros',
+    tx:[
+      'É proibida a circulação de veículos não identificados dentro do perímetro do quartel. Por mais bem-intencionada que seja, toda medida de controle deve respeitar os limites legais.',
+      'O Estado que monitora seus cidadãos em nome da ordem pública deve, necessariamente, estabelecer limites precisos. A segurança constrói-se com a participação da população, e não apenas por meio da repressão. Do mesmo modo, todo policial deve obedecer à hierarquia sem abandonar o exame da legalidade das ordens.',
+      'Durante o atendimento da ocorrência, o soldado agiu mais rapidamente do que se esperava.'
+    ].join('\n\n')
+  },
+  {
+    ids:['chat_prev_015','chat_prev_016','chat_prev_017','chat_prev_018'],
+    tt:'Texto EEC-II · texto autoral para revisão de erros',
+    tx:[
+      'A tecnologia trouxe novos desafios à segurança, e a formação não pode ignorar a dimensão ética do seu emprego. Os países que avançaram na regulamentação combinaram inovação, transparência e controle.',
+      'É o policial que, em geral, realiza o primeiro atendimento à vítima e registra as informações indispensáveis à investigação.'
+    ].join('\n\n'),
+    items:{
+      chat_prev_015:'No trecho “a tecnologia trouxe novos desafios à segurança”, o emprego do acento grave indicativo de crase é facultativo.'
+    }
+  },
+  {
+    ids:['rev_20260823_001','rev_20260823_002','rev_20260823_003','rev_20260823_004','rev_20260823_005','rev_20260823_006','rev_20260823_007'],
+    tt:'Texto R23-I · texto autoral para contextualização da revisão',
+    tx:[
+      'A Defensoria em Foz atua cotidianamente em comunidades afastadas, uma vez que parte da população encontra dificuldade para chegar à sede do órgão. Em uma ocorrência recente, a instituição interveio para assegurar atendimento urgente a duas famílias.',
+      'Quando direitos são ameaçados e a situação exige resposta imediata, a equipe pode indicar uma providência específica; ela não é adotada automaticamente em todos os casos. As equipes que acompanham as comunidades mantêm contato com servidores que atuam na rede de proteção.',
+      'Com esse trabalho a Defensoria amplia o acesso à justiça e reduz o tempo de espera por orientação.'
+    ].join('\n\n'),
+    items:{
+      rev_20260823_003:'A substituição de “interveio” por “interviu”, no primeiro parágrafo, preservaria a correção gramatical do texto.'
+    }
+  },
+  {
+    ids:['rev_20260823_008','rev_20260823_009','rev_20260823_010','rev_20260823_011','rev_20260823_012','rev_20260823_013'],
+    tt:'Texto R23-II · texto autoral para contextualização da revisão',
+    tx:[
+      'No Assentamento Noroeste, a Defensoria acompanhava o projeto Hortas Comunitárias quando identificou outra necessidade dos moradores. Por isso, iniciou o projeto Mutirão de Registro Civil, destinado a recuperar documentos e facilitar o acesso a serviços públicos.',
+      'Uma moradora precisou de novos documentos para concluir a solicitação de registro civil. Muitos comprovantes haviam sido perdidos durante o período de chuvas, mas as famílias poderão se beneficiar do atendimento concentrado.',
+      '“Estamos garantindo que cada pessoa possa reconstruir sua documentação”, afirma a coordenadora. Na semana seguinte, referido projeto passou a atender também comunidades vizinhas.'
+    ].join('\n\n')
+  },
+  {
+    ids:['rev_20260824_026','rev_20260824_031','rev_20260824_034','rev_20260824_035','rev_20260824_036','rev_20260824_037','rev_20260824_039','rev_20260824_040','rev_20260824_041','rev_20260824_042','rev_20260824_043'],
+    tt:'Texto R24-I · texto autoral sobre inteligência artificial',
+    tx:[
+      'Com o rápido desenvolvimento da inteligência artificial, o uso e a aplicação da IA nunca foram tão grandes. Existem agora evidências significativas de que a IA permite que a administração pública realize tarefas repetitivas com maior rapidez.',
+      'A capacidade de processar dados, agilizar procedimentos, realizar triagens e otimizar recursos é inquestionável. Ainda assim, deve-se considerar os riscos, pois a adoção irrefletida pode ter implicações para a igualdade de acesso aos serviços.',
+      'A IA deve ser entendida não apenas como ferramenta de automação, mas também como elemento transformador da gestão. Reconhecendo o impacto da IA, a UNESCO organizou, juntamente com outros organismos, debates sobre transparência e responsabilidade.',
+      'Entre os ganhos apontados está a celeridade processual obtida por meio de robôs. Esse benefício, porém, não elimina a necessidade de supervisão humana.'
+    ].join('\n\n')
+  },
+  {
+    ids:['rev_20260824_025','rev_20260824_027','rev_20260824_028','rev_20260824_029','rev_20260824_030','rev_20260824_032','rev_20260824_033'],
+    tt:'Texto R24-II · texto autoral sobre legitimidade e participação',
+    tx:[
+      'Para que a inovação seja aceita, é necessário que tenha legitimidade social. O cidadão não pode ser tratado apenas como agente passivo que utilizará serviços definidos sem participação pública.',
+      'A participação social é indispensável, pois permite identificar necessidades que os dados, sozinhos, não revelam. Embora mais de 68% da população reconheça a utilidade dos serviços digitais, persistem preocupações com privacidade e exclusão.',
+      'A administração publicou orientações detalhadas para os servidores que operam o sistema, e publicou materiais simplificados para os cidadãos que utilizam o serviço.',
+      'Pesquisas sobre gênero ganharam espaço no debate. Elas examinam como sistemas de inteligência artificial podem reproduzir desigualdades.'
+    ].join('\n\n'),
+    items:{
+      rev_20260824_028:'No segundo parágrafo, a substituição de “Embora” por “Conquanto” preservaria a relação de concessão e a correção gramatical.',
+      rev_20260824_032:'A união dos dois períodos do quarto parágrafo em “Pesquisas sobre gênero examinam como sistemas de inteligência artificial podem reproduzir desigualdades” preservaria o sentido e a correção do texto.'
+    }
+  },
+  {
+    ids:['rev_20260824_038'],
+    tt:'Texto R24-III · adaptação autoral para contextualização',
+    tx:'Ao explicar por que os livros foram inventados, Padre Antônio Vieira contrapõe a palavra falada, que passa e pode ser esquecida, à palavra escrita, que permanece e conserva a memória.'
+  }
+];
+function createdPortugueseContext(q){
+  for(var i=0;i<PORTUGUESE_CONTEXT_GROUPS.length;i++){
+    var group=PORTUGUESE_CONTEXT_GROUPS[i];
+    if(group.ids.indexOf(q.id)<0)continue;
+    q.tt=group.tt;q.tx=group.tx;q.contextOrigin='autoral_contextualizacao';
+    if(group.items&&group.items[q.id])q.e=group.items[q.id];
+    return true;
+  }
+  return false;
+}
+function extractEmbeddedPortugueseContext(q){
+  if(!q||q.m!=='Língua Portuguesa'||q.tx||q.textId||!q.e)return false;
+  var match=q.e.match(/^(Texto\s+[^—]+?)\s*—\s*["“]([\s\S]+?)["”]\s*(?:—\s*)?(.+)$/);
+  if(!match||match[2].trim().length<40||match[3].trim().length<10)return false;
+  q.tt=q.tt||match[1].trim();q.tx=match[2].trim();q.e=match[3].trim();q.contextOrigin='extraido_do_enunciado';
+  return true;
+}
 function contextHash(text){var h=2166136261,s=String(text||'');for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(36);}
-function prepareQuestionContexts(list){(list||[]).forEach(function(q){if(q.m!=='Língua Portuguesa')return;if(q.tx&&q.tx.trim()){if(!q.textId)q.textId='revtxt_'+contextHash(q.tx);if(!QUESTION_TEXTS[q.textId])QUESTION_TEXTS[q.textId]=q.tx;q.tx='';}if(q.textId&&!QUESTION_TEXTS[q.textId]&&q.tx){QUESTION_TEXTS[q.textId]=q.tx;q.tx='';}if(q.textId&&!QUESTION_TEXTS[q.textId])q.missingContext=true;});}
+function prepareQuestionContexts(list){
+  (list||[]).forEach(function(q){
+    if(q.m!=='Língua Portuguesa')return;
+    if(!q.tx&&!q.textId)createdPortugueseContext(q);
+    if(!q.tx&&!q.textId)extractEmbeddedPortugueseContext(q);
+    if(q.tx&&q.tx.trim()){
+      if(!q.textId)q.textId='revtxt_'+contextHash(q.tx);
+      if(!QUESTION_TEXTS[q.textId])QUESTION_TEXTS[q.textId]=q.tx;
+      q.tx='';
+    }
+    if(q.textId&&!QUESTION_TEXTS[q.textId])q.missingContext=true;
+    else if(q.missingContext)delete q.missingContext;
+  });
+}
 function questionContextText(q){if(!q)return '';return (q.textId&&QUESTION_TEXTS[q.textId])||q.tx||'';}
 function questionUsable(q){return !!q&&!q.missingContext&&(!q.textId||!!questionContextText(q));}
 prepareQuestionContexts(QQ);
