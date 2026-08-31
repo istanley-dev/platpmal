@@ -8,6 +8,7 @@ on:
       - 'scripts/generate_dso_reading_cards.py'
       - 'scripts/apply_dso_reading_cards_v3.py'
       - 'scripts/apply_lei5346_resilience_patch.py'
+      - 'scripts/diag_lei5346_occurrences.py'
       - '.github/workflows/build-dso-reading-cards.yml'
   workflow_dispatch:
 
@@ -23,6 +24,10 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pypdf
+
+      - name: Diagnose Lei 5.346 art. 51/54 source
+        continue-on-error: true
+        run: python3 scripts/diag_lei5346_occurrences.py
 
       - name: Apply resilient current Lei 5.346 source
         run: python3 scripts/apply_lei5346_resilience_patch.py
@@ -88,8 +93,6 @@ jobs:
           if 'direitos e deveres individuais e coletivos' not in cf5:
               raise SystemExit('C1D1 parece conter ADCT ou artigo incorreto, não CF art. 5º')
 
-          # Currentness guard for Lei 5.346/1992: Lei 9.381/2024 changed ages
-          # in arts. 51 and 54 to 67 and 72 respectively.
           lei51=text(3,4,'51').lower()
           lei54=text(3,4,'54').lower()
           if '67' not in lei51 or '72' not in lei54:
