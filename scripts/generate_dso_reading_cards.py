@@ -7,29 +7,25 @@ import re
 import time
 from pathlib import Path
 
+import requests
 import generate_full_law_reading as base
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "law-reading"
 OUT.mkdir(exist_ok=True)
 
-# Official pages are inconsistent: older military codes often use "Art 20."
-# (without a dot after Art), while other sources use Art., Artigo or ARTIGO.
-# Do not make this case-insensitive: top-level headings are capitalized, whereas
-# ordinary internal references are very often lowercase "art.".
 ARTICLE_RE = re.compile(
     r"(?m)^[^\S\n]*(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*(\d+)"
     r"(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \t\r\n.]|$)"
 )
 
-# Consolidated official pages sometimes represent a revoked article only in a
-# combined revocation notice, so there is no standalone heading for the parser.
-# These placeholders preserve the PDF's numeric reading range without inventing
-# substantive legal text.
 KNOWN_REVOKED = {
     ("CPPM", "459"): "Art. 459. Revogado pela Lei nº 8.236, de 20 de setembro de 1991.",
     ("L8069", "248"): "Art. 248. Revogado pela Lei nº 13.431, de 4 de abril de 2017.",
 }
+
+PMAL_LEI5346 = "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/892/param/2/set/2/get/2416565e/dist/"
+PMAL_RDPM = "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/792/param/2/set/1/get/c8f191d3/dist/"
 
 
 def parse_articles_exact(text: str) -> dict[str, str]:
@@ -42,16 +38,12 @@ def parse_articles_exact(text: str) -> dict[str, str]:
         block = base.clean_lines(text[m.start():end])
         if len(block) < 15:
             continue
-        # Keep the first top-level occurrence. This is important for statutes
-        # such as ECA, whose final provisions quote articles from other laws;
-        # those later quoted "Art. 121" headings must not overwrite ECA art. 121.
         if key not in out:
             out[key] = block
     return out
 
 
 def scope_text(prefix: str, text: str) -> str:
-    """Keep only the legal corpus targeted by the DSO range."""
     if prefix == "CF":
         art250_matches = list(re.finditer(
             r"(?m)^\s*Art\.[ \t\r\n]*250(?:\.?[º°oO])?(?=[. \t\r\n]|$)", text
@@ -73,11 +65,57 @@ def scope_text(prefix: str, text: str) -> str:
     return text
 
 
+def reader_proxy_text(official_url: str) -> str:
+    """Fallback transport only: retrieve the same official URL through Jina Reader.
+
+    This does not relax content checks. The returned text is accepted only if the
+    normal article/range audits pass later in the build.
+    """
+    proxy = "https://r.jina.ai/" + official_url
+    last = None
+    for attempt in range(3):
+        try:
+            r = requests.get(
+                proxy,
+                headers={"User-Agent": base.UA, "Accept": "text/plain,text/markdown,*/*"},
+                timeout=(15, 90),
+            )
+            r.raise_for_status()
+            text = base.clean_lines(r.text)
+            if len(text) < 500:
+                raise RuntimeError(f"proxy retornou somente {len(text)} caracteres")
+            return text
+        except Exception as exc:
+            last = exc
+            if attempt < 2:
+                time.sleep(2.0 * (attempt + 1))
+    raise RuntimeError(f"fallback de transporte falhou para {official_url}: {last}")
+
+
+def official_pdf_with_proxy(prefix: str, url: str) -> str:
+    try:
+        return base.fetch_pdf_text(url)
+    except Exception as direct_exc:
+        print(f"{prefix}: download oficial direto indisponível ({type(direct_exc).__name__}); tentando transporte alternativo", flush=True)
+        return reader_proxy_text(url)
+
+
 def source_text(prefix: str):
     if prefix == "RD":
-        text, url = base.resolve_rdpm()
-        return "Decreto Estadual 37.042/1996 — RDPMAL", url, "official_pm_al", text
+        try:
+            text, url = base.resolve_rdpm()
+            return "Decreto Estadual 37.042/1996 — RDPMAL", url, "official_pm_al", text
+        except Exception as direct_exc:
+            print(f"RD: Sislegis direto indisponível ({type(direct_exc).__name__}); tentando transporte alternativo", flush=True)
+            return "Decreto Estadual 37.042/1996 — RDPMAL", PMAL_RDPM, "official_pm_al_proxy", reader_proxy_text(PMAL_RDPM)
+
     title, url, kind = base.SOURCES[prefix]
+    if prefix == "Lei5346":
+        # Keep the current PMAL Sislegis consolidated copy as the canonical source.
+        url = PMAL_LEI5346
+        text = official_pdf_with_proxy(prefix, url)
+        return title, url, "official_pm_al", text
+
     text = base.fetch_pdf_text(url) if kind == "pdf" else base.fetch_html(url)
     return title, url, kind, scope_text(prefix, text)
 
@@ -128,6 +166,16 @@ def main():
         raise RuntimeError("CF: artigos permanentes esperados não foram reconhecidos")
     if "18A" in cf:
         raise RuntimeError("CF: art. 18-A do ADCT apareceu no corpus da Constituição")
+
+    # State-law source integrity: both sources must contain the boundaries used
+    # by the DSO PDFs before any daily JSON can be generated.
+    for prefix, required in {
+        "Lei5346": ("1", "14", "30", "52", "88", "104", "105", "135"),
+        "RD": ("1", "25", "38", "66", "81", "82", "107"),
+    }.items():
+        missing = [k for k in required if k not in cache.get(prefix, {})]
+        if missing:
+            raise RuntimeError(f"{prefix}: fonte oficial/fallback não contém limites DSO {missing}")
 
     manifest = {
         "version": 4,
