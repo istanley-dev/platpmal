@@ -21,10 +21,13 @@ jobs:
       - name: Baixar o site
         uses: actions/checkout@v4
 
-      - name: Auditar Banco de Leis e plano DSO antes de publicar
+      - name: Aplicar Central de Revisão no artefato
+        run: python scripts/apply_review_hub_v1.py
+
+      - name: Auditar Banco de Leis, plano DSO e Central de Revisão antes de publicar
         run: |
           python3 - <<'PY'
-          import json, pathlib
+          import json, pathlib, re
           root=pathlib.Path('.')
           manifest_path=root/'law-reading'/'manifest.json'
           bank_path=root/'law-reading'/'bank.json'
@@ -59,7 +62,13 @@ jobs:
               if needle not in html: raise SystemExit(f'BLOQUEADO: UI da Meta de Leitura incompleta ({needle})')
           if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html:
               raise SystemExit('BLOQUEADO: leitor antigo V2 reapareceu')
-          print('OK: publicação autorizada — Banco integral estático e 65 dias DSO íntegros.')
+          for needle in ('PMAL_REVIEW_HUB_V1','id="v-reviewhub"','id="btn-review-hub"','window.openReviewHub'):
+              if needle not in html: raise SystemExit(f'BLOQUEADO: Central de Revisão incompleta ({needle})')
+          op=re.search(r'<div class="sec-k">Opera[cç][oõ]es</div>([\s\S]*?)<!-- QUIZ -->',html,re.I)
+          if not op: raise SystemExit('BLOQUEADO: bloco Operações não encontrado')
+          for old in ('btn-review-20260830','btn-review-20260825','btn-review-20260824','btn-review-20260823','btn-smart'):
+              if old in op.group(1): raise SystemExit(f'BLOQUEADO: revisão antiga ainda polui a Home ({old})')
+          print('OK: publicação autorizada — DSO íntegro e Central de Revisão consolidada.')
           PY
 
   deploy:
@@ -71,6 +80,8 @@ jobs:
     steps:
       - name: Baixar o site
         uses: actions/checkout@v4
+      - name: Aplicar Central de Revisão no artefato
+        run: python scripts/apply_review_hub_v1.py
       - name: Configurar o GitHub Pages
         uses: actions/configure-pages@v5
       - name: Preparar os arquivos
