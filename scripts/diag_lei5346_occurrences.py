@@ -12,6 +12,7 @@ URLS = [
 ]
 UA = "Mozilla/5.0 (PMAL study platform diagnostics)"
 
+print("Lei 5.346 occurrence diagnostics v2", flush=True)
 for name, url in URLS:
     print(f"\n===== {name} =====", flush=True)
     try:
@@ -31,7 +32,6 @@ for name, url in URLS:
 
         text = "\n".join(pages)
         text = text.replace("\xa0", " ").replace("\u00ad", "")
-        # Broad contexts, independent from production parser.
         for key in ("51", "54"):
             print(f"\n### ALL CONTEXTS ART {key} ###", flush=True)
             pats = [
