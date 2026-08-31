@@ -17,8 +17,7 @@ if len(art_indexes) != 1:
 lines[art_indexes[0]] = target_art_line
 s = "\n".join(lines) + ("\n" if s.endswith("\n") else "")
 
-# Prefer the current official PMAL Sislegis copy for the Estatuto. This avoids
-# depending on the Assembly SAPL host, which is intermittently timing out in CI.
+# Prefer the current official PMAL Sislegis copy for the Estatuto.
 old_lei5346 = "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/1992/845/845_texto_integral.pdf"
 new_lei5346 = "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/892/param/2/set/2/get/2416565e/dist/"
 if old_lei5346 in s:
@@ -26,10 +25,32 @@ if old_lei5346 in s:
 elif new_lei5346 not in s:
     raise SystemExit("Fonte da Lei 5.346 não encontrada para atualização")
 
+# Official government hosts can be intermittently unavailable from GitHub
+# runners. Retry transport failures without weakening any content validation.
+helper = r'''def http_get(url: str, timeout=(12,45), attempts: int=3):
+    last=None
+    for attempt in range(attempts):
+        try:
+            r=S.get(url,timeout=timeout,allow_redirects=True)
+            r.raise_for_status()
+            return r
+        except requests.RequestException as exc:
+            last=exc
+            if attempt+1<attempts:
+                time.sleep(1.5*(attempt+1))
+    raise last
+
+def fetch_html'''
+if "def http_get(" not in s:
+    s, helper_n = re.subn(r'def fetch_html', lambda _m: helper, s, count=1)
+    if helper_n != 1:
+        raise SystemExit("Não foi possível inserir http_get")
+
+s = s.replace('r=S.get(url,timeout=45); r.raise_for_status(); enc=', 'r=http_get(url,timeout=(12,45)); enc=', 1)
+s = s.replace('r=S.get(url,timeout=60); r.raise_for_status(); return clean_lines(', 'r=http_get(url,timeout=(12,60)); return clean_lines(', 1)
+
 new_block = r'''def resolve_rdpm() -> tuple[str,str]:
     # Official PMAL Sislegis record for Decreto Estadual 37.042/1996 (RDPMAL).
-    # The old sistemas.pm.al.gov.br hostname currently presents a TLS hostname
-    # mismatch in GitHub runners, so use the current official central.pm.al.gov.br.
     direct_urls=[
         "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/792/param/2/set/1/get/c8f191d3/dist/",
     ]
@@ -39,9 +60,9 @@ new_block = r'''def resolve_rdpm() -> tuple[str,str]:
     ]
 
     def extract_document(url: str):
-        rr=S.get(url,timeout=60,allow_redirects=True); rr.raise_for_status()
+        rr=http_get(url,timeout=(12,60),attempts=3)
         ct=(rr.headers.get("content-type") or "").lower()
-        if rr.content.startswith(b"%PDF") or "pdf" in ct:
+        if rr.content.startswith(b"%PDF") or "pdf" in ct or "save" in ct:
             from io import BytesIO
             from pypdf import PdfReader
             text=clean_lines("\n".join((p.extract_text() or "") for p in PdfReader(BytesIO(rr.content)).pages))
@@ -61,7 +82,7 @@ new_block = r'''def resolve_rdpm() -> tuple[str,str]:
 
     for page_url in listing_urls:
         try:
-            r=S.get(page_url,timeout=45); r.raise_for_status(); soup=BeautifulSoup(r.text,"html.parser")
+            r=http_get(page_url,timeout=(12,45),attempts=3); soup=BeautifulSoup(r.text,"html.parser")
             for tr in soup.find_all("tr"):
                 txt=tr.get_text(" ",strip=True)
                 if "37.042" not in txt or "REGULAMENTO DISCIPLINAR" not in txt.upper():
@@ -86,4 +107,4 @@ ns, n = re.subn(pat, lambda _m: new_block, s, count=1, flags=re.S)
 if n != 1:
     raise SystemExit(f"resolver patch count={n}; expected 1")
 path.write_text(ns, encoding="utf-8")
-print("PMAL state-law sources + multiline article parser patched (v7)")
+print("Official-source retries + PMAL state laws + article parser patched (v8)")
