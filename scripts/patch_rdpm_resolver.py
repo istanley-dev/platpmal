@@ -7,9 +7,9 @@ s = path.read_text(encoding="utf-8")
 
 # Article suffixes such as 197-A are attached to the number. A spaced dash in
 # "Art. 25 - O..." starts the article body and must never become suffix "O".
-# Replace the complete source line instead of trying to reproduce its escaped
-# regex text character-for-character.
-target_art_line = r'''ART_RE = re.compile(r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \t\n.]|$)")'''
+# Official Planalto HTML can split a heading as "Art." + CR/LF + "45.";
+# allow line breaks only in that whitespace slot.
+target_art_line = r'''ART_RE = re.compile(r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t\r\n]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \t\r\n.]|$)")'''
 lines = s.splitlines()
 art_indexes = [i for i, line in enumerate(lines) if line.startswith("ART_RE = re.compile(")]
 if len(art_indexes) != 1:
@@ -77,4 +77,4 @@ ns, n = re.subn(pat, lambda _m: new_block, s, count=1, flags=re.S)
 if n != 1:
     raise SystemExit(f"resolver patch count={n}; expected 1")
 path.write_text(ns, encoding="utf-8")
-print("RDPM resolver + article header parser patched (v5)")
+print("RDPM resolver + multiline article header parser patched (v6)")
