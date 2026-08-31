@@ -48,7 +48,7 @@ SOURCES = {
     "CPPM": ("Código de Processo Penal Militar", "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1002compilado.htm", "html"),
     "L8069": ("Estatuto da Criança e do Adolescente", "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm", "html"),
     "L9503": ("Código de Trânsito Brasileiro", "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm", "html"),
-    "Lei5346": ("Lei Estadual 5.346/1992", "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/1992/845/845_texto_integral.pdf", "pdf"),
+    "Lei5346": ("Lei Estadual 5.346/1992", "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/892/param/2/set/2/get/2416565e/dist/", "pdf"),
 }
 
 PLAN = [
@@ -56,7 +56,7 @@ PLAN = [
 (2,1,"CPM — arts. 1º a 12",[("CPM","1","12")]),(2,2,"CPPM — arts. 1º a 28",[("CPPM","1","28")]),(2,3,"CPM — arts. 13 a 25",[("CPM","13","25")]),(2,4,"CPPM — arts. 29 a 46",[("CPPM","29","46")]),(2,5,"CPM — arts. 26 a 29 e 48 a 68",[("CPM","26","29"),("CPM","48","68")]),(2,6,"CPPM — arts. 243 a 271",[("CPPM","243","271")]),(2,7,"CPM — arts. 69 a 108",[("CPM","69","108")]),(2,8,"CPPM — arts. 451 a 460",[("CPPM","451","460")]),(2,9,"CPM — arts. 109 a 135",[("CPM","109","135")]),(2,10,"ECA — arts. 1º a 32",[("L8069","1","32")]),(2,11,"ECA — arts. 33 a 73",[("L8069","33","73")]),(2,12,"CPM — arts. 136 a 194",[("CPM","136","194")]),(2,13,"CTB — arts. 1º a 73",[("L9503","1","73")]),(2,14,"CPM — arts. 195 a 253",[("CPM","195","253")]),(2,15,"CPM — arts. 254 a 310",[("CPM","254","310")]),(2,16,"CPM — arts. 311 a 354",[("CPM","311","354")]),(2,17,"ECA — arts. 74 a 109",[("L8069","74","109")]),(2,18,"CTB — arts. 74 a 129-B",[("L9503","74","129B")]),(2,19,"CTB — arts. 130 a 200",[("L9503","130","200")]),(2,20,"ECA — arts. 110 a 163",[("L8069","110","163")]),(2,21,"ECA — arts. 194 a 197",[("L8069","194","197")]),(2,22,"ECA — arts. 197-A a 224",[("L8069","197A","224")]),(2,23,"ECA — arts. 225 a 244-C",[("L8069","225","244C")]),(2,24,"CTB — arts. 201 a 268-A",[("L9503","201","268A")]),(2,25,"CTB — arts. 269 a 341",[("L9503","269","341")]),(2,26,"ECA — arts. 245 a 267",[("L8069","245","267")]),
 (3,1,"Lei Estadual 5.346/1992 — arts. 1º a 14",[("Lei5346","1","14")]),(3,2,"Lei Estadual 5.346/1992 — arts. 15 a 30",[("Lei5346","15","30")]),(3,3,"Lei Estadual 5.346/1992 — arts. 31 a 52",[("Lei5346","31","52")]),(3,4,"Lei Estadual 5.346/1992 — arts. 53 a 88",[("Lei5346","53","88")]),(3,5,"Lei Estadual 5.346/1992 — arts. 89 a 104",[("Lei5346","89","104")]),(3,6,"Lei Estadual 5.346/1992 — arts. 105 a 135",[("Lei5346","105","135")]),(3,7,"Decreto Estadual 37.042/1996 — arts. 1º a 25",[("RD","1","25")]),(3,8,"Decreto Estadual 37.042/1996 — arts. 26 a 38",[("RD","26","38")]),(3,9,"Decreto Estadual 37.042/1996 — arts. 39 a 66",[("RD","39","66")]),(3,10,"Decreto Estadual 37.042/1996 — arts. 67 a 81",[("RD","67","81")]),(3,11,"Decreto Estadual 37.042/1996 — arts. 82 a 107",[("RD","82","107")]),]
 
-ART_RE = re.compile(r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t]*(\d+)(?:[º°oO])?(?:[ \t]*[-–—‑][ \t]*([A-Za-z]{1,3}))?[ \t]*(?:[.º°])?(?=[ \t\n])")
+ART_RE = re.compile(r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t\r\n]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \t\r\n.]|$)")
 
 def art_code(v: str) -> int:
     v = re.sub(r"[\s.º°oO\-–—‑]", "", str(v)).upper(); m = re.match(r"^(\d+)([A-Z]*)$", v)
@@ -75,8 +75,21 @@ def parse_articles(text: str) -> dict[str,str]:
         if len(block)>=15: out[key]=block
     return out
 
+def http_get(url: str, timeout=(12,45), attempts: int=3):
+    last=None
+    for attempt in range(attempts):
+        try:
+            r=S.get(url,timeout=timeout,allow_redirects=True)
+            r.raise_for_status()
+            return r
+        except requests.RequestException as exc:
+            last=exc
+            if attempt+1<attempts:
+                time.sleep(1.5*(attempt+1))
+    raise last
+
 def fetch_html(url: str) -> str:
-    r=S.get(url,timeout=45); r.raise_for_status(); enc=r.apparent_encoding or r.encoding or "latin-1"
+    r=http_get(url,timeout=(12,45)); enc=r.apparent_encoding or r.encoding or "latin-1"
     try: html=r.content.decode(enc,errors="replace")
     except LookupError: html=r.content.decode("latin-1",errors="replace")
     soup=BeautifulSoup(html,"html.parser")
@@ -89,32 +102,58 @@ def fetch_html(url: str) -> str:
 def fetch_pdf_text(url: str) -> str:
     from io import BytesIO
     from pypdf import PdfReader
-    r=S.get(url,timeout=60); r.raise_for_status(); return clean_lines("\n".join((p.extract_text() or "") for p in PdfReader(BytesIO(r.content)).pages))
+    r=http_get(url,timeout=(12,60)); return clean_lines("\n".join((p.extract_text() or "") for p in PdfReader(BytesIO(r.content)).pages))
 
 def resolve_rdpm() -> tuple[str,str]:
-    urls=["https://sistemas.pm.al.gov.br/sistemas/public/sislegis/publico/index/id/1/dist/1495053443/ordergrid/link_externo_DESC/startgrid/260","https://sistemas.pm.al.gov.br/sistemas/public/sislegis/publico/index/dist/1484785043/perPagegrid/50/ordergrid/descricao_ASC/startgrid/1250"]
-    for page_url in urls:
+    # Official PMAL Sislegis record for Decreto Estadual 37.042/1996 (RDPMAL).
+    direct_urls=[
+        "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/792/param/2/set/1/get/c8f191d3/dist/",
+    ]
+    listing_urls=[
+        "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/index/id/1/ordergrid/descricao_ASC/startgrid/260",
+        "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/index/ordergrid/descricao_ASC/startgrid/1250",
+    ]
+
+    def extract_document(url: str):
+        rr=http_get(url,timeout=(12,60),attempts=3)
+        ct=(rr.headers.get("content-type") or "").lower()
+        if rr.content.startswith(b"%PDF") or "pdf" in ct or "save" in ct:
+            from io import BytesIO
+            from pypdf import PdfReader
+            text=clean_lines("\n".join((p.extract_text() or "") for p in PdfReader(BytesIO(rr.content)).pages))
+        else:
+            text=clean_lines(BeautifulSoup(rr.text,"html.parser").get_text("\n"))
+        arts=parse_articles(text)
+        if all(str(n) in arts for n in (1,25,38,66,81,107)):
+            return text,rr.url
+        return None
+
+    for url in direct_urls:
         try:
-            r=S.get(page_url,timeout=45); r.raise_for_status(); soup=BeautifulSoup(r.text,"html.parser"); target=None
+            found=extract_document(url)
+            if found: return found
+        except Exception:
+            pass
+
+    for page_url in listing_urls:
+        try:
+            r=http_get(page_url,timeout=(12,45),attempts=3); soup=BeautifulSoup(r.text,"html.parser")
             for tr in soup.find_all("tr"):
                 txt=tr.get_text(" ",strip=True)
-                if "37.042" in txt and "REGULAMENTO DISCIPLINAR" in txt.upper(): target=tr; break
-            if not target: continue
-            links=[urljoin(page_url,a["href"]) for a in target.find_all("a",href=True)]
-            for found in re.findall(r"https?://[^\"'<> ]+",str(target)): links.append(found.replace("&amp;","&"))
-            for link in dict.fromkeys(links):
-                try:
-                    rr=S.get(link,timeout=45,allow_redirects=True); rr.raise_for_status(); ct=(rr.headers.get("content-type") or "").lower()
-                    if rr.content.startswith(b"%PDF") or "pdf" in ct:
-                        from io import BytesIO
-                        from pypdf import PdfReader
-                        rd=clean_lines("\n".join((p.extract_text() or "") for p in PdfReader(BytesIO(rr.content)).pages))
-                    else: rd=clean_lines(BeautifulSoup(rr.text,"html.parser").get_text("\n"))
-                    arts=parse_articles(rd)
-                    if all(str(n) in arts for n in (1,25,38,66,81,107)): return rd,rr.url
-                except Exception: continue
-        except Exception: continue
-    raise RuntimeError("Não foi possível resolver uma fonte integral do RDPMAL no PMAL Sislegis")
+                if "37.042" not in txt or "REGULAMENTO DISCIPLINAR" not in txt.upper():
+                    continue
+                links=[urljoin(r.url,a["href"]) for a in tr.find_all("a",href=True)]
+                for found_url in re.findall(r"https?://[^\"'<> ]+",str(tr)):
+                    links.append(found_url.replace("&amp;","&"))
+                for link in dict.fromkeys(links):
+                    try:
+                        found=extract_document(link)
+                        if found: return found
+                    except Exception:
+                        continue
+        except Exception:
+            continue
+    raise RuntimeError("Não foi possível resolver/validar a fonte integral oficial do RDPMAL no PMAL Sislegis")
 
 def select_range(articles: dict[str,str],lo: str,hi: str):
     pairs=sorted(articles.items(),key=lambda kv:art_code(kv[0]))
