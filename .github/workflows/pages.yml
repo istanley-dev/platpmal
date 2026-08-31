@@ -1,5 +1,4 @@
 name: Publicar no GitHub Pages
-# Mantido explícito para permitir republicação segura após commits gerados por workflows.
 
 on:
   push:
@@ -16,7 +15,55 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o site
+        uses: actions/checkout@v4
+
+      - name: Auditar Banco de Leis e plano DSO antes de publicar
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          root=pathlib.Path('.')
+          manifest_path=root/'law-reading'/'manifest.json'
+          bank_path=root/'law-reading'/'bank.json'
+          if not manifest_path.exists(): raise SystemExit('BLOQUEADO: law-reading/manifest.json ausente')
+          if not bank_path.exists(): raise SystemExit('BLOQUEADO: law-reading/bank.json ausente')
+          m=json.loads(manifest_path.read_text(encoding='utf-8'))
+          b=json.loads(bank_path.read_text(encoding='utf-8'))
+          if m.get('version') != 5 or m.get('format') != 'static-integral-law-bank':
+              raise SystemExit('BLOQUEADO: manifesto DSO não é V5 estático')
+          if m.get('runtimeNetworkRequired') is not False:
+              raise SystemExit('BLOQUEADO: Meta de Leitura ainda depende de rede em runtime')
+          days=m.get('days') or []
+          if m.get('totalDays') != 65 or len(days) != 65:
+              raise SystemExit(f'BLOQUEADO: cobertura DSO inválida ({len(days)}/65)')
+          if b.get('format') != 'pmal-static-integral-bank' or len(b.get('laws',{})) < 24:
+              raise SystemExit('BLOQUEADO: Banco de Leis integral incompleto')
+          seen=set()
+          for d in days:
+              key=(d.get('cycle'),d.get('day'))
+              if key in seen: raise SystemExit(f'BLOQUEADO: dia duplicado {key}')
+              seen.add(key)
+              p=root/d['path']
+              if not p.exists(): raise SystemExit(f'BLOQUEADO: arquivo diário ausente {p}')
+              x=json.loads(p.read_text(encoding='utf-8'))
+              cards=[a for sec in x.get('sections',[]) for a in sec.get('articles',[])]
+              if x.get('version') != 5 or x.get('format') != 'static-integral-law-bank':
+                  raise SystemExit(f'BLOQUEADO: formato inválido em {p}')
+              if not cards or len(cards) != x.get('articleCount') or len(cards) != d.get('articleCount'):
+                  raise SystemExit(f'BLOQUEADO: cobertura divergente em {p}')
+          html=(root/'index.html').read_text(encoding='utf-8')
+          for needle in ('PMAL_DSO_READING_CARDS_V3_START','PMAL_DSO_STATIC_BANK_V5','static-integral-law-bank'):
+              if needle not in html: raise SystemExit(f'BLOQUEADO: UI da Meta de Leitura incompleta ({needle})')
+          if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html:
+              raise SystemExit('BLOQUEADO: leitor antigo V2 reapareceu')
+          print('OK: publicação autorizada — Banco integral estático e 65 dias DSO íntegros.')
+          PY
+
   deploy:
+    needs: audit
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
