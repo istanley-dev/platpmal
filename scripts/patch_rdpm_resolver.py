@@ -61,8 +61,8 @@ new_block = r'''def resolve_rdpm() -> tuple[str,str]:
 def select_range'''
 
 pat = r'def resolve_rdpm\(\) -> tuple\[str,str\]:.*?\ndef select_range'
-ns, n = re.subn(pat, new_block, s, count=1, flags=re.S)
+ns, n = re.subn(pat, lambda _m: new_block, s, count=1, flags=re.S)
 if n != 1:
     raise SystemExit(f"resolver patch count={n}; expected 1")
 path.write_text(ns, encoding="utf-8")
-print("RDPM resolver patched to current official PMAL source (v2)")
+print("RDPM resolver patched to current official PMAL source (v3)")
