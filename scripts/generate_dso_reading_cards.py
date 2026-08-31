@@ -17,29 +17,28 @@ OUT.mkdir(exist_ok=True)
 def scope_text(prefix: str, text: str) -> str:
     """Keep only the legal corpus targeted by the DSO range.
 
-    The Planalto Constitution page contains the permanent Constitution followed by
-    the ADCT. Both restart article numbering. DSO references such as CF art. 5º and
-    CF arts. 18–36 refer to the permanent Constitution, so parsing must stop before
-    the ADCT heading or later ADCT articles can overwrite the constitutional ones.
+    Planalto serves the permanent Constitution and the ADCT on one page. Both use
+    article numbers from 1 upward. DSO references to "CF" mean the permanent text,
+    so the cut must happen at the ADCT heading that occurs *after* CF art. 250.
     """
     if prefix == "CF":
-        markers = [
-            r"(?i)ATO\s+DAS\s+DISPOSI[CÇ][OÕ]ES\s+CONSTITUCIONAIS\s+TRANSIT[OÓ]RIAS",
-            r"(?i)ADCT\b",
-        ]
-        cuts = []
-        for pat in markers:
-            m = re.search(pat, text)
-            if m:
-                cuts.append(m.start())
-        if cuts:
-            text = text[:min(cuts)]
-        # Safety: the permanent Constitution must still reach art. 250, while
-        # ADCT-specific art. 18-A must not be present in the scoped text.
-        if not re.search(r"(?mi)^\s*Art\.\s*250\b", text):
-            raise RuntimeError("CF: recorte anterior ao ADCT não alcançou o art. 250")
-        if re.search(r"(?mi)^\s*Art\.\s*18[-–—‑]A\b", text):
-            raise RuntimeError("CF: conteúdo do ADCT vazou para a Constituição permanente")
+        art250_matches = list(re.finditer(r"(?mi)^\s*Art\.[ \t\r\n]*250(?:\.?[º°oO])?(?=[. \t\r\n]|$)", text))
+        if not art250_matches:
+            raise RuntimeError("CF: art. 250 da Constituição permanente não foi localizado")
+        anchor = art250_matches[0].start()
+
+        heading_re = re.compile(
+            r"(?i)ATO[ \t\r\n]+DAS[ \t\r\n]+DISPOSI[CÇ][OÕ]ES[ \t\r\n]+CONSTITUCIONAIS[ \t\r\n]+TRANSIT[OÓ]RIAS"
+        )
+        headings = [m.start() for m in heading_re.finditer(text) if m.start() > anchor]
+        if not headings:
+            raise RuntimeError("CF: título do ADCT posterior ao art. 250 não foi localizado")
+        text = text[:min(headings)]
+
+        if not re.search(r"(?mi)^\s*Art\.[ \t\r\n]*250(?:\.?[º°oO])?(?=[. \t\r\n]|$)", text):
+            raise RuntimeError("CF: recorte anterior ao ADCT não preservou o art. 250")
+        if re.search(r"(?mi)^\s*Art\.[ \t\r\n]*18[-–—‑]A\b", text):
+            raise RuntimeError("CF: art. 18-A do ADCT vazou para a Constituição permanente")
     return text
 
 
@@ -66,7 +65,6 @@ def numeric_base(key: str) -> int:
 
 
 def main():
-    # Remove obsolete day payloads from previous formats in a clean, deterministic build.
     for old in OUT.glob("c*-d*.txt"):
         old.unlink()
     for old in OUT.glob("c*-d*.json"):
@@ -91,14 +89,11 @@ def main():
         }
         time.sleep(.12)
 
-    # Hard guard against the exact CF/ADCT collision found during audit.
     cf = cache.get("CF", {})
-    if "5" not in cf or "18" not in cf or "36" not in cf:
+    if "5" not in cf or "18" not in cf or "36" not in cf or "250" not in cf:
         raise RuntimeError("CF: artigos permanentes esperados não foram reconhecidos")
     if "18A" in cf:
         raise RuntimeError("CF: art. 18-A do ADCT apareceu no corpus da Constituição")
-    if "250" not in cf:
-        raise RuntimeError("CF: corpus permanente terminou antes do art. 250")
 
     manifest = {
         "version": 4,
@@ -138,7 +133,7 @@ def main():
 
             src = sources[prefix]
             range_label = "texto integral da lei" if lo == "*" else f"arts. {lo} a {hi}"
-            cards = [{"key": k, "text": text} for k, text in selected]
+            cards = [{"key": k, "text": article_text} for k, article_text in selected]
             total += len(cards)
             sections.append({
                 "prefix": prefix,
@@ -183,11 +178,10 @@ def main():
 
     for entry in manifest["days"]:
         data = json.loads((ROOT / entry["path"]).read_text(encoding="utf-8"))
-        exact = sum(len(s.get("articles", [])) for s in data.get("sections", []))
+        exact = sum(len(sec.get("articles", [])) for sec in data.get("sections", []))
         if exact != entry["articleCount"]:
             raise RuntimeError(f"{entry['path']}: manifesto={entry['articleCount']} json={exact}")
 
-    # Named content guards for the first day of each PDF cycle.
     c1d1 = json.loads((OUT / "c1-d01.json").read_text(encoding="utf-8"))
     cf5 = c1d1["sections"][0]["articles"][0]["text"]
     if "direitos e deveres individuais e coletivos" not in cf5.lower():
