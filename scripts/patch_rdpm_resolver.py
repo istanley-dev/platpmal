@@ -65,4 +65,4 @@ ns, n = re.subn(pat, new_block, s, count=1, flags=re.S)
 if n != 1:
     raise SystemExit(f"resolver patch count={n}; expected 1")
 path.write_text(ns, encoding="utf-8")
-print("RDPM resolver patched to current official PMAL source")
+print("RDPM resolver patched to current official PMAL source (v2)")
