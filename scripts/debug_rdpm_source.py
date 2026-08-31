@@ -2,59 +2,68 @@
 from __future__ import annotations
 
 import re
-from io import BytesIO
-
 import requests
-from pypdf import PdfReader
+from bs4 import BeautifulSoup
 
-URL = "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/792/param/2/set/1/get/c8f191d3/dist/"
-UA = "Mozilla/5.0 (PMAL study platform RDPM diagnostics; +https://github.com/istanley-dev/platpmal)"
+UA = "Mozilla/5.0 (PMAL study platform article diagnostics; +https://github.com/istanley-dev/platpmal)"
+S = requests.Session()
+S.headers.update({"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9"})
 
-r = requests.get(URL, headers={"User-Agent": UA, "Accept-Language": "pt-BR,pt;q=0.9"}, timeout=60, allow_redirects=True)
-print("STATUS", r.status_code, flush=True)
-print("FINAL", r.url, flush=True)
-print("CONTENT-TYPE", r.headers.get("content-type"), flush=True)
-print("CONTENT-LENGTH", len(r.content), flush=True)
-print("FIRST-BYTES", repr(r.content[:80]), flush=True)
-r.raise_for_status()
-
-if not r.content.startswith(b"%PDF"):
-    print("NOT_PDF_SAMPLE", r.text[:5000], flush=True)
-    raise SystemExit(2)
-
-reader = PdfReader(BytesIO(r.content))
-print("PAGES", len(reader.pages), flush=True)
-page_texts = []
-for i, page in enumerate(reader.pages, 1):
-    txt = page.extract_text() or ""
-    page_texts.append(txt)
-    print(f"PAGE {i} CHARS {len(txt)}", flush=True)
-    if i <= 3:
-        print(f"--- PAGE {i} SAMPLE ---", flush=True)
-        print(txt[:8000], flush=True)
-
-text = "\n".join(page_texts).replace("\xa0", " ").replace("\u00ad", "")
-print("TOTAL_CHARS", len(text), flush=True)
-
-patterns = {
-    "strict_current": r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t]*(\d+)(?:[º°oO])?(?:[ \t]*[-–—‑][ \t]*([A-Za-z]{1,3}))?[ \t]*(?:[.º°])?(?=[ \t\n])",
-    "loose_art": r"(?i)\bArt(?:igo)?\.?\s*(\d{1,3})(?:\s*[º°oO])?(?:\s*[-–—‑]?\s*([A-Za-z]{1,3}))?",
-    "number_prefix": r"(?mi)^\s*(\d{1,3})\s*[º°oO]?\s*[-–—.:]",
+SOURCES = {
+    "L14133": (
+        "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm",
+        [45,71,72,114,150,151,194],
+    ),
+    "CPM": (
+        "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+        [13,25,26,48,68,108,135,194,253,254,354],
+    ),
 }
-for name, pat in patterns.items():
-    matches = list(re.finditer(pat, text))
-    labels = []
-    for m in matches:
-        labels.append(m.group(1) + ((m.group(2) or "").upper() if m.lastindex and m.lastindex >= 2 else ""))
-    print("PATTERN", name, "COUNT", len(matches), flush=True)
-    print("LABELS_HEAD", labels[:80], flush=True)
-    print("LABELS_TAIL", labels[-40:], flush=True)
-    for boundary in ("1", "25", "38", "66", "81", "107"):
-        print("BOUNDARY", name, boundary, boundary in labels, flush=True)
 
-for boundary in (1, 25, 38, 66, 81, 107):
-    print(f"--- CONTEXT {boundary} ---", flush=True)
-    rx = re.compile(rf"(?is).{{0,250}}(?:Art(?:igo)?\.?\s*)?{boundary}\s*[º°oO]?.{{0,700}}")
-    hits = rx.findall(text)
-    for h in hits[:5]:
-        print(repr(h), flush=True)
+PATTERNS = {
+    "candidate_v5": re.compile(r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \t\n.]|$)"),
+    "header_flexible": re.compile(r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t]*(\d+)(?:[ \t]*\.?[ \t]*[º°oO])?(?:[ \t]*[-–—‑][ \t]*([A-Z]{1,3})(?=[. \t\n]))?(?=[. \t\n-–—‑]|$)"),
+}
+
+def clean_lines(text: str) -> str:
+    text=text.replace("\xa0"," ").replace("\u00ad","")
+    text=re.sub(r"[ \t]+"," ",text)
+    text=re.sub(r" *\n *","\n",text)
+    text=re.sub(r"\n{3,}","\n\n",text)
+    return text.strip()
+
+def fetch_html(url: str) -> str:
+    r=S.get(url,timeout=45); r.raise_for_status(); enc=r.apparent_encoding or r.encoding or "latin-1"
+    try: html=r.content.decode(enc,errors="replace")
+    except LookupError: html=r.content.decode("latin-1",errors="replace")
+    soup=BeautifulSoup(html,"html.parser")
+    for tag in soup.find_all(["script","style","strike","s","del"]): tag.decompose()
+    for tag in soup.find_all(style=True):
+        attrs=getattr(tag,"attrs",None)
+        if attrs and "line-through" in str(attrs.get("style","")).lower(): tag.decompose()
+    return clean_lines(soup.get_text("\n"))
+
+for name,(url,boundaries) in SOURCES.items():
+    print(f"\n===== {name} =====", flush=True)
+    text=fetch_html(url)
+    print("CHARS",len(text),flush=True)
+    for pname,pat in PATTERNS.items():
+        labels=[]
+        for m in pat.finditer(text):
+            labels.append(m.group(1)+((m.group(2) or "").upper() if m.lastindex and m.lastindex>=2 else ""))
+        print("PATTERN",pname,"COUNT",len(labels),flush=True)
+        print("MISSING",[str(b) for b in boundaries if str(b) not in labels],flush=True)
+        print("NEAR_LABELS",[(x,labels[max(0,i-2):i+3]) for x in map(str,boundaries) for i,v in enumerate(labels) if v==x][:30],flush=True)
+
+    for b in boundaries:
+        print(f"\n--- {name} BOUNDARY {b} ---",flush=True)
+        # Show every line containing the literal article marker, preserving repr.
+        rx_line=re.compile(rf"(?i)^.*\bArt(?:igo)?\.?\s*{b}(?!\d).*$")
+        line_hits=[ln for ln in text.splitlines() if rx_line.search(ln)]
+        print("LINE_HITS",len(line_hits),flush=True)
+        for ln in line_hits[:12]: print("LINE",repr(ln),flush=True)
+        # Also show raw context if the marker and number were separated by newlines/tags.
+        rx_ctx=re.compile(rf"(?is).{{0,180}}\bArt(?:igo)?\.?\s*{b}(?!\d).{{0,350}}")
+        hits=rx_ctx.findall(text)
+        print("CTX_HITS",len(hits),flush=True)
+        for h in hits[:5]: print("CTX",repr(h),flush=True)
