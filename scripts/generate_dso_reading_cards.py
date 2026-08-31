@@ -13,20 +13,52 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "law-reading"
 OUT.mkdir(exist_ok=True)
 
+# Official pages are inconsistent: older military codes often use "Art 20."
+# (without a dot after Art), while other sources use Art., Artigo or ARTIGO.
+# Do not make this case-insensitive: top-level headings are capitalized, whereas
+# ordinary internal references are very often lowercase "art.".
+ARTICLE_RE = re.compile(
+    r"(?m)^[^\S\n]*(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*(\d+)"
+    r"(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \t\r\n.]|$)"
+)
+
+# Consolidated official pages sometimes represent a revoked article only in a
+# combined revocation notice, so there is no standalone heading for the parser.
+# These placeholders preserve the PDF's numeric reading range without inventing
+# substantive legal text.
+KNOWN_REVOKED = {
+    ("CPPM", "459"): "Art. 459. Revogado pela Lei nº 8.236, de 20 de setembro de 1991.",
+    ("L8069", "248"): "Art. 248. Revogado pela Lei nº 13.431, de 4 de abril de 2017.",
+}
+
+
+def parse_articles_exact(text: str) -> dict[str, str]:
+    text = base.clean_lines(text)
+    matches = list(ARTICLE_RE.finditer(text))
+    out: dict[str, str] = {}
+    for i, m in enumerate(matches):
+        key = m.group(1) + ((m.group(2) or "").upper())
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        block = base.clean_lines(text[m.start():end])
+        if len(block) < 15:
+            continue
+        # Keep the first top-level occurrence. This is important for statutes
+        # such as ECA, whose final provisions quote articles from other laws;
+        # those later quoted "Art. 121" headings must not overwrite ECA art. 121.
+        if key not in out:
+            out[key] = block
+    return out
+
 
 def scope_text(prefix: str, text: str) -> str:
-    """Keep only the legal corpus targeted by the DSO range.
-
-    Planalto serves the permanent Constitution and the ADCT on one page. Both use
-    article numbers from 1 upward. DSO references to "CF" mean the permanent text,
-    so the cut must happen at the ADCT heading that occurs *after* CF art. 250.
-    """
+    """Keep only the legal corpus targeted by the DSO range."""
     if prefix == "CF":
-        art250_matches = list(re.finditer(r"(?mi)^\s*Art\.[ \t\r\n]*250(?:\.?[º°oO])?(?=[. \t\r\n]|$)", text))
+        art250_matches = list(re.finditer(
+            r"(?m)^\s*Art\.[ \t\r\n]*250(?:\.?[º°oO])?(?=[. \t\r\n]|$)", text
+        ))
         if not art250_matches:
             raise RuntimeError("CF: art. 250 da Constituição permanente não foi localizado")
         anchor = art250_matches[0].start()
-
         heading_re = re.compile(
             r"(?i)ATO[ \t\r\n]+DAS[ \t\r\n]+DISPOSI[CÇ][OÕ]ES[ \t\r\n]+CONSTITUCIONAIS[ \t\r\n]+TRANSIT[OÓ]RIAS"
         )
@@ -34,10 +66,9 @@ def scope_text(prefix: str, text: str) -> str:
         if not headings:
             raise RuntimeError("CF: título do ADCT posterior ao art. 250 não foi localizado")
         text = text[:min(headings)]
-
-        if not re.search(r"(?mi)^\s*Art\.[ \t\r\n]*250(?:\.?[º°oO])?(?=[. \t\r\n]|$)", text):
+        if not re.search(r"(?m)^\s*Art\.[ \t\r\n]*250(?:\.?[º°oO])?(?=[. \t\r\n]|$)", text):
             raise RuntimeError("CF: recorte anterior ao ADCT não preservou o art. 250")
-        if re.search(r"(?mi)^\s*Art\.[ \t\r\n]*18[-–—‑]A\b", text):
+        if re.search(r"(?m)^\s*Art\.[ \t\r\n]*18[-–—‑]A\b", text):
             raise RuntimeError("CF: art. 18-A do ADCT vazou para a Constituição permanente")
     return text
 
@@ -77,9 +108,12 @@ def main():
     for idx, prefix in enumerate(prefixes, 1):
         print(f"[{idx}/{len(prefixes)}] {prefix}", flush=True)
         title, url, kind, text = source_text(prefix)
-        articles = base.parse_articles(text)
+        articles = parse_articles_exact(text)
         if not articles:
             raise RuntimeError(f"{prefix}: nenhum artigo reconhecido em {url}")
+        for (rp, key), notice in KNOWN_REVOKED.items():
+            if rp == prefix and key not in articles:
+                articles[key] = notice
         cache[prefix] = articles
         sources[prefix] = {
             "title": title,
