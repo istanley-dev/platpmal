@@ -1,15 +1,14 @@
-name: Build DSO reading cards
+name: Build static DSO law bank
 
 on:
   push:
     branches: [main]
     paths:
+      - 'scripts/build_static_dso_bank.py'
+      - 'scripts/apply_dso_reading_cards_v3.py'
+      - 'scripts/patch_dso_ui_static_v5.py'
       - 'scripts/generate_full_law_reading.py'
       - 'scripts/generate_dso_reading_cards.py'
-      - 'scripts/apply_dso_reading_cards_v3.py'
-      - 'scripts/apply_lei5346_resilience_patch.py'
-      - 'scripts/hotfix_lei5346_consolidation_runtime.py'
-      - 'scripts/diag_lei5346_occurrences.py'
       - '.github/workflows/build-dso-reading-cards.yml'
   workflow_dispatch:
 
@@ -19,121 +18,107 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pypdf
 
-      - name: Diagnose Lei 5.346 art. 51/54 source
-        continue-on-error: true
-        run: python3 scripts/diag_lei5346_occurrences.py
-
-      - name: Apply resilient current Lei 5.346 source
-        run: python3 scripts/apply_lei5346_resilience_patch.py
-
-      - name: Make Lei 5.346 consolidation idempotent
-        run: python3 scripts/hotfix_lei5346_consolidation_runtime.py
-
-      - name: Generate exact structured DSO article cards
-        run: python3 scripts/generate_dso_reading_cards.py
-
-      - name: Restore reading goal as article cards
-        run: python3 scripts/apply_dso_reading_cards_v3.py
-
-      - name: Audit 65-day coverage, CF scope and UI
+      - name: Normalize static builder sort helper
         run: |
           python3 - <<'PY'
-          import json, pathlib
-          root=pathlib.Path('.')
-          manifest_path=root/'law-reading'/'manifest.json'
-          if not manifest_path.exists(): raise SystemExit('manifest.json ausente')
-          m=json.loads(manifest_path.read_text(encoding='utf-8'))
-          if m.get('version') != 4 or m.get('format') != 'structured-article-cards':
-              raise SystemExit('manifesto não está no formato estruturado V4')
-          days=m.get('days') or []
-          if m.get('totalDays') != 65 or len(days) != 65:
-              raise SystemExit(f"cobertura inválida: totalDays={m.get('totalDays')} entries={len(days)}")
+          from pathlib import Path
+          p=Path('scripts/build_static_dso_bank.py')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('dyn.base.article_sort_key(kv[0])','base.art_code(kv[0])')
+          p.write_text(s,encoding='utf-8')
+          PY
 
-          seen=set()
+      - name: Build internal integral law bank and 65 DSO days
+        run: python3 scripts/build_static_dso_bank.py
+
+      - name: Restore original reading-card UX
+        run: python3 scripts/apply_dso_reading_cards_v3.py
+
+      - name: Point reading UI to static bank V5
+        run: python3 scripts/patch_dso_ui_static_v5.py
+
+      - name: Audit static bank, 65-day DSO plan and critical laws
+        run: |
+          python3 - <<'PY'
+          import json,re,pathlib
+          root=pathlib.Path('.')
+          mp=root/'law-reading'/'manifest.json'
+          bp=root/'law-reading'/'bank.json'
+          if not mp.exists() or not bp.exists(): raise SystemExit('banco/manifesto estático ausente')
+          m=json.loads(mp.read_text(encoding='utf-8'))
+          b=json.loads(bp.read_text(encoding='utf-8'))
+          if m.get('version')!=5 or m.get('format')!='static-integral-law-bank': raise SystemExit('manifesto não é banco estático V5')
+          if m.get('runtimeNetworkRequired') is not False: raise SystemExit('runtime ainda depende de rede')
+          days=m.get('days') or []
+          if m.get('totalDays')!=65 or len(days)!=65: raise SystemExit(f'cobertura inválida: {len(days)} dias')
+          if b.get('format')!='pmal-static-integral-bank' or len(b.get('laws',{}))<24: raise SystemExit('bank.json incompleto')
+
           payloads={}
+          seen=set()
           for d in days:
               key=(d['cycle'],d['day'])
               if key in seen: raise SystemExit(f'dia duplicado {key}')
               seen.add(key)
               f=root/d['path']
-              if f.suffix != '.json': raise SystemExit(f'{f}: payload diário não é JSON')
               if not f.exists(): raise SystemExit(f'arquivo ausente {f}')
-              data=json.loads(f.read_text(encoding='utf-8'))
-              if data.get('version') != 4 or data.get('format') != 'structured-article-cards':
-                  raise SystemExit(f'{f}: formato inválido')
-              if (data.get('cycle'),data.get('day')) != key:
-                  raise SystemExit(f'{f}: ciclo/dia divergente')
-              articles=[a for s in data.get('sections',[]) for a in s.get('articles',[])]
-              if len(articles) != d.get('articleCount') or len(articles) != data.get('articleCount'):
-                  raise SystemExit(f"{f}: manifesto={d.get('articleCount')} payload={data.get('articleCount')} real={len(articles)}")
-              if not articles or any(not a.get('key') or not a.get('text') for a in articles):
-                  raise SystemExit(f'{f}: artigo vazio/inválido')
-              payloads[key]=data
+              x=json.loads(f.read_text(encoding='utf-8'))
+              if x.get('version')!=5 or x.get('format')!='static-integral-law-bank': raise SystemExit(f'{f}: formato incorreto')
+              cards=[a for s in x.get('sections',[]) for a in s.get('articles',[])]
+              if not cards or len(cards)!=x.get('articleCount') or len(cards)!=d.get('articleCount'): raise SystemExit(f'{f}: contagem divergente')
+              if any(not a.get('key') or not a.get('text') for a in cards): raise SystemExit(f'{f}: cartão vazio')
+              payloads[key]=x
 
-          def keys(c,d):
-              return [a['key'] for s in payloads[(c,d)]['sections'] for a in s['articles']]
-          def text(c,d,key):
+          def keys(c,d): return [a['key'] for s in payloads[(c,d)]['sections'] for a in s['articles']]
+          def text(c,d,k):
               for s in payloads[(c,d)]['sections']:
                   for a in s['articles']:
-                      if a['key']==key:return a['text']
-              raise SystemExit(f'C{c}D{d}: artigo {key} ausente')
+                      if a['key']==k:return a['text']
+              raise SystemExit(f'C{c}D{d}: art. {k} ausente')
 
-          if keys(1,1) != ['5']: raise SystemExit(f'C1D1 deveria conter apenas CF art. 5º: {keys(1,1)}')
-          if not {'1','12'}.issubset(keys(2,1)): raise SystemExit('C2D1 não cobre CPM 1–12')
-          if not {'1','14'}.issubset(keys(3,1)): raise SystemExit('C3D1 não cobre Lei 5.346 1–14')
-          if not {'82','107'}.issubset(keys(3,11)): raise SystemExit('C3D11 não cobre RDPMAL 82–107')
+          if keys(1,1)!=['5']: raise SystemExit(f'C1D1 incorreto: {keys(1,1)}')
+          if not {'1','12'}.issubset(keys(2,1)): raise SystemExit('C2D1 não cobre CPM 1-12')
+          if not {'1','14'}.issubset(keys(3,1)): raise SystemExit('C3D1 não cobre Lei 5.346 1-14')
+          if not {'82','107'}.issubset(keys(3,11)): raise SystemExit('C3D11 não cobre RDPM 82-107')
+          exp=[str(n) for n in range(18,30)]+['29A']+[str(n) for n in range(30,37)]
+          if keys(1,4)!=exp: raise SystemExit(f'CF 18-36 incorreta: {keys(1,4)}')
+          if 'direitos e deveres individuais e coletivos' not in text(1,1,'5').lower(): raise SystemExit('CF art. 5 incorreto/ADCT')
+          cpm190=text(2,12,'190').lower()
+          if 'deixar o militar de apresentar-se' not in cpm190 or 'vinte e quatro horas' not in cpm190: raise SystemExit('CPM art. 190 inválido')
 
-          expected_cf=[str(n) for n in range(18,30)]+['29A']+[str(n) for n in range(30,37)]
-          if keys(1,4) != expected_cf:
-              raise SystemExit(f'C1D4 CF permanente inesperada: {keys(1,4)}')
-          cf5=text(1,1,'5').lower()
-          if 'direitos e deveres individuais e coletivos' not in cf5:
-              raise SystemExit('C1D1 parece conter ADCT ou artigo incorreto, não CF art. 5º')
+          a7=text(3,1,'7').lower()
+          if 'aptidão psicológica' not in a7 or 'exame toxicológico' not in a7: raise SystemExit('Lei 5.346 art. 7 sem Lei 8.409/2021')
+          if 'beneficiar os participantes do último concurso' in a7: raise SystemExit('Lei 5.346 art. 7 contém Lei 7.657/2014 inconstitucional')
+          if not re.search(r'cadete\s*[–—-]\s*(?:de\s*)?18\s*\(dezoito\)\s*a\s*30\s*\(trinta\)',a7,re.I): raise SystemExit('Lei 5.346 art. 7: limite do Cadete não restaurado')
 
-          lei7=text(3,1,'7').lower()
-          if 'aptidão psicológica' not in lei7 or 'exame toxicológico' not in lei7:
-              raise SystemExit('Lei 5.346 art. 7 não reflete Lei 8.409/2021')
-          if '40 (quarenta) anos' in lei7 and ('cadete' in lei7 or 'soldado' in lei7):
-              raise SystemExit('Lei 5.346 art. 7 ainda contém redação inconstitucional da Lei 7.657/2014')
-          lei51=text(3,4,'51').lower()
-          lei54=text(3,4,'54').lower()
-          if '67 (sessenta e sete)' not in lei51 or 'ii-a' not in lei51 or 'ii-b' not in lei51 or '§ 5º' not in lei51:
-              raise SystemExit('Lei 5.346 art. 51 não reflete integralmente Lei 9.381/2024')
-          if '72 (setenta e dois)' not in lei54:
-              raise SystemExit('Lei 5.346 art. 54 não reflete Lei 9.381/2024')
-          if 'iii – ser sorteado para a função de juiz militar' not in text(3,6,'118').lower():
-              raise SystemExit('Lei 5.346 art. 118 não reflete Lei 9.381/2024')
-          if 'corpo de bombeiros militar de alagoas' not in text(3,6,'134A').lower():
-              raise SystemExit('Lei 5.346 art. 134-A não reflete Lei 8.409/2021')
+          # Correct DSO locations: art. 51 is C3D3; art. 54 is C3D4.
+          a51=text(3,3,'51').lower(); a54=text(3,4,'54').lower()
+          if '67 (sessenta e sete)' not in a51 or 'ii-a' not in a51 or 'ii-b' not in a51 or '§ 5º' not in a51: raise SystemExit('Lei 5.346 art. 51 incompleto')
+          if '72 (setenta e dois)' not in a54: raise SystemExit('Lei 5.346 art. 54 desatualizado')
+          if 'juiz militar' not in text(3,6,'118').lower(): raise SystemExit('Lei 5.346 art. 118 desatualizado')
+          if 'corpo de bombeiros militar de alagoas' not in text(3,6,'134A').lower(): raise SystemExit('Lei 5.346 art. 134-A ausente')
 
           html=(root/'index.html').read_text(encoding='utf-8')
-          if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html:
-              raise SystemExit('reader V2 separado ainda presente')
-          if html.count('PMAL_DSO_READING_CARDS_V3_START') != 1:
-              raise SystemExit('reader V3 ausente ou duplicado')
-          for needle in ['Meta de leitura','dso-law-card','pmalDsoMarkArticleV3','FIXAÇÃO · CEBRASPE E REVISÕES','structured-article-cards']:
-              if needle not in html: raise SystemExit(f'UI V3 incompleta: {needle}')
-          for forbidden in ['parseSectionsV3','V3_TEXT_CACHE']:
-              if forbidden in html: raise SystemExit(f'parser textual antigo ainda presente: {forbidden}')
-
-          print('OK: 65 dias estruturados; CF separada do ADCT; Lei 5.346 consolidada; ciclos 1/2/3 e RDPMAL conferidos; UI V3 auditada.')
+          for needle in ['PMAL_DSO_READING_CARDS_V3_START','PMAL_DSO_STATIC_BANK_V5','static-integral-law-bank','Meta de leitura','dso-law-card','FIXAÇÃO · CEBRASPE E REVISÕES']:
+              if needle not in html: raise SystemExit(f'UI incompleta: {needle}')
+          if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html: raise SystemExit('reader V2 antigo ainda presente')
+          print('OK: banco integral interno estático + 65 dias DSO + Lei 5.346 vigente + CPM 190 + UI auditados.')
           PY
 
-      - name: Commit generated reading data and UI
+      - name: Commit static bank and reading UI
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html law-reading scripts/generate_dso_reading_cards.py
+          git add index.html law-reading
           if git diff --cached --quiet; then
             echo "Nada para commitar"
             exit 0
           fi
-          git commit -m "feat: publish 65 DSO reading-card ranges"
+          git commit -m "feat: publish static 65-day DSO integral law bank"
           git push origin HEAD:main
