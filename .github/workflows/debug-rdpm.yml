@@ -1,0 +1,22 @@
+name: Debug RDPM official source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/debug_rdpm_source.py'
+      - '.github/workflows/debug-rdpm.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  debug:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+      - name: Inspect RDPM source markup
+        run: python3 scripts/debug_rdpm_source.py
