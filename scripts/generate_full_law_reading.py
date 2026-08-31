@@ -82,7 +82,8 @@ def fetch_html(url: str) -> str:
     soup=BeautifulSoup(html,"html.parser")
     for tag in soup.find_all(["script","style","strike","s","del"]): tag.decompose()
     for tag in soup.find_all(style=True):
-        if "line-through" in str(tag.get("style","")).lower(): tag.decompose()
+        attrs=getattr(tag,"attrs",None)
+        if attrs and "line-through" in str(attrs.get("style","")).lower(): tag.decompose()
     return clean_lines(soup.get_text("\n"))
 
 def fetch_pdf_text(url: str) -> str:
