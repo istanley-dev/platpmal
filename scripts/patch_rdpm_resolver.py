@@ -17,6 +17,15 @@ if len(art_indexes) != 1:
 lines[art_indexes[0]] = target_art_line
 s = "\n".join(lines) + ("\n" if s.endswith("\n") else "")
 
+# Prefer the current official PMAL Sislegis copy for the Estatuto. This avoids
+# depending on the Assembly SAPL host, which is intermittently timing out in CI.
+old_lei5346 = "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/1992/845/845_texto_integral.pdf"
+new_lei5346 = "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/892/param/2/set/2/get/2416565e/dist/"
+if old_lei5346 in s:
+    s = s.replace(old_lei5346, new_lei5346, 1)
+elif new_lei5346 not in s:
+    raise SystemExit("Fonte da Lei 5.346 não encontrada para atualização")
+
 new_block = r'''def resolve_rdpm() -> tuple[str,str]:
     # Official PMAL Sislegis record for Decreto Estadual 37.042/1996 (RDPMAL).
     # The old sistemas.pm.al.gov.br hostname currently presents a TLS hostname
@@ -77,4 +86,4 @@ ns, n = re.subn(pat, lambda _m: new_block, s, count=1, flags=re.S)
 if n != 1:
     raise SystemExit(f"resolver patch count={n}; expected 1")
 path.write_text(ns, encoding="utf-8")
-print("RDPM resolver + multiline article header parser patched (v6)")
+print("PMAL state-law sources + multiline article parser patched (v7)")
