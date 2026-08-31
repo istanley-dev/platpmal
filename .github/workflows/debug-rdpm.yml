@@ -17,6 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 pypdf
       - name: Inspect RDPM source markup
         run: python3 scripts/debug_rdpm_source.py
