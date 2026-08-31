@@ -18,14 +18,26 @@ def balanced(start):
             d-=1
             if d==0:return s[start:i+1]
     return ''
-out=[]
-for name in [
-    'pendingLawReview','startLawReviewGated','startYesterdayReview','startWeekReviewGated',
-    'touchLeituraDia','readingOrder','readingPlanInfo','renderLeituraSub','renderBiblio',
-    'bibRead','ldRead','dueLawReviewCards','startLeituraQuiz',
-    'trackAnswer','answer','ans','renderQ','showRes','startQ'
-]:
+def func(name):
     m=re.search(r'function\s+'+re.escape(name)+r'\s*\([^)]*\)\s*\{',s)
-    if m:out.append('\n=== '+name+' ===\n'+balanced(m.start())+'\n')
+    return balanced(m.start()) if m else ''
+names=[
+    'pendingLawReview','startLawReviewGated','startYesterdayReview','startWeekReviewGated',
+    'computeTodaysArticles','touchLeituraDia','readingOrder','readingPlanInfo','renderLeituraSub','renderBiblio',
+    'bibRead','ldRead','bibUpdCounter','buildLawReviewDeck','dueLawReviewCards','startLeituraQuiz',
+    'trackAnswer','answer','ans','renderQ','showRes','startQ'
+]
+out=[];seen=set()
+for name in names:
+    b=func(name)
+    if b:
+        out.append('\n=== '+name+' ===\n'+b+'\n');seen.add(name)
+# Também captura automaticamente qualquer função que manipule o estado da leitura diária.
+for m in re.finditer(r'function\s+([A-Za-z_$][\w$]*)\s*\([^)]*\)\s*\{',s):
+    name=m.group(1)
+    if name in seen: continue
+    b=balanced(m.start())
+    if b and ('leituraDia' in b or 'READ_DAILY_QTY' in b or 'bibLidos' in b):
+        out.append('\n=== '+name+' ===\n'+b+'\n');seen.add(name)
 Path('law-review-functions.txt').write_text(''.join(out),encoding='utf-8')
-print('law review functions extracted')
+print('law review functions extracted:',len(seen))
