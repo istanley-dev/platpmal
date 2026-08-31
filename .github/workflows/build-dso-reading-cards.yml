@@ -88,7 +88,8 @@ jobs:
           if not {'82','107'}.issubset(keys(3,11)): raise SystemExit('C3D11 não cobre RDPM 82-107')
           exp=[str(n) for n in range(18,30)]+['29A']+[str(n) for n in range(30,37)]
           if keys(1,4)!=exp: raise SystemExit(f'CF 18-36 incorreta: {keys(1,4)}')
-          if 'direitos e deveres individuais e coletivos' not in text(1,1,'5').lower(): raise SystemExit('CF art. 5 incorreto/ADCT')
+          cf5=text(1,1,'5').lower()
+          if 'todos são iguais perante a lei' not in cf5 or 'inviolabilidade do direito à vida' not in cf5: raise SystemExit('CF art. 5 não corresponde ao texto constitucional permanente')
           cpm190=text(2,12,'190').lower()
           if 'deixar o militar de apresentar-se' not in cpm190 or 'vinte e quatro horas' not in cpm190: raise SystemExit('CPM art. 190 inválido')
 
