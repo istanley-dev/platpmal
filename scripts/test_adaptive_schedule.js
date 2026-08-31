@@ -4,7 +4,8 @@ const path = require('path');
 const vm = require('vm');
 
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
-const source = [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1]).join('\n');
+const importedReview = fs.readFileSync(path.join(__dirname, '..', 'review-20260830.js'), 'utf8');
+const source = importedReview + '\n' + [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1]).join('\n');
 
 function fakeElement(id) {
   return {
@@ -48,12 +49,12 @@ function boot(storage) {
   context.window = context; context.globalThis = context;
   vm.createContext(context);
   const exportHook = `
-;globalThis.__app={S,QQ,WEEK,QUESTION_TEXTS,REVIEW_QUESTIONS_20260823,REVIEW_QUESTIONS_20260824,REVIEW_QUESTIONS_20260825,
+;globalThis.__app={S,QQ,WEEK,DSO_WEEK_20260831,QUESTION_TEXTS,REVIEW_QUESTIONS_20260823,REVIEW_QUESTIONS_20260824,REVIEW_QUESTIONS_20260825,REVIEW_QUESTIONS_20260830,
 buildAdaptiveDay,adaptiveItemDesc,adaptiveReviewQuestions,buildDailyPool,startQ,startSimulado,startWeekReview,
 findQuestionById,SS,LS,registerStudySubject,localDateKey,studyClass,studySubjects,errorCombatItems,
 lawDailySelection,computeTodaysArticles,touchLeituraDia,recordLawMemory,lawMemoryRec,prepareQuestionContexts,questionContextText,questionUsable,getPool,
 PORTUGUESE_CONTEXT_GROUPS,extractEmbeddedPortugueseContext,
-phaseInfo,dayPlan,renderCrono,MAX_ADAPTIVE_ITEMS,DATA_ALVO_PROVA,
+phaseInfo,dayPlan,renderCrono,scheduleForDate,startReview20260830,MAX_ADAPTIVE_ITEMS,DATA_ALVO_PROVA,
 testMathAutoPool:function(){var old=dayPlan;dayPlan=function(){return {subs:['Matemática','Direito Administrativo'],target:12,primary:['Matemática','Direito Administrativo'],maintenance:['Matemática'],weak:null};};try{return buildDailyPool();}finally{dayPlan=old;}}};`;
   new vm.Script(source + exportHook, { filename: 'index.inline.js' }).runInContext(context, { timeout: 20000 });
   return context.__app;
@@ -75,16 +76,37 @@ assert.equal(app.S.plan.examDate, '2026-11-29');
 assert.equal(app.S.reviewSessions['2026-08-25'].total, 52);
 assert.equal(app.S.reviewSessions['2026-08-25'].accuracy, 86.5);
 assert.equal(app.S.studyHistory['2026-08-25'].subjects.find((x) => x.subject === 'Matemática').total, undefined);
-const everyId = app.QQ.concat(app.REVIEW_QUESTIONS_20260823, app.REVIEW_QUESTIONS_20260824, app.REVIEW_QUESTIONS_20260825).map((q) => q.id);
+const everyId = app.QQ.concat(app.REVIEW_QUESTIONS_20260823, app.REVIEW_QUESTIONS_20260824, app.REVIEW_QUESTIONS_20260825, app.REVIEW_QUESTIONS_20260830).map((q) => q.id);
 assert.equal(new Set(everyId).size, everyId.length, 'IDs devem continuar únicos');
+assert.equal(app.S.reviewSessions['2026-08-30'].total, 120);
+assert.equal(app.S.reviewSessions['2026-08-30'].correct, 83);
+assert.equal(app.S.reviewSessions['2026-08-30'].errors, 31);
+assert.equal(app.S.reviewSessions['2026-08-30'].blank, 6);
+assert.equal(app.S.reviewSessions['2026-08-30'].net, 52);
+assert.equal(app.REVIEW_QUESTIONS_20260830.length, 120);
+assert.equal(new Set(app.REVIEW_QUESTIONS_20260830.map((q) => q.id)).size, 120);
+assert(app.REVIEW_QUESTIONS_20260830.every((q) => q.reviewOnly && q.scope === 'review_only'));
+assert(app.REVIEW_QUESTIONS_20260830.every((q, i) => q.id === `sim_20260830_${String(i + 1).padStart(3, '0')}`));
+assert(app.REVIEW_QUESTIONS_20260830.every((q) => q.e && q.c && q.p && q.f && q.gabaritoStatus === 'provisorio'));
+assert.equal(app.REVIEW_QUESTIONS_20260830.filter((q) => q.originalCorrect).length, 83);
+assert.equal(app.REVIEW_QUESTIONS_20260830.filter((q) => !q.originalCorrect && !q.originalBlank).length, 31);
+assert.equal(app.REVIEW_QUESTIONS_20260830.filter((q) => q.originalBlank).length, 6);
+assert.equal(app.findQuestionById('sim_20260830_001').textId, 'sim_20260830_texto_1');
+assert.equal(app.findQuestionById('sim_20260830_120').originalNumber, 120);
+assert.equal(new Set(app.REVIEW_QUESTIONS_20260830.slice(0, 20).map((q) => q.textId)).size, 2);
+assert(app.REVIEW_QUESTIONS_20260830.slice(0, 20).every(app.questionUsable));
 
 // DSO-base solicitado e estudo previsto != estudo concluído.
 assert.deepEqual(Array.from(app.WEEK[1].subs), ['Direito Constitucional', 'Noções de Informática']);
 assert.deepEqual(Array.from(app.WEEK[2].subs), ['Direito Administrativo', 'Matemática']);
 assert.deepEqual(Array.from(app.WEEK[3].subs), ['Direito Penal', 'Direito Processual Penal']);
 const emptyFuture = app.buildAdaptiveDay('2026-08-31');
-assert(emptyFuture.groups.dso.some((x) => x.subject === 'Direito Constitucional'));
+assert(emptyFuture.groups.dso.some((x) => x.subject === 'Direitos Humanos'));
+assert(emptyFuture.groups.dso.some((x) => x.subject === 'Direito Penal Militar'));
 assert.equal(app.studySubjects('2026-08-31').length, 0, 'planejamento não vira estudo real');
+assert.deepEqual(Array.from(app.scheduleForDate('2026-09-01').subs), ['Legislação Penal Especial', 'Direito Processual Penal Militar']);
+assert(app.scheduleForDate('2026-09-04').blocks.some((x) => x.subject === 'Língua Portuguesa'));
+assert.equal(app.scheduleForDate('2026-09-06').flexible, true);
 
 // D+1 de 25/08 em 26/08, sem duplicação; Português fixo; Matemática teórica.
 const d1 = app.buildAdaptiveDay('2026-08-26');
@@ -107,7 +129,7 @@ assert.equal(app.studyClass(app.studySubjects('2026-08-02')[0]).label, 'CRÍTICO
 assert.equal(app.studyClass(app.studySubjects('2026-08-03')[0]).label, 'CRÍTICO');
 assert(Object.values(app.buildAdaptiveDay('2026-08-09').groups).flat().some((x) => x.subject === 'Direitos Humanos' && (x.offsets || []).includes(7)));
 assert.equal(Object.values(app.buildAdaptiveDay('2026-08-22').groups).flat().some((x) => x.subject === 'Direito Constitucional' && (x.offsets || []).includes(21)), false);
-assert(Object.values(app.buildAdaptiveDay('2026-08-31').groups).flat().some((x) => x.subject === 'Direito Constitucional' && (x.offsets || []).includes(30)));
+assert(app.buildAdaptiveDay('2026-08-31').summary.deferred > 0, 'revisões antigas excedentes devem ser redistribuídas sem apagar o histórico');
 assert(Object.values(app.buildAdaptiveDay('2026-08-23').groups).flat().some((x) => x.subject === 'Direitos Humanos' && (x.offsets || []).includes(21)));
 
 // Português seg/qua/sex e fusão com revisão.
@@ -123,7 +145,7 @@ const capped = app.buildAdaptiveDay('2026-08-26');
 assert(Object.values(capped.groups).flat().length <= app.MAX_ADAPTIVE_ITEMS);
 assert(capped.summary.deferred >= 0);
 assert(app.errorCombatItems('2026-08-26').length <= 3);
-assert(Object.values(app.buildAdaptiveDay('2026-08-31').groups).flat().some((x) => x.kind === 'advanced'));
+assert(app.buildAdaptiveDay('2026-08-31').summary.deferred >= 1, 'a manutenção antiga pode ser redistribuída quando a carga diária está cheia');
 
 // Matemática nunca entra automaticamente em bateria mobile.
 const mathPool = app.testMathAutoPool();
@@ -159,6 +181,9 @@ app.S.mode = 'simulado'; app.S.qty = 10; app.startQ();
 assert.equal(app.S.sq.some((q) => q.reviewOnly || q.scope === 'review_only'), false);
 app.startSimulado('equilibrado');
 assert.equal(app.S.sq.some((q) => q.reviewOnly || q.scope === 'review_only'), false);
+app.startReview20260830();
+assert.equal(app.S.sq.length, 120);
+assert(app.S.sq.every((q) => q.scope === 'review_only'));
 
 // Contextos de Português: texto único por textId e bloqueio quando faltar.
 const p1 = { id: 'ctx1', m: 'Língua Portuguesa', tx: 'Texto-base compartilhado.', e: 'Item 1.' };
@@ -221,6 +246,7 @@ assert.equal(JSON.parse(storage.getItem('pmal26')).lawMemory.cards.reloadProbe.d
 const reloaded = boot(storage);
 assert(reloaded.S.studyHistory.reloadProbe);
 assert.equal(reloaded.S.lawMemory.cards.reloadProbe.due, 123);
+assert.equal(reloaded.S.reviewSessions['2026-08-30'].questionIds.length, 120);
 assert.equal(app.findQuestionById('rev_20260825_adm_001').reviewDate, '2026-08-25');
 assert.doesNotThrow(() => app.renderCrono());
 
