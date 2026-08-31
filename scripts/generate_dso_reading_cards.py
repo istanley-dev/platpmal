@@ -43,15 +43,19 @@ def parse_articles_exact(text: str) -> dict[str, str]:
     return out
 
 
-def recover_cpm190_from_raw_html(url: str) -> str | None:
-    """Recover CPM art. 190 from raw official Planalto HTML before cleanup.
+def valid_cpm190(block: str | None) -> bool:
+    if not block:
+        return False
+    low = block.lower()
+    return (
+        "deixar o militar de apresentar-se" in low
+        and "partida do navio ou aeronave" in low
+        and "vinte e quatro horas" in low
+    )
 
-    The compiled page visually exposes the current art. 190, but its markup can
-    place the provision inside elements removed by the generic strike-through
-    cleanup. We inspect the untouched official HTML and accept only a candidate
-    containing the distinctive current wording of the article, bounded by art.
-    191. No other article uses this recovery path.
-    """
+
+def recover_cpm190_from_raw_html(url: str) -> str | None:
+    """Try the untouched official Planalto HTML before generic cleanup."""
     r = base.http_get(url, timeout=(12, 60), attempts=3)
     enc = r.apparent_encoding or r.encoding or "latin-1"
     try:
@@ -70,18 +74,12 @@ def recover_cpm190_from_raw_html(url: str) -> str | None:
     end_re = re.compile(
         r"(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*191(?:\.?[º°oO])?(?=[. \t\r\n]|$)"
     )
-
     for start in start_re.finditer(raw):
         end = end_re.search(raw, start.end())
         if not end:
             continue
         block = base.clean_lines(raw[start.start():end.start()])
-        low = block.lower()
-        if (
-            "deixar o militar de apresentar-se" in low
-            and "partida do navio ou aeronave" in low
-            and "vinte e quatro horas" in low
-        ):
+        if valid_cpm190(block):
             return block
     return None
 
@@ -109,11 +107,7 @@ def scope_text(prefix: str, text: str) -> str:
 
 
 def reader_proxy_text(official_url: str) -> str:
-    """Fallback transport only: retrieve the same official URL through Jina Reader.
-
-    This does not relax content checks. The returned text is accepted only if the
-    normal article/range audits pass later in the build.
-    """
+    """Fallback transport: render the exact same official URL through Jina Reader."""
     proxy = "https://r.jina.ai/" + official_url
     last = None
     for attempt in range(3):
@@ -133,6 +127,34 @@ def reader_proxy_text(official_url: str) -> str:
             if attempt < 2:
                 time.sleep(2.0 * (attempt + 1))
     raise RuntimeError(f"fallback de transporte falhou para {official_url}: {last}")
+
+
+def recover_cpm190(url: str) -> str | None:
+    """Recover current CPM art. 190 from the same official URL by two transports."""
+    try:
+        direct = recover_cpm190_from_raw_html(url)
+        if valid_cpm190(direct):
+            return direct
+    except Exception as exc:
+        print(f"CPM 190: HTML bruto direto falhou ({type(exc).__name__}); tentando renderização", flush=True)
+
+    rendered = reader_proxy_text(url)
+    rendered_articles = parse_articles_exact(rendered)
+    candidate = rendered_articles.get("190")
+    if valid_cpm190(candidate):
+        return candidate
+
+    # Last narrow pass over rendered text in case markdown formatting broke the
+    # line-based article parser. Still bounded by 190 -> 191 and text-validated.
+    clean = base.clean_lines(rendered)
+    start = re.search(r"Art\.?\s*190(?:\.?[º°oO])?", clean, re.I)
+    if start:
+        end = re.search(r"Art\.?\s*191(?:\.?[º°oO])?", clean[start.end():], re.I)
+        if end:
+            block = base.clean_lines(clean[start.start():start.end() + end.start()])
+            if valid_cpm190(block):
+                return block
+    return None
 
 
 def official_pdf_with_proxy(prefix: str, url: str) -> str:
@@ -190,11 +212,11 @@ def main():
         title, url, kind, text = source_text(prefix)
         articles = parse_articles_exact(text)
         if prefix == "CPM" and "190" not in articles:
-            recovered = recover_cpm190_from_raw_html(url)
+            recovered = recover_cpm190(url)
             if not recovered:
-                raise RuntimeError("CPM: art. 190 vigente não foi recuperado do HTML oficial bruto")
+                raise RuntimeError("CPM: art. 190 vigente não foi recuperado da fonte oficial renderizada")
             articles["190"] = recovered
-            print("CPM: art. 190 recuperado do HTML oficial bruto e validado pelo texto vigente", flush=True)
+            print("CPM: art. 190 recuperado da fonte oficial e validado pelo texto vigente", flush=True)
         if not articles:
             raise RuntimeError(f"{prefix}: nenhum artigo reconhecido em {url}")
         for (rp, key), notice in KNOWN_REVOKED.items():
