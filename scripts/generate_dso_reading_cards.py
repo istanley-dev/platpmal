@@ -43,6 +43,32 @@ def parse_articles_exact(text: str) -> dict[str, str]:
     return out
 
 
+def recover_article_block(text: str, key: str, next_key: str) -> str | None:
+    """Recover a top-level article when Planalto formatting defeats line parsing.
+
+    This is deliberately narrow: it looks for a capitalized article heading and
+    stops at the immediately following article heading. It is used only after the
+    normal parser fails a known official article.
+    """
+    clean = base.clean_lines(text)
+    start_re = re.compile(
+        rf"(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*{re.escape(key)}"
+        rf"(?:\.?[º°oO])?(?=[. \t\r\n]|$)"
+    )
+    end_re = re.compile(
+        rf"(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*{re.escape(next_key)}"
+        rf"(?:\.?[º°oO])?(?=[. \t\r\n]|$)"
+    )
+    start = start_re.search(clean)
+    if not start:
+        return None
+    end = end_re.search(clean, start.end())
+    if not end:
+        return None
+    block = base.clean_lines(clean[start.start():end.start()])
+    return block if len(block) >= 15 else None
+
+
 def scope_text(prefix: str, text: str) -> str:
     if prefix == "CF":
         art250_matches = list(re.finditer(
@@ -111,7 +137,6 @@ def source_text(prefix: str):
 
     title, url, kind = base.SOURCES[prefix]
     if prefix == "Lei5346":
-        # Keep the current PMAL Sislegis consolidated copy as the canonical source.
         url = PMAL_LEI5346
         text = official_pdf_with_proxy(prefix, url)
         return title, url, "official_pm_al", text
@@ -147,6 +172,11 @@ def main():
         print(f"[{idx}/{len(prefixes)}] {prefix}", flush=True)
         title, url, kind, text = source_text(prefix)
         articles = parse_articles_exact(text)
+        if prefix == "CPM" and "190" not in articles:
+            recovered = recover_article_block(text, "190", "191")
+            if recovered:
+                articles["190"] = recovered
+                print("CPM: art. 190 recuperado do texto oficial por limite 190→191", flush=True)
         if not articles:
             raise RuntimeError(f"{prefix}: nenhum artigo reconhecido em {url}")
         for (rp, key), notice in KNOWN_REVOKED.items():
@@ -167,8 +197,6 @@ def main():
     if "18A" in cf:
         raise RuntimeError("CF: art. 18-A do ADCT apareceu no corpus da Constituição")
 
-    # State-law source integrity: both sources must contain the boundaries used
-    # by the DSO PDFs before any daily JSON can be generated.
     for prefix, required in {
         "Lei5346": ("1", "14", "30", "52", "88", "104", "105", "135"),
         "RD": ("1", "25", "38", "66", "81", "82", "107"),
