@@ -23,6 +23,7 @@ ATTRS = {
     "data-url", "data-href", "data-id", "data-file", "data-arquivo", "formaction",
 }
 
+print("RDPM source diagnostics v2", flush=True)
 for page_url in URLS:
     print("\n=== PAGE", page_url, "===", flush=True)
     try:
