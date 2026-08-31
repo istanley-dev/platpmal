@@ -1,0 +1,78 @@
+name: Build DSO reading cards
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate_full_law_reading.py'
+      - 'scripts/apply_dso_reading_cards_v3.py'
+      - '.github/workflows/build-dso-reading-cards.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pypdf
+
+      - name: Generate the 65 DSO daily law ranges
+        run: python3 scripts/generate_full_law_reading.py
+
+      - name: Restore reading goal as article cards
+        run: python3 scripts/apply_dso_reading_cards_v3.py
+
+      - name: Audit generated coverage and UI
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re
+          root=pathlib.Path('.')
+          p=root/'law-reading'/'manifest.json'
+          if not p.exists(): raise SystemExit('manifest.json ausente')
+          m=json.loads(p.read_text(encoding='utf-8'))
+          if m.get('totalDays') != 65: raise SystemExit(f"totalDays={m.get('totalDays')} != 65")
+          days=m.get('days') or []
+          if len(days) != 65: raise SystemExit(f'dias no manifesto={len(days)} != 65')
+          seen=set()
+          for d in days:
+              key=(d['cycle'],d['day'])
+              if key in seen: raise SystemExit(f'dia duplicado {key}')
+              seen.add(key)
+              f=root/d['path']
+              if not f.exists(): raise SystemExit(f'arquivo ausente {f}')
+              txt=f.read_text(encoding='utf-8')
+              found=re.findall(r'(?mi)^(?:Art\.|Artigo)[ \t\r\n]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?',txt)
+              if not found: raise SystemExit(f'nenhum artigo em {f}')
+              if d.get('articleCount') != len(found):
+                  raise SystemExit(f"{f}: manifesto={d.get('articleCount')} parser={len(found)}")
+          checks={(1,1):('5','5'),(2,1):('1','12'),(3,1):('1','14'),(3,11):('82','107')}
+          for key,(lo,hi) in checks.items():
+              d=next(x for x in days if (x['cycle'],x['day'])==key)
+              txt=(root/d['path']).read_text(encoding='utf-8')
+              nums=[a+(b or '') for a,b in re.findall(r'(?mi)^(?:Art\.|Artigo)[ \t\r\n]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?',txt)]
+              if lo not in nums or hi not in nums: raise SystemExit(f'{key}: limites {lo}-{hi} não encontrados')
+          html=(root/'index.html').read_text(encoding='utf-8')
+          if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html: raise SystemExit('reader V2 antigo ainda presente')
+          if html.count('PMAL_DSO_READING_CARDS_V3_START') != 1: raise SystemExit('reader V3 ausente ou duplicado')
+          for needle in ['Meta de leitura','dso-law-card','pmalDsoMarkArticleV3','FIXAÇÃO · CEBRASPE E REVISÕES']:
+              if needle not in html: raise SystemExit(f'UI V3 incompleta: {needle}')
+          print('OK: 65 dias auditados; C1D1, C2D1, C3D1 e C3D11 conferidos; V3 única.')
+          PY
+
+      - name: Commit generated reading data and UI
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html law-reading
+          if git diff --cached --quiet; then
+            echo "Nada para commitar"
+            exit 0
+          fi
+          git commit -m "feat: publish 65 DSO reading-card ranges"
+          git push origin HEAD:main
