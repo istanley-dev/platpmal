@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_full_law_reading.py'
+      - 'scripts/generate_dso_reading_cards.py'
       - 'scripts/apply_dso_reading_cards_v3.py'
       - '.github/workflows/build-dso-reading-cards.yml'
   workflow_dispatch:
@@ -22,47 +23,81 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pypdf
 
-      - name: Generate the 65 DSO daily law ranges
-        run: python3 scripts/generate_full_law_reading.py
+      - name: Generate exact structured DSO article cards
+        run: python3 scripts/generate_dso_reading_cards.py
 
       - name: Restore reading goal as article cards
         run: python3 scripts/apply_dso_reading_cards_v3.py
 
-      - name: Audit generated coverage and UI
+      - name: Audit 65-day coverage, CF scope and UI
         run: |
           python3 - <<'PY'
-          import json, pathlib, re
+          import json, pathlib
           root=pathlib.Path('.')
-          p=root/'law-reading'/'manifest.json'
-          if not p.exists(): raise SystemExit('manifest.json ausente')
-          m=json.loads(p.read_text(encoding='utf-8'))
-          if m.get('totalDays') != 65: raise SystemExit(f"totalDays={m.get('totalDays')} != 65")
+          manifest_path=root/'law-reading'/'manifest.json'
+          if not manifest_path.exists(): raise SystemExit('manifest.json ausente')
+          m=json.loads(manifest_path.read_text(encoding='utf-8'))
+          if m.get('version') != 4 or m.get('format') != 'structured-article-cards':
+              raise SystemExit('manifesto não está no formato estruturado V4')
           days=m.get('days') or []
-          if len(days) != 65: raise SystemExit(f'dias no manifesto={len(days)} != 65')
+          if m.get('totalDays') != 65 or len(days) != 65:
+              raise SystemExit(f"cobertura inválida: totalDays={m.get('totalDays')} entries={len(days)}")
+
           seen=set()
+          payloads={}
           for d in days:
               key=(d['cycle'],d['day'])
               if key in seen: raise SystemExit(f'dia duplicado {key}')
               seen.add(key)
               f=root/d['path']
+              if f.suffix != '.json': raise SystemExit(f'{f}: payload diário não é JSON')
               if not f.exists(): raise SystemExit(f'arquivo ausente {f}')
-              txt=f.read_text(encoding='utf-8')
-              found=re.findall(r'(?mi)^(?:Art\.|Artigo)[ \t\r\n]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?',txt)
-              if not found: raise SystemExit(f'nenhum artigo em {f}')
-              if d.get('articleCount') != len(found):
-                  raise SystemExit(f"{f}: manifesto={d.get('articleCount')} parser={len(found)}")
-          checks={(1,1):('5','5'),(2,1):('1','12'),(3,1):('1','14'),(3,11):('82','107')}
-          for key,(lo,hi) in checks.items():
-              d=next(x for x in days if (x['cycle'],x['day'])==key)
-              txt=(root/d['path']).read_text(encoding='utf-8')
-              nums=[a+(b or '') for a,b in re.findall(r'(?mi)^(?:Art\.|Artigo)[ \t\r\n]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?',txt)]
-              if lo not in nums or hi not in nums: raise SystemExit(f'{key}: limites {lo}-{hi} não encontrados')
+              data=json.loads(f.read_text(encoding='utf-8'))
+              if data.get('version') != 4 or data.get('format') != 'structured-article-cards':
+                  raise SystemExit(f'{f}: formato inválido')
+              if (data.get('cycle'),data.get('day')) != key:
+                  raise SystemExit(f'{f}: ciclo/dia divergente')
+              articles=[a for s in data.get('sections',[]) for a in s.get('articles',[])]
+              if len(articles) != d.get('articleCount') or len(articles) != data.get('articleCount'):
+                  raise SystemExit(f"{f}: manifesto={d.get('articleCount')} payload={data.get('articleCount')} real={len(articles)}")
+              if not articles or any(not a.get('key') or not a.get('text') for a in articles):
+                  raise SystemExit(f'{f}: artigo vazio/inválido')
+              payloads[key]=data
+
+          def keys(c,d):
+              return [a['key'] for s in payloads[(c,d)]['sections'] for a in s['articles']]
+          def text(c,d,key):
+              for s in payloads[(c,d)]['sections']:
+                  for a in s['articles']:
+                      if a['key']==key:return a['text']
+              raise SystemExit(f'C{c}D{d}: artigo {key} ausente')
+
+          # First day of each PDF/cycle plus final RDPM range.
+          if keys(1,1) != ['5']: raise SystemExit(f'C1D1 deveria conter apenas CF art. 5º: {keys(1,1)}')
+          if not {'1','12'}.issubset(keys(2,1)): raise SystemExit('C2D1 não cobre CPM 1–12')
+          if not {'1','14'}.issubset(keys(3,1)): raise SystemExit('C3D1 não cobre Lei 5.346 1–14')
+          if not {'82','107'}.issubset(keys(3,11)): raise SystemExit('C3D11 não cobre RDPMAL 82–107')
+
+          # Critical regression guard: Planalto serves Constitution + ADCT together.
+          # C1D4 must be permanent CF 18–36, with 29-A, and never ADCT 18-A.
+          expected_cf=[str(n) for n in range(18,30)]+['29A']+[str(n) for n in range(30,37)]
+          if keys(1,4) != expected_cf:
+              raise SystemExit(f'C1D4 CF permanente inesperada: {keys(1,4)}')
+          cf5=text(1,1,'5').lower()
+          if 'direitos e deveres individuais e coletivos' not in cf5:
+              raise SystemExit('C1D1 parece conter ADCT ou artigo incorreto, não CF art. 5º')
+
           html=(root/'index.html').read_text(encoding='utf-8')
-          if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html: raise SystemExit('reader V2 antigo ainda presente')
-          if html.count('PMAL_DSO_READING_CARDS_V3_START') != 1: raise SystemExit('reader V3 ausente ou duplicado')
-          for needle in ['Meta de leitura','dso-law-card','pmalDsoMarkArticleV3','FIXAÇÃO · CEBRASPE E REVISÕES']:
+          if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html:
+              raise SystemExit('reader V2 separado ainda presente')
+          if html.count('PMAL_DSO_READING_CARDS_V3_START') != 1:
+              raise SystemExit('reader V3 ausente ou duplicado')
+          for needle in ['Meta de leitura','dso-law-card','pmalDsoMarkArticleV3','FIXAÇÃO · CEBRASPE E REVISÕES','structured-article-cards']:
               if needle not in html: raise SystemExit(f'UI V3 incompleta: {needle}')
-          print('OK: 65 dias auditados; C1D1, C2D1, C3D1 e C3D11 conferidos; V3 única.')
+          for forbidden in ['parseSectionsV3','V3_TEXT_CACHE']:
+              if forbidden in html: raise SystemExit(f'parser textual antigo ainda presente: {forbidden}')
+
+          print('OK: 65 dias estruturados; CF separada do ADCT; ciclos 1/2/3 e RDPMAL conferidos; UI V3 auditada.')
           PY
 
       - name: Commit generated reading data and UI
