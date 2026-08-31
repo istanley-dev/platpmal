@@ -1,0 +1,182 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 7,
+  "label": "CPM — arts. 69 a 108",
+  "articleCount": 41,
+  "sections": [
+    {
+      "prefix": "CPM",
+      "title": "Código Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "range": "arts. 69 a 108",
+      "articles": [
+        {
+          "key": "69",
+          "text": "Art. 69. Para fixação da pena\r\nprivativa de liberdade, o juiz aprecia a gravidade do crime praticado e a personalidade do\r\nréu, devendo ter em conta a intensidade do dolo ou grau da culpa, a maior ou menor\r\nextensão do dano ou perigo de dano, os meios empregados, o modo de execução, os motivos\r\ndeterminantes, as circunstâncias de tempo e lugar, os antecedentes do réu e sua atitude\r\nde insensibilidade, indiferença ou arrependimento após o crime.\n\nDeterminação da pena\r\n\n§ 1º Se são cominadas penas\r\nalternativas, o juiz deve determinar qual delas é aplicável.\n\nLimites legais da pena \r\n\n§ 2º Salvo o disposto no art.\r\n76, é fixada dentro dos limites legais a quantidade da pena aplicável.\n\nCircunstâncias agravantes"
+        },
+        {
+          "key": "70",
+          "text": "Art. 70. São circunstâncias que\r\nsempre agravam a pena, quando não integrantes ou qualificativas do crime:\n\nI - a reincidência;\n\nII - ter o agente cometido o\r\ncrime:\n\na) por motivo fútil ou torpe;\n\nb) para facilitar ou assegurar a\r\nexecução, a ocultação, a impunidade ou vantagem de outro crime;\n\nc) depois de embriagar-se, salvo\r\nse a embriaguez decorre de caso fortuito, engano ou fôrça maior;\n\nd) à traição, de emboscada,\r\ncom surprêsa, ou mediante outro recurso insidioso que dificultou ou tornou impossível a\r\ndefesa da vítima;\n\ne) com o emprêgo de veneno,\r\nasfixia, tortura, fogo, explosivo, ou qualquer outro meio dissimulado ou cruel, ou de que\r\npodia resultar perigo comum;\n\nf) contra ascendente,\r\ndescendente, irmão ou cônjuge;\n\ng) com abuso de poder ou\r\nviolação de dever inerente a cargo, ofício, ministério ou profissão;\n\n\r\nh) contra criança, pessoa maior de 60 (sessenta) anos, pessoa \r\nenferma, mulher grávida ou pessoa com deficiência;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\ni) quando o ofendido estava sob a\r\nimediata proteção da autoridade;\n\nj) em ocasião de incêndio,\r\nnaufrágio, encalhe, alagamento, inundação, ou qualquer calamidade pública, ou de\r\ndesgraça particular do ofendido;\n\nl) estando de serviço;\n\nm) com emprêgo de arma, material\r\nou instrumento de serviço, para êsse fim procurado;\n\nn) em auditório da Justiça\r\nMilitar ou local onde tenha sede a sua administração;\n\no) em país estrangeiro.\n\nParágrafo único. As\r\ncircunstâncias das letras\nc\n\n,\r\nsalvo no caso de embriaguez preordenada,\nl\n\n,\nm\n\ne\no\n\n, só agravam o crime quando\r\npraticado por militar.\n\nReincidência"
+        },
+        {
+          "key": "71",
+          "text": "Art. 71. Verifica-se a\r\nreincidência quando o agente comete nôvo crime, depois de transitar em julgado a\r\nsentença que, no país ou no estrangeiro, o tenha condenado por crime anterior.\n\nTemporariedade da reincidência\r\n\n§ 1º Não se toma em conta, para\r\nefeito da reincidência, a condenação anterior, se, entre a data do cumprimento ou\r\nextinção da pena e o crime posterior, decorreu período de tempo superior a cinco anos.\n\nCrimes não considerados para\r\nefeito da reincidência\n\n§ 2º Para efeito da reincidência,\r\nnão se consideram os crimes anistiados."
+        },
+        {
+          "key": "72",
+          "text": "Art.\n\n72. São circunstâncias que sempre atenuam a pena:\n\nCircunstância atenuantes\n\nI - ser o agente menor de vinte e\r\num ou maior de setenta anos;\n\nII - ser meritório seu\r\ncomportamento anterior;\n\nIII - ter o agente:\n\na) cometido o crime por motivo de\r\nrelevante valor social ou moral;\n\nb) procurado, por sua espontânea\r\nvontade e com eficiência, logo após o crime, evitar-lhe ou minorar-lhe as\r\nconseqüências, ou ter, antes do julgamento, reparado o dano;\n\nc) cometido o crime sob a\r\ninfluência de violenta emoção, provocada por ato injusto da vítima;\n\nd) confessado espontâneamente,\r\nperante a autoridade, a autoria do crime, ignorada ou imputada a outrem;\n\ne) sofrido tratamento com rigor\r\nnão permitido em lei. Não atendimento de atenuantes\n\nParágrafo único. Nos crimes em\r\nque a pena máxima cominada é de morte, ao juiz é facultado atender, ou não, às\r\ncircunstâncias atenuantes enumeradas no artigo.\n\nQuantum\n\nda agravação ou atenuação"
+        },
+        {
+          "key": "73",
+          "text": "Art.\n\n73. Quando a lei determina a agravação ou atenuação da\r\npena sem mencionar o\nquantum\n\n, deve o juiz fixá-lo\r\nentre um quinto e um têrço, guardados os limites da pena cominada ao crime.\n\nMais de uma agravante ou\r\natenuante"
+        },
+        {
+          "key": "74",
+          "text": "Art.\n\n74. Quando ocorre mais de uma agravante ou mais de uma\r\natenuante, o juiz poderá limitar-se a uma só agravação ou a uma só atenuação.\n\nConcurso de agravantes e\r\natenuantes"
+        },
+        {
+          "key": "75",
+          "text": "Art.\n\n75. No concurso de agravantes e atenuantes, a pena deve\r\naproximar-se do limite indicado pelas circunstâncias preponderantes, entendendo-se como\r\ntais as que resultam dos motivos determinantes do crime, da personalidade do agente, e da\r\nreincidência. Se há equivalência entre umas e outras, é como se não tivessem\r\nocorrido.\n\nMajorantes e minorantes"
+        },
+        {
+          "key": "76",
+          "text": "Art.\n\n76. Quando a lei prevê causas especiais de aumento ou\r\ndiminuição da pena, não fica o juiz adstrito aos limites da pena cominada ao crime,\r\nsenão apenas aos da espécie de pena aplicável (art. 58).\n\nParágrafo único. No concurso\r\ndessas causas especiais, pode o juiz limitar-se a um só aumento ou a uma só\r\ndiminuição, prevalecendo, todavia, a causa que mais aumente ou diminua.\n\nCálculo da pena\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "77",
+          "text": "Art. 77. A pena-base será fixada de acordo com o critério definido \r\nno art. 69 deste Código e, em seguida, serão consideradas as \r\ncircunstâncias atenuantes e agravantes e, por último, as causas de \r\ndiminuição e de aumento de pena.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nParágrafo único. Salvo na aplicação das causas de diminuição e de \r\naumento, a pena não poderá ser fixada aquém do mínimo nem acima do \r\nmáximo previsto em abstrato para o crime.\n\n(Incluído pela \r\nLei nº 14.688, de 2023)"
+        },
+        {
+          "key": "78",
+          "text": "Art.\n\n78.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nConcurso material\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "79",
+          "text": "Art. \r\n79.\n\nQuando\no agente, mediante mais de uma ação ou omissão, \r\npratica dois ou mais crimes, idênticos ou não, aplicam-se-lhe \r\ncumulativamente as penas privativas de liberdade em que haja \r\nincorrido.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nParágrafo único. No caso de aplicação cumulativa de penas de \r\nreclusão e de detenção, executa-se primeiro aquela.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nConcurso formal\n\n(Incluído pela \r\nLei nº 14.688, de 2023)"
+        },
+        {
+          "key": "79A",
+          "text": "Art. 79-A. Quando o agente, mediante uma só ação ou omissão, pratica \r\ndois ou mais crimes, idênticos ou não, aplica-se-lhe a mais grave \r\ndas penas cabíveis ou, se iguais, somente uma delas, mas aumentada, \r\nem qualquer caso, de 1/6 (um sexto) até metade.\n\n(Incluído pela \r\nLei nº 14.688, de 2023)\n\n\r\n§ 1º As penas aplicam-se, entretanto, cumulativamente, se a ação ou \r\nomissão é dolosa e os crimes concorrentes resultam de desígnios \r\nautônomos, consoante o disposto no art. 79 deste Código.\n\n(Incluído pela \r\nLei nº 14.688, de 2023)\n\n\r\n§ 2º Não poderá a pena exceder a que seria cabível pela regra do \r\nart. 79 deste Código.\n\n(Incluído pela \r\nLei nº 14.688, de 2023)\n\nCrime continuado"
+        },
+        {
+          "key": "80",
+          "text": "Art. \r\n80.\n\n\r\nQuando o agente, mediante mais de uma ação ou omissão, pratica dois \r\nou mais crimes da mesma espécie e, pelas condições de tempo, lugar, \r\nmaneira de execução e outras semelhantes, devem os subsequentes ser \r\nhavidos como continuação do primeiro, aplica-se-lhe a pena de um só \r\ndos crimes, se idênticas, ou a mais grave, se diversas, aumentada, \r\nem qualquer caso, de 1/6 (um sexto) a 2/3 (dois terços).\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nParágrafo único. Nos crimes dolosos contra vítimas diferentes \r\ncometidos com violência ou grave ameaça à pessoa, poderá o juízo, \r\nconsiderando a culpabilidade, os antecedentes, a conduta social e a \r\npersonalidade do agente, bem como os motivos e as circunstâncias, \r\naumentar a pena de um só dos crimes, se idênticas, ou a mais grave, \r\nse diversas, até o triplo, observadas as regras dos §§ 1º e 2º do \r\nart. 79-A e do art. 81 deste Código.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nLimite da pena unificada"
+        },
+        {
+          "key": "81",
+          "text": "Art.\n\n81. A pena unificada não pode ultrapassar de trinta anos,\r\nse é de reclusão, ou de quinze anos, se é de detenção.\n\nRedução facultativa da pena\r\n\n§ 1º A pena unificada pode ser\r\ndiminuída de um sexto a um quarto, no caso de unidade de ação ou omissão, ou de crime\r\ncontinuado.\n\nGraduação no caso de pena de\r\nmorte\n\n§ 2° Quando cominada a pena de\r\nmorte como grau máximo e a de reclusão como grau mínimo, aquela corresponde, para o\r\nefeito de graduação, à de reclusão por trinta anos.\n\nCálculo da pena aplicável à\r\ntentativa\n\n§ 3° Nos crimes punidos com a pena\r\nde morte, esta corresponde à de reclusão por trinta anos, para cálculo da pena\r\naplicável à tentativa, salvo disposição especial."
+        },
+        {
+          "key": "82",
+          "text": "Art. 82.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nPenas não privativas de\r\nliberdade"
+        },
+        {
+          "key": "83",
+          "text": "Art.\n\n83. As penas não privativas de liberdade são aplicadas\r\ndistinta e integralmente, ainda que previstas para um só dos crimes concorrentes.\n\nCAPÍTULO III\n\nDA SUSPENSÃO\r\nCONDICIONAL DA PENA\n\nPressupostos da suspensão"
+        },
+        {
+          "key": "84",
+          "text": "Art. 84.\n\nA execução da pena privativa de liberdade não \r\nsuperior a 2 (dois) anos pode ser suspensa por 3 (três) a 5 (cinco) \r\nanos, no caso de pena de reclusão, e por 2 (dois) a 4 (quatro) anos, \r\nno caso de pena de detenção, desde que:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nI - o sentenciado não haja\r\nsofrido no País ou no estrangeiro, condenação irrecorrível por outro crime a pena\r\nprivativa da liberdade, salvo o disposto no 1º do art. 71;\n(Redação dada pela Lei nº 6.544, de 30.6.1978)\n\n\r\nII – a culpabilidade, os antecedentes, a conduta social e a \r\npersonalidade do agente, bem como os motivos e as circunstâncias do \r\ncrime, autorizem a concessão do benefício.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n\nRestrições\n\n\r\n§ 1º A suspensão não se estende à pena acessória nem exclui a \r\naplicação de medida de segurança não detentiva.\n\n(Incluído pela \r\nLei nº 14.688, de 2023)\n\n\r\n§ 2º A execução da pena privativa de liberdade não superior a 4 \r\n(quatro) anos poderá ser suspensa por 4 (quatro) a 6 (seis) anos, \r\ndesde que o condenado seja maior de 70 (setenta) anos de idade ou \r\nexistam razões de saúde que justifiquem a suspensão.\n\n(Incluído pela \r\nLei nº 14.688, de 2023)\n\nCondições"
+        },
+        {
+          "key": "85",
+          "text": "Art.\n\n85. A sentença deve especificar as condições a que fica\r\nsubordinada a suspensão.\n\nRevogação obrigatória da\r\nsuspensão"
+        },
+        {
+          "key": "86",
+          "text": "Art. 86. A suspensão é revogada\r\nse, no curso do prazo, o beneficiário:\n\n\r\nI – é condenado por crime doloso, na Justiça Militar ou na Justiça \r\nComum, por sentença irrecorrível;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nII - não efetua, sem motivo\r\njustificado, a reparação do dano;\n\n\r\nIII – \r\n\n(revogado)\n.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nRevogação facultativa\r\n\n\r\n§ 1º A suspensão também pode ser revogada se o condenado deixar de \r\ncumprir qualquer das obrigações constantes da sentença ou, se \r\nmilitar, for punido por infração disciplinar considerada grave.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nProrrogação de prazo\r\n\n§ 2º Quando facultativa a\r\nrevogação, o juiz pode, ao invés de decretá-la, prorrogar o período de prova até o\r\nmáximo, se êste não foi o fixado.\n\n§ 3º Se o beneficiário está\r\nrespondendo a processo que, no caso de condenação, pode acarretar a revogação,\r\nconsidera-se prorrogado o prazo da suspensão até o julgamento definitivo.\n\nExtinção da pena"
+        },
+        {
+          "key": "87",
+          "text": "Art.\n\n87. Se o prazo expira sem que tenha sido revogada a\r\nsuspensão, fica extinta a pena privativa de liberdade.\n\nNão aplicação da suspensão\r\ncondicional da pena"
+        },
+        {
+          "key": "88",
+          "text": "Art.\n\n88. A suspensão condicional da pena não se aplica:\n\nI - ao condenado por crime\r\ncometido em tempo de guerra;\n\nII - em tempo de paz:\n\na) por crime contra a segurança\r\nnacional, de aliciação e incitamento, de violência contra superior, oficial de dia, de\r\nserviço ou de quarto, sentinela, vigia ou plantão, de desrespeito a superior, de\r\ninsubordinação, ou de deserção;\n\nb) pelos crimes previstos nos\r\narts. 160, 161, 162, 235, 291 e seu parágrafo único, ns. I a IV.\n\nCAPÍTULO IV\n\nDO LIVRAMENTO\r\nCONDICIONAL\n\nRequisitos"
+        },
+        {
+          "key": "89",
+          "text": "Art.\n\n89. O condenado a pena de reclusão ou de detenção por\r\ntempo igual ou superior a dois anos pode ser liberado condicionalmente, desde que:\n\nI - tenha cumprido:\n\na) metade da pena, se primário;\n\nb) dois terços, se reincidente;\n\nII - tenha reparado, salvo\r\nimpossibilidade de fazê-lo, o dano causado pelo crime;\n\nIII - sua boa conduta durante a\r\nexecução da pena, sua adaptação ao trabalho e às circunstâncias atinentes a sua\r\npersonalidade, ao meio social e à sua vida pregressa permitem supor que não voltará a\r\ndelinqüir.\n\nPenas em concurso de infrações\r\n\n§ 1º No caso de condenação\r\npor infrações penais em concurso, deve ter-se em conta a pena unificada.\n\nCondenação de menor de 21 ou\r\nmaior de 70 anos\n\n§ 2º Se o condenado é\r\nprimário e menor de vinte e um ou maior de setenta anos, o tempo de cumprimento da pena\r\npode ser reduzido a um têrço.\n\nEspecificações das condições"
+        },
+        {
+          "key": "90",
+          "text": "Art. 90. A sentença deve\r\nespecificar as condições a que fica subordinado o livramento.\n\nPreliminares da concessão"
+        },
+        {
+          "key": "91",
+          "text": "Art. 91. O livramento sòmente se\r\nconcede mediante parecer do Conselho Penitenciário, ouvidos o diretor do estabelecimento\r\nem que está ou tenha estado o liberando e o representante do Ministério Público da\r\nJustiça Militar; e, se imposta medida de segurança detentiva, após perícia conclusiva\r\nda não periculosidade do liberando.\n\nObservação cautelar e\r\nproteção do liberado"
+        },
+        {
+          "key": "92",
+          "text": "Art. 92. O liberado fica sob\r\nobservação cautelar e proteção realizadas por patronato oficial ou particular,\r\ndirigido aquêle e inspecionado êste pelo Conselho Penitenciário. Na falta de patronato,\r\no liberado fica sob observação cautelar realizada por serviço social penitenciário ou\r\nórgão similar.\n\nRevogação obrigatória"
+        },
+        {
+          "key": "93",
+          "text": "Art. 93. Revoga-se o livramento,\r\nse o liberado vem a ser condenado, em sentença irrecorrível, a penal privativa de\r\nliberdade:\n\nI - por infração penal cometida\r\ndurante a vigência do benefício;\n\nII - por infração penal\r\nanterior, salvo se, tendo de ser unificadas as penas, não fica prejudicado o requisito do\r\nart. 89, nº I, letra\na\n\nRevogação facultativa\r\n\n§ 1º O juiz pode, também, revogar\r\no livramento se o liberado deixa de cumprir qualquer das obrigações constantes da\r\nsentença ou é irrecorrìvelmente condenado, por motivo de contravenção, a pena que\r\nnão seja privativa de liberdade; ou, se militar, sofre penalidade por transgressão\r\ndisciplinar considerada grave.\n\nInfração sujeita à\r\njurisdição penal comum\n\n§ 2º Para os efeitos da\r\nrevogação obrigatória, são tomadas, também, em consideração, nos têrmos dos ns. I\r\ne II dêste artigo, as infrações sujeitas à jurisdição penal comum; e, igualmente, a\r\ncontravenção compreendida no § 1º, se assim, com prudente arbítrio, o entender o\r\njuiz.\n\nEfeitos da revogação"
+        },
+        {
+          "key": "94",
+          "text": "Art.\n\n94. Revogado o livramento, não pode ser novamente concedido\r\ne, salvo quando a revogação resulta de condenação por infração penal anterior ao\r\nbenefício, não se desconta na pena o tempo em que estêve sôlto o condenado.\n\nExtinção da pena"
+        },
+        {
+          "key": "95",
+          "text": "Art.\n\n95. Se, até o seu têrmo, o livramento não é revogado,\r\nconsidera-se extinta a pena privativa de liberdade.\n\nParágrafo único. Enquanto não\r\npassa em julgado a sentença em processo, a que responde o liberado por infração penal\r\ncometida na vigência do livramento, deve o juiz abster-se de declarar a extinção da\r\npena.\n\nNão aplicação do livramento\r\ncondicional"
+        },
+        {
+          "key": "96",
+          "text": "Art.\n\n96. O livramento condicional não se aplica ao condenado por\r\ncrime cometido em tempo de guerra.\n\nCasos especiais do livramento\r\ncondicional"
+        },
+        {
+          "key": "97",
+          "text": "Art.\n\n97. Em tempo de paz, o livramento condicional por crime\r\ncontra a segurança externa do país, ou de revolta, motim, aliciação e incitamento,\r\nviolência contra superior ou militar de serviço, só será concedido após o cumprimento\r\nde dois terços da pena, observado ainda o disposto no art. 89, preâmbulo, seus números\r\nII e III e §§ 1º e 2º.\n\nCAPÍTULO V\n\nDAS PENAS\r\nACESSÓRIAS\n\nPenas Acessórias"
+        },
+        {
+          "key": "98",
+          "text": "Art. 98. São penas acessórias:\n\nI - a perda de pôsto e patente;\n\nII - a indignidade para o\r\noficialato;\n\nIII - a incompatibilidade com o\r\noficialato;\n\nIV - a exclusão das fôrças\r\narmadas;\n\nV - a perda da função pública,\r\nainda que eletiva;\n\nVI - a inabilitação para o\r\nexercício de função pública;\n\n\r\nVII – a incapacidade para o exercício do poder familiar, da tutela \r\nou da curatela, quando tal medida for determinante para salvaguardar \r\nos interesses do filho, do tutelado ou do curatelado;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nVIII - a suspensão dos direitos\r\npolíticos.\n\nFunção pública equiparada\r\n\nParágrafo único. Equipara-se à\r\nfunção pública a que é exercida em emprêsa pública, autarquia, sociedade de economia\r\nmista, ou sociedade de que participe a União, o Estado ou o Município como acionista\r\nmajoritário.\n\nPerda de posto e patente\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "99",
+          "text": "Art. 99.\n\nA perda de posto e patente resulta da condenação a \r\npena privativa de liberdade por tempo superior a 2 (dois) anos, por \r\ncrimes comuns e militares, e importa a perda das condecorações, \r\ndesde que submetido o oficial ao julgamento previsto no \r\n\ninciso VI do \r\n§ 3º do art. 142 da Constituição Federal.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nIndignidade para o oficialato"
+        },
+        {
+          "key": "100",
+          "text": "Art. 100. Fica sujeito à\r\ndeclaração de indignidade para o oficialato o militar condenado, qualquer que seja a\r\npena, nos crimes de traição, espionagem ou cobardia, ou em qualquer dos definidos nos\r\narts. 161, 235, 240, 242, 243, 244, 245, 251, 252, 303, 304, 311 e 312.\n\nIncompatibilidade com o\r\noficialato"
+        },
+        {
+          "key": "101",
+          "text": "Art. 101. Fica sujeito à\r\ndeclaração de incompatibilidade com o oficialato o militar condenado nos crimes dos\r\narts. 141 e 142.\n\nExclusão das fôrças armadas"
+        },
+        {
+          "key": "102",
+          "text": "Art. 102. A condenação da\r\npraça a pena privativa de liberdade, por tempo superior a dois anos, importa sua\r\nexclusão das fôrças armadas.\n\nPerda da função pública"
+        },
+        {
+          "key": "103",
+          "text": "Art. 103. Incorre na perda da função pública o civil:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nI - condenado a pena privativa de\r\nliberdade por crime cometido com abuso de poder ou violação de dever inerente à\r\nfunção pública;\n\nII - condenado, por outro crime,\r\na pena privativa de liberdade por mais de dois anos.\n\nParágrafo único. O disposto no\r\nartigo aplica-se ao militar da reserva, ou reformado, se estiver no exercício de função\r\npública de qualquer natureza.\n\nInabilitação para o exercício\r\nde função pública"
+        },
+        {
+          "key": "104",
+          "text": "Art.\n\n104. Incorre na inabilitação para o exercício de função\r\npública, pelo prazo de dois até vinte anos, o condenado a reclusão por mais de quatro\r\nanos, em virtude de crime praticado com abuso de poder ou violação do dever militar ou\r\ninerente à função pública.\n\nTêrmo inicial\n\nParágrafo único. O prazo da\r\ninabilitação para o exercício de função pública começa ao têrmo da execução da\r\npena privativa de liberdade ou da medida de segurança imposta em substituição, ou da\r\ndata em que se extingue a referida pena.\n\nIncapacidade para o exercício do poder familiar, da tutela ou da \r\ncuratela\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "105",
+          "text": "Art. 105. O condenado por cometimento de crime doloso sujeito a pena \r\nde reclusão praticado contra outrem igualmente titular do mesmo \r\npoder familiar ou contra filho, tutelado ou curatelado poderá, \r\njustificadamente e em atendimento ao melhor interesse do menor ou do \r\ncuratelado, ter decretada a incapacidade para o exercício do poder \r\nfamiliar, da tutela ou da curatela, enquanto durar a execução da \r\npena ou da medida de segurança imposta em substituição nos termos do \r\nart. 113 deste Código.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nIncapacidade provisória\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nParágrafo único. Durante o processo para apuração dos crimes \r\ndescritos no\ncaput\ndeste artigo, poderá o juízo, \r\njustificadamente e em atendimento ao melhor interesse do menor ou do \r\ncuratelado, decretar a incapacidade provisória para o exercício do \r\npoder familiar, da tutela ou da curatela.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nSuspensão dos direitos\r\npolíticos"
+        },
+        {
+          "key": "106",
+          "text": "Art.\n\n106. Durante a execução da\r\npena privativa de liberdade ou da medida de segurança ìmposta em substituição, ou\r\nenquanto perdura a inabilitação para função pública, o\r\ncondenado não pode votar, nem ser votado.\n\nImposição de pena acessória"
+        },
+        {
+          "key": "107",
+          "text": "Art.\n\n107. Salvo os casos dos arts. 99, 103, nº II, e 106, a\r\nimposição da pena acessória deve constar expressamente da sentença.\n\nTempo computável"
+        },
+        {
+          "key": "108",
+          "text": "Art.\n\n108. Computa-se no prazo das inabilitações temporárias o\r\ntempo de liberdade resultante da suspensão condicional da pena ou do livramento\r\ncondicional, se não sobrevém revogação.\n\nCAPÍTULO VI\n\nDOS EFEITOS DA\r\nCONDENAÇÃO\n\nObrigação de reparar o dano"
+        }
+      ]
+    }
+  ]
+}

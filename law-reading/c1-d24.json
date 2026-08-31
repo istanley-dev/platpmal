@@ -1,0 +1,258 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 1,
+  "day": 24,
+  "label": "Lei 9.099/1995 — arts. 1º a 59",
+  "articleCount": 60,
+  "sections": [
+    {
+      "prefix": "L9099",
+      "title": "Lei 9.099/1995",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm",
+      "range": "arts. 1 a 59",
+      "articles": [
+        {
+          "key": "1",
+          "text": "Art. 1º Os Juizados Especiais Cíveis e\r\nCriminais, órgãos da Justiça Ordinária, serão criados pela União, no Distrito\r\nFederal e nos Territórios, e pelos Estados, para conciliação, processo, julgamento e\r\nexecução, nas causas de sua competência."
+        },
+        {
+          "key": "2",
+          "text": "Art. 2º O processo orientar-se-á pelos\r\ncritérios da oralidade, simplicidade, informalidade, economia processual e celeridade,\r\nbuscando, sempre que possível, a conciliação ou a transação.\n\nCapítulo II\n\nDos Juizados Especiais Cíveis\n\nSeção I\n\nDa Competência"
+        },
+        {
+          "key": "3",
+          "text": "Art. 3º O Juizado Especial Cível tem\r\ncompetência para conciliação, processo e julgamento das causas cíveis de menor\r\ncomplexidade, assim consideradas:\n\nI\r\n- as causas cujo valor não exceda a quarenta vezes o salário mínimo;\n\nII\r\n- as enumeradas no art. 275, inciso II, do Código de Processo Civil;\n\nIII - a ação de despejo para uso próprio;\n\nIV\r\n- as ações possessórias sobre bens imóveis de valor não excedente ao fixado no inciso\r\nI deste artigo.\n\n§\r\n1º Compete ao Juizado Especial promover a execução:\n\nI\r\n- dos seus julgados;\n\nII\r\n- dos títulos executivos extrajudiciais, no valor de até quarenta vezes o salário\r\nmínimo, observado o disposto no § 1º do art. 8º desta Lei.\n\n§\r\n2º Ficam excluídas da competência do Juizado Especial as causas de natureza alimentar,\r\nfalimentar, fiscal e de interesse da Fazenda Pública, e também as relativas a acidentes\r\nde trabalho, a resíduos e ao estado e capacidade das pessoas, ainda que de cunho\r\npatrimonial.\n\n§\r\n3º A opção pelo procedimento previsto nesta Lei importará em renúncia ao crédito\r\nexcedente ao limite estabelecido neste artigo, excetuada a hipótese de conciliação."
+        },
+        {
+          "key": "4",
+          "text": "Art. 4º É competente, para as causas previstas nesta Lei, o Juizado do\r\nforo:\n\nI\r\n- do domicílio do réu ou, a critério do autor, do local onde aquele exerça atividades\r\nprofissionais ou econômicas ou mantenha estabelecimento, filial, agência, sucursal ou\r\nescritório;\n\nII\r\n- do lugar onde a obrigação deva ser satisfeita;\n\nIII - do domicílio do autor ou do local do ato\r\nou fato, nas ações para reparação de dano de qualquer natureza.\n\nParágrafo único. Em qualquer hipótese,\r\npoderá a ação ser proposta no foro previsto no inciso I deste artigo.\n\nSeção II\n\nDo Juiz, dos Conciliadores e dos Juízes\r\nLeigos"
+        },
+        {
+          "key": "5",
+          "text": "Art. 5º O Juiz dirigirá o processo com\r\nliberdade para determinar as provas a serem produzidas, para apreciá-las e para dar\r\nespecial valor às regras de experiência comum ou técnica."
+        },
+        {
+          "key": "6",
+          "text": "Art. 6º O Juiz adotará em cada caso a\r\ndecisão que reputar mais justa e equânime, atendendo aos fins sociais da lei e às\r\nexigências do bem comum."
+        },
+        {
+          "key": "7",
+          "text": "Art. 7º Os conciliadores e Juízes leigos são\r\nauxiliares da Justiça, recrutados, os primeiros, preferentemente, entre os bacharéis em\r\nDireito, e os segundos, entre advogados com mais de cinco anos de experiência.\n\nParágrafo único. Os Juízes leigos ficarão\r\nimpedidos de exercer a advocacia perante os Juizados Especiais, enquanto no desempenho de\r\nsuas funções.\n\nSeção III\n\nDas Partes"
+        },
+        {
+          "key": "8",
+          "text": "Art. 8º Não poderão ser partes, no processo\r\ninstituído por esta Lei, o incapaz, o preso, as pessoas jurídicas de direito público,\r\nas empresas públicas da União, a massa falida e o insolvente civil.\n\n§ 1\no\nSomente \r\nserão admitidas a propor ação perante o Juizado Especial:\n(Redação \r\ndada pela Lei nº 12.126, de 2009)\n\nI - as pessoas físicas capazes, excluídos os \r\ncessionários de direito de pessoas jurídicas;\n(Incluído \r\npela Lei nº 12.126, de 2009)\n\nII - as \r\npessoas enquadradas como microempreendedores individuais, microempresas \r\ne empresas de pequeno porte na forma da\nLei Complementar n\no\n\r\n123, de 14 de dezembro de 2006\n;\n\r\n\n(Redação dada pela Lei Complementar nº 147, de \r\n2014)\n\nIII - as pessoas jurídicas qualificadas como \r\nOrganização da Sociedade Civil de Interesse Público, nos termos da\n\nLei n\no\n9.790, \r\nde 23 de março de 1999\n;\n(Incluído \r\npela Lei nº 12.126, de 2009)\n\nIV - as sociedades de crédito ao microempreendedor, \r\nnos termos do\n\nart. 1\no\nda Lei n\no\n\r\n10.194, de 14 de fevereiro de 2001\n.\n(Incluído \r\npela Lei nº 12.126, de 2009)\n\n§\r\n2º O maior de dezoito anos poderá ser autor, independentemente de assistência,\r\ninclusive para fins de conciliação."
+        },
+        {
+          "key": "9",
+          "text": "Art. 9º Nas causas de valor até vinte\r\nsalários mínimos, as partes comparecerão pessoalmente, podendo ser assistidas por\r\nadvogado; nas de valor superior, a assistência é obrigatória.\n\n§\r\n1º Sendo facultativa a assistência, se uma das partes comparecer assistida por advogado,\r\nou se o réu for pessoa jurídica ou firma individual, terá a outra parte, se quiser,\r\nassistência judiciária prestada por órgão instituído junto ao Juizado Especial, na\r\nforma da lei local.\n\n§\r\n2º O Juiz alertará as partes da conveniência do patrocínio por advogado, quando a\r\ncausa o recomendar.\n\n§\r\n3º O mandato ao advogado poderá ser verbal, salvo quanto aos poderes especiais.\n\n§ 4\no\n\r\nO réu, sendo pessoa jurídica ou titular de firma individual, poderá ser \r\nrepresentado por preposto credenciado, munido de carta de preposição com poderes \r\npara transigir, sem haver necessidade de vínculo empregatício. \r\n\n(Redação dada pela Lei nº \r\n12.137, de 2009)"
+        },
+        {
+          "key": "10",
+          "text": "Art. 10. Não se admitirá, no processo,\r\nqualquer forma de intervenção de terceiro nem de assistência. Admitir-se-á o\r\nlitisconsórcio."
+        },
+        {
+          "key": "11",
+          "text": "Art. 11. O Ministério Público intervirá nos\r\ncasos previstos em lei.\n\nSeção IV\n\nD\nos atos processuais"
+        },
+        {
+          "key": "12",
+          "text": "Art. 12. Os atos processuais serão públicos e\r\npoderão realizar-se em horário noturno, conforme dispuserem as normas de organização\r\njudiciária."
+        },
+        {
+          "key": "12A",
+          "text": "Art. 12-A. Na contagem de prazo \r\nem dias, estabelecido por lei ou pelo juiz, para a prática de qualquer ato \r\nprocessual, inclusive para a interposição de recursos, computar-se-ão somente os \r\ndias úteis. \r\n\n(Incluído pela Lei nº \r\n13.728, de 2018)"
+        },
+        {
+          "key": "13",
+          "text": "Art. 13. Os atos processuais serão válidos\r\nsempre que preencherem as finalidades para as quais forem realizados, atendidos os\r\ncritérios indicados no art. 2º desta Lei.\n\n§\r\n1º Não se pronunciará qualquer nulidade sem que tenha havido prejuízo.\n\n§\r\n2º A prática de atos processuais em outras comarcas poderá ser solicitada por qualquer\r\nmeio idôneo de comunicação.\n\n§\r\n3º Apenas os atos considerados essenciais serão registrados resumidamente, em notas\r\nmanuscritas, datilografadas, taquigrafadas ou estenotipadas. Os demais atos poderão ser\r\ngravados em fita magnética ou equivalente, que será inutilizada após o trânsito em\r\njulgado da decisão.\n\n§\r\n4º As normas locais disporão sobre a conservação das peças do processo e demais\r\ndocumentos que o instruem.\n\nSeção V\n\nDo pedido"
+        },
+        {
+          "key": "14",
+          "text": "Art. 14. O processo instaurar-se-á com a\r\napresentação do pedido, escrito ou oral, à Secretaria do Juizado.\n\n§\r\n1º Do pedido constarão, de forma simples e em linguagem acessível:\n\nI\r\n- o nome, a qualificação e o endereço das partes;\n\nII\r\n- os fatos e os fundamentos, de forma sucinta;\n\nIII - o objeto e seu valor.\n\n§\r\n2º É lícito formular pedido genérico quando não for possível determinar, desde logo,\r\na extensão da obrigação.\n\n§\r\n3º O pedido oral será reduzido a escrito pela Secretaria do Juizado, podendo ser\r\nutilizado o sistema de fichas ou formulários impressos."
+        },
+        {
+          "key": "15",
+          "text": "Art. 15. Os pedidos mencionados no art. 3º\r\ndesta Lei poderão ser alternativos ou cumulados; nesta última hipótese, desde que\r\nconexos e a soma não ultrapasse o limite fixado naquele dispositivo."
+        },
+        {
+          "key": "16",
+          "text": "Art. 16. Registrado o pedido, independentemente\r\nde distribuição e autuação, a Secretaria do Juizado designará a sessão de\r\nconciliação, a realizar-se no prazo de quinze dias."
+        },
+        {
+          "key": "17",
+          "text": "Art. 17. Comparecendo inicialmente ambas as\r\npartes, instaurar-se-á, desde logo, a sessão de conciliação, dispensados o registro\r\nprévio de pedido e a citação.\n\nParágrafo único. Havendo pedidos\r\ncontrapostos, poderá ser dispensada a contestação formal e ambos serão apreciados na\r\nmesma sentença.\n\nSeção VI\n\nDas Citações e Intimações"
+        },
+        {
+          "key": "18",
+          "text": "Art. 18. A citação far-se-á:\n\nI\r\n- por correspondência, com aviso de recebimento em mão própria;\n\nII\r\n- tratando-se de pessoa jurídica ou firma individual, mediante entrega ao encarregado da\r\nrecepção, que será obrigatoriamente identificado;\n\nIII - sendo necessário, por oficial de\r\njustiça, independentemente de mandado ou carta precatória.\n\n§\r\n1º A citação conterá cópia do pedido inicial, dia e hora para comparecimento do\r\ncitando e advertência de que, não comparecendo este, considerar-se-ão verdadeiras as\r\nalegações iniciais, e será proferido julgamento, de plano.\n\n§\r\n2º Não se fará citação por edital.\n\n§\r\n3º O comparecimento espontâneo suprirá a falta ou nulidade da citação."
+        },
+        {
+          "key": "19",
+          "text": "Art. 19. As intimações serão feitas na forma\r\nprevista para citação, ou por qualquer outro meio idôneo de comunicação.\n\n§\r\n1º Dos atos praticados na audiência, considerar-se-ão desde logo cientes as partes.\n\n§\r\n2º As partes comunicarão ao juízo as mudanças de endereço ocorridas no curso do\r\nprocesso, reputando-se eficazes as intimações enviadas ao local anteriormente indicado,\r\nna ausência da comunicação.\n\nSeção VII\n\nDa Revelia"
+        },
+        {
+          "key": "20",
+          "text": "Art. 20. Não comparecendo o demandado à\r\nsessão de conciliação ou à audiência de instrução e julgamento, reputar-se-ão\r\nverdadeiros os fatos alegados no pedido inicial, salvo se o contrário resultar da\r\nconvicção do Juiz.\n\nSeção VIII\n\nDa Conciliação e do Juízo Arbitral"
+        },
+        {
+          "key": "21",
+          "text": "Art. 21. Aberta a sessão, o Juiz togado ou\r\nleigo esclarecerá as partes presentes sobre as vantagens da conciliação, mostrando-lhes\r\nos riscos e as conseqüências do litígio, especialmente quanto ao disposto no § 3º do\r\nart. 3º desta Lei."
+        },
+        {
+          "key": "22",
+          "text": "Art. 22. A conciliação será conduzida pelo\r\nJuiz togado ou leigo ou por conciliador sob sua orientação.\n\n§ 1º \r\nObtida a conciliação, esta será reduzida a escrito e homologada pelo Juiz \r\ntogado mediante sentença com eficácia de título executivo.\n\n\r\n\n(Incluído \r\npela Lei nº 13.994, de 2020).\n\n§ 2º É \r\ncabível a conciliação não presencial conduzida pelo Juizado mediante o \r\nemprego dos recursos tecnológicos disponíveis de transmissão de sons e \r\nimagens em tempo real, devendo o resultado da tentativa de conciliação ser \r\nreduzido a escrito com os anexos pertinentes. \r\n\n(Incluído \r\npela Lei nº 13.994, de 2020)."
+        },
+        {
+          "key": "23",
+          "text": "Art. \r\n23. Se o demandado não comparecer ou recusar-se a participar da tentativa \r\nde conciliação não presencial, o Juiz togado proferirá sentença. \r\n\n(Redação dada pela Lei nº \r\n13.994, de 2020)"
+        },
+        {
+          "key": "24",
+          "text": "Art. 24. Não obtida a conciliação, as partes\r\npoderão optar, de comum acordo, pelo juízo arbitral, na forma prevista nesta Lei.\n\n§\r\n1º O juízo arbitral considerar-se-á instaurado, independentemente de termo de\r\ncompromisso, com a escolha do árbitro pelas partes. Se este não estiver presente, o Juiz\r\nconvocá-lo-á e designará, de imediato, a data para a audiência de instrução.\n\n§\r\n2º O árbitro será escolhido dentre os juízes leigos."
+        },
+        {
+          "key": "25",
+          "text": "Art. 25. O árbitro conduzirá o processo com\r\nos mesmos critérios do Juiz, na forma dos arts. 5º e 6º desta Lei, podendo decidir por\r\neqüidade."
+        },
+        {
+          "key": "26",
+          "text": "Art. 26. Ao término da instrução, ou nos\r\ncinco dias subseqüentes, o árbitro apresentará o laudo ao Juiz togado para\r\nhomologação por sentença irrecorrível.\n\nSeção IX\n\nDa Instrução e Julgamento"
+        },
+        {
+          "key": "27",
+          "text": "Art. 27. Não instituído o juízo arbitral,\r\nproceder-se-á imediatamente à audiência de instrução e julgamento, desde que não\r\nresulte prejuízo para a defesa.\n\nParágrafo único. Não sendo possível a sua\r\nrealização imediata, será a audiência designada para um dos quinze dias subseqüentes,\r\ncientes, desde logo, as partes e testemunhas eventualmente presentes."
+        },
+        {
+          "key": "28",
+          "text": "Art. 28. Na audiência de instrução e\r\njulgamento serão ouvidas as partes, colhida a prova e, em seguida, proferida a sentença."
+        },
+        {
+          "key": "29",
+          "text": "Art. 29. Serão decididos de plano todos os\r\nincidentes que possam interferir no regular prosseguimento da audiência. As demais\r\nquestões serão decididas na sentença.\n\nParágrafo único. Sobre os documentos\r\napresentados por uma das partes, manifestar-se-á imediatamente a parte contrária, sem\r\ninterrupção da audiência.\n\nSeção X\n\nDa Resposta do Réu"
+        },
+        {
+          "key": "30",
+          "text": "Art. 30. A contestação, que será oral ou\r\nescrita, conterá toda matéria de defesa, exceto argüição de suspeição ou\r\nimpedimento do Juiz, que se processará na forma da legislação em vigor."
+        },
+        {
+          "key": "31",
+          "text": "Art. 31. Não se admitirá a reconvenção. É\r\nlícito ao réu, na contestação, formular pedido em seu favor, nos limites do art. 3º\r\ndesta Lei, desde que fundado nos mesmos fatos que constituem objeto da controvérsia.\n\nParágrafo único. O autor poderá responder ao\r\npedido do réu na própria audiência ou requerer a designação da nova data, que será\r\ndesde logo fixada, cientes todos os presentes.\n\nSeção XI\n\nDas Provas"
+        },
+        {
+          "key": "32",
+          "text": "Art. 32. Todos os meios de prova moralmente\r\nlegítimos, ainda que não especificados em lei, são hábeis para provar a veracidade dos\r\nfatos alegados pelas partes."
+        },
+        {
+          "key": "33",
+          "text": "Art. 33. Todas as provas serão produzidas na\r\naudiência de instrução e julgamento, ainda que não requeridas previamente, podendo o\r\nJuiz limitar ou excluir as que considerar excessivas, impertinentes ou protelatórias."
+        },
+        {
+          "key": "34",
+          "text": "Art. 34. As testemunhas, até o máximo de\r\ntrês para cada parte, comparecerão à audiência de instrução e julgamento levadas\r\npela parte que as tenha arrolado, independentemente de intimação, ou mediante esta, se\r\nassim for requerido.\n\n§\r\n1º O requerimento para intimação das testemunhas será apresentado à Secretaria no\r\nmínimo cinco dias antes da audiência de instrução e julgamento.\n\n§\r\n2º Não comparecendo a testemunha intimada, o Juiz poderá determinar sua imediata\r\ncondução, valendo-se, se necessário, do concurso da força pública."
+        },
+        {
+          "key": "35",
+          "text": "Art. 35. Quando a prova do fato exigir, o Juiz\r\npoderá inquirir técnicos de sua confiança, permitida às partes a apresentação de\r\nparecer técnico.\n\nParágrafo único. No curso da audiência,\r\npoderá o Juiz, de ofício ou a requerimento das partes, realizar inspeção em pessoas ou\r\ncoisas, ou determinar que o faça pessoa de sua confiança, que lhe relatará\r\ninformalmente o verificado."
+        },
+        {
+          "key": "36",
+          "text": "Art. 36. A prova oral não será reduzida a\r\nescrito, devendo a sentença referir, no essencial, os informes trazidos nos depoimentos."
+        },
+        {
+          "key": "37",
+          "text": "Art. 37. A instrução poderá ser dirigida por\r\nJuiz leigo, sob a supervisão de Juiz togado.\n\nSeção XII\n\nDa Sentença"
+        },
+        {
+          "key": "38",
+          "text": "Art. 38. A sentença mencionará os elementos\r\nde convicção do Juiz, com breve resumo dos fatos relevantes ocorridos em audiência,\r\ndispensado o relatório.\n\nParágrafo único. Não se admitirá sentença\r\ncondenatória por quantia ilíquida, ainda que genérico o pedido."
+        },
+        {
+          "key": "39",
+          "text": "Art. 39. É ineficaz a sentença condenatória\r\nna parte que exceder a alçada estabelecida nesta Lei."
+        },
+        {
+          "key": "40",
+          "text": "Art. 40. O Juiz leigo que tiver dirigido a\r\ninstrução proferirá sua decisão e imediatamente a submeterá ao Juiz togado, que\r\npoderá homologá-la, proferir outra em substituição ou, antes de se manifestar,\r\ndeterminar a realização de atos probatórios indispensáveis."
+        },
+        {
+          "key": "41",
+          "text": "Art. 41. Da sentença, excetuada a\r\nhomologatória de conciliação ou laudo arbitral, caberá recurso para o próprio\r\nJuizado.\n\n§\r\n1º O recurso será julgado por uma turma composta por três Juízes togados, em\r\nexercício no primeiro grau de jurisdição, reunidos na sede do Juizado.\n\n§\r\n2º No recurso, as partes serão obrigatoriamente representadas por advogado."
+        },
+        {
+          "key": "42",
+          "text": "Art. 42. O recurso será interposto no prazo de\r\ndez dias, contados da ciência da sentença, por petição escrita, da qual constarão as\r\nrazões e o pedido do recorrente.\n\n§\r\n1º O preparo será feito, independentemente de intimação, nas quarenta e oito horas\r\nseguintes à interposição, sob pena de deserção.\n\n§\r\n2º Após o preparo, a Secretaria intimará o recorrido para oferecer resposta escrita no\r\nprazo de dez dias."
+        },
+        {
+          "key": "43",
+          "text": "Art. 43. O recurso terá somente efeito\r\ndevolutivo, podendo o Juiz dar-lhe efeito suspensivo, para evitar dano irreparável para a\r\nparte."
+        },
+        {
+          "key": "44",
+          "text": "Art. 44. As partes poderão requerer a\r\ntranscrição da gravação da fita magnética a que alude o § 3º do art. 13 desta Lei,\r\ncorrendo por conta do requerente as despesas respectivas."
+        },
+        {
+          "key": "45",
+          "text": "Art. 45. As partes serão intimadas da data da\r\nsessão de julgamento."
+        },
+        {
+          "key": "46",
+          "text": "Art. 46. O julgamento em segunda instância\r\nconstará apenas da ata, com a indicação suficiente do processo, fundamentação sucinta\r\ne parte dispositiva. Se a sentença for confirmada pelos próprios fundamentos, a súmula\r\ndo julgamento servirá de acórdão."
+        },
+        {
+          "key": "47",
+          "text": "Art. 47.\n(VETADO)\n\nSeção XIII\n\nDos Embargos de Declaração"
+        },
+        {
+          "key": "48",
+          "text": "Art. 48. Caberão embargos de declaração contra sentença ou acórdão nos \r\ncasos previstos no Código de Processo Civil.\r\n\r\n\n\r\n\n\r\n\n\r\n\n(Redação dada pela Lei nº 13.105, de 2015)\n\r\n\n(Vigência)\n\nParágrafo único. Os erros materiais podem ser\r\ncorrigidos de ofício."
+        },
+        {
+          "key": "49",
+          "text": "Art. 49. Os embargos de declaração serão\r\ninterpostos por escrito ou oralmente, no prazo de cinco dias, contados da ciência da\r\ndecisão."
+        },
+        {
+          "key": "50",
+          "text": "Art. 50. Os \r\nembargos de declaração interrompem o prazo para a interposição de recurso. \r\n\n(Redação dada pela Lei nº 13.105, de 2015)\n\r\n\n(Vigência)\n\nSeção XIV\n\nDa Extinção do Processo Sem Julgamento do\r\nMérito"
+        },
+        {
+          "key": "51",
+          "text": "Art. 51. Extingue-se o processo, além dos\r\ncasos previstos em lei:\n\nI\r\n- quando o autor deixar de comparecer a qualquer das audiências do processo;\n\nII\r\n- quando inadmissível o procedimento instituído por esta Lei ou seu prosseguimento,\r\napós a conciliação;\n\nIII - quando for reconhecida a incompetência\r\nterritorial;\n\nIV\r\n- quando sobrevier qualquer dos impedimentos previstos no art. 8º desta Lei;\n\nV\r\n- quando, falecido o autor, a habilitação depender de sentença ou não se der no prazo\r\nde trinta dias;\n\nVI\r\n- quando, falecido o réu, o autor não promover a citação dos sucessores no prazo de\r\ntrinta dias da ciência do fato.\n\n§\r\n1º A extinção do processo independerá, em qualquer hipótese, de prévia intimação\r\npessoal das partes.\n\n§\r\n2º No caso do inciso I deste artigo, quando comprovar que a ausência decorre de força\r\nmaior, a parte poderá ser isentada, pelo Juiz, do pagamento das custas.\n\nSeção XV\n\nDa Execução"
+        },
+        {
+          "key": "52",
+          "text": "Art. 52. A execução da sentença\r\nprocessar-se-á no próprio Juizado, aplicando-se, no que couber, o disposto no Código de\r\nProcesso Civil, com as seguintes alterações:\n\nI\r\n- as sentenças serão necessariamente líquidas, contendo a conversão em Bônus do\r\nTesouro Nacional - BTN ou índice equivalente;\n\nII\r\n- os cálculos de conversão de índices, de honorários, de juros e de outras parcelas\r\nserão efetuados por servidor judicial;\n\nIII - a intimação da sentença será feita,\r\nsempre que possível, na própria audiência em que for proferida. Nessa intimação, o\r\nvencido será instado a cumprir a sentença tão logo ocorra seu trânsito em julgado, e\r\nadvertido dos efeitos do seu descumprimento (inciso V);\n\nIV\r\n- não cumprida voluntariamente a sentença transitada em julgado, e tendo havido\r\nsolicitação do interessado, que poderá ser verbal, proceder-se-á desde logo à\r\nexecução, dispensada nova citação;\n\nV\r\n- nos casos de obrigação de entregar, de fazer, ou de não fazer, o Juiz, na sentença\r\nou na fase de execução, cominará multa diária, arbitrada de acordo com as condições\r\neconômicas do devedor, para a hipótese de inadimplemento. Não cumprida a obrigação, o\r\ncredor poderá requerer a elevação da multa ou a transformação da condenação em\r\nperdas e danos, que o Juiz de imediato arbitrará, seguindo-se a execução por quantia\r\ncerta, incluída a multa vencida de obrigação de dar, quando evidenciada a malícia do\r\ndevedor na execução do julgado;\n\nVI\r\n- na obrigação de fazer, o Juiz pode determinar o cumprimento por outrem, fixado o valor\r\nque o devedor deve depositar para as despesas, sob pena de multa diária;\n\nVII - na alienação forçada dos bens, o Juiz\r\npoderá autorizar o devedor, o credor ou terceira pessoa idônea a tratar da alienação\r\ndo bem penhorado, a qual se aperfeiçoará em juízo até a data fixada para a praça ou\r\nleilão. Sendo o preço inferior ao da avaliação, as partes serão ouvidas. Se o\r\npagamento não for à vista, será oferecida caução idônea, nos casos de alienação de\r\nbem móvel, ou hipotecado o imóvel;\n\nVIII - é dispensada a publicação de editais\r\nem jornais, quando se tratar de alienação de bens de pequeno valor;\n\nIX\r\n- o devedor poderá oferecer embargos, nos autos da execução, versando sobre:\n\na)\r\nfalta ou nulidade da citação no processo, se ele correu à revelia;\n\nb)\r\nmanifesto excesso de execução;\n\nc)\r\nerro de cálculo;\n\nd)\r\ncausa impeditiva, modificativa ou extintiva da obrigação, superveniente à sentença."
+        },
+        {
+          "key": "53",
+          "text": "Art. 53. A execução de título executivo\r\nextrajudicial, no valor de até quarenta salários mínimos, obedecerá ao disposto no\r\nCódigo de Processo Civil, com as modificações introduzidas por esta Lei.\n\n§\r\n1º Efetuada a penhora, o devedor será intimado a comparecer à audiência de\r\nconciliação, quando poderá oferecer embargos (art. 52, IX), por escrito ou verbalmente.\n\n§\r\n2º Na audiência, será buscado o meio mais rápido e eficaz para a solução do\r\nlitígio, se possível com dispensa da alienação judicial, devendo o conciliador propor,\r\nentre outras medidas cabíveis, o pagamento do débito a prazo ou a prestação, a dação\r\nem pagamento ou a imediata adjudicação do bem penhorado.\n\n§\r\n3º Não apresentados os embargos em audiência, ou julgados improcedentes, qualquer das\r\npartes poderá requerer ao Juiz a adoção de uma das alternativas do parágrafo anterior.\n\n§\r\n4º Não encontrado o devedor ou inexistindo bens penhoráveis, o processo será\r\nimediatamente extinto, devolvendo-se os documentos ao autor.\n\nSeção XVI\n\nDas Despesas"
+        },
+        {
+          "key": "54",
+          "text": "Art. 54. O acesso ao Juizado Especial\r\nindependerá, em primeiro grau de jurisdição, do pagamento de custas, taxas ou despesas.\n\nParágrafo único. O preparo do recurso, na\r\nforma do § 1º do art. 42 desta Lei, compreenderá todas as despesas processuais,\r\ninclusive aquelas dispensadas em primeiro grau de jurisdição, ressalvada a hipótese de\r\nassistência judiciária gratuita."
+        },
+        {
+          "key": "55",
+          "text": "Art. 55. A sentença de primeiro grau não\r\ncondenará o vencido em custas e honorários de advogado, ressalvados os casos de\r\nlitigância de má-fé. Em segundo grau, o recorrente, vencido, pagará as custas e\r\nhonorários de advogado, que serão fixados entre dez por cento e vinte por cento do valor\r\nde condenação ou, não havendo condenação, do valor corrigido da causa.\n\nParágrafo único. Na execução não serão\r\ncontadas custas, salvo quando:\n\nI\r\n- reconhecida a litigância de má-fé;\n\nII\r\n- improcedentes os embargos do devedor;\n\nIII - tratar-se de execução de sentença que\r\ntenha sido objeto de recurso improvido do devedor.\n\nSeção XVII\n\nDisposições Finais"
+        },
+        {
+          "key": "56",
+          "text": "Art. 56. Instituído o Juizado Especial, serão\r\nimplantadas as curadorias necessárias e o serviço de assistência judiciária."
+        },
+        {
+          "key": "57",
+          "text": "Art. 57. O acordo extrajudicial, de qualquer\r\nnatureza ou valor, poderá ser homologado, no juízo competente, independentemente de\r\ntermo, valendo a sentença como título executivo judicial.\n\nParágrafo único. Valerá como título\r\nextrajudicial o acordo celebrado pelas partes, por instrumento escrito, referendado pelo\r\nórgão competente do Ministério Público."
+        },
+        {
+          "key": "58",
+          "text": "Art. 58. As normas de organização judiciária\r\nlocal poderão estender a conciliação prevista nos arts. 22 e 23 a causas não\r\nabrangidas por esta Lei."
+        },
+        {
+          "key": "59",
+          "text": "Art. 59. Não se admitirá ação rescisória\r\nnas causas sujeitas ao procedimento instituído por esta Lei.\n\nCapítulo III\n\nDos Juizados Especiais Criminais\n\nDisposições Gerais"
+        }
+      ]
+    }
+  ]
+}

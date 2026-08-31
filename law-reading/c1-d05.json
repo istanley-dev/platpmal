@@ -1,0 +1,130 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 1,
+  "day": 5,
+  "label": "Código Penal — arts. 1º a 28",
+  "articleCount": 28,
+  "sections": [
+    {
+      "prefix": "CP",
+      "title": "Código Penal",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm",
+      "range": "arts. 1 a 28",
+      "articles": [
+        {
+          "key": "1",
+          "text": "Art. 1\nº\n- Não há crime sem lei anterior que o defina. Não há pena\r\nsem prévia cominação legal.\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nLei penal no tempo"
+        },
+        {
+          "key": "2",
+          "text": "Art. 2º - Ninguém pode ser punido por fato que lei posterior deixa\r\nde considerar crime, cessando em virtude dela a execução e os efeitos penais da\r\nsentença condenatória.\n(Redação dada\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\nParágrafo único - A lei posterior, que de qualquer modo favorecer o agente, aplica-se\r\naos fatos anteriores, ainda que decididos por sentença condenatória transitada em\r\njulgado.\n(Redação dada pela Lei nº\r\n7.209, de 11.7.1984)\n\n\r\nLei excepcional ou temporária\n(Incluído\r\npela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "3",
+          "text": "Art. 3º - A lei excepcional ou temporária, embora decorrido o\r\nperíodo de sua duração ou cessadas as circunstâncias que a determinaram, aplica-se ao\r\nfato praticado durante sua vigência.\n(Redação\r\ndada pela Lei nº 7.209, de 1984)\n\n\r\nTempo do crime"
+        },
+        {
+          "key": "4",
+          "text": "Art. 4º - Considera-se praticado o crime no momento da ação ou\r\nomissão, ainda que outro seja o momento do resultado.\n(Redação dada pela Lei nº 7.209, de 1984)\n\n\r\nTerritorialidade"
+        },
+        {
+          "key": "5",
+          "text": "Art. 5º - Aplica-se a lei brasileira, sem prejuízo de\r\nconvenções, tratados e regras de direito internacional, ao crime cometido no território\r\nnacional.\n(Redação dada pela Lei nº 7.209,\r\nde 1984)\n\n\r\n§ 1º - Para os efeitos penais, consideram-se como extensão do território nacional as\r\nembarcações e aeronaves brasileiras, de natureza pública ou a serviço do governo\r\nbrasileiro onde quer que se encontrem, bem como as aeronaves e as embarcações\r\nbrasileiras, mercantes ou de propriedade privada, que se achem, respectivamente, no\r\nespaço aéreo correspondente ou em alto-mar.\n(Redação\r\ndada pela Lei nº 7.209, de 1984)\n\n\r\n§ 2º - É também aplicável a lei brasileira aos crimes praticados a bordo de aeronaves\r\nou embarcações estrangeiras de propriedade privada, achando-se aquelas em pouso no\r\nterritório nacional ou em vôo no espaço aéreo correspondente, e estas em porto ou mar\r\nterritorial do Brasil.\n(Redação dada pela Lei\r\nnº 7.209, de 1984)\n\n\r\nLugar do crime\n(Redação dada pela Lei nº\r\n7.209, de 1984)"
+        },
+        {
+          "key": "6",
+          "text": "Art. 6º - Considera-se praticado o crime no lugar em que ocorreu a ação\r\nou omissão, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o\r\nresultado.\n(Redação dada pela Lei nº 7.209,\r\nde 1984)\n\n\r\nExtraterritorialidade\n(Redação dada pela\r\nLei nº 7.209, de 1984)"
+        },
+        {
+          "key": "7",
+          "text": "Art. 7º - Ficam sujeitos à lei brasileira, embora cometidos no\r\nestrangeiro:\n(Redação dada pela Lei nº\r\n7.209, de 1984)\n\n\r\nI - os crimes:\n(Redação dada pela Lei nº\r\n7.209, de 11.7.1984)\n\n\r\na) contra a vida ou a liberdade do Presidente da República;\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\nb) contra o patrimônio ou a fé pública da União, do Distrito Federal, de Estado, de\r\nTerritório, de Município, de empresa pública, sociedade de economia mista, autarquia ou\r\nfundação instituída pelo Poder Público;\n(Incluído\r\npela Lei nº 7.209, de 1984)\n\n\r\nc) contra a administração pública, por quem está a seu serviço;\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\nd) de genocídio, quando o agente for brasileiro ou domiciliado no Brasil;\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\nII - os crimes:\n(Redação dada pela Lei\r\nnº 7.209, de 11.7.1984)\n\n\r\na) que, por tratado ou convenção, o Brasil se obrigou a reprimir;\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\nb) praticados por brasileiro;\n(Incluído pela\r\nLei nº 7.209, de 1984)\n\n\r\nc) praticados em aeronaves ou embarcações brasileiras, mercantes ou de propriedade\r\nprivada, quando em território estrangeiro e aí não sejam julgados.\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\n§ 1º - Nos casos do inciso I, o agente é punido segundo a lei brasileira, ainda que\r\nabsolvido ou condenado no estrangeiro.\n(Incluído\r\npela Lei nº 7.209, de 1984)\n\n\r\n§ 2º - Nos casos do inciso II, a aplicação da lei brasileira depende do concurso das\r\nseguintes condições:\n(Incluído pela Lei nº\r\n7.209, de 1984)\n\n\r\na) entrar o agente no território nacional;\n(Incluído\r\npela Lei nº 7.209, de 1984)\n\n\r\nb) ser o fato punível também no país em que foi praticado;\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\nc) estar o crime incluído entre aqueles pelos quais a lei brasileira autoriza a\r\nextradição;\n(Incluído pela Lei nº 7.209, de\r\n1984)\n\n\r\nd) não ter sido o agente absolvido no estrangeiro ou não ter aí cumprido a pena;\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\ne) não ter sido o agente perdoado no estrangeiro ou, por outro motivo, não estar extinta\r\na punibilidade, segundo a lei mais favorável.\n(Incluído\r\npela Lei nº 7.209, de 1984)\n\n\r\n§ 3º - A lei brasileira aplica-se também ao crime cometido por estrangeiro contra\r\nbrasileiro fora do Brasil, se, reunidas as condições previstas no parágrafo anterior:\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\na) não foi pedida ou foi negada a extradição;\n(Incluído pela Lei nº 7.209, de 1984)\n\n\r\nb) houve requisição do Ministro da Justiça.\n(Incluído\r\npela Lei nº 7.209, de 1984)\n\n\r\nPena cumprida no estrangeiro\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "8",
+          "text": "Art. 8º - A pena cumprida no estrangeiro atenua a pena imposta no Brasil\r\npelo mesmo crime, quando diversas, ou nela é computada, quando idênticas.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nEficácia de sentença estrangeira\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "9",
+          "text": "Art. 9º - A sentença estrangeira, quando a aplicação da lei brasileira\r\nproduz na espécie as mesmas conseqüências, pode ser homologada no Brasil para:\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nI - obrigar o condenado à reparação do dano, a restituições e a outros efeitos civis;\r\n\n(Incluído pela Lei nº 7.209, de\r\n11.7.1984)\n\n\r\nII - sujeitá-lo a medida de segurança.\n(Incluído\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\nParágrafo único\n- A homologação depende:\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\na) para os efeitos previstos no inciso I, de pedido da parte interessada;\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nb) para os outros efeitos, da existência de tratado de extradição com o país de cuja\r\nautoridade judiciária emanou a sentença, ou, na falta de tratado, de requisição do\r\nMinistro da Justiça.\n(Incluído pela Lei nº\r\n7.209, de 11.7.1984)\n\n\r\nContagem de prazo\n\n(Redação dada\r\npela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "10",
+          "text": "Art. 10 - O dia do começo inclui-se no cômputo do prazo. Contam-se os\r\ndias, os meses e os anos pelo calendário comum.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nFrações não computáveis da pena\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "11",
+          "text": "Art. 11 - Desprezam-se, nas penas privativas de liberdade e nas\r\nrestritivas de direitos, as frações de dia, e, na pena de multa, as frações de\r\ncruzeiro.\n(Redação dada pela Lei nº 7.209,\r\nde 11.7.1984)\n\n\r\nLegislação especial\n(Incluída pela Lei\r\nnº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "12",
+          "text": "Art. 12 - As regras gerais deste Código aplicam-se aos fatos\r\nincriminados por lei especial, se esta não dispuser de modo diverso.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\nTÍTULO II\n\r\nDO CRIME\n\n\r\nRelação de causalidade\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "13",
+          "text": "Art. 13 - O resultado, de que depende a existência do crime, somente é\r\nimputável a quem lhe deu causa. Considera-se causa a ação ou omissão sem a qual o\r\nresultado não teria ocorrido.\n(Redação dada\r\npela Lei nº 7.209, de 11.7.1984)\n\nSuperveniência\r\nde causa independente\n\n(Incluído\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\n§ 1º\n\n- A superveniência de causa relativamente independente exclui a\r\nimputação quando, por si só, produziu o resultado; os fatos anteriores, entretanto,\r\nimputam-se a quem os praticou.\n(Incluído pela\r\nLei nº 7.209, de 11.7.1984)\n\nRelevância\r\nda omissão\n\n(Incluído pela Lei nº\r\n7.209, de 11.7.1984)\n\n\r\n§ 2\nº\n- A omissão é penalmente relevante quando o omitente devia e\r\npodia agir para evitar o resultado. O dever de agir incumbe a quem:\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\na) tenha por lei obrigação de cuidado, proteção ou vigilância;\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nb) de outra forma, assumiu a responsabilidade de impedir o resultado;\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nc) com seu comportamento anterior, criou o risco da ocorrência do resultado.\n(Incluído pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "14",
+          "text": "Art. 14 - Diz-se o crime:\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nCrime consumado\n(Incluído pela Lei nº\r\n7.209, de 11.7.1984)\n\n\r\nI - consumado, quando nele se reúnem todos os elementos de sua definição legal;\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\n\nTentativa\n\n(Incluído\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\nII - tentado, quando, iniciada a execução, não se consuma por circunstâncias alheias\r\nà vontade do agente.\n(Incluído pela Lei nº\r\n7.209, de 11.7.1984)\n\n\r\nPena de tentativa\n\n(Incluído pela\r\nLei nº 7.209, de 11.7.1984)\n\n\r\n\nParágrafo único - Salvo disposição em contrário, pune-se a tentativa com a\r\npena correspondente ao crime consumado, diminuída de um a dois terços.\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nDesistência voluntária e arrependimento eficaz\n\n(Redação dada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "15",
+          "text": "Art. 15 - O agente que, voluntariamente, desiste de prosseguir na\r\nexecução ou impede que o resultado se produza, só responde pelos atos já praticados.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nArrependimento posterior\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "16",
+          "text": "Art. 16 - Nos crimes cometidos sem violência ou grave ameaça à pessoa,\r\nreparado o dano ou restituída a coisa, até o recebimento da denúncia ou da queixa, por\r\nato voluntário do agente, a pena será reduzida de um a dois terços.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nCrime impossível\n(Redação dada pela Lei\r\nnº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "17",
+          "text": "Art. 17 - Não se pune a tentativa quando, por ineficácia absoluta do\r\nmeio ou por absoluta impropriedade do objeto, é impossível consumar-se o crime.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "18",
+          "text": "Art. 18 - Diz-se o crime:\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nCrime doloso\n\n(Incluído pela Lei\r\nnº 7.209, de 11.7.1984)\n\n\r\nI - doloso, quando o agente quis o resultado ou assumiu o risco de produzi-lo;\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nCrime culposo\n\n(Incluído\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\nII - culposo, quando o agente deu causa ao resultado por imprudência, negligência ou\r\nimperícia.\n(Incluído pela Lei nº 7.209, de\r\n11.7.1984)\n\n\r\nParágrafo único\n\n- Salvo os casos expressos em lei, ninguém pode ser\r\npunido por fato previsto como crime, senão quando o pratica dolosamente.\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nAgravação pelo resultado\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "19",
+          "text": "Art. 19\n\n- Pelo resultado que agrava especialmente a\r\npena, só responde o agente que o houver causado ao menos culposamente.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nErro sobre elementos do tipo\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "20",
+          "text": "Art. 20 - O erro sobre elemento constitutivo do tipo legal de crime\r\nexclui o dolo, mas permite a punição por crime culposo, se previsto em lei.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nDescriminantes putativas\n\n(Incluído\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\n§ 1º - É isento de pena quem, por erro plenamente justificado pelas circunstâncias,\r\nsupõe situação de fato que, se existisse, tornaria a ação legítima. Não há\r\nisenção de pena quando o erro deriva de culpa e o fato é punível como crime culposo.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nErro determinado por terceiro\n(Incluído\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\n§ 2º - Responde pelo crime o terceiro que determina o erro.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nErro sobre a pessoa\n\n(Incluído pela\r\nLei nº 7.209, de 11.7.1984)\n\n\r\n§ 3\nº\n- O erro quanto à pessoa contra a qual o crime é praticado não\r\nisenta de pena. Não se consideram, neste caso, as condições ou qualidades da vítima,\r\nsenão as da pessoa contra quem o agente queria praticar o crime.\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nErro sobre a ilicitude do fato\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "21",
+          "text": "Art. 21 - O desconhecimento da lei é inescusável. O erro sobre a\r\nilicitude do fato, se inevitável, isenta de pena; se evitável, poderá diminuí-la de um\r\nsexto a um terço.\n(Redação dada pela Lei\r\nnº 7.209, de 11.7.1984)\n\n\r\nParágrafo único - Considera-se evitável o erro se o agente atua ou se omite sem a\r\nconsciência da ilicitude do fato, quando lhe era possível, nas circunstâncias, ter ou\r\natingir essa consciência.\n(Redação dada\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\nCoação irresistível e obediência hierárquica\n(Redação dada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "22",
+          "text": "Art. 22 - Se o fato é cometido sob coação irresistível ou em estrita\r\nobediência a ordem, não manifestamente ilegal, de superior hierárquico, só é punível\r\no autor da coação ou da ordem.\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nExclusão de ilicitude\n\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)"
+        },
+        {
+          "key": "23",
+          "text": "Art. 23 - Não há crime quando o agente pratica o fato:\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nI - em estado de necessidade;\n(Incluído pela\r\nLei nº 7.209, de 11.7.1984)\n\n\r\nII - em legítima defesa;\n(Incluído pela Lei\r\nnº 7.209, de 11.7.1984)\n\r\n\n(Vide ADPF \r\n779)\n\n\r\nIII - em estrito cumprimento de dever legal ou no exercício regular de direito.\n(Incluído pela Lei nº 7.209, de 11.7.1984)\n\n\r\nExcesso punível\n(Incluído pela Lei nº\r\n7.209, de 11.7.1984)\n\n\r\nParágrafo único - O agente, em qualquer das hipóteses deste artigo, responderá pelo\r\nexcesso doloso ou culposo.\n(Incluído pela Lei\r\nnº 7.209, de 11.7.1984)\n\n\r\nEstado de necessidade"
+        },
+        {
+          "key": "24",
+          "text": "Art. 24 - Considera-se em estado de necessidade quem pratica o fato para\r\nsalvar de perigo atual, que não provocou por sua vontade, nem podia de outro modo evitar,\r\ndireito próprio ou alheio, cujo sacrifício, nas circunstâncias, não era razoável\r\nexigir-se.\n(Redação dada pela Lei nº 7.209,\r\nde 11.7.1984)\n\n\r\n§ 1\nº\n- Não pode alegar estado de necessidade quem tinha o dever legal\r\nde enfrentar o perigo.\n(Redação dada pela\r\nLei nº 7.209, de 11.7.1984)\n\n\r\n§ 2\nº\n- Embora seja razoável exigir-se o sacrifício do direito\r\nameaçado, a pena poderá ser reduzida de um a dois terços.\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nLegítima defesa"
+        },
+        {
+          "key": "25",
+          "text": "Art. 25 - Entende-se em legítima defesa quem, usando moderadamente dos\r\nmeios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de\r\noutrem.\n(Redação dada pela Lei nº 7.209, de\r\n11.7.1984)\n\r\n\n(Vide ADPF \r\n779)\n\n\r\n\nParágrafo \r\núnico. Observados os requisitos previstos no\ncaput\ndeste artigo, \r\nconsidera-se também em legítima defesa o agente de segurança pública que repele \r\nagressão ou risco de agressão a vítima mantida refém durante a prática de \r\ncrimes. \r\n\n(Incluído pela Lei nº \r\n13.964, de 2019)\n\n(Vide ADPF \r\n779)\n\nTÍTULO III\n\r\nDA IMPUTABILIDADE PENAL\n\n\r\nInimputáveis"
+        },
+        {
+          "key": "26",
+          "text": "Art. 26 - É isento de pena o agente que, por doença mental ou\r\ndesenvolvimento mental incompleto ou retardado, era, ao tempo da ação ou da omissão,\r\ninteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo\r\ncom esse entendimento.\n(Redação dada pela\r\nLei nº 7.209, de 11.7.1984)\n\n\r\nRedução de pena\n\n\r\nParágrafo único - A pena pode ser reduzida de um a dois terços, se o agente, em virtude\r\nde perturbação de saúde mental ou por desenvolvimento mental incompleto ou retardado\r\nnão era inteiramente capaz de entender o caráter ilícito do fato ou de determinar-se de\r\nacordo com esse entendimento.\n(Redação dada\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\nMenores de dezoito anos"
+        },
+        {
+          "key": "27",
+          "text": "Art. 27\n\n- Os menores de 18 (dezoito) anos são\r\npenalmente inimputáveis, ficando sujeitos às normas estabelecidas na legislação\r\nespecial.\n(Redação dada pela Lei nº 7.209,\r\nde 11.7.1984)\n\n\r\nEmoção e paixão"
+        },
+        {
+          "key": "28",
+          "text": "Art. 28 - Não excluem a imputabilidade penal:\n(Redação dada pela Lei nº 7.209, de 11.7.1984)\n\n\r\nI - a emoção ou a paixão;\n(Redação dada\r\npela Lei nº 7.209, de 11.7.1984)\n\n\r\nEmbriaguez\n\n\r\nII - a embriaguez, voluntária ou culposa, pelo álcool ou substância de efeitos\r\nanálogos.\n(Redação dada pela Lei nº 7.209,\r\nde 11.7.1984)\n\n\r\n§ 1\nº\n- É isento de pena o agente que, por embriaguez completa,\r\nproveniente de caso fortuito ou força maior, era, ao tempo da ação ou da omissão,\r\ninteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo\r\ncom esse entendimento.\n(Redação dada pela Lei\r\nnº 7.209, de 11.7.1984)\n\n\r\n§ 2\nº\n- A pena pode ser reduzida de um a dois terços, se o agente, por\r\nembriaguez, proveniente de caso fortuito ou força maior, não possuía, ao tempo da\r\nação ou da omissão, a plena capacidade de entender o caráter ilícito do fato ou de\r\ndeterminar-se de acordo com esse entendimento.\n(Redação\r\ndada pela Lei nº 7.209, de 11.7.1984)\n\nTÍTULO IV\n\r\nDO CONCURSO DE PESSOAS"
+        }
+      ]
+    }
+  ]
+}

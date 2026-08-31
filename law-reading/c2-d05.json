@@ -1,0 +1,126 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 5,
+  "label": "CPM — arts. 26 a 29 e 48 a 68",
+  "articleCount": 25,
+  "sections": [
+    {
+      "prefix": "CPM",
+      "title": "Código Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "range": "arts. 26 a 29",
+      "articles": [
+        {
+          "key": "26",
+          "text": "Art.\n\n26. Quando a lei penal militar se refere a\r\n\"brasileiro\" ou \"nacional\", compreende as pessoas enumeradas como\r\nbrasileiros na Constituição do Brasil.\n\nEstrangeiros\n\nParágrafo único. Para os\r\nefeitos da lei penal militar, são considerados estrangeiros os apátridas e os\r\nbrasileiros que perderam a nacionalidade.\n\nServidores da Justiça Militar\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "27",
+          "text": "Art. 27.\n\nPara o efeito da \r\naplicação deste Código, consideram-se servidores da Justiça Militar \r\nos juízes, os servidores públicos e os auxiliares da Justiça \r\nMilitar.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nCasos de prevalência do Código\r\nPenal Militar"
+        },
+        {
+          "key": "28",
+          "text": "Art.\n\n28. Os crimes contra a segurança externa do país ou contra\r\nas instituições militares, definidos neste Código, excluem os da mesma natureza\r\ndefinidos em outras leis.\n\nTÍTULO II\n\nDO CRIME\n\nRelação de causalidade"
+        },
+        {
+          "key": "29",
+          "text": "Art. 29. O resultado de que\r\ndepende a existência do crime sòmente é imputável a quem lhe deu causa. Considera-se\r\ncausa a ação ou omissão sem a qual o resultado não teria ocorrido.\n\n§ 1º A superveniência de causa\r\nrelativamente independente exclui a imputação quando, por si só, produziu o resultado.\r\nOs fatos anteriores, imputam-se, entretanto, a quem os praticou.\n\n§ 2º A omissão é relevante\r\ncomo causa quando o omitente devia e podia agir para evitar o resultado. O dever de agir\r\nincumbe a quem tenha por lei obrigação de cuidado, proteção ou vigilância; a quem, de\r\noutra forma, assumiu a responsabilidade de impedir o resultado; e a quem, com seu\r\ncomportamento anterior, criou o risco de sua superveniência."
+        }
+      ]
+    },
+    {
+      "prefix": "CPM",
+      "title": "Código Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "range": "arts. 48 a 68",
+      "articles": [
+        {
+          "key": "48",
+          "text": "Art.\n\n48. Não é imputável quem, no momento da ação ou da\r\nomissão, não possui a capacidade de entender o caráter ilícito do fato ou de\r\ndeterminar-se de acôrdo com êsse entendimento, em virtude de doença mental, de\r\ndesenvolvimento mental incompleto ou retardado.\n\nRedução facultativa da pena\r\n\n\r\nParágrafo único. Se a doença ou a deficiência mental não suprime, \r\nmas diminui consideravelmente a capacidade de entendimento da \r\nilicitude do fato ou a de autodeterminação, não fica excluída a \r\nimputabilidade, mas a pena pode ser reduzida de 1/3 (um terço) a 2/3 \r\n(dois terços), sem prejuízo do disposto no art. 113 deste Código.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nEmbriaguez"
+        },
+        {
+          "key": "49",
+          "text": "Art.\n\n49. Não é igualmente imputável o agente que, por\r\nembriaguez completa proveniente de caso fortuito ou fôrça maior, era, ao tempo da ação\r\nou da omissão, inteiramente incapaz de entender o caráter criminoso do fato ou de\r\ndeterminar-se de acôrdo com êsse entendimento.\n\nParágrafo único. A pena pode\r\nser reduzida de um a dois terços, se o agente por embriaguez proveniente de caso fortuito\r\nou fôrça maior, não possuía, ao tempo da ação ou da omissão, a plena capacidade de\r\nentender o caráter criminoso do fato ou de determinar-se de acôrdo com êsse\r\nentendimento.\n\nMenores"
+        },
+        {
+          "key": "50",
+          "text": "Art. \r\n50.\n\nO menor\nde 18 (dezoito) anos é penalmente inimputável, \r\nficando sujeito às normas estabelecidas na legislação especial.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nEquiparação a maiores"
+        },
+        {
+          "key": "51",
+          "text": "Art. 51.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência"
+        },
+        {
+          "key": "52",
+          "text": "Art. 52.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nTÍTULO IV\n\nDO CONCURSO DE\r\nAGENTES\n\nCoautoria\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "53",
+          "text": "Art.\n\n53. Quem, de qualquer modo, concorre para o crime incide nas\r\npenas a êste cominadas.\n\nCondições ou circunstâncias\r\npessoais\n\n§ 1º A punibilidade de qualquer\r\ndos concorrentes é independente da dos outros, determinando-se segundo a sua própria\r\nculpabilidade. Não se comunicam, outrossim, as condições ou circunstâncias de caráter\r\npessoal, salvo quando elementares do crime.\n\nAgravação de pena\r\n\n§ 2° A pena é agravada em\r\nrelação ao agente que:\n\nI - promove ou organiza a\r\ncooperação no crime ou dirige a atividade dos demais agentes;\n\nII - coage outrem à execução\r\nmaterial do crime;\n\nIII - instiga ou determina a\r\ncometer o crime alguém sujeito à sua autoridade, ou não punível em virtude de\r\ncondição ou qualidade pessoal;\n\nIV - executa o crime, ou nêle\r\nparticipa, mediante paga ou promessa de recompensa.\n\nAtenuação de pena\r\n\n§ 3º A pena é atenuada com\r\nrelação ao agente, cuja participação no crime é de somenos importância.\n\nCabeças\n\n§ 4º Na prática de crime de\r\nautoria coletiva necessária, reputam-se cabeças os que dirigem, provocam, instigam ou\r\nexcitam a ação.\n\n\r\n§ 5º Quando o crime é cometido por inferiores hierárquicos e um ou \r\nmais oficiais, são estes considerados cabeças, assim como os inferiores \r\nhierárquicos que exercem função de oficial.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nCasos de impunibilidade"
+        },
+        {
+          "key": "54",
+          "text": "Art.\n\n54. O ajuste, a determinação ou instigação e o auxílio,\r\nsalvo disposição em contrário, não são puníveis se o crime não chega, pelo menos, a\r\nser tentado.\n\nTÍTULO V\n\nDAS PENAS\n\nCAPÍTULO I\n\nDAS PENAS\r\nPRINCIPAIS\n\nPenas principais"
+        },
+        {
+          "key": "55",
+          "text": "Art. 55. As penas principais\r\nsão:\n\na) morte;\n\nb) reclusão;\n\nc) detenção;\n\nd) prisão;\n\ne) impedimento;\n\nf)\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\ng)\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nPena de morte"
+        },
+        {
+          "key": "56",
+          "text": "Art. 56. A pena de morte é\r\nexecutada por fuzilamento.\n\nComunicação"
+        },
+        {
+          "key": "57",
+          "text": "Art.\n\n57. A sentença definitiva de condenação à morte é\r\ncomunicada, logo que passe em julgado, ao Presidente da República, e não pode ser\r\nexecutada senão depois de sete dias após a comunicação.\n\nParágrafo único. Se a pena é\r\nimposta em zona de operações de guerra, pode ser imediatamente executada, quando o\r\nexigir o interêsse da ordem e da disciplina militares.\n\nMínimos e máximos genéricos"
+        },
+        {
+          "key": "58",
+          "text": "Art. 58. O mínimo da pena de\r\nreclusão é de um ano, e o máximo de trinta anos; o mínimo da pena de detenção é de\r\ntrinta dias, e o máximo de dez anos.\n\nPena até dois anos imposta a\r\nmilitar"
+        },
+        {
+          "key": "59",
+          "text": "Art. 59 - A pena de reclusão ou de detenção até 2 (dois) anos,\r\naplicada a militar, é convertida em pena de prisão e cumprida, quando não cabível a\r\nsuspensão condicional:\n(Redação dada pela Lei nº\r\n6.544, de 30.6.1978)\n\nI - pelo oficial, em recinto de\r\nestabelecimento militar;\n\nII - pela praça, em\r\nestabelecimento penal militar, onde ficará separada de presos que estejam cumprindo pena\r\ndisciplinar ou pena privativa de liberdade por tempo superior a dois anos.\n\nSeparação de praças especiais\r\ne graduadas\n\nParágrafo único. Para efeito de\r\nseparação, no cumprimento da pena de prisão, atender-se-á, também, à condição das\r\npraças especiais e à das graduadas, ou não; e, dentre as graduadas, à das que tenham\r\ngraduação especial.\n\nPena do assemelhado"
+        },
+        {
+          "key": "60",
+          "text": "Art. 60.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nPena superior a dois anos,\r\nimposta a militar"
+        },
+        {
+          "key": "61",
+          "text": "Art. 61 - A\r\npena privativa da liberdade por mais de 2 (dois) anos, aplicada a militar, é cumprida em\r\npenitenciária militar e, na falta dessa, em estabelecimento prisional civil, ficando o\r\nrecluso ou detento sujeito ao regime conforme a legislação penal comum, de cujos\r\nbenefícios e concessões, também, poderá gozar.\n(Redação\r\ndada pela Lei nº 6.544, de 30.6.1978)\n\nPena privativa da liberdade\r\nimposta a civil"
+        },
+        {
+          "key": "62",
+          "text": "Art. 62 - O\r\ncivil cumpre a pena aplicada pela Justiça Militar, em estabelecimento prisional civil,\r\nficando ele sujeito ao regime conforme a legislação penal comum, de cujos benefícios e\r\nconcessões, também, poderá gozar.\n(Redação dada\r\npela Lei nº 6.544, de 30.6.1978)\n\nCumprimento em penitenciária\r\nmilitar\n\nParágrafo único - Por crime\r\nmilitar praticado em tempo de guerra poderá o civil ficar sujeito a cumprir a pena, no\r\ntodo ou em parte em penitenciária militar, se, em benefício da segurança nacional,\r\nassim o determinar a sentença.\n(Redação dada pela Lei\r\nnº 6.544, de 30.6.1978)\n\nPena de impedimento"
+        },
+        {
+          "key": "63",
+          "text": "Art.\n\n63. A pena de impedimento sujeita o condenado a permanecer\r\nno recinto da unidade, sem prejuízo da instrução militar."
+        },
+        {
+          "key": "64",
+          "text": "Art.\n\n64.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência"
+        },
+        {
+          "key": "65",
+          "text": "Art.\n\n65.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nSuperveniência de doença mental"
+        },
+        {
+          "key": "66",
+          "text": "Art.\n\n66. O condenado a que sobrevenha doença mental deve ser\r\nrecolhido a manicômio judiciário ou, na falta dêste, a outro estabelecimento adequado,\r\nonde lhe seja assegurada custódia e tratamento.\n\nTempo computável"
+        },
+        {
+          "key": "67",
+          "text": "Art.\n\n67. Computam-se na pena privativa de liberdade\r\no tempo de prisão provisória, no Brasil ou no estrangeiro, e o de internação em\r\nhospital ou manicômio, bem como o excesso de tempo, reconhecido em decisão judicial\r\nirrecorrível, no cumprimento da pena, por outro crime, desde que a decisão seja\r\nposterior ao crime de que se trata.\n\nTransferência de condenados"
+        },
+        {
+          "key": "68",
+          "text": "Art.\n\n68. O condenado pela Justiça Militar de uma região,\r\ndistrito ou zona pode cumprir pena em estabelecimento de outra região, distrito ou zona.\n\nCAPÍTULO II\n\nDA APLICAÇÃO\r\nDA PENA\n\nFixação da pena privativa de\r\nliberdade"
+        }
+      ]
+    }
+  ]
+}

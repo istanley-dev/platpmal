@@ -1,0 +1,1080 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "totalDays": 65,
+  "generatedAt": "2026-08-31T15:56:44Z",
+  "runtimeNetworkRequired": false,
+  "days": [
+    {
+      "cycle": 1,
+      "day": 1,
+      "label": "CF/88 — art. 5º",
+      "path": "law-reading/c1-d01.json",
+      "articleCount": 1,
+      "segments": [
+        [
+          "CF",
+          "5",
+          "5"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 2,
+      "label": "CF/88 — arts. 6º a 11",
+      "path": "law-reading/c1-d02.json",
+      "articleCount": 6,
+      "segments": [
+        [
+          "CF",
+          "6",
+          "11"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 3,
+      "label": "CF/88 — arts. 12 a 17",
+      "path": "law-reading/c1-d03.json",
+      "articleCount": 6,
+      "segments": [
+        [
+          "CF",
+          "12",
+          "17"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 4,
+      "label": "CF/88 — arts. 18 a 36",
+      "path": "law-reading/c1-d04.json",
+      "articleCount": 20,
+      "segments": [
+        [
+          "CF",
+          "18",
+          "36"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 5,
+      "label": "Código Penal — arts. 1º a 28",
+      "path": "law-reading/c1-d05.json",
+      "articleCount": 28,
+      "segments": [
+        [
+          "CP",
+          "1",
+          "28"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 6,
+      "label": "CF/88 — arts. 136 a 144",
+      "path": "law-reading/c1-d06.json",
+      "articleCount": 9,
+      "segments": [
+        [
+          "CF",
+          "136",
+          "144"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 7,
+      "label": "Lei 14.133/2021 — arts. 1º a 44",
+      "path": "law-reading/c1-d07.json",
+      "articleCount": 44,
+      "segments": [
+        [
+          "L14133",
+          "1",
+          "44"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 8,
+      "label": "Lei 14.133/2021 — arts. 45 a 71",
+      "path": "law-reading/c1-d08.json",
+      "articleCount": 27,
+      "segments": [
+        [
+          "L14133",
+          "45",
+          "71"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 9,
+      "label": "Lei 14.133/2021 — arts. 72 a 114",
+      "path": "law-reading/c1-d09.json",
+      "articleCount": 43,
+      "segments": [
+        [
+          "L14133",
+          "72",
+          "114"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 10,
+      "label": "Lei 14.133/2021 — arts. 115 a 150",
+      "path": "law-reading/c1-d10.json",
+      "articleCount": 36,
+      "segments": [
+        [
+          "L14133",
+          "115",
+          "150"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 11,
+      "label": "Lei 14.133/2021 — arts. 151 a 194",
+      "path": "law-reading/c1-d11.json",
+      "articleCount": 45,
+      "segments": [
+        [
+          "L14133",
+          "151",
+          "194"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 12,
+      "label": "CADH — arts. 1º a 40",
+      "path": "law-reading/c1-d12.json",
+      "articleCount": 40,
+      "segments": [
+        [
+          "CADH",
+          "1",
+          "40"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 13,
+      "label": "CADH — arts. 41 a 82",
+      "path": "law-reading/c1-d13.json",
+      "articleCount": 42,
+      "segments": [
+        [
+          "CADH",
+          "41",
+          "82"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 14,
+      "label": "CPP — arts. 4º a 23",
+      "path": "law-reading/c1-d14.json",
+      "articleCount": 23,
+      "segments": [
+        [
+          "CPP",
+          "4",
+          "23"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 15,
+      "label": "CPP — arts. 24 a 62",
+      "path": "law-reading/c1-d15.json",
+      "articleCount": 40,
+      "segments": [
+        [
+          "CPP",
+          "24",
+          "62"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 16,
+      "label": "Lei 14.751/2023 — Lei Orgânica Nacional das PMs/CBMs",
+      "path": "law-reading/c1-d16.json",
+      "articleCount": 44,
+      "segments": [
+        [
+          "LO",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 17,
+      "label": "Lei 7.716/1989 + Lei 8.072/1990 — racismo e crimes hediondos",
+      "path": "law-reading/c1-d17.json",
+      "articleCount": 46,
+      "segments": [
+        [
+          "L7716",
+          "*",
+          "*"
+        ],
+        [
+          "L8072",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 18,
+      "label": "Lei 13.869/2019 — Abuso de Autoridade",
+      "path": "law-reading/c1-d18.json",
+      "articleCount": 46,
+      "segments": [
+        [
+          "L13869",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 19,
+      "label": "Lei 10.826/2003 — Estatuto do Desarmamento",
+      "path": "law-reading/c1-d19.json",
+      "articleCount": 40,
+      "segments": [
+        [
+          "L10826",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 20,
+      "label": "Lei 12.850/2013 — Organização Criminosa",
+      "path": "law-reading/c1-d20.json",
+      "articleCount": 37,
+      "segments": [
+        [
+          "L12850",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 21,
+      "label": "Lei 9.605/1998 — Crimes Ambientais",
+      "path": "law-reading/c1-d21.json",
+      "articleCount": 87,
+      "segments": [
+        [
+          "L9605",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 22,
+      "label": "Lei 11.340/2006 — Maria da Penha",
+      "path": "law-reading/c1-d22.json",
+      "articleCount": 57,
+      "segments": [
+        [
+          "L11340",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 23,
+      "label": "Lei 9.455/1997 + Lei 7.960/1989 — Tortura e Prisão Temporária",
+      "path": "law-reading/c1-d23.json",
+      "articleCount": 11,
+      "segments": [
+        [
+          "L9455",
+          "*",
+          "*"
+        ],
+        [
+          "L7960",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 24,
+      "label": "Lei 9.099/1995 — arts. 1º a 59",
+      "path": "law-reading/c1-d24.json",
+      "articleCount": 60,
+      "segments": [
+        [
+          "L9099",
+          "1",
+          "59"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 25,
+      "label": "Lei 9.099/1995 — arts. 60 a 97",
+      "path": "law-reading/c1-d25.json",
+      "articleCount": 39,
+      "segments": [
+        [
+          "L9099",
+          "60",
+          "97"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 26,
+      "label": "Lei 11.343/2006 — arts. 1º a 47",
+      "path": "law-reading/c1-d26.json",
+      "articleCount": 61,
+      "segments": [
+        [
+          "L11343",
+          "1",
+          "47"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 27,
+      "label": "Lei 11.343/2006 — arts. 48 a 75",
+      "path": "law-reading/c1-d27.json",
+      "articleCount": 39,
+      "segments": [
+        [
+          "L11343",
+          "48",
+          "75"
+        ]
+      ]
+    },
+    {
+      "cycle": 1,
+      "day": 28,
+      "label": "Lei 10.259/2001 — Juizados Especiais Federais",
+      "path": "law-reading/c1-d28.json",
+      "articleCount": 27,
+      "segments": [
+        [
+          "L10259",
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 1,
+      "label": "CPM — arts. 1º a 12",
+      "path": "law-reading/c2-d01.json",
+      "articleCount": 12,
+      "segments": [
+        [
+          "CPM",
+          "1",
+          "12"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 2,
+      "label": "CPPM — arts. 1º a 28",
+      "path": "law-reading/c2-d02.json",
+      "articleCount": 29,
+      "segments": [
+        [
+          "CPPM",
+          "1",
+          "28"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 3,
+      "label": "CPM — arts. 13 a 25",
+      "path": "law-reading/c2-d03.json",
+      "articleCount": 13,
+      "segments": [
+        [
+          "CPM",
+          "13",
+          "25"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 4,
+      "label": "CPPM — arts. 29 a 46",
+      "path": "law-reading/c2-d04.json",
+      "articleCount": 18,
+      "segments": [
+        [
+          "CPPM",
+          "29",
+          "46"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 5,
+      "label": "CPM — arts. 26 a 29 e 48 a 68",
+      "path": "law-reading/c2-d05.json",
+      "articleCount": 25,
+      "segments": [
+        [
+          "CPM",
+          "26",
+          "29"
+        ],
+        [
+          "CPM",
+          "48",
+          "68"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 6,
+      "label": "CPPM — arts. 243 a 271",
+      "path": "law-reading/c2-d06.json",
+      "articleCount": 29,
+      "segments": [
+        [
+          "CPPM",
+          "243",
+          "271"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 7,
+      "label": "CPM — arts. 69 a 108",
+      "path": "law-reading/c2-d07.json",
+      "articleCount": 41,
+      "segments": [
+        [
+          "CPM",
+          "69",
+          "108"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 8,
+      "label": "CPPM — arts. 451 a 460",
+      "path": "law-reading/c2-d08.json",
+      "articleCount": 10,
+      "segments": [
+        [
+          "CPPM",
+          "451",
+          "460"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 9,
+      "label": "CPM — arts. 109 a 135",
+      "path": "law-reading/c2-d09.json",
+      "articleCount": 27,
+      "segments": [
+        [
+          "CPM",
+          "109",
+          "135"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 10,
+      "label": "ECA — arts. 1º a 32",
+      "path": "law-reading/c2-d10.json",
+      "articleCount": 39,
+      "segments": [
+        [
+          "L8069",
+          "1",
+          "32"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 11,
+      "label": "ECA — arts. 33 a 73",
+      "path": "law-reading/c2-d11.json",
+      "articleCount": 49,
+      "segments": [
+        [
+          "L8069",
+          "33",
+          "73"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 12,
+      "label": "CPM — arts. 136 a 194",
+      "path": "law-reading/c2-d12.json",
+      "articleCount": 59,
+      "segments": [
+        [
+          "CPM",
+          "136",
+          "194"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 13,
+      "label": "CTB — arts. 1º a 73",
+      "path": "law-reading/c2-d13.json",
+      "articleCount": 83,
+      "segments": [
+        [
+          "L9503",
+          "1",
+          "73"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 14,
+      "label": "CPM — arts. 195 a 253",
+      "path": "law-reading/c2-d14.json",
+      "articleCount": 59,
+      "segments": [
+        [
+          "CPM",
+          "195",
+          "253"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 15,
+      "label": "CPM — arts. 254 a 310",
+      "path": "law-reading/c2-d15.json",
+      "articleCount": 57,
+      "segments": [
+        [
+          "CPM",
+          "254",
+          "310"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 16,
+      "label": "CPM — arts. 311 a 354",
+      "path": "law-reading/c2-d16.json",
+      "articleCount": 44,
+      "segments": [
+        [
+          "CPM",
+          "311",
+          "354"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 17,
+      "label": "ECA — arts. 74 a 109",
+      "path": "law-reading/c2-d17.json",
+      "articleCount": 38,
+      "segments": [
+        [
+          "L8069",
+          "74",
+          "109"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 18,
+      "label": "CTB — arts. 74 a 129-B",
+      "path": "law-reading/c2-d18.json",
+      "articleCount": 65,
+      "segments": [
+        [
+          "L9503",
+          "74",
+          "129B"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 19,
+      "label": "CTB — arts. 130 a 200",
+      "path": "law-reading/c2-d19.json",
+      "articleCount": 81,
+      "segments": [
+        [
+          "L9503",
+          "130",
+          "200"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 20,
+      "label": "ECA — arts. 110 a 163",
+      "path": "law-reading/c2-d20.json",
+      "articleCount": 54,
+      "segments": [
+        [
+          "L8069",
+          "110",
+          "163"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 21,
+      "label": "ECA — arts. 194 a 197",
+      "path": "law-reading/c2-d21.json",
+      "articleCount": 4,
+      "segments": [
+        [
+          "L8069",
+          "194",
+          "197"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 22,
+      "label": "ECA — arts. 197-A a 224",
+      "path": "law-reading/c2-d22.json",
+      "articleCount": 38,
+      "segments": [
+        [
+          "L8069",
+          "197A",
+          "224"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 23,
+      "label": "ECA — arts. 225 a 244-C",
+      "path": "law-reading/c2-d23.json",
+      "articleCount": 31,
+      "segments": [
+        [
+          "L8069",
+          "225",
+          "244C"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 24,
+      "label": "CTB — arts. 201 a 268-A",
+      "path": "law-reading/c2-d24.json",
+      "articleCount": 73,
+      "segments": [
+        [
+          "L9503",
+          "201",
+          "268A"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 25,
+      "label": "CTB — arts. 269 a 341",
+      "path": "law-reading/c2-d25.json",
+      "articleCount": 88,
+      "segments": [
+        [
+          "L9503",
+          "269",
+          "341"
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "day": 26,
+      "label": "ECA — arts. 245 a 267",
+      "path": "law-reading/c2-d26.json",
+      "articleCount": 39,
+      "segments": [
+        [
+          "L8069",
+          "245",
+          "267"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 1,
+      "label": "Lei Estadual 5.346/1992 — arts. 1º a 14",
+      "path": "law-reading/c3-d01.json",
+      "articleCount": 14,
+      "segments": [
+        [
+          "Lei5346",
+          "1",
+          "14"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 2,
+      "label": "Lei Estadual 5.346/1992 — arts. 15 a 30",
+      "path": "law-reading/c3-d02.json",
+      "articleCount": 16,
+      "segments": [
+        [
+          "Lei5346",
+          "15",
+          "30"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 3,
+      "label": "Lei Estadual 5.346/1992 — arts. 31 a 52",
+      "path": "law-reading/c3-d03.json",
+      "articleCount": 22,
+      "segments": [
+        [
+          "Lei5346",
+          "31",
+          "52"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 4,
+      "label": "Lei Estadual 5.346/1992 — arts. 53 a 88",
+      "path": "law-reading/c3-d04.json",
+      "articleCount": 36,
+      "segments": [
+        [
+          "Lei5346",
+          "53",
+          "88"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 5,
+      "label": "Lei Estadual 5.346/1992 — arts. 89 a 104",
+      "path": "law-reading/c3-d05.json",
+      "articleCount": 16,
+      "segments": [
+        [
+          "Lei5346",
+          "89",
+          "104"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 6,
+      "label": "Lei Estadual 5.346/1992 — arts. 105 a 135",
+      "path": "law-reading/c3-d06.json",
+      "articleCount": 32,
+      "segments": [
+        [
+          "Lei5346",
+          "105",
+          "135"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 7,
+      "label": "Decreto Estadual 37.042/1996 — arts. 1º a 25",
+      "path": "law-reading/c3-d07.json",
+      "articleCount": 25,
+      "segments": [
+        [
+          "RD",
+          "1",
+          "25"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 8,
+      "label": "Decreto Estadual 37.042/1996 — arts. 26 a 38",
+      "path": "law-reading/c3-d08.json",
+      "articleCount": 13,
+      "segments": [
+        [
+          "RD",
+          "26",
+          "38"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 9,
+      "label": "Decreto Estadual 37.042/1996 — arts. 39 a 66",
+      "path": "law-reading/c3-d09.json",
+      "articleCount": 28,
+      "segments": [
+        [
+          "RD",
+          "39",
+          "66"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 10,
+      "label": "Decreto Estadual 37.042/1996 — arts. 67 a 81",
+      "path": "law-reading/c3-d10.json",
+      "articleCount": 15,
+      "segments": [
+        [
+          "RD",
+          "67",
+          "81"
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "day": 11,
+      "label": "Decreto Estadual 37.042/1996 — arts. 82 a 107",
+      "path": "law-reading/c3-d11.json",
+      "articleCount": 26,
+      "segments": [
+        [
+          "RD",
+          "82",
+          "107"
+        ]
+      ]
+    }
+  ],
+  "sources": {
+    "CADH": {
+      "title": "Convenção Americana sobre Direitos Humanos",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto/d0678.htm",
+      "kind": "html",
+      "articles": 82
+    },
+    "CF": {
+      "title": "Constituição Federal de 1988",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+      "kind": "html",
+      "articles": 273
+    },
+    "CP": {
+      "title": "Código Penal",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm",
+      "kind": "html",
+      "articles": 431
+    },
+    "CPM": {
+      "title": "Código Penal Militar",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "kind": "html",
+      "articles": 411
+    },
+    "CPP": {
+      "title": "Código de Processo Penal",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm",
+      "kind": "html",
+      "articles": 845
+    },
+    "CPPM": {
+      "title": "Código de Processo Penal Militar",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1002compilado.htm",
+      "kind": "html",
+      "articles": 717
+    },
+    "L10259": {
+      "title": "Lei 10.259/2001",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10259.htm",
+      "kind": "html",
+      "articles": 27
+    },
+    "L10826": {
+      "title": "Lei 10.826/2003",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826compilado.htm",
+      "kind": "html",
+      "articles": 40
+    },
+    "L11340": {
+      "title": "Lei 11.340/2006",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm",
+      "kind": "html",
+      "articles": 57
+    },
+    "L11343": {
+      "title": "Lei 11.343/2006",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm",
+      "kind": "html",
+      "articles": 100
+    },
+    "L12850": {
+      "title": "Lei 12.850/2013",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12850.htm",
+      "kind": "html",
+      "articles": 37
+    },
+    "L13869": {
+      "title": "Lei 13.869/2019",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13869.htm",
+      "kind": "html",
+      "articles": 46
+    },
+    "L14133": {
+      "title": "Lei 14.133/2021",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm",
+      "kind": "html",
+      "articles": 208
+    },
+    "L7716": {
+      "title": "Lei 7.716/1989",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l7716.htm",
+      "kind": "html",
+      "articles": 27
+    },
+    "L7960": {
+      "title": "Lei 7.960/1989",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l7960.htm",
+      "kind": "html",
+      "articles": 7
+    },
+    "L8069": {
+      "title": "Estatuto da Criança e do Adolescente",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm",
+      "kind": "html",
+      "articles": 328
+    },
+    "L8072": {
+      "title": "Lei 8.072/1990",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l8072.htm",
+      "kind": "html",
+      "articles": 19
+    },
+    "L9099": {
+      "title": "Lei 9.099/1995",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm",
+      "kind": "html",
+      "articles": 99
+    },
+    "L9455": {
+      "title": "Lei 9.455/1997",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9455.htm",
+      "kind": "html",
+      "articles": 4
+    },
+    "L9503": {
+      "title": "Código de Trânsito Brasileiro",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+      "kind": "html",
+      "articles": 390
+    },
+    "L9605": {
+      "title": "Lei 9.605/1998",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm",
+      "kind": "html",
+      "articles": 87
+    },
+    "LO": {
+      "title": "Lei 14.751/2023",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm",
+      "kind": "html",
+      "articles": 44
+    },
+    "Lei5346": {
+      "title": "Lei Estadual 5.346/1992 — Estatuto PMAL",
+      "url": "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/892/param/2/set/2/get/2416565e/dist/",
+      "kind": "static_official_pm_al_plus_enacted_amendments",
+      "articles": 136
+    },
+    "RD": {
+      "title": "Decreto Estadual 37.042/1996 — RDPMAL",
+      "url": "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/download/id/792/param/2/set/1/get/c8f191d3/dist/",
+      "kind": "official_pm_al",
+      "articles": 107
+    }
+  }
+}

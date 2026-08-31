@@ -1,0 +1,134 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 6,
+  "label": "CPPM — arts. 243 a 271",
+  "articleCount": 29,
+  "sections": [
+    {
+      "prefix": "CPPM",
+      "title": "Código de Processo Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1002compilado.htm",
+      "range": "arts. 243 a 271",
+      "articles": [
+        {
+          "key": "243",
+          "text": "Art. 243. Qualquer pessoa poderá e os militares deverão prender quem fôr insubmisso ou\r\ndesertor, ou seja encontrado em flagrante delito.\n\n\r\n\nSujeição a flagrante delito"
+        },
+        {
+          "key": "244",
+          "text": "Art. 244. Considera-se em flagrante delito aquêle que:\n\n\r\na) está cometendo o crime;\n\n\r\nb) acaba de cometê-lo;\n\n\r\nc) é perseguido logo após o fato delituoso em situação que faça acreditar ser êle o\r\nseu autor;\n\n\r\nd) é encontrado, logo depois, com instrumentos, objetos, material ou papéis que façam\r\npresumir a sua participação no fato delituoso.\n\n\r\n\nInfração permanente\n\n\r\nParágrafo único. Nas infrações permanentes, considera-se o agente em flagrante delito\r\nenquanto não cessar a permanência.\n\n\r\nLavratura do auto"
+        },
+        {
+          "key": "245",
+          "text": "Art. 245. Apresentado o prêso ao comandante ou ao oficial de dia, de serviço ou de\r\nquarto, ou autoridade correspondente, ou à autoridade judiciária, será, por qualquer\r\ndêles, ouvido o condutor e as testemunhas que o acompanharem, bem como inquirido o\r\nindiciado sôbre a imputação que lhe é feita, e especialmente sôbre o lugar e hora em\r\nque o fato aconteceu, lavrando-se de tudo auto, que será por todos assinado.\n\n\r\n§ 1º Em se tratando de menor inimputável, será apresentado, imediatamente, ao juiz de\r\nmenores.\n\n\r\n\nAusência de testemunhas\n\n\r\n§ 2º A falta de testemunhas não impedirá o auto de prisão em flagrante, que será\r\nassinado por duas pessoas, pelo menos, que hajam testemunhado a apresentação do preso.\n\n\r\n\nRecusa ou impossibilidade de assinatura do auto\n\n\r\n§ 3º Quando a pessoa conduzida se recusar a assinar, não souber ou não puder fazê-lo, o\r\nauto será assinado por duas testemunhas, que lhe tenham ouvido a leitura na presença do\r\nindiciado, do condutor e das testemunhas do fato delituoso.\n\n\r\n\nDesignação de escrivão\n\n\r\n§ 4º Sendo o auto presidido por autoridade militar, designará esta, para exercer as\r\nfunções de escrivão, um capitão, capitão-tenente, primeiro ou segundo-tenente, se o\r\nindiciado fôr oficial. Nos demais casos, poderá designar um subtenente, suboficial ou\r\nsargento.\n\n\r\n\nFalta ou impedimento de escrivão\n\n\r\n§ 5º Na falta ou impedimento de escrivão ou das pessoas referidas no parágrafo anterior,\r\na autoridade designará, para lavrar o auto, qualquer pessoa idônea, que, para êsse fim,\r\nprestará o compromisso legal.\n\n\r\n\nRecolhimento a prisão. Diligências"
+        },
+        {
+          "key": "246",
+          "text": "Art. 246. Se das respostas resultarem fundadas suspeitas contra a pessoa conduzida, a\r\nautoridade mandará recolhê-la à prisão, procedendo-se, imediatamente, se fôr o caso,\r\na exame de corpo de delito, à busca e apreensão dos instrumentos do crime e a qualquer\r\noutra diligência necessária ao seu esclarecimento.\n\nNota de culpa"
+        },
+        {
+          "key": "247",
+          "text": "Art. 247. Dentro em vinte e quatro horas após a prisão, será dada ao prêso nota de\r\nculpa assinada pela autoridade, com o motivo da prisão, o nome do condutor e os das\r\ntestemunhas.\n\n\r\n\nRecibo da nota de culpa\n\n\r\n§ 1º Da nota de culpa o prêso passará recibo que será assinado por duas testemunhas,\r\nquando êle não souber, não puder ou não quiser assinar.\n\n\r\n\nRelaxamento da prisão\n\n\r\n§ 2º Se, ao contrário da hipótese prevista no art. 246, a autoridade militar ou\r\njudiciária verificar a manifesta inexistência de infração penal militar ou a não\r\nparticipação da pessoa conduzida, relaxará a prisão. Em se tratando de infração\r\npenal comum, remeterá o prêso à autoridade civil competente.\n\n\r\n\nRegistro das ocorrências"
+        },
+        {
+          "key": "248",
+          "text": "Art. 248. Em qualquer hipótese, de tudo quanto ocorrer será lavrado auto ou têrmo, para\r\nremessa à autoridade judiciária competente, a fim de que esta confirme ou infirme os\r\natos praticados.\n\n\r\n\nFato praticado em presença da autoridade"
+        },
+        {
+          "key": "249",
+          "text": "Art. 249. Quando o fato fôr praticado em presença da autoridade, ou contra ela, no\r\nexercício de suas funções, deverá ela própria prender e autuar em flagrante o\r\ninfrator, mencionando a circunstância.\n\n\r\n\nPrisão em lugar não sujeito à administração militar"
+        },
+        {
+          "key": "250",
+          "text": "Art. 250. Quando a prisão em flagrante fôr efetuada em lugar não sujeito à\r\nadministração militar, o auto poderá ser lavrado por autoridade civil, ou pela\r\nautoridade militar do lugar mais próximo daquele em que ocorrer a prisão.\n\n\r\n\nRemessa do auto de flagrante ao juiz"
+        },
+        {
+          "key": "251",
+          "text": "Art. 251. O auto de prisão em flagrante deve ser remetido imediatamente ao juiz\r\ncompetente, se não tiver sido lavrado por autoridade judiciária; e, no máximo, dentro\r\nem cinco dias, se depender de diligência prevista no art. 246.\n\n\r\n\nPassagem do prêso à disposição do juiz\n\n\r\nParágrafo único. Lavrado o auto de flagrante delito, o prêso passará imediatamente à\r\ndisposição da autoridade judiciária competente para conhecer do processo.\n\n\r\n\nDevolução do auto"
+        },
+        {
+          "key": "252",
+          "text": "Art. 252. O auto poderá ser mandado ou devolvido à autoridade militar, pelo juiz ou a\r\nrequerimento do Ministério Público, se novas diligências forem julgadas necessárias ao\r\nesclarecimento do fato.\n\n\r\n\nConcessão de liberdade provisória"
+        },
+        {
+          "key": "253",
+          "text": "Art. 253. Quando o juiz verificar pelo auto de prisão em flagrante que o agente praticou\r\no fato nas condições dos arts. 35, 38, observado o disposto no art. 40, e dos arts. 39 e\r\n42, do Código Penal Militar, poderá conceder ao indiciado liberdade provisória,\r\nmediante têrmo de comparecimento a todos os atos do processo, sob pena de revogar a\r\nconcessão.\n\nSEÇÃO III\n\nDa prisão preventiva\n\n\r\n\nCompetência e requisitos para a decretação"
+        },
+        {
+          "key": "254",
+          "text": "Art 254. A prisão preventiva pode ser decretada pelo auditor ou pelo Conselho de\r\nJustiça, de ofício, a requerimento do Ministério Público ou mediante representação\r\nda autoridade encarregada do inquérito policial-militar, em qualquer fase dêste ou do\r\nprocesso, concorrendo os requisitos seguintes:\n\n\r\na) prova do fato delituoso;\n\n\r\nb) indícios suficientes de autoria.\n\n\r\n\nNo Superior Tribunal Militar\n\n\r\nParágrafo único. Durante a instrução de processo originário do Superior Tribunal\r\nMilitar, a decretação compete ao relator.\n\n\r\n\nCasos de decretação"
+        },
+        {
+          "key": "255",
+          "text": "Art. 255. A prisão preventiva, além dos requisitos do artigo anterior, deverá fundar-se\r\nem um dos seguintes casos:\n\n\r\na) garantia da ordem pública;\n\n\r\nb) conveniência da instrução criminal;\n\n\r\nc) periculosidade do indiciado ou acusado;\n\n\r\nd) segurança da aplicação da lei penal militar;\n\n\r\ne) exigência da manutenção das normas ou princípios de hierarquia e disciplina\r\nmilitares, quando ficarem ameaçados ou \r\natingidos com a liberdade do indiciado ou acusado.\n\n\r\n\nFundamentação do despacho"
+        },
+        {
+          "key": "256",
+          "text": "Art. 256. O despacho que decretar ou denegar a prisão preventiva será sempre\r\nfundamentado; e, da mesma forma, o seu pedido ou requisição, que deverá preencher as\r\ncondições previstas nas letras\na\ne\nb\n, do art. 254.\n\n\r\n\nDesnecessidade da prisão"
+        },
+        {
+          "key": "257",
+          "text": "Art. 257. O juiz deixará de decretar a prisão preventiva, quando, por qualquer\r\ncircunstância evidente dos autos, ou pela profissão, condições de vida ou interêsse\r\ndo indiciado ou acusado, presumir que êste não fuja, nem exerça influência em\r\ntestemunha ou perito, nem impeça ou perturbe, de qualquer modo, a ação da justiça.\n\n\r\nModificação de condições\n\n\r\nParágrafo único. Essa decisão poderá ser revogada a todo o tempo, desde que se\r\nmodifique qualquer das condições previstas neste artigo.\n\n\r\n\nProibição"
+        },
+        {
+          "key": "258",
+          "text": "Art. 258. A prisão preventiva em nenhum caso será decretada se o juiz verificar, pelas\r\nprovas constantes dos autos, ter o agente praticado o fato nas condições dos arts. 35,\r\n38, observado o disposto no art. 40, e dos arts. 39 e 42, do Código Penal Militar.\n\n\r\n\nRevogação e nova decretação"
+        },
+        {
+          "key": "259",
+          "text": "Art. 259. O juiz poderá revogar a prisão preventiva se, no curso do processo, verificar\r\na falta de motivos para que subsista, bem como de nôvo decretá-la, se sobrevierem\r\nrazões que a justifiquem.\n\n\r\nParágrafo único. A prorrogação da prisão preventiva dependerá de prévia audiência\r\ndo Ministério Público.\n\n\r\n\nExecução da prisão preventiva"
+        },
+        {
+          "key": "260",
+          "text": "Art. 260. A prisão preventiva executar-se-á por mandado, com os requisitos do art. 225.\r\nSe o indiciado ou acusado já se achar detido, será notificado do despacho que a decretar\r\npelo escrivão do inquérito, ou do processo, que o certificará nos autos.\n\n\r\n\nPassagem à disposição do juiz"
+        },
+        {
+          "key": "261",
+          "text": "Art. 261. Decretada a prisão preventiva, o prêso passará à disposição da autoridade\r\njudiciária, observando-se o disposto no art. 237.\n\nCAPÍTULO IV\n\nDO COMPARECIMENTO ESPONTÂNEO\n\n\r\n\nTomada de declarações"
+        },
+        {
+          "key": "262",
+          "text": "Art. 262. Comparecendo espontâneamente o indiciado ou acusado, tomar-se-ão por têrmo as\r\ndeclarações que fizer. Se o comparecimento não se der perante a autoridade judiciária,\r\na esta serão apresentados o têrmo e o indiciado ou acusado, para que delibere acêrca da\r\nprisão preventiva ou de outra medida que entender cabível.\n\n\r\nParágrafo único. O têrmo será assinado por duas testemunhas presenciais do ocorrido;\r\ne, se o indiciado ou acusado não souber ou não puder assinar, sê-lo-á por uma pessoa a\r\nseu rôgo, além das testemunhas mencionadas.\n\nCAPÍTULO V\n\nDA MENAGEM\n\n\r\n\nCompetência e requisitos para a concessão"
+        },
+        {
+          "key": "263",
+          "text": "Art. 263. A menagem poderá ser concedida pelo juiz, nos crimes cujo máximo da pena\r\nprivativa da liberdade não exceda a quatro anos, tendo-se, porém, em atenção a\r\nnatureza do crime e os antecedentes do acusado.\n\n\r\n\nLugar da menagem"
+        },
+        {
+          "key": "264",
+          "text": "Art. 264. A menagem a militar poderá efetuar-se no lugar em que residia quando ocorreu o\r\ncrime ou seja sede do juízo que o estiver apurando, ou, atendido o seu pôsto ou\r\ngraduação, em quartel, navio, acampamento, ou em estabelecimento ou sede de órgão\r\nmilitar. A menagem a civil será no lugar da sede do juízo, ou em lugar sujeito à\r\nadministração militar, se assim o entender necessário a autoridade que a conceder.\n\n\r\n\nAudiência do Ministério Público\n\n\r\n§ 1º O Ministério Público será ouvido, prèviamente, sôbre a concessão da menagem,\r\ndevendo emitir parecer dentro do prazo de três dias.\n\n\r\n\nPedido de informação\n\n\r\n§ 2º Para a menagem em lugar sujeito à administração militar, será pedida informação,\r\na respeito da sua conveniência, à autoridade responsável pelo respectivo comando ou\r\ndireção.\n\n\r\n\nCassação da menagem"
+        },
+        {
+          "key": "265",
+          "text": "Art. 265. Será cassada a menagem àquele que se retirar do lugar para o qual foi ela\r\nconcedida, ou faltar, sem causa justificada, a qualquer ato judicial para que tenha sido\r\nintimado ou a que deva comparecer independentemente de intimação especial.\n\n\r\n\nMenagem do insubmisso"
+        },
+        {
+          "key": "266",
+          "text": "Art. 266. O insubmisso terá o quartel por menagem, independentemente de decisão\r\njudicial, podendo, entretanto, ser cassada pela autoridade militar, por conveniência de\r\ndisciplina.\n\n\r\n\nCessação da menagem"
+        },
+        {
+          "key": "267",
+          "text": "Art. 267. A menagem cessa com a sentença condenatória, ainda que não tenha passado em\r\njulgado.\n\n\r\nParágrafo único. Salvo o caso do artigo anterior, o juiz poderá ordenar a cessação da\r\nmenagem, em qualquer tempo, com a liberação das obrigações dela decorrentes, desde que\r\nnão a julgue mais necessária ao interêsse da Justiça.\n\n\r\n\nContagem para a pena"
+        },
+        {
+          "key": "268",
+          "text": "Art. 268. A menagem concedida em residência ou cidade não será levada em conta no\r\ncumprimento da pena.\n\n\r\n\nReincidência"
+        },
+        {
+          "key": "269",
+          "text": "Art. 269. Ao reincidente não se concederá menagem.\n\nCAPÍTULO VI\n\nDA LIBERDADE PROVISÓRIA\n\n\r\n\nCasos de liberdade provisória"
+        },
+        {
+          "key": "270",
+          "text": "Art. 270. O indiciado ou acusado livrar-se-á sôlto no caso de infração a que não fôr\r\ncominada pena privativa de liberdade.\n\n\r\n\nParágrafo único. Poderá livrar-se sôlto:\n\n\r\na) no caso de infração culposa, salvo se compreendida entre as previstas no Livro I,\r\nTítulo I, da Parte Especial, do Código Penal Militar;\n\n\r\nb) no caso de infração punida com pena de detenção não superior a dois anos, salvo as\r\nprevistas nos arts. 157, 160, 161, 162, 163, 164, 166, 173, 176, 177, 178, 187, 192, 235,\r\n299 e 302, do Código Penal Militar.\n\n\r\n\nSuspensão"
+        },
+        {
+          "key": "271",
+          "text": "Art. 271. A superveniência de qualquer dos motivos referidos no art. 255 poderá\r\ndeterminar a suspensão da liberdade provisória, por despacho da autoridade que a\r\nconcedeu, de ofício ou a requerimento do Ministério Público.\n\nCAPÍTULO VII\n\nDA APLICAÇÃO PROVISÓRIA DE MEDIDAS DE\r\nSEGURANÇA\n\n\r\n\nCasos de aplicação"
+        }
+      ]
+    }
+  ]
+}

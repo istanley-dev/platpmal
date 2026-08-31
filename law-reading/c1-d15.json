@@ -1,0 +1,178 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 1,
+  "day": 15,
+  "label": "CPP — arts. 24 a 62",
+  "articleCount": 40,
+  "sections": [
+    {
+      "prefix": "CPP",
+      "title": "Código de Processo Penal",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm",
+      "range": "arts. 24 a 62",
+      "articles": [
+        {
+          "key": "24",
+          "text": "Art. 24. Nos crimes de ação pública, esta será promovida por denúncia\r\ndo Ministério Público, mas dependerá, quando a lei o exigir, de requisição do\r\nMinistro da Justiça, ou de representação do ofendido ou de quem tiver qualidade para\r\nrepresentá-lo.\n\n§ 1\no\nNo caso de morte do ofendido ou\r\nquando declarado ausente por decisão judicial, o direito de representação passará ao\r\ncônjuge, ascendente, descendente ou irmão.\n(Parágrafo\r\núnico renumerado pela Lei nº 8.699, de 27.8.1993)\n\n§ 2\no\nSeja qual for o crime, quando praticado em detrimento\r\ndo patrimônio ou interesse da União, Estado e Município, a ação penal será pública. \r\n\n(Incluído pela Lei nº 8.699, de 27.8.1993)"
+        },
+        {
+          "key": "25",
+          "text": "Art. 25. A representação será irretratável, depois de oferecida a\r\ndenúncia."
+        },
+        {
+          "key": "26",
+          "text": "Art. 26. A ação penal, nas contravenções, será iniciada com o auto de\r\nprisão em flagrante ou por meio de portaria expedida pela autoridade judiciária ou\r\npolicial."
+        },
+        {
+          "key": "27",
+          "text": "Art. 27. Qualquer pessoa do povo poderá provocar\r\na iniciativa do Ministério Público, nos casos em que caiba a ação pública,\r\nfornecendo-lhe, por escrito, informações sobre o fato e a autoria e indicando o tempo, o\r\nlugar e os elementos de convicção."
+        },
+        {
+          "key": "28",
+          "text": "Art. 28. \r\nOrdenado o arquivamento do inquérito policial ou de quaisquer elementos \r\ninformativos da mesma natureza, o órgão do Ministério Público comunicará \r\nà vítima, ao investigado e à autoridade policial e encaminhará os autos \r\npara a instância de revisão ministerial para fins de homologação, na \r\nforma da lei.\n\n(Redação dada \r\npela Lei nº 13.964, de 2019)\n\n\r\n\n(Vigência)\n\n\r\n(Vide ADI 6.298)\n\r\n\n(Vide \r\nADI 6.300\n) \r\n\n\r\n(Vide ADI 6.305)\n\n§ 1º Se a \r\nvítima, ou seu representante legal, não concordar com o arquivamento do \r\ninquérito policial, poderá, no prazo de 30 (trinta) dias do recebimento \r\nda comunicação, submeter a matéria à revisão da instância competente do \r\nórgão ministerial, conforme dispuser a respectiva lei orgânica.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\r\n\n\r\n(Vide ADI 6.298)\n\n§ 2º Nas ações \r\npenais relativas a crimes praticados em detrimento da União, Estados e \r\nMunicípios, a revisão do arquivamento do inquérito policial poderá ser \r\nprovocada pela chefia do órgão a quem couber a sua representação \r\njudicial.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "28A",
+          "text": "Art. 28-A. \r\nNão sendo caso de arquivamento e tendo o investigado confessado formal e \r\ncircunstancialmente a prática de infração penal sem violência ou grave \r\nameaça e com pena mínima inferior a 4 (quatro) anos, o Ministério \r\nPúblico poderá propor acordo de não persecução penal, desde que \r\nnecessário e suficiente para reprovação e prevenção do crime, mediante \r\nas seguintes condições ajustadas cumulativa e alternativamente:\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\r\n\n\r\n(Vide ADI 6.298)\n\nI - reparar o \r\ndano ou restituir a coisa à vítima, exceto na impossibilidade de \r\nfazê-lo;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\nII - renunciar \r\nvoluntariamente a bens e direitos indicados pelo Ministério Público como \r\ninstrumentos, produto ou proveito do crime;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\nIII - prestar \r\nserviço à comunidade ou a entidades públicas por período correspondente \r\nà pena mínima cominada ao delito diminuída de um a dois terços, em local \r\na ser indicado pelo juízo da execução, na forma do \r\n\nart. 46 do \r\nDecreto-Lei nº 2.848, de 7 de dezembro de 1940 (Código Penal)\n;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\r\n\n\r\n(Vide ADI 6.298)\n\nIV - pagar \r\nprestação pecuniária, a ser estipulada nos termos do \r\n\nart. 45 do \r\nDecreto-Lei nº 2.848, de 7 de dezembro de 1940 (Código Penal),\na \r\nentidade pública ou de interesse social, a ser indicada pelo juízo da \r\nexecução, que tenha, preferencialmente, como função proteger bens \r\njurídicos iguais ou semelhantes aos aparentemente lesados pelo delito; \r\nou\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\r\n\n\r\n(Vide ADI 6.298)\n\nV - cumprir, \r\npor prazo determinado, outra condição indicada pelo Ministério Público, \r\ndesde que proporcional e compatível com a infração penal imputada.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 1º Para \r\naferição da pena mínima cominada ao delito a que se refere o\ncaput\n\r\ndeste artigo, serão consideradas as causas de aumento e diminuição \r\naplicáveis ao caso concreto.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 2º O \r\ndisposto no\ncaput\ndeste artigo não se aplica nas seguintes \r\nhipóteses:\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\nI - se for \r\ncabível transação penal de competência dos Juizados Especiais Criminais, \r\nnos termos da lei;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\nII - se o \r\ninvestigado for reincidente ou se houver elementos probatórios que \r\nindiquem conduta criminal habitual, reiterada ou profissional, exceto se \r\ninsignificantes as infrações penais pretéritas;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\nIII - ter sido \r\no agente beneficiado nos 5 (cinco) anos anteriores ao cometimento da \r\ninfração, em acordo de não persecução penal, transação penal ou \r\nsuspensão condicional do processo; e\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\nIV - nos \r\ncrimes praticados no âmbito de violência doméstica ou familiar, ou \r\npraticados contra a mulher por razões da condição de sexo feminino, em \r\nfavor do agressor.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 3º O acordo \r\nde não persecução penal será formalizado por escrito e será firmado pelo \r\nmembro do Ministério Público, pelo investigado e por seu defensor.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 4º Para a \r\nhomologação do acordo de não persecução penal, será realizada audiência \r\nna qual o juiz deverá verificar a sua voluntariedade, por meio da oitiva \r\ndo investigado na presença do seu defensor, e sua legalidade.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 5º Se o juiz \r\nconsiderar inadequadas, insuficientes ou abusivas as condições dispostas \r\nno acordo de não persecução penal, devolverá os autos ao Ministério \r\nPúblico para que seja reformulada a proposta de acordo, com concordância \r\ndo investigado e seu defensor.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\r\n\n\r\n(Vide ADI 6.298)\n\n§ 6º \r\nHomologado judicialmente o acordo de não persecução penal, o juiz \r\ndevolverá os autos ao Ministério Público para que inicie sua execução \r\nperante o juízo de execução penal.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 7º O juiz \r\npoderá recusar homologação à proposta que não atender aos requisitos \r\nlegais ou quando não for realizada a adequação a que se refere o § 5º \r\ndeste artigo.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\r\n\n\r\n(Vide ADI 6.298)\n\n§ 8º Recusada \r\na homologação, o juiz devolverá os autos ao Ministério Público para a \r\nanálise da necessidade de complementação das investigações ou o \r\noferecimento da denúncia.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\r\n\n\r\n(Vide ADI 6.298)\n\n§ 9º A vítima \r\nserá intimada da homologação do acordo de não persecução penal e de seu \r\ndescumprimento.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 10. \r\nDescumpridas quaisquer das condições estipuladas no acordo de não \r\npersecução penal, o Ministério Público deverá comunicar ao juízo, para \r\nfins de sua rescisão e posterior oferecimento de denúncia.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 11. O \r\ndescumprimento do acordo de não persecução penal pelo investigado também \r\npoderá ser utilizado pelo Ministério Público como justificativa para o \r\neventual não oferecimento de suspensão condicional do processo.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 12. A \r\ncelebração e o cumprimento do acordo de não persecução penal não \r\nconstarão de certidão de antecedentes criminais, exceto para os fins \r\nprevistos no inciso III do § 2º deste artigo.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 13. Cumprido \r\nintegralmente o acordo de não persecução penal, o juízo competente \r\ndecretará a extinção de punibilidade.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)\n\n§ 14. No caso \r\nde recusa, por parte do Ministério Público, em propor o acordo de não \r\npersecução penal, o investigado poderá requerer a remessa dos autos a \r\nórgão superior, na forma do art. 28 deste Código.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "29",
+          "text": "Art. 29. Será admitida ação privada nos crimes\r\nde ação pública, se esta não for intentada no prazo legal, cabendo ao Ministério\r\nPúblico aditar a queixa, repudiá-la e oferecer denúncia substitutiva, intervir em todos\r\nos termos do processo, fornecer elementos de prova, interpor recurso e, a todo tempo, no\r\ncaso de negligência do querelante, retomar a ação como parte principal."
+        },
+        {
+          "key": "30",
+          "text": "Art. 30. Ao ofendido ou a quem tenha qualidade\r\npara representá-lo caberá intentar a ação privada."
+        },
+        {
+          "key": "31",
+          "text": "Art. 31. No caso de morte do ofendido ou quando declarado ausente por\r\ndecisão judicial, o direito de oferecer queixa ou prosseguir na ação passará ao\r\ncônjuge, ascendente, descendente ou irmão."
+        },
+        {
+          "key": "32",
+          "text": "Art. 32. Nos crimes de ação privada, o juiz, a requerimento da parte que\r\ncomprovar a sua pobreza, nomeará advogado para promover a ação penal.\n\n§ 1\no\nConsiderar-se-á pobre a pessoa que não puder prover\r\nàs despesas do processo, sem privar-se dos recursos indispensáveis ao próprio sustento\r\nou da família.\n\n§ 2\no\nSerá prova suficiente de pobreza o atestado da\r\nautoridade policial em cuja circunscrição residir o ofendido."
+        },
+        {
+          "key": "33",
+          "text": "Art. 33. Se o ofendido for menor de 18 anos, ou mentalmente\r\nenfermo, ou retardado mental, e não tiver representante legal, ou colidirem os interesses\r\ndeste com os daquele, o direito de queixa poderá ser exercido por curador especial,\r\nnomeado, de ofício ou a requerimento do Ministério Público, pelo juiz competente para o\r\nprocesso penal."
+        },
+        {
+          "key": "34",
+          "text": "Art. 34. Se o ofendido for menor de 21 e maior de 18\r\nanos, o direito de queixa poderá ser exercido por ele ou por seu representante\r\nlegal."
+        },
+        {
+          "key": "35",
+          "text": "Art. 35.\n\n(Revogado\r\npela Lei nº 9.520, de 27.11.1997)"
+        },
+        {
+          "key": "36",
+          "text": "Art. 36. Se comparecer mais de uma pessoa com direito de queixa, terá\r\npreferência o cônjuge, e, em seguida, o parente mais próximo na ordem de enumeração\r\nconstante do\nart. 31\n, podendo, entretanto, qualquer delas prosseguir na ação, caso o\r\nquerelante desista da instância ou a abandone."
+        },
+        {
+          "key": "37",
+          "text": "Art. 37. As fundações, associações ou sociedades legalmente\r\nconstituídas poderão exercer a ação penal, devendo ser representadas por quem os\r\nrespectivos contratos ou estatutos designarem ou, no silêncio destes, pelos seus\r\ndiretores ou sócios-gerentes."
+        },
+        {
+          "key": "38",
+          "text": "Art. 38. Salvo disposição em contrário, o ofendido, ou seu\r\nrepresentante legal, decairá no direito de queixa ou de representação, se não o\r\nexercer dentro do prazo de seis meses, contado do dia em que vier a saber quem é o\r\nautor do crime, ou, no caso do\nart. 29\n, do dia em que se esgotar o prazo para o\r\noferecimento da denúncia.\n\n§ 1º\n\r\nVerificar-se-á a decadência do direito de queixa ou representação, dentro do \r\nmesmo prazo, nos casos dos\narts. 24\n, parágrafo único, e \r\n\n31\n.\n\r\n\n(Redação dada pela Lei \r\nnº 15.438, de 2026)\n\n§ 2º Nos \r\ncrimes praticados no âmbito de violência doméstica e familiar contra a mulher, a \r\nofendida decairá do direito de queixa ou de representação se não o exercer no \r\nprazo de 12 (doze) meses, contado do dia em que vier a saber quem é o autor do \r\ncrime, ou, no caso do art. 29 deste Código, do dia em que se esgotar o prazo \r\npara o oferecimento de denúncia.\n\r\n\n(Incluído pela\nLei nº 15.438, de 2026)"
+        },
+        {
+          "key": "39",
+          "text": "Art. 39. O direito de representação poderá ser exercido, pessoalmente\r\nou por procurador com poderes especiais, mediante declaração, escrita ou oral, feita ao\r\njuiz, ao órgão do Ministério Público, ou à autoridade policial.\n\n§ 1\no\nA representação feita oralmente ou por escrito,\r\nsem assinatura devidamente autenticada do ofendido, de seu representante legal ou\r\nprocurador, será reduzida a termo, perante o juiz ou autoridade policial, presente o\r\nórgão do Ministério Público, quando a este houver sido dirigida.\n\n§ 2\no\nA representação conterá todas as informações\r\nque possam servir à apuração do fato e da autoria.\n\n§ 3\no\nOferecida ou reduzida a termo a representação, a\r\nautoridade policial procederá a inquérito, ou, não sendo competente, remetê-lo-á à\r\nautoridade que o for.\n\n§ 4\no\nA representação, quando feita ao juiz ou perante\r\neste reduzida a termo, será remetida à autoridade policial para que esta proceda a\r\ninquérito.\n\n§ 5\no\nO órgão do Ministério Público dispensará o\r\ninquérito, se com a representação forem oferecidos elementos que o habilitem a promover\r\na ação penal, e, neste caso, oferecerá a denúncia no prazo de quinze dias."
+        },
+        {
+          "key": "40",
+          "text": "Art. 40. Quando, em autos ou papéis de que conhecerem, os juízes ou\r\ntribunais verificarem a existência de crime de ação pública, remeterão ao Ministério\r\nPúblico as cópias e os documentos necessários ao oferecimento da denúncia."
+        },
+        {
+          "key": "41",
+          "text": "Art. 41. A denúncia ou queixa conterá a exposição do fato criminoso,\r\ncom todas as suas circunstâncias, a qualificação do acusado ou esclarecimentos pelos\r\nquais se possa identificá-lo, a classificação do crime e, quando necessário, o rol das\r\ntestemunhas."
+        },
+        {
+          "key": "42",
+          "text": "Art. 42. O Ministério Público não poderá desistir da ação penal."
+        },
+        {
+          "key": "43",
+          "text": "Art. 43.\n(Revogado pela Lei \r\nnº 11.719, de 2008)."
+        },
+        {
+          "key": "44",
+          "text": "Art. 44. A queixa poderá ser dada por procurador com poderes especiais,\r\ndevendo constar do instrumento do mandato o nome do querelante e a menção do fato\r\ncriminoso, salvo quando tais esclarecimentos dependerem de diligências que devem ser\r\npreviamente requeridas no juízo criminal."
+        },
+        {
+          "key": "45",
+          "text": "Art. 45. A queixa, ainda quando a ação penal for privativa do ofendido,\r\npoderá ser aditada pelo Ministério Público, a quem caberá intervir em todos os termos\r\nsubseqüentes do processo."
+        },
+        {
+          "key": "46",
+          "text": "Art. 46. O prazo para oferecimento da denúncia,\r\nestando o réu preso, será de 5 dias, contado da data em que o órgão do\r\nMinistério Público receber os autos do inquérito policial, e de 15 dias, se o\r\nréu estiver solto ou afiançado. No último caso, se houver devolução do inquérito à\r\nautoridade policial (\nart. 16\n), contar-se-á o prazo da data em que o órgão do\r\nMinistério Público receber novamente os autos.\n\n\r\n§ 1\no\nQuando o Ministério Público dispensar o\r\ninquérito policial, o prazo para o oferecimento da denúncia contar-se-á da data em que\r\ntiver recebido as peças de informações ou a representação\n\n\r\n§ 2\no\nO prazo para o aditamento da queixa será de\r\n3 dias, contado da data em que o órgão do Ministério Público receber os autos,\r\ne, se este não se pronunciar dentro do tríduo, entender-se-á que não tem o que aditar,\r\nprosseguindo-se nos demais termos do processo."
+        },
+        {
+          "key": "47",
+          "text": "Art. 47. Se o Ministério Público julgar necessários maiores\r\nesclarecimentos e documentos complementares ou novos elementos de convicção, deverá\r\nrequisitá-los, diretamente, de quaisquer autoridades ou funcionários que devam ou possam\r\nfornecê-los."
+        },
+        {
+          "key": "48",
+          "text": "Art. 48. A queixa contra qualquer dos autores do crime obrigará ao\r\nprocesso de todos, e o Ministério Público velará pela sua indivisibilidade."
+        },
+        {
+          "key": "49",
+          "text": "Art. 49. A renúncia ao exercício do direito de queixa, em relação a um\r\ndos autores do crime, a todos se estenderá."
+        },
+        {
+          "key": "50",
+          "text": "Art. 50. A renúncia expressa constará de declaração assinada pelo\r\nofendido, por seu representante legal ou procurador com poderes especiais.\n\n\r\nParágrafo único. A renúncia do representante legal do menor que houver\r\ncompletado 18 (dezoito) anos não privará este do direito de queixa, nem a renúncia do\r\núltimo excluirá o direito do primeiro."
+        },
+        {
+          "key": "51",
+          "text": "Art. 51. O perdão concedido a um dos querelados aproveitará a todos, sem\r\nque produza, todavia, efeito em relação ao que o recusar."
+        },
+        {
+          "key": "52",
+          "text": "Art. 52. Se o querelante for menor de 21 e maior de 18\r\nanos, o direito de perdão poderá ser exercido por ele ou por seu representante\r\nlegal, mas o perdão concedido por um, havendo oposição do outro, não produzirá\r\nefeito."
+        },
+        {
+          "key": "53",
+          "text": "Art. 53. Se o querelado for mentalmente enfermo ou retardado mental e não\r\ntiver representante legal, ou colidirem os interesses deste com os do querelado, a\r\naceitação do perdão caberá ao curador que o juiz Ihe nomear."
+        },
+        {
+          "key": "54",
+          "text": "Art. 54. Se o querelado for menor de 21 anos, observar-se-á,\r\nquanto à aceitação do perdão, o disposto no\nart. 52\n."
+        },
+        {
+          "key": "55",
+          "text": "Art. 55. O perdão poderá ser aceito por procurador com poderes\r\nespeciais."
+        },
+        {
+          "key": "56",
+          "text": "Art. 56. Aplicar-se-á ao perdão extraprocessual expresso o disposto no\r\n\nart. 50\n."
+        },
+        {
+          "key": "57",
+          "text": "Art. 57. A renúncia tácita e o perdão tácito admitirão todos os meios\r\nde prova."
+        },
+        {
+          "key": "58",
+          "text": "Art. 58. Concedido o perdão, mediante declaração expressa nos autos, o\r\nquerelado será intimado a dizer, dentro de três dias, se o aceita, devendo, ao mesmo\r\ntempo, ser cientificado de que o seu silêncio importará aceitação.\n\n\r\nParágrafo único. Aceito o perdão, o juiz julgará extinta a punibilidade."
+        },
+        {
+          "key": "59",
+          "text": "Art. 59. A aceitação do perdão fora do processo constará de\r\ndeclaração assinada pelo querelado, por seu representante legal ou procurador com\r\npoderes especiais."
+        },
+        {
+          "key": "60",
+          "text": "Art. 60. Nos casos em que somente se procede mediante queixa,\r\nconsiderar-se-á perempta a ação penal:\n\n\r\nI - quando, iniciada esta, o querelante deixar de promover o andamento do\r\nprocesso durante 30 dias seguidos;\n\n\r\nII - quando, falecendo o querelante, ou sobrevindo sua incapacidade, não\r\ncomparecer em juízo, para prosseguir no processo, dentro do prazo de 60 (sessenta) dias,\r\nqualquer das pessoas a quem couber fazê-lo, ressalvado o disposto no \r\n\nart. 36\n;\n\n\r\nIII - quando o querelante deixar de comparecer, sem motivo justificado, a\r\nqualquer ato do processo a que deva estar presente, ou deixar de formular o pedido de\r\ncondenação nas alegações finais;\n\n\r\nIV - quando, sendo o querelante pessoa jurídica, esta se extinguir sem deixar\r\nsucessor."
+        },
+        {
+          "key": "61",
+          "text": "Art. 61. Em qualquer fase do processo, o juiz, se reconhecer extinta a\r\npunibilidade, deverá declará-lo de ofício.\n\n\r\nParágrafo único. No caso de requerimento do Ministério Público, do\r\nquerelante ou do réu, o juiz mandará autuá-lo em apartado, ouvirá a parte contrária\r\ne, se o julgar conveniente, concederá o prazo de cinco dias para a prova, proferindo\r\na decisão dentro de cinco dias ou reservando-se para apreciar a matéria na sentença\r\nfinal."
+        },
+        {
+          "key": "62",
+          "text": "Art. 62. No caso de morte do acusado, o juiz somente à vista da certidão\r\nde óbito, e depois de ouvido o Ministério Público, declarará extinta a punibilidade.\n\nTÍTULO IV\n\nDA AÇÃO CIVIL"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 16,
+  "label": "CPM — arts. 311 a 354",
+  "articleCount": 44,
+  "sections": [
+    {
+      "prefix": "CPM",
+      "title": "Código Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "range": "arts. 311 a 354",
+      "articles": [
+        {
+          "key": "311",
+          "text": "Art. 311. Falsificar, no todo ou\r\nem parte, documento público ou particular, ou alterar documento verdadeiro, desde que o\r\nfato atente contra a administração ou o serviço militar:\n\nPena - sendo documento público,\r\nreclusão, de dois a seis anos; sendo documento particular, reclusão, até cinco anos.\n\nAgravação da pena\n\n§ 1º A pena é agravada se o\r\nagente é oficial ou exerce função em repartição militar.\n\nDocumento por equiparação\n\n§ 2º Equipara-se a documento,\r\npara os efeitos penais, o disco fonográfico ou a fita ou fio de aparelho eletromagnético\r\na que se incorpore declaração destinada à prova de fato jurìdicamente relevante.\n\nFalsidade ideológica"
+        },
+        {
+          "key": "312",
+          "text": "Art. 312. Omitir, em documento\r\npúblico ou particular, declaração que dêle devia constar, ou nêle inserir ou fazer\r\ninserir declaração falsa ou diversa da que devia ser escrita, com o fim de prejudicar\r\ndireito, criar obrigação ou alterar a verdade sôbre fato jurìdicamente relevante,\r\ndesde que o fato atente contra a administração ou o serviço militar:\n\nPena - reclusão, até cinco\r\nanos, se o documento é público; reclusão, até três anos, se o documento é\r\nparticular.\n\nCheque sem fundos"
+        },
+        {
+          "key": "313",
+          "text": "Art.\n\n313. Emitir cheque sem suficiente provisão de fundos em\r\npoder do sacado, se a emissão é feita de militar em favor de militar, ou se o fato\r\natenta contra a administração militar:\n\nPena - reclusão, até cinco\r\nanos.\n\nCircunstância irrelevante\n\n§ 1º Salvo o caso do art. 245, é\r\nirrelevante ter sido o cheque emitido para servir como título ou garantia de dívida.\n\nAtenuação de pena\n\n§ 2º Ao crime previsto no artigo\r\naplica-se o disposto nos §§ 1º e 2º do art. 240.\n\nCertidão ou atestado ideológicamente falso"
+        },
+        {
+          "key": "314",
+          "text": "Art.\n\n314. Atestar ou certificar falsamente, em razão de\r\nfunção, ou profissão, fato ou circunstância que habilite alguém a obter cargo, pôsto\r\nou função, ou isenção de ônus ou de serviço, ou qualquer outra vantagem, desde que o\r\nfato atente contra a administração ou serviço militar:\n\nPena - detenção, até dois\r\nanos.\n\nAgravação de pena\n\nParágrafo único. A pena é\r\nagravada se o crime é praticado com o fim de lucro ou em prejuízo de terceiro.\n\nUso de documento falso"
+        },
+        {
+          "key": "315",
+          "text": "Art.\n\n315. Fazer uso de qualquer dos documentos falsificados ou\r\nalterados por outrem, a que se referem os artigos anteriores:\n\nPena - a cominada à\r\nfalsificação ou à alteração.\n\nSupressão de documento"
+        },
+        {
+          "key": "316",
+          "text": "Art.\n\n316. Destruir, suprimir ou ocultar, em benefício próprio\r\nou de outrem, ou em prejuízo alheio, documento verdadeiro, de que não podia dispor,\r\ndesde que o fato atente contra a administração ou o serviço militar:\n\nPena - reclusão, de dois a seis\r\nanos, se o documento é público; reclusão, até cinco anos, se o documento é\r\nparticular.\n\nUso de documento pessoal alheio"
+        },
+        {
+          "key": "317",
+          "text": "Art.\n\n317. Usar, como próprio, documento de identidade alheia, ou\r\nde qualquer licença ou privilégio em favor de outrem, ou ceder a outrem documento\r\npróprio da mesma natureza, para que dêle se utilize, desde que o fato atente contra a\r\nadministração ou o serviço militar:\n\nPena - detenção, até seis\r\nmeses, se o fato não constitui elemento de crime mais grave.\n\nFalsa identidade"
+        },
+        {
+          "key": "318",
+          "text": "Art.\n\n318. Atribuir-se, ou a terceiro, perante a administração\r\nmilitar, falsa identidade, para obter vantagem em proveito próprio ou alheio, ou para\r\ncausar dano a outrem:\n\nPena - detenção, de três meses\r\na um ano, se o fato não constitui crime mais grave.\n\nCAPÍTULO VI\n\nDOS CRIMES\r\nCONTRA O DEVER FUNCIONAL\n\nPrevaricação"
+        },
+        {
+          "key": "319",
+          "text": "Art.\n\n319. Retardar ou deixar de praticar, indevidamente, ato de\r\nofício, ou praticá-lo contra expressa disposição de lei, para satisfazer interêsse ou\r\nsentimento pessoal:\n\nPena - detenção, de seis meses\r\na dois anos.\n\nViolação do dever funcional com o fim de lucro"
+        },
+        {
+          "key": "320",
+          "text": "Art. 320. Violar, em qualquer\r\nnegócio de que tenha sido incumbido pela administração militar, seu dever funcional\r\npara obter especulativamente vantagem pessoal, para si ou para outrem:\n\nPena - reclusão, de dois a oito\r\nanos.\n\nExtravio, sonegação ou inutilização de livro ou documento"
+        },
+        {
+          "key": "321",
+          "text": "Art. 321. Extraviar livro\r\noficial, ou qualquer documento, de que tem a guarda em razão do cargo, sonegá-lo ou\r\ninutilizá-lo, total ou parcialmente:\n\nPena - reclusão, de dois a seis\r\nanos, se o fato não constitui crime mais grave.\n\nCondescendência criminosa"
+        },
+        {
+          "key": "322",
+          "text": "Art. 322. Deixar de\r\nresponsabilizar subordinado que comete infração no exercício do cargo, ou, quando lhe\r\nfalte competência, não levar o fato ao conhecimento da autoridade competente:\n\nPena - se o fato foi praticado\r\npor indulgência, detenção até seis meses; se por negligência, detenção até três\r\nmeses.\n\nNão inclusão de nome em lista"
+        },
+        {
+          "key": "323",
+          "text": "Art. 323. Deixar, no exercício\r\nde função, de incluir, por negligência, qualquer nome em relação ou lista para o\r\nefeito de alistamento ou de convocação militar:\n\nPena - detenção, até seis\r\nmeses.\n\nInobservância de lei, regulamento ou instrução"
+        },
+        {
+          "key": "324",
+          "text": "Art.\n\n324. Deixar, no exercício de função, de observar lei,\r\nregulamento ou instrução, dando causa direta à prática de ato prejudicial à\r\nadministração militar:\n\n\r\nPena – se o fato foi praticado por tolerância, detenção de 1 (um) a \r\n3 (três) anos, e, se por negligência, detenção de 1 (um) a 2 (dois) \r\nanos.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nViolação ou divulgação indevida de \r\ncorrespondência ou comunicação"
+        },
+        {
+          "key": "325",
+          "text": "Art.\n\n325. Devassar indevidamente o conteúdo de correspondência\r\ndirigida à administração militar, ou por esta expedida:\n\nPena - detenção, de dois a seis\r\nmeses, se o fato não constitui crime mais grave.\n\n\r\nParágrafo único. Na mesma pena incorre quem, ainda que não seja \r\nservidor público, mas desde que o fato atente contra a administração \r\nmilitar:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nI - indevidamente se se apossa de\r\ncorrespondência, embora não fechada, e no todo ou em parte a sonega ou destrói;\n\nII - indevidamente divulga,\r\ntransmite a outrem, ou abusivamente utiliza comunicação de interêsse militar;\n\nIII - impede a comunicação\r\nreferida no número anterior.\n\nViolação de sigilo funcional"
+        },
+        {
+          "key": "326",
+          "text": "Art.\n\n326. Revelar fato de que tem\r\nciência em razão do cargo ou função e que deva permanecer em segrêdo, ou\r\nfacilitar-lhe a revelação, em prejuízo da administração militar:\n\nPena - detenção, de seis meses\r\na dois anos, se o fato não constitui crime mais grave.\n\n\r\n§ 1º Nas mesmas penas incorre quem:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nI – permite ou facilita, mediante atribuição, fornecimento ou \r\nempréstimo de senha, ou de qualquer outra forma, o acesso de pessoas \r\nnão autorizadas a sistemas de informações ou banco de dados da \r\nadministração militar;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nII – se utiliza indevidamente do acesso restrito.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 2º Se da ação ou omissão resulta dano à administração militar ou a \r\noutrem:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 2 (dois) a 6 (seis) anos.\n\r\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nViolação de sigilo de proposta de concorrência"
+        },
+        {
+          "key": "327",
+          "text": "Art.\n\n327. Devassar o sigilo de proposta de concorrência de\r\ninterêsse da administração militar ou proporcionar a terceiro o ensejo de devassá-lo:\n\nPena - detenção, de três meses\r\na um ano.\n\nObstáculo à hasta pública, concorrência ou tomada \r\nde preços"
+        },
+        {
+          "key": "328",
+          "text": "Art.\n\n328. Impedir, perturbar ou fraudar a realização de hasta\r\npública, concorrência ou tomada de preços, de interêsse da administração militar:\n\nPena - detenção, de seis meses\r\na dois anos.\n\nExercício funcional ilegal"
+        },
+        {
+          "key": "329",
+          "text": "Art.\n\n329. Entrar no exercício de pôsto ou função militar, ou\r\nde cargo ou função em repartição militar, antes de satisfeitas as exigências legais,\r\nou continuar o exercício, sem autorização, depois de saber que foi exonerado, ou\r\nafastado, legal e definitivamente, qualquer que seja o ato determinante do afastamento:\n\nPena - detenção, até quatro\r\nmeses, se o fato não constitui crime mais grave.\n\nA\nbandono \r\nde cargo"
+        },
+        {
+          "key": "330",
+          "text": "Art.\n\n330. Abandonar cargo público, em repartição ou\r\nestabelecimento militar:\n\nPena - detenção, até dois\r\nmeses.\n\nFormas qualificadas\n\n§ 1º Se do fato resulta prejuízo\r\nà administração militar:\n\nPena - detenção, de três meses\r\na um ano.\n\n§ 2º Se o\r\nfato ocorre em lugar compreendido na faixa de fronteira:\n\nPena - detenção, de um a três\r\nanos.\n\nAplicação ilegal de verba ou dinheiro"
+        },
+        {
+          "key": "331",
+          "text": "Art.\n\n331. Dar às verbas ou ao dinheiro público aplicação\r\ndiversa da estabelecida em lei:\n\nPena - detenção, até seis\r\nmeses.\n\nAbuso de confiança ou boa-fé"
+        },
+        {
+          "key": "332",
+          "text": "Art. 332\n.\nAbusar da confiança ou da boa-fé de militar ou de \r\nservidor público, em serviço ou em razão deste, apresentando-lhe ou \r\nremetendo-lhe, para aprovação, recebimento, anuência ou aposição de \r\nvisto, relação, nota, empenho de despesa, ordem ou folha de \r\npagamento, comunicação, ofício ou qualquer outro documento que sabe, \r\nou deve saber, serem inexatos ou irregulares, desde que o fato \r\natente contra a administração ou o serviço militar:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - detenção, de seis meses\r\na dois anos, se o fato não constitui crime mais grave.\n\nForma qualificada\r\n\n§ 1º A pena é agravada, se do\r\nfato decorre prejuízo material ou processo penal militar para a pessoa de cuja confiança\r\nou boa-fé se abusou.\n\nModalidade culposa\n\n§ 2º Se a apresentação ou\r\nremessa decorre de culpa:\n\nPena - detenção, até seis\r\nmeses.\n\nViolência arbitrária"
+        },
+        {
+          "key": "333",
+          "text": "Art.\n\n333. Praticar violência, em repartição ou estabelecimento\r\nmilitar, no exercício de função ou a pretexto de exercê-la:\n\nPena - detenção, de seis meses\r\na dois anos, além da correspondente à violência.\n\nPatrocínio indébito"
+        },
+        {
+          "key": "334",
+          "text": "Art. 334. Patrocinar, direta ou indiretamente, interesse privado \r\nperante a administração militar, valendo-se da qualidade de servidor \r\npúblico ou de militar:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - detenção, até três\r\nmeses.\n\nParágrafo único. Se o\r\ninterêsse é ilegítimo:\n\nPena - detenção, de três meses\r\na um ano.\n\nCAPÍTULO VII\n\nDOS CRIMES\r\nPRATICADOS POR PARTICULAR\n\nCONTRA A\r\nADMINISTRAÇÃO\n\nMILITAR\n\nUsurpação de função"
+        },
+        {
+          "key": "335",
+          "text": "Art. 335. Usurpar o exercício de\r\nfunção em repartição ou estabelecimento militar:\n\nPena - detenção, de três meses\r\na dois anos.\n\n\r\nParágrafo único. Se do fato o agente aufere vantagem:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 2 (dois) a 5 (cinco) anos.\n\r\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nTráfico de influência"
+        },
+        {
+          "key": "336",
+          "text": "Art. 336.\n\nSolicitar, exigir, cobrar ou obter, para si ou para \r\noutrem, vantagem ou promessa de vantagem, a pretexto de influir em \r\nato praticado por militar ou por servidor público de local sujeito à \r\nadministração militar no exercício da função:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 2 (dois) a 5 (cinco) anos.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nAumento de pena\n\n\r\nParágrafo único. A pena é aumentada de metade se o agente alega ou \r\ninsinua que a vantagem é também destinada ao militar ou ao servidor \r\npúblico.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nSubtração ou inutilização de\r\nlivro, processo ou documento"
+        },
+        {
+          "key": "337",
+          "text": "Art. 337. Subtrair ou inutilizar,\r\ntotal ou parcialmente, livro oficial, processo ou qualquer documento, desde que o fato\r\natente contra a administração ou o serviço militar:\n\nPena - reclusão, de dois a cinco\r\nanos, se o fato não constitui crime mais grave.\n\nInutilização de edital ou de\r\nsinal oficial"
+        },
+        {
+          "key": "338",
+          "text": "Art. 338. Rasgar, ou de qualquer\r\nforma inutilizar ou conspurcar edital afixado por ordem da autoridade militar; violar ou\r\ninutilizar sêlo ou sinal empregado, por determinação legal ou ordem de autoridade\r\nmilitar, para identificar ou cerrar qualquer objeto:\n\nPena - detenção, até um ano.\n\nImpedimento, perturbação ou fraude de \r\nconcorrência"
+        },
+        {
+          "key": "339",
+          "text": "Art. 339. Impedir, perturbar ou\r\nfraudar em prejuízo da Fazenda Nacional, concorrência, hasta pública ou tomada de\r\npreços ou outro qualquer processo administrativo para aquisição ou venda de coisas ou\r\nmercadorias de uso das fôrças armadas, seja elevando arbitràriamente os preços,\r\nauferindo lucro excedente a um quinto do valor da transação, seja alterando substância,\r\nqualidade ou quantidade da coisa ou mercadoria fornecida, seja impedindo a livre\r\nconcorrência de outros fornecedores, ou por qualquer modo tornando mais onerosa a\r\ntransação:\n\nPena - detenção, de um a três\r\nanos.\n\n§ 1º Na mesma pena incorre o\r\nintermediário na transação.\n\n§ 2º É aumentada a pena de um\r\nterço, se o crime ocorre em período de grave crise econômica.\n\nTÍTULO VIII\n\nDOS CRIMES\r\nCONTRA\n\nA\r\nADMINISTRAÇÃO DA JUSTIÇA\n\nMILITAR\n\nRecusa de função na Justiça Militar"
+        },
+        {
+          "key": "340",
+          "text": "Art. 340. Recusar-se o militar a exercer, sem motivo legal, função \r\nque lhe seja atribuída na administração da Justiça Militar:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – detenção, de 1 (um) a 2 (dois) anos.\n\r\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nDesacato"
+        },
+        {
+          "key": "341",
+          "text": "Art.\n\n341. Desacatar autoridade judiciária militar no exercício\r\nda função ou em razão dela:\n\nPena - reclusão, até quatro\r\nanos.\n\nCoação"
+        },
+        {
+          "key": "342",
+          "text": "Art. 342. Usar de violência ou\r\ngrave ameaça, com o fim de favorecer interêsse próprio ou alheio, contra autoridade,\r\nparte, ou qualquer outra pessoa que funciona, ou é chamada a intervir em inquérito\r\npolicial, processo administrativo ou judicial militar:\n\nPena - reclusão, até quatro\r\nanos, além da pena correspondente à violência.\n\nDenunciação caluniosa"
+        },
+        {
+          "key": "343",
+          "text": "Art.\n\n343. Dar causa à instauração de inquérito policial ou\r\nprocesso judicial militar contra alguém, imputando-lhe crime sujeito à jurisdição\r\nmilitar, de que o sabe inocente:\n\nPena - reclusão, de dois a oito\r\nanos.\n\nAgravação de pena\n\nParágrafo único. A pena é\r\nagravada, se o agente se serve do anonimato ou de nome suposto.\n\nComunicação falsa de crime"
+        },
+        {
+          "key": "344",
+          "text": "Art.\n\n344. Provocar a ação da autoridade, comunicando-lhe a\r\nocorrência de crime sujeito à jurisdição militar, que sabe não se ter verificado:\n\nPena - detenção, até seis\r\nmeses.\n\nAuto-acusação falsa"
+        },
+        {
+          "key": "345",
+          "text": "Art.\n\n345. Acusar-se, perante a autoridade, de crime sujeito à\r\njurisdição militar, inexistente ou praticado por outrem:\n\nPena - detenção, de três meses\r\na um ano.\n\nFalso testemunho ou falsa perícia"
+        },
+        {
+          "key": "346",
+          "text": "Art.\n\n346. Fazer afirmação falsa, ou negar ou calar a verdade,\r\ncomo testemunha, perito, tradutor ou intérprete, em inquérito policial, processo\r\nadministrativo ou judicial, militar:\n\nPena - reclusão, de dois a seis\r\nanos.\n\nAumento de pena\n\n1º A pena aumenta-se de um\r\ntêrço, se o crime é praticado mediante subôrno.\n\nRetratação\n\n2º O fato deixa de ser punível,\r\nse, antes da sentença o agente se retrata ou declara a verdade.\n\nCorrupção ativa de testemunha, perito ou \r\nintérprete"
+        },
+        {
+          "key": "347",
+          "text": "Art.\n\n347. Dar, oferecer ou prometer dinheiro ou qualquer outra\r\nvantagem a testemunha, perito, tradutor ou intérprete, para fazer afirmação falsa,\r\nnegar ou calar a verdade em depoimento, perícia, tradução ou interpretação, em\r\ninquérito policial, processo administrativo ou judicial, militar, ainda que a oferta não\r\nseja aceita:\n\nPena - reclusão, de dois a oito\r\nanos.\n\nPublicidade opressiva"
+        },
+        {
+          "key": "348",
+          "text": "Art.\n\n348. Fazer pela imprensa, rádio ou televisão, antes da\r\nintercorrência de decisão definitiva em processo penal militar, comentário tendente a\r\nexercer pressão sôbre declaração de testemunha ou laudo de perito:\n\nPena - detenção, até seis\r\nmeses.\n\nDesobediência a decisão judicial"
+        },
+        {
+          "key": "349",
+          "text": "Art.\n\n349. Deixar, sem justa causa, de cumprir decisão da\r\nJustiça Militar, ou retardar ou fraudar o seu cumprimento:\n\nPena - detenção, de três meses\r\na um ano.\n\n§ 1º No caso de transgressão dos\r\narts. 116, 117 e 118, a pena será cumprida sem prejuízo da execução da medida de\r\nsegurança.\n\n§ 2º Nos casos do art. 118 e seus\r\n§§ 1º e 2º, a pena pela desobediência é aplicada ao representante, ou representantes\r\nlegais, do estabelecimento, sociedade ou associação.\n\nFavorecimento pessoal"
+        },
+        {
+          "key": "350",
+          "text": "Art.\n\n350. Auxiliar a subtrair-se à ação da autoridade autor de\r\ncrime militar, a que é cominada pena de morte ou reclusão:\n\nPena - detenção, até seis\r\nmeses.\n\nDiminuição de pena\n\n\r\n§ 1º Se ao crime é cominada pena de detenção ou de impedimento:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - detenção, até três\r\nmeses.\n\nIsenção de pena\n\n§ 2º Se quem presta o auxílio é\r\nascendente, descendente, cônjuge ou irmão do criminoso, fica isento da pena.\n\nFavorecimento real"
+        },
+        {
+          "key": "351",
+          "text": "Art.\n\n351. Prestar a criminoso, fora dos casos de co-autoria ou de\r\nreceptação, auxílio destinado a tornar seguro o proveito do crime:\n\nPena - detenção, de três meses\r\na um ano.\n\nInutilização, sonegação ou\r\ndescaminho de material probante"
+        },
+        {
+          "key": "352",
+          "text": "Art.\n\n352. Inutilizar, total ou\r\nparcialmente, sonegar ou dar descaminho a autos, documento ou objeto de valor probante,\r\nque tem sob guarda ou recebe para exame:\n\nPena - detenção, de seis meses\r\na três anos, se o fato não constitui crime mais grave.\n\nModalidade culposa\n\nParágrafo único. Se a\r\ninutilização ou o descaminho resulta de ação ou omissão culposa:\n\nPena - detenção, até seis\r\nmeses.\n\nExploração de prestígio"
+        },
+        {
+          "key": "353",
+          "text": "Art. 353. Solicitar ou receber dinheiro ou qualquer outra utilidade, \r\na pretexto de influir em juiz, órgão do Ministério Público, servidor \r\npúblico da Justiça, perito, tradutor, intérprete ou testemunha, na \r\nJustiça Militar:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - reclusão, até cinco\r\nanos.\n\nA\numento de pena\n\nParágrafo único. A pena é\r\naumentada de um têrço, se o agente alega ou insinua que o dinheiro ou utilidade também\r\nse destina a qualquer das pessoas referidas no artigo.\n\nDesobediência a decisão sôbre\r\nperda ou suspensão de atividade ou direito"
+        },
+        {
+          "key": "354",
+          "text": "Art.\n\n354. Exercer função, atividade, direito, autoridade ou\r\nmúnus, de que foi suspenso ou privado por decisão da Justiça Militar:\n\nPena - detenção, de três meses\r\na dois anos.\n\nLIVRO II\n\nDOS CRIMES\r\nMILITARES EM TEMPO\n\nDE GUERRA\n\nTÍTULO I\n\nDO FAVORECIMENTO\r\nAO INIMIGO\n\nCAPÍTULO I\n\nDA TRAIÇÃO\n\nTraição"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 1,
+  "day": 17,
+  "label": "Lei 7.716/1989 + Lei 8.072/1990 — racismo e crimes hediondos",
+  "articleCount": 46,
+  "sections": [
+    {
+      "prefix": "L7716",
+      "title": "Lei 7.716/1989",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l7716.htm",
+      "range": "texto integral da lei",
+      "articles": [
+        {
+          "key": "1",
+          "text": "Art. 1º Serão punidos, na forma desta Lei, os crimes\r\nresultantes de discriminação ou preconceito de raça, cor, etnia, religião ou\r\nprocedência nacional. \r\n\n(Redação dada\r\npela Lei nº 9.459, de 15/05/97)"
+        },
+        {
+          "key": "2",
+          "text": "Art. 2º\n(Vetado)."
+        },
+        {
+          "key": "2A",
+          "text": "Art. 2º-A Injuriar alguém, ofendendo-lhe a \r\ndignidade ou o decoro, em razão de raça, cor, etnia ou procedência nacional. \r\n\n(Incluído pela Lei nº \r\n14.532, de 2023)\n\nPena: reclusão, de 2 (dois) a 5 (cinco) anos, \r\ne multa.\n\n(Incluído pela Lei nº \r\n14.532, de 2023)\n\nParágrafo único. A pena é aumentada de metade \r\nse o crime for cometido mediante concurso de 2 (duas) ou mais pessoas. \r\n\n(Incluído pela Lei nº \r\n14.532, de 2023)"
+        },
+        {
+          "key": "3",
+          "text": "Art. 3º Impedir ou obstar o acesso de alguém, devidamente habilitado, a qualquer cargo\r\nda Administração Direta ou Indireta, bem como das concessionárias de serviços\r\npúblicos.\n\nPena: reclusão de dois a cinco anos.\n\nParágrafo \r\núnico. Incorre na mesma pena quem, por motivo de discriminação de raça, \r\ncor, etnia, religião ou procedência nacional, obstar a promoção \r\nfuncional.\n\r\n\n\r\n(Incluído pela Lei nº 12.288, de 2010)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "4",
+          "text": "Art. 4º Negar ou obstar emprego em empresa privada.\n\nPena: \r\nreclusão de dois a cinco anos.\n\n§ 1\no\n\r\nIncorre na mesma pena quem, por motivo de discriminação de raça ou de \r\ncor ou práticas resultantes do preconceito de descendência ou origem \r\nnacional ou étnica:\n\r\n(Incluído pela Lei nº 12.288, de 2010)\n\r\n\n(Vigência)\n\nI - deixar \r\nde conceder os equipamentos necessários ao empregado em igualdade de \r\ncondições com os demais trabalhadores;\n\r\n\n\r\n(Incluído pela Lei nº 12.288, de 2010)\n\r\n\n(Vigência)\n\nII - impedir \r\na ascensão funcional do empregado ou obstar outra forma de benefício \r\nprofissional;\n\r\n(Incluído pela Lei nº 12.288, de 2010)\n\r\n\n(Vigência)\n\nIII - \r\nproporcionar ao empregado tratamento diferenciado no ambiente de \r\ntrabalho, especialmente quanto ao salário.\n\r\n(Incluído pela Lei nº 12.288, de 2010)\n\r\n\n(Vigência)\n\n§ 2\no\n\r\nFicará sujeito às penas de multa e de prestação de serviços à \r\ncomunidade, incluindo atividades de promoção da igualdade racial, quem, \r\nem anúncios ou qualquer outra forma de recrutamento de trabalhadores, \r\nexigir aspectos de aparência próprios de raça ou etnia para emprego \r\ncujas atividades não justifiquem essas exigências.\n\r\n(Incluído pela Lei nº 12.288, de 2010)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "5",
+          "text": "Art. 5º Recusar ou impedir acesso a estabelecimento comercial, negando-se a servir,\r\natender ou receber cliente ou comprador.\n\nPena: reclusão de um a três anos."
+        },
+        {
+          "key": "6",
+          "text": "Art. 6º Recusar, negar ou impedir a inscrição ou ingresso de aluno em estabelecimento\r\nde ensino público ou privado de qualquer grau.\n\nPena: reclusão de três a cinco anos.\n\nParágrafo único. Se o crime for praticado contra menor de dezoito anos a pena é\r\nagravada de 1/3 (um terço)."
+        },
+        {
+          "key": "7",
+          "text": "Art. 7º Impedir o acesso ou recusar hospedagem em hotel, pensão, estalagem, ou qualquer\r\nestabelecimento similar.\n\nPena: reclusão de três a cinco anos."
+        },
+        {
+          "key": "8",
+          "text": "Art. 8º Impedir o acesso ou recusar atendimento em restaurantes, bares, confeitarias, ou\r\nlocais semelhantes abertos ao público.\n\nPena: reclusão de um\r\na três anos."
+        },
+        {
+          "key": "9",
+          "text": "Art. 9º Impedir o acesso ou recusar atendimento em estabelecimentos esportivos, casas de\r\ndiversões, ou clubes sociais abertos ao público.\n\nPena: reclusão de um a três anos."
+        },
+        {
+          "key": "10",
+          "text": "Art. 10. Impedir o acesso ou recusar atendimento em salões de cabeleireiros, barbearias,\r\ntermas ou casas de massagem ou estabelecimento com as mesmas finalidades.\n\nPena: reclusão de um a três anos."
+        },
+        {
+          "key": "11",
+          "text": "Art. 11. Impedir o acesso às entradas sociais em edifícios públicos ou residenciais e\r\nelevadores ou escada de acesso aos mesmos:\n\nPena: reclusão de um a três anos."
+        },
+        {
+          "key": "12",
+          "text": "Art. 12. Impedir o acesso ou uso de transportes públicos, como aviões, navios barcas,\r\nbarcos, ônibus, trens, metrô ou qualquer outro meio de transporte concedido.\n\nPena: reclusão de um a três anos."
+        },
+        {
+          "key": "13",
+          "text": "Art. 13. Impedir ou obstar o acesso de alguém ao serviço em qualquer ramo das Forças\r\nArmadas.\n\nPena: reclusão de dois a quatro anos."
+        },
+        {
+          "key": "14",
+          "text": "Art. 14. Impedir ou obstar, por qualquer meio ou forma, o casamento ou convivência\r\nfamiliar e social.\n\nPena: reclusão de dois a quatro anos."
+        },
+        {
+          "key": "15",
+          "text": "Art. 15.\n(Vetado)."
+        },
+        {
+          "key": "16",
+          "text": "Art. 16. Constitui efeito da condenação a perda do cargo ou função pública, para o\r\nservidor público, e a suspensão do funcionamento do estabelecimento particular por prazo\r\nnão superior a três meses."
+        },
+        {
+          "key": "17",
+          "text": "Art. 17.\n(Vetado)."
+        },
+        {
+          "key": "18",
+          "text": "Art. 18. Os efeitos de que tratam os arts. 16 e 17 desta Lei não são automáticos,\r\ndevendo ser motivadamente declarados na sentença."
+        },
+        {
+          "key": "19",
+          "text": "Art. 19.\n(Vetado)."
+        },
+        {
+          "key": "20",
+          "text": "Art. 20. Praticar, induzir ou incitar a discriminação ou\r\npreconceito de raça, cor, etnia, religião ou procedência nacional. (\nRedação dada pela Lei nº 9.459, de 15/05/97\n)\n\nPena: reclusão de um a três anos e multa.\n(Redação dada pela Lei nº 9.459, de\r\n15/05/97)\n\n§ 1º Fabricar, comercializar, distribuir ou veicular símbolos, emblemas, ornamentos,\r\ndistintivos ou propaganda que utilizem a cruz suástica ou gamada, para fins de\r\ndivulgação do nazismo.\n(Redação dada pela Lei nº 9.459, de\r\n15/05/97)\n\nPena: reclusão de dois a cinco anos e multa.\n(Incluído pela Lei nº 9.459, de 15/05/97)\n\n§ 2º Se qualquer dos crimes previstos neste artigo for cometido por \r\nintermédio dos meios de comunicação social, de publicação em redes sociais, \r\nda rede mundial de computadores ou de publicação de qualquer natureza: \r\n\n(Redação dada pela Lei nº \r\n14.532, de 2023)\n\nPena: reclusão de dois a cinco anos e multa.\n(Incluído pela Lei nº 9.459, de 15/05/97)\n\n§ 2º-A Se qualquer dos crimes previstos neste artigo for cometido no \r\ncontexto de atividades esportivas, religiosas, artísticas ou culturais \r\ndestinadas ao público:\n\n(Incluído pela Lei nº \r\n14.532, de 2023)\n\nPena: reclusão, de 2 (dois) a 5 (cinco) anos, e proibição de frequência, por \r\n3 (três) anos, a locais destinados a práticas esportivas, artísticas ou \r\nculturais destinadas ao público, conforme o caso. \r\n\n(Incluído pela Lei nº \r\n14.532, de 2023)\n\n§ 2º-B Sem prejuízo da pena correspondente à violência, incorre nas mesmas \r\npenas previstas no caput deste artigo quem obstar, impedir ou empregar \r\nviolência contra quaisquer manifestações ou práticas religiosas. \r\n\n(Incluído pela Lei nº \r\n14.532, de 2023)\n\n§ 3º No caso do § 2º deste artigo, o juiz poderá determinar, ouvido o \r\nMinistério Público ou a pedido deste, ainda antes do inquérito policial, sob \r\npena de desobediência:\n\n(Redação dada pela Lei nº \r\n14.532, de 2023)\n\nI - o recolhimento imediato ou a busca e apreensão dos exemplares do material respectivo;\n(Incluído pela Lei nº 9.459, de 15/05/97)\n\n(Incluído pela Lei nº 9.459, de 15/05/97)\n\nII - a cessação das \r\nrespectivas transmissões radiofônicas, televisivas, eletrônicas ou da \r\npublicação por qualquer meio;\n\r\n\n(Redação dada pela Lei nº \r\n12.735, de 2012)\n\r\n\n(Vigência)\n\nIII - a interdição das respectivas mensagens ou páginas \r\nde informação na rede mundial de computadores. \r\n\n(Incluído pela Lei nº 12.288, de 2010)\n\r\n\n(Vigência)\n\n§ 4º Na hipótese do § 2º, constitui efeito da condenação, após o trânsito em\r\njulgado da decisão, a destruição do material apreendido. \r\n\n(Incluído pela Lei nº 9.459, de 15/05/97)"
+        },
+        {
+          "key": "20A",
+          "text": "Art. 20-A. Os crimes previstos nesta Lei terão as penas aumentadas de 1/3 \r\n(um terço) até a metade, quando ocorrerem em contexto ou com intuito de \r\ndescontração, diversão ou recreação.\n\n(Incluído pela Lei nº \r\n14.532, de 2023)"
+        },
+        {
+          "key": "20B",
+          "text": "Art. 20-B. Os crimes previstos nos arts. 2º-A e 20 desta Lei terão as penas \r\naumentadas de 1/3 (um terço) até a metade, quando praticados por funcionário \r\npúblico, conforme definição prevista no\nDecreto-Lei nº 2.848, de 7 de \r\ndezembro de 1940\n(Código Penal), no exercício de suas funções ou a pretexto \r\nde exercê-las.\n\n(Incluído pela Lei nº \r\n14.532, de 2023)"
+        },
+        {
+          "key": "20C",
+          "text": "Art. 20-C. Na interpretação desta Lei, o juiz deve considerar como \r\ndiscriminatória qualquer atitude ou tratamento dado à pessoa ou a grupos \r\nminoritários que cause constrangimento, humilhação, vergonha, medo ou \r\nexposição indevida, e que usualmente não se dispensaria a outros grupos em \r\nrazão da cor, etnia, religião ou procedência. \r\n\n(Incluído pela Lei nº \r\n14.532, de 2023)"
+        },
+        {
+          "key": "20D",
+          "text": "Art. 20-D. Em todos os atos processuais, cíveis e criminais, a vítima dos \r\ncrimes de racismo deverá estar acompanhada de advogado ou defensor público. \r\n\n(Incluído pela Lei nº \r\n14.532, de 2023)"
+        },
+        {
+          "key": "21",
+          "text": "Art. 21. Esta Lei entra em vigor na data de sua publicação.\n\n(Renumerado pela Lei nº 8.081, de 21.9.1990)"
+        },
+        {
+          "key": "22",
+          "text": "Art. 22. Revogam-se as disposições em contrário.\n(Renumerado pela\r\nLei nº 8.081, de 21.9.1990)\n\nBrasília, 5 de janeiro de 1989; 168º\r\nda Independência e 101º da República.\n\nJOSÉ SARNEY\n\nPaulo Brossard\n\nEste texto não substitui o publicado no\r\nDOU de 6.1.1989\ne \r\n\nretificada em \r\n9.1.1989\n\n*"
+        }
+      ]
+    },
+    {
+      "prefix": "L8072",
+      "title": "Lei 8.072/1990",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l8072.htm",
+      "range": "texto integral da lei",
+      "articles": [
+        {
+          "key": "1",
+          "text": "Art. 1\no\nSão considerados hediondos os seguintes crimes, todos\r\ntipificados no\nDecreto-Lei n\no\n2.848, de 7 de dezembro de 1940 - Código\r\nPenal\n, consumados ou tentados:\n(Redação dada pela Lei nº 8.930, de\r\n1994)\n\n(Vide Lei nº 7.210, de 1984)\n\nI - homicídio (art. 121), quando praticado em \r\natividade típica de grupo de extermínio, ainda que cometido por 1 \r\n(um) só agente, e homicídio qualificado (art. 121, § 2º); \r\n\n(Redação dada \r\npela Lei nº 15.159, de 2025)\n\nI-A - lesão corporal dolosa de natureza gravíssima (art. \r\n129, § 2º) e lesão corporal seguida de morte (art. 129, § 3º), quando \r\npraticadas:\n\n(Redação dada pela Lei nº \r\n15.159, de 2025)\n\na) \r\ncontra autoridade ou agente descrito nos\r\n\narts. 142\ne\r\n\n144 da Constituição Federal\r\n\nou integrantes do sistema prisional ou da Força Nacional de Segurança \r\nPública, no exercício da função ou em decorrência dela, ou contra seu cônjuge, \r\ncompanheiro ou parente consanguíneo até terceiro grau, em razão dessa condição; \r\n\n(Redação dada pela Lei nº \r\n15.159, de 2025)\n\nb) \r\ncontra membro do Poder Judiciário, do Ministério Público, da Defensoria Pública \r\nou da Advocacia Pública, de que tratam os\r\n\narts. 131\ne\r\n\n132 da Constituição Federal\n, \r\nou oficial de justiça, no exercício da função ou em decorrência dela, ou contra \r\nseu cônjuge, companheiro ou parente, inclusive por afinidade, até o terceiro \r\ngrau, em razão dessa condição; ou\n\n(Redação dada pela Lei nº \r\n15.159, de 2025)\n\nc) nas \r\ndependências de instituição de ensino;\n\n(Incluído pela Lei nº \r\n15.159, de 2025)\n\nI-B – feminicídio (art. 121-A); \r\n\n(Incluído pela \r\nLei nº 14.994, de 2024)\n\nI-C – \r\nvicaricídio (art. 121-B); \r\n\n(Incluído pela \r\nLei nº 15.384, de 2026)\n\nII - roubo:\n\n(Redação dada \r\npela Lei nº 13.964, de 2019)\n\na) \r\ncircunstanciado pela restrição de liberdade da vítima (art. 157, § 2º, \r\ninciso V);\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nb) \r\ncircunstanciado pelo emprego de arma de fogo (art. 157, § 2º-A, inciso \r\nI) ou pelo emprego de arma de fogo de uso proibido ou restrito (art. \r\n157, § 2º-B);\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nc) qualificado \r\npelo resultado lesão corporal grave ou morte (art. 157, § 3º);\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nIII - extorsão \r\nqualificada pela restrição da liberdade da vítima, ocorrência de lesão \r\ncorporal ou morte (art. 158, § 3º);\n\n(Redação dada \r\npela Lei nº 13.964, de 2019)\n\nIV\r\n- extorsão mediante seqüestro e na forma qualificada (art. 159,\ncaput\n, e §§ l\no\n,\r\n2\no\ne 3\no\n); \r\n\n(Inciso\r\nincluído pela Lei nº 8.930, de 1994)\n\nV - estupro (art. 213,\ncaput\n\ne \r\n§§ 1\no\ne 2\no\n); \r\n\n(Redação dada pela \r\nLei nº 12.015, de 2009)\n\nVI - estupro de vulnerável (art. 217-A,\n\r\ncaput\n\ne §§ 1\no\n, 2\no\n, 3\no\n\r\ne 4\no\n); \r\n\n(Redação dada pela \r\nLei nº 12.015, de 2009)\n\nVII - epidemia com resultado morte (art. 267, § 1\no\n). \r\n\n(Inciso\r\nincluído pela Lei nº 8.930, de 1994)\n\nVII-A – (VETADO)\n(Inciso incluído pela Lei nº 9.695, de\r\n1998)\n\nVII-B - falsificação, corrupção, adulteração ou alteração de produto destinado a\r\nfins terapêuticos ou medicinais (art. 273,\ncaput\ne § 1\no\n, § 1\no\n-A\r\ne § 1\no\n-B, com a redação dada pela\nLei n\no\n9.677, de\r\n2 de julho de 1998\n).\n(Inciso incluído pela Lei nº 9.695, de\r\n1998)\n\nVIII - favorecimento da prostituição ou de outra \r\nforma de exploração sexual de criança ou adolescente ou de vulnerável (art. \r\n218-B, caput, e §§ 1º e 2º).\n\r\n\n(Incluído pela Lei nº 12.978, de \r\n2014)\n\nIX - furto \r\nqualificado pelo emprego de explosivo ou de artefato análogo que cause \r\nperigo comum (art. 155, § 4º-A).\n\n(Incluído pela Lei nº \r\n13.964, de 2019)\n\n\r\nX - induzimento, instigação ou auxílio a suicídio ou a automutilação \r\nrealizados por meio da rede de computadores, de rede social ou \r\ntransmitidos em tempo real (art. 122,\ncaput\ne § 4º);\n\r\n\n(Incluído pela \r\nLei 14.811, de 2024)\n\n\r\nXI - sequestro e cárcere privado cometido contra menor de 18 \r\n(dezoito) anos (art. 148, § 1º, inciso IV);\n\r\n\n(Incluído pela \r\nLei 14.811, de 2024)\n\n\r\nXII - tráfico de pessoas cometido contra criança ou adolescente \r\n(art. 149-A,\ncaput\n, incisos I a V, e § 1º, inciso II). \r\n\n(Incluído pela \r\nLei 14.811, de 2024)\n\nParágrafo \r\núnico. Consideram-se também hediondos, tentados ou consumados:\n\n(Redação dada \r\npela Lei nº 13.964, de 2019)\n\nI - o crime de \r\ngenocídio, previsto nos\narts. 1º, 2º e 3º da Lei nº 2.889, de 1º de \r\noutubro de 1956\n;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nII - o crime \r\nde posse ou porte ilegal de arma de fogo de uso proibido, previsto no \r\n\nart. 16 da Lei nº 10.826, de 22 de dezembro de 2003\n;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nIII - o crime \r\nde comércio ilegal de armas de fogo, previsto no \r\n\nart. 17 da Lei nº \r\n10.826, de 22 de dezembro de 2003\n;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nIV - o crime \r\nde tráfico internacional de arma de fogo, acessório ou munição, previsto \r\nno\nart. 18 da Lei nº 10.826, de 22 de dezembro de 2003\n;\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nV - o crime de \r\norganização criminosa, quando direcionado à prática de crime hediondo ou \r\nequiparado.\n\n(Incluído pela \r\nLei nº 13.964, de 2019)\n\nVI – os crimes previstos no \r\n\nDecreto-Lei nº 1.001, de 21 de outubro \r\nde 1969\n(Código Penal Militar), que apresentem identidade com os \r\ncrimes previstos no art. 1º desta Lei.\n\r\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nVII - os crimes previstos no\n\ncaput\ne \r\nnos\n§§ 1º e 2º do art. 240\n, no\n\ncaput\ne no\nparágrafo único do \r\nart. 241\n, no\ncaput\ne nos\n\r\n§§ 1º\ne\n3º do art. 241-A,\nno\r\n\ncaput\ndo art. 241-B\n, no\n\ncaput\ne nos\n§§ 1º\ne\r\n\n2º do art. 241-D\ne no\n\ncaput\n\r\ne no\n§ 1º do art. 244-A da Lei \r\nnº 8.069, de 13 de julho de 1990\n(Estatuto da Criança e do \r\nAdolescente);\n\n(Redação dada \r\npela Lei nº 15.487, de 2026)\n\nVIII \r\n- os crimes de domínio social estruturado e de favorecimento ao domínio \r\nsocial estruturado, previstos no\ncaput\ne nos §§ 1º e 3º do art. 2º e \r\nno art. 3º da lei que institui o marco legal do combate ao crime organizado \r\nno Brasil.\n\n(Incluído pela \r\nLei nº 15.358, de 2026)"
+        },
+        {
+          "key": "2",
+          "text": "Art. 2º Os crimes hediondos, a prática da tortura, o tráfico ilícito de entorpecentes\r\ne drogas afins e o terrorismo são insuscetíveis de: \r\n\n(Vide Súmula \r\nVinculante)\n\nI\r\n- anistia, graça e indulto;\n\nII - fiança.\n\n(Redação \r\ndada pela Lei nº 11.464, de 2007)\n\n§ 1\no\nA pena por crime previsto neste artigo será cumprida \r\ninicialmente em regime fechado.\n(Redação \r\ndada pela Lei nº 11.464, de 2007)\n\n(Revogado\npela Lei nº 13.964, de 2019)\n\n§ 3\no\nEm caso de sentença \r\ncondenatória, o juiz decidirá fundamentadamente se o réu poderá apelar em \r\nliberdade.\n(Redação \r\ndada pela Lei nº 11.464, de 2007)\n\n§ 4\no\nA prisão temporária, sobre a qual dispõe a \r\n\nLei n\no\n\r\n7.960, de 21 de dezembro de 1989\n, nos crimes previstos neste artigo, \r\nterá o prazo de 30 (trinta) dias, prorrogável por igual período em caso \r\nde extrema e comprovada necessidade. \r\n\n(Incluído pela Lei \r\nnº 11.464, de 2007)"
+        },
+        {
+          "key": "3",
+          "text": "Art. 3º A União manterá estabelecimentos penais, de segurança máxima, destinados ao\r\ncumprimento de penas impostas a condenados de alta periculosidade, cuja permanência em\r\npresídios estaduais ponha em risco a ordem ou incolumidade pública."
+        },
+        {
+          "key": "4",
+          "text": "Art. 4º\n(Vetado)."
+        },
+        {
+          "key": "5",
+          "text": "Art. 5º Ao art. 83 do\n\r\nCódigo Penal\né acrescido o seguinte inciso:\n\n\"Art. 83.\r\n..............................................................\n\n........................................................................\n\nV -\ncumprido mais de dois terços da pena,\r\nnos casos de condenação por crime hediondo, prática da tortura, tráfico ilícito de\r\nentorpecentes e drogas afins, e terrorismo, se o apenado não for reincidente específico\r\nem crimes dessa natureza.\""
+        },
+        {
+          "key": "6",
+          "text": "Art. 6º Os arts. 157, § 3º; 159, caput e seus §§ 1º, 2º e 3º; \r\n213; 214; 223, caput e seu parágrafo único; 267, caput e 270; caput, todos do\r\n\nCódigo Penal\n, passam a vigorar com a \r\nseguinte redação:\n\n\"Art. 157.\r\n.............................................................\n\n§ 3º\nSe da violência resulta lesão\r\ncorporal grave, a pena é de reclusão, de cinco a quinze anos, além da multa; se resulta\r\nmorte, a reclusão é de vinte a trinta anos, sem prejuízo da multa.\n\n........................................................................"
+        },
+        {
+          "key": "7",
+          "text": "Art. 7º Ao art. 159 do\n\r\nCódigo Penal\nfica acrescido o seguinte parágrafo:\n\n\"Art. 159.\r\n..............................................................\n\n........................................................................\n\n§ 4º\nSe o crime é cometido por\r\nquadrilha ou bando, o co-autor que denunciá-lo à autoridade, facilitando a libertação\r\ndo seqüestrado, terá sua pena reduzida de um a dois terços.\""
+        },
+        {
+          "key": "8",
+          "text": "Art. 8º Será de três a seis anos de reclusão a pena\r\nprevista no\nart. 288 do Código Penal\n,\r\nquando se tratar de crimes hediondos, prática da tortura, tráfico ilícito de\r\nentorpecentes e drogas afins ou terrorismo.\n\nParágrafo único. O participante e o associado que denunciar à autoridade o bando ou\r\nquadrilha, possibilitando seu desmantelamento, terá a pena reduzida de um a dois terços."
+        },
+        {
+          "key": "9",
+          "text": "Art. 9º As penas fixadas no art. 6º para os crimes capitulados\r\nnos\narts. 157, § 3º\n,\r\n\n158, § 2º\n,\r\n\n159, caput\ne seus\r\n\n§§ 1º, 2º e 3º,\n\n213, caput\ne sua combinação com \r\no\nart. 223, caput\ne\r\n\nparágrafo único\n,\r\n\n214\ne sua combinação com o\r\n\nart. 223, caput\ne\r\n\nparágrafo único\n, todos do\r\n\nCódigo Penal\n, são acrescidas de metade, \r\nrespeitado o limite superior de trinta anos de reclusão, estando a vítima em \r\nqualquer das hipóteses referidas no\n\r\nart. 224\ntambém do Código Penal."
+        },
+        {
+          "key": "10",
+          "text": "Art. 10. O art. 35 da\nLei nº 6.368, \r\nde 21 de outubro de 1976\n, passa a vigorar acrescido de parágrafo único, com \r\na seguinte redação:\n\n\"Art. 35\n.\r\n................................................................\n\nParágrafo único. Os prazos procedimentais\r\ndeste capítulo serão contados em dobro quando se tratar dos crimes previstos nos arts.\r\n12, 13 e 14.\""
+        },
+        {
+          "key": "11",
+          "text": "Art. 11.\n(Vetado)."
+        },
+        {
+          "key": "12",
+          "text": "Art. 12. Esta lei entra em vigor na data de sua publicação."
+        },
+        {
+          "key": "13",
+          "text": "Art. 13. Revogam-se as disposições em contrário.\n\nBrasília, 25 de julho de 1990; 169º da\r\nIndependência e 102º da República.\n\nFERNANDO COLLOR\r\n\nBernardo Cabral\n\nEste texto não substitui o\r\npublicado no DOU de 26.7.1990\n\n\r\n*"
+        },
+        {
+          "key": "159",
+          "text": "Art.\r\n159.\n...............................................................\n\nPena - reclusão, de oito a quinze anos.\n\n§ 1º\r\n.................................................................\n\nPena - reclusão, de doze a vinte anos.\n\n§ 2º\r\n.................................................................\n\nPena - reclusão, de dezesseis a vinte e\r\nquatro anos.\n\n§ 3º\r\n.................................................................\n\nPena - reclusão, de vinte e quatro a trinta\r\nanos.\n\n........................................................................"
+        },
+        {
+          "key": "213",
+          "text": "Art.\r\n213\n. ...............................................................\n\nPena - reclusão, de seis a dez anos."
+        },
+        {
+          "key": "214",
+          "text": "Art.\r\n214\n. ...............................................................\n\nPena - reclusão, de seis a dez anos.\n\n........................................................................"
+        },
+        {
+          "key": "223",
+          "text": "Art. 223\n.\r\n...............................................................\n\nPena - reclusão, de oito a doze anos.\n\nParágrafo único.\r\n........................................................\n\nPena - reclusão, de doze a vinte e cinco\r\nanos.\n\n........................................................................"
+        },
+        {
+          "key": "267",
+          "text": "Art. 267\n.\r\n...............................................................\n\nPena - reclusão, de dez a quinze anos.\n\n........................................................................"
+        },
+        {
+          "key": "270",
+          "text": "Art. 270\n.\r\n...............................................................\n\nPena - reclusão, de dez a quinze anos.\n\n.......................................................................\""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 9,
+  "label": "CPM — arts. 109 a 135",
+  "articleCount": 27,
+  "sections": [
+    {
+      "prefix": "CPM",
+      "title": "Código Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "range": "arts. 109 a 135",
+      "articles": [
+        {
+          "key": "109",
+          "text": "Art. 109. São efeitos da\r\ncondenação:\n\nI - tornar certa a obrigação de\r\nreparar o dano resultante do crime;\n\n\r\nPerda em favor da Fazenda Pública\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nII – a perda em favor da Fazenda Pública, ressalvado o direito do \r\nlesado ou de terceiro de boa-fé:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\na) dos instrumentos do crime,\r\ndesde que consistam em coisas cujo fabrico, alienação, uso, porte ou detenção\r\nconstitua fato ilícito;\n\nb) do produto do crime ou de\r\nqualquer bem ou valor que constitua proveito auferido pelo agente com a sua prática.\n\nTÍTULO VI\n\nDAS MEDIDAS DE\r\nSEGURANÇA\n\nEspécies de medidas de\r\nsegurança"
+        },
+        {
+          "key": "110",
+          "text": "Art. 110.\n\nAs medidas de segurança são pessoais ou \r\npatrimoniais.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 1º As medidas de segurança pessoais subdividem-se em:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nI – detentivas: compreendem a internação em estabelecimento de \r\ncustódia e tratamento ou em seção especial de estabelecimento penal;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nII – não detentivas: compreendem o tratamento ambulatorial, a \r\ninterdição de licença para direção de veículos motorizados, o exílio \r\nlocal e a proibição de frequentar determinados lugares.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 2º As medidas de segurança patrimoniais compreendem a interdição \r\nde estabelecimento ou sede de sociedade ou associação e o confisco.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nPessoas sujeitas às medidas de\r\nsegurança"
+        },
+        {
+          "key": "111",
+          "text": "Art. 111. As medidas de\r\nsegurança sòmente podem ser impostas:\n\nI - aos civis;\n\nII – aos militares condenados a pena privativa de liberdade por \r\ntempo superior a 2 (dois) anos, aos que de outro modo hajam perdido \r\nfunção, posto ou patente ou aos que tenham sido excluídos das Forças \r\nArmadas;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nIII – aos militares, no caso do art. 48 deste Código;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nIV – aos militares, no caso do art. 115 deste Código, com aplicação \r\ndos seus §§ 1º, 2º e 3º.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nEstabelecimento de custódia e tratamento\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "112",
+          "text": "Art. 112.\n\nQuando o agente é inimputável, nos termos do art. \r\n48 deste Código, o juiz poderá determinar sua internação em \r\nestabelecimento de custódia e tratamento.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPrazo de internação\r\n\n\r\n§ 1º A internação ou o tratamento ambulatorial será por tempo \r\nindeterminado, perdurando enquanto não for averiguada, mediante \r\nperícia médica, a cessação da periculosidade, observado que o prazo \r\nmínimo deverá ser de 1 (um) a 3 (três) anos.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPerícia médica\n\n\r\n§ 2º A perícia médica realizar-se-á ao término do prazo mínimo \r\nfixado e deverá ser repetida de ano em ano, ou a qualquer tempo, se \r\no determinar o juiz da execução.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nDesinternação ou liberação condicional\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 3º A desinternação ou a liberação será sempre condicional, devendo \r\nser restabelecida a situação anterior se o agente, antes do decurso \r\nde 1 (um) ano, praticar fato indicativo de persistência de sua \r\npericulosidade.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 4º Durante o período previsto no § 3º deste artigo, aplicar-se-á o \r\ndisposto no art. 92 deste Código.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 5º Em qualquer fase do tratamento ambulatorial, poderá o juiz \r\ndeterminar a internação do agente, se essa providência for \r\nnecessária para fins curativos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nSubstituição da pena por\r\ninternação"
+        },
+        {
+          "key": "113",
+          "text": "Art. 113.\n\nNa hipótese do parágrafo único do art. 48 deste \r\nCódigo, e se o condenado necessitar de especial tratamento curativo \r\ndestinado aos inimputáveis, a pena privativa de liberdade poderá ser \r\nsubstituída por internação ou por tratamento ambulatorial, pelo \r\nprazo mínimo de 1 (um) a 3 (três) anos, nos termos do art. 112 deste \r\nCódigo.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nSuperveniência de cura\r\n\n§ 1º Sobrevindo a cura, pode o\r\ninternado ser transferido para o estabelecimento penal, não ficando excluído o seu\r\ndireito a livramento condicional.\n\nPersistência do estado mórbido\r\n\n§ 2º Se, ao término do prazo,\r\npersistir o mórbido estado psíquico do internado, condicionante de periculosidade atual,\r\na internação passa a ser por tempo indeterminado, aplicando-se o disposto nos §§ 1º a\r\n4º do artigo anterior.\n\nÉbrios habituais ou toxicômanos\r\n\n§ 3º À idêntica internação\r\npara fim curativo, sob as mesmas normas, ficam sujeitos os condenados reconhecidos como\r\nébrios habituais ou toxicômanos.\n\nRegime de internação"
+        },
+        {
+          "key": "114",
+          "text": "Art.\n\n114. A internação, em qualquer dos casos previstos nos\r\nartigos precedentes, deve visar não apenas ao tratamento curativo do internado, senão\r\ntambém ao seu aperfeiçoamento, a um regime educativo ou de trabalho, lucrativo ou não,\r\nsegundo o permitirem suas condições pessoais.\n\nCassação de licença para\r\ndirigir veículos motorizados"
+        },
+        {
+          "key": "115",
+          "text": "Art.\n\n115. Ao condenado por crime cometido na direção ou\r\nrelacionadamente à direção de veículos motorizados, deve ser cassada a licença para\r\ntal fim, pelo prazo mínimo de um ano, se as circunstâncias do caso e os antecedentes do\r\ncondenado revelam a sua inaptidão para essa atividade e conseqüente perigo para a\r\nincolumidade alheia.\n\n§ 1º O prazo da interdição se\r\nconta do dia em que termina a execução da pena privativa de liberdade ou da medida de\r\nsegurança detentiva, ou da data da suspensão condicional da pena ou da concessão do\r\nlivramento ou desinternação condicionais.\n\n§ 2º Se, antes de expirado o prazo\r\nestabelecido, é averiguada a cessação do perigo condicionante da interdição, esta é\r\nrevogada; mas, se o perigo persiste ao têrmo do prazo, prorroga-se êste enquanto não\r\ncessa aquêle.\n\n§ 3º A cassação da licença deve\r\nser determinada ainda no caso de absolvição do réu em razão de inimputabilidade.\n\nExílio local"
+        },
+        {
+          "key": "116",
+          "text": "Art.\n\n116. O exílio local, aplicável quando o juiz o considera\r\nnecessário como medida preventiva, a bem da ordem pública ou do próprio condenado,\r\nconsiste na proibição de que êste resida ou permaneça, durante um ano, pelo menos, na\r\nlocalidade, município ou comarca em que o crime foi praticado.\n\nParágrafo único. O exílio deve\r\nser cumprido logo que cessa ou é suspensa condicionalmente a execução da pena privativa\r\nde liberdade.\n\nProibição de freqüentar\r\ndeterminados lugares"
+        },
+        {
+          "key": "117",
+          "text": "Art.\n\n117. A proibição de freqüentar determinados lugares\r\nconsiste em privar o condenado, durante um ano, pelo menos, da faculdade de acesso a\r\nlugares que favoreçam, por qualquer motivo, seu retôrno à atividade criminosa.\n\nParágrafo único. Para o\r\ncumprimento da proibição, aplica-se o disposto no parágrafo único do artigo anterior.\n\nInterdição de estabelecimento,\r\nsociedade ou associação"
+        },
+        {
+          "key": "118",
+          "text": "Art.\n\n118. A interdição de estabelecimento comercial ou\r\nindustrial, ou de sociedade ou associação, pode ser decretada por tempo não inferior a\r\nquinze dias, nem superior a seis meses, se o estabelecimento, sociedade ou associação\r\nserve de meio ou pretexto para a prática de infração penal.\n\n§ 1º A interdição consiste na\r\nproibição de exercer no local o mesmo comércio ou indústria, ou a atividade social.\n\n§ 2º A sociedade ou associação,\r\ncuja sede é interditada, não pode exercer em outro local as suas atividades.\n\nConfisco"
+        },
+        {
+          "key": "119",
+          "text": "Art. 119. O juiz, embora não\r\napurada a autoria, ou ainda quando o agente é inimputável, ou não punível, deve\r\nordenar o confisco dos instrumentos e produtos do crime, desde que consistam em coisas:\n\nI - cujo fabrico, alienação,\r\nuso, porte ou detenção constitui fato ilícito;\n\nII - que, pertencendo às\r\nfôrças armadas ou sendo de uso exclusivo de militares, estejam em poder ou em uso do\r\nagente, ou de pessoa não devidamente autorizada;\n\nIII - abandonadas, ocultas ou\r\ndesaparecidas.\n\nParágrafo único. É ressalvado\r\no direito do lesado ou de terceiro de boa-fé, nos casos dos ns. I e III.\n\nImposição da medida de\r\nsegurança"
+        },
+        {
+          "key": "120",
+          "text": "Art.\n\n120. A medida de segurança é imposta em sentença, que lhe\r\nestabelecerá as condições, nos têrmos da lei penal militar.\n\nParágrafo único. A imposição\r\nda medida de segurança não impede a expulsão do estrangeiro.\n\nTÍTULO VII\n\nDA AÇÃO PENAL\n\nPropositura da ação penal"
+        },
+        {
+          "key": "121",
+          "text": "Art. 121.\n\nA ação penal é promovida pelo Ministério Público, \r\nna forma da lei.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nParágrafo único. Será admitida ação privada, se a ação pública não \r\nfor intentada no prazo legal.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nDependência de requisição"
+        },
+        {
+          "key": "122",
+          "text": "Art. 122.\n\nNos crimes previstos nos arts. 136 a 141 deste \r\nCódigo, a ação penal, quando o agente for militar, depende da \r\nrequisição do Comando da Força a que aquele estiver subordinado, \r\nobservado que, no caso do art. 141, quando o agente for civil e não \r\nhouver coautor militar, a requisição será do Ministério da Justiça.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nTÍTULO VIII\n\nDA EXTINÇÃO DA\r\nPUNIBILIDADE\n\nCausas extintivas"
+        },
+        {
+          "key": "123",
+          "text": "Art. 123. Extingue-se a\r\npunibilidade:\n\nI - pela morte do agente;\n\n\r\nII – pela anistia, graça ou indulto;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nIII - pela retroatividade de lei\r\nque não mais considera o fato como criminoso;\n\nIV - pela prescrição;\n\n\r\nV –\n(revogado)\n;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nVI - pelo ressarcimento do dano,\r\nno peculato culposo (art. 303, § 4º).\n\n\r\n\r\nVII – pelo perdão judicial, nos casos previstos em lei.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nParágrafo único. A extinção\r\nda punibilidade de crime, que é pressuposto, elemento constitutivo ou circunstância\r\nagravante de outro, não se estende a êste. Nos crimes conexos, a extinção da\r\npunibilidade de um dêles não impede, quanto aos outros, a agravação da pena resultante\r\nda conexão.\n\nEspécies de prescrição"
+        },
+        {
+          "key": "124",
+          "text": "Art. 124.\n\nA prescrição refere-se à pretensão punitiva ou à \r\nexecutória.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPrescrição da pretensão punitiva\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "125",
+          "text": "Art. 125. A prescrição da pretensão punitiva, salvo o disposto no § \r\n1º deste artigo, regula-se pelo máximo da pena privativa de \r\nliberdade cominada ao crime, verificando-se:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nI - em trinta anos, se a pena é\r\nde morte;\n\nII - em vinte anos, se o máximo\r\nda pena é superior a doze;\n\nIII - em dezesseis anos, se o\r\nmáximo da pena é superior a oito e não excede a doze;\n\nIV - em doze anos, se o máximo\r\nda pena é superior a quatro e não excede a oito;\n\nV - em oito anos, se o máximo da\r\npena é superior a dois e não excede a quatro;\n\nVI - em quatro anos, se o máximo\r\nda pena é igual a um ano ou, sendo superior, não excede a dois;\n\n\r\nVII – em 3 (três) anos, se o máximo da pena é inferior a 1 (um) ano.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nSuperveniência de sentença\r\ncondenatória de que sòmente o réu recorre\n\n§ 1º Sobrevindo sentença\r\ncondenatória, de que sòmente o réu tenha recorrido, a prescrição passa a regular-se\r\npela pena imposta, e deve ser logo declarada, sem prejuízo do andamento do recurso se,\r\nentre a última causa interruptiva do curso da prescrição (§ 5°) e a sentença, já\r\ndecorreu tempo suficiente.\n\nTêrmo inicial da prescrição da\r\nação penal\n\n§ 2º A prescrição da ação\r\npenal começa a correr:\n\na) do dia em que o crime se\r\nconsumou;\n\nb) no caso de tentativa, do dia\r\nem que cessou a atividade criminosa;\n\nc) nos crimes permanentes, do dia\r\nem que cessou a permanência;\n\nd) nos crimes de falsidade, da\r\ndata em que o fato se tornou conhecido.\n\nCaso de concurso de crimes ou de\r\ncrime continuado\n\n§ 3º No caso de concurso de\r\ncrimes ou de crime continuado, a prescrição é referida, não à pena unificada, mas à\r\nde cada crime considerado isoladamente.\n\nSuspensão da prescrição\n\n§ 4º A prescrição da ação\r\npenal não corre:\n\nI - enquanto não resolvida, em\r\noutro processo, questão de que dependa o reconhecimento da existência do crime;\n\nII - enquanto o agente cumpre\r\npena no estrangeiro.\n\n\r\n\r\nIII – enquanto pendentes embargos de declaração ou recursos ao \r\nSupremo Tribunal Federal, se estes forem considerados inadmissíveis.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nInterrupção da prescrição \r\n\n§ 5º O curso da prescrição da\r\nação penal interrompe-se:\n\nI - pela instauração do\r\nprocesso;\n\nII – pela sentença condenatória ou acórdão condenatório recorríveis;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nIII – pelo início ou continuação da execução provisória ou \r\ndefinitiva da pena; e\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nIV – pela reincidência.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n§ 6º A interrupção da\r\nprescrição produz efeito relativamente a todos os autores do crime; e nos crimes\r\nconexos, que sejam objeto do mesmo processo, a interrupção relativa a qualquer dêles\r\nestende-se aos demais.\n\nPrescrição da execução da\r\npena ou da medida de segurança que a substitui"
+        },
+        {
+          "key": "126",
+          "text": "Art.\n\n126. A prescrição da execução da pena privativa de\r\nliberdade ou da medida de segurança que a substitui (art. 113) regula-se pelo tempo\r\nfixado na sentença e verifica-se nos mesmos prazos estabelecidos no art. 125, os quais se\r\naumentam de um têrço, se o condenado é criminoso habitual ou por tendência.\n\n§ 1º Começa a correr a\r\nprescrição:\n\na) do dia em que passa em julgado\r\na sentença condenatória ou a que revoga a suspensão condicional da pena ou o livramento\r\ncondicional;\n\nb) do dia em que se interrompe a\r\nexecução, salvo quando o tempo da interrupção deva computar-se na pena.\n\n§ 2º No caso de evadir-se o\r\ncondenado ou de revogar-se o livramento ou desinternação condicionais, a prescrição se\r\nregula pelo restante tempo da execução.\n\n§ 3º O curso da prescrição da\r\nexecução da pena suspende-se enquanto o condenado está prêso por outro motivo, e\r\ninterrompe-se pelo início ou continuação do cumprimento da pena, ou pela reincidência."
+        },
+        {
+          "key": "127",
+          "text": "Art.\n\n127.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nDisposições comuns a ambas as\r\nespécies de prescrição"
+        },
+        {
+          "key": "128",
+          "text": "Art.\n\n128. Interrompida a prescrição, salvo o caso do § 3º,\r\nsegunda parte, do art. 126, todo o prazo começa a correr, novamente, do dia da\r\ninterrupção.\n\nRedução"
+        },
+        {
+          "key": "129",
+          "text": "Art. 129. São reduzidos de\r\nmetade os prazos da prescrição, quando o criminoso era, ao tempo do crime, menor de\r\nvinte e um anos ou maior de setenta.\n\nImprescritibilidade das penas\r\nacessórias"
+        },
+        {
+          "key": "130",
+          "text": "Art.\n\n130. É imprescritível a execução das penas acessórias.\n\nPrescrição no caso de\r\ninsubmissão"
+        },
+        {
+          "key": "131",
+          "text": "Art.\n\n131. A prescrição começa a correr, no crime de\r\ninsubmissão, do dia em que o insubmisso atinge a idade de trinta anos.\n\nPrescrição no caso de\r\ndeserção"
+        },
+        {
+          "key": "132",
+          "text": "Art.\n\n132. No crime de deserção, embora decorrido o prazo da\r\nprescrição, esta só extingue a punibilidade quando o desertor atinge a idade de\r\nquarenta e cinco anos, e, se oficial, a de sessenta.\n\nDeclaração de ofício"
+        },
+        {
+          "key": "133",
+          "text": "Art.\n\n133. A prescrição, embora não alegada, deve ser declarada\r\nde ofício.\n\nReabilitação"
+        },
+        {
+          "key": "134",
+          "text": "Art. 134. A reabilitação\r\nalcança quaisquer penas impostas por sentença definitiva.\n\n§ 1º A reabilitação poderá ser\r\nrequerida decorridos cinco anos do dia em que fôr extinta, de qualquer modo, a pena\r\nprincipal ou terminar a execução desta ou da medida de segurança aplicada em\r\nsubstituição (art. 113), ou do dia em que terminar o prazo da suspensão condicional da\r\npena ou do livramento condicional, desde que o condenado:\n\na) tenha tido domicílio no\r\nPaís, no prazo acima referido;\n\nb) tenha dado, durante êsse\r\ntempo, demonstração efetiva e constante de bom comportamento público e privado;\n\nc) tenha ressarcido o dano\r\ncausado pelo crime ou demonstre absoluta impossibilidade de o fazer até o dia do pedido,\r\nou exiba documento que comprove a renúncia da vítima ou novação da dívida.\n\n§ 2º A reabilitação não pode\r\nser concedida:\n\na) em favor dos que foram\r\nreconhecidos perigosos, salvo prova cabal em contrário;\n\nb) em relação aos atingidos\r\npelas penas acessórias do art. 98, inciso VII, se o crime fôr de natureza sexual em\r\ndetrimento de filho, tutelado ou curatelado.\n\nPrazo para renovação do pedido\r\n\n§ 3º Negada a reabilitação, não\r\npode ser novamente requerida senão após o decurso de dois anos.\n\n§ 4º Os prazos para o pedido de\r\nreabilitação serão contados em dôbro no caso de criminoso habitual ou por tendência.\n\nRevogação\n\n§ 5º A reabilitação será\r\nrevogada de ofício, ou a requerimento do Ministério Público, se a pessoa reabilitada\r\nfôr condenada, por decisão definitiva, ao cumprimento de pena privativa da liberdade.\n\nCancelamento do registro de\r\ncondenações penais"
+        },
+        {
+          "key": "135",
+          "text": "Art.\n\n135. Declarada a reabilitação, serão cancelados, mediante\r\naverbação, os antecedentes criminais.\n\nSigilo sôbre antecedentes\r\ncriminais\n\nParágrafo único. Concedida a\r\nreabilitação, o registro oficial de condenações penais não pode ser comunicado senão\r\nà autoridade policial ou judiciária, ou ao representante do Ministério Público, para\r\ninstrução de processo penal que venha a ser instaurado contra o reabilitado.\n\nPARTE ESPECIAL\n\nLIVRO I\n\nDOS CRIMES\r\nMILITARES EM TEMPO\n\nDE PAZ\n\nTÍTULO I\n\nDOS CRIMES\r\nCONTRA A SEGURANÇA\n\nEXTERNA DO PAÍS\r\n\nHostilidade contra país\r\nestrangeiro"
+        }
+      ]
+    }
+  ]
+}

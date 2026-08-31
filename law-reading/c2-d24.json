@@ -1,0 +1,310 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 24,
+  "label": "CTB — arts. 201 a 268-A",
+  "articleCount": 73,
+  "sections": [
+    {
+      "prefix": "L9503",
+      "title": "Código de Trânsito Brasileiro",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+      "range": "arts. 201 a 268A",
+      "articles": [
+        {
+          "key": "201",
+          "text": "Art. 201. Deixar de guardar a distância lateral de um metro e cinqüenta centímetros ao\r\npassar ou ultrapassar bicicleta:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "202",
+          "text": "Art. 202. Ultrapassar outro veículo:\n\nI\r\n- pelo acostamento;\n\nII\r\n- em interseções e passagens de nível;\n\n\r\n\n\r\nInfração - gravíssima;\n\n(Redação \r\ndada pela Lei nº \r\n12.971, de 2014)\n\r\n\n(Vigência)\n\n\r\n\n\r\nPenalidade - multa (cinco vezes).\n\n(Redação \r\ndada pela Lei nº \r\n12.971, de 2014)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "203",
+          "text": "Art. 203. Ultrapassar pela contramão outro veículo:\n\nI\r\n- nas curvas, aclives e declives, sem visibilidade suficiente;\n\nII\r\n- nas faixas de pedestre;\n\n\r\nIII - nas pontes, viadutos ou túneis;\n\nIV\r\n- parado em fila junto a sinais luminosos, porteiras, cancelas, cruzamentos ou qualquer\r\noutro impedimento à livre circulação;\n\nV\r\n- onde houver marcação viária longitudinal de divisão de fluxos opostos do tipo linha\r\ndupla contínua ou simples contínua amarela:\n\n\r\n\n\r\nInfração - gravíssima;\n\n(Redação \r\ndada pela Lei nº \r\n12.971, de 2014)\n\r\n\n(Vigência)\n\n\r\n\n\r\nPenalidade - multa (cinco vezes).\n\n(Redação \r\ndada pela Lei nº \r\n12.971, de 2014)\n\r\n\n(Vigência)\n\n\r\nParágrafo único. Aplica-se em dobro a multa prevista no \r\n\ncaput\n\nem \r\ncaso de reincidência no período de até 12 (doze) meses da infração anterior.\n\n(Incluído \r\npela Lei nº \r\n12.971, de 2014)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "204",
+          "text": "Art. 204. Deixar de parar o veículo no acostamento à direita, para aguardar a\r\noportunidade de cruzar a pista ou entrar à esquerda, onde não houver local apropriado\r\npara operação de retorno:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "205",
+          "text": "Art. 205. Ultrapassar veículo em movimento que integre cortejo, préstito, desfile e\r\nformações militares, salvo com autorização da autoridade de trânsito ou de seus\r\nagentes:\n\n\r\nInfração - leve;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "206",
+          "text": "Art. 206. Executar operação de retorno:\n\nI\r\n- em locais proibidos pela sinalização;\n\nII\r\n- nas curvas, aclives, declives, pontes, viadutos e túneis;\n\n\r\nIII - passando por cima de calçada, passeio, ilhas, ajardinamento ou canteiros de\r\ndivisões de pista de rolamento, refúgios e faixas de pedestres e nas de veículos não\r\nmotorizados;\n\nIV\r\n- nas interseções, entrando na contramão de direção da via transversal;\n\nV\r\n- com prejuízo da livre circulação ou da segurança, ainda que em locais permitidos:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "207",
+          "text": "Art. 207. Executar operação de conversão à direita ou à esquerda em locais proibidos\r\npela sinalização:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "208",
+          "text": "Art. 208.\r\nAvançar o sinal vermelho do semáforo ou o de parada\nobrigatória, exceto onde houver sinalização que permita a livre\nconversão à direita prevista no art. 44-A deste Código: \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "209",
+          "text": "Art. 209. Transpor, sem autorização, bloqueio viário com ou \r\nsem sinalização ou dispositivos auxiliares, ou deixar de adentrar as áreas \r\ndestinadas à pesagem de veículos: \r\n\n(Redação dada pela Lei nº \r\n14.157, de 2021)\n\nInfração - grave;\n\nPenalidade - multa."
+        },
+        {
+          "key": "209A",
+          "text": "Art. 209-A. Evadir-se da cobrança pelo uso de rodovias e vias \r\nurbanas para não efetuar o seu pagamento, ou deixar de efetuá-lo na \r\nforma estabelecida: \r\n\n(Incluído pela \r\nLei nº 14.157, de 2021)\n\n\r\nInfração – grave;\n\n\r\nPenalidade – multa."
+        },
+        {
+          "key": "210",
+          "text": "Art. 210. Transpor, sem autorização, bloqueio viário policial:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa, apreensão do veículo e suspensão do direito de dirigir;\n\n\r\nMedida administrativa - remoção do veículo e recolhimento do documento de\r\nhabilitação."
+        },
+        {
+          "key": "211",
+          "text": "Art. 211. Ultrapassar veículos em fila, parados em razão de sinal luminoso, cancela,\r\nbloqueio viário parcial ou qualquer outro obstáculo, com exceção dos veículos não\r\nmotorizados:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa.\n\nParágrafo único. \r\n(VETADO). \r\n\n(Incluído pela Lei nº \r\n14.071, de 2020)\n\n(Vigência)"
+        },
+        {
+          "key": "212",
+          "text": "Art. 212. Deixar de parar o veículo antes de transpor linha férrea:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "213",
+          "text": "Art. 213. Deixar de parar o veículo sempre que a respectiva marcha for interceptada:\n\nI\r\n- por agrupamento de pessoas, como préstitos, passeatas, desfiles e outros:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa.\n\nII\r\n- por agrupamento de veículos, como cortejos, formações militares e outros:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "214",
+          "text": "Art. 214. Deixar de dar preferência de passagem a pedestre e a veículo não motorizado:\n\nI\r\n- que se encontre na faixa a ele destinada;\n\nII\r\n- que não haja concluído a travessia mesmo que ocorra sinal verde para o veículo;\n\n\r\nIII - portadores de deficiência física, crianças, idosos e gestantes:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa.\n\nIV\r\n- quando houver iniciado a travessia mesmo que não haja sinalização a ele destinada;\n\nV\r\n- que esteja atravessando a via transversal para onde se dirige o veículo:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "215",
+          "text": "Art. 215. Deixar de dar preferência de passagem:\n\nI\r\n- em interseção não sinalizada:\n\na)\r\na veículo que estiver circulando por rodovia ou rotatória;\n\nb)\r\na veículo que vier da direita;\n\nII\r\n- nas interseções com sinalização de regulamentação de Dê a Preferência:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "216",
+          "text": "Art. 216. Entrar ou sair de áreas lindeiras sem estar adequadamente posicionado para\r\ningresso na via e sem as precauções com a segurança de pedestres e de outros veículos:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "217",
+          "text": "Art. 217. Entrar ou sair de fila de veículos estacionados sem dar preferência de\r\npassagem a pedestres e a outros veículos:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "218",
+          "text": "Art. 218. Transitar em \r\nvelocidade superior à máxima permitida para o local, medida por instrumento ou \r\nequipamento hábil, em rodovias, vias de trânsito rápido, vias arteriais e demais \r\nvias:\n(Redação dada pela Lei \r\nnº 11.334, de 2006)\n\r\n\n(Vide ADI n\nº \r\n3951)\n\nI - quando a velocidade for superior à máxima em \r\naté 20% (vinte por cento):\n\r\n(Redação dada pela Lei nº 11.334, de 2006)\n\nInfração - média; \r\n\n(Redação dada pela Lei \r\nnº 11.334, de 2006)\n\nPenalidade - multa; \r\n\n(Redação dada pela Lei \r\nnº 11.334, de 2006)\n\nII - quando a velocidade for superior à máxima \r\nem mais de 20% (vinte por cento) até 50% (cinqüenta por cento): \r\n\n(Redação dada pela Lei \r\nnº 11.334, de 2006)\n\nInfração - grave; \r\n\n(Redação dada pela Lei \r\nnº 11.334, de 2006)\n\nPenalidade - multa; \r\n\n(Redação dada pela Lei \r\nnº 11.334, de 2006)\n\nIII - quando a velocidade for superior à máxima \r\nem mais de 50% (cinqüenta por cento): \r\n\n(Incluído pela Lei nº \r\n11.334, de 2006)\n\nInfração - gravíssima; \r\n\n(Redação dada pela \r\nLei nº 14.071, de 2020)\n\nPenalidade - multa (três vezes) e suspensão do direito de dirigir. \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)"
+        },
+        {
+          "key": "219",
+          "text": "Art. 219. Transitar com o veículo em velocidade inferior à metade da velocidade máxima\r\nestabelecida para a via, retardando ou obstruindo o trânsito, a menos que as condições\r\nde tráfego e meteorológicas não o permitam, salvo se estiver na faixa da direita:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "220",
+          "text": "Art. 220. Deixar de reduzir a velocidade do veículo de forma compatível com a segurança\r\ndo trânsito:\n\nI\r\n- quando se aproximar de passeatas, aglomerações, cortejos, préstitos e desfiles:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa;\n\nII\r\n- nos locais onde o trânsito esteja sendo controlado pelo agente da autoridade de\r\ntrânsito, mediante sinais sonoros ou gestos;\n\n\r\nIII - ao aproximar-se da guia da calçada (meio-fio) ou acostamento;\n\nIV\r\n- ao aproximar-se de ou passar por interseção não sinalizada;\n\nV\r\n- nas vias rurais cuja faixa de domínio não esteja cercada;\n\nVI\r\n- nos trechos em curva de pequeno raio;\n\n\r\nVII - ao aproximar-se de locais sinalizados com advertência de obras ou trabalhadores na\r\npista;\n\n\r\nVIII - sob chuva, neblina, cerração ou ventos fortes;\n\nIX\r\n- quando houver má visibilidade;\n\nX\r\n- quando o pavimento se apresentar escorregadio, defeituoso ou avariado;\n\nXI\r\n- à aproximação de animais na pista;\n\n\r\nXII - em declive;\n\n\r\nInfração - grave; \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)\n\nPenalidade - multa; \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)\n\n\r\nXIII - ao ultrapassar ciclista:\n\n\r\nInfração - gravíssima; \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nPenalidade - multa; \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\n\r\nXIV - nas proximidades de escolas, hospitais, estações de embarque e desembarque de\r\npassageiros ou onde haja intensa movimentação de pedestres:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "221",
+          "text": "Art. 221. Portar no veículo placas de identificação em desacordo com as\r\nespecificações e modelos estabelecidos pelo CONTRAN:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para regularização e apreensão das\r\nplacas irregulares.\n\n\r\nParágrafo único. Incide na mesma penalidade aquele que confecciona, distribui ou coloca,\r\nem veículo próprio ou de terceiros, placas de identificação não autorizadas pela\r\nregulamentação."
+        },
+        {
+          "key": "222",
+          "text": "Art. 222. Deixar de manter ligado, nas situações de atendimento de emergência, o \r\nsistema de iluminação intermitente dos veículos de polícia, de socorro de \r\nincêndio e salvamento, de fiscalização de trânsito e das ambulâncias, ainda que \r\nparados:\n\n(Redação dada pela Lei nº \r\n14.440, de 2022)\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "223",
+          "text": "Art. 223. Transitar com o farol desregulado ou com o facho de luz alta de forma a\r\nperturbar a visão de outro condutor:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para regularização."
+        },
+        {
+          "key": "224",
+          "text": "Art. 224. Fazer uso do facho de luz alta dos faróis em vias providas de iluminação\r\npública:\n\n\r\nInfração - leve;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "225",
+          "text": "Art. 225. Deixar de sinalizar a via, de forma a prevenir os demais condutores e, à noite,\r\nnão manter acesas as luzes externas ou omitir-se quanto a providências necessárias para\r\ntornar visível o local, quando:\n\nI\r\n- tiver de remover o veículo da pista de rolamento ou permanecer no acostamento;\n\nII\r\n- a carga for derramada sobre a via e não puder ser retirada imediatamente:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "226",
+          "text": "Art. 226. Deixar de retirar todo e qualquer objeto que tenha sido utilizado para\r\nsinalização temporária da via:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "227",
+          "text": "Art. 227. Usar buzina:\n\nI\r\n- em situação que não a de simples toque breve como advertência ao pedestre ou a\r\ncondutores de outros veículos;\n\nII\r\n- prolongada e sucessivamente a qualquer pretexto;\n\n\r\nIII - entre as vinte e duas e as seis horas;\n\nIV\r\n- em locais e horários proibidos pela sinalização;\n\nV\r\n- em desacordo com os padrões e freqüências estabelecidas pelo CONTRAN:\n\n\r\nInfração - leve;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "228",
+          "text": "Art. 228. Usar no veículo equipamento com som em volume ou freqüência que não sejam\r\nautorizados pelo CONTRAN:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para regularização."
+        },
+        {
+          "key": "229",
+          "text": "Art. 229. Usar indevidamente no veículo aparelho de alarme ou que produza sons e ruído\r\nque perturbem o sossego público, em desacordo com normas fixadas pelo CONTRAN:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa e apreensão do veículo;\n\n\r\nMedida administrativa - remoção do veículo."
+        },
+        {
+          "key": "230",
+          "text": "Art. 230. Conduzir o veículo:\n\nI\r\n- com o lacre, a inscrição do chassi, o selo, a placa ou qualquer outro elemento de\r\nidentificação do veículo violado ou falsificado;\n\nII\r\n- transportando passageiros em compartimento de carga, salvo por motivo de força maior,\r\ncom permissão da autoridade competente e na forma estabelecida pelo CONTRAN;\n\n\r\nIII - com dispositivo anti-radar;\n\nIV\r\n- sem qualquer uma das placas de identificação;\n\nV\r\n- que não esteja registrado e devidamente licenciado;\n\nVI\r\n- com qualquer uma das placas de identificação sem condições de legibilidade e\r\nvisibilidade:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa e apreensão do veículo;\n\n\r\nMedida administrativa - remoção do veículo;\n\n\r\nVII - com a cor ou característica alterada;\n\n\r\nVIII - sem ter sido submetido à inspeção de segurança veicular, quando obrigatória;\n\nIX\r\n- sem equipamento obrigatório ou estando este ineficiente ou inoperante;\n\nX\r\n- com equipamento obrigatório em desacordo com o estabelecido pelo CONTRAN;\n\nXI\r\n- com descarga livre ou silenciador de motor de explosão defeituoso, deficiente ou\r\ninoperante;\n\n\r\nXII - com equipamento ou acessório proibido;\n\n\r\nXIII - com o equipamento do sistema de iluminação e de sinalização alterados;\n\n\r\nXIV - com registrador instantâneo inalterável de velocidade e tempo viciado ou\r\ndefeituoso, quando houver exigência desse aparelho;\n\nXV\r\n- com inscrições, adesivos, legendas e símbolos de caráter publicitário afixados ou\r\npintados no pára-brisa e em toda a extensão da parte traseira do veículo, excetuadas as\r\nhipóteses previstas neste Código;\n\n\r\nXVI - com vidros total ou parcialmente cobertos por películas refletivas ou não,\r\npainéis decorativos ou pinturas;\n\n\r\nXVII - com cortinas ou persianas fechadas, não autorizadas pela legislação;\n\n\r\nXVIII - em mau estado de conservação, comprometendo a segurança, ou reprovado na\r\navaliação de inspeção de segurança e de emissão de poluentes e ruído, prevista no\r\nart. 104;\n\n\r\nXIX - sem acionar o limpador de pára-brisa sob chuva:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para regularização;\n\nXX\r\n- sem portar a autorização para condução de escolares, na forma estabelecida no art.\r\n136:\n\nInfração – \r\ngravíssima; \r\n\n(Redação dada pela \r\nLei nº 13.855, de 2019)\n\r\n\n(Vigência)\n\nPenalidade – \r\nmulta (cinco vezes);\n\r\n\n(Redação dada pela \r\nLei nº 13.855, de 2019)\n\r\n\n(Vigência)\n\nMedida \r\nadministrativa – remoção do veículo;\n\r\n\n(Incluído pela Lei \r\nnº 13.855, de 2019)\n\r\n\n(Vigência)\n\n\r\nXXI - de carga, com falta de inscrição da tara e demais inscrições previstas neste\r\nCódigo;\n\n\r\nXXII - com defeito no sistema de iluminação, de sinalização ou com lâmpadas\r\nqueimadas:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa.\n\n\r\nXXIII - em \r\ndesacordo com as condições estabelecidas no art. 67-C, relativamente ao \r\ntempo de permanência do condutor ao volante e aos intervalos para descanso, \r\nquando se tratar de veículo de transporte de carga ou coletivo de \r\npassageiros:\n\r\n(Redação dada pela Lei nº 13.103, de 2015)\n\n(Vigência)\n\nInfração - média;\n\r\n(Redação dada pela Lei nº 13.103, de 2015)\n\n(Vigência)\n\nPenalidade - \r\nmulta;\n\r\n\n(Redação \r\ndada pela Lei nº 13.103, de 2015)\n\n(Vigência)\n\nMedida \r\nadministrativa - retenção do veículo para cumprimento do tempo de descanso \r\naplicável.\n(Redação \r\ndada pela Lei nº 13.103, de 2015)\n\n(Vigência)\n\nXXIV- (\nVETADO\n). \r\n\n(Incluído \r\npela Lei nº \r\n12.619, de 2012)\n\n(Vigência)\n\n§ 1\no\n\r\nSe o condutor cometeu infração igual nos últimos 12 (doze) meses, será \r\nconvertida, automaticamente, a penalidade disposta no inciso XXIII em \r\ninfração grave.\n\r\n(Incluído pela Lei nº 13.103, de 2015)\n\n(Vigência)\n\n§ 2\no\n\r\nEm se tratando de condutor estrangeiro, a liberação do veículo fica \r\ncondicionada ao pagamento ou ao depósito, judicial ou administrativo, da \r\nmulta.\n(Incluído \r\npela Lei nº 13.103, de 2015)\n\n(Vigência)"
+        },
+        {
+          "key": "231",
+          "text": "Art. 231. Transitar com o veículo:\n\nI\r\n- danificando a via, suas instalações e equipamentos;\n\nII\r\n- derramando, lançando ou arrastando sobre a via:\n\na)\r\ncarga que esteja transportando;\n\nb)\r\ncombustível ou lubrificante que esteja utilizando;\n\n\r\nc) qualquer objeto que possa acarretar risco de sinistro:\n\n(Redação dada \r\npela Lei nº 14.599, de 2023)\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para regularização;\n\n\r\nIII - produzindo fumaça, gases ou partículas em níveis superiores aos fixados pelo\r\nCONTRAN;\n\nIV\r\n- com suas dimensões ou de sua carga superiores aos limites estabelecidos legalmente ou\r\npela sinalização, sem autorização:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para regularização;\n\nV\r\n- com excesso de peso, admitido percentual de tolerância quando aferido por equipamento,\r\nna forma a ser estabelecida pelo CONTRAN:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa acrescida a cada duzentos quilogramas ou fração de excesso de peso\r\napurado, constante na seguinte tabela:\n\na) até 600 kg (seiscentos quilogramas) - R$ \r\n5,32 (cinco reais e trinta e dois centavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nb) de 601 (seiscentos e um) a 800 kg \r\n(oitocentos quilogramas) - R$ 10,64 (dez reais e sessenta e quatro \r\ncentavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nc) de 801 (oitocentos e um) a 1.000 kg (mil \r\nquilogramas) - R$ 21,28 (vinte e um reais e vinte e oito centavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nd) de 1.001 (mil e um) a 3.000 kg (três mil \r\nquilogramas) - R$ 31,92 (trinta e um reais e noventa e dois centavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\ne) de 3.001 (três mil e um) a 5.000 kg (cinco \r\nmil quilogramas) - R$ 42,56 (quarenta e dois reais e cinquenta e seis \r\ncentavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nf) acima de 5.001 kg (cinco mil e um \r\nquilogramas) - R$ 53,20 (cinquenta e três reais e vinte centavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\nMedida administrativa - retenção do veículo e transbordo da carga excedente;\n\nVI\r\n- em desacordo com a autorização especial, expedida pela autoridade competente para\r\ntransitar com dimensões excedentes, ou quando a mesma estiver vencida:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa e apreensão do veículo;\n\n\r\nMedida administrativa - remoção do veículo;\n\n\r\nVII - com lotação excedente;\n\n\r\nVIII - efetuando transporte remunerado de pessoas ou bens, quando não for licenciado para\r\nesse fim, salvo casos de força maior ou com permissão da autoridade competente:\n\nInfração – \r\ngravíssima;\n\r\n\n(Redação dada pela \r\nLei nº 13.855, de 2019)\n\r\n\n(Vigência)\n\nPenalidade – \r\nmulta;\n\r\n\n(Redação dada pela \r\nLei nº 13.855, de 2019)\n\r\n\n(Vigência)\n\nMedida \r\nadministrativa – remoção do veículo;\n\r\n\n(Redação dada pela \r\nLei nº 13.855, de 2019)\n\r\n\n(Vigência)\n\nIX\r\n- desligado ou desengrenado, em declive:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo;\n\nX\r\n- excedendo a capacidade máxima de tração:\n\n\r\nInfração - de média a gravíssima, a depender da relação entre o excesso de peso\r\napurado e a capacidade máxima de tração, a ser regulamentada pelo CONTRAN;\n\n\r\nPenalidade - multa;\n\n\r\nMedida Administrativa - retenção do veículo e transbordo de carga excedente.\n\n\r\nParágrafo único. Sem prejuízo das multas previstas nos incisos V e X, o veículo que\r\ntransitar com excesso de peso ou excedendo à capacidade máxima de tração, não\r\ncomputado o percentual tolerado na forma do disposto na legislação, somente poderá\r\ncontinuar viagem após descarregar o que exceder, segundo critérios estabelecidos na\r\nreferida legislação complementar."
+        },
+        {
+          "key": "232",
+          "text": "Art. 232. Conduzir veículo sem os documentos de porte obrigatório referidos neste\r\nCódigo:\n\n\r\nInfração - leve;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo até a apresentação do documento."
+        },
+        {
+          "key": "233",
+          "text": "Art. 233. Deixar de efetuar o registro de veículo no prazo de trinta dias, junto ao\r\nórgão executivo de trânsito, ocorridas as hipóteses previstas no art. 123:\n\nInfração - média; \r\n\n(Redação dada pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)\n\nPenalidade - multa; \r\n\n(Redação dada pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)\n\nMedida administrativa - remoção do veículo. \r\n\n(Redação dada pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)"
+        },
+        {
+          "key": "233A",
+          "text": "Art. 233-A. (VETADO). \r\n\n(Incluído pela Lei nº \r\n14.071, de 2020)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "234",
+          "text": "Art. 234. Falsificar ou adulterar documento de habilitação e de identificação do\r\nveículo:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa e apreensão do veículo;\n\n\r\nMedida administrativa - remoção do veículo."
+        },
+        {
+          "key": "235",
+          "text": "Art. 235. Conduzir pessoas, animais ou carga nas partes externas do veículo, salvo nos\r\ncasos devidamente autorizados:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para transbordo."
+        },
+        {
+          "key": "236",
+          "text": "Art. 236. Rebocar outro veículo com cabo flexível ou corda, salvo em casos de\r\nemergência:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "237",
+          "text": "Art. 237. Transitar com o veículo em desacordo com as especificações, e com falta de\r\ninscrição e simbologia necessárias à sua identificação, quando exigidas pela\r\nlegislação:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção do veículo para regularização."
+        },
+        {
+          "key": "238",
+          "text": "Art. 238. Recusar-se a entregar à autoridade de trânsito ou a seus agentes, mediante\r\nrecibo, os documentos de habilitação, de registro, de licenciamento de veículo e outros\r\nexigidos por lei, para averiguação de sua autenticidade:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa e apreensão do veículo;\n\n\r\nMedida administrativa - remoção do veículo."
+        },
+        {
+          "key": "239",
+          "text": "Art. 239. Retirar do local veículo legalmente retido para regularização, sem permissão\r\nda autoridade competente ou de seus agentes:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa e apreensão do veículo;\n\n\r\nMedida administrativa - remoção do veículo."
+        },
+        {
+          "key": "240",
+          "text": "Art. 240. Deixar o responsável de promover a baixa do registro de veículo irrecuperável\r\nou definitivamente desmontado:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - Recolhimento do Certificado de Registro e do Certificado de\r\nLicenciamento Anual."
+        },
+        {
+          "key": "241",
+          "text": "Art. 241. Deixar de atualizar o cadastro de registro do veículo ou de habilitação do\r\ncondutor:\n\n\r\nInfração - leve;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "242",
+          "text": "Art. 242. Fazer falsa declaração de domicílio para fins de registro, licenciamento ou\r\nhabilitação:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "242A",
+          "text": "Art. 242-A. (VETADO).\n\n(Incluído pela Lei \r\nComplementar nº 207, de 2024)"
+        },
+        {
+          "key": "243",
+          "text": "Art. 243. Deixar a empresa seguradora de comunicar ao órgão executivo de trânsito\r\ncompetente a ocorrência de perda total do veículo e de lhe devolver as respectivas\r\nplacas e documentos:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - Recolhimento das placas e dos documentos."
+        },
+        {
+          "key": "244",
+          "text": "Art. 244.\r\nConduzir motocicleta, motoneta ou ciclomotor: \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nI - \r\nsem usar capacete de segurança ou vestuário de acordo com as\nnormas e as especificações aprovadas pelo Contran; \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nII\r\n- transportando passageiro sem o capacete de segurança, na forma estabelecida no inciso\r\nanterior, ou fora do assento suplementar colocado atrás do condutor ou em carro lateral;\n\n\r\nIII - fazendo malabarismo ou equilibrando-se apenas em uma roda;\n\nIV - \r\n(revogado); \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nV - transportando criança menor de 10 (dez) anos de idade ou que não\ntenha, nas circunstâncias, condições de cuidar da própria segurança: \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nInfração - gravíssima; \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\nPenalidade - multa e suspensão do direito de dirigir; \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\nMedida administrativa - retenção do veículo até regularização e\nrecolhimento do documento de habilitação; \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\nVI\r\n- rebocando outro veículo;\n\n\r\nVII - sem segurar o guidom com ambas as mãos, salvo eventualmente para indicação de\r\nmanobras;\n\nVIII – \r\ntransportando carga incompatível com suas especificações ou em desacordo com o \r\nprevisto no § 2\no\ndo art. 139-A desta Lei; \r\n\n(Incluído pela Lei \r\nnº 12.009, de 2009)\n\nIX – \r\nefetuando transporte remunerado de mercadorias em desacordo com o previsto no \r\nart. 139-A desta Lei ou com as normas que regem a atividade profissional dos \r\nmototaxistas:\n\r\n\n(Incluído pela Lei \r\nnº 12.009, de 2009)\n\nInfração – \r\ngrave; \r\n\n(Incluído pela Lei \r\nnº 12.009, de 2009)\n\nPenalidade – \r\nmulta; \r\n\n(Incluído pela Lei \r\nnº 12.009, de 2009)\n\nMedida \r\nadministrativa – apreensão do veículo para regularização. \r\n\n(Incluído pela Lei \r\nnº 12.009, de 2009)\n\nX - \r\ncom a utilização de capacete de segurança sem viseira ou óculos\nde proteção ou com viseira ou óculos de proteção em desacordo com a\nregulamentação do Contran; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nXI - transportando passageiro com o capacete de segurança utilizado\nna forma prevista no inciso X do\n\ncaput\n\ndeste artigo: \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nInfração - média; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nPenalidade - multa; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nMedida administrativa - retenção do veículo até regularização; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nXII – (VETADO). \r\n\n(Incluído pela Lei nº \r\n14.071, de 2020)\n\r\n\n(Vigência)\n\n§\r\n1º Para ciclos aplica-se o disposto nos incisos III, VII e VIII, além de:\n\na)\r\nconduzir passageiro fora da garupa ou do assento especial a ele destinado;\n\nb)\r\ntransitar em vias de trânsito rápido ou rodovias, salvo onde houver acostamento ou\r\nfaixas de rolamento próprias;\n\nc)\r\ntransportar crianças que não tenham, nas circunstâncias, condições de cuidar de sua\r\nprópria segurança.\n\n§\r\n2º Aplica-se aos ciclomotores o disposto na alínea\nb\ndo parágrafo anterior:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa.\n\n§ 3\no\nA restrição imposta pelo inciso VI do\ncaput\n\r\ndeste artigo não se aplica às motocicletas e motonetas que tracionem semi-reboques\r\nespecialmente projetados para esse fim e devidamente homologados pelo órgão competente.\n(Incluído pela Lei nº 10.517, de 2002)"
+        },
+        {
+          "key": "245",
+          "text": "Art. 245. Utilizar a via para depósito de mercadorias, materiais ou equipamentos, sem\r\nautorização do órgão ou entidade de trânsito com circunscrição sobre a via:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - remoção da mercadoria ou do material.\n\n\r\nParágrafo único. A penalidade e a medida administrativa incidirão sobre a pessoa\r\nfísica ou jurídica responsável."
+        },
+        {
+          "key": "246",
+          "text": "Art. 246. Deixar de sinalizar qualquer obstáculo à livre circulação, à segurança de\r\nveículo e pedestres, tanto no leito da via terrestre como na calçada, ou obstaculizar a\r\nvia indevidamente:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa, agravada em até cinco vezes, a critério da autoridade de trânsito,\r\nconforme o risco à segurança.\n\n\r\nParágrafo único. A penalidade será aplicada à pessoa física ou jurídica responsável\r\npela obstrução, devendo a autoridade com circunscrição sobre a via providenciar a\r\nsinalização de emergência, às expensas do responsável, ou, se possível, promover a\r\ndesobstrução."
+        },
+        {
+          "key": "247",
+          "text": "Art. 247. Deixar de conduzir pelo bordo da pista de rolamento, em fila única, os\r\nveículos de tração ou propulsão humana e os de tração animal, sempre que não houver\r\nacostamento ou faixa a eles destinados:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "248",
+          "text": "Art. 248. Transportar em veículo destinado ao transporte de passageiros carga excedente\r\nem desacordo com o estabelecido no art. 109:\n\n\r\nInfração - grave;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - retenção para o transbordo."
+        },
+        {
+          "key": "249",
+          "text": "Art. 249. Deixar de manter acesas, à noite, as luzes de posição, quando o veículo\r\nestiver parado, para fins de embarque ou desembarque de passageiros e carga ou descarga de\r\nmercadorias:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "250",
+          "text": "Art. 250. Quando o veículo estiver em movimento:\n\nI\r\n- deixar de manter acesa a luz baixa:\n\na)\r\ndurante a noite;\n\nb) de dia, em túneis e sob chuva, \r\nneblina ou cerração; \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nc) de dia, no caso de veículos de transporte \r\ncoletivo de passageiros em circulação em faixas ou pistas a eles destinadas; \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nd) de dia, no caso de motocicletas, motonetas e \r\nciclomotores; \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\ne) \r\nde dia, em rodovias de pista simples situadas fora dos perímetros urbanos, no \r\ncaso de veículos desprovidos de luzes de rodagem diurna; \r\n\n(Incluído pela Lei nº \r\n14.071, de 2020)\n\n(Vigência)\n\nII - \r\n(revogado); \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n\r\nIII - deixar de manter a placa traseira iluminada, à noite;\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa.\n\n\r\nIV - deixar o veículo de transporte público coletivo de passageiros ou de \r\nescolares de manter a porta fechada:\n\n(Incluído pela Lei nº \r\n14.440, de 2022)\n\n\r\nInfração - gravíssima;\n\n(Incluído pela Lei nº \r\n14.440, de 2022)\n\n\r\nPenalidade - multa;\n\n(Incluído pela Lei nº \r\n14.440, de 2022)\n\n\r\nMedida administrativa - retenção do veículo até a regularização. \r\n\n(Incluído pela Lei nº \r\n14.440, de 2022)"
+        },
+        {
+          "key": "251",
+          "text": "Art. 251. Utilizar as luzes do veículo:\n\nI\r\n- o pisca-alerta, exceto em imobilizações ou situações de emergência;\n\nII\r\n- baixa e alta de forma intermitente, exceto nas seguintes situações:\n\na)\r\na curtos intervalos, quando for conveniente advertir a outro condutor que se tem o\r\npropósito de ultrapassá-lo;\n\nb)\r\nem imobilizações ou situação de emergência, como advertência, utilizando\r\npisca-alerta;\n\nc)\r\nquando a sinalização de regulamentação da via determinar o uso do pisca-alerta:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa."
+        },
+        {
+          "key": "252",
+          "text": "Art. 252. Dirigir o veículo:\n\nI\r\n- com o braço do lado de fora;\n\nII\r\n- transportando pessoas, animais ou volume à sua esquerda ou entre os braços e pernas;\n\n\r\nIII - com incapacidade física ou mental temporária que comprometa a segurança do\r\ntrânsito;\n\nIV\r\n- usando calçado que não se firme nos pés ou que comprometa a utilização dos pedais;\n\nV\r\n- com apenas uma das mãos, exceto quando deva fazer sinais regulamentares de braço,\r\nmudar a marcha do veículo, ou acionar equipamentos e acessórios do veículo;\n\nVI\r\n- utilizando-se de fones nos ouvidos conectados a aparelhagem sonora ou de telefone\r\ncelular;\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa.\n\n\r\n\nVII - realizando a cobrança de \r\ntarifa com o veículo em movimento:\n\n\r\n\n\r\n(Incluído pela Lei nº 13.154, de 2015)\n\nInfração - média;\n\n\r\n\n\r\n(Incluído pela Lei nº 13.154, de 2015)\n\nPenalidade - multa.\n\n\r\n\n\r\n(Incluído pela Lei nº 13.154, de 2015)\n\nParágrafo único. A hipótese prevista no inciso V \r\ncaracterizar-se-á como infração gravíssima no caso de o condutor estar segurando \r\nou manuseando telefone celular. \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)"
+        },
+        {
+          "key": "253",
+          "text": "Art. 253. Bloquear a via com veículo:\n\n\r\nInfração - gravíssima;\n\n\r\nPenalidade - multa e apreensão do veículo;\n\n\r\nMedida administrativa - remoção do veículo."
+        },
+        {
+          "key": "253A",
+          "text": "Art. \r\n253-A. Usar qualquer veículo para, deliberadamente, interromper, restringir ou \r\nperturbar a circulação na via sem autorização do órgão ou entidade de trânsito \r\ncom circunscrição sobre ela: \r\n\n(Incluído pela Lei nº 13. \r\n281, de 2016)\n\nInfração - gravíssima; \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\nPenalidade - multa (vinte vezes) e suspensão do \r\ndireito de dirigir por 12 (doze) meses; \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\nMedida administrativa - remoção do veículo. \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\n§ 1\nAplica-se a multa agravada em 60 \r\n(sessenta) vezes aos organizadores da conduta prevista no\ncaput\n. \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\n§ 2\nAplica-se em dobro a multa em caso de \r\nreincidência no período de 12 (doze) meses. \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\n§ 3\nAs penalidades são aplicáveis a pessoas \r\nfísicas ou jurídicas que incorram na infração, devendo a autoridade com \r\ncircunscrição sobre a via restabelecer de imediato, se possível, as condições de \r\nnormalidade para a circulação na via. \r\n\n(Incluído pela Lei nº 13.281, de 2016)"
+        },
+        {
+          "key": "254",
+          "text": "Art. 254. É proibido ao pedestre:\n\nI\r\n- permanecer ou andar nas pistas de rolamento, exceto para cruzá-las onde for permitido;\n\nII\r\n- cruzar pistas de rolamento nos viadutos, pontes, ou túneis, salvo onde exista\r\npermissão;\n\n\r\nIII - atravessar a via dentro das áreas de cruzamento, salvo quando houver sinalização\r\npara esse fim;\n\nIV\r\n- utilizar-se da via em agrupamentos capazes de perturbar o trânsito, ou para a prática\r\nde qualquer folguedo, esporte, desfiles e similares, salvo em casos especiais e com a\r\ndevida licença da autoridade competente;\n\nV\r\n- andar fora da faixa própria, passarela, passagem aérea ou subterrânea;\n\nVI\r\n- desobedecer à sinalização de trânsito específica;\n\n\r\nInfração - leve;\n\n\r\nPenalidade - multa, em 50% (cinqüenta por cento) do valor da infração de natureza leve.\n\n\r\n\nVII - (VETADO). \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\n\r\n\n§ 1\n(VETADO). \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\n\r\n\n§ 2\n(VETADO). \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\n\r\n\n§ 3\n(VETADO). \r\n\n(Incluído pela Lei nº 13.281, de 2016)"
+        },
+        {
+          "key": "255",
+          "text": "Art. 255. Conduzir bicicleta em passeios onde não seja permitida a circulação desta, ou\r\nde forma agressiva, em desacordo com o disposto no parágrafo único do art. 59:\n\n\r\nInfração - média;\n\n\r\nPenalidade - multa;\n\n\r\nMedida administrativa - remoção da bicicleta, mediante recibo para o pagamento da multa.\n\nCAPÍTULO XVI\n\nDAS PENALIDADES"
+        },
+        {
+          "key": "256",
+          "text": "Art. 256. A autoridade de trânsito, na esfera das competências estabelecidas neste\r\nCódigo e dentro de sua circunscrição, deverá aplicar, às infrações nele previstas,\r\nas seguintes penalidades:\n\nI\r\n- advertência por escrito;\n\nII\r\n- multa;\n\n\r\nIII - suspensão do direito de dirigir;\n\nIV\r\n- \r\n\n(Revogado pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nV\r\n- cassação da Carteira Nacional de Habilitação;\n\nVI\r\n- cassação da Permissão para Dirigir;\n\n\r\nVII - freqüência obrigatória em curso de reciclagem.\n\n§\r\n1º A aplicação das penalidades previstas neste Código não elide as punições\r\noriginárias de ilícitos penais decorrentes de crimes de trânsito, conforme\r\ndisposições de lei.\n\n§\r\n2º\n\n(VETADO)\n\n§\r\n3º A imposição da penalidade será comunicada aos órgãos ou entidades executivos de\r\ntrânsito responsáveis pelo licenciamento do veículo e habilitação do condutor."
+        },
+        {
+          "key": "257",
+          "text": "Art. 257. As penalidades serão impostas ao condutor, ao proprietário do veículo, ao\r\nembarcador e ao transportador, salvo os casos de descumprimento de obrigações e deveres\r\nimpostos a pessoas físicas ou jurídicas expressamente mencionados neste Código.\n\n§\r\n1º Aos proprietários e condutores de veículos serão impostas concomitantemente as\r\npenalidades de que trata este Código toda vez que houver responsabilidade solidária em\r\ninfração dos preceitos que lhes couber observar, respondendo cada um de\nper si\n\r\npela falta em comum que lhes for atribuída.\n\n§\r\n2º Ao proprietário caberá sempre a responsabilidade pela infração referente à\r\nprévia regularização e preenchimento das formalidades e condições exigidas para o\r\ntrânsito do veículo na via terrestre, conservação e inalterabilidade de suas\r\ncaracterísticas, componentes, agregados, habilitação legal e compatível de seus\r\ncondutores, quando esta for exigida, e outras disposições que deva observar.\n\n§\r\n3º Ao condutor caberá a responsabilidade pelas infrações decorrentes de atos\r\npraticados na direção do veículo.\n\n\r\n§ 4º O embarcador é responsável pela infração relativa ao transporte de carga \r\ncom excesso de peso nos eixos ou no peso bruto total, quando simultaneamente for \r\no único remetente da carga e o peso declarado na nota fiscal, fatura ou \r\nmanifesto for inferior àquele aferido.\n\n§\r\n5º O transportador é o responsável pela infração relativa ao transporte de carga com\r\nexcesso de peso nos eixos ou quando a carga proveniente de mais de um embarcador\r\nultrapassar o peso bruto total.\n\n§\r\n6º O transportador e o embarcador são solidariamente responsáveis pela infração\r\nrelativa ao excesso de peso bruto total, se o peso declarado na nota fiscal, fatura ou\r\nmanifesto for superior ao limite legal.\n\n§ 7º Quando não for imediata a identificação do infrator, o\nprincipal condutor ou o proprietário do veículo terá o prazo de 30\n(trinta) dias, contado da notificação da autuação, para apresentá-lo,\nna forma em que dispuser o Contran, e, transcorrido o prazo, se não o\nfizer, será considerado responsável pela infração o principal condutor\nou, em sua ausência, o proprietário do veículo. \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n\r\n\n\r\n§ 8º Após o prazo previsto no § 7º deste artigo, se o infrator não \r\ntiver sido identificado, e o veículo for de propriedade de pessoa \r\njurídica, será lavrada nova multa ao proprietário do veículo, \r\nmantida a originada pela infração, cujo valor será igual a 2 (duas) \r\nvezes o da multa originária, garantidos o direito de defesa prévia e \r\nde interposição de recursos previstos neste Código, na forma \r\nestabelecida pelo Contran.\n\n(Redação dada pela Lei nº 14.229, de 2021)\n\r\n\n(Vigência)\n\n\r\n§ 9º O fato de o infrator ser pessoa jurídica não o exime do disposto no § 3º do \r\nart. 258 e no art. 259.\n\n§ 10. O \r\nproprietário poderá indicar ao órgão executivo de trânsito o principal condutor \r\ndo veículo, o qual, após aceitar a indicação, terá seu nome inscrito em campo \r\npróprio do cadastro do veículo no Renavam.\n\r\n\n(Incluído \r\npela Lei nº 13.495, 2017)\n\r\n\n(Vigência)\n\n§ 11. O \r\nprincipal condutor será excluído do Renavam:\n\r\n\n(Incluído \r\npela Lei nº 13.495, 2017)\n\r\n\n(Vigência)\n\nI -\n\nquando \r\nhouver transferência de propriedade do veículo;\n\r\n\n(Incluído \r\npela Lei nº 13.495, 2017)\n\r\n\n(Vigência)\n\nII - mediante \r\nrequerimento próprio ou do proprietário do veículo;\n\r\n\n(Incluído \r\npela Lei nº 13.495, 2017)\n\r\n\n(Vigência)\n\nIII - a partir da indicação de outro \r\nprincipal condutor.\n\r\n\n(Incluído \r\npela Lei nº 13.495, 2017)\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "258",
+          "text": "Art. 258. As infrações punidas com multa classificam-se, de acordo com sua gravidade, em\r\nquatro categorias:\n\nI - infração de natureza gravíssima, punida \r\ncom multa no valor de R$ 293,47 (duzentos e noventa e três reais e \r\nquarenta e sete centavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\n\nII - infração de natureza grave, punida com \r\nmulta no valor de R$ 195,23 (cento e noventa e cinco reais e vinte e \r\ntrês centavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\n\nIII - infração de natureza média, punida com \r\nmulta no valor de R$ 130,16 (cento e trinta reais e dezesseis centavos); \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\n\nIV - infração de natureza leve, punida com \r\nmulta no valor de R$ 88,38 (oitenta e oito reais e trinta e oito \r\ncentavos). \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\n\n§ 1\n\n(Revogado)\n.\n\r\n\n\r\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n§\r\n2º Quando se tratar de multa agravada, o fator multiplicador ou índice adicional\r\nespecífico é o previsto neste Código.\n\n§\r\n3º\n\n(VETADO)\n\n§\r\n4º\n\n(VETADO)"
+        },
+        {
+          "key": "259",
+          "text": "Art. 259. A cada infração cometida são computados os seguintes números de pontos:\n\nI\r\n- gravíssima - sete pontos;\n\nII\r\n- grave - cinco pontos;\n\n\r\nIII - média - quatro pontos;\n\nIV\r\n- leve - três pontos.\n\n§\r\n1º\n\n(VETADO)\n\n§\r\n2º\n\n(VETADO)\n\n§ \r\n3\no\n\n(\nVETADO\n).\n\r\n\n(Incluído \r\npela Lei nº \r\n12.619, de 2012)\n\n\r\n(Vigência)\n\n§ 4º Ao condutor identificado será atribuída pontuação pelas\ninfrações de sua responsabilidade, nos termos previstos no § 3º do\nart. 257 deste Código, exceto aquelas: \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\nI - praticadas por passageiros usuários do serviço de transporte\nrodoviário de passageiros em viagens de longa distância transitando em\nrodovias com a utilização de ônibus, em linhas regulares\nintermunicipal, interestadual, internacional e aquelas em viagem de\nlonga distância por fretamento e turismo ou de qualquer modalidade,\nexcluídas as situações regulamentadas pelo Contran conforme disposto\nno art. 65 deste Código; \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\nII - previstas no art. 221, nos incisos VII e XXI do art. 230 e nos\narts. 232, 233, 233-A, 240 e 241 deste Código, sem prejuízo da\naplicação das penalidades e medidas administrativas cabíveis; \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\nIII - puníveis de forma específica com suspensão do direito de\ndirigir. \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)"
+        },
+        {
+          "key": "260",
+          "text": "Art. 260. As multas serão impostas e arrecadadas pelo órgão ou entidade de trânsito\r\ncom circunscrição sobre a via onde haja ocorrido a infração, de acordo com a\r\ncompetência estabelecida neste Código.\n\n§\r\n1º As multas decorrentes de infração cometida em unidade da Federação diversa da do\r\nlicenciamento do veículo serão arrecadadas e compensadas na forma estabelecida pelo\r\nCONTRAN.\n\n§\r\n2º As multas decorrentes de infração cometida em unidade da Federação diversa daquela\r\ndo licenciamento do veículo poderão ser comunicadas ao órgão ou entidade responsável\r\npelo seu licenciamento, que providenciará a notificação.\n\n§ 3º\n(Revogado\r\npela Lei nº 9.602, de 1998)\n\n§\r\n4º Quando a infração for cometida com veículo licenciado no exterior, em trânsito no\r\nterritório nacional, a multa respectiva deverá ser paga antes de sua saída do País,\r\nrespeitado o princípio de reciprocidade."
+        },
+        {
+          "key": "261",
+          "text": "Art. 261. A penalidade de suspensão do \r\ndireito de dirigir será imposta nos seguintes casos: \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nI - \r\nsempre que, conforme a pontuação prevista no art. 259 deste\nCódigo, o infrator atingir, no período de 12 (doze) meses, a seguinte\ncontagem de pontos: \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\na) 20 (vinte) pontos, caso constem 2 (duas) ou mais infrações\ngravíssimas na pontuação; \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)\n\nb) 30 (trinta) pontos, caso conste 1 (uma) infração gravíssima\nna pontuação; \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)\n\nc) 40 (quarenta) pontos, caso não conste nenhuma infração\ngravíssima na pontuação; \r\n\n(Incluído pela \r\nLei nº 14.071, de 2020)\n\n(Vigência)\n\nII - por transgressão às normas estabelecidas \r\nneste Código, cujas infrações preveem, de forma específica, a penalidade \r\nde suspensão do direito de dirigir. \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\nIII - (VETADO).\n\n(Incluído pela Lei \r\nnº 14.304, de 2022)\n\n\r\n\n(Vigência)\n\n\r\n\n§ 1º Os prazos para aplicação da \r\npenalidade de suspensão do direito de dirigir são os seguintes: \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nI - no caso do inciso I do \r\n\ncaput\n: de 6 \r\n(seis) meses a 1 (um) ano e, no caso de reincidência no período de 12 \r\n(doze) meses, de 8 (oito) meses a 2 (dois) anos; \r\n\n(Incluído pela Lei \r\nnº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\nII - no caso do inciso II do \r\n\ncaput\n: de \r\n2 (dois) a 8 (oito) meses, exceto para as infrações com prazo descrito \r\nno dispositivo infracional, e, no caso de reincidência no período de 12 \r\n(doze) meses, de 8 (oito) a 18 (dezoito) meses, respeitado o disposto no \r\ninciso II do art. 263. \r\n\n(Incluído pela Lei \r\nnº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\nIII - (VETADO).\n\n\r\n\n(Incluído \r\npela Lei nº 14.304, de 2022)\n\n\r\n\n(Vigência)\n\n§\r\n2º Quando ocorrer a suspensão do direito de dirigir, a Carteira Nacional de\r\nHabilitação será devolvida a seu titular imediatamente após cumprida a penalidade e o\r\ncurso de reciclagem.\n\n\r\n\n\r\n\r\n\n§ 3º A imposição da penalidade de suspensão do direito de\ndirigir elimina a quantidade de pontos computados, prevista no inciso\nI do\n\ncaput\n\nou no § 5º deste artigo, para fins de contagem\nsubsequente. \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n\r\n\r\n§ 4\no\n\n(\nVETADO\n).\n\r\n\n(Incluído \r\npela Lei nº \r\n12.619, de 2012)\n\n\r\n(Vigência)\n\n\r\n§ 5º No caso do condutor que exerce atividade remunerada ao\nveículo, a penalidade de suspensão do direito de dirigir de que trata\no\n\ncaput\n\ndeste artigo será imposta quando o infrator atingir\no limite de pontos previsto na alínea\n\nc\n\ndo inciso I do\n\ncaput\n\ndeste artigo, independentemente da natureza das\ninfrações cometidas, facultado a ele participar de curso preventivo de\nreciclagem sempre que, no período de 12 (doze) meses, atingir 30\n(trinta) pontos, conforme regulamentação do Contran. \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\n\r\n\r\n§ 6\no\nConcluído o curso de reciclagem \r\nprevisto no § 5\no\n, o condutor terá eliminados os pontos que lhe \r\ntiverem sido atribuídos, para fins de contagem subsequente.\n\n\r\n\n\r\n(Incluído pela Lei nº 13.154, de 2015)\n\n§ 7º O motorista que optar pelo curso \r\nprevisto no § 5\nnão poderá fazer nova opção no período de 12 \r\n(doze) meses. \r\n\n(Redação dada pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\n\r\n§ 8\no\nA pessoa jurídica concessionária \r\nou permissionária de serviço público tem o direito de ser informada dos pontos \r\natribuídos, na forma do art. 259, aos motoristas que integrem seu quadro \r\nfuncional, exercendo atividade remunerada ao volante, na forma que dispuser o \r\nContran.\n\r\n\n\r\n(Incluído pela Lei nº 13.154, de 2015)\n\n§ 9º Incorrerá na infração prevista \r\nno inciso II do art. 162 o condutor que, notificado da penalidade de que \r\ntrata este artigo, dirigir veículo automotor em via pública. \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n§ 10. O processo de suspensão do direito de dirigir a que se\nrefere o inciso II do\n\ncaput\n\ndeste artigo deverá ser\ninstaurado concomitantemente ao processo de aplicação da penalidade de\nmulta, e ambos serão de competência do órgão ou entidade responsável\npela aplicação da multa, na forma definida pelo Contran. \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\n§ 11. O Contran regulamentará as \r\ndisposições deste artigo. \r\n\n(Incluído pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)\n\n\r\n§ 12. (VETADO).\n\n(Incluído pela \r\nLei nº 14.304, de 2022)\n\n\r\n\n(Vigência)\n\n\r\n§ 13. (VETADO).\n\n(Incluído pela \r\nLei nº 14.304, de 2022)\n\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "262",
+          "text": "Art. 262. \r\n\n(Revogado pela Lei nº 13.281, de 2016)\n\r\n\n\r\n(Vigência)"
+        },
+        {
+          "key": "263",
+          "text": "Art. 263. A cassação do documento de habilitação dar-se-á:\n\nI\r\n- quando, suspenso o direito de dirigir, o infrator conduzir qualquer veículo;\n\nII\r\n- no caso de reincidência, no prazo de doze meses, das infrações previstas no inciso\r\nIII do art. 162 e nos arts. 163, 164, 165, 173, 174 e 175;\n\n\r\nIII - quando condenado judicialmente por delito de trânsito, observado o disposto no art.\r\n160.\n\n\r\n\r\nIV - (VETADO).\n\n(Incluído pela Lei \r\nnº 14.304, de 2022)\n\n\r\n\n(Vigência)\n\n§\r\n1º Constatada, em processo administrativo, a irregularidade na expedição do documento\r\nde habilitação, a autoridade expedidora promoverá o seu cancelamento.\n\n§\r\n2º Decorridos dois anos da cassação da Carteira Nacional de Habilitação, o infrator\r\npoderá requerer sua reabilitação, submetendo-se a todos os exames necessários à\r\nhabilitação, na forma estabelecida pelo CONTRAN.\n\n\r\n\r\n§ 3º (VETADO).\n\n\r\n\n(Incluído \r\npela Lei nº 14.304, de 2022)\n\n\r\n\n(Vigência)"
+        },
+        {
+          "key": "264",
+          "text": "Art. 264.\n\n(VETADO)"
+        },
+        {
+          "key": "265",
+          "text": "Art. 265. As penalidades de suspensão do direito de dirigir e de cassação do documento\r\nde habilitação serão aplicadas por decisão fundamentada da autoridade de trânsito\r\ncompetente, em processo administrativo, assegurado ao infrator amplo direito de defesa."
+        },
+        {
+          "key": "266",
+          "text": "Art. 266. Quando o infrator cometer, simultaneamente, duas ou mais infrações,\r\nser-lhe-ão aplicadas, cumulativamente, as respectivas penalidades."
+        },
+        {
+          "key": "267",
+          "text": "Art. 267. Deverá ser imposta a penalidade de advertência por\nescrito à infração de natureza leve ou média, passível de ser punida\ncom multa, caso o infrator não tenha cometido nenhuma outra infração\nnos últimos 12 (doze) meses. \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n§ 1º \r\n(Revogado). \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)\n\n§ 2º (Revogado). \r\n\n(Redação dada \r\npela Lei nº 14.071, de 2020)\n\n(Vigência)"
+        },
+        {
+          "key": "268",
+          "text": "Art. 268. O infrator será submetido a curso de reciclagem, na forma estabelecida pelo\r\nCONTRAN:\n\nI - \r\n(revogado); \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nII\r\n- quando suspenso do direito de dirigir;\n\n\r\n\n\r\nIII - quando se envolver em sinistro grave para o qual haja \r\ncontribuído, independentemente de processo judicial;\n\n(Redação dada \r\npela Lei nº 14.599, de 2023)\n\nIV\r\n- quando condenado judicialmente por delito de trânsito;\n\nV\r\n- a qualquer tempo, se for constatado que o condutor está colocando em risco a segurança\r\ndo trânsito;\n\nVI - \r\n(revogado). \r\n\n(Redação dada pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nParágrafo único\n. Além do curso de reciclagem \r\nprevisto no\ncaput\ndeste artigo, o infrator será submetido à \r\navaliação psicológica nos casos dos incisos III, IV e V do\ncaput\n\r\ndeste artigo.\n\n(Incluído pela Lei nº \r\n14.071, de 2020)\n\n(Vigência)\n\n(Parte promulgada pelo Congresso Nacional)"
+        },
+        {
+          "key": "268A",
+          "text": "Art. 268-A. Fica criado o Registro Nacional Positivo de\nCondutores (RNPC), administrado pelo órgão máximo executivo de\ntrânsito da União, com a finalidade de cadastrar os condutores que não\ncometeram infração de trânsito sujeita à pontuação prevista no art.\n259 deste Código, nos últimos 12 (doze) meses, conforme regulamentação\ndo Contran. \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\r\n\n(Vigência)\n\n§ 1º O RNPC deverá ser atualizado mensalmente. \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n§ 2º A abertura de cadastro requer autorização prévia e\nexpressa do potencial cadastrado. \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n§ 3º Após a abertura do cadastro, a anotação de informação no\nRNPC independe de autorização e de comunicação ao cadastrado. \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n§ 4º A exclusão do RNPC dar-se-á: \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nI - por solicitação do cadastrado; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nII - quando for atribuída ao cadastrado pontuação por infração; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nIII - quando o cadastrado tiver o direito de dirigir suspenso; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nIV - quando a Carteira Nacional de Habilitação do cadastrado estiver\ncassada ou com validade vencida há mais de 30 (trinta) dias; \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\nV - quando o cadastrado estiver cumprindo pena privativa de\nliberdade. \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n§ 5º A consulta ao RNPC é garantida a todos os cidadãos, nos\ntermos da regulamentação do Contran. \r\n\n(Incluído pela Lei \r\nnº 14.071, de 2020)\n\n(Vigência)\n\n§ 6º A União, os Estados, o Distrito Federal e os Municípios\npoderão utilizar o RNPC para conceder benefícios fiscais ou tarifários\naos condutores cadastrados, na forma da legislação específica de cada\nente da Federação.\n(Incluído pela Lei nº 14.071, de 2020)\n\r\n\n(Vigência)\n\n\r\n§ 7º O condutor que, ao término do período de validade da Carteira Nacional \r\nde Habilitação ou da Autorização para Conduzir Ciclomotor, estiver \r\ncadastrado no RNPC terá sua habilitação renovada automaticamente e ficará \r\ndispensado dos procedimentos previstos no art. 147 deste Código, com exceção \r\ndos exames de aptidão física e mental.\n\n(Redação dada pela Lei \r\nnº 15.428, de 2026)\n\n\r\n§ 8º\n\n\r\nI - \r\n\n\r\nII -\n\n\r\nIII -\n\nCAPÍTULO XVII\n\nDAS MEDIDAS ADMINISTRATIVAS"
+        }
+      ]
+    }
+  ]
+}

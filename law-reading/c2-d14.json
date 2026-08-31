@@ -1,0 +1,254 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 14,
+  "label": "CPM — arts. 195 a 253",
+  "articleCount": 59,
+  "sections": [
+    {
+      "prefix": "CPM",
+      "title": "Código Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "range": "arts. 195 a 253",
+      "articles": [
+        {
+          "key": "195",
+          "text": "Art. 195. Abandonar, sem ordem\r\nsuperior, o pôsto ou lugar de serviço que lhe tenha sido designado, ou o serviço que\r\nlhe cumpria, antes de terminá-lo:\n\nPena - detenção, de três meses\r\na um ano.\n\nDescumprimento de missão"
+        },
+        {
+          "key": "196",
+          "text": "Art. 196. Deixar o militar de\r\ndesempenhar a missão que lhe foi confiada:\n\nPena - detenção, de seis meses\r\na dois anos, se o fato não constitui crime mais grave.\n\n§ 1º Se é oficial o agente, a\r\npena é aumentada de um têrço.\n\n§ 2º Se o agente exercia\r\nfunção de comando, a pena é aumentada de metade.\n\nModalidade culposa\r\n\n§ 3º Se a abstenção é\r\nculposa:\n\nPena - detenção, de três meses\r\na um ano.\n\nRetenção indevida"
+        },
+        {
+          "key": "197",
+          "text": "Art. 197. Deixar o oficial de\r\nrestituir, por ocasião da passagem de função, ou quando lhe é exigido, objeto, plano,\r\ncarta, cifra, código ou documento que lhe haja sido confiado:\n\n\r\nPena – detenção, até 6 (seis) meses, se o fato não constitui crime \r\nmais grave.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nParágrafo único. Se o objeto,\r\nplano, carta, cifra, código, ou documento envolve ou constitui segrêdo relativo à\r\nsegurança nacional:\n\nPena - detenção, de três meses\r\na um ano, se o fato não constitui crime mais grave.\n\nOmissão de eficiência da\r\nfôrça"
+        },
+        {
+          "key": "198",
+          "text": "Art. 198. Deixar o comandante de\r\nmanter a fôrça sob seu comando em estado de eficiência:\n\n\r\nPena – detenção, de 3 (três) meses a 1 (um) ano.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nOmissão de providências para\r\nevitar danos"
+        },
+        {
+          "key": "199",
+          "text": "Art. 199. Deixar o comandante de\r\nempregar todos os meios ao seu alcance para evitar perda, destruição ou inutilização\r\nde instalações militares, navio, aeronave ou engenho de guerra motomecanizado em perigo:\r\n\nPena - reclusão, de dois a oito\r\nanos.\n\nModalidade culposa\r\n\nParágrafo único. Se a\r\nabstenção é culposa:\n\nPena - detenção, de três meses\r\na um ano.\n\nOmissão de providências para\r\nsalvar comandados"
+        },
+        {
+          "key": "200",
+          "text": "Art. 200. Deixar o comandante, em\r\nocasião de incêndio, naufrágio, encalhe, colisão, ou outro perigo semelhante, de tomar\r\ntôdas as providências adequadas para salvar os seus comandados e minorar as\r\nconseqüências do sinistro, não sendo o último a sair de bordo ou a deixar a aeronave\r\nou o quartel ou sede militar sob seu comando:\n\nPena - reclusão, de dois a seis\r\nanos.\n\nModalidade culposa\r\n\nParágrafo único. Se a\r\nabstenção é culposa:\n\nPena - detenção, de seis meses\r\na dois anos.\n\nOmissão de socorro"
+        },
+        {
+          "key": "201",
+          "text": "Art. 201. Deixar o comandante de\r\nsocorrer, sem justa causa, navio de guerra ou mercante, nacional ou estrangeiro, ou\r\naeronave, em perigo, ou náufragos que hajam pedido socorro:\n\n\r\nPena – detenção, de 1 (um) a 2 (dois) anos.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nEmbriaguez em serviço"
+        },
+        {
+          "key": "202",
+          "text": "Art.\n\n202. Embriagar-se o militar, quando em serviço, ou\r\napresentar-se embriagado para prestá-lo:\n\nPena - detenção, de seis meses\r\na dois anos.\n\nDormir em serviço"
+        },
+        {
+          "key": "203",
+          "text": "Art.\n\n203. Dormir o militar, quando em serviço, como oficial de\r\nquarto ou de ronda, ou em situação equivalente, ou, não sendo oficial, em serviço de\r\nsentinela, vigia, plantão às máquinas, ao leme, de ronda ou em qualquer serviço de\r\nnatureza semelhante:\n\nPena - detenção, de três meses\r\na um ano.\n\nCAPÍTULO IV\n\nDO EXERCÍCIO DE\r\nCOMÉRCIO\n\nExercício de comércio por\r\noficial"
+        },
+        {
+          "key": "204",
+          "text": "Art. 204. Comerciar o oficial da\r\nativa, ou tomar parte na administração ou gerência de sociedade comercial, ou dela ser\r\nsócio ou participar, exceto como acionista ou cotista em sociedade anônima, ou por cotas\r\nde responsabilidade limitada:\n\n\r\nPena – detenção, de 1 (um) a 2 (dois) anos.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nTÍTULO IV\n\nDOS CRIMES\r\nCONTRA A PESSOA\n\nCAPÍTULO I\n\nDO HOMICÍDIO\n\nHomicídio simples"
+        },
+        {
+          "key": "205",
+          "text": "Art. 205. Matar alguém:\n\nPena - reclusão, de seis a vinte\r\nanos.\n\nMinoração facultativa da pena\r\n\n§ 1º Se o agente comete o crime\r\nimpelido por motivo de relevante valor social ou moral, ou sob o domínio de violenta\r\nemoção, logo em seguida a injusta provocação da vítima, o juiz pode reduzir a pena,\r\nde um sexto a um têrço.\n\nHomicídio qualificado\r\n\n§ 2° Se o homicídio é\r\ncometido:\n\nI - por motivo fútil;\n\nII - mediante paga ou promessa de\r\nrecompensa, por cupidez, para excitar ou saciar desejos sexuais, ou por outro motivo\r\ntorpe;\n\nIII - com emprêgo de veneno,\r\nasfixia, tortura, fogo, explosivo, ou qualquer outro meio dissimulado ou cruel, ou de que\r\npossa resultar perigo comum;\n\nIV - à traição, de emboscada,\r\ncom surprêsa ou mediante outro recurso insidioso, que dificultou ou tornou impossível a\r\ndefesa da vítima;\n\nV - para assegurar a execução,\r\na ocultação, a impunidade ou vantagem de outro crime;\n\nVI - prevalecendo-se o agente da\r\nsituação de serviço:\n\n\r\n\r\nVII – contra autoridade ou agente descrito nos \r\n\narts. 142\ne \r\n\n144 da \r\nConstituição Federal\n, integrantes do sistema prisional e da Força \r\nNacional de Segurança Pública, no exercício da função ou em \r\ndecorrência dela, ou contra seu cônjuge, companheiro ou parente consanguíneo até o terceiro grau, em razão dessa condição:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nPena - reclusão, de doze a\r\ntrinta anos.\n\nHomicídio culposo"
+        },
+        {
+          "key": "206",
+          "text": "Art. 206. Se o homicídio é\r\nculposo:\n\nPena - detenção, de um a quatro\r\nanos.\n\n\r\nAumento de pena\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 1º A pena é aumentada de 1/3 (um terço):\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nI – se o crime resulta da inobservância de regra técnica de \r\nprofissão, arte ou ofício;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nII – se o agente deixa de prestar imediato socorro à vítima, não \r\nprocura diminuir as consequências do seu ato ou foge para evitar \r\nprisão em flagrante.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nMultiplicidade de vítimas\r\n\n§ 2º Se, em conseqüência de\r\numa só ação ou omissão culposa, ocorre morte de mais de uma pessoa ou também lesões\r\ncorporais em outras pessoas, a pena é aumentada de um sexto até metade.\n\n\r\n\r\n§ 3º O juízo poderá deixar de aplicar a pena se as consequências da \r\ninfração atingirem o próprio agente de forma tão grave que a sanção \r\npenal se torne desnecessária.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nProvocação direta ou auxílio a\r\nsuicídio"
+        },
+        {
+          "key": "207",
+          "text": "Art. 207. Instigar ou induzir\r\nalguém a suicidar-se, ou prestar-lhe auxílio para que o faça, vindo o suicídio\r\nconsumar-se:\n\nPena - reclusão, de dois a seis\r\nanos.\n\n\r\nAumento de pena\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 1º Se o crime é praticado por motivo egoístico, ou a vítima é \r\nmenor ou tem diminuída, por qualquer motivo, a resistência moral, a \r\npena é duplicada.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nProvocação indireta ao\r\nsuicídio\n\n§ 2º Infligir, desumana e reiteradamente, maus-tratos a alguém, sob \r\nsua autoridade ou dependência, levando-o, em razão disso, à prática \r\nde suicídio:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – detenção, de 1 (um) a 4 (quatro) anos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nRedução de pena\n\n§ 3° Se o suicídio é apenas\r\ntentado, e da tentativa resulta lesão grave, a pena é reduzida de um a dois terços.\n\nCAPÍTULO II\n\nDO GENOCÍDIO\n\nGenocídio"
+        },
+        {
+          "key": "208",
+          "text": "Art.\n\n208. Matar membros de um grupo nacional, étnico, religioso\r\nou pertencente a determinada raça, com o fim de destruição total ou parcial dêsse\r\ngrupo:\n\nPena - reclusão, de quinze a\r\ntrinta anos.\n\nCasos assimilados\r\n\nParágrafo único. Será punido\r\ncom reclusão, de quatro a quinze anos, quem, com o mesmo fim:\n\nI - inflige lesões graves a\r\nmembros do grupo;\n\nII - submete o grupo a\r\ncondições de existência, físicas ou morais, capazes de ocasionar a eliminação de\r\ntodos os seus membros ou parte dêles;\n\nIII - força o grupo à sua\r\ndispersão;\n\nIV - impõe medidas destinadas a\r\nimpedir os nascimentos no seio do grupo;\n\nV - efetua coativamente a\r\ntransferência de crianças do grupo para outro grupo.\n\nCAPÍTULO III\n\nDA LESÃO\r\nCORPORAL E DA RIXA\n\nLesão leve"
+        },
+        {
+          "key": "209",
+          "text": "Art. 209. Ofender a integridade\r\ncorporal ou a saúde de outrem:\n\nPena - detenção, de três meses\r\na um ano.\n\nLesão grave\n\n\r\n§ 1º Se se produz, dolosamente, aceleração de parto, perigo de vida, \r\ndebilidade permanente de membro, sentido ou função, ou incapacidade \r\npara as ocupações habituais, por mais de 30 (trinta) dias:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - reclusão, até cinco\r\nanos.\n\n\r\n§ 2º Se se produz, dolosamente, enfermidade incurável, perda ou \r\ninutilização de membro, sentido ou função, incapacidade permanente \r\npara o trabalho, deformidade duradoura ou aborto:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - reclusão, de dois a oito\r\nanos.\n\n\r\nLesão qualificada pelo resultado\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 3º Se os resultados previstos nos §§ 1º e 2º deste artigo forem \r\ncausados culposamente:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – detenção, de 1 (um) a 4 (quatro) anos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 3º-A. Se da lesão resultar morte e as circunstâncias evidenciarem \r\nque o agente não quis o resultado nem assumiu o risco de produzi-lo:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 4 (quatro) a 12 (doze) anos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nMinoração facultativa da pena\r\n\n§ 4° Se o agente comete o crime\r\nimpelido por motivo de relevante valor moral ou social ou sob o domínio de violenta\r\nemoção, logo em seguida a injusta provocação da vítima, o juiz pode reduzir a pena,\r\nde um sexto a um têrço.\n\n§ 5º No caso de lesões leves,\r\nse estas são recíprocas, não se sabendo qual dos contendores atacou primeiro, ou quando\r\nocorre qualquer das hipóteses do parágrafo anterior, o juiz pode diminuir a pena de um a\r\ndois terços.\n\nLesão levíssima\n\n§ 6º No caso de lesões\r\nlevíssimas, o juiz pode considerar a infração como disciplinar.\n\nLesão culposa"
+        },
+        {
+          "key": "210",
+          "text": "Art. 210. Se a lesão é culposa:\r\n\nPena - detenção, de dois meses\r\na um ano.\n\nAumento de pena\n\n\r\n\r\n§ 1º A pena é aumentada de 1/3 (um terço) se o crime resulta da \r\ninobservância de regra técnica de profissão, arte ou ofício, ou se o \r\nagente deixa de prestar imediato socorro à vítima, não procura \r\ndiminuir as consequências do seu ato ou foge para evitar prisão em \r\nflagrante.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n§ 2º Se, em conseqüência de\r\numa só ação ou omissão culposa, ocorrem lesões em várias pessoas, a pena é\r\naumentada de um sexto até metade.\n\n\r\n\r\n§ 3º O juiz poderá deixar de aplicar a pena se as consequências da \r\ninfração atingirem o próprio agente de forma tão grave que a sanção \r\npenal se torne desnecessária.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nParticipação em rixa"
+        },
+        {
+          "key": "211",
+          "text": "Art. 211. Participar de rixa,\r\nsalvo para separar os contendores:\n\nPena - detenção, até dois\r\nmeses.\n\nParágrafo único. Se ocorre\r\nmorte ou lesão grave, aplica-se, pelo fato de participação na rixa, a pena de\r\ndetenção, de seis meses a dois anos.\n\nCAPÍTULO IV\n\nDA\r\nPERICLITAÇÃO DA VIDA OU DA SAÚDE\n\nAbandono de pessoa"
+        },
+        {
+          "key": "212",
+          "text": "Art. 212. Abandonar o militar\r\npessoa que está sob seu cuidado, guarda, vigilância ou autoridade e, por qualquer\r\nmotivo, incapaz de defender-se dos riscos resultantes do abandono:\n\nPena - detenção, de seis meses\r\na três anos.\n\nFormas qualificadas pelo\r\nresultado\n\n§ 1º Se do abandono resulta\r\nlesão grave:\n\nPena - reclusão, até cinco\r\nanos.\n\n§ 2º Se resulta morte:\n\nPena - reclusão, de quatro a\r\ndoze anos.\n\n\r\nAumento de pena\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 3º As penas cominadas neste artigo são aumentadas de 1/3 (um \r\nterço):\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nI – se o abandono ocorre em lugar ermo;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nII – se o agente é ascendente ou descendente, cônjuge, irmão, tutor \r\nou curador da vítima;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nIII – se a vítima é maior de 60 (sessenta) anos, menor de 14 \r\n(quatorze) anos ou pessoa com deficiência.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nMaus tratos"
+        },
+        {
+          "key": "213",
+          "text": "Art. 213. Expor a perigo a vida\r\nou saúde, em lugar sujeito à administração militar ou no exercício de função\r\nmilitar, de pessoa sob sua autoridade, guarda ou vigilância, para o fim de educação,\r\ninstrução, tratamento ou custódia, quer privando-a de alimentação ou cuidados\r\nindispensáveis, quer sujeitando-a a trabalhos excessivos ou inadequados, quer abusando de\r\nmeios de correção ou disciplina:\n\nPena - detenção, de dois meses\r\na um ano.\n\nFormas qualificadas pelo\r\nresultado\n\n§ 1º Se do fato resulta lesão\r\ngrave:\n\nPena - reclusão, até quatro\r\nanos.\n\n§ 2º Se resulta morte:\n\nPena - reclusão, de dois a dez\r\nanos.\n\n\r\n\r\n§ 3º A pena é aumentada de 1/3 (um terço) se o crime é praticado \r\ncontra pessoa menor de 14 (quatorze) anos, maior de 60 (sessenta) \r\nanos ou com deficiência.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nCAPÍTULO V\n\nDOS CRIMES\r\nCONTRA A HONRA\n\nCalúnia"
+        },
+        {
+          "key": "214",
+          "text": "Art.\n\n214. Caluniar alguém, imputando-lhe falsamente fato\r\ndefinido como crime:\n\nPena - detenção, de seis meses\r\na dois anos.\n\n§ 1º Na mesma pena incorre\r\nquem, sabendo falsa a imputação, a propala ou divulga.\n\nExceção da verdade\r\n\n§ 2º A prova da verdade do fato\r\nimputado exclui o crime, mas não é admitida:\n\nI - se, constituindo o fato\r\nimputado crime de ação privada, o ofendido não foi condenado por sentença\r\nirrecorrível;\n\nII - se o fato é imputado a\r\nqualquer das pessoas indicadas no nº I do art. 218;\n\nIII - se do crime imputado,\r\nembora de ação pública, o ofendido foi absolvido por sentença irrecorrível.\n\nDifamação"
+        },
+        {
+          "key": "215",
+          "text": "Art.\n\n215. Difamar alguém, imputando-lhe fato ofensivo à sua\r\nreputação:\n\nPena - detenção, de três meses\r\na um ano.\n\nParágrafo único. A exceção da\r\nverdade sòmente se admite se a ofensa é relativa ao exercício da função pública,\r\nmilitar ou civil, do ofendido.\n\nI\nnjúria"
+        },
+        {
+          "key": "216",
+          "text": "Art. 216. Injuriar alguém,\r\nofendendo-lhe a dignidade ou o decôro:\n\nPena - detenção, até seis\r\nmeses.\n\n\r\n§ 1º O juízo pode deixar de aplicar a pena:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nI – quando o ofendido, de forma reprovável, provocou diretamente a \r\ninjúria;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nII – no caso de retorsão imediata, que consista em outra injúria.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nInjúria qualificada\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 2º Se a injúria consiste na utilização de elementos referentes a \r\nraça, a cor, a etnia, a religião, a origem, a orientação sexual ou a \r\ncondição de pessoa idosa ou com deficiência:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 1 (um) a 3 (três) anos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nInjúria real"
+        },
+        {
+          "key": "217",
+          "text": "Art. 217. Se a injúria consiste\r\nem violência, ou outro ato que atinja a pessoa, e, por sua natureza ou pelo meio\r\nempregado, se considera aviltante:\n\nPena - detenção, de três meses\r\na um ano, além da pena correspondente à violência.\n\nDisposições comuns"
+        },
+        {
+          "key": "218",
+          "text": "Art.\n\n218. As penas cominadas nos antecedentes artigos dêste\r\ncapítulo aumentam-se de um têrço, se qualquer dos crimes é cometido:\n\nI - contra o Presidente da\r\nRepública ou chefe de govêrno estrangeiro;\n\nII - contra superior;\n\n\r\nIII – contra militar ou servidor público, em razão das suas funções;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nIV – na presença de 2 (duas) ou mais pessoas ou de inferior \r\nhierárquico do ofendido, ou por meio que facilite a divulgação da \r\ncalúnia, da difamação ou da injúria.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nParágrafo único. Se o crime é\r\ncometido mediante paga ou promessa de recompensa, aplica-se a pena em dôbro, se o fato\r\nnão constitui crime mais grave.\n\nOfensa às fôrças armadas"
+        },
+        {
+          "key": "219",
+          "text": "Art.\n\n219. Propalar fatos, que sabe inverídicos, capazes de\r\nofender a dignidade ou abalar o crédito das fôrças armadas ou a confiança que estas\r\nmerecem do público:\n\nPena - detenção, de seis meses\r\na um ano.\n\nParágrafo único. A pena será\r\naumentada de um têrço, se o crime é cometido pela imprensa, rádio ou televisão.\n\nExclusão de pena"
+        },
+        {
+          "key": "220",
+          "text": "Art.\n\n220. Não constitui ofensa punível, salvo quando\r\ninequívoca a intenção de injuriar, difamar ou caluniar:\n\nI - a irrogada em juízo, na\r\ndiscussão da causa, por uma das partes ou seu procurador contra a outra parte ou seu\r\nprocurador;\n\nII - a opinião desfavorável da\r\ncrítica literária, artística ou científica;\n\nIII - a apreciação crítica às\r\ninstituições militares, salvo quando inequívoca a intenção de ofender;\n\nIV - o conceito desfavorável em\r\napreciação ou informação prestada no cumprimento do dever de ofício.\n\nParágrafo único. Nos casos dos\r\nns. I e IV, responde pela ofensa quem lhe dá publicidade.\n\nEquivocidade da ofensa"
+        },
+        {
+          "key": "221",
+          "text": "Art.\n\n221. Se a ofensa é irrogada de forma imprecisa ou\r\nequívoca, quem se julga atingido pode pedir explicações em juízo. Se o interpelado se\r\nrecusa a dá-las ou, a critério do juiz, não as dá satisfatórias, responde pela\r\nofensa.\n\nCAPÍTULO VI\n\nDOS CRIMES\r\nCONTRA A LIBERDADE\n\nSeção I - Dos\r\ncrimes contra a liberdade\n\nindividual\n\nConstrangimento ilegal"
+        },
+        {
+          "key": "222",
+          "text": "Art. 222. Constranger alguém,\r\nmediante violência ou grave ameaça, ou depois de lhe haver reduzido, por qualquer outro\r\nmeio, a capacidade de resistência, a não fazer o que a lei permite, ou a fazer ou a\r\ntolerar que se faça, o que ela não manda:\n\n\r\nPena – detenção, de 3 (três) meses a 1 (um) ano.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nAumento de pena\n\n§ 1º A pena aplica-se em\r\ndôbro, quando, para a execução do crime, se reúnem mais de três pessoas, ou há\r\nemprêgo de arma, ou quando o constrangimento é exercido com abuso de autoridade, para\r\nobter de alguém confissão de autoria de crime ou declaração como testemunha.\n\n§ 2º Além da pena cominada,\r\naplica-se a correspondente à violência.\n\nExclusão de crime\r\n\n§ 3º Não constitui crime:\n\nI - Salvo o caso de transplante\r\nde órgãos, a intervenção médica ou cirúrgica, sem o consentimento do paciente ou de\r\nseu representante legal, se justificada para conjurar iminente perigo de vida ou de grave\r\ndano ao corpo ou à saúde;\n\nII - a coação exercida para\r\nimpedir suicídio.\n\nAmeaça"
+        },
+        {
+          "key": "223",
+          "text": "Art. 223. Ameaçar alguém, por\r\npalavra, escrito ou gesto, ou qualquer outro meio simbólico, de lhe causar mal injusto e\r\ngrave:\n\nPena - detenção, até seis\r\nmeses, se o fato não constitui crime mais grave.\n\nParágrafo único. Se a ameaça\r\né motivada por fato referente a serviço de natureza militar, a pena é aumentada de um\r\ntêrço.\n\nDesafio para duelo"
+        },
+        {
+          "key": "224",
+          "text": "Art.\n\n224. Desafiar outro militar para duelo ou aceitar-lhe o\r\ndesafio, embora o duelo não se realize:\n\nPena - detenção, até três\r\nmeses, se o fato não constitui crime mais grave.\n\nSeqüestro ou cárcere \r\nprivado"
+        },
+        {
+          "key": "225",
+          "text": "Art.\n\n225. Privar alguém de sua liberdade, mediante seqüestro ou\r\ncárcere privado:\n\nPena - reclusão, até três\r\nanos.\n\nAumento de pena\n\n\r\n§ 1º A pena é de reclusão, de 2 (dois) a 5 (cinco) anos:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nI – se a vítima é ascendente, descendente, cônjuge, companheira do \r\nagente, maior de 60 (sessenta) anos, menor de 18 (dezoito) anos ou \r\npessoa com deficiência;\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nII - se o crime é praticado\r\nmediante internação da vítima em casa de saúde ou hospital;\n\nIII - se a privação de\r\nliberdade dura mais de quinze dias.\n\n\r\n\r\nIV – se o crime é praticado com fins libidinosos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nFormas qualificadas pelo\r\nresultado\n\n§ 2º Se resulta à vítima, em\r\nrazão de maus tratos ou da natureza da detenção, grave sofrimento físico ou moral:\n\nPena - reclusão, de dois a oito\r\nanos.\n\n§ 3º Se, pela razão do parágrafo\r\nanterior, resulta morte:\n\nPena - reclusão, de doze a\r\ntrinta anos.\n\nSeção II - Do\r\ncrime contra a inviolabilidade do domicílio\n\nViolação de domicílio"
+        },
+        {
+          "key": "226",
+          "text": "Art. 226. Entrar ou permanecer,\r\nclandestina ou astuciosamente, ou contra a vontade expressa ou tácita de quem de direito,\r\nem casa alheia ou em suas dependências:\n\nPena - detenção, até três\r\nmeses.\n\nForma qualificada\r\n\n§ 1º Se o crime é cometido\r\ndurante o repouso noturno, ou com emprêgo de violência ou de arma, ou mediante\r\narrombamento, ou por duas ou mais pessoas:\n\nPena - detenção, de seis meses\r\na dois anos, além da pena correspondente à violência.\n\n\r\nAumento de pena\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 2º A pena é aumentada de 1/3 (um terço) se o fato é cometido por \r\nmilitar em serviço ou por servidor público, fora dos casos legais, \r\nou com inobservância das formalidades prescritas em lei ou com abuso \r\nde poder.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nExclusão de crime\r\n\n§ 3º Não constitui crime a\r\nentrada ou permanência em casa alheia ou em suas dependências:\n\nI - durante o dia, com\r\nobservância das formalidades legais, para efetuar prisão ou outra diligência em\r\ncumprimento de lei ou regulamento militar;\n\nII - a qualquer hora do dia ou da\r\nnoite para acudir vítima de desastre ou quando alguma infração penal está sendo ali\r\npraticada ou na iminência de o ser.\n\nCompreensão do têrmo\r\n\"casa\"\n\n§ 4º O termo \"casa\"\r\ncompreende:\n\nI - qualquer compartimento\r\nhabitado;\n\nII - aposento ocupado de\r\nhabitação coletiva;\n\nIII - compartimento não aberto\r\nao público, onde alguém exerce profissão ou atividade.\n\n§ 5º Não se compreende no\r\ntêrmo \"casa\":\n\nI - hotel, hospedaria, ou\r\nqualquer outra habitação coletiva, enquanto aberta, salvo a restrição do nº II do\r\nparágrafo anterior;\n\nII - taverna, boate, casa de\r\njôgo e outras do mesmo gênero.\n\nSeção III -\r\nDos crimes contra a inviolabilidade de correspondência ou comunicação\n\nViolação de correspondência"
+        },
+        {
+          "key": "227",
+          "text": "Art. 227. Devassar indevidamente\r\no conteúdo de correspondência privada dirigida a outrem:\n\nPena - detenção, até seis\r\nmeses.\n\n§ 1º Nas mesmas penas incorre:\n\nI - quem se apossa de\r\ncorrespondência alheia, fechada ou aberta, e, no todo ou em parte, a sonega ou destrói;\n\nII - quem indevidamente divulga,\r\ntransmite a outrem ou utiliza, abusivamente, comunicação telegráfica ou radioelétrica\r\ndirigida a terceiro, ou conversação telefônica entre outras pessoas;\n\nIII - quem impede a comunicação\r\nou a conversação referida no número anterior.\n\nAumento de pena\n\n§ 2º A pena aumenta-se de\r\nmetade, se há dano para outrem.\n\n§ 3º Se o agente comete o crime\r\ncom abuso de função, em serviço postal, telegráfico, radioelétrico ou telefônico:\n\nPena - detenção, de um a três\r\nanos.\n\nNatureza militar do crime\r\n\n§ 4º Salvo o disposto no\r\nparágrafo anterior, qualquer dos crimes previstos neste artigo só é considerado militar\r\nno caso do art. 9º, nº II, letra\na\n\n.\n\nSeção IV - Dos\r\ncrimes contra a inviolabilidade dos segredos de caráter particular\n\nDivulgação de segrêdo"
+        },
+        {
+          "key": "228",
+          "text": "Art. 228. Divulgar, sem justa\r\ncausa, conteúdo de documento particular sigiloso ou de correspondência confidencial, de\r\nque é detentor ou destinatário, desde que da divulgação possa resultar dano a outrem:\n\nPena - detenção, até seis\r\nmeses.\n\nViolação de recato"
+        },
+        {
+          "key": "229",
+          "text": "Art. 229. Violar, mediante\r\nprocesso técnico o direito ao recato pessoal ou o direito ao resguardo das palavras que\r\nnão forem pronunciadas públicamente:\n\nPena - detenção, até um ano.\n\n§ 1º Na mesma pena\r\nincorre quem divulga os fatos captados. \r\n\r\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 2º Considera-se processo técnico, para os fins deste artigo, \r\nqualquer meio que registre informações, dados, imagens ou outros \r\nsimilares, não consentidos pela vítima.\n\r\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nViolação de segrêdo\r\nprofissional"
+        },
+        {
+          "key": "230",
+          "text": "Art. 230. Revelar, sem justa\r\ncausa, segrêdo de que tem ciência, em razão de função ou profissão, exercida em\r\nlocal sob administração militar, desde que da revelação possa resultar dano a outrem:\n\nPena - detenção, de três meses\r\na um ano.\n\nNatureza militar do crime"
+        },
+        {
+          "key": "231",
+          "text": "Art. 231. Os crimes previstos nos\r\narts. 228 e 229 sòmente são considerados militares no caso do art. 9º, nº II, letra\na\n\n.\n\nCAPÍTULO VII\n\nDOS CRIMES\r\nSEXUAIS\n\nEstupro"
+        },
+        {
+          "key": "232",
+          "text": "Art. 232.\n\nConstranger alguém, mediante violência ou grave \r\nameaça, a ter conjunção carnal ou a praticar ou permitir que com ele \r\nse pratique outro ato libidinoso:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 6 (seis) a 10 (dez) anos.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 1º Se da conduta resulta lesão de natureza grave, ou se a vítima é \r\nmenor de 18 (dezoito) e maior de 14 (quatorze) anos:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 8 (oito) a 12 (doze) anos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 2º Se da conduta resulta morte:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 12 (doze) a 30 (trinta) anos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 3º Se a vítima é menor de 14 (quatorze) anos ou, por enfermidade \r\nou deficiência mental, não tem o necessário discernimento para a \r\nprática do ato ou, por qualquer outra causa, não pode oferecer \r\nresistência:\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n(Vide ADI \r\n7555)\n\n\r\nPena – reclusão, de 8 (oito) a 15 (quinze) anos.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "233",
+          "text": "Art. 233.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nCorrupção de menores"
+        },
+        {
+          "key": "234",
+          "text": "Art. 234. Induzir alguém menor de 14 (quatorze) anos a satisfazer a \r\nlascívia de outrem:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nPena – reclusão, de 2 (dois) a 5 (cinco) anos.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nAto de libidinagem\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "235",
+          "text": "Art. 235.\n\nPraticar, ou permitir o militar que com ele se \r\npratique, ato libidinoso em lugar sujeito à administração militar ou \r\nno exercício de função militar:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - detenção, de seis meses\r\na um ano.\n\nPresunção de violência"
+        },
+        {
+          "key": "236",
+          "text": "Art.\n\n236. Presume-se a violência, se a vítima:\n\nI - não é maior de quatorze\r\nanos, salvo fundada suposição contrária do agente;\n\n(Vide ADI \r\n7555)\n\nII - é doente ou deficiente\r\nmental, e o agente conhecia esta circunstância;\n\n(Vide ADI \r\n7555)\n\nIII - não pode, por qualquer\r\noutra causa, oferecer resistência.\n\n(Vide ADI \r\n7555)\n\nAumento de pena"
+        },
+        {
+          "key": "237",
+          "text": "Art.\n\n237. Nos crimes previstos neste capítulo, a pena é\r\nagravada, se o fato é praticado:\n\nI - com o concurso de duas ou\r\nmais pessoas;\n\nII - por oficial, ou por militar\r\nem serviço.\n\nCAPÍTULO VIII\n\nDO ULTRAJE\r\nPÚBLICO AO PUDOR\n\nAto obsceno"
+        },
+        {
+          "key": "238",
+          "text": "Art. 238. Praticar ato obsceno em\r\nlugar sujeito à administração militar:\n\nPena - detenção de três meses\r\na um ano.\n\nParágrafo único. A pena é\r\nagravada, se o fato é praticado por militar em serviço ou por oficial.\n\nEscrito ou objeto obsceno"
+        },
+        {
+          "key": "239",
+          "text": "Art. 239. Produzir, distribuir,\r\nvender, expor à venda, exibir, adquirir ou ter em depósito para o fim de venda,\r\ndistribuição ou exibição, livros, jornais, revistas, escritos, pinturas, gravuras,\r\nestampas, imagens, desenhos ou qualquer outro objeto de caráter obsceno, em lugar sujeito\r\nà administração militar, ou durante o período de exercício ou manobras:\n\nPena - detenção, de seis meses\r\na dois anos.\n\nParágrafo único. Na mesma pena\r\nincorre quem distribui, vende, oferece à venda ou exibe a militares em serviço objeto de\r\ncaráter obsceno.\n\nTÍTULO V\n\nDOS CRIMES\r\nCONTRA O PATRIMÔNIO\n\nCAPÍTULO I\n\nDO FURTO\n\nFurto simples"
+        },
+        {
+          "key": "240",
+          "text": "Art. 240. Subtrair, para si ou\r\npara outrem, coisa alheia móvel:\n\nPena - reclusão, até seis anos.\r\n\nFurto atenuado\n\n§ 1º Se o agente é primário e\r\né de pequeno valor a coisa furtada, o juiz pode substituir a pena de reclusão pela de\r\ndetenção, diminuí-la de um a dois terços, ou considerar a infração como disciplinar.\r\nEntende-se pequeno o valor que não exceda a um décimo da quantia mensal do mais alto\r\nsalário mínimo do país.\n\n§ 2º A atenuação do\r\nparágrafo anterior é igualmente aplicável no caso em que o criminoso, sendo primário,\r\nrestitui a coisa ao seu dono ou repara o dano causado, antes de instaurada a ação penal.\r\n\nEnergia de valor econômico\r\n\n§ 3º Equipara-se à coisa\r\nmóvel a energia elétrica ou qualquer outra que tenha valor econômico.\n\nFurto qualificado\r\n\n§ 4º Se o furto é praticado\r\ndurante a noite:\n\nPena reclusão, de dois a oito\r\nanos.\n\n\r\n§ 5º Se a coisa furtada pertence à Fazenda Pública:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nPena - reclusão, de dois a seis\r\nanos.\n\n§ 6º Se o furto é praticado:\n\nI - com destruição ou\r\nrompimento de obstáculo à subtração da coisa;\n\nII - com abuso de confiança ou\r\nmediante fraude, escalada ou destreza;\n\nIII - com emprêgo de chave\r\nfalsa;\n\nIV - mediante concurso de duas ou\r\nmais pessoas:\n\nPena - reclusão, de três a dez\r\nanos.\n\n\r\n§ 6º-A. Na mesma pena do § 6º deste artigo incorre quem subtrai \r\narma, munição, explosivo ou outro material de uso restrito militar \r\nou que contenha sinal indicativo de pertencer a instituição militar.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\n§ 7º Aos casos previstos nos §§ 4º e 5º são aplicáveis as atenuações \r\na que se referem os §§ 1º e 2º, e aos casos previstos nos §§ 6º e \r\n6º-A é aplicável a atenuação referida no § 2º deste artigo.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nFurto de uso"
+        },
+        {
+          "key": "241",
+          "text": "Art.\n\n241. Se a coisa é subtraída\r\npara o fim de uso momentâneo e, a seguir, vem a ser imediatamente restituída ou reposta\r\nno lugar onde se achava:\n\nPena - detenção, até seis\r\nmeses.\n\n\r\nAumento de pena\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nParágrafo único. A pena é aumentada de metade se a coisa usada é \r\nveículo motorizado, embarcação, aeronave ou arma, e de 1/3 (um \r\nterço) se é animal de sela ou de tiro.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nCAPÍTULO II\n\nDO ROUBO E DA\r\nEXTORSÃO\n\nRoubo simples"
+        },
+        {
+          "key": "242",
+          "text": "Art. 242. Subtrair coisa alheia\r\nmóvel, para si ou para outrem, mediante emprêgo ou ameaça de emprêgo de violência\r\ncontra pessoa, ou depois de havê-la, por qualquer modo, reduzido à impossibilidade de\r\nresistência:\n\nPena - reclusão, de quatro a\r\nquinze anos.\n\n§ 1º Na mesma pena incorre\r\nquem, em seguida à subtração da coisa, emprega ou ameaça empregar violência contra\r\npessoa, a fim de assegurar a impunidade do crime ou a detenção da coisa para si ou para\r\noutrem.\n\nRoubo qualificado\r\n\n§ 2º A pena aumenta-se de um\r\ntêrço até metade:\n\nI - se a violência ou ameaça é\r\nexercida com emprêgo de arma;\n\nII - se há concurso de duas ou\r\nmais pessoas;\n\nIII - se a vítima está em\r\nserviço de transporte de valôres, e o agente conhece tal circunstância;\n\nIV - se a vítima está em\r\nserviço de natureza militar;\n\nV - se é dolosamente causada\r\nlesão grave;\n\nVI - se resulta morte e as\r\ncircunstâncias evidenciam que o agente não quis êsse resultado, nem assumiu o risco de\r\nproduzi-lo.\n\nVII – se a subtração é de veículo automotor que venha a ser \r\ntransportado para outra unidade da Federação ou para o exterior;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nVIII – se o agente mantém a vítima em seu poder, restringindo sua \r\nliberdade;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nIX – se a coisa subtraída é arma, munição, explosivo ou outro \r\nmaterial de uso restrito militar ou que contenha sinal indicativo de \r\npertencer a instituição militar.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nLatrocínio\n\n§ 3º Se, para praticar o roubo, ou\r\nassegurar a impunidade do crime, ou a detenção da coisa, o agente ocasiona dolosamente a\r\nmorte de alguém, a pena será de reclusão, de quinze a trinta anos, sendo irrelevante se\r\na lesão patrimonial deixa de consumar-se. Se há mais de uma vítima dessa violência à\r\npessoa, aplica-se o disposto no art. 79.\n\nExtorsão simples"
+        },
+        {
+          "key": "243",
+          "text": "Art. 243. Obter para si ou para\r\noutrem indevida vantagem econômica, constrangendo alguém, mediante violência ou grave\r\nameaça:\n\na) a praticar ou tolerar que se\r\npratique ato lesivo do seu patrimônio, ou de terceiro;\n\nb) a omitir ato de interêsse do\r\nseu patrimônio, ou de terceiro:\n\nPena - reclusão, de quatro a\r\nquinze anos.\n\nFormas qualificadas\r\n\n§ 1º Aplica-se à extorsão o\r\ndisposto no § 2º do art. 242.\n\n§ 2º Aplica-se à extorsão,\r\npraticada mediante violência, o disposto no § 3º do art. 242.\n\nExtorsão mediante seqüestro"
+        },
+        {
+          "key": "244",
+          "text": "Art. 244. Extorquir ou tentar\r\nextorquir para si ou para outrem, mediante seqüestro de pessoa, indevida vantagem\r\neconômica:\n\nPena - reclusão, de seis a\r\nquinze anos.\n\nFormas qualificadas\r\n\n§ 1º Se o seqüestro dura mais de\r\nvinte e quatro horas, ou se o seqüestrado é menor de dezesseis ou maior de sessenta\r\nanos, ou se o crime é cometido por mais de duas pessoas, a pena é de reclusão de oito a\r\nvinte anos.\n\n§ 2º Se à pessoa seqüestrada, em\r\nrazão de maus tratos ou da natureza do seqüestro, resulta grave sofrimento físico ou\r\nmoral, a pena de reclusão é aumentada de um têrço.\n\n§ 3º Se o agente vem a empregar\r\nviolência contra a pessoa seqüestrada, aplicam-se, correspondentemente, as disposições\r\ndo art. 242, § 2º, ns. V e VI ,e § 3º.\n\n\r\n§ 4º Se o crime é cometido em concurso, o concorrente que o \r\ndenunciar à autoridade, facilitando a libertação do sequestrado, \r\nterá sua pena reduzida de 1/3 (um terço) a 2/3 (dois terços).\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nChantagem"
+        },
+        {
+          "key": "245",
+          "text": "Art. 245. Obter ou tentar obter\r\nde alguém, para si ou para outrem, indevida vantagem econômica, mediante a ameaça de\r\nrevelar fato, cuja divulgação pode lesar a sua reputação ou de pessoa que lhe seja\r\nparticularmente cara:\n\nPena - reclusão, de três a dez\r\nanos.\n\nParágrafo único. Se a ameaça\r\né de divulgação pela imprensa, radiodifusão ou televisão, a pena é agravada.\n\nExtorsão indireta"
+        },
+        {
+          "key": "246",
+          "text": "Art.\n\n246. Obter de alguém, como garantia de dívida, abusando de\r\nsua premente necessidade, documento que pode dar causa a procedimento penal contra o\r\ndevedor ou contra terceiro:\n\nPena - reclusão, até três\r\nanos.\n\nAumento de pena"
+        },
+        {
+          "key": "247",
+          "text": "Art.\n\n247. Nos crimes previstos neste capítulo, a pena é\r\nagravada, se a violência é contra superior, ou militar de serviço.\n\nCAPÍTULO III\n\nDA APROPRIAÇÃO\r\nINDÉBITA\n\nApropriação indébita simples"
+        },
+        {
+          "key": "248",
+          "text": "Art. 248. Apropriar-se de coisa\r\nalheia móvel, de que tem a posse ou detenção:\n\nPena - reclusão, até seis anos.\r\n\nAgravação de pena\r\n\nParágrafo único. A pena é\r\nagravada, se o valor da coisa excede vinte vêzes o maior salário mínimo, ou se o agente\r\nrecebeu a coisa:\n\nI - em depósito necessário;\n\nII - em razão de ofício,\r\nemprêgo ou profissão.\n\nApropriação de coisa havida\r\nacidentalmente"
+        },
+        {
+          "key": "249",
+          "text": "Art. 249. Apropriar-se alguém de\r\ncoisa alheia vinda ao seu poder por êrro, caso fortuito ou fôrça da natureza:\n\nPena - detenção, até um ano.\n\nApropriação de coisa achada\r\n\nParágrafo único. Na mesma pena\r\nincorre quem acha coisa alheia perdida e dela se apropria, total ou parcialmente, deixando\r\nde restituí-la ao dono ou legítimo possuidor, ou de entregá-la à autoridade\r\ncompetente, dentro do prazo de quinze dias."
+        },
+        {
+          "key": "250",
+          "text": "Art.\n\n250. Nos crimes previstos neste capítulo, aplica-se o\r\ndisposto nos §§ 1º e 2º do art. 240.\n\nCAPÍTULO IV\n\nDO ESTELIONATO E\r\nOUTRAS FRAUDES\n\nEstelionato"
+        },
+        {
+          "key": "251",
+          "text": "Art.\n\n251. Obter, para si ou para outrem, vantagem ilícita, em\r\nprejuízo alheio, induzindo ou mantendo alguém em êrro, mediante artifício, ardil ou\r\nqualquer outro meio fraudulento:\n\nPena - reclusão, de dois a sete\r\nanos.\n\n§ 1º Nas mesmas penas incorre\r\nquem:\n\nDisposição de coisa alheia como\r\nprópria\n\nI - vende, permuta, dá em\r\npagamento, em locação ou em garantia, coisa alheia como própria;\n\nAlienação ou oneração\r\nfraudulenta de coisa própria\n\nII - vende, permuta, dá em\r\npagamento ou em garantia coisa própria inalienável, gravada de ônus ou litigiosa, ou\r\nimóvel que prometeu vender a terceiro, mediante pagamento em prestações, silenciando\r\nsôbre qualquer dessas circunstâncias;\n\nDefraudação de penhor\r\n\nIII - defrauda, mediante\r\nalienação não consentida pelo credor ou por outro modo, a garantia pignoratícia,\r\nquando tem a posse do objeto empenhado;\n\nFraude na entrega de coisa\r\n\nIV - defrauda substância,\r\nqualidade ou quantidade de coisa que entrega a adquirente;\n\nFraude no pagamento de cheque\r\n\nV - defrauda de qualquer modo o\r\npagamento de cheque que emitiu a favor de alguém.\n\n§ 2º Os crimes previstos nos ns. I\r\na V do parágrafo anterior são considerados militares sòmente nos casos do art. 9º, nº\r\nII, letras\na\n\ne\ne\n\n.\n\nAgravação de pena\r\n\n§ 3º A pena é agravada, se o\r\ncrime é cometido em detrimento da administração militar.\n\nAbuso de pessoa"
+        },
+        {
+          "key": "252",
+          "text": "Art.\n\n252. Abusar, em proveito próprio ou alheio, no exercício\r\nde função, em unidade, repartição ou estabelecimento militar, da necessidade, paixão\r\nou inexperiência, ou da doença ou deficiência mental de outrem, induzindo-o à prática\r\nde ato que produza efeito jurídico, em prejuízo próprio ou de terceiro, ou em\r\ndetrimento da administração militar:\n\nPena - reclusão, de dois a seis\r\nanos."
+        },
+        {
+          "key": "253",
+          "text": "Art.\n\n253. Nos crimes previstos neste capítulo, aplica-se o\r\ndisposto nos §§ 1º e 2º do art. 240.\n\nCAPÍTULO V\n\nDA RECEPTAÇÃO\n\nReceptação"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 21,
+  "label": "ECA — arts. 194 a 197",
+  "articleCount": 4,
+  "sections": [
+    {
+      "prefix": "L8069",
+      "title": "Estatuto da Criança e do Adolescente",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm",
+      "range": "arts. 194 a 197",
+      "articles": [
+        {
+          "key": "194",
+          "text": "Art. 194. O procedimento para imposição de penalidade administrativa por infração\r\nàs normas de proteção à criança e ao adolescente terá início por representação do\r\nMinistério Público, ou do Conselho Tutelar, ou auto de infração elaborado por servidor\r\nefetivo ou voluntário credenciado, e assinado por duas testemunhas, se possível.\n\n§ 1º No procedimento iniciado com o auto de infração, poderão ser usadas fórmulas\r\nimpressas, especificando-se a natureza e as circunstâncias da infração.\n\n§ 2º Sempre que possível, à verificação da infração seguir-se-á a lavratura do\r\nauto, certificando-se, em caso contrário, dos motivos do retardamento."
+        },
+        {
+          "key": "195",
+          "text": "Art. 195. O requerido terá prazo de dez dias para apresentação de defesa, contado da\r\ndata da intimação, que será feita:\n\nI - pelo autuante, no próprio auto, quando este for lavrado na presença do requerido;\n\nII - por oficial de justiça ou funcionário legalmente habilitado, que entregará\r\ncópia do auto ou da representação ao requerido, ou a seu representante legal, lavrando\r\ncertidão;\n\nIII - por via postal, com aviso de recebimento, se não for encontrado o requerido ou\r\nseu representante legal;\n\nIV - por edital, com prazo de trinta dias, se incerto ou não sabido o paradeiro do\r\nrequerido ou de seu representante legal."
+        },
+        {
+          "key": "196",
+          "text": "Art. 196. Não sendo apresentada a defesa no prazo legal, a autoridade judiciária\r\ndará vista dos autos do Ministério Público, por cinco dias, decidindo em igual prazo."
+        },
+        {
+          "key": "197",
+          "text": "Art. 197. Apresentada a defesa, a autoridade judiciária procederá na conformidade do\r\nartigo anterior, ou, sendo necessário, designará audiência de instrução e julgamento.\n\n(Incluído \r\npela Lei nº 12.010, de 2009)\n\nVigência\n\nParágrafo único. Colhida a prova oral, manifestar-se-ão sucessivamente o Ministério\r\nPúblico e o procurador do requerido, pelo tempo de vinte minutos para cada um,\r\nprorrogável por mais dez, a critério da autoridade judiciária, que em seguida\r\nproferirá sentença.\n\nSeção VIII\n\n(Incluída \r\npela Lei \r\nnº 12.010, de 2009)\n\nVigência\n\nDa Habilitação de Pretendentes à Adoção"
+        }
+      ]
+    }
+  ]
+}

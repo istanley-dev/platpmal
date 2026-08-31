@@ -1,0 +1,70 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 2,
+  "day": 3,
+  "label": "CPM — arts. 13 a 25",
+  "articleCount": 13,
+  "sections": [
+    {
+      "prefix": "CPM",
+      "title": "Código Penal Militar",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001compilado.htm",
+      "range": "arts. 13 a 25",
+      "articles": [
+        {
+          "key": "13",
+          "text": "Art.\n\n13. O militar da reserva, ou reformado, conserva as\r\nresponsabilidades e prerrogativas do pôsto ou graduação, para o efeito da aplicação\r\nda lei penal militar, quando pratica ou contra êle é praticado crime militar.\n\nDefeito de incorporação ou de matrícula\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)"
+        },
+        {
+          "key": "14",
+          "text": "Art. 14.\n\nO defeito do ato de incorporação ou de matrícula não \r\nexclui a aplicação da lei penal militar, salvo se alegado ou \r\nconhecido antes da prática do crime.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nTempo de guerra"
+        },
+        {
+          "key": "15",
+          "text": "Art.\n\n15. O tempo de guerra, para os efeitos da aplicação da lei\r\npenal militar, começa com a declaração ou o reconhecimento do estado de guerra, ou com\r\no decreto de mobilização se nêle estiver compreendido aquêle reconhecimento; e termina\r\nquando ordenada a cessação das hostilidades.\n\nContagem de prazo"
+        },
+        {
+          "key": "16",
+          "text": "Art.\n\n16. No cômputo dos prazos inclui-se o dia do comêço.\r\nContam-se os dias, os meses e os anos pelo calendário comum.\n\nLegislação especial.\r\nSalário-mínimo"
+        },
+        {
+          "key": "17",
+          "text": "Art.\n\n17. As regras gerais dêste Código aplicam-se aos fatos\r\nincriminados por lei penal militar especial, se esta não dispõe de modo diverso. Para os\r\nefeitos penais, salário mínimo é o maior mensal vigente no país, ao tempo da\r\nsentença.\n\nCrimes praticados em prejuízo de\r\npaís aliado"
+        },
+        {
+          "key": "18",
+          "text": "Art.\n\n18. Ficam sujeitos às disposições dêste Código os\r\ncrimes praticados em prejuízo de país em guerra contra país inimigo do Brasil:\n\nI - se o crime é praticado por\r\nbrasileiro;\n\nII - se o crime é praticado no\r\nterritório nacional, ou em território estrangeiro, militarmente ocupado por fôrça\r\nbrasileira, qualquer que seja o agente.\n\nInfrações disciplinares"
+        },
+        {
+          "key": "19",
+          "text": "Art.\n\n19. Êste Código não compreende as infrações dos\r\nregulamentos disciplinares.\n\nCrimes praticados em tempo de\r\nguerra"
+        },
+        {
+          "key": "20",
+          "text": "Art.\n\n20. Aos crimes praticados em tempo de guerra, salvo\r\ndisposição especial, aplicam-se as penas cominadas para o tempo de paz, com o aumento de\r\num têrço.\n\nAssemelhado"
+        },
+        {
+          "key": "21",
+          "text": "Art. 21.\n\n(Revogado pela Lei nº \r\n14.688, de 2023)\n\r\n\nVigência\n\nPessoa considerada militar"
+        },
+        {
+          "key": "22",
+          "text": "Art. 22. É militar, para o efeito da aplicação deste Código, \r\nqualquer pessoa que, em tempo de paz ou de guerra, seja incorporada \r\na instituições militares ou nelas matriculada, para servir em posto \r\nou em graduação ou em regime de sujeição à disciplina militar.\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\nEquiparação a comandante"
+        },
+        {
+          "key": "23",
+          "text": "Art.\n\n23. Equipara-se ao comandante, para o efeito da aplicação\r\nda lei penal militar, tôda autoridade com função de direção.\n\nConceito de superior"
+        },
+        {
+          "key": "24",
+          "text": "Art. \r\n24. Considera\n-se \r\nsuperior para fins de aplicação da lei penal militar:\n\n(Redação dada \r\npela Lei nº 14.688, de 2023)\n\n\r\nI – o militar que ocupa nível hierárquico, posto ou graduação \r\nsuperiores, conforme a antiguidade, nos termos da \r\n\nLei nº 6.880, de 9 \r\nde dezembro de 1980\n(Estatuto dos Militares), e de leis das unidades \r\nda Federação que regulam o regime jurídico de seus militares;\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nII – o militar que, em virtude da função, exerce autoridade sobre \r\noutro de igual posto ou graduação.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\n\r\nParágrafo único. O militar sobre o qual se exerce autoridade nas \r\ncondições descritas nos incisos I e II do\ncaput\ndeste artigo \r\né considerado inferior hierárquico para fins de aplicação da lei \r\npenal militar.\n\n(Incluído \r\npela Lei nº 14.688, de 2023)\n\nCrime praticado em presença do\r\ninimigo"
+        },
+        {
+          "key": "25",
+          "text": "Art.\n\n25. Diz-se crime praticado em presença do inimigo, quando o\r\nfato ocorre em zona de efetivas operações militares, ou na iminência ou em situação\r\nde hostilidade.\n\nReferência a\r\n\"brasileiro\" ou \"nacional\""
+        }
+      ]
+    }
+  ]
+}

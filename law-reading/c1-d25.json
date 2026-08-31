@@ -1,0 +1,174 @@
+{
+  "version": 5,
+  "format": "static-integral-law-bank",
+  "cycle": 1,
+  "day": 25,
+  "label": "Lei 9.099/1995 — arts. 60 a 97",
+  "articleCount": 39,
+  "sections": [
+    {
+      "prefix": "L9099",
+      "title": "Lei 9.099/1995",
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm",
+      "range": "arts. 60 a 97",
+      "articles": [
+        {
+          "key": "60",
+          "text": "Art. 60. O Juizado Especial Criminal, provido por \r\njuízes togados ou togados e leigos, tem competência para a conciliação, o \r\njulgamento e a execução das infrações penais de menor potencial ofensivo, \r\nrespeitadas as regras de conexão e continência.\n(Redação \r\ndada pela Lei nº 11.313, de 2006)\n\nParágrafo único. Na reunião de processos, perante o juízo comum ou o tribunal do \r\njúri, decorrentes da aplicação das regras de conexão e continência, \r\nobservar-se-ão os institutos da transação penal e da composição dos danos civis. \r\n\n(Incluído pela Lei nº \r\n11.313, de 2006)"
+        },
+        {
+          "key": "61",
+          "text": "Art. 61. Consideram-se infrações penais de menor \r\npotencial ofensivo, para os efeitos desta Lei, as contravenções penais e os \r\ncrimes a que a lei comine pena máxima não superior a 2 (dois) anos, cumulada ou \r\nnão com multa.\n(Redação dada \r\npela Lei nº 11.313, de 2006)"
+        },
+        {
+          "key": "62",
+          "text": "Art. 62. O \r\nprocesso perante o Juizado Especial orientar-se-á pelos critérios da oralidade, \r\nsimplicidade, informalidade, economia processual e celeridade, objetivando, \r\nsempre que possível, a reparação dos danos sofridos pela vítima e a aplicação de \r\npena não privativa de liberdade.\n\r\n\n(Redação dada \r\npela Lei nº 13.603, de 2018)\n\nSeção I\n\nDa Competência e dos Atos Processuais"
+        },
+        {
+          "key": "63",
+          "text": "Art. 63. A competência do Juizado será\r\ndeterminada pelo lugar em que foi praticada a infração penal."
+        },
+        {
+          "key": "64",
+          "text": "Art. 64. Os atos processuais serão públicos e\r\npoderão realizar-se em horário noturno e em qualquer dia da semana, conforme dispuserem\r\nas normas de organização judiciária."
+        },
+        {
+          "key": "65",
+          "text": "Art. 65. Os atos processuais serão válidos\r\nsempre que preencherem as finalidades para as quais foram realizados, atendidos os\r\ncritérios indicados no art. 62 desta Lei.\n\n§\r\n1º Não se pronunciará qualquer nulidade sem que tenha havido prejuízo.\n\n§\r\n2º A prática de atos processuais em outras comarcas poderá ser solicitada por qualquer\r\nmeio hábil de comunicação.\n\n§\r\n3º Serão objeto de registro escrito exclusivamente os atos havidos por essenciais. Os\r\natos realizados em audiência de instrução e julgamento poderão ser gravados em fita\r\nmagnética ou equivalente."
+        },
+        {
+          "key": "66",
+          "text": "Art. 66. A citação será pessoal e far-se-á\r\nno próprio Juizado, sempre que possível, ou por mandado.\n\nParágrafo único. Não encontrado o acusado\r\npara ser citado, o Juiz encaminhará as peças existentes ao Juízo comum para adoção do\r\nprocedimento previsto em lei."
+        },
+        {
+          "key": "67",
+          "text": "Art. 67. A intimação far-se-á por\r\ncorrespondência, com aviso de recebimento pessoal ou, tratando-se de pessoa jurídica ou\r\nfirma individual, mediante entrega ao encarregado da recepção, que será\r\nobrigatoriamente identificado, ou, sendo necessário, por oficial de justiça,\r\nindependentemente de mandado ou carta precatória, ou ainda por qualquer meio idôneo de\r\ncomunicação.\n\nParágrafo único. Dos atos praticados em\r\naudiência considerar-se-ão desde logo cientes as partes, os interessados e defensores."
+        },
+        {
+          "key": "68",
+          "text": "Art. 68. Do ato de intimação do autor do fato\r\ne do mandado de citação do acusado, constará a necessidade de seu comparecimento\r\nacompanhado de advogado, com a advertência de que, na sua falta, ser-lhe-á designado\r\ndefensor público.\n\nSeção II\n\nDa Fase Preliminar"
+        },
+        {
+          "key": "69",
+          "text": "Art. 69. A autoridade policial que tomar conhecimento da ocorrência lavrará\r\ntermo circunstanciado e o encaminhará imediatamente ao Juizado, com o autor do fato e a\r\nvítima, providenciando-se as requisições dos exames periciais necessários.\n\nParágrafo único. Ao autor do fato que, após a lavratura do termo,\r\nfor imediatamente encaminhado ao juizado ou assumir o compromisso de a ele comparecer,\r\nnão se imporá prisão em flagrante, nem se exigirá fiança. Em caso de violência\r\ndoméstica, o juiz poderá determinar, como medida de cautela, seu afastamento do lar,\r\ndomicílio ou local de convivência com a vítima.\n(Redação\r\ndada pela Lei nº 10.455, de 13.5.2002)\n)"
+        },
+        {
+          "key": "70",
+          "text": "Art. 70. Comparecendo o autor do fato e a\r\nvítima, e não sendo possível a realização imediata da audiência preliminar, será\r\ndesignada data próxima, da qual ambos sairão cientes."
+        },
+        {
+          "key": "71",
+          "text": "Art. 71. Na falta do comparecimento de qualquer dos envolvidos, a Secretaria\r\nprovidenciará sua intimação e, se for o caso, a do responsável civil, na forma dos\r\narts. 67 e 68 desta Lei."
+        },
+        {
+          "key": "72",
+          "text": "Art. 72. Na audiência preliminar, presente o\r\nrepresentante do Ministério Público, o autor do fato e a vítima e, se possível, o\r\nresponsável civil, acompanhados por seus advogados, o Juiz esclarecerá sobre a\r\npossibilidade da composição dos danos e da aceitação da proposta de aplicação\r\nimediata de pena não privativa de liberdade."
+        },
+        {
+          "key": "73",
+          "text": "Art. 73. A conciliação será conduzida pelo\r\nJuiz ou por conciliador sob sua orientação.\n\nParágrafo único. Os conciliadores são\r\nauxiliares da Justiça, recrutados, na forma da lei local, preferentemente entre\r\nbacharéis em Direito, excluídos os que exerçam funções na administração da Justiça\r\nCriminal."
+        },
+        {
+          "key": "74",
+          "text": "Art. 74. A composição dos danos civis será\r\nreduzida a escrito e, homologada pelo Juiz mediante sentença irrecorrível, terá\r\neficácia de título a ser executado no juízo civil competente.\n\nParágrafo único. Tratando-se de ação penal\r\nde iniciativa privada ou de ação penal pública condicionada à representação, o\r\nacordo homologado acarreta a renúncia ao direito de queixa ou representação."
+        },
+        {
+          "key": "75",
+          "text": "Art. 75. Não obtida a composição dos danos\r\ncivis, será dada imediatamente ao ofendido a oportunidade de exercer o direito de\r\nrepresentação verbal, que será reduzida a termo.\n\nParágrafo único. O não oferecimento da\r\nrepresentação na audiência preliminar não implica decadência do direito, que poderá\r\nser exercido no prazo previsto em lei."
+        },
+        {
+          "key": "76",
+          "text": "Art. 76. Havendo representação ou tratando-se\r\nde crime de ação penal pública incondicionada, não sendo caso de arquivamento, o\r\nMinistério Público poderá propor a aplicação imediata de pena restritiva de direitos\r\nou multas, a ser especificada na proposta.\n\n§\r\n1º Nas hipóteses de ser a pena de multa a única aplicável, o Juiz poderá reduzi-la\r\naté a metade.\n\n§\r\n2º Não se admitirá a proposta se ficar comprovado:\n\nI\r\n- ter sido o autor da infração condenado, pela prática de crime, à pena privativa de\r\nliberdade, por sentença definitiva;\n\nII\r\n- ter sido o agente beneficiado anteriormente, no prazo de cinco anos, pela aplicação de\r\npena restritiva ou multa, nos termos deste artigo;\n\nIII - não indicarem os antecedentes, a conduta\r\nsocial e a personalidade do agente, bem como os motivos e as circunstâncias, ser\r\nnecessária e suficiente a adoção da medida.\n\n§\r\n3º Aceita a proposta pelo autor da infração e seu defensor, será submetida à\r\napreciação do Juiz.\n\n§\r\n4º Acolhendo a proposta do Ministério Público aceita pelo autor da infração, o Juiz\r\naplicará a pena restritiva de direitos ou multa, que não importará em reincidência,\r\nsendo registrada apenas para impedir novamente o mesmo benefício no prazo de cinco anos.\n\n§\r\n5º Da sentença prevista no parágrafo anterior caberá a apelação referida no art. 82\r\ndesta Lei.\n\n§\r\n6º A imposição da sanção de que trata o § 4º deste artigo não constará de\r\ncertidão de antecedentes criminais, salvo para os fins previstos no mesmo dispositivo, e\r\nnão terá efeitos civis, cabendo aos interessados propor ação cabível no juízo\r\ncível.\n\nSeção III\n\nDo Procedimento Sumariíssimo"
+        },
+        {
+          "key": "77",
+          "text": "Art. 77. Na ação penal de iniciativa\r\npública, quando não houver aplicação de pena, pela ausência do autor do fato, ou pela\r\nnão ocorrência da hipótese prevista no art. 76 desta Lei, o Ministério Público\r\noferecerá ao Juiz, de imediato, denúncia oral, se não houver necessidade de\r\ndiligências imprescindíveis.\n\n§\r\n1º Para o oferecimento da denúncia, que será elaborada com base no termo de ocorrência\r\nreferido no art. 69 desta Lei, com dispensa do inquérito policial, prescindir-se-á do\r\nexame do corpo de delito quando a materialidade do crime estiver aferida por boletim\r\nmédico ou prova equivalente.\n\n§\r\n2º Se a complexidade ou circunstâncias do caso não permitirem a formulação da\r\ndenúncia, o Ministério Público poderá requerer ao Juiz o encaminhamento das peças\r\nexistentes, na forma do parágrafo único do art. 66 desta Lei.\n\n§\r\n3º Na ação penal de iniciativa do ofendido poderá ser oferecida queixa oral, cabendo\r\nao Juiz verificar se a complexidade e as circunstâncias do caso determinam a adoção das\r\nprovidências previstas no parágrafo único do art. 66 desta Lei."
+        },
+        {
+          "key": "78",
+          "text": "Art. 78. Oferecida a denúncia ou queixa, será\r\nreduzida a termo, entregando-se cópia ao acusado, que com ela ficará citado e\r\nimediatamente cientificado da designação de dia e hora para a audiência de instrução\r\ne julgamento, da qual também tomarão ciência o Ministério Público, o ofendido, o\r\nresponsável civil e seus advogados.\n\n§\r\n1º Se o acusado não estiver presente, será citado na forma dos arts. 66 e 68 desta Lei\r\ne cientificado da data da audiência de instrução e julgamento, devendo a ela trazer\r\nsuas testemunhas ou apresentar requerimento para intimação, no mínimo cinco dias antes\r\nde sua realização.\n\n§\r\n2º Não estando presentes o ofendido e o responsável civil, serão intimados nos termos\r\ndo art. 67 desta Lei para comparecerem à audiência de instrução e julgamento.\n\n§\r\n3º As testemunhas arroladas serão intimadas na forma prevista no art. 67 desta Lei."
+        },
+        {
+          "key": "79",
+          "text": "Art. 79. No dia e hora designados para a\r\naudiência de instrução e julgamento, se na fase preliminar não tiver havido\r\npossibilidade de tentativa de conciliação e de oferecimento de proposta pelo Ministério\r\nPúblico, proceder-se-á nos termos dos arts. 72, 73, 74 e 75 desta Lei."
+        },
+        {
+          "key": "80",
+          "text": "Art. 80. Nenhum ato será adiado, determinando\r\no Juiz, quando imprescindível, a condução coercitiva de quem deva comparecer."
+        },
+        {
+          "key": "81",
+          "text": "Art. 81. Aberta a audiência, será dada a\r\npalavra ao defensor para responder à acusação, após o que o Juiz receberá, ou não, a\r\ndenúncia ou queixa; havendo recebimento, serão ouvidas a vítima e as testemunhas de\r\nacusação e defesa, interrogando-se a seguir o acusado, se presente, passando-se\r\nimediatamente aos debates orais e à prolação da sentença.\n\n§\r\n1º Todas as provas serão produzidas na audiência de instrução e julgamento, podendo o\r\nJuiz limitar ou excluir as que considerar excessivas, impertinentes ou protelatórias.\n\n§ 1º-A. Durante a audiência, todas as partes e demais \r\nsujeitos processuais presentes no ato deverão respeitar a dignidade da vítima, \r\nsob pena de responsabilização civil, penal e administrativa, cabendo ao juiz \r\ngarantir o cumprimento do disposto neste artigo, vedadas: \r\n\n(Incluído pela Lei nº \r\n14.245, de 2021)\n\nI - a \r\nmanifestação sobre circunstâncias ou elementos alheios aos fatos objeto de \r\napuração nos autos;\n\n(Incluído pela Lei nº \r\n14.245, de 2021)\n\nII - a \r\nutilização de linguagem, de informações ou de material que ofendam a dignidade \r\nda vítima ou de testemunhas.\n\n(Incluído pela Lei nº \r\n14.245, de 2021)\n\n§\r\n2º De todo o ocorrido na audiência será lavrado termo, assinado pelo Juiz e pelas\r\npartes, contendo breve resumo dos fatos relevantes ocorridos em audiência e a sentença.\n\n§\r\n3º A sentença, dispensado o relatório, mencionará os elementos de convicção do Juiz."
+        },
+        {
+          "key": "82",
+          "text": "Art. 82. Da decisão de rejeição da denúncia\r\nou queixa e da sentença caberá apelação, que poderá ser julgada por turma composta de\r\ntrês Juízes em exercício no primeiro grau de jurisdição, reunidos na sede do Juizado.\n\n§\r\n1º A apelação será interposta no prazo de dez dias, contados da ciência da sentença\r\npelo Ministério Público, pelo réu e seu defensor, por petição escrita, da qual\r\nconstarão as razões e o pedido do recorrente.\n\n§\r\n2º O recorrido será intimado para oferecer resposta escrita no prazo de dez dias.\n\n§\r\n3º As partes poderão requerer a transcrição da gravação da fita magnética a que\r\nalude o § 3º do art. 65 desta Lei.\n\n§\r\n4º As partes serão intimadas da data da sessão de julgamento pela imprensa.\n\n§\r\n5º Se a sentença for confirmada pelos próprios fundamentos, a súmula do julgamento\r\nservirá de acórdão."
+        },
+        {
+          "key": "83",
+          "text": "Art. 83. Cabem embargos de declaração quando, em sentença ou acórdão, \r\nhouver obscuridade, contradição ou omissão. \r\n\n(Redação dada pela Lei nº 13.105, de 2015)\n\r\n\n(Vigência)\n\n§\r\n1º Os embargos de declaração serão opostos por escrito ou oralmente, no prazo de cinco\r\ndias, contados da ciência da decisão.\n\n§ 2\no\nOs embargos de declaração interrompem o prazo \r\npara a interposição de recurso. \r\n\n(Redação dada pela Lei nº 13.105, de 2015)\n\r\n\n(Vigência)\n\n§\r\n3º Os erros materiais podem ser corrigidos de ofício.\n\nSeção IV\n\nDa Execução"
+        },
+        {
+          "key": "84",
+          "text": "Art. 84. Aplicada exclusivamente pena de multa,\r\nseu cumprimento far-se-á mediante pagamento na Secretaria do Juizado.\n\nParágrafo único. Efetuado o pagamento, o Juiz\r\ndeclarará extinta a punibilidade, determinando que a condenação não fique constando\r\ndos registros criminais, exceto para fins de requisição judicial."
+        },
+        {
+          "key": "85",
+          "text": "Art. 85. Não efetuado o pagamento de multa,\r\nserá feita a conversão em pena privativa da liberdade, ou restritiva de direitos, nos\r\ntermos previstos em lei."
+        },
+        {
+          "key": "86",
+          "text": "Art. 86. A execução das penas privativas de\r\nliberdade e restritivas de direitos, ou de multa cumulada com estas, será processada\r\nperante o órgão competente, nos termos da lei.\n\nSeção V\n\nDas Despesas Processuais"
+        },
+        {
+          "key": "87",
+          "text": "Art. 87. Nos casos de homologação do acordo\r\ncivil e aplicação de pena restritiva de direitos ou multa (arts. 74 e 76, § 4º), as\r\ndespesas processuais serão reduzidas, conforme dispuser lei estadual.\n\nSeção VI\n\nDisposições Finais"
+        },
+        {
+          "key": "88",
+          "text": "Art. 88. Além das hipóteses do Código Penal\r\ne da legislação especial, dependerá de representação a ação penal relativa aos\r\ncrimes de lesões corporais leves e lesões culposas."
+        },
+        {
+          "key": "89",
+          "text": "Art. 89. Nos crimes em que a pena mínima\r\ncominada for igual ou inferior a um ano, abrangidas ou não por esta Lei, o Ministério\r\nPúblico, ao oferecer a denúncia, poderá propor a suspensão do processo, por dois a\r\nquatro anos, desde que o acusado não esteja sendo processado ou não tenha sido condenado\r\npor outro crime, presentes os demais requisitos que autorizariam a suspensão condicional\r\nda pena (\nart. 77 do Código Penal\n).\n\n§\r\n1º Aceita a proposta pelo acusado e seu defensor, na presença do Juiz, este, recebendo a\r\ndenúncia, poderá suspender o processo, submetendo o acusado a período de prova, sob as\r\nseguintes condições:\n\nI\r\n- reparação do dano, salvo impossibilidade de fazê-lo;\n\nII\r\n- proibição de freqüentar determinados lugares;\n\nIII - proibição de ausentar-se da comarca\r\nonde reside, sem autorização do Juiz;\n\nIV\r\n- comparecimento pessoal e obrigatório a juízo, mensalmente, para informar e justificar\r\nsuas atividades.\n\n§\r\n2º O Juiz poderá especificar outras condições a que fica subordinada a suspensão,\r\ndesde que adequadas ao fato e à situação pessoal do acusado.\n\n§\r\n3º A suspensão será revogada se, no curso do prazo, o beneficiário vier a ser\r\nprocessado por outro crime ou não efetuar, sem motivo justificado, a reparação do dano.\n\n§\r\n4º A suspensão poderá ser revogada se o acusado vier a ser processado, no curso do\r\nprazo, por contravenção, ou descumprir qualquer outra condição imposta.\n\n§\r\n5º Expirado o prazo sem revogação, o Juiz declarará extinta a punibilidade.\n\n§\r\n6º Não correrá a prescrição durante o prazo de suspensão do processo.\n\n§\r\n7º Se o acusado não aceitar a proposta prevista neste artigo, o processo prosseguirá em\r\nseus ulteriores termos."
+        },
+        {
+          "key": "90",
+          "text": "Art. 90. As disposições desta Lei não se\r\naplicam aos processos penais cuja instrução já estiver iniciada. \r\n\n(Vide ADIN nº 1.719-9)"
+        },
+        {
+          "key": "90A",
+          "text": "Art. 90-A. As disposições desta Lei não se aplicam no\r\nâmbito da Justiça Militar.\n(Artigo incluído pela Lei nº 9.839, de\r\n27.9.1999)"
+        },
+        {
+          "key": "91",
+          "text": "Art. 91. Nos casos em que esta Lei passa a\r\nexigir representação para a propositura da ação penal pública, o ofendido ou seu\r\nrepresentante legal será intimado para oferecê-la no prazo de trinta dias, sob pena de\r\ndecadência."
+        },
+        {
+          "key": "92",
+          "text": "Art. 92. Aplicam-se subsidiariamente as\r\ndisposições dos Códigos Penal e de Processo Penal, no que não forem incompatíveis com\r\nesta Lei.\n\nCapítulo IV\n\nDisposições Finais Comuns"
+        },
+        {
+          "key": "93",
+          "text": "Art. 93. Lei Estadual disporá sobre o Sistema\r\nde Juizados Especiais Cíveis e Criminais, sua organização, composição e competência."
+        },
+        {
+          "key": "94",
+          "text": "Art. 94. Os serviços de cartório poderão ser\r\nprestados, e as audiências realizadas fora da sede da Comarca, em bairros ou cidades a\r\nela pertencentes, ocupando instalações de prédios públicos, de acordo com audiências\r\npreviamente anunciadas."
+        },
+        {
+          "key": "95",
+          "text": "Art. 95. Os Estados, Distrito Federal e\r\nTerritórios criarão e instalarão os Juizados Especiais no prazo de seis meses, a contar\r\nda vigência desta Lei.\n\nParágrafo único. No prazo de 6 (seis) meses, contado \r\nda publicação desta Lei, serão criados e instalados os Juizados Especiais \r\nItinerantes, que deverão dirimir, prioritariamente, os conflitos existentes nas \r\náreas rurais ou nos locais de menor concentração populacional. \r\n\n(Redação dada pela Lei nº 12.726, \r\nde 2012)"
+        },
+        {
+          "key": "96",
+          "text": "Art. 96. Esta Lei entra em vigor no prazo de\r\nsessenta dias após a sua publicação."
+        },
+        {
+          "key": "97",
+          "text": "Art. 97. Ficam revogadas a \r\n\nLei nº 4.611, de 2\r\nde abril de 1965\ne a\nLei nº 7.244, de 7 de novembro de 1984\n.\n\n\r\nBrasília, 26 de setembro de 1995; 174º da\r\nIndependência e 107º da República.\n\nFERNANDO HENRIQUE CARDOSO\n\nNelson A. Jobim\n\nEste texto não substitui o\r\npublicado no DOU de 27.9.1995\n\n*"
+        }
+      ]
+    }
+  ]
+}
