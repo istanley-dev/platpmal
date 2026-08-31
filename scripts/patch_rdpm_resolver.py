@@ -7,11 +7,15 @@ s = path.read_text(encoding="utf-8")
 
 # Article suffixes such as 197-A are attached to the number. A spaced dash in
 # "Art. 25 - O..." starts the article body and must never become suffix "O".
-old_art = r'ART_RE = re.compile(r"(?mi)^[ \\t]*(?:Art\\.|Artigo)[ \\t]*(\\d+)(?:[º°oO])?(?:[ \\t]*[-–—‑][ \\t]*([A-Za-z]{1,3}))?[ \\t]*(?:[.º°])?(?=[ \\t\\n])")'
-new_art = r'ART_RE = re.compile(r"(?mi)^[ \\t]*(?:Art\\.|Artigo)[ \\t]*(\\d+)(?:\\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \\t\\n.]|$)")'
-if old_art not in s:
-    raise SystemExit("ART_RE original não encontrado; patch abortado")
-s = s.replace(old_art, new_art, 1)
+# Replace the complete source line instead of trying to reproduce its escaped
+# regex text character-for-character.
+target_art_line = r'''ART_RE = re.compile(r"(?mi)^[ \t]*(?:Art\.|Artigo)[ \t]*(\d+)(?:\.?[º°oO])?(?:[-–—‑]([A-Za-z]{1,3}))?(?=[ \t\n.]|$)")'''
+lines = s.splitlines()
+art_indexes = [i for i, line in enumerate(lines) if line.startswith("ART_RE = re.compile(")]
+if len(art_indexes) != 1:
+    raise SystemExit(f"ART_RE source lines={len(art_indexes)}; expected 1")
+lines[art_indexes[0]] = target_art_line
+s = "\n".join(lines) + ("\n" if s.endswith("\n") else "")
 
 new_block = r'''def resolve_rdpm() -> tuple[str,str]:
     # Official PMAL Sislegis record for Decreto Estadual 37.042/1996 (RDPMAL).
@@ -73,4 +77,4 @@ ns, n = re.subn(pat, lambda _m: new_block, s, count=1, flags=re.S)
 if n != 1:
     raise SystemExit(f"resolver patch count={n}; expected 1")
 path.write_text(ns, encoding="utf-8")
-print("RDPM resolver + article header parser patched (v4)")
+print("RDPM resolver + article header parser patched (v5)")
