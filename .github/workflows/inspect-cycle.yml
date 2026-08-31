@@ -8,6 +8,9 @@ on:
       - 'scripts/fix_law_parser_v21.py'
       - 'scripts/apply_dso_law_cycles.py'
       - 'scripts/audit_dso_law_cycles.py'
+      - 'scripts/generate_full_law_reading.py'
+      - 'scripts/apply_full_law_reader.py'
+      - 'scripts/audit_full_law_reader.py'
       - 'scripts/audit_law_runtime.py'
       - 'scripts/find_orphan_question_candidates.py'
       - 'scripts/summarize_orphan_candidates.py'
@@ -22,6 +25,9 @@ on:
       - 'scripts/fix_law_parser_v21.py'
       - 'scripts/apply_dso_law_cycles.py'
       - 'scripts/audit_dso_law_cycles.py'
+      - 'scripts/generate_full_law_reading.py'
+      - 'scripts/apply_full_law_reader.py'
+      - 'scripts/audit_full_law_reader.py'
       - 'scripts/audit_law_runtime.py'
       - 'scripts/find_orphan_question_candidates.py'
       - 'scripts/summarize_orphan_candidates.py'
@@ -49,6 +55,14 @@ jobs:
         run: python3 scripts/fix_law_parser_v21.py
       - name: Apply DSO law reading cycles
         run: python3 scripts/apply_dso_law_cycles.py
+      - name: Install full law reader dependencies
+        run: pip install requests beautifulsoup4 pypdf
+      - name: Generate integral DSO law reading
+        run: python3 scripts/generate_full_law_reading.py
+      - name: Apply integral law reader UI
+        run: python3 scripts/apply_full_law_reader.py
+      - name: Audit integral law reader
+        run: python3 scripts/audit_full_law_reader.py
       - name: Audit DSO law reading cycles
         run: python3 scripts/audit_dso_law_cycles.py
       - name: Runtime-audit actual parser against full bank
@@ -67,8 +81,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html law-cycle-audit.json law-bank-runtime-audit.json law-bank-orphan-candidates.json law-bank-strong-candidates.json law-bank-gap-classification.json question-lookup-usage.txt law-review-functions.txt
+          git add index.html law-reading/ law-reading-audit.json law-cycle-audit.json law-bank-runtime-audit.json law-bank-orphan-candidates.json law-bank-strong-candidates.json law-bank-gap-classification.json question-lookup-usage.txt law-review-functions.txt
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "feat: apply DSO law reading cycles and coverage"
+          git commit -m "feat: add integral DSO law reading to bank"
           BRANCH="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
           git push origin HEAD:"$BRANCH"
