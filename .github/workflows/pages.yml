@@ -1,4 +1,5 @@
 name: Publicar no GitHub Pages
+# Mantido explícito para permitir republicação segura após commits gerados por workflows.
 
 on:
   push:
