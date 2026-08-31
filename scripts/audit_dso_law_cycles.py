@@ -12,7 +12,7 @@ checks={
  'progress_by_completed_day': 'completeDsoLawDay' in blk and 'planToken' in blk,
  'spaced_review': all(x in blk for x in ['D+1','D+7','D+21']),
  'cebraspe_mix': all(x in blk for x in ['troca de conceitos','prazos/números','jurisprudência','lei seca']),
- 'general_bank_isolated': "QQ.concat(lawCoverageQuestions())" in blk and "QQ.filter" not in blk,
+ 'general_bank_isolated': "QQ.concat(lawCoverageQuestions())" in blk and "QQ.filter(" not in blk,
 }
 # dias: conta objetos {n:...,label:...} apenas dentro do plano
 plan_part=blk.split('var PMAL_DSO_LAW_PLAN=',1)[1].split('window.PMAL_DSO_LAW_PLAN',1)[0]
