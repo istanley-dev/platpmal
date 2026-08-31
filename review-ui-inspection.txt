@@ -1,0 +1,973 @@
+=== OPERACOES HTML ===
+<div class="sec-k">Operações</div>
+  <div class="tiles mb8">
+    <button class="tile t-vio" id="btn-review-20260830" onclick="startReview20260830()"><span class="ic">📝</span><span class="tt">Simulado 30/08 — revisão</span><span class="tsub">120 questões · 83 acertos · 31 erros · 6 em branco · 52 líquidos</span></button>
+    <button class="tile t-vio" id="btn-review-20260825" onclick="startReview20260825()"><span class="ic">📚</span><span class="tt">Revisão 25/08/2026</span><span class="tsub">Administrativo: 52 questões · 45 acertos · 7 erros · Matemática teórica</span></button>
+    <button class="tile t-vio" id="btn-review-20260824" onclick="startReview20260824()"><span class="ic">📚</span><span class="tt">Revisão 24/08/2026</span><span class="tsub">73 questões · 54 acertos · 19 erros · 74,0%</span></button>
+    <button class="tile t-vio" id="btn-review-20260823" onclick="startReview20260823()"><span class="ic">📚</span><span class="tt">Revisão 23/08/2026</span><span class="tsub">Simulado antigo · 120 no total · 65 itens revisáveis · 24 erros + 4 em branco</span></button>
+    <button class="tile t-grn" id="btn-crono" onclick="gN('crono')"><span class="ic">🎯</span><span class="tt">Operação do Dia</span><span class="tsub" id="btn-crono-sub">Missão diária: questões das matérias de hoje + revisão + leituras</span></button>
+    <button class="tile t-grn" id="btn-smart" onclick="revisaoInteligente()"><span class="ic">🧠</span><span class="tt">Patrulha de Revisão</span><span class="tsub">50% críticos · 30% instáveis · 20% manutenção</span></button>
+    <button class="tile t-gold" id="btn-sim" onclick="openSimuladoSelector()"><span class="ic">🎖️</span><span class="tt">Simulado Real</span><span class="tsub">Estratégico, equilibrado ou adaptativo · P1 50 + P2 70</span></button>
+    <button class="tile t-red" id="btn-cruel" onclick="startCruel()"><span class="ic">☠️</span><span class="tt">CEBRASPE Cruel</span><span class="tsub">Apenas questões muito difíceis e cruéis</span></button>
+    <button class="tile t-blue" id="btn-red" onclick="gN('redacao')"><span class="ic">✍️</span><span class="tt">Redação</span><span class="tsub">Discursiva de Atualidades · autoavaliação CEBRASPE</span></button>
+    <button class="tile t-steel" id="btn-metas" onclick="gN('metas')"><span class="ic">📖</span><span class="tt">Metas de Leitura</span><span class="tsub">Dispositivos legais puxados dos seus erros</span></button>
+  </div>
+  <button class="tile t-vio tile-w" id="btn-gen-manual"><span class="ic">✨</span><span class="tt">Gerar questões com IA</span><span class="tsub">Novas questões focadas nos seus pontos fracos</span></button>
+
+  <div class="card mb12 mt12" id="apicard" style="display:none">
+    <div class="cb">
+      <div class="badge-ai">✨ IA Generativa</div>
+      <div class="slbl">Chave de API Anthropic</div>
+      <p class="ts tmut" style="margin-bottom:10px">Para gerar questões automaticamente, insira sua chave de API. Ela fica salva apenas no seu navegador. <a href="https://console.anthropic.com" target="_blank">Obter chave →</a></p>
+      <input type="password" id="inp-key" placeholder="sk-ant-..." style="margin-bottom:8px">
+      <button class="bgold" id="btn-save-key">💾 Salvar chave</button>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="v-quiz" class="view">
+  <div class="pw">
+    <div class="pt"><div class="pf" id="qprog"></div></div>
+    <div class="ptx" id="qcnt">1/10</div>
+  </div>
+  <div class="card">
+    <div class="cb">
+      <div class="qm">
+        <span class="qmat" id="qmat">—</span>
+        <span class="qniv" id="qniv">—</span>
+      </div>
+      <div class="qass" id="qass">📖 —</div>
+      <div class="qtx" id="qtx">
+        <div class="qtx-tt" id="qtx-tt">Texto de referência</div>
+        <div class="qtx-body" id="qtx-body"></div>
+      </div>
+      <div class="qtxt" id="qtxt">Carregando...</div>
+      <div class="ar" id="ar-resp">
+        <button class="bcerto" id="btn-c">✓ CERTO</button>
+        <button class="berrado" id="btn-e">✗ ERRADO</button>
+      </div>
+      <div class="ar-conf" id="ar-conf" style="display:none">
+        <div style="font-size:12px;font-weight:700;color:var(--mut);text-align:center;margin-bottom:8px">Antes de ver o resultado: como você respondeu?</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <button class="bconf" onclick="confirmConf('certeza')">😎<br>Tinha certeza</button>
+          <button class="bconf" onclick="confirmConf('duvida')">🤔<br>Na dúvida</button>
+          <button class="bconf" onclick="confirmConf('chute')">🎲<br>Chutei</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEEDBACK -->
+<div id="v-fb" class="view">
+  <div class="fbb" id="fbb">
+    <div class="stamp" id="fb-st">✅</div>
+    <h2 id="fb-ti">Você acertou!</h2>
+    <div class="gl">Gabarito: <span class="gb" id="fb-gb">CERTO</span></div>
+    <div id="fb-ce-wrap" style="display:none"><span class="ceb" id="fb-ce">—</span></div>
+  </div>
+  <div id="fb-alert"></div>
+  <div class="source-panel" id="fb-source-panel">
+    <div class="source-title">Origem da questão</div>
+    <div class="source-text" id="fb-source-text">—</div>
+    <button class="flag-btn" id="fb-flag-btn" onclick="toggleFlagCurrentQuestion()">⚠️ Sinalizar possível erro</button>
+  </div>
+  <div class="qtx" id="fb-qtx" style="display:none;margin:10px 0"><div class="qtx-tt" id="fb-qtx-tt">Texto de referência</div><div class="qtx-body" id="fb-qtx-body"></div></div>
+  <div class="fbl fbc"><div class="fbl-lb">💬 Comentário técnico</div><div class="fbl-tx" id="fb-co"></div></div>
+  <div class="fbl fbp"><div class="fbl-lb">⚠️ Pegadinha CEBRASPE</div><div class="fbl-tx" id="fb-pe"></div></div>
+  <div class="fbl fbf"><div class="fbl-lb">⚖️ Fundamento legal / gramatical</div><div class="fbl-tx" id="fb-fu"></div></div>
+  <div class="fbl fbd"><div class="fbl-lb">💡 Bizu de memorização</div><div class="fbl-tx" id="fb-di"></div></div>
+  <div class="fb-meta" id="fb-meta" style="display:none"></div>
+  <button class="bp mt12" id="btn-nx">Próxima questão →</button>
+</div>
+
+<!-- RESULTS -->
+<div id="v-res" class="view">
+  <div class="slbl tc mb8">📊 RELATÓRIO DE OPERAÇÃO</div>
+  <div id="ontem-banner"></div>
+  <div class="card mb12">
+    <div class="cb tc">
+      <div class="sr" id="rring"><div class="pct" id="rpct">0%</div><div class="lb">Acertos</div></div>
+      <div class="rrow">
+        <div class="rstat"><div class="n ng" id="rok">0</div><div class="l">Certas</div></div>
+        <div class="rstat"><div class="n nr" id="rnok">0</div><div class="l">Erradas</div></div>
+        <div class="rstat"><div class="n" id="rtot">0</div><div class="l">Total</div></div>
+      </div>
+      <div class="tmut ts" id="rnk"></div>
+    </div>
+  </div>
+  <div class="card mb12"><div class="cb"><div class="slbl">Desempenho por matéria</div><div id="rperf"></div></div></div>
+  <div class="g2 mb12">
+    <div class="card"><div class="cb"><div class="slbl">📊 Nível médio respondido</div><div class="ts" id="rnivel">—</div></div></div>
+    <div class="card"><div class="cb"><div class="slbl">🧭 Próximos blocos sugeridos</div><div class="tmut ts" id="rprox">—</div></div></div>
+  </div>
+  <div class="card mb12"><div class="cb"><div class="slbl mb8">🔎 Erros por tipo (diagnóstico CEBRASPE)</div><div id="rtipo"></div></div></div>
+  <div class="g2 mb12">
+    <div class="card"><div class="cb"><div class="slbl" style="color:#7fe0a2">💪 Território Dominado</div><div class="tmut ts" id="rfor">—</div></div></div>
+    <div class="card"><div class="cb"><div class="slbl" style="color:#f49b9b">🎯 Zonas de Risco</div><div class="tmut ts" id="rcri">—</div></div></div>
+  </div>
+  <div class="card mb12" id="recard"><div class="cb"><div class="slbl mb8">❌ Erros em Combate</div><div id="reli"></div></div></div>
+  <div class="card mb12"><div class="cb"><div class="slbl">📅 Patrulha de Revisão</div><div class="ts" id="rpla"></div></div></div>
+  <div class="card mb12">
+    <div class="cb">
+      <div class="slbl">🤖 Prompt para nova rodada com IA</div>
+      <div class="tmut ts mb8">Copie e cole este prompt numa conversa nova da IA para gerar questões focadas nas suas fraquezas:</div>
+      <div class="pbox" id="rpro"></div>
+      <button class="bgold" id="btn-cp">📋 Copiar Prompt</button>
+    </div>
+  </div>
+  <div class="g2">
+    <button class="bo" id="btn-re">↩ Revisar Erros</button>
+    <button class="bp" id="btn-nv">+ Novo Simulado</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div id="v-stats" class="view">
+  <div class="slbl">📈 PROGRESSO GERAL</div>
+  <div id="stats-bd"></div>
+</div>
+
+<!-- GENERATING SCREEN -->
+<div id="v-gen" class="view">
+  <div class="gen-wrap">
+    <div class="gen-icon">🤖</div>
+    <h2>Gerando novas questões...</h2>
+    <p>A IA está criando questões personalizadas baseadas no seu desempenho e nos seus pontos fracos.</p>
+    <div class="dots" style="margin-top:16px"><span></span><span></span><span></span></div>
+    <div class="gen-steps" id="gen-steps">
+      <div class="gs active" id="gs1"><div class="gi">1</div><span>Analisando seu desempenho</span></div>
+      <div class="gs wait" id="gs2"><div class="gi">2</div><span>Gerando questões com IA</span></div>
+      <div class="gs wait" id="gs3"><div class="gi">3</div><span>Adicionando ao banco</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SIMULADO CEBRASPE (sem feedback imediato, com cronômetro e pontuação líquida) -->
+<div id="v-sim" class="view">
+  <div class="simbar">
+    <span style="font-size:10px;font-weight:800;letter-spacing:2px;color:var(--mut)">☠ PROVA SECA</span>
+    <span class="simtimer" id="sim-timer">00:00</span>
+    <span class="sim-mode-label" id="sim-mode-label">Estratégico</span>
+    <span class="simcount" id="sim-count">1/120</span>
+  </div>
+  <div class="pw"><div class="pt"><div class="pf" id="sim-prog"></div></div></div>
+  <div class="card">
+    <div class="cb">
+      <div class="qm"><span class="qmat" id="sim-mat">—</span><span class="qniv" id="sim-niv">—</span></div>
+      <div class="qass" id="sim-ass">📖 —</div>
+      <div class="qtx" id="sim-qtx" style="display:none">
+        <div class="qtx-tt" id="sim-qtx-tt">Texto de referência</div>
+        <div class="qtx-body" id="sim-qtx-body"></div>
+      </div>
+      <div class="qtxt" id="sim-txt">Carregando…</div>
+      <div class="ar">
+        <button class="bcerto" id="sim-c">✓ CERTO</button>
+        <button class="berrado" id="sim-e">✗ ERRADO</button>
+      </div>
+      <button class="bbranco" id="sim-b">○ Deixar em branco</button>
+    </div>
+  </div>
+  <div class="simnote" style="margin-top:12px">⚠️ Estilo CEBRASPE: cada <b>erro anula um acerto</b>. Na dúvida sem segurança, <b>deixar em branco</b> costuma ser mais seguro que chutar.</div>
+</div>
+
+<!-- RESULTADO DO SIMULADO (pontuação líquida) -->
+<div id="v-simres" class="view">
+  <div class="hcard">
+    <h2>🎯 Resultado — Simulado CEBRASPE</h2>
+    <p>Pontuação no padrão da banca: <b>acertos − erros</b> (itens em branco não pontuam nem descontam).</p>
+  </div>
+  <div class="card mb12"><div class="cb">
+    <div class="liq"><div class="ln" id="sr-liq">0</div><div class="ll">PONTUAÇÃO LÍQUIDA (acertos − erros)</div></div>
+    <div class="liqgrid">
+      <div class="liqc"><div class="v" id="sr-ac" style="color:var(--sg)">0</div><div class="k">Acertos</div></div>
+      <div class="liqc"><div class="v" id="sr-er" style="color:var(--dr)">0</div><div class="k">Erros</div></div>
+      <div class="liqc"><div class="v" id="sr-br" style="color:var(--mut)">0</div><div class="k">Em branco</div></div>
+    </div>
+    <div class="simnote" id="sr-note">—</div>
+    <div class="slbl mb8">Aproveitamento por matéria (líquido)</div>
+    <div id="sr-mat"></div>
+    <div class="bnav-sim" style="margin-top:14px">
+      <button class="bp" id="sr-rev" style="flex:1">❌ Revisar meus erros</button>
+      <button class="bs" id="sr-novo" style="flex:1">🔄 Novo simulado</button>
+    </div>
+  </div></div>
+</div>
+
+<!-- REDAÇÃO (prova discursiva — Atualidades) -->
+<div id="v-re
+
+=== SELECT ERROS ===
+<select id="sel-niv">
+            <option value="all">Todos os níveis</option>
+            <option value="medio">⭐ Médio</option>
+            <option value="dificil">⭐⭐ Difícil</option>
+            <option value="muito_dificil">⭐⭐⭐ Muito Difícil</option>
+            <option value="cruel">☠️ Cruel</option>
+          </select>
+        </div>
+        <div class="fg" style="margin:0">
+          <label>Questões</label>
+          <select id="sel-qty">
+            <option value="5">5 — rápido</option>
+            <option value="10" selected>10 — padrão</option>
+            <option value="20">20 — simulado</option>
+            <option value="30">30 — completo</option>
+            <option value="120">120 — oficial</option>
+            <option value="999">Todas</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg" style="margin-bottom:12px">
+        <label>Fonte das questões</label>
+        <select id="sel-source">
+          <option value="all">Todas as fontes</option>
+          <option value="pmal">Somente oficiais PMAL</option>
+          <option value="provas">Oficiais PMAL + PMs recentes adaptadas</option>
+          <option value="autorais">Somente autorais da plataforma</option>
+          <option value="sem_ia">Excluir questões geradas por IA</option>
+          <option value="ineditas">Somente ainda não respondidas</option>
+          <option value="erros">Somente erradas anteriormente</option>
+        </select>
+
+=== FUNCTIONS ===
+adaptiveReviewQuestions
+buildLawReviewDeck
+buildOfficialDailyReview
+buildYesterdayReviewDeck
+completeTheoryReview
+continuarAposRevisaoLeis
+continuarAposRevisaoOntem
+continuarAposRevisaoSemanal
+dueLawReviewCards
+errorCombatItems
+importDailyReview20260824
+importDailyReview20260825
+importErros20260803
+importMockReview20260830
+importPersonalReview20260823
+lawErrorKeys
+officialReviewClass
+officialReviewScore
+officialReviewTarget
+pendingLawReview
+pendingWeekReview
+pendingYesterdayReview
+pmalDsoDueReviews
+pmalDsoMarkReviews
+pmalDsoReviewKeys
+renderWeekReview
+revisaoInteligente
+saveReviewOnlyAnswer
+setOfficialReviewQty
+showGenError
+startFlashReview
+startLawReviewGated
+startOfficialDailyReview
+startPortStudyReview
+startReview20260823
+startReview20260824
+startReview20260825
+startReview20260830
+startWeekReview
+startWeekReviewGated
+startYesterdayReview
+
+=== FUNCTION adaptiveReviewQuestions ===
+function adaptiveReviewQuestions(item){
+  var ids=[];(item.sourceDates||[item.sourceDate]).filter(Boolean).forEach(function(d){var session=S.reviewSessions&&S.reviewSessions[d];if(session&&Array.isArray(session.questionIds))ids=mergeUnique(ids,session.questionIds);});if(item.study&&item.study.reviewQuestionIds)ids=mergeUnique(ids,item.study.reviewQuestionIds);
+  if(item.kind==='combat'){Object.values(S.AS||{}).filter(function(r){return r.m===item.subject&&topico(r.a)===item.topic;}).forEach(function(r){(r.hist||[]).forEach(function(h){if(!h.ok&&h.id)ids=mergeUnique(ids,[h.id]);});});}
+  var qs=ids.map(findQuestionById).filter(function(q){return q&&q.m===item.subject&&!q.missingContext;});
+  if(item.kind!=='d1'&&item.kind!=='dso'){
+    var session=S.reviewSessions&&S.reviewSessions[item.sourceDate];
+    var attempts=session&&session.attempts||[];
+    function score(q){var own=attempts.filter(function(a){return a.id===q.id;}),last=own[own.length-1];if(last&&!last.ok)return 0;if(last&&(last.conf==='duvida'||last.conf==='chute'))return 1;if(!last&&(q.reviewClass==='erro'||q.reviewClass==='inseguro'))return 2;if(!last)return 3;return 4;}
+    qs.sort(function(a,b){return score(a)-score(b);});
+    var urgent=qs.filter(function(q){return score(q)<4;}),stable=qs.filter(function(q){return score(q)>=4;}),maintenanceSlots=urgent.length?Math.max(2,MAX_ADAPTIVE_QUESTIONS-Math.min(10,urgent.length)):2;
+    qs=urgent.slice(0,10).concat(stable.slice(0,maintenanceSlots));
+  }
+  return qs.slice(0,MAX_ADAPTIVE_QUESTIONS);
+}
+
+=== FUNCTION buildLawReviewDeck ===
+function buildLawReviewDeck(){
+  if(typeof DISP==='undefined')return [];
+  touchLeituraDia();
+  var hojeKeys=new Set(S.leituraDia.keys||[]);
+  var lidos=Object.keys(S.bibLidos).filter(function(k){return DISP[k]&&!hojeKeys.has(k);});
+  return lidos.map(function(k){
+    var fk='LEI▸'+k, frec=flashGet(fk);
+    return {tipo:'lei',key:k,label:labelFromDispKey(k),texto:DISP[k],status:'lei',fkey:fk,due:frec.due};
+  });
+}
+
+=== FUNCTION buildOfficialDailyReview ===
+function buildOfficialDailyReview(N){
+  var pool=QQ.filter(function(q){return isOfficialQuestion(q)&&!isFlagged(q);});
+  if(!pool.length)return [];
+  var used=new Set(),nErro=Math.round(N*.50),nBranco=Math.round(N*.25),nInst=Math.round(N*.15),nMan=N-nErro-nBranco-nInst,sq=[];
+  sq=sq.concat(takeOfficialBucket(pool.filter(function(q){return officialReviewClass(q)==='erro';}),nErro,used));
+  sq=sq.concat(takeOfficialBucket(pool.filter(function(q){return officialReviewClass(q)==='branco';}),nBranco,used));
+  sq=sq.concat(takeOfficialBucket(pool.filter(function(q){return officialReviewClass(q)==='instavel';}),nInst,used));
+  sq=sq.concat(takeOfficialBucket(pool.filter(function(q){return officialReviewClass(q)==='manutencao';}),nMan,used));
+  if(sq.length<N)sq=sq.concat(takeOfficialBucket(pool,N-sq.length,used));
+  sq=diversifyMission(sq,N);
+  return sq.slice(0,N).sort(function(){return Math.random()-.5;});
+}
+
+=== FUNCTION buildYesterdayReviewDeck ===
+function buildYesterdayReviewDeck(){
+  const y=new Date();y.setDate(y.getDate()-1);y.setHours(0,0,0,0);
+  const yStart=y.getTime();const yEnd=yStart+DIA_MS-1;
+  const seen={};
+  // Fonte principal: histórico real (inclui teoria e estudos feitos fora da plataforma).
+  // Matemática aparece na camada adaptativa como teoria e nunca entra neste baralho de questões.
+  studySubjects(localDateKey(y)).forEach(function(rec){
+    if(rec.subject==='Matemática')return;
+    var tops=(rec.topics||[]).length?rec.topics:['Revisão geral'];
+    tops.forEach(function(t){var k=rec.subject+'▸'+t;seen[k]={mat:rec.subject,topico:t,teveErro:(rec.errors||0)>0||(rec.insecure||0)>0};});
+  });
+  // Compatibilidade com o histórico antigo, anterior ao campo studyHistory.
+  (S.log||[]).forEach(function(entry){
+    if(entry.ts>=yStart&&entry.ts<=yEnd&&entry.m!=='Matemática'){
+      const top=topico(entry.a),k=entry.m+'▸'+top;
+      if(!seen[k])seen[k]={mat:entry.m,topico:top,teveErro:false};
+      if(entry.res==='erro')seen[k].teveErro=true;
+    }
+  });
+  let entries=Object.values(seen);
+  entries.sort(function(a,b){return (b.teveErro?1:0)-(a.teveErro?1:0);});
+  if(entries.length>MAX_ONTEM_CARDS)entries=entries.slice(0,MAX_ONTEM_CARDS);
+  const cards=[];
+  entries.forEach(function(e){
+    const lesson=getLessonContent(e.mat,e.topico);
+    if(!lesson)return;
+    const fk=flashKey(e.mat,e.topico),frec=flashGet(fk);
+    cards.push(Object.assign(lesson,{status:'ontem',fkey:fk,due:frec.due}));
+  });
+  return cards;
+}
+
+=== FUNCTION completeTheoryReview ===
+function completeTheoryReview(){if(S._theoryContext){if(S._theoryContext.item.kind==='dso')registerStudySubject(S._theoryContext.target,{subject:'Matemática',mode:'theory',topics:(S._theoryContext.item.study&&S._theoryContext.item.study.topics)||[],sources:['DSO'],note:'Matemática — estudo teórico concluído.'});markAdaptiveDone(S._theoryContext.item,S._theoryContext.target);SS();S._theoryContext=null;}toast('🧮 Revisão teórica concluída.');gN('crono');}
+
+=== FUNCTION continuarAposRevisaoLeis ===
+function continuarAposRevisaoLeis(){
+  touchDaily();S.daily.leisFeitas=true;SS();
+  var resumeFn=S._pendingAfterReview;S._pendingAfterReview=null;
+  if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();
+  else gN('home');
+}
+
+=== FUNCTION continuarAposRevisaoOntem ===
+function continuarAposRevisaoOntem(){
+  touchDaily();S.daily.diaAnterior=true;SS();checkDailyDone();
+  const resumeFn=S._pendingAfterReview;S._pendingAfterReview=null;
+  if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();
+  else gN('home');
+}
+
+=== FUNCTION continuarAposRevisaoSemanal ===
+function continuarAposRevisaoSemanal(){
+  if(!S.weekly)S.weekly={lastDone:0};
+  S.weekly.lastDone=Date.now();SS();
+  const resumeFn=S._pendingAfterReview;S._pendingAfterReview=null;
+  if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();
+  else gN('home');
+}
+
+=== FUNCTION dueLawReviewCards ===
+function dueLawReviewCards(){
+  var now=Date.now();
+  var deck=buildLawReviewDeck().filter(function(c){return c.due<=now;});
+  deck.sort(function(a,b){return a.due-b.due;});
+  if(deck.length>MAX_LEI_CARDS)deck=deck.slice(0,MAX_LEI_CARDS);
+  return deck;
+}
+
+=== FUNCTION errorCombatItems ===
+function errorCombatItems(targetKey){
+  var byTopic={};Object.keys(S.AS||{}).forEach(function(k){var r=S.AS[k],t=topico(r.a),key=r.m+'▸'+t,h=topicHist(r.m,t);if(byTopic[key]||!h.length)return;var errs=h.filter(function(x){return !x.ok;});if(!errs.length)return;var secureTail=h.slice(-3).length===3&&h.slice(-3).every(function(x){return x.ok&&x.conf==='certeza';});if(secureTail)return;var last=errs[errs.length-1],level=errs.length>=3?'🔥 erro persistente':errs.length===2?'🔴 erro recorrente':'atenção';byTopic[key]={subject:r.m,topic:t,kind:'combat',sourceDate:null,study:null,reasons:[level],errorCount:errs.length,lastError:last.ts,priority:errs.length>=3?0:errs.length===2?1:2};});
+  return Object.values(byTopic).sort(function(a,b){return a.priority-b.priority||b.lastError-a.lastError;}).slice(0,3);
+}
+
+=== FUNCTION importDailyReview20260824 ===
+function importDailyReview20260824(){
+  try{
+    var key='pmal26_import_revisao_20260824_v1';
+    S.reviewSessions=S.reviewSessions||{};
+    var old=S.reviewSessions['2026-08-24']||{};
+    S.reviewSessions['2026-08-24']=Object.assign(old,{date:'2026-08-24',title:'Revisão 24/08/2026',type:'daily_study',mode:'review_only',scope:'review_only',total:73,correct:54,errors:19,blank:0,accuracy:74,reviewableCount:REVIEW_QUESTIONS_20260824.length,questionIds:REVIEW_QUESTIONS_20260824.map(function(q){return q.id;}),breakdown:{'Direito Constitucional':{total:30,correct:23,errors:7},'Noções de Informática':{total:23,correct:14,errors:9},'Língua Portuguesa':{total:20,correct:17,errors:3,masteryNote:'Diferenciar acerto dominado de acerto intuitivo.'}},source:'sessão diária e capturas enviadas em 24/08/2026',excludedFromGeneralMetrics:true});
+    if(localStorage.getItem(key)!=='ok'){
+      var now=new Date('2026-08-24T09:00:00-03:00').getTime();
+      REVIEW_QUESTIONS_20260824.forEach(function(q,idx){
+        var rec=asGet(q.m+' ▸ '+q.a,q.m,q.a),tag='revisao_20260824_'+q.id;
+        if(!(rec.hist||[]).some(function(h){return h&&h.importTag===tag;}))rec.hist.push({id:q.id,ok:q.reviewClass==='dominado',branco:false,instavel:q.reviewClass==='acerto_intuitivo',ts:now+idx,round:S.round,conf:q.reviewClass==='dominado'?'certeza':'duvida',ce:'revisão exclusiva',nv:q.n,reviewClass:q.reviewClass,scope:'review_only',excludeFromMetrics:true,importTag:tag});
+        rec.personalizedAt='2026-08-24';rec.personalizedClass=q.reviewClass;rec.ivIdx=0;rec.crit=q.reviewClass==='erro';rec.revLeft=Math.max(rec.revLeft||0,q.reviewClass==='erro'?4:2);rec.due=q.reviewClass==='dominado'?now+14*DIA_MS:now;rec.status=statusOf(rec);
+        var frec=flashGet(flashKey(q.m,q.a));frec.due=q.reviewClass==='dominado'?now+14*DIA_MS:0;
+      });
+      localStorage.setItem(key,'ok');
+    }
+    SS();
+  }catch(e){console.warn('Falha na importação da revisão de 24/08/2026:',e);}
+}
+
+=== FUNCTION importDailyReview20260825 ===
+function importDailyReview20260825(){
+  try{
+    var key='pmal26_import_revisao_20260825_v1',now=new Date('2026-08-25T09:00:00-03:00').getTime();S.reviewSessions=S.reviewSessions||{};
+    var old=S.reviewSessions['2026-08-25']||{};
+    S.reviewSessions['2026-08-25']=Object.assign(old,{date:'2026-08-25',title:'Revisão 25/08/2026 — Direito Administrativo',type:'daily_study',mode:'review_only',scope:'review_only',total:52,correct:45,errors:7,blank:0,accuracy:86.5,net:38,scoring:'CEBRASPE +1/-1',filters:['Princípios','Regime Jurídico Administrativo'],reviewableCount:REVIEW_QUESTIONS_20260825.length,questionIds:REVIEW_QUESTIONS_20260825.map(function(q){return q.id;}),theoryStudies:[{subject:'Matemática',mode:'theory',note:'Matemática — estudo teórico realizado em 25/08/2026. Nenhuma quantidade ou desempenho em questões foi registrado.'}],source:'capturas e fechamento enviados pelo usuário em 25/08/2026',excludedFromGeneralMetrics:true});
+    registerStudySubject('2026-08-25',{subject:'Direito Administrativo',mode:'questions',topics:REVIEW_QUESTIONS_20260825.map(function(q){return topico(q.a);}),sources:['TEC/CEBRASPE — estudo externo'],total:52,correct:45,errors:7,accuracy:86.5,net:38,reviewQuestionIds:REVIEW_QUESTIONS_20260825.map(function(q){return q.id;})});
+    registerStudySubject('2026-08-25',{subject:'Matemática',mode:'theory',topics:['Frações','Razão e proporção','Divisão proporcional'],sources:['DSO — teoria'],note:'Matemática — estudo teórico realizado em 25/08/2026.'});
+    if(localStorage.getItem(key)!=='ok'){
+      REVIEW_QUESTIONS_20260825.forEach(function(q,idx){var rec=asGet(q.m+' ▸ '+q.a,q.m,q.a),tag='revisao_20260825_'+q.id;if(!(rec.hist||[]).some(function(h){return h&&h.importTag===tag;}))rec.hist.push({id:q.id,ok:q.reviewClass!=='erro',branco:false,instavel:q.reviewClass==='inseguro',ts:now+idx,round:S.round,conf:q.reviewClass==='erro'?'duvida':'certeza',ce:'revisão exclusiva',nv:q.n,reviewClass:q.reviewClass,scope:'review_only',excludeFromMetrics:true,importTag:tag});rec.personalizedAt='2026-08-25';rec.personalizedClass=q.reviewClass==='erro'?'chute_lacuna':'recuperado';rec.ivIdx=0;rec.crit=q.reviewClass==='erro';rec.revLeft=Math.max(rec.revLeft||0,q.reviewClass==='erro'?4:1);rec.due=q.reviewClass==='erro'?now:now+7*DIA_MS;rec.status=statusOf(rec);var frec=flashGet(flashKey(q.m,topico(q.a)));frec.due=q.reviewClass==='erro'?0:now+7*DIA_MS;});localStorage.setItem(key,'ok');
+    }
+    SS();
+  }catch(e){console.warn('Falha na importação da revisão de 25/08/2026:',e);}
+}
+
+=== FUNCTION importErros20260803 ===
+function importErros20260803(){
+  try{
+    var migrationKey='pmal26_import_erros_20260803_v1';
+    if(localStorage.getItem(migrationKey)==='ok')return;
+
+    var now=Date.now();
+    var imported=0;
+
+    IMPORT_ERROS_20260803.forEach(function(meta,idx){
+      var q=QQ.find(function(item){return item.id===meta.id;});
+      if(!q)return;
+
+      // Fila de erros, sem inserir respostas artificiais no histórico global de desempenho.
+      S.eids.add(q.id);
+
+      // Radar e repetição espaçada.
+      var k=asKey(q);
+      var rec=asGet(k,q.m,q.a);
+      var already=rec.hist.some(function(h){
+        return h&&h.id===q.id&&h.importTag==='erros_20260803_v1';
+      });
+
+      if(!already){
+        rec.hist.push({
+          id:q.id,
+          ok:false,
+          ce:q.ce||'conteúdo',
+          nv:q.n||'dificil',
+          ts:now-(idx+1),
+          round:S.round,
+          ans:q.g==='CERTO'?'ERRADO':'CERTO',
+          g:q.g,
+          conf:'duvida',
+          importTag:'erros_20260803_v1'
+        });
+      }
+
+      rec.crit=true;
+      rec.ivIdx=0;
+      rec.revLeft=Math.max(rec.revLeft||0,meta.priority==='complementar'?1:3);
+      rec.due=meta.priority==='complementar'
+        ? now+(7*24*60*60*1000)
+        : now;
+      rec.status=statusOf(rec);
+
+      // Deixa o flashcard do respectivo tópico disponível imediatamente nas prioridades altas.
+      var fk=flashKey(q.m,topico(q.a));
+      var flashRec=flashGet(fk);
+      if(meta.priority!=='complementar')flashRec.due=0;
+
+      imported++;
+    });
+
+    SS();
+    localStorage.setItem(migrationKey,'ok');
+    localStorage.setItem(migrationKey+'_count',String(imported));
+  }catch(e){
+    console.warn('Falha na importação dos erros de 03/08/2026:',e);
+  }
+}
+
+=== FUNCTION importMockReview20260830 ===
+function importMockReview20260830(){
+  try{
+    var bank=prepareMock20260830();if(bank.length!==120)throw new Error('banco importado com '+bank.length+' itens');
+    var ids=bank.map(function(q){return q.id;}),unique=new Set(ids);if(unique.size!==120)throw new Error('IDs duplicados no simulado importado');
+    S.reviewSessions=S.reviewSessions||{};var old=S.reviewSessions['2026-08-30']||{},now=new Date('2026-08-30T08:00:00-03:00').getTime();
+    var originalAttempts=bank.map(function(q,idx){return {id:q.id,answer:q.userAnswer,ok:q.originalCorrect,blank:q.originalBlank,conf:q.originalBlank?'duvida':(q.originalCorrect?'certeza':'duvida'),ts:now+idx,originalNumber:q.originalNumber,reviewClass:q.reviewClass,importTag:'simulado_20260830_original'};});
+    var attempts=(old.attempts||[]).slice();originalAttempts.forEach(function(a){if(!attempts.some(function(x){return x.id===a.id&&x.importTag===a.importTag;}))attempts.push(a);});
+    var breakdown={};bank.forEach(function(q){var b=breakdown[q.m]||(breakdown[q.m]={total:0,correct:0,errors:0,blank:0});b.total++;if(q.originalBlank)b.blank++;else if(q.originalCorrect)b.correct++;else b.errors++;});
+    S.reviewSessions['2026-08-30']=Object.assign(old,{date:'2026-08-30',title:'Simulado PMAL — 30/08/2026',type:'imported_mock',mode:'review_only',scope:'review_only',total:120,reviewableCount:120,correct:83,errors:31,blank:6,net:52,accuracy:69.2,scoring:'CEBRASPE +1/-1',gabaritoStatus:'provisorio',questionIds:ids,attempts:attempts,breakdown:breakdown,essay:SIM_ESSAY_20260830,source:'Simulado PMAL — 30/08/2026',excludedFromGeneralMetrics:true});
+    Object.keys(breakdown).forEach(function(m){var b=breakdown[m],qids=bank.filter(function(q){return q.m===m;}).map(function(q){return q.id;});registerStudySubject('2026-08-30',{subject:m,mode:'questions',topics:bank.filter(function(q){return q.m===m;}).map(function(q){return topico(q.a);}),sources:['Simulado PMAL — 30/08/2026'],total:b.total,correct:b.correct,errors:b.errors,accuracy:Math.round(b.correct/b.total*1000)/10,reviewQuestionIds:qids});});
+    localStorage.setItem('pmal26_import_simulado_20260830_v1','ok');SS();
+  }catch(e){console.warn('Falha na importação do simulado de 30/08/2026:',e);}
+}
+
+=== FUNCTION importPersonalReview20260823 ===
+function importPersonalReview20260823(){
+  try{
+    var key='pmal26_import_revisao_20260823_v2';if(localStorage.getItem(key)==='ok')return;
+    var now=new Date('2026-08-23T20:00:00-03:00').getTime(),counts={erro_persistente:0,regressao:0,recuperado:0,chute_lacuna:0,circunstancial:0};
+    PERSONAL_REVIEW_20260823.forEach(function(x,idx){
+      var rec=asGet(x.m+' ▸ '+x.a,x.m,x.a),tag='revisao_20260823_'+x.id;
+      if(!(rec.hist||[]).some(function(h){return h&&h.importTag===tag;}))rec.hist.push({id:x.id,ok:x.classification==='recuperado',branco:x.classification==='chute_lacuna',instavel:x.classification==='regressao',ts:now+idx,round:S.round,conf:x.classification==='chute_lacuna'?'duvida':'certeza',ce:'revisão personalizada',nv:x.classification==='erro_persistente'?'cruel':'dificil',reviewClass:x.classification,importTag:tag});
+      rec.personalizedClass=x.classification;rec.personalizedAt='2026-08-23';rec.personalizedId=x.id;rec.ivIdx=0;rec.crit=x.classification==='erro_persistente';rec.revLeft=Math.max(rec.revLeft||0,x.classification==='erro_persistente'?4:(x.classification==='recuperado'?1:2));rec.due=x.classification==='recuperado'?now+14*DIA_MS:now;rec.status=statusOf(rec);
+      var frec=flashGet(flashKey(x.m,x.a));frec.due=x.classification==='recuperado'?now+14*DIA_MS:0;counts[x.classification]++;
+    });
+    S.reviewSessions=S.reviewSessions||{};
+    var oldSession=S.reviewSessions['2026-08-23']||{};
+    S.reviewSessions['2026-08-23']=Object.assign(oldSession,{date:'2026-08-23',title:'Revisão 23/08/2026',mode:'review_only',scope:'review_only',total:120,reviewableCount:65,correct:92,errors:24,blank:4,net:68,scoring:'CEBRASPE',questionIds:REVIEW_QUESTIONS_20260823.map(function(q){return q.id;}),breakdown:{'Língua Portuguesa':{correct:8,errors:5},'Noções de Informática':{correct:3,errors:3,doubts:1},'Matemática':{correct:2,errors:3,doubts:2},'Conhecimentos de Alagoas':{correct:3,errors:1},'Direito — bloco 1':{correct:9,errors:11},'DPM/PPM/DH — bloco final':{correct:7,errors:7}},classificationCounts:counts,source:'questões enviadas pelo usuário em 23/08/2026'});
+    SS();localStorage.setItem(key,'ok');localStorage.setItem(key+'_summary',JSON.stringify({cards:PERSONAL_REVIEW_20260823.length,counts:counts}));
+  }catch(e){console.warn('Falha na importação da revisão de 23/08/2026:',e);}
+}
+
+=== FUNCTION lawErrorKeys ===
+function lawErrorKeys(){
+  var out={},map=buildKeyToQids();
+  Object.keys(S.metas||{}).forEach(function(k){if(DISP[k]&&S.metas[k]&&!S.metas[k].studied)out[k]=1;});
+  var ids=[];if(S.eids)ids=ids.concat(Array.from(S.eids));if(S.legacyEids)ids=ids.concat(Array.from(S.legacyEids));
+  var idset={};ids.forEach(function(id){idset[id]=1;});
+  Object.keys(map).forEach(function(k){if((map[k]||[]).some(function(id){return idset[id];}))out[k]=1;});
+  return out;
+}
+
+=== FUNCTION officialReviewClass ===
+function officialReviewClass(q){
+  var h=lastDetailedHistoryForQuestion(q.id);
+  if(h&&h.branco)return 'branco';
+  if((h&&!h.ok)||(S.eids&&S.eids.has(q.id)))return 'erro';
+  if(h&&(h.instavel||h.conf==='duvida'||h.conf==='chute'))return 'instavel';
+  return 'manutencao';
+}
+
+=== FUNCTION officialReviewScore ===
+function officialReviewScore(q){
+  var sc=incidenceScore(q)*2;
+  var cls=officialReviewClass(q);
+  if(cls==='erro')sc+=18;
+  else if(cls==='branco')sc+=14;
+  else if(cls==='instavel')sc+=9;
+  if(q.n==='cruel')sc+=8; else if(q.n==='muito_dificil')sc+=5; else if(q.n==='dificil')sc+=2;
+  if(dueQuestion(q))sc+=7;
+  var recent=(S.ha||[]).slice(-80).some(function(x){return x.id===q.id;}); if(recent)sc-=5;
+  return sc+Math.random()*2.5;
+}
+
+=== FUNCTION officialReviewTarget ===
+function officialReviewTarget(){
+  S.plan=S.plan||{};
+  var n=parseInt(S.plan.officialReviewQty||30,10);
+  return [20,25,30,40,50].indexOf(n)>=0?n:30;
+}
+
+=== FUNCTION pendingLawReview ===
+function pendingLawReview(){
+  if(S.daily.leisFeitas)return false; // já fez uma rodada hoje — o resto do estoque fica pra amanhã
+  return dueLawReviewCards().length>0;
+}
+
+=== FUNCTION pendingWeekReview ===
+function pendingWeekReview(){
+  if(!S.weekly)S.weekly={lastDone:0};
+  if(Date.now()-S.weekly.lastDone<7*DIA_MS)return false;
+  return weekTopics().some(function(t){return t.mat!=='Matemática';});
+}
+
+=== FUNCTION pendingYesterdayReview ===
+function pendingYesterdayReview(){
+  touchDaily();
+  if(S.daily.diaAnterior)return false;
+  return buildYesterdayReviewDeck().length>0;
+}
+
+=== FUNCTION pmalDsoDueReviews ===
+function pmalDsoDueReviews(){
+ var st=pmalDsoEnsure(),now=Date.now(),DAY=86400000,due=[];
+ Object.keys(st.history).forEach(function(k){var r=st.history[k];if(!r||!r.ts)return;if(!r.reviews)r.reviews={};
+  [1,7,21].forEach(function(d){var stage='d'+d;if(!r.reviews[stage]&&now-r.ts>=d*DAY)due.push({histKey:k,rec:r,stage:stage,days:d,keys:r.keys||[]});});
+ });
+ due.sort(function(a,b){return a.days-b.days||a.rec.ts-b.rec.ts;});return due;
+}
+
+=== FUNCTION pmalDsoMarkReviews ===
+function pmalDsoMarkReviews(entries){var st=pmalDsoEnsure();(entries||[]).forEach(function(e){if(!st.history[e.histKey])return;if(!st.history[e.histKey].reviews)st.history[e.histKey].reviews={};st.history[e.histKey].reviews[e.stage]=Date.now();});if(typeof SS==='function')SS();}
+
+=== FUNCTION pmalDsoReviewKeys ===
+function pmalDsoReviewKeys(entries){var o={},r=[];(entries||pmalDsoDueReviews()).forEach(function(e){(e.keys||[]).forEach(function(k){if(DISP[k]&&!o[k]){o[k]=1;r.push(k);}});});return r;}
+
+=== FUNCTION renderWeekReview ===
+function renderWeekReview(){
+  const el=document.getElementById('week-review-body');
+  if(!el)return;
+  const topics=weekTopics();
+  if(!topics.length){
+    el.innerHTML='<div class="tmut ts" style="padding:8px 0">Ainda sem questões respondidas nos últimos 7 dias.</div>';
+    return;
+  }
+  const stCls={vermelho:'st-vermelho',amarelo:'st-amarelo',verde:'st-verde',novo:'st-verde'};
+  const vistas=new Set(S.ha.map(a=>a.id));
+  let html='<div style="font-size:11.5px;color:var(--mut);margin-bottom:8px">'+topics.length+' tópico(s) praticado(s) nos últimos 7 dias — resumo rápido, mesmo o que já está bem.</div>';
+  html+=topics.map(function(t){
+    // Só usa como fonte questões JÁ respondidas desse tópico — as ainda não vistas ficam de fora,
+    // pra não entregar de graça a explicação de algo que pode cair na revisão consolidada depois.
+    const naoVistasDoTopico=QQ.filter(q=>q.m===t.mat&&topico(q.a)===t.topico&&!vistas.has(q.id)).map(q=>q.id);
+    const lesson=buildTopicLesson(t.mat,t.topico,{maxRegras:1,maxPeg:1,maxBizus:1,excludeIds:new Set(naoVistasDoTopico)});
+    const linha=lesson&&(lesson.bizus[0]||lesson.pegadinhas[0]||lesson.regras[0]);
+    return '<div class="ma-card" style="padding:10px 12px;margin-bottom:8px">'+
+      '<div class="ma-head" style="margin-bottom:2px"><span class="stdot '+(stCls[t.status]||'st-verde')+'"></span>'+
+      '<span class="ma-tt" style="font-size:12.5px">'+esc(t.topico)+'</span>'+
+      '<span class="ma-mat" style="font-size:10px">'+esc(abbr(t.mat))+' · '+t.n+'q · '+t.pct+'%</span></div>'+
+      (linha?'<div style="font-size:11px;color:var(--mut);line-height:1.5;margin-left:20px">'+esc(linha)+'</div>':'')+
+      '</div>';
+  }).join('');
+  el.innerHTML=html;
+}
+
+=== FUNCTION revisaoInteligente ===
+function revisaoInteligente(){
+  const buckets={vermelho:[],amarelo:[],verde:[],azul:[]};
+  Object.values(S.AS).forEach(rec=>{const s=statusOf(rec);if(buckets[s])buckets[s].push(rec);});
+  const totalAssuntos=buckets.vermelho.length+buckets.amarelo.length+buckets.verde.length+buckets.azul.length;
+  if(totalAssuntos===0){toast('Responda algumas questões primeiro para a IA mapear seus assuntos!');return;}
+  const N=parseInt(document.getElementById('sel-qty')?.value)||10;
+  const want={vermelho:Math.round(N*0.5),amarelo:Math.round(N*0.3),verde:N-Math.round(N*0.5)-Math.round(N*0.3)};
+  function pega(recs,qtd){
+    let out=[];const keys=recs.map(r=>asKey({m:r.m,a:r.a}));
+    let pool=QQ.filter(q=>keys.includes(asKey(q)));
+    pool.sort(()=>Math.random()-.5);
+    return pool.slice(0,qtd);
+  }
+  let sq=[];
+  sq=sq.concat(pega(buckets.vermelho,want.vermelho));
+  sq=sq.concat(pega(buckets.amarelo,want.amarelo));
+  // Prioriza azul (manutenção vencida pelo SRS) antes de verde (ainda dentro do prazo)
+  sq=sq.concat(pega(buckets.azul.concat(buckets.verde),want.verde));
+  // completa se faltou
+  if(sq.length<N){
+    const usados=new Set(sq.map(q=>q.id));
+    const resto=QQ.filter(q=>!usados.has(q.id)&&S.AS[asKey(q)]);
+    resto.sort(()=>Math.random()-.5);
+    sq=sq.concat(resto.slice(0,N-sq.length));
+  }
+  if(!sq.length){toast('Sem questões suficientes. Faça um simulado primeiro.');return;}
+  sq.sort(()=>Math.random()-.5);
+  S.round++;
+  S.mode='revisao';S.sq=sq.slice(0,N);S.ci=0;S.sa=[];
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+  touchDaily();S.daily.rev=true;SS();checkDailyDone();
+  toast('🧠 Revisão Inteligente: '+want.vermelho+' críticas + '+want.amarelo+' instáveis + manutenção');
+}
+
+=== FUNCTION saveReviewOnlyAnswer ===
+function saveReviewOnlyAnswer(q,a,ok,conf){
+  S.reviewSessions=S.reviewSessions||{};
+  var reviewDate=q.reviewDate||S.reviewActive||'2026-08-23';
+  var session=S.reviewSessions[reviewDate]||{};session.attempts=session.attempts||[];
+  session.attempts.push({id:q.id,answer:a,ok:ok,conf:conf,ts:Date.now(),originalNumber:q.originalNumber||null,reviewClass:q.reviewClass});
+  // Mantém o espaçamento adaptativo sem registrar a tentativa nas métricas gerais.
+  var rec=asGet(asKey(q),q.m,q.a);rec.hist.push({id:q.id,ok:ok,ans:a,g:q.g,conf:conf,ts:Date.now(),round:S.round,ce:q.ce,nv:q.n,scope:'review_only',excludeFromMetrics:true});
+  if(ok&&conf==='certeza')agenda(rec,'manutencao');else agenda(rec,ok?'instavel':'recorrente');rec.status=statusOf(rec);
+  session.lastAttemptAt=Date.now();
+  var reviewBank={'2026-08-23':REVIEW_QUESTIONS_20260823,'2026-08-24':REVIEW_QUESTIONS_20260824,'2026-08-25':REVIEW_QUESTIONS_20260825,'2026-08-30':(typeof REVIEW_QUESTIONS_20260830!=='undefined'?REVIEW_QUESTIONS_20260830:[])};
+  session.reviewableCount=(reviewBank[reviewDate]||[]).length;
+  S.reviewSessions[reviewDate]=session;SS();
+}
+
+=== FUNCTION setOfficialReviewQty ===
+function setOfficialReviewQty(v){
+  S.plan=S.plan||{}; S.plan.officialReviewQty=parseInt(v,10)||30; SS(); renderCrono();
+}
+
+=== FUNCTION showGenError ===
+function showGenError(msg,detail){
+  toast('❌ '+msg);
+  const card=document.getElementById('apicard');
+  if(card){
+    card.style.display='block';
+    let ex=document.getElementById('gen-err-box');
+    if(!ex){
+      ex=document.createElement('div');
+      ex.id='gen-err-box';
+      ex.style.cssText='background:var(--drb);border:1px solid var(--drl);border-radius:6px;padding:12px;margin-top:10px;font-size:13px;color:var(--dr);line-height:1.5';
+      card.querySelector('.cb').appendChild(ex);
+    }
+    ex.innerHTML='<strong>⚠️ '+msg+'</strong>'+(detail?'<br>'+detail:'');
+  }
+}
+
+=== FUNCTION startFlashReview ===
+function startFlashReview(){
+  openFlashCatalog();
+}
+
+=== FUNCTION startLawReviewGated ===
+function startLawReviewGated(resumeFn){
+  var deck=dueLawReviewCards();
+  if(!deck.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
+  S._flashQueue=deck;S._flashIdx=0;S._flashSessionType='leis';S._pendingAfterReview=resumeFn||null;
+  sv('flash');renderFlashCard();
+  toast('📖 Revisão de leis já lidas — obrigatória antes de seguir.');
+}
+
+=== FUNCTION startOfficialDailyReview ===
+function startOfficialDailyReview(){
+  ensureOfficialDailyState();
+  var target=officialReviewTarget(),remaining=Math.max(0,target-S.daily.officialRevCount),N=remaining||target;
+  var sq=buildOfficialDailyReview(N);
+  if(!sq.length){toast('Ainda não há questões oficiais suficientes para esta revisão.');return;}
+  S.mode='official_daily';S.sim=false;S.round++;S.sq=sq;S.ci=0;S.sa=[];
+  var hsc=document.getElementById('hsc');if(hsc)hsc.style.display='none';
+  sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📋 Revisão oficial CEBRASPE: '+sq.length+' questões — erros, brancos, instáveis e manutenção.');
+}
+
+=== FUNCTION startPortStudyReview ===
+function startPortStudyReview(){
+  const deck=buildPortStudyDeck();
+  if(!deck.length){toast('Conteúdo de português ainda não disponível.');return;}
+  S._flashQueue=deck;S._flashIdx=0;S._flashSessionType='estudo';
+  sv('flash');renderFlashCard();
+}
+
+=== FUNCTION startReview20260823 ===
+function startReview20260823(){
+  prepareQuestionContexts(REVIEW_QUESTIONS_20260823);S.reviewActive='2026-08-23';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260823.filter(questionUsable);S.ci=0;S.sa=[];S.round++;
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📚 Revisão exclusiva: 65 itens recebidos. O saldo original permanece 92 C / 24 E / 4 B / 68 líquidos.');
+}
+
+=== FUNCTION startReview20260824 ===
+function startReview20260824(){
+  prepareQuestionContexts(REVIEW_QUESTIONS_20260824);S.reviewActive='2026-08-24';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260824.filter(questionUsable);S.ci=0;S.sa=[];S.round++;
+  document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📚 Revisão exclusiva de 24/08: 44 itens. O estudo do dia foi 73 questões, 54 acertos e 19 erros.');
+}
+
+=== FUNCTION startReview20260825 ===
+function startReview20260825(){prepareQuestionContexts(REVIEW_QUESTIONS_20260825);S.reviewActive='2026-08-25';S.mode='review_only';S.sim=false;S.sq=REVIEW_QUESTIONS_20260825.filter(questionUsable);S.ci=0;S.sa=[];S.round++;document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});toast('📚 Revisão exclusiva de 25/08: Direito Administrativo, sem impacto nas métricas gerais.');}
+
+=== FUNCTION startReview20260830 ===
+function startReview20260830(){
+  var bank=prepareMock20260830().filter(questionUsable);if(bank.length!==120){toast('A revisão de 30/08 está incompleta neste carregamento.');return;}
+  S.reviewActive='2026-08-30';S.mode='review_only';S.sim=false;S.sq=bank.slice();S.ci=0;S.sa=[];S.round++;
+  document.getElementById('hsc').style.display='none';sv('quiz');renderQ();document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📝 Simulado 30/08: 120 itens em revisão exclusiva. Gabarito provisório; sem impacto nas métricas gerais.');
+}
+
+=== FUNCTION startWeekReview ===
+function startWeekReview(){
+  const topics=weekTopics();
+  if(!topics.length){toast('Sem atividade registrada nos últimos 7 dias ainda.');return;}
+  const questionTopics=topics.filter(function(t){return t.mat!=='Matemática';});
+  const matsSeen=new Set(questionTopics.map(function(t){return t.mat;}));
+  const chaves=new Set(questionTopics.map(function(t){return t.mat+'▸'+t.topico;}));
+  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a))&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
+  if(!pool.length){toast('Sem questões suficientes para revisar esses tópicos agora.');return;}
+  pool=getSmartPool(pool);
+  pool=[...pool].sort(()=>Math.random()-.5);
+  const n=Math.min(20,pool.length);
+  S.mode='materia';S.subs=[...matsSeen];S.niv='all';S.round++;
+  S.sq=pool.slice(0,n);S.ci=0;S.sa=[];
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+  toast('📅 Revisão da semana: '+n+' questões intercaladas de '+topics.length+' tópico(s)');
+}
+
+=== FUNCTION startWeekReviewGated ===
+function startWeekReviewGated(resumeFn){
+  const topics=weekTopics().filter(function(t){return t.mat!=='Matemática';});
+  if(!topics.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
+  const matsSeen=new Set(topics.map(function(t){return t.mat;}));
+  const chaves=new Set(topics.map(function(t){return t.mat+'▸'+t.topico;}));
+  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a))&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
+  if(!pool.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
+  pool=getSmartPool(pool);
+  pool=[...pool].sort(()=>Math.random()-.5);
+  const n=Math.min(20,pool.length);
+  S.mode='materia';S.subs=[...matsSeen];S.niv='all';S.round++;
+  S.sq=pool.slice(0,n);S.ci=0;S.sa=[];
+  S._afterQuizContinue='semana';S._pendingAfterReview=resumeFn||null;
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+  toast('📆 Revisão semanal obrigatória — '+n+' questões de '+topics.length+' tópico(s) antes de seguir.');
+}
+
+=== FUNCTION startYesterdayReview ===
+function startYesterdayReview(resumeFn){
+  const deck=buildYesterdayReviewDeck();
+  if(!deck.length){toast('Nada registrado ontem para revisar por cartões. Matemática, quando houver, fica na revisão teórica.');if(resumeFn)window[resumeFn]();return;}
+  S._flashQueue=deck;S._flashIdx=0;S._flashSessionType='ontem';S._pendingAfterReview=resumeFn||null;
+  sv('flash');renderFlashCard();
+  toast('📅 Revisão do dia anterior — obrigatória antes de seguir com a missão de hoje.');
+}
+
+=== D1 CONTEXT ===
+horar"}',
+    '',
+    'Seja rigoroso e realista, como um corretor de banca seria — não infle a nota de conteúdo por gentileza. Avalie objetivamente.'
+  ];
+  const prompt=promptParts.join('\n');
+  try{
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:2000,messages:[{role:'user',content:prompt}]})
+    });
+    if(!resp.ok){
+      const err=await resp.json().catch(()=>({}));
+      const msg=err.error?.message||('Erro '+resp.status);
+      if(resp.status===401){apiKey='';localStorage.removeItem('pmal26_key');}
+      throw new Error(msg);
+    }
+    const data=await resp.json();
+    const text=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
+    let jsonStr=text.trim().replace(/```json\s*/gi,'').replace(/```\s*/g,'');
+    const start=jsonStr.indexOf('{'),end=jsonStr.lastIndexOf('}');
+    if(start===-1||end===-1)throw new Error('A IA não retornou um JSON válido. Tente novamente.');
+    jsonStr=jsonStr.substring(start,end+1);
+    const r=JSON.parse(jsonStr);
+    const tlMatch=linhasTxt.match(/(\d+)/);
+    const tl=tlMatch?Math.max(1,parseInt(tlMatch[1])):Math.max(1,tx.split('\n').length);
+    const nc=Math.max(0,Math.min(30,Number(r.nc)||0));
+    const ne=Math.max(0,Number(r.ne)||0);
+    let npd=r.fugaAoTema?0:Math.max(0,nc-(6*ne/tl));
+    npd=Math.round(npd*100)/100;
+    const aprovado=npd>=15;
+    panel.innerHTML=
+      '<div style="font-weight:800;font-size:13px;margin-bottom:8px">🤖 Correção por IA (estimativa)</div>'+
+      '<div style="display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap">'+
+        '<div style="flex:1;min-width:90px;text-align:center;padding:10px;background:'+(aprovado?'#12241a':'#2a1518')+';border-radius:10px"><div style="font-size:22px;font-weight:900;color:'+(aprovado?'#4ade80':'#f47070')+'">'+npd.toFixed(2)+'</div><div style="font-size:10px;color:var(--mut)">NPD (corte: 15,00)</div></div>'+
+        '<div style="flex:1;min-width:90px;text-align:center;padding:10px;background:var(--bg);border-radius:10px"><div style="font-size:18px;font-weight:800">'+nc.toFixed(1)+'/30</div><div style="font-size:10px;color:var(--mut)">Nota de conteúdo</div></div>'+
+        '<div style="flex:1;min-width:90px;text-align:center;padding:10px;background:var(--bg);border-radius:10px"><div style="font-size:18px;font-weight:800">'+ne+'</div><div style="font-size:10px;color:var(--mut)">Erros estimados</div></div>'+
+      '</div>'+
+      (r.fugaAoTema?'<div style="background:#2a1518;color:#f2a9a9;padding:8px;border-radius:8px;font-size:12px;margin-bottom:8px">⚠️ A IA identificou possível <b>fuga ao tema</b> — isso zera a nota na prova real.</div>':'')+
+      '<div style="font-size:12px;margin-bottom:6px"><b>Aspecto I:</b> '+esc(r.aspectoI||'—')+'</div>'+
+      '<div style="font-size:12px;margin-bottom:6px"><b>Aspecto II:</b> '+esc(r.aspectoII||'—')+'</div>'+
+      '<div style="font-size:12px;margin-bottom:10px"><b>Aspecto III:</b> '+esc(r.aspectoIII||'—')+'</div>'+
+      (r.pontosFortes&&r.pontosFortes.length?'<div style="font-size:12px;font-weight:700;color:#16a34a;margin-bottom:3px">✓ Pontos fortes</div><ul style="margin:0 0 8px 18px;font-size:12px;padding:0">'+r.pontosFortes.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul>':'')+
+      (r.pontosFracos&&r.pontosFracos.length?'<div style="font-size:12px;font-weight:700;color:#f47070;margin-bottom:3px">✗ Pontos a melhorar</div><ul style="margin:0 0 8px 18px;font-size:12px;padding:0">'+r.pontosFracos.map(p=>'<li>'+esc(p)+'</li>'
+
+=== D7 CONTEXT ===
+text&&(!topics.length||topics.indexOf(topico(q.a))>=0);})).slice(0,item.kind==='advanced'?8:12);}startAdaptiveQuestionPool(item,pool);
+}
+function completeDsoLesson(idx){
+  var item=S._adaptiveDisplay&&S._adaptiveDisplay.items[idx];if(!item||!item.dsoBlocks)return;
+  var topics=item.dsoBlocks.map(function(b){return b.topic;}),minutes=item.dsoBlocks.reduce(function(sum,b){return sum+(b.minutes||0);},0);
+  registerStudySubject(S._adaptiveDisplay.date,{subject:item.subject,mode:'theory',topics:topics,sources:['DSO'],note:'DSO concluído · '+minutes+' min'});
+  markAdaptiveDone(item,S._adaptiveDisplay.date);SS();renderCrono();toast('✅ DSO concluído: '+abbr(item.subject)+' · '+minutes+' min. Revisões futuras foram programadas.');
+}
+function daysLeft(refKey){
+  if(!S.plan||!S.plan.examDate)return null;
+  const ex=dateFromKey(S.plan.examDate);const now=refKey?dateFromKey(refKey):new Date();ex.setHours(0,0,0,0);now.setHours(0,0,0,0);
+  return Math.round((ex-now)/86400000);
+}
+function phaseInfo(refKey){
+  const d=daysLeft(refKey);let ph,name,color,target;
+  if(d===null||d>=63){ph=1;name='Fase 1 · Avanço + base de memória';color='f1';target=30;}
+  else if(d>=35){ph=2;name='Fase 2 · Questões + D+7/D+21';color='f2';target=35;}
+  else if(d>=14){ph=3;name='Fase 3 · Modo prova';color='f3';target=35;}
+  else{ph=4;name='Fase 4 · Reta final controlada';color='f3';target=25;}
+  return {ph:ph,name:name,color:color,target:target,d:d};
+}
+function weakSubjects(){
+  const sc={};
+  Object.values(S.AS).forEach(rec=>{const s=statusOf(rec);if(s==='vermelho')sc[rec.m]=(sc[rec.m]||0)+2;else if(s==='amarelo')sc[rec.m]=(sc[rec.m]||0)+1;});
+  return Object.entries(sc).sort((a,b)=>b[1]-a[1]).map(e=>e[0]);
+}
+function dayPlan(refKey){
+  const ref=refKey?dateFromKey(refKey):new Date(),wd=ref.getDay(),key=refKey||localDateKey(ref),base=scheduleForDate(key),ph=phaseInfo(refKey);
+  let subs=base.subs.slice(),weak=null;
+  if(ph.ph>=2){
+    const w=weakSubjects();
+    weak=w.find(function(x){return x!=='Língua Portuguesa'&&subs.indexOf(x)<0;})||null;
+    if(weak)subs.push(weak); // injeta fraqueza sem retirar o foco nem a manutenção previstos
+  }
+  const target=base.target||ph.target;
+  return {wd:wd,subs:subs,primary:(base.primary||[]).slice(),maintenance:(base.maintenance||[]).slice(),weak:weak,extra:base.extra,target:target,note:base.note||'',pendingEssay:!!base.pendingEssay,recentSimReview:!!base.recentSimReview,flexible:!!base.flexible};
+}
+function touchDaily(){const t=todayStr();if(!S.daily||S.daily.d!==t)S.daily={d:t,q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};}
+function startSet(subs,qty){
+  S.mode='materia';S.subs=subs.slice();S.niv='all';S.qty=qty;
+  let pool=QQ.filter(q=>subs.includes(q.m));
+  if(!pool.length){toast('Sem questões dessas matérias agora.');return;}
+  pool.sort(()=>Math.random()-.5);S.round++;
+  S.sq=pool.slice(0,Math.min(qty,pool.length));S.ci=0;S.sa=[];
+  const hsc=document.getElementById('hsc');if(hsc)hsc.style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+  toast('🎯 Questões do dia: '+subs.map(abbr).join(', '));
+}
+// ══════════ MINI-AULA ANTES DA MISSÃO DIÁRIA ══════════
+// Monta o lote de hoje ANTES de mostrar qualquer tela, já com priorização inteligente
+// (não vistas > erradas > resto) — a mesma que o modo "Por Matéria" já usa.
+function buildDailyPool(){
+  const p=dayPlan(),N=p.target,used=new Set();
+  // Matemática continua no plano de estudo, mas não é empurrada para a bateria automática mobile.
+  const questionSubs=p.subs.filter(function(m){return m!=='Matemática';});
+  const all=QQ.filter(function(q){return questionSubs.indexOf(q.
+
+=== D21 CONTEXT ===
+&&(!topics.length||topics.indexOf(topico(q.a))>=0);})).slice(0,item.kind==='advanced'?8:12);}startAdaptiveQuestionPool(item,pool);
+}
+function completeDsoLesson(idx){
+  var item=S._adaptiveDisplay&&S._adaptiveDisplay.items[idx];if(!item||!item.dsoBlocks)return;
+  var topics=item.dsoBlocks.map(function(b){return b.topic;}),minutes=item.dsoBlocks.reduce(function(sum,b){return sum+(b.minutes||0);},0);
+  registerStudySubject(S._adaptiveDisplay.date,{subject:item.subject,mode:'theory',topics:topics,sources:['DSO'],note:'DSO concluído · '+minutes+' min'});
+  markAdaptiveDone(item,S._adaptiveDisplay.date);SS();renderCrono();toast('✅ DSO concluído: '+abbr(item.subject)+' · '+minutes+' min. Revisões futuras foram programadas.');
+}
+function daysLeft(refKey){
+  if(!S.plan||!S.plan.examDate)return null;
+  const ex=dateFromKey(S.plan.examDate);const now=refKey?dateFromKey(refKey):new Date();ex.setHours(0,0,0,0);now.setHours(0,0,0,0);
+  return Math.round((ex-now)/86400000);
+}
+function phaseInfo(refKey){
+  const d=daysLeft(refKey);let ph,name,color,target;
+  if(d===null||d>=63){ph=1;name='Fase 1 · Avanço + base de memória';color='f1';target=30;}
+  else if(d>=35){ph=2;name='Fase 2 · Questões + D+7/D+21';color='f2';target=35;}
+  else if(d>=14){ph=3;name='Fase 3 · Modo prova';color='f3';target=35;}
+  else{ph=4;name='Fase 4 · Reta final controlada';color='f3';target=25;}
+  return {ph:ph,name:name,color:color,target:target,d:d};
+}
+function weakSubjects(){
+  const sc={};
+  Object.values(S.AS).forEach(rec=>{const s=statusOf(rec);if(s==='vermelho')sc[rec.m]=(sc[rec.m]||0)+2;else if(s==='amarelo')sc[rec.m]=(sc[rec.m]||0)+1;});
+  return Object.entries(sc).sort((a,b)=>b[1]-a[1]).map(e=>e[0]);
+}
+function dayPlan(refKey){
+  const ref=refKey?dateFromKey(refKey):new Date(),wd=ref.getDay(),key=refKey||localDateKey(ref),base=scheduleForDate(key),ph=phaseInfo(refKey);
+  let subs=base.subs.slice(),weak=null;
+  if(ph.ph>=2){
+    const w=weakSubjects();
+    weak=w.find(function(x){return x!=='Língua Portuguesa'&&subs.indexOf(x)<0;})||null;
+    if(weak)subs.push(weak); // injeta fraqueza sem retirar o foco nem a manutenção previstos
+  }
+  const target=base.target||ph.target;
+  return {wd:wd,subs:subs,primary:(base.primary||[]).slice(),maintenance:(base.maintenance||[]).slice(),weak:weak,extra:base.extra,target:target,note:base.note||'',pendingEssay:!!base.pendingEssay,recentSimReview:!!base.recentSimReview,flexible:!!base.flexible};
+}
+function touchDaily(){const t=todayStr();if(!S.daily||S.daily.d!==t)S.daily={d:t,q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};}
+function startSet(subs,qty){
+  S.mode='materia';S.subs=subs.slice();S.niv='all';S.qty=qty;
+  let pool=QQ.filter(q=>subs.includes(q.m));
+  if(!pool.length){toast('Sem questões dessas matérias agora.');return;}
+  pool.sort(()=>Math.random()-.5);S.round++;
+  S.sq=pool.slice(0,Math.min(qty,pool.length));S.ci=0;S.sa=[];
+  const hsc=document.getElementById('hsc');if(hsc)hsc.style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
+  toast('🎯 Questões do dia: '+subs.map(abbr).join(', '));
+}
+// ══════════ MINI-AULA ANTES DA MISSÃO DIÁRIA ══════════
+// Monta o lote de hoje ANTES de mostrar qualquer tela, já com priorização inteligente
+// (não vistas > erradas > resto) — a mesma que o modo "Por Matéria" já usa.
+function buildDailyPool(){
+  const p=dayPlan(),N=p.target,used=new Set();
+  // Matemática continua no plano de estudo, mas não é empurrada para a bateria automática mobile.
+  const questionSubs=p.subs.filter(function(m){return m!=='Matemática';});
+  const all=QQ.filter(function(q){return questionSubs.indexOf(q.m)>=0
