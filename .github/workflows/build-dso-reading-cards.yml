@@ -8,6 +8,7 @@ on:
       - 'scripts/generate_dso_reading_cards.py'
       - 'scripts/apply_dso_reading_cards_v3.py'
       - 'scripts/apply_lei5346_resilience_patch.py'
+      - 'scripts/hotfix_lei5346_consolidation_runtime.py'
       - 'scripts/diag_lei5346_occurrences.py'
       - '.github/workflows/build-dso-reading-cards.yml'
   workflow_dispatch:
@@ -31,6 +32,9 @@ jobs:
 
       - name: Apply resilient current Lei 5.346 source
         run: python3 scripts/apply_lei5346_resilience_patch.py
+
+      - name: Make Lei 5.346 consolidation idempotent
+        run: python3 scripts/hotfix_lei5346_consolidation_runtime.py
 
       - name: Generate exact structured DSO article cards
         run: python3 scripts/generate_dso_reading_cards.py
@@ -93,10 +97,21 @@ jobs:
           if 'direitos e deveres individuais e coletivos' not in cf5:
               raise SystemExit('C1D1 parece conter ADCT ou artigo incorreto, não CF art. 5º')
 
+          lei7=text(3,1,'7').lower()
+          if 'aptidão psicológica' not in lei7 or 'exame toxicológico' not in lei7:
+              raise SystemExit('Lei 5.346 art. 7 não reflete Lei 8.409/2021')
+          if '40 (quarenta) anos' in lei7 and ('cadete' in lei7 or 'soldado' in lei7):
+              raise SystemExit('Lei 5.346 art. 7 ainda contém redação inconstitucional da Lei 7.657/2014')
           lei51=text(3,4,'51').lower()
           lei54=text(3,4,'54').lower()
-          if '67' not in lei51 or '72' not in lei54:
-              raise SystemExit('Lei 5.346 publicada não reflete atualização de 2024 nos arts. 51/54')
+          if '67 (sessenta e sete)' not in lei51 or 'ii-a' not in lei51 or 'ii-b' not in lei51 or '§ 5º' not in lei51:
+              raise SystemExit('Lei 5.346 art. 51 não reflete integralmente Lei 9.381/2024')
+          if '72 (setenta e dois)' not in lei54:
+              raise SystemExit('Lei 5.346 art. 54 não reflete Lei 9.381/2024')
+          if 'iii – ser sorteado para a função de juiz militar' not in text(3,6,'118').lower():
+              raise SystemExit('Lei 5.346 art. 118 não reflete Lei 9.381/2024')
+          if 'corpo de bombeiros militar de alagoas' not in text(3,6,'134A').lower():
+              raise SystemExit('Lei 5.346 art. 134-A não reflete Lei 8.409/2021')
 
           html=(root/'index.html').read_text(encoding='utf-8')
           if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html:
@@ -108,7 +123,7 @@ jobs:
           for forbidden in ['parseSectionsV3','V3_TEXT_CACHE']:
               if forbidden in html: raise SystemExit(f'parser textual antigo ainda presente: {forbidden}')
 
-          print('OK: 65 dias estruturados; CF separada do ADCT; Lei 5.346 vigente; ciclos 1/2/3 e RDPMAL conferidos; UI V3 auditada.')
+          print('OK: 65 dias estruturados; CF separada do ADCT; Lei 5.346 consolidada; ciclos 1/2/3 e RDPMAL conferidos; UI V3 auditada.')
           PY
 
       - name: Commit generated reading data and UI
