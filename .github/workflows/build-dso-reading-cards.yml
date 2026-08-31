@@ -7,6 +7,7 @@ on:
       - 'scripts/generate_full_law_reading.py'
       - 'scripts/generate_dso_reading_cards.py'
       - 'scripts/apply_dso_reading_cards_v3.py'
+      - 'scripts/apply_lei5346_resilience_patch.py'
       - '.github/workflows/build-dso-reading-cards.yml'
   workflow_dispatch:
 
@@ -22,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pypdf
+
+      - name: Apply resilient current Lei 5.346 source
+        run: python3 scripts/apply_lei5346_resilience_patch.py
 
       - name: Generate exact structured DSO article cards
         run: python3 scripts/generate_dso_reading_cards.py
@@ -72,20 +76,24 @@ jobs:
                       if a['key']==key:return a['text']
               raise SystemExit(f'C{c}D{d}: artigo {key} ausente')
 
-          # First day of each PDF/cycle plus final RDPM range.
           if keys(1,1) != ['5']: raise SystemExit(f'C1D1 deveria conter apenas CF art. 5º: {keys(1,1)}')
           if not {'1','12'}.issubset(keys(2,1)): raise SystemExit('C2D1 não cobre CPM 1–12')
           if not {'1','14'}.issubset(keys(3,1)): raise SystemExit('C3D1 não cobre Lei 5.346 1–14')
           if not {'82','107'}.issubset(keys(3,11)): raise SystemExit('C3D11 não cobre RDPMAL 82–107')
 
-          # Critical regression guard: Planalto serves Constitution + ADCT together.
-          # C1D4 must be permanent CF 18–36, with 29-A, and never ADCT 18-A.
           expected_cf=[str(n) for n in range(18,30)]+['29A']+[str(n) for n in range(30,37)]
           if keys(1,4) != expected_cf:
               raise SystemExit(f'C1D4 CF permanente inesperada: {keys(1,4)}')
           cf5=text(1,1,'5').lower()
           if 'direitos e deveres individuais e coletivos' not in cf5:
               raise SystemExit('C1D1 parece conter ADCT ou artigo incorreto, não CF art. 5º')
+
+          # Currentness guard for Lei 5.346/1992: Lei 9.381/2024 changed ages
+          # in arts. 51 and 54 to 67 and 72 respectively.
+          lei51=text(3,4,'51').lower()
+          lei54=text(3,4,'54').lower()
+          if '67' not in lei51 or '72' not in lei54:
+              raise SystemExit('Lei 5.346 publicada não reflete atualização de 2024 nos arts. 51/54')
 
           html=(root/'index.html').read_text(encoding='utf-8')
           if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html:
@@ -97,14 +105,14 @@ jobs:
           for forbidden in ['parseSectionsV3','V3_TEXT_CACHE']:
               if forbidden in html: raise SystemExit(f'parser textual antigo ainda presente: {forbidden}')
 
-          print('OK: 65 dias estruturados; CF separada do ADCT; ciclos 1/2/3 e RDPMAL conferidos; UI V3 auditada.')
+          print('OK: 65 dias estruturados; CF separada do ADCT; Lei 5.346 vigente; ciclos 1/2/3 e RDPMAL conferidos; UI V3 auditada.')
           PY
 
       - name: Commit generated reading data and UI
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html law-reading
+          git add index.html law-reading scripts/generate_dso_reading_cards.py
           if git diff --cached --quiet; then
             echo "Nada para commitar"
             exit 0
