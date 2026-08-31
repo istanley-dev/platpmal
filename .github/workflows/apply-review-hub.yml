@@ -1,0 +1,44 @@
+name: Apply Review Hub
+
+on:
+  push:
+    paths:
+      - 'scripts/apply_review_hub_v1.py'
+      - '.github/workflows/apply-review-hub.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply review hub
+        run: python scripts/apply_review_hub_v1.py
+      - name: Audit review hub
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text(encoding='utf-8')
+          required=['PMAL_REVIEW_HUB_V1','id="v-reviewhub"','id="btn-review-hub"','function(){','window.openReviewHub','window.reviewHubStartCurrentErrors','window.reviewHubStartHistoricalErrors']
+          for x in required:
+              if x not in s: raise SystemExit('Review Hub audit failed: missing '+x)
+          m=re.search(r'<div class="sec-k">Opera[cç][oõ]es</div>([\s\S]*?)<!-- QUIZ -->',s,re.I)
+          if not m: raise SystemExit('Review Hub audit failed: Operations block not found')
+          home=m.group(1)
+          for old in ['btn-review-20260830','btn-review-20260825','btn-review-20260824','btn-review-20260823','btn-smart']:
+              if old in home: raise SystemExit('Review Hub audit failed: old review tile still on Home: '+old)
+          if s.count('id="v-reviewhub"')!=1: raise SystemExit('Review Hub audit failed: duplicate view')
+          print('OK: Home limpa + Central de Revisão única + filtros/erros/revisões salvas.')
+          PY
+      - name: Commit generated index
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "feat: publish centralized review hub"
+          git push
