@@ -8,7 +8,6 @@ import time
 from pathlib import Path
 
 import requests
-from bs4 import BeautifulSoup
 import generate_full_law_reading as base
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,65 +43,47 @@ def parse_articles_exact(text: str) -> dict[str, str]:
     return out
 
 
-def recover_article_block(text: str, key: str, next_key: str) -> str | None:
-    clean = base.clean_lines(text)
+def recover_cpm190_from_raw_html(url: str) -> str | None:
+    """Recover CPM art. 190 from raw official Planalto HTML before cleanup.
+
+    The compiled page visually exposes the current art. 190, but its markup can
+    place the provision inside elements removed by the generic strike-through
+    cleanup. We inspect the untouched official HTML and accept only a candidate
+    containing the distinctive current wording of the article, bounded by art.
+    191. No other article uses this recovery path.
+    """
+    r = base.http_get(url, timeout=(12, 60), attempts=3)
+    enc = r.apparent_encoding or r.encoding or "latin-1"
+    try:
+        html = r.content.decode(enc, errors="replace")
+    except LookupError:
+        html = r.content.decode("latin-1", errors="replace")
+
+    soup = base.BeautifulSoup(html, "html.parser")
+    for tag in soup.find_all(["script", "style"]):
+        tag.decompose()
+    raw = base.clean_lines(soup.get_text("\n"))
+
     start_re = re.compile(
-        rf"(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*{re.escape(key)}"
-        rf"(?:\.?[º°oO])?(?=[. \t\r\n]|$)"
+        r"(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*190(?:\.?[º°oO])?(?=[. \t\r\n]|$)"
     )
     end_re = re.compile(
-        rf"(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*{re.escape(next_key)}"
-        rf"(?:\.?[º°oO])?(?=[. \t\r\n]|$)"
+        r"(?:Art(?:igo)?|ART(?:IGO)?)\.?[ \t\r\n]*191(?:\.?[º°oO])?(?=[. \t\r\n]|$)"
     )
-    start = start_re.search(clean)
-    if not start:
-        return None
-    end = end_re.search(clean, start.end())
-    if not end:
-        return None
-    block = base.clean_lines(clean[start.start():end.start()])
-    return block if len(block) >= 15 else None
 
-
-def recover_cpm_190_from_raw_html(url: str) -> str | None:
-    """Recover CPM art. 190 directly from the current official Planalto HTML.
-
-    The consolidated page has formatting that can hide this heading after text
-    normalization. We anchor on the official section heading 'Deserção especial',
-    then collect visible strings from Art. 190 up to Art. 191.
-    """
-    try:
-        r = base.http_get(url, timeout=(12, 45), attempts=3)
-        enc = r.apparent_encoding or r.encoding or "latin-1"
-        try:
-            html = r.content.decode(enc, errors="replace")
-        except LookupError:
-            html = r.content.decode("latin-1", errors="replace")
-        soup = BeautifulSoup(html, "html.parser")
-        for tag in soup.find_all(["script", "style", "strike", "s", "del"]):
-            tag.decompose()
-        strings = [base.clean_lines(s) for s in soup.stripped_strings]
-        start = None
-        for i, s in enumerate(strings):
-            if re.search(r"\bArt\.?\s*190\b", s):
-                context = " ".join(strings[max(0, i - 8):i]).lower()
-                if "deser" in context and "especial" in context:
-                    start = i
-                    break
-        if start is None:
-            return None
-        end = None
-        for j in range(start + 1, len(strings)):
-            if re.search(r"\bArt\.?\s*191\b", strings[j]):
-                end = j
-                break
-        if end is None:
-            return None
-        block = base.clean_lines("\n".join(strings[start:end]))
-        return block if len(block) >= 40 else None
-    except Exception as exc:
-        print(f"CPM: recuperação HTML do art. 190 falhou ({type(exc).__name__}: {exc})", flush=True)
-        return None
+    for start in start_re.finditer(raw):
+        end = end_re.search(raw, start.end())
+        if not end:
+            continue
+        block = base.clean_lines(raw[start.start():end.start()])
+        low = block.lower()
+        if (
+            "deixar o militar de apresentar-se" in low
+            and "partida do navio ou aeronave" in low
+            and "vinte e quatro horas" in low
+        ):
+            return block
+    return None
 
 
 def scope_text(prefix: str, text: str) -> str:
@@ -128,6 +109,11 @@ def scope_text(prefix: str, text: str) -> str:
 
 
 def reader_proxy_text(official_url: str) -> str:
+    """Fallback transport only: retrieve the same official URL through Jina Reader.
+
+    This does not relax content checks. The returned text is accepted only if the
+    normal article/range audits pass later in the build.
+    """
     proxy = "https://r.jina.ai/" + official_url
     last = None
     for attempt in range(3):
@@ -204,12 +190,11 @@ def main():
         title, url, kind, text = source_text(prefix)
         articles = parse_articles_exact(text)
         if prefix == "CPM" and "190" not in articles:
-            recovered = recover_article_block(text, "190", "191")
+            recovered = recover_cpm190_from_raw_html(url)
             if not recovered:
-                recovered = recover_cpm_190_from_raw_html(url)
-            if recovered:
-                articles["190"] = recovered
-                print("CPM: art. 190 recuperado do HTML oficial entre os arts. 190 e 191", flush=True)
+                raise RuntimeError("CPM: art. 190 vigente não foi recuperado do HTML oficial bruto")
+            articles["190"] = recovered
+            print("CPM: art. 190 recuperado do HTML oficial bruto e validado pelo texto vigente", flush=True)
         if not articles:
             raise RuntimeError(f"{prefix}: nenhum artigo reconhecido em {url}")
         for (rp, key), notice in KNOWN_REVOKED.items():
