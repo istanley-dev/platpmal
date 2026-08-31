@@ -1,0 +1,27 @@
+name: Inspect review UI
+
+on:
+  push:
+    paths:
+      - 'scripts/inspect_review_hub.py'
+      - '.github/workflows/inspect-review-ui.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect review UI
+        run: python scripts/inspect_review_hub.py
+      - name: Commit report
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add review-ui-inspection.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: publish review UI inspection"
+          git push
