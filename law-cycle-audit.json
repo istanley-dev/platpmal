@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "marker": "PMAL_DSO_LAW_CYCLES_V1",
+  "dso_days": 65,
+  "checks": {
+    "marker": true,
+    "plan_global": true,
+    "coverage_layer": true,
+    "progress_by_completed_day": true,
+    "spaced_review": true,
+    "cebraspe_mix": true,
+    "general_bank_isolated": true,
+    "day_count_65": true,
+    "javascript_syntax": true
+  },
+  "syntax_error": "",
+  "ok": true
+}
