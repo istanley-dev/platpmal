@@ -1,0 +1,32 @@
+name: Apply RDPM resolver patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/patch_rdpm_resolver.py'
+      - '.github/workflows/patch-rdpm-resolver.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply resolver patch
+        run: python3 scripts/patch_rdpm_resolver.py
+      - name: Install generator dependencies
+        run: pip install requests beautifulsoup4 pypdf
+      - name: Validate all 65 integral readings
+        run: python3 scripts/generate_full_law_reading.py
+      - name: Commit resolver only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/generate_full_law_reading.py
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: resolve RDPM from current official PMAL host"
+          git push origin HEAD:main
