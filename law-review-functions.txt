@@ -17,7 +17,7 @@ function startLawReviewGated(resumeFn){
 === startYesterdayReview ===
 function startYesterdayReview(resumeFn){
   const deck=buildYesterdayReviewDeck();
-  if(!deck.length){toast('Nada registrado ontem para revisar.');if(resumeFn)window[resumeFn]();return;}
+  if(!deck.length){toast('Nada registrado ontem para revisar por cartões. Matemática, quando houver, fica na revisão teórica.');if(resumeFn)window[resumeFn]();return;}
   S._flashQueue=deck;S._flashIdx=0;S._flashSessionType='ontem';S._pendingAfterReview=resumeFn||null;
   sv('flash');renderFlashCard();
   toast('📅 Revisão do dia anterior — obrigatória antes de seguir com a missão de hoje.');
@@ -25,11 +25,11 @@ function startYesterdayReview(resumeFn){
 
 === startWeekReviewGated ===
 function startWeekReviewGated(resumeFn){
-  const topics=weekTopics();
+  const topics=weekTopics().filter(function(t){return t.mat!=='Matemática';});
   if(!topics.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
   const matsSeen=new Set(topics.map(function(t){return t.mat;}));
   const chaves=new Set(topics.map(function(t){return t.mat+'▸'+t.topico;}));
-  let pool=QQ.filter(function(q){return chaves.has(q.m+'▸'+topico(q.a));});
+  let pool=QQ.filter(function(q){return q.m!=='Matemática'&&chaves.has(q.m+'▸'+topico(q.a))&&questionUsable(q)&&!q.reviewOnly&&q.scope!=='review_only';});
   if(!pool.length){if(resumeFn&&typeof window[resumeFn]==='function')window[resumeFn]();return;}
   pool=getSmartPool(pool);
   pool=[...pool].sort(()=>Math.random()-.5);
@@ -43,6 +43,99 @@ function startWeekReviewGated(resumeFn){
   toast('📆 Revisão semanal obrigatória — '+n+' questões de '+topics.length+' tópico(s) antes de seguir.');
 }
 
+=== touchLeituraDia ===
+function touchLeituraDia(){
+  var t=todayStr(),expected=dateFromKey(t).getDay()===0?5:READ_DAILY_QTY;
+  if(!S.leituraDia||S.leituraDia.d!==t){var info=computeTodaysArticles();S.leituraDia={d:t,keys:info.todays,inReview:info.inReview,intensiveV1:true};SS();}
+  else if(!S.leituraDia.intensiveV1||(S.leituraDia.keys||[]).length<expected){var upgraded=computeTodaysArticles();S.leituraDia.keys=mergeUnique(S.leituraDia.keys,upgraded.todays).slice(0,expected);S.leituraDia.inReview=false;S.leituraDia.intensiveV1=true;SS();}
+}
+
+=== readingOrder ===
+function readingOrder(){
+  var keys=Object.keys(DISP);
+  keys.sort(function(a,b){
+    var da=a.split(' ')[0], db=b.split(' ')[0];
+    var ia=(BIB_ORDER[da]!==undefined?BIB_ORDER[da]:9), ib=(BIB_ORDER[db]!==undefined?BIB_ORDER[db]:9);
+    if(ia!==ib)return ia-ib;
+    return (parseInt(a.split(' ')[1])||0)-(parseInt(b.split(' ')[1])||0);
+  });
+  return keys;
+}
+
+=== readingPlanInfo ===
+function readingPlanInfo(){
+  touchLeituraDia();var keys=readingOrder();var N=keys.length;var lidos=Object.keys(S.bibLidos).filter(function(k){return DISP[k];}).length;
+  return {N:N,lidos:lidos,todays:S.leituraDia.keys||[],inReview:S.leituraDia.inReview};
+}
+
+=== renderLeituraSub ===
+function renderLeituraSub(){
+  var info=readingPlanInfo();var pct=info.N?Math.round(info.lidos/info.N*100):0;
+  var bar=document.getElementById('leitura-bar');if(bar)bar.style.width=pct+'%';
+  var subEl=document.getElementById('leitura-sub');
+  if(subEl){if(info.inReview)subEl.innerHTML='<b>'+info.lidos+'/'+info.N+'</b> dispositivos lidos ('+pct+'%) · 🏆 ciclo legal concluído; agora revise pelos erros.';else subEl.innerHTML='<b>'+info.lidos+'/'+info.N+'</b> dispositivos lidos ('+pct+'%) · Hoje: <b>'+info.todays.length+'</b> · seleção 50% incidência / 30% erros / 20% rotação (média semanal).';}
+  return info;
+}
+
+=== renderBiblio ===
+
+
+=== bibRead ===
+function bibRead(key){
+  if(S.bibLidos[key]){
+    // releitura: XP menor, sem toast duplicado
+    S.bibLidos[key].count=(S.bibLidos[key].count||1)+1;
+    awardXP(2);SS();
+    bibUpdCounter();
+    return;
+  }
+  S.bibLidos[key]={ts:Date.now(),count:1};
+  awardXP(5);SS();
+  toast('📖 +5 XP — '+key+' lido!');
+  bibUpdCounter();
+  // atualiza badge visual no próprio details
+  const badge=document.getElementById('bib-badge-'+key.replace(/[^a-zA-Z0-9]/g,''));
+  if(badge){badge.textContent='✓ lido';badge.style.background='#14301f';badge.style.color='#6ee7a0';}
+}
+
+=== ldRead ===
+function ldRead(key){
+  bibRead(key);
+  var safeId='ld-'+key.replace(/[^a-zA-Z0-9]/g,'');
+  var badge=document.getElementById(safeId+'-badge');
+  if(badge){badge.textContent='✓ lido';badge.style.color='#166534';}
+  renderLeituraSub(); // atualiza contagem/barra sem recriar a lista (preserva os <details> abertos)
+}
+
+=== dueLawReviewCards ===
+function dueLawReviewCards(){
+  var now=Date.now();
+  var deck=buildLawReviewDeck().filter(function(c){return c.due<=now;});
+  deck.sort(function(a,b){return a.due-b.due;});
+  if(deck.length>MAX_LEI_CARDS)deck=deck.slice(0,MAX_LEI_CARDS);
+  return deck;
+}
+
+=== startLeituraQuiz ===
+function startLeituraQuiz(){
+  touchLeituraDia();
+  var todaysKeys=S.leituraDia.keys||[];
+  if(!todaysKeys.length){toast('Nenhum artigo novo hoje — você está em dia ou na fase de revisão. Treine pela Biblioteca Legal!');return;}
+  var map=buildKeyToQids();
+  var idSet={};
+  todaysKeys.forEach(function(k){(map[k]||[]).forEach(function(id){idSet[id]=1;});});
+  var ids=Object.keys(idSet);
+  if(!ids.length){toast('Esses artigos ainda não têm questão específica vinculada no banco — marque como lidos e treine por matéria.');return;}
+  var pool=QQ.filter(function(q){return idSet[q.id];});
+  pool.sort(function(){return Math.random()-.5;});
+  S.round++;
+  S.sq=pool.slice(0,Math.min(pool.length,20));S.ci=0;S.sa=[];
+  document.getElementById('hsc').style.display='none';
+  sv('quiz');renderQ();
+  document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('act');});
+  toast('📖 '+pool.length+' questão(ões) dos artigos de hoje!');
+}
+
 === trackAnswer ===
 function trackAnswer(q,a,ok,conf){
   const k=asKey(q), rec=asGet(k,q.m,q.a);
@@ -52,6 +145,7 @@ function trackAnswer(q,a,ok,conf){
   rec.hist.push({ok:ok,ce:q.ce,nv:q.n,ts:Date.now(),round:S.round,ans:a,g:q.g,id:q.id,conf:conf||null});
   // Registro obrigatório por questão (11 campos)
   S.log.push({m:q.m,a:q.a,sub:q.a,peg:q.p||'',ans:a,gab:q.g,res:ok?'acerto':'erro',erro:ok?'':q.ce,nv:q.n,round:S.round,ts:Date.now(),status:'',conf:conf||null});
+  registerQuestionStudy(q,ok,conf);
   let alert=null;
   const h=rec.hist, errRec=h.slice(-4).filter(x=>!x.ok).length;
   // FALSA CONFIANÇA: acertou mas chutando — alerta específico, prioridade alta (mesmo sem erro)
@@ -129,7 +223,7 @@ function renderQ(){
   document.getElementById('qprog').style.width=pct+'%';
   document.getElementById('qcnt').textContent=(S.ci+1)+'/'+tot;
   document.getElementById('qmat').textContent=q.m;
-  document.getElementById('qass').innerHTML='📖 '+esc(q.a)+questionSourceBadge(q);
+  document.getElementById('qass').innerHTML='📖 '+esc(q.a)+questionSourceBadge(q)+(q.reviewOnly?' <span class="badge-ai">📚 REVISÃO EXCLUSIVA · '+esc((q.reviewClass||'').replace(/_/g,' '))+'</span>':'');
   const ne=document.getElementById('qniv');
   const nm={medio:'⭐ Médio',dificil:'⭐⭐ Difícil',muito_dificil:'⭐⭐⭐ Muito Difícil',cruel:'☠️ Cruel'};
   const nc={medio:'nm',dificil:'nd',muito_dificil:'nmd',cruel:'nc'};
@@ -140,13 +234,14 @@ function renderQ(){
   const pfx=isAi?'✨ IA: ':((isReal||isRecent)?('📋 '+ano+': '):'');
   ne.textContent=pfx+(nm[q.n]||q.n);
   ne.className='qniv '+(isAi?'nai':((isReal||isRecent)?'nreal':(nc[q.n]||'nm')));
-  // Texto-base: exibir quando q.tx existe
+  // Texto-base: resolvido uma vez pelo textId, com compatibilidade para q.tx antigo.
   const qtxEl=document.getElementById('qtx');
   const qtxTt=document.getElementById('qtx-tt');
   const qtxBody=document.getElementById('qtx-body');
-  if(q.tx&&q.tx.trim()){
+  const contextText=questionContextText(q);
+  if(contextText&&contextText.trim()){
     qtxTt.textContent=q.tt||'Texto de referência';
-    qtxBody.textContent=q.tx;
+    qtxBody.textContent=contextText;
     qtxEl.style.display='block';
   } else {
     qtxEl.style.display='none';
@@ -167,6 +262,7 @@ function renderQ(){
 
 === showRes ===
 function showRes(){
+  if(S._adaptiveContext){markAdaptiveDone(S._adaptiveContext.item,S._adaptiveContext.target);S._adaptiveContext=null;}
   const sa=S.sa,tot=sa.length,ok=sa.filter(a=>a.ok).length,err=tot-ok,pct=tot>0?Math.round(ok/tot*100):0;
   document.getElementById('rring').className='sr '+scCls(pct);
   document.getElementById('rpct').textContent=pct+'%';
@@ -192,14 +288,14 @@ function showRes(){
   const ec=document.getElementById('recard');
   if(errs.length>0){
     ec.style.display='block';
-    document.getElementById('reli').innerHTML=errs.map(a=>{const q=QQ.find(x=>x.id===a.id);return q?'<div class="eli"><div class="em">'+q.m+'</div><div class="et">'+q.e+'</div></div>':'';}).join('');
+    document.getElementById('reli').innerHTML=errs.map(a=>{const q=findQuestionById(a.id);return q?'<div class="eli"><div class="em">'+q.m+' · '+q.id+'</div><div class="et">'+q.e+'</div></div>':'';}).join('');
   }else ec.style.display='none';
   const weak=entries.filter(e=>Math.round(e[1].c/e[1].t*100)<50).map(e=>e[0]);
   let plano='';
   if(err===0)plano='<strong>🎉 Desempenho perfeito!</strong> Revise os fundamentos para consolidar.';
   else{if(weak.length)plano+='<strong>🚨 Revisão urgente:</strong> '+weak.join(', ')+'<br><br>';plano+='<strong>💡 Para amanhã:</strong> Releia os artigos das questões erradas. Use o prompt abaixo ou clique em "Novo Simulado" para continuar — se o banco acabar, a IA gera mais automaticamente.';}
   document.getElementById('rpla').innerHTML=plano;
-  const errAs=errs.map(a=>{const q=QQ.find(x=>x.id===a.id);return q?q.a:'';}).filter(Boolean);
+  const errAs=errs.map(a=>{const q=findQuestionById(a.id);return q?q.a:'';}).filter(Boolean);
   document.getElementById('rpro').textContent=buildPrompt(entries,ok,tot,errAs,pct);
   document.getElementById('btn-cp').onclick=function(){
     navigator.clipboard.writeText(document.getElementById('rpro').textContent)
@@ -263,6 +359,7 @@ function showRes(){
 
 === startQ ===
 function startQ(){
+  S.reviewActive=null;
   // Sempre lê direto do DOM — garante o valor atual independente de eventos
   S.qty=parseInt(document.getElementById('sel-qty').value)||10;
   S.niv=document.getElementById('sel-niv').value;
