@@ -25,13 +25,17 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 pypdf
 
-      - name: Normalize static builder sort helper
+      - name: Normalize static builder helpers
         run: |
           python3 - <<'PY'
           from pathlib import Path
           p=Path('scripts/build_static_dso_bank.py')
           s=p.read_text(encoding='utf-8')
           s=s.replace('dyn.base.article_sort_key(kv[0])','base.art_code(kv[0])')
+          old='''    if not re.search(r"Cadete\\s*[–—-]\\s*(?:de\\s*)?18\\s*\\(dezoito\\)\\s*a\\s*30\\s*\\(trinta\\)", out["7"], re.I):\n        raise RuntimeError("Lei 5.346 art. 7 não restaurou o limite válido do Cadete")\n'''
+          new='''    current_cadete = re.search(r"Cadete\\s*[–—-].{0,120}?30", out["7"], re.I|re.S)\n    invalid_cadete = re.search(r"Cadete\\s*[–—-].{0,120}?40", out["7"], re.I|re.S)\n    if not current_cadete or (invalid_cadete and invalid_cadete.start() < current_cadete.start()):\n        raise RuntimeError("Lei 5.346 art. 7 não restaurou o limite válido do Cadete")\n'''
+          if old not in s: raise SystemExit('guarda antiga do Cadete não encontrada')
+          s=s.replace(old,new,1)
           p.write_text(s,encoding='utf-8')
           PY
 
@@ -49,24 +53,20 @@ jobs:
           python3 - <<'PY'
           import json,re,pathlib
           root=pathlib.Path('.')
-          mp=root/'law-reading'/'manifest.json'
-          bp=root/'law-reading'/'bank.json'
+          mp=root/'law-reading'/'manifest.json'; bp=root/'law-reading'/'bank.json'
           if not mp.exists() or not bp.exists(): raise SystemExit('banco/manifesto estático ausente')
-          m=json.loads(mp.read_text(encoding='utf-8'))
-          b=json.loads(bp.read_text(encoding='utf-8'))
+          m=json.loads(mp.read_text(encoding='utf-8')); b=json.loads(bp.read_text(encoding='utf-8'))
           if m.get('version')!=5 or m.get('format')!='static-integral-law-bank': raise SystemExit('manifesto não é banco estático V5')
           if m.get('runtimeNetworkRequired') is not False: raise SystemExit('runtime ainda depende de rede')
           days=m.get('days') or []
           if m.get('totalDays')!=65 or len(days)!=65: raise SystemExit(f'cobertura inválida: {len(days)} dias')
           if b.get('format')!='pmal-static-integral-bank' or len(b.get('laws',{}))<24: raise SystemExit('bank.json incompleto')
 
-          payloads={}
-          seen=set()
+          payloads={}; seen=set()
           for d in days:
               key=(d['cycle'],d['day'])
               if key in seen: raise SystemExit(f'dia duplicado {key}')
-              seen.add(key)
-              f=root/d['path']
+              seen.add(key); f=root/d['path']
               if not f.exists(): raise SystemExit(f'arquivo ausente {f}')
               x=json.loads(f.read_text(encoding='utf-8'))
               if x.get('version')!=5 or x.get('format')!='static-integral-law-bank': raise SystemExit(f'{f}: formato incorreto')
@@ -95,7 +95,8 @@ jobs:
           a7=text(3,1,'7').lower()
           if 'aptidão psicológica' not in a7 or 'exame toxicológico' not in a7: raise SystemExit('Lei 5.346 art. 7 sem Lei 8.409/2021')
           if 'beneficiar os participantes do último concurso' in a7: raise SystemExit('Lei 5.346 art. 7 contém Lei 7.657/2014 inconstitucional')
-          if not re.search(r'cadete\s*[–—-]\s*(?:de\s*)?18\s*\(dezoito\)\s*a\s*30\s*\(trinta\)',a7,re.I): raise SystemExit('Lei 5.346 art. 7: limite do Cadete não restaurado')
+          cad30=re.search(r'cadete\s*[–—-].{0,120}?30',a7,re.I|re.S); cad40=re.search(r'cadete\s*[–—-].{0,120}?40',a7,re.I|re.S)
+          if not cad30 or (cad40 and cad40.start()<cad30.start()): raise SystemExit('Lei 5.346 art. 7: limite atual do Cadete não é 30')
 
           # Correct DSO locations: art. 51 is C3D3; art. 54 is C3D4.
           a51=text(3,3,'51').lower(); a54=text(3,4,'54').lower()
