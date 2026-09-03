@@ -1,0 +1,52 @@
+name: Apply CPPM Review Notes
+
+on:
+  push:
+    paths:
+      - 'scripts/add_cppm_review_notes_20260903.py'
+      - '.github/workflows/apply-cppm-review-notes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add CPPM notes to existing Review Hub
+        run: python scripts/add_cppm_review_notes_20260903.py
+      - name: Audit CPPM review notes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          required=[
+            'PMAL_CPPM_REVIEW_NOTES_20260903_V1',
+            'id="rh-cppm-recent-notes"',
+            'PJM — delegação',
+            'PJM — equivalência funcional',
+            'Deserção — estabilidade da praça',
+            "window.toggleCppmReviewNote",
+            'pmal26_cppm_review_notes_20260903_v1',
+          ]
+          for x in required:
+              if x not in s: raise SystemExit('CPPM review-note audit failed: missing '+x)
+          hub=s.find('<!-- PMAL_REVIEW_HUB_VIEW -->')
+          notes=s.find('id="rh-cppm-recent-notes"')
+          quiz=s.find('<!-- QUIZ -->',hub)
+          if not (0 <= hub < notes < quiz):
+              raise SystemExit('CPPM review-note audit failed: notes are not inside the existing Review Hub')
+          if s.count('id="rh-cppm-recent-notes"') != 1:
+              raise SystemExit('CPPM review-note audit failed: duplicate notebook section')
+          print('OK: 3 CPPM mistakes live inside the existing Central de Revisão.')
+          PY
+      - name: Commit generated index
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "feat: add recent CPPM mistakes to review hub"
+          git push
