@@ -84,3 +84,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Deploy trigger: o index gerado e auditado já está no main; esta linha apenas dispara o Pages.
