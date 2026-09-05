@@ -1,0 +1,64 @@
+name: Apply Recent User Questions
+
+on:
+  push:
+    paths:
+      - 'scripts/add_recent_user_questions_20260905.py'
+      - '.github/workflows/apply-recent-user-questions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add recent questions
+        run: python scripts/add_recent_user_questions_20260905.py
+      - name: Audit question-bank integration
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,re,unicodedata
+          s=Path('index.html').read_text(encoding='utf-8')
+          mark='PMAL_RECENT_USER_QUESTIONS_20260905_V1'
+          if mark not in s: raise SystemExit('marker ausente')
+          if s.find(mark)>s.find('const SUBS=[...new Set(QQ.map(q=>q.m))];'):
+              raise SystemExit('lote entrou depois da inicialização dos filtros')
+          m=re.search(r'var QUESTIONS_20260905_RECENTES=(\[.*?\]);\nfunction pmalNormQ20260905',s,re.S)
+          if not m: raise SystemExit('array recente não encontrado')
+          qs=json.loads(m.group(1))
+          if len(qs)!=10: raise SystemExit(f'esperadas 10 questões, obtidas {len(qs)}')
+          ids=[q['id'] for q in qs]
+          if len(ids)!=len(set(ids)): raise SystemExit('IDs duplicados no lote')
+          required={'id','m','a','n','e','g','c','p','f','d','ce','src','real'}
+          for q in qs:
+              miss=required-set(q)
+              if miss: raise SystemExit(f"{q.get('id')}: campos ausentes {sorted(miss)}")
+              if q['g'] not in ('CERTO','ERRADO'): raise SystemExit(q['id']+': gabarito inválido')
+              if len(q['c'].strip())<100: raise SystemExit(q['id']+': comentário técnico curto')
+              if len(q['p'].strip())<20 or len(q['f'].strip())<8 or len(q['d'].strip())<15: raise SystemExit(q['id']+': metadados pedagógicos insuficientes')
+          for token in ['Q596585','Q2985819','Q695609','USR_CPPM_PJM_FUNCOES_20260905','USR_CPPM_DESERCAO_ESTAVEL_20260905','USR_AMB_DUPLA_IMPUTACAO_20260905','USR_TORT_NOTURNO_20260905']:
+              if token not in ids: raise SystemExit('questão crítica ausente: '+token)
+          mi=re.search(r'var IMPORT_20260905_RECENTES=(\[.*?\]);\nfunction importRecentQuestions20260905',s,re.S)
+          if not mi: raise SystemExit('migração de erros não encontrada')
+          imp=json.loads(mi.group(1))
+          if len(imp)!=8: raise SystemExit(f'esperados 8 erros confirmados, obtidos {len(imp)}')
+          # O item civil foi acertado e Tortura não é marcado como erro devido à ambiguidade do recorte.
+          errids={x['id'] for x in imp}
+          if 'USR_AMB_RISCO_INTEGRAL_20260905' in errids or 'USR_TORT_NOTURNO_20260905' in errids:
+              raise SystemExit('item não confirmado foi marcado como erro')
+          if 'QQ.push(q)' not in s or 'S.eids.add(q.id)' not in s:
+              raise SystemExit('integração com banco/revisão ausente')
+          print('OK: 10 questões no QQ + 8 erros confirmados na Central de Revisão, sem duplicação intencional.')
+          PY
+      - name: Commit generated index
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "feat: publish recent user questions in question bank"
+          git push
