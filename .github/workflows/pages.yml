@@ -24,6 +24,17 @@ jobs:
       - name: Aplicar Central de Revisão no artefato
         run: python scripts/apply_review_hub_v1.py
 
+      - name: Preparar testes de interface
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Testar navegação, revisão e progresso
+        run: |
+          npm install --prefix "$RUNNER_TEMP/pmal-ui-tests" --no-save --ignore-scripts jsdom@26.1.0
+          node scripts/test_adaptive_schedule.js
+          NODE_PATH="$RUNNER_TEMP/pmal-ui-tests/node_modules" node scripts/test_interface.js
+
       - name: Auditar Banco de Leis, plano DSO e Central de Revisão antes de publicar
         run: |
           python3 - <<'PY'

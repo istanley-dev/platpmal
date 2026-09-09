@@ -13,7 +13,7 @@ function fakeElement(id) {
     classList: { add() {}, remove() {}, toggle() {}, contains() { return false; } },
     value: id === 'sel-qty' ? '20' : id === 'sel-niv' ? 'all' : '',
     textContent: '', innerHTML: '', disabled: false,
-    addEventListener() {}, appendChild() {}, insertAdjacentHTML() {}, remove() {}, focus() {}, select() {},
+    addEventListener() {}, setAttribute() {}, appendChild() {}, insertAdjacentHTML() {}, remove() {}, focus() {}, select() {},
     setSelectionRange() {}, scrollIntoView() {}, closest() { return fakeElement('closest'); },
     querySelectorAll() { return []; }, querySelector() { return fakeElement('child'); }
   };
@@ -38,6 +38,7 @@ function boot(storage) {
   const element = (id) => { if (!elements.has(id)) elements.set(id, fakeElement(id)); return elements.get(id); };
   const document = {
     getElementById: element, querySelectorAll() { return []; }, querySelector() { return fakeElement('query'); },
+    addEventListener() {},
     createElement(tag) { return fakeElement(tag); }, body: fakeElement('body')
   };
   const context = {
@@ -161,12 +162,13 @@ assert.equal(app.S.sq.some((q) => q.m === 'Matemática'), false);
 
 // Banco de Leis diário e memória espaçada.
 const weekdayLaw = app.computeTodaysArticles();
-assert(weekdayLaw.todays.length >= 5 && weekdayLaw.todays.length <= 8);
+assert(weekdayLaw.todays.length > 0, 'a faixa diária DSO deve conter dispositivos');
+assert.equal(weekdayLaw.perDay, weekdayLaw.todays.length);
 const legacyFive = weekdayLaw.todays.slice(0, 5);
 app.S.leituraDia = { d: app.localDateKey(new Date()), keys: Array.from(legacyFive), inReview: false };
 app.touchLeituraDia();
-assert.equal(app.S.leituraDia.keys.length, 7, 'rotina antiga do mesmo dia deve migrar de 5 para 7 dispositivos');
-assert(legacyFive.every((key) => app.S.leituraDia.keys.includes(key)), 'migração deve preservar os dispositivos já exibidos');
+assert.deepEqual(Array.from(app.S.leituraDia.keys), Array.from(weekdayLaw.todays), 'a rotina deve seguir a faixa do ciclo DSO atual');
+assert.equal(app.S.leituraDia.dsoPlanV1, true, 'a rotina antiga deve migrar para o plano DSO');
 const law = app.lawDailySelection('2026-08-26');
 assert(law.deadlines.length > 0 && law.deadlines.length <= 5);
 assert(law.juris.length > 0 && law.juris.length <= 3);

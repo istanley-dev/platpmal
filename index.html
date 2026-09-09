@@ -499,6 +499,7 @@ header{background:rgba(9,12,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-
 .rh-saved{display:grid;grid-template-columns:1fr;gap:7px}
 @media(max-width:520px){.rh-kpis{grid-template-columns:repeat(3,1fr)}.rh-actions,.rh-cta-row{grid-template-columns:1fr 1fr}.rh-filter{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="interface.css?v=20260908">
 </head>
 <body>
 <header>
@@ -4910,7 +4911,8 @@ function showRes(){
     updHS();document.getElementById('hsc').style.display='none';
   };
   sv('res');document.querySelectorAll('.nb').forEach(b=>b.classList.remove('act'));
-  document.querySelector('.nb[data-n="res"]').classList.add('act');
+  const resultNav=document.querySelector('.nb[data-n="res"]')||document.querySelector('.nb[data-n="practice"]');
+  if(resultNav)resultNav.classList.add('act');
   const ontemB=document.getElementById('ontem-banner');
   if(S._afterQuizContinue==='ontem'){
     ontemB.innerHTML=
@@ -7067,5 +7069,6 @@ setTimeout(function(){if(typeof renderLeituraDia==='function')renderLeituraDia()
 })();
 </script>
 
+<script src="interface.js?v=20260908"></script>
 </body>
 </html>
