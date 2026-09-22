@@ -3868,21 +3868,20 @@ function advancedMaintenanceItems(targetKey,excluded){
   return Object.values(latest).map(function(x){x.age=Math.floor((target-dateFromKey(x.sourceDate).getTime())/DIA_MS);x.priority=studyClass(x.study).priority;return x;}).filter(function(x){return x.age>=14;}).sort(function(a,b){return a.priority-b.priority||b.age-a.age||incidenceScore({m:a.subject,a:a.topic})-incidenceScore({m:b.subject,a:b.topic});}).slice(0,3);
 }
 function buildAdaptiveDay(targetKey){
-  ensureStudyState();targetKey=targetKey||localDateKey(new Date());var wd=dateFromKey(targetKey).getDay(),base=scheduleForDate(targetKey),bySubject={};
+  ensureStudyState();targetKey=targetKey||localDateKey(new Date());var bySubject={};
   function add(subject,kind,sourceDate,rec,reason,offset){
     if(!subject)return;var x=bySubject[subject];if(!x)x=bySubject[subject]={subject:subject,kind:kind,sourceDate:sourceDate||null,sourceDates:[],study:rec||null,reasons:[],offsets:[]};
     x.reasons=mergeUnique(x.reasons,[reason]);x.sourceDates=mergeUnique(x.sourceDates,sourceDate?[sourceDate]:[]);if(offset)x.offsets=mergeUnique(x.offsets,[offset]);
     var rank={combat:0,d1:1,d3:2,dso:3,d7:4,d14:5,d21:6,d30:7,advanced:8};if(rank[kind]<rank[x.kind])x.kind=kind;if(rec&&(!x.study||studyClass(rec).priority<studyClass(x.study).priority)){x.study=rec;x.sourceDate=sourceDate;}
   }
-  (base.subs||[]).forEach(function(m){add(m,'dso',null,null,'Estudo DSO');});
-  (base.blocks||[]).forEach(function(b){var x=bySubject[b.subject];if(x)x.dsoBlocks=(x.dsoBlocks||[]).concat([b]);});
   [1,3,7,14,21,30].forEach(function(offset){var source=shiftDateKey(targetKey,-offset);studySubjects(source).forEach(function(r){var cls=studyClass(r);if(cls.intervals.indexOf(offset)<0)return;add(r.subject,'d'+offset,source,r,'Revisão D+'+offset+' · '+cls.label,offset);});});
-  var fixed=[1,3,5].indexOf(wd)>=0;if(fixed)add('Língua Portuguesa','port',null,null,'Português fixo 3x/semana');
   var combat=errorCombatItems(targetKey),standaloneCombat=[];combat.forEach(function(c){var x=bySubject[c.subject];if(!x){standaloneCombat.push(c);return;}x.kind='combat';x.topic=x.topic||c.topic;x.combatTopics=mergeUnique(x.combatTopics,[c.topic]);x.errorCount=(x.errorCount||0)+c.errorCount;x.lastError=Math.max(x.lastError||0,c.lastError);x.reasons=mergeUnique(x.reasons,c.reasons);});
-  var groups={dso:[],recent:[],combat:standaloneCombat,maintenance:[],port:[],math:[]},excluded={};
-  Object.keys(bySubject).forEach(function(m){var x=bySubject[m];excluded[m]=true;if(m==='Matemática'){groups.math.push(x);return;}if(m==='Língua Portuguesa'&&fixed){x.kind='port';groups.port.push(x);return;}if(x.dsoBlocks){groups.dso.push(x);return;}if(x.kind==='combat')groups.combat.push(x);else if(x.kind==='d1'||x.kind==='d3')groups.recent.push(x);else if(x.kind==='d7'||x.kind==='d14'||x.kind==='d21'||x.kind==='d30')groups.maintenance.push(x);else groups.dso.push(x);});
+  var incidence={};QQ.forEach(function(q){if(!q.m||q.missingContext)return;incidence[q.m]=(incidence[q.m]||0)+1;});
+  Object.keys(incidence).sort(function(a,b){return incidenceScore({m:b,a:b})-incidenceScore({m:a,a:a})||incidence[b]-incidence[a];}).forEach(function(subject){if(bySubject[subject])return;add(subject,'incidence',null,null,'Incidência CEBRASPE');});
+  var groups={recent:[],combat:standaloneCombat,maintenance:[],incidence:[],math:[]},excluded={};
+  Object.keys(bySubject).forEach(function(m){var x=bySubject[m];excluded[m]=true;if(m==='Matemática'){groups.math.push(x);return;}if(x.kind==='combat')groups.combat.push(x);else if(x.kind==='d1'||x.kind==='d3')groups.recent.push(x);else if(x.kind==='d7'||x.kind==='d14'||x.kind==='d21'||x.kind==='d30')groups.maintenance.push(x);else groups.incidence.push(x);});
   groups.maintenance=groups.maintenance.concat(advancedMaintenanceItems(targetKey,excluded));
-  var order=['combat','recent','dso','port','math','maintenance'],kept=0,deferred=0;order.forEach(function(g){var cap=g==='combat'?3:g==='recent'?4:g==='maintenance'?3:g==='dso'?(base.maxDso||2):2;var room=Math.max(0,MAX_ADAPTIVE_ITEMS-kept),arr=groups[g],take=Math.min(arr.length,cap,room);deferred+=arr.length-take;groups[g]=arr.slice(0,take);kept+=take;});
+  var order=['combat','recent','maintenance','incidence','math'],kept=0,deferred=0;order.forEach(function(g){var cap=g==='combat'?3:g==='recent'?4:g==='maintenance'?3:g==='incidence'?3:2;var room=Math.max(0,MAX_ADAPTIVE_ITEMS-kept),arr=groups[g],take=Math.min(arr.length,cap,room);deferred+=arr.length-take;groups[g]=arr.slice(0,take);});
   S.adaptiveReview.deferred[targetKey]={count:deferred,ts:Date.now()};
   return {date:targetKey,groups:groups,summary:{blocks:kept,deferred:deferred,minutes:kept*18+25}};
 }
@@ -3902,7 +3901,7 @@ function adaptiveItemHTML(item,idx,target){
   return '<div class="adaptive-item'+cls+'"><div class="adaptive-main"><div class="adaptive-title">'+(math?'🧮 ':item.kind==='port'?'🇵🇹 ':item.kind==='combat'?'🔥 ':'')+esc(abbr(item.subject))+(item.topic?' — '+esc(item.topic):'')+'</div><div class="adaptive-desc">'+esc(adaptiveItemDesc(item))+'</div><div class="adaptive-tags">'+tags+'</div></div>'+button+'</div>';
 }
 function renderAdaptiveSchedule(targetKey){
-  var el=document.getElementById('adaptive-schedule');if(!el)return;var data=buildAdaptiveDay(targetKey),defs=[['dso','📚 ESTUDO DSO'],['recent','🔁 REVISÃO RECENTE'],['combat','🔥 ERROS EM COMBATE'],['maintenance','🧠 MANUTENÇÃO AVANÇADA'],['port','🇵🇹 PORTUGUÊS FIXO'],['math','🧮 MATEMÁTICA TEÓRICA']],flat=[],mobile=!!(window.matchMedia&&window.matchMedia('(max-width:430px)').matches);
+  var el=document.getElementById('adaptive-schedule');if(!el)return;var data=buildAdaptiveDay(targetKey),defs=[['combat','🔥 ERROS E REINCIDÊNCIAS'],['recent','🔁 REVISÕES PRIORITÁRIAS'],['maintenance','🧠 MANUTENÇÃO AVANÇADA'],['incidence','📊 INCIDÊNCIA CEBRASPE'],['math','🧮 MATEMÁTICA TEÓRICA']],flat=[],mobile=!!(window.matchMedia&&window.matchMedia('(max-width:430px)').matches);
   defs.forEach(function(d){data.groups[d[0]].forEach(function(x){x._idx=flat.length;flat.push(x);});});S._adaptiveDisplay={date:data.date,items:flat};
   var summary='<div class="adaptive-summary"><b>Hoje</b><span>'+data.summary.blocks+' blocos</span><span>~'+Math.floor(data.summary.minutes/60)+'h'+String(data.summary.minutes%60).padStart(2,'0')+'</span>'+(data.summary.deferred?'<span>'+data.summary.deferred+' redistribuído(s)</span>':'')+'</div>';
   el.innerHTML=summary+defs.map(function(d){var arr=data.groups[d[0]];if(!arr.length)return '';var body='<div class="adaptive-list">'+arr.map(function(x){return adaptiveItemHTML(x,x._idx,data.date);}).join('')+'</div>';return '<details class="adaptive-group"'+(mobile?'':' open')+'><summary class="adaptive-label">'+d[1]+' · '+arr.length+'</summary>'+body+'</details>';}).join('');
@@ -4472,7 +4471,7 @@ function renderCrono(){
   document.getElementById('crono-ringtx').innerHTML=full?'<b>Missão de hoje concluída!</b> 🎉 Streak garantido — pode seguir treinando à vontade.':'Conclua as tarefas abaixo para fechar o dia e ganhar +20 XP.';
   const pend=pendingMetas();let rows='';
   const adaptiveItems=Object.values(st.adaptive.groups).flat(),adaptiveDone=adaptiveItems.filter(function(x){return isAdaptiveDone(x,st.adaptive.date)||(x.kind==='dso'&&studySubjects(st.adaptive.date).some(function(r){return r.subject===x.subject;}));}).length;
-  rows+=taskRow(adaptiveItems.length>0&&adaptiveDone===adaptiveItems.length,'Plano adaptativo ('+adaptiveDone+'/'+adaptiveItems.length+')','DSO + revisões reais + erros + manutenção, com carga limitada','Ver blocos',"document.getElementById('adaptive-card').scrollIntoView({behavior:'smooth'})");
+  rows+=taskRow(adaptiveItems.length>0&&adaptiveDone===adaptiveItems.length,'Plano adaptativo ('+adaptiveDone+'/'+adaptiveItems.length+')','Fixação + revisões + erros + incidência CEBRASPE, com carga limitada','Ver blocos',"document.getElementById('adaptive-card').scrollIntoView({behavior:'smooth'})");
   (function(){
     const linfo=readingPlanInfo();
     if(linfo.todays.length)rows+=taskRow(leituraDoDiaFeita(),'Banco de Leis ('+linfo.todays.filter(k=>!!S.bibLidos[k]).length+'/'+linfo.todays.length+')','Lei seca + prazos + jurisprudência + pegadinhas','Ver abaixo',"document.getElementById('leitura-card').scrollIntoView({behavior:'smooth'})");

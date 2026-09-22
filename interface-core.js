@@ -107,11 +107,11 @@
   }
   function taskData(){
     const status=dailyStatus(),date=status.adaptive.date;
-    const ordered=['combat','recent','dso','port','math','maintenance'].flatMap(group=>status.adaptive.groups[group]||[]);
+    const ordered=['combat','recent','maintenance','incidence','math'].flatMap(group=>status.adaptive.groups[group]||[]);
     const tasks=ordered.map((item,index)=>{
       const done=isAdaptiveDone(item,date)||(item.kind==='dso'&&studySubjects(date).some(r=>r.subject===item.subject));
       const isLesson=!!item.dsoBlocks;
-      const kind=item.subject==='Matemática'?'Teoria':isLesson?'Aula DSO':item.kind==='dso'?'Estudo DSO':'Revisão';
+      const kind=item.subject==='Matemática'?'Teoria':'Revisão adaptativa';
       const minutes=isLesson?item.dsoBlocks.reduce((sum,b)=>sum+(b.minutes||0),0):18;
       const topic=item.topic||(item.study&&item.study.topics||[]).slice(0,2).join(' · ');
       return {id:'adaptive-'+index,title:item.subject,subtitle:(topic?topic+' · ':'')+kind,detail:adaptiveItemDesc(item),minutes,done,item,index,type:'adaptive'};
