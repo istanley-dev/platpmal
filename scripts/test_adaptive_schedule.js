@@ -97,19 +97,19 @@ assert.equal(app.findQuestionById('sim_20260830_120').originalNumber, 120);
 assert.equal(new Set(app.REVIEW_QUESTIONS_20260830.slice(0, 20).map((q) => q.textId)).size, 2);
 assert(app.REVIEW_QUESTIONS_20260830.slice(0, 20).every(app.questionUsable));
 
-// DSO-base solicitado e estudo previsto != estudo concluído.
+// O DSO continua disponível para leitura, mas não comanda o cronograma adaptativo.
 assert.deepEqual(Array.from(app.WEEK[1].subs), ['Direito Constitucional', 'Noções de Informática']);
 assert.deepEqual(Array.from(app.WEEK[2].subs), ['Direito Administrativo', 'Matemática']);
 assert.deepEqual(Array.from(app.WEEK[3].subs), ['Direito Penal', 'Direito Processual Penal']);
 const emptyFuture = app.buildAdaptiveDay('2026-08-31');
-assert(emptyFuture.groups.dso.some((x) => x.subject === 'Direitos Humanos'));
-assert(emptyFuture.groups.dso.some((x) => x.subject === 'Direito Penal Militar'));
+assert(!Object.prototype.hasOwnProperty.call(emptyFuture.groups, 'dso'));
+assert(Object.values(emptyFuture.groups).flat().every((x) => x.kind !== 'dso'));
 assert.equal(app.studySubjects('2026-08-31').length, 0, 'planejamento não vira estudo real');
 assert.deepEqual(Array.from(app.scheduleForDate('2026-09-01').subs), ['Legislação Penal Especial', 'Direito Processual Penal Militar']);
 assert(app.scheduleForDate('2026-09-04').blocks.some((x) => x.subject === 'Língua Portuguesa'));
 assert.equal(app.scheduleForDate('2026-09-06').flexible, true);
 
-// D+1 de 25/08 em 26/08, sem duplicação; Português fixo; Matemática teórica.
+// D+1 de 25/08 em 26/08, sem duplicação; Matemática teórica.
 const d1 = app.buildAdaptiveDay('2026-08-26');
 const d1Items = Object.values(d1.groups).flat();
 assert.equal(d1Items.filter((x) => x.subject === 'Direito Administrativo').length, 1);
@@ -119,7 +119,6 @@ const mathD1 = d1Items.find((x) => x.subject === 'Matemática');
 assert(mathD1 && mathD1.offsets.includes(1));
 assert.match(app.adaptiveItemDesc(mathD1), /Revisão teórica/);
 assert.match(app.adaptiveItemDesc(mathD1), /papel\/caneta/);
-assert.equal(d1Items.filter((x) => x.subject === 'Língua Portuguesa').length, 1);
 
 // Classificação e cadências variáveis.
 app.registerStudySubject('2026-08-01', { subject: 'Direito Constitucional', mode: 'questions', topics: ['Direitos Fundamentais'], total: 20, correct: 19, errors: 0, accuracy: 95 });
@@ -133,11 +132,8 @@ assert.equal(Object.values(app.buildAdaptiveDay('2026-08-22').groups).flat().som
 assert(app.buildAdaptiveDay('2026-08-31').summary.deferred > 0, 'revisões antigas excedentes devem ser redistribuídas sem apagar o histórico');
 assert(Object.values(app.buildAdaptiveDay('2026-08-23').groups).flat().some((x) => x.subject === 'Direitos Humanos' && (x.offsets || []).includes(21)));
 
-// Português seg/qua/sex e fusão com revisão.
-for (const date of ['2026-08-24', '2026-08-26', '2026-08-28']) {
-  assert.equal(Object.values(app.buildAdaptiveDay(date).groups).flat().filter((x) => x.subject === 'Língua Portuguesa').length, 1);
-}
-assert.equal(Object.values(app.buildAdaptiveDay('2026-08-25').groups).flat().filter((x) => x.subject === 'Língua Portuguesa').length, 0);
+// Português entra por histórico, erros ou incidência, e não por agenda fixa.
+assert.equal(Object.values(app.buildAdaptiveDay('2026-08-25').groups).flat().filter((x) => x.subject === 'Língua Portuguesa').length, 1);
 app.registerStudySubject('2026-08-25', { subject: 'Língua Portuguesa', mode: 'questions', topics: ['Sintaxe'] });
 assert.equal(Object.values(app.buildAdaptiveDay('2026-08-26').groups).flat().filter((x) => x.subject === 'Língua Portuguesa').length, 1);
 
