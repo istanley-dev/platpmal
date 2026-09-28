@@ -1,0 +1,24 @@
+name: Apply study-bank updates
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/add_recent_user_questions_20260905.py'
+      - '.github/workflows/apply-study-bank.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply bank
+        run: python3 scripts/add_recent_user_questions_20260905.py
+      - name: Commit generated platform changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html scripts/add_recent_user_questions_20260905.py .github/workflows/apply-study-bank.yml
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: apply study-bank updates"
+          git push
