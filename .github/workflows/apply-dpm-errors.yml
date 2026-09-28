@@ -79,3 +79,5 @@ jobs:
           git add index.html .github/workflows/apply-dpm-errors.yml
           git commit -m "feat: add DPM error review bank and reinforcement questions"
           git push
+
+# trigger import
