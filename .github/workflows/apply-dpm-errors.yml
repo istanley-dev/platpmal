@@ -1,0 +1,81 @@
+name: Apply DPM error bank 20260928
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-dpm-errors.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inject DPM review bank
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const path='index.html';
+          const marker='const SUBS=[...new Set(QQ.map(q=>q.m))];';
+          const tag='DPM_ERROR_BANK_20260928_V1';
+          if(!fs.existsSync(path)) throw new Error('index.html not found');
+          let html=fs.readFileSync(path,'utf8');
+          if(html.includes(tag)){ fs.rmSync('.github/workflows/apply-dpm-errors.yml'); process.exit(0); }
+
+          const R=(id,a,n,e,g,c,p,f,d)=>({id,m:'Direito Penal Militar',a,n,e,g,c,p,f,d,ce:'lei seca',src:'Revisão DPM 28/09/2026',real:1});
+          const qs=[
+            R('USR_DPM_20260928_01','Estado de necessidade — excludente de culpabilidade','dificil','No direito penal militar, o estado de necessidade pode, conforme as circunstâncias previstas em lei, funcionar como causa de exclusão da culpabilidade.','CERTO','O art. 39 do CPM disciplina hipótese de estado de necessidade como excludente de culpabilidade; o art. 43 trata de hipótese diversa, como excludente de crime.','Não confunda os arts. 39 e 43.','CPM, arts. 39 e 43.','ART. 39 = culpabilidade; ART. 43 = exclusão de crime.'),
+            R('USR_DPM_20260928_02','Excesso escusável — surpresa ou perturbação de ânimo','dificil','Segundo o Código Penal Militar, o excesso não é punível quando resulta de surpresa ou perturbação de ânimo escusáveis, em face da situação.','CERTO','É a regra expressa do art. 45, parágrafo único.','A palavra decisiva é ESCUSÁVEL.','CPM, art. 45, parágrafo único.','SURPRESA/PERTURBAÇÃO ESCUSÁVEL = excesso não punível.'),
+            R('USR_DPM_20260928_03','Estado de necessidade — sacrifício de direito superior','muito_dificil','Militar que, para proteger direito próprio contra perigo certo e atual, sacrifica direito alheio superior ao protegido, sem que lhe fosse razoavelmente exigível conduta diversa, pode estar amparado pelo estado de necessidade como excludente de culpabilidade.','CERTO','O art. 39 admite expressamente o sacrifício de direito alheio ainda quando superior ao direito protegido, desde que inexigível conduta diversa.','No art. 39, a superioridade do direito sacrificado não impede, por si só, a excludente.','CPM, art. 39.','ART. 39 aceita direito sacrificado ATÉ SUPERIOR, se inexigível conduta diversa.'),
+            R('USR_DPM_20260928_04','Crime impossível — ineficácia absoluta do meio','muito_dificil','Militar que inicia atos executórios para matar o comandante mediante artefato absolutamente ineficaz pratica tentativa punível, pois a intenção homicida e o início da execução bastam para caracterizar a tentativa.','ERRADO','O art. 32 estabelece que, por ineficácia absoluta do meio ou absoluta impropriedade do objeto, nenhuma pena é aplicável.','Início da execução não basta quando a consumação é absolutamente impossível.','CPM, art. 32.','MEIO ABSOLUTAMENTE INEFICAZ = crime impossível; nenhuma pena.'),
+            R('USR_DPM_20260928_05','Tentativa — redução da pena','dificil','No CPM, salvo a hipótese excepcional de aplicação da pena do crime consumado por excepcional gravidade, a tentativa é punida com a pena correspondente ao crime consumado, diminuída de um a dois terços.','CERTO','O art. 30, parágrafo único, prevê redução de 1/3 a 2/3 e admite, em excepcional gravidade, a pena do consumado.','Não confunda a regra geral com a exceção de excepcional gravidade.','CPM, art. 30, parágrafo único.','TENTATIVA CPM = -1/3 a -2/3; excepcional gravidade pode afastar a redução.'),
+            R('USR_DPM_20260928_06','Tentativa — excepcional gravidade','muito_dificil','No direito penal militar, a pena do crime consumado jamais pode ser aplicada ao agente que praticou crime tentado, ainda que o caso seja de excepcional gravidade.','ERRADO','O art. 30, parágrafo único, permite ao juiz aplicar a pena do crime consumado no caso de excepcional gravidade.','A palavra “jamais” contradiz a exceção legal.','CPM, art. 30, parágrafo único.','EXCEPCIONAL GRAVIDADE = pode aplicar pena do consumado.'),
+            R('USR_DPM_20260928_07','Relação de causalidade — conceito de causa','dificil','Segundo o art. 29 do Código Penal Militar, considera-se causa a ação ou omissão sem a qual o resultado não teria ocorrido.','CERTO','O art. 29 adota expressamente esse conceito de causa.','No CPM, a relação causal está no art. 29; consumação e tentativa estão no art. 30.','CPM, art. 29.','CAUSA = ação/omissão sem a qual o resultado não teria ocorrido.'),
+
+            R('GEN_DPM_20260928_08','Estado de necessidade — inferioridade do mal','muito_dificil','Militar salva a própria vida de perigo certo e atual que não provocou e não podia evitar, destruindo patrimônio alheio de valor consideravelmente inferior ao mal evitado, sem dever legal de enfrentar o perigo. Pode incidir o estado de necessidade como excludente de crime.','CERTO','É a hipótese do art. 43: mal causado consideravelmente inferior, perigo certo e atual, inevitabilidade e ausência de dever legal de arrostar.','No art. 43, o mal causado deve ser CONSIDERAVELMENTE INFERIOR.','CPM, art. 43.','ART. 43 = mal causado consideravelmente inferior → exclusão de crime.'),
+            R('GEN_DPM_20260928_09','Estado de necessidade — direito superior','dificil','No CPM, se o direito alheio sacrificado for superior ao direito protegido, o estado de necessidade será necessariamente afastado, ainda que não fosse razoavelmente exigível conduta diversa.','ERRADO','O art. 39 admite o sacrifício de direito alheio ainda quando superior ao direito protegido, desde que não fosse razoavelmente exigível conduta diversa.','O item confunde o art. 39 com a lógica do art. 43.','CPM, art. 39.','ART. 39: direito sacrificado pode ser SUPERIOR.'),
+            R('GEN_DPM_20260928_10','Excesso escusável','dificil','O excesso culposo em causa de exclusão de crime pode ser punido se o fato for previsto como crime culposo, mas o excesso resultante de escusável surpresa ou perturbação de ânimo não é punível.','CERTO','Essa é a disciplina do art. 45 e de seu parágrafo único.','A banca pode retirar o requisito “escusável”.','CPM, art. 45.','CULPOSO = responde se houver crime culposo; ESCUSÁVEL = não punível.'),
+            R('GEN_DPM_20260928_11','Crime impossível — impropriedade do objeto','dificil','A absoluta impropriedade do objeto é hipótese de crime impossível no CPM, quando por essa razão é impossível consumar-se o crime.','CERTO','O art. 32 prevê a absoluta impropriedade do objeto como causa de impossibilidade de consumação, sem aplicação de pena.','Não confunda impropriedade absoluta com mera impropriedade relativa.','CPM, art. 32.','OBJETO ABSOLUTAMENTE IMPRÓPRIO = crime impossível.'),
+            R('GEN_DPM_20260928_12','Desistência voluntária','muito_dificil','Se o militar voluntariamente desiste de prosseguir na execução antes da consumação, responde necessariamente pela tentativa do crime pretendido, com redução de um a dois terços.','ERRADO','Pelo art. 31, na desistência voluntária o agente só responde pelos atos já praticados, não pela tentativa do crime pretendido.','Voluntariedade da desistência muda a consequência jurídica.','CPM, art. 31.','DESISTIU VOLUNTARIAMENTE = só responde pelos atos já praticados.'),
+            R('GEN_DPM_20260928_13','Causalidade — causa relativamente independente','muito_dificil','A superveniência de causa relativamente independente exclui a imputação do resultado quando, por si só, tiver produzido o resultado, imputando-se os fatos anteriores a quem os praticou.','CERTO','É a regra do art. 29, § 1º.','A expressão decisiva é “por si só”.','CPM, art. 29, § 1º.','CAUSA RELATIVAMENTE INDEPENDENTE + produz sozinha = exclui o resultado.'),
+            R('GEN_DPM_20260928_14','Causalidade — omissão relevante','dificil','No CPM, a omissão jamais pode ser considerada causa do resultado, porque a relação causal exige necessariamente uma ação física do agente.','ERRADO','O art. 29, § 2º, reconhece a omissão como relevante quando o omitente devia e podia agir para evitar o resultado, nas hipóteses legais de dever de agir.','“Jamais” contradiz expressamente o § 2º.','CPM, art. 29, § 2º.','OMISSÃO PODE SER CAUSA quando havia dever e possibilidade de agir.')
+          ];
+
+          qs.forEach(q=>{{if(!QQ.some(x=>x.id===q.id)) QQ.push(q);}});
+          const original=qs.filter(q=>q.id.startsWith('USR_DPM_'));
+          function importDpm(){{
+            const now=Date.now(); let done=0;
+            original.forEach((q,idx)=>{{
+              const rec=asGet(asKey(q),q.m,q.a), importTag='dpm_erro_20260928_'+q.id;
+              if((rec.hist||[]).some(h=>h&&h.importTag===importTag)) return;
+              S.eids.add(q.id);
+              rec.hist.push({{id:q.id,ok:false,branco:false,ts:now-(idx+1),round:S.round,ans:q.g==='CERTO'?'ERRADO':'CERTO',g:q.g,conf:'duvida',ce:q.ce,nv:q.n,importTag}});
+              rec.crit=true; rec.revLeft=Math.max(rec.revLeft||0,4); rec.due=now; rec.ivIdx=0;
+              if(typeof statusOf==='function') rec.status=statusOf(rec);
+              if(typeof flashGet==='function'&&typeof flashKey==='function'&&typeof topico==='function') flashGet(flashKey(q.m,topico(q.a))).due=0;
+              done++;
+            }});
+            SS(); console.log('DPM errors imported:',done);
+          }}
+          const block='/* '+tag+' */\n'+
+            'var DPM_ERRORS_20260928='+JSON.stringify(qs)+';\n'+
+            'DPM_ERRORS_20260928.forEach(function(q){if(!QQ.some(function(x){return x.id===q.id;}))QQ.push(q);});\n'+
+            'var DPM_ORIGINAL_20260928=DPM_ERRORS_20260928.filter(function(q){return q.id.indexOf("USR_DPM_")===0;});\n'+
+            'function importDpmErrors20260928(){try{var now=Date.now();DPM_ORIGINAL_20260928.forEach(function(q,idx){var rec=asGet(asKey(q),q.m,q.a),importTag="dpm_erro_20260928_"+q.id;if((rec.hist||[]).some(function(h){return h&&h.importTag===importTag;}))return;S.eids.add(q.id);rec.hist.push({id:q.id,ok:false,branco:false,ts:now-(idx+1),round:S.round,ans:q.g==="CERTO"?"ERRADO":"CERTO",g:q.g,conf:"duvida",ce:q.ce,nv:q.n,importTag:importTag});rec.crit=true;rec.revLeft=Math.max(rec.revLeft||0,4);rec.due=now;rec.ivIdx=0;if(typeof statusOf==="function")rec.status=statusOf(rec);if(typeof flashGet==="function"&&typeof flashKey==="function"&&typeof topico==="function")flashGet(flashKey(q.m,topico(q.a))).due=0;});SS();}catch(e){console.error(e);}}\n'+
+            'if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){setTimeout(importDpmErrors20260928,0);});else setTimeout(importDpmErrors20260928,0);\n'+
+            '/* '+tag+'_END */\n';
+          const pos=html.indexOf(marker); if(pos<0) throw new Error('Marker not found');
+          html=html.slice(0,pos)+block+html.slice(pos);
+          fs.writeFileSync(path,html);
+          fs.rmSync('.github/workflows/apply-dpm-errors.yml');
+          NODE
+      - name: Commit platform update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/apply-dpm-errors.yml
+          git commit -m "feat: add DPM error review bank and reinforcement questions"
+          git push
