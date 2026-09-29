@@ -4,11 +4,13 @@
 
   const PLAN = {
     enabled: true,
-    version: '2026.09.11-maintenance',
+    version: '2026.09.29-adaptive-2-3',
     minimumMinutes: 30,
-    maximumCoreBlocks: 3,
+    maximumCoreBlocks: 4,
+    minimumSubjects: 2,
+    maximumSubjects: 3,
     portugueseQuestions: '5–8 questões',
-    note: 'Sem dívida de estudo: se um dia não der, retome no próximo acesso sem empilhar tarefas.'
+    note: 'Todos os dias: revisão dos erros do dia anterior + 2–3 matérias do cronograma. O restante do cronograma permanece ativo.'
   };
   window.PMAL_MAINTENANCE_PLAN = PLAN;
 
@@ -54,10 +56,38 @@
   function pickMinimum(data) {
     const tasks = (data && data.tasks) || [];
     const pending = tasks.filter(task => !task.done);
-    const port = pending.find(isPortuguese) || tasks.find(isPortuguese);
-    const review = pending.find(isReview) || tasks.find(isReview);
-    const dso = pending.find(isDSO) || pending.find(task => task.type === 'adaptive' && !isPortuguese(task) && !isReview(task));
-    return uniqueTasks([port, review, dso]).slice(0, PLAN.maximumCoreBlocks);
+    const source = pending.length ? pending : tasks;
+    const port = source.find(isPortuguese) || tasks.find(isPortuguese);
+    const review = source.find(isReview) || tasks.find(isReview);
+
+    // Mantém Português frequente e seleciona mais 1–2 matérias do ciclo,
+    // sem transformar o dia em uma lista interminável de tarefas.
+    const subjects = [];
+    if (port) subjects.push(port);
+
+    const candidates = source.filter(task =>
+      task.type === 'adaptive' &&
+      !isPortuguese(task) &&
+      !isReview(task) &&
+      !isDSO(task)
+    );
+    for (const task of candidates) {
+      if (subjects.length >= PLAN.maximumSubjects) break;
+      const subject = norm(task.title);
+      if (!subjects.some(item => norm(item.title) === subject)) subjects.push(task);
+    }
+
+    // Se Português não estiver disponível, o cronograma ainda entrega 2–3 matérias.
+    if (!port) {
+      for (const task of candidates) {
+        if (subjects.length >= PLAN.maximumSubjects) break;
+        const subject = norm(task.title);
+        if (!subjects.some(item => norm(item.title) === subject)) subjects.push(task);
+      }
+    }
+
+    const selected = uniqueTasks([review, ...subjects]);
+    return selected.slice(0, PLAN.maximumCoreBlocks);
   }
 
   function syntheticRow(index, title, subtitle, route) {
@@ -89,12 +119,12 @@
         const head = home.querySelector('.ui-page-head');
         if (head) head.after(banner); else home.prepend(banner);
       }
-      banner.innerHTML = '<h2>Modo manutenção diária</h2><p>Agora a meta é manter contato com a prova todos os dias, sem transformar a rotina em uma cobrança impossível. O mínimo cabe em cerca de '+PLAN.minimumMinutes+' minutos.</p><div class="maintenance-badges"><span class="maintenance-badge">Português todos os dias</span><span class="maintenance-badge">1 revisão curta</span><span class="maintenance-badge">1 bloco principal</span></div><div class="maintenance-grid"><div class="maintenance-step"><b>1 · Português</b><span>'+PLAN.portugueseQuestions+' ou revisão D+1/D+7.</span></div><div class="maintenance-step"><b>2 · Erros</b><span>2–5 questões que já te derrubaram.</span></div><div class="maintenance-step"><b>3 · Matéria do ciclo</b><span>Um único bloco DSO/PMAL; PMPE entra quando houver sobreposição.</span></div></div>';
+      banner.innerHTML = '<h2>Plano adaptativo diário</h2><p>O cronograma completo continua ativo. A rotina diária combina a revisão dos erros do dia anterior com 2–3 matérias do ciclo.</p><div class="maintenance-badges"><span class="maintenance-badge">2–3 matérias por dia</span><span class="maintenance-badge">Revisão dos erros D+1</span><span class="maintenance-badge">Português com alta frequência</span></div><div class="maintenance-grid"><div class="maintenance-step"><b>1 · Revisão</b><span>Erros e dúvidas registrados no dia anterior.</span></div><div class="maintenance-step"><b>2 · Matérias</b><span>2–3 matérias previstas no cronograma do dia.</span></div><div class="maintenance-step"><b>3 · Questões</b><span>Priorizar CEBRASPE e reforçar assuntos de maior incidência.</span></div></div>';
 
       const pageHeadTitle = home.querySelector('.ui-page-head h1');
       const pageHeadSub = home.querySelector('.ui-page-head p');
-      if (pageHeadTitle) pageHeadTitle.textContent = 'Constância primeiro.';
-      if (pageHeadSub) pageHeadSub.textContent = 'Modo manutenção · sem acúmulo de tarefas';
+      if (pageHeadTitle) pageHeadTitle.textContent = 'Seu estudo, em dia.';
+      if (pageHeadSub) pageHeadSub.textContent = 'Revisão dos erros + 2–3 matérias do cronograma';
 
       const heading = home.querySelector('.ui-section-heading');
       if (heading) {
@@ -152,7 +182,7 @@
         if (estimate) estimate.innerHTML = minDone >= 3 ? 'Mínimo do dia concluído' : 'Meta-base: <b>~'+PLAN.minimumMinutes+' min</b>';
       }
       const nextMeta = home.querySelector('.ui-next-meta span:first-child');
-      if (nextMeta && nextMeta.lastChild) nextMeta.lastChild.textContent = 'PMAL + PMPE nas interseções';
+      if (nextMeta && nextMeta.lastChild) nextMeta.lastChild.textContent = 'PMAL · CEBRASPE';
     } catch (error) {
       console.warn('[maintenance-mode] Falha ao adaptar a página Hoje:', error);
     } finally {
@@ -167,7 +197,7 @@
     injectStyles();
     const box = document.createElement('section');
     box.className = 'maintenance-banner maintenance-crono';
-    box.innerHTML = '<h2>Cronograma em modo manutenção</h2><p>O cronograma completo continua disponível abaixo, mas ele agora é opcional. Para manter a preparação viva nesta fase, conte como dia cumprido quando fizer os três blocos curtos.</p><div class="maintenance-grid"><div class="maintenance-step"><b>Português · 8–10 min</b><span>5–8 questões do tópico do ciclo + D+1 quando houver.</span></div><div class="maintenance-step"><b>Revisão · 8–10 min</b><span>Erros recentes e revisões D+7/D+21.</span></div><div class="maintenance-step"><b>DSO · 12–20 min</b><span>Um bloco apenas. Não carregue para amanhã o que não couber hoje.</span></div></div><div class="maintenance-badges"><span class="maintenance-badge">DSO = base PMAL</span><span class="maintenance-badge">AOCP/PMPE só nos assuntos comuns</span><span class="maintenance-badge">Domingo: revisão leve ou descanso</span></div>';
+    box.innerHTML = '<h2>Cronograma adaptativo</h2><p>O cronograma completo continua ativo. Cada dia trabalha 2–3 matérias, começando pela revisão dos erros e dúvidas do dia anterior.</p><div class="maintenance-grid"><div class="maintenance-step"><b>Revisão D+1</b><span>Erros e dúvidas do dia anterior antes de avançar.</span></div><div class="maintenance-step"><b>2–3 matérias</b><span>Conteúdo e questões conforme o ciclo previsto.</span></div><div class="maintenance-step"><b>Foco CEBRASPE</b><span>Maior exposição aos assuntos mais incidentes e aos pontos fracos.</span></div></div><div class="maintenance-badges"><span class="maintenance-badge">Edital completo</span><span class="maintenance-badge">Questões como base</span><span class="maintenance-badge">Revisões espaçadas mantidas</span></div>';
     const anchor = crono.querySelector('.ui-page-head') || crono.firstElementChild;
     if (anchor) anchor.after(box); else crono.prepend(box);
   }
