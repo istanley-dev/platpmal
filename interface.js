@@ -5,7 +5,7 @@
   'use strict';
 
   const PLAN = {
-    version: '2026.10.05-masterizacao-2',
+    version: '2026.10.05-masterizacao-3',
     maxSubjects: 3,
     portugueseDaily: true,
     targetQuestions: 100,
@@ -39,12 +39,21 @@
   function priority(t){
     if (!isAdaptive(t)) return 0;
     const k=t.item.kind;
-    if (k==='combat') return 100;
-    if (k==='recent') return 90;
-    if (k==='incidence') return 80;
-    if (k==='maintenance') return 55;
-    if (k==='math') return 50;
-    return 40;
+    if (k==='combat') return 120;      // reincidência/combate
+    if (k==='recent') return 108;      // erro/revisão recente
+    if (k==='incidence') return 96;    // alta incidência
+    if (k==='maintenance') return 68;  // manutenção
+    if (k==='math') return 64;
+    return 50;
+  }
+  function rotationBonus(t){
+    // Rotação diária: quando várias prioridades são parecidas, evita repetir
+    // sempre a mesma ordem de matérias sem sacrificar os assuntos críticos.
+    const day=Math.floor(Date.now()/86400000);
+    const key=norm(t.title||t.item.subject);
+    let hash=0;
+    for(let i=0;i<key.length;i++) hash=(hash*31+key.charCodeAt(i))%997;
+    return (hash+day)%17;
   }
 
   // Seleção própria: cobertura + incidência + fraqueza/reincidência, sem usar dsoBlocks.
@@ -60,7 +69,7 @@
 
     const ranked=pool
       .filter(t=>!isPortuguese(t))
-      .sort((a,b)=>priority(b)-priority(a));
+      .sort((a,b)=>(priority(b)+rotationBonus(b))-(priority(a)+rotationBonus(a)));
 
     for(const t of ranked){
       if(chosen.length>=PLAN.maxSubjects) break;
