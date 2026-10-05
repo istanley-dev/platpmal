@@ -211,7 +211,7 @@
         '<div class="master-step"><b>🔁 D-1</b><span>Erros e dúvidas do dia anterior primeiro.</span></div>'+
         '<div class="master-step"><b>🔥 Prioridade</b><span>Reincidência + fraqueza + incidência pesam mais.</span></div>'+
         '<div class="master-step"><b>📚 Cobertura</b><span>Assuntos consolidados entram em manutenção para abrir espaço ao edital.</span></div>'+
-      '</div>'+radarMarkup(data);
+      '</div>'+radarMarkup(data)+readingHistoryMarkup();
 
     const title=home.querySelector('.ui-page-head h1');
     const sub=home.querySelector('.ui-page-head p');
@@ -261,6 +261,74 @@
     box.innerHTML='<h2>🧠 Cronograma próprio de masterização</h2><p>O DSO não comanda esta área. A seleção é feita pelo desempenho do aluno, incidência Cebraspe, reincidências, pegadinhas e cobertura do edital. O ciclo de lei seca continua separado.</p><div class="master-badges"><span class="master-badge">Máx. 3 matérias/dia</span><span class="master-badge">Português diário</span><span class="master-badge">Simulado semanal</span><span class="master-badge">Sem dívida</span></div>';
     const anchor=crono.querySelector('.ui-page-head')||crono.firstElementChild;
     if(anchor) anchor.after(box); else crono.prepend(box);
+  }
+
+  /* Evolução 5 — persistência independente da Lei Seca.
+     O estado original continua sendo a fonte de conclusão; esta camada mantém
+     um histórico por data para que a virada do dia não apague o que já foi feito. */
+  const READING_KEY='pmal_lei_seca_historico_v1';
+  function readingToday(){
+    const d=new Date();
+    return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  }
+  function readHistory(){
+    try{const x=JSON.parse(localStorage.getItem(READING_KEY)||'{}');return x&&typeof x==='object'?x:{}}catch(e){return {}}
+  }
+  function writeHistory(h){try{localStorage.setItem(READING_KEY,JSON.stringify(h));}catch(e){}}
+  function markReadingDone(date){
+    const h=readHistory();
+    if(!h[date]){h[date]={done:true,completedAt:new Date().toISOString()};writeHistory(h);}
+  }
+  function readingHistoryMarkup(){
+    const h=readHistory(), today=readingToday(), rows=[];
+    for(let i=6;i>=0;i--){
+      const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-i);
+      const key=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      const label=i===0?'Hoje':d.toLocaleDateString('pt-BR',{weekday:'short'}).replace('.','');
+      rows.push('<span class="master-badge">'+(h[key]?.done?'✓ ':'')+esc(label)+(key===today?' · hoje':'')+'</span>');
+    }
+    return '<div class="master-badges" aria-label="Histórico da lei seca">'+rows.join('')+'</div>';
+  }
+  function installReadingPersistence(){
+    if(!window.PmalInterface || window.__readingPersistenceInstalled)return;
+    const original=window.PmalInterface.taskData;
+    if(typeof original!=='function')return;
+    window.__readingPersistenceInstalled=true;
+    window.PmalInterface.taskData=function(){
+      const data=original.apply(this,arguments);
+      const reading=(data.tasks||[]).find(t=>t.type==='reading');
+      const today=readingToday();
+      if(reading){
+        // Captura a conclusão legítima do motor atual antes da virada do dia.
+        if(reading.done)markReadingDone(today);
+        const h=readHistory();
+        if(h[today]?.done)reading.done=true;
+      }
+      return data;
+    };
+    // Guarda a posição de leitura e caixas marcadas por dia, sem criar dívida
+    // para dias perdidos. Ao retornar no mesmo dia, o usuário continua de onde parou.
+    const progressKey=()=>READING_KEY+'_progress_'+readingToday();
+    const saveProgress=()=>{
+      const card=document.getElementById('leitura-card');if(!card)return;
+      const checks=Array.from(card.querySelectorAll('input[type="checkbox"]')).map(x=>!!x.checked);
+      const scrolls=Array.from(card.querySelectorAll('*')).filter(x=>x.scrollHeight>x.clientHeight+8).slice(0,8).map(x=>x.scrollTop);
+      try{localStorage.setItem(progressKey(),JSON.stringify({checks,scrolls,savedAt:Date.now()}));}catch(e){}
+    };
+    const restoreProgress=()=>{
+      const card=document.getElementById('leitura-card');if(!card)return;
+      try{
+        const p=JSON.parse(localStorage.getItem(progressKey())||'null');if(!p)return;
+        const checks=card.querySelectorAll('input[type="checkbox"]');
+        (p.checks||[]).forEach((v,i)=>{if(checks[i])checks[i].checked=!!v;});
+        const scrolls=Array.from(card.querySelectorAll('*')).filter(x=>x.scrollHeight>x.clientHeight+8).slice(0,8);
+        (p.scrolls||[]).forEach((v,i)=>{if(scrolls[i])scrolls[i].scrollTop=v;});
+      }catch(e){}
+    };
+    setTimeout(restoreProgress,300);
+    document.addEventListener('change',e=>{if(e.target.closest('#leitura-card'))saveProgress();},true);
+    document.addEventListener('scroll',e=>{if(e.target&&e.target.closest&&e.target.closest('#leitura-card'))saveProgress();},true);
+    setInterval(()=>{if(document.getElementById('leitura-card'))saveProgress();},3000);
   }
 
   function afterCore(){
