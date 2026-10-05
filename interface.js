@@ -5,7 +5,7 @@
   'use strict';
 
   const PLAN = {
-    version: '2026.10.05-masterizacao-3',
+    version: '2026.10.05-masterizacao-4',
     maxSubjects: 3,
     portugueseDaily: true,
     targetQuestions: 100,
@@ -28,6 +28,13 @@
       .master-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.master-step{padding:11px 12px;border-radius:12px;background:var(--card,#fff);border:1px solid var(--border,#e4e7ec)}
       .master-step b{display:block;font-size:.82rem;margin-bottom:3px}.master-step span{font-size:.75rem;color:var(--muted,#667085);line-height:1.35}
       @media(max-width:720px){.master-grid{grid-template-columns:1fr}}
+      .master-radar{margin-top:14px;padding:14px;border:1px solid var(--border,#e4e7ec);border-radius:14px;background:var(--card,#fff)}
+      .master-radar-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}
+      .master-radar-head h3{margin:0 0 3px;font-size:.9rem}.master-radar-head p{margin:0;color:var(--muted,#667085);font-size:.74rem}
+      .master-radar-head>strong{font-size:.78rem;white-space:nowrap}.radar-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--border,#eef0f3)}
+      .radar-row b{display:block;font-size:.78rem}.radar-row small{display:block;color:var(--muted,#667085);font-size:.7rem;margin-top:2px}.radar-row>span{font-weight:800;font-size:.72rem}
+      .master-empty{font-size:.75rem;color:var(--muted,#667085);margin:8px 0}
+    
     `;
     document.head.appendChild(s);
   }
@@ -88,6 +95,89 @@
     return chosen;
   }
 
+
+  /* Evolução 4 — motor de masterização por tópico.
+     Não substitui o motor adaptativo existente: transforma os itens que ele
+     já entrega em um radar de tópicos e usa esse radar para desempatar a seleção. */
+  const TOPIC_WEIGHTS = { combat: 140, recent: 118, incidence: 104, maintenance: 62, math: 60 };
+  function topicName(t){
+    const i=t && t.item ? t.item : t;
+    return String((i && (i.topic || i.subtopic || i.assunto)) ||
+      (i && i.study && i.study.topics && i.study.topics[0]) ||
+      (t && t.title) || 'Assunto não identificado').trim();
+  }
+  function num(v){
+    const n=Number(v);
+    return Number.isFinite(n)?n:null;
+  }
+  function topicMetric(i,name){
+    const v=i && (i[name] != null ? i[name] : i.study && i.study[name]);
+    return num(v);
+  }
+  function topicScore(t){
+    const i=t.item||{};
+    const base=TOPIC_WEIGHTS[i.kind]||50;
+    const incidence=topicMetric(i,'incidence') ?? topicMetric(i,'incidencia') ?? 0;
+    const recurrence=topicMetric(i,'recurrence') ?? topicMetric(i,'reincidencia') ?? 0;
+    const accuracy=topicMetric(i,'accuracy') ?? topicMetric(i,'performance') ?? topicMetric(i,'aproveitamento');
+    const weakness=accuracy==null ? 0 : Math.max(0,100-accuracy);
+    const days=topicMetric(i,'daysSinceReview') ?? topicMetric(i,'diasDesdeRevisao') ?? 0;
+    return base + incidence*0.35 + recurrence*8 + weakness*0.55 + Math.min(days,30)*1.2;
+  }
+  function buildTopicRadar(data){
+    const map=new Map();
+    (data.tasks||[]).filter(isAdaptive).forEach(t=>{
+      const name=topicName(t), key=norm(name);
+      if(!map.has(key)) map.set(key,{name,score:0,items:0,done:0,kinds:new Set(),accuracy:[]});
+      const x=map.get(key); x.score=Math.max(x.score,topicScore(t)); x.items++;
+      if(t.done)x.done++; if(t.item.kind)x.kinds.add(t.item.kind);
+      const a=topicMetric(t.item,'accuracy') ?? topicMetric(t.item,'performance');
+      if(a!=null)x.accuracy.push(a);
+    });
+    return [...map.values()].map(x=>({
+      ...x,
+      kinds:[...x.kinds],
+      accuracy:x.accuracy.length?Math.round(x.accuracy.reduce((a,b)=>a+b,0)/x.accuracy.length):null,
+      level:x.score>=145?'🔴 Crítico':x.score>=110?'🟠 Fraco':x.score>=80?'🟡 Instável':'🟢 Consolidado'
+    })).sort((a,b)=>b.score-a.score);
+  }
+  function selectMaster(data){
+    const all=(data.tasks||[]).filter(t=>isAdaptive(t)&&!isDso(t));
+    const pending=all.filter(t=>!t.done);
+    const pool=pending.length?pending:all;
+    const chosen=[],usedSubjects=new Set(),usedTopics=new Set();
+    const port=pool.find(isPortuguese)||all.find(isPortuguese);
+    if(port){chosen.push(port);usedSubjects.add(norm(port.title));usedTopics.add(norm(topicName(port)));}
+    const radar=buildTopicRadar({tasks:pool});
+    const ranked=pool.filter(t=>!isPortuguese(t)).sort((a,b)=>{
+      const ta=topicName(a),tb=topicName(b);
+      const ra=radar.find(x=>norm(x.name)===norm(ta)),rb=radar.find(x=>norm(x.name)===norm(tb));
+      return ((rb?.score||priority(b))+rotationBonus(b))-((ra?.score||priority(a))+rotationBonus(a));
+    });
+    // Primeiro garante diversidade de tópico; depois preenche respeitando o limite de matérias.
+    for(const t of ranked){
+      if(chosen.length>=PLAN.maxSubjects)break;
+      const tk=norm(topicName(t)),sk=norm(t.title);
+      if(usedTopics.has(tk) || usedSubjects.has(sk))continue;
+      chosen.push(t);usedTopics.add(tk);usedSubjects.add(sk);
+    }
+    for(const t of ranked){
+      if(chosen.length>=PLAN.maxSubjects)break;
+      const sk=norm(t.title);
+      if(!usedSubjects.has(sk)){chosen.push(t);usedSubjects.add(sk);}
+    }
+    return chosen;
+  }
+  function radarMarkup(data){
+    const radar=buildTopicRadar(data);
+    const top=radar.slice(0,5);
+    const total=radar.length, consolidated=radar.filter(x=>x.level==='🟢 Consolidado').length;
+    const coverage=total?Math.round(consolidated/total*100):0;
+    return '<section class="master-radar"><div class="master-radar-head"><div><h3>🎯 Radar de masterização</h3><p>O motor prioriza tópico + desempenho + reincidência + incidência.</p></div><strong>'+coverage+'% consolidados</strong></div>'+
+      (top.length?top.map(x=>'<div class="radar-row"><div><b>'+esc(x.level)+' · '+esc(x.name)+'</b><small>'+x.items+' bloco(s)'+(x.accuracy!=null?' · '+x.accuracy+'% de aproveitamento':'')+'</small></div><span>'+Math.round(x.score)+'</span></div>').join(''):'<p class="master-empty">O radar será preenchido conforme o histórico gerar tópicos.</p>')+
+      '</section>';
+  }
+
   function render(){
     if(!window.PmalInterface || typeof window.PmalInterface.taskData!=='function') return;
     const home=document.getElementById('v-home');
@@ -121,7 +211,7 @@
         '<div class="master-step"><b>🔁 D-1</b><span>Erros e dúvidas do dia anterior primeiro.</span></div>'+
         '<div class="master-step"><b>🔥 Prioridade</b><span>Reincidência + fraqueza + incidência pesam mais.</span></div>'+
         '<div class="master-step"><b>📚 Cobertura</b><span>Assuntos consolidados entram em manutenção para abrir espaço ao edital.</span></div>'+
-      '</div>';
+      '</div>'+radarMarkup(data);
 
     const title=home.querySelector('.ui-page-head h1');
     const sub=home.querySelector('.ui-page-head p');
