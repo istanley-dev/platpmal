@@ -5,7 +5,7 @@
   'use strict';
 
   const PLAN = {
-    version: '2026.10.05-masterizacao-1',
+    version: '2026.10.05-masterizacao-2',
     maxSubjects: 3,
     portugueseDaily: true,
     targetQuestions: 100,
