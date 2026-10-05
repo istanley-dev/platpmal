@@ -333,6 +333,7 @@
 
   function afterCore(){
     style();
+    installReadingPersistence();
     const oldSv=window.sv;
     if(typeof oldSv==='function' && !window.__masterSvWrapped){
       window.__masterSvWrapped=true;
@@ -351,7 +352,7 @@
 
   function loadCore(){
     const s=document.createElement('script');
-    s.src='interface-core.js?v=20261005-masterizacao';
+    s.src='interface-core.js?v=20261005-masterizacao-lei-seca';
     s.onload=afterCore;
     s.onerror=()=>console.error('[PMAL] Falha ao carregar interface-core.js');
     document.head.appendChild(s);
