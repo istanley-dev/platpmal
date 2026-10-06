@@ -96,78 +96,17 @@
   }
 
 
-  /* Evolução 4 — motor de masterização por tópico.
-     Não substitui o motor adaptativo existente: transforma os itens que ele
-     já entrega em um radar de tópicos e usa esse radar para desempatar a seleção. */
-  const TOPIC_WEIGHTS = { combat: 140, recent: 118, incidence: 104, maintenance: 62, math: 60 };
-  function topicName(t){
-    const i=t && t.item ? t.item : t;
-    return String((i && (i.topic || i.subtopic || i.assunto)) ||
-      (i && i.study && i.study.topics && i.study.topics[0]) ||
-      (t && t.title) || 'Assunto não identificado').trim();
-  }
-  function num(v){
-    const n=Number(v);
-    return Number.isFinite(n)?n:null;
-  }
-  function topicMetric(i,name){
-    const v=i && (i[name] != null ? i[name] : i.study && i.study[name]);
-    return num(v);
-  }
-  function topicScore(t){
-    const i=t.item||{};
-    const base=TOPIC_WEIGHTS[i.kind]||50;
-    const incidence=topicMetric(i,'incidence') ?? topicMetric(i,'incidencia') ?? 0;
-    const recurrence=topicMetric(i,'recurrence') ?? topicMetric(i,'reincidencia') ?? 0;
-    const accuracy=topicMetric(i,'accuracy') ?? topicMetric(i,'performance') ?? topicMetric(i,'aproveitamento');
-    const weakness=accuracy==null ? 0 : Math.max(0,100-accuracy);
-    const days=topicMetric(i,'daysSinceReview') ?? topicMetric(i,'diasDesdeRevisao') ?? 0;
-    return base + incidence*0.35 + recurrence*8 + weakness*0.55 + Math.min(days,30)*1.2;
-  }
-  function buildTopicRadar(data){
-    const map=new Map();
-    (data.tasks||[]).filter(isAdaptive).forEach(t=>{
-      const name=topicName(t), key=norm(name);
-      if(!map.has(key)) map.set(key,{name,score:0,items:0,done:0,kinds:new Set(),accuracy:[]});
-      const x=map.get(key); x.score=Math.max(x.score,topicScore(t)); x.items++;
-      if(t.done)x.done++; if(t.item.kind)x.kinds.add(t.item.kind);
-      const a=topicMetric(t.item,'accuracy') ?? topicMetric(t.item,'performance');
-      if(a!=null)x.accuracy.push(a);
-    });
-    return [...map.values()].map(x=>({
-      ...x,
-      kinds:[...x.kinds],
-      accuracy:x.accuracy.length?Math.round(x.accuracy.reduce((a,b)=>a+b,0)/x.accuracy.length):null,
-      level:x.score>=145?'🔴 Crítico':x.score>=110?'🟠 Fraco':x.score>=80?'🟡 Instável':'🟢 Consolidado'
-    })).sort((a,b)=>b.score-a.score);
-  }
-  function selectMaster(data){
-    const all=(data.tasks||[]).filter(t=>isAdaptive(t)&&!isDso(t));
-    const pending=all.filter(t=>!t.done);
-    const pool=pending.length?pending:all;
-    const chosen=[],usedSubjects=new Set(),usedTopics=new Set();
-    const port=pool.find(isPortuguese)||all.find(isPortuguese);
-    if(port){chosen.push(port);usedSubjects.add(norm(port.title));usedTopics.add(norm(topicName(port)));}
-    const radar=buildTopicRadar({tasks:pool});
-    const ranked=pool.filter(t=>!isPortuguese(t)).sort((a,b)=>{
-      const ta=topicName(a),tb=topicName(b);
-      const ra=radar.find(x=>norm(x.name)===norm(ta)),rb=radar.find(x=>norm(x.name)===norm(tb));
-      return ((rb?.score||priority(b))+rotationBonus(b))-((ra?.score||priority(a))+rotationBonus(a));
-    });
-    // Primeiro garante diversidade de tópico; depois preenche respeitando o limite de matérias.
-    for(const t of ranked){
-      if(chosen.length>=PLAN.maxSubjects)break;
-      const tk=norm(topicName(t)),sk=norm(t.title);
-      if(usedTopics.has(tk) || usedSubjects.has(sk))continue;
-      chosen.push(t);usedTopics.add(tk);usedSubjects.add(sk);
-    }
-    for(const t of ranked){
-      if(chosen.length>=PLAN.maxSubjects)break;
-      const sk=norm(t.title);
-      if(!usedSubjects.has(sk)){chosen.push(t);usedSubjects.add(sk);}
-    }
-    return chosen;
-  }
+  /* Evolução 6 — radar real baseado no histórico efetivo de questões. */
+  const TOPIC_WEIGHTS={combat:140,recent:118,incidence:104,maintenance:62,math:60};
+  const INCIDENCE_HINTS={'lingua portuguesa':['sintaxe','concordancia','regencia','crase','pontuacao','pronomes','interpretacao'],'direito administrativo':['atos administrativos','poderes administrativos','agentes publicos','principios','licitacoes','responsabilidade civil'],'direito constitucional':['direitos fundamentais','organizacao do estado','administracao publica','controle de constitucionalidade','seguranca publica'],'direito penal':['teoria do crime','ilicitude','culpabilidade','concurso de pessoas','penas'],'direito processual penal':['inquerito','acao penal','provas','prisao','competencia'],'direito penal militar':['teoria do crime','estado de necessidade','excesso','concurso de pessoas'],'direito processual penal militar':['inquerito policial militar','acao penal','prisao','competencia','provas'],'direitos humanos':['sistema interamericano','pacto de san jose','tratados'],'legislacao penal especial':['lei de drogas','estatuto do desarmamento','maria da penha','abuso de autoridade'],'nocoes de informatica':['windows','seguranca da informacao','redes','internet','office','arquivos','forense computacional']};
+  function topicName(t){const i=t&&t.item?t.item:t;return String((i&&(i.topic||i.subtopic||i.assunto))||(i&&i.study&&i.study.topics&&i.study.topics[0])||(t&&t.title)||'Assunto não identificado').trim();}
+  function num(v){const n=Number(v);return Number.isFinite(n)?n:null;}
+  function topicMetric(i,name){const v=i&&(i[name]!=null?i[name]:i.study&&i.study[name]);return num(v);}
+  function topicKey(subject,topic){return norm(subject)+'▸'+norm(topic);}
+  function actualTopicRadar(){const map=new Map(),logs=Array.isArray(window.S&&S.log)?S.log:[],now=Date.now();logs.forEach(q=>{if(!q||!q.m)return;const topic=String(q.a||'Assunto não identificado').trim(),key=topicKey(q.m,topic);if(!map.has(key))map.set(key,{subject:q.m,name:topic,total:0,errors:0,chutes:0,last:0,incidence:0});const x=map.get(key);x.total++;if(q.res==='erro')x.errors++;if(q.conf==='chute')x.chutes++;x.last=Math.max(x.last,num(q.ts)||0);const hints=INCIDENCE_HINTS[norm(q.m)]||[];if(hints.some(h=>norm(topic).includes(norm(h))))x.incidence=1;});return [...map.values()].map(x=>{const accuracy=x.total?100-(x.errors/x.total*100):100,recurrence=x.errors>=3?2:x.errors>=2?1:0,recent=x.last?Math.max(0,1-Math.min((now-x.last)/86400000,30)/30):0,chute=x.chutes>=2?10:0,score=50+(100-accuracy)*.9+recurrence*22+x.incidence*28+recent*12+chute;return {...x,accuracy:Math.round(accuracy),score,level:score>=145?'🔴 Crítico':score>=110?'🟠 Fraco':score>=80?'🟡 Instável':'🟢 Consolidado'};}).sort((a,b)=>b.score-a.score);}
+  function topicScore(t,radar){const i=t.item||{},name=topicName(t),rec=radar.find(x=>norm(x.subject)===norm(i.subject||t.title)&&norm(x.name)===norm(name)),base=TOPIC_WEIGHTS[i.kind]||50,incidence=topicMetric(i,'incidence')??topicMetric(i,'incidencia')??0,recurrence=topicMetric(i,'recurrence')??topicMetric(i,'reincidencia')??0,accuracy=topicMetric(i,'accuracy')??topicMetric(i,'performance')??topicMetric(i,'aproveitamento'),weakness=accuracy==null?0:Math.max(0,100-accuracy),days=topicMetric(i,'daysSinceReview')??topicMetric(i,'diasDesdeRevisao')??0;return base+(rec?rec.score:0)*1.15+incidence*.35+recurrence*8+weakness*.55+Math.min(days,30)*1.2;}
+  function buildTopicRadar(data){const actual=actualTopicRadar(),map=new Map(actual.map(x=>[topicKey(x.subject,x.name),x]));(data.tasks||[]).filter(isAdaptive).forEach(t=>{const name=topicName(t),subject=t.item&&t.item.subject||t.title,key=topicKey(subject,name);if(!map.has(key))map.set(key,{subject,name,total:0,errors:0,chutes:0,last:0,incidence:0,accuracy:null,score:topicScore(t,actual),level:'🟢 Consolidado'});});return [...map.values()].map(x=>({...x,items:x.total||0,done:0})).sort((a,b)=>b.score-a.score);}
+  function selectMaster(data){const all=(data.tasks||[]).filter(t=>isAdaptive(t)&&!isDso(t)),pending=all.filter(t=>!t.done),pool=pending.length?pending:all,chosen=[],usedSubjects=new Set(),usedTopics=new Set(),port=pool.find(isPortuguese)||all.find(isPortuguese);if(port){chosen.push(port);usedSubjects.add(norm(port.title));usedTopics.add(norm(topicName(port)));}const radar=buildTopicRadar({tasks:pool});const ranked=pool.filter(t=>!isPortuguese(t)).sort((a,b)=>(topicScore(b,radar)+priority(b)+rotationBonus(b))-(topicScore(a,radar)+priority(a)+rotationBonus(a)));for(const t of ranked){if(chosen.length>=PLAN.maxSubjects)break;const tk=norm(topicName(t)),sk=norm(t.title);if(usedTopics.has(tk)||usedSubjects.has(sk))continue;chosen.push(t);usedTopics.add(tk);usedSubjects.add(sk);}for(const t of ranked){if(chosen.length>=PLAN.maxSubjects)break;const sk=norm(t.title);if(!usedSubjects.has(sk)){chosen.push(t);usedSubjects.add(sk);}}return chosen;}
   function radarMarkup(data){
     const radar=buildTopicRadar(data);
     const top=radar.slice(0,5);
