@@ -5,7 +5,7 @@
   'use strict';
 
   const PLAN = {
-    version: '2026.10.06-masterizacao-7',
+    version: '2026.10.06-masterizacao-8',
     maxSubjects: 3,
     portugueseDaily: true,
     targetQuestions: 100,
@@ -73,7 +73,50 @@
   function actualTopicRadar(){const map=new Map(),logs=Array.isArray(window.S&&S.log)?S.log:[],bank=Array.isArray(window.QQ)?window.QQ:[],now=Date.now(),bankCounts=new Map();bank.forEach(q=>{if(q&&q.m){const k=topicKey(q.m,q.a||'Assunto não identificado');bankCounts.set(k,(bankCounts.get(k)||0)+1);}});const maxBank=Math.max(1,...bankCounts.values());logs.forEach(q=>{if(!q||!q.m)return;const topic=String(q.a||'Assunto não identificado').trim(),key=topicKey(q.m,topic);if(!map.has(key))map.set(key,{subject:q.m,name:topic,total:0,errors:0,chutes:0,last:0,incidence:0,bankCount:bankCounts.get(key)||0});const x=map.get(key);x.total++;if(q.res==='erro')x.errors++;if(q.conf==='chute')x.chutes++;x.last=Math.max(x.last,num(q.ts)||0);const hints=INCIDENCE_HINTS[norm(q.m)]||[];if(hints.some(h=>norm(topic).includes(norm(h))))x.incidence=1;});return [...map.values()].map(x=>{const accuracy=x.total?100-(x.errors/x.total*100):100,recurrence=x.errors>=3?2:x.errors>=2?1:0,recent=x.last?Math.max(0,1-Math.min((now-x.last)/86400000,30)/30):0,chute=x.chutes>=2?10:0,bankIncidence=(x.bankCount/maxBank)*35,score=50+(100-accuracy)*.9+recurrence*22+x.incidence*28+bankIncidence+recent*12+chute;return {...x,accuracy:Math.round(accuracy),score,level:score>=145?'🔴 Crítico':score>=110?'🟠 Fraco':score>=80?'🟡 Instável':'🟢 Consolidado'};}).sort((a,b)=>b.score-a.score);}
   function topicScore(t,radar){const i=t.item||{},name=topicName(t),rec=radar.find(x=>norm(x.subject)===norm(i.subject||t.title)&&norm(x.name)===norm(name)),base=TOPIC_WEIGHTS[i.kind]||50,incidence=topicMetric(i,'incidence')??topicMetric(i,'incidencia')??0,recurrence=topicMetric(i,'recurrence')??topicMetric(i,'reincidencia')??0,accuracy=topicMetric(i,'accuracy')??topicMetric(i,'performance')??topicMetric(i,'aproveitamento'),weakness=accuracy==null?0:Math.max(0,100-accuracy),days=topicMetric(i,'daysSinceReview')??topicMetric(i,'diasDesdeRevisao')??0;return base+(rec?rec.score:0)*1.15+incidence*.35+recurrence*8+weakness*.55+Math.min(days,30)*1.2;}
   function buildTopicRadar(data){const actual=actualTopicRadar(),map=new Map(actual.map(x=>[topicKey(x.subject,x.name),x]));(data.tasks||[]).filter(isAdaptive).forEach(t=>{const name=topicName(t),subject=t.item&&t.item.subject||t.title,key=topicKey(subject,name);if(!map.has(key))map.set(key,{subject,name,total:0,errors:0,chutes:0,last:0,incidence:0,accuracy:null,score:topicScore(t,actual),level:'🟢 Consolidado'});});return [...map.values()].map(x=>({...x,items:x.total||0,done:0})).sort((a,b)=>b.score-a.score);}
-  function selectMaster(data){const all=(data.tasks||[]).filter(t=>isAdaptive(t)&&!isDso(t)),pending=all.filter(t=>!t.done),pool=pending.length?pending:all,chosen=[],usedSubjects=new Set(),usedTopics=new Set(),port=pool.find(isPortuguese)||all.find(isPortuguese);if(port){chosen.push(port);usedSubjects.add(norm(port.title));usedTopics.add(norm(topicName(port)));}const radar=buildTopicRadar({tasks:pool});const ranked=pool.filter(t=>!isPortuguese(t)).sort((a,b)=>(topicScore(b,radar)+priority(b)+rotationBonus(b))-(topicScore(a,radar)+priority(a)+rotationBonus(a)));for(const t of ranked){if(chosen.length>=PLAN.maxSubjects)break;const tk=norm(topicName(t)),sk=norm(t.title);if(usedTopics.has(tk)||usedSubjects.has(sk))continue;chosen.push(t);usedTopics.add(tk);usedSubjects.add(sk);}for(const t of ranked){if(chosen.length>=PLAN.maxSubjects)break;const sk=norm(t.title);if(!usedSubjects.has(sk)){chosen.push(t);usedSubjects.add(sk);}}return chosen;}
+  function selectMaster(data){
+    const all=(data.tasks||[]).filter(t=>isAdaptive(t)&&!isDso(t));
+    const pending=all.filter(t=>!t.done);
+    const pool=pending.length?pending:all;
+    const candidates=pool.filter(t=>!['combat','recent'].includes(t.item&&t.item.kind));
+    const chosen=[],usedSubjects=new Set(),usedTopics=new Set();
+    const port=candidates.find(isPortuguese)||all.find(isPortuguese);
+    if(port){chosen.push(port);usedSubjects.add(norm(port.title));usedTopics.add(norm(topicName(port)));}
+    const radar=buildTopicRadar({tasks:pool});
+    const ranked=candidates.filter(t=>!isPortuguese(t)).sort((a,b)=>
+      (topicScore(b,radar)+priority(b)+rotationBonus(b))-
+      (topicScore(a,radar)+priority(a)+rotationBonus(a))
+    );
+    for(const t of ranked){
+      if(chosen.length>=PLAN.maxSubjects)break;
+      const tk=norm(topicName(t)),sk=norm(t.title);
+      if(usedTopics.has(tk)||usedSubjects.has(sk))continue;
+      chosen.push(t);usedTopics.add(tk);usedSubjects.add(sk);
+    }
+    for(const t of ranked){
+      if(chosen.length>=PLAN.maxSubjects)break;
+      const sk=norm(t.title);
+      if(!usedSubjects.has(sk)){chosen.push(t);usedSubjects.add(sk);}
+    }
+    return chosen.slice(0,PLAN.maxSubjects);
+  }
+
+  function dailySupport(data){
+    const all=(data.tasks||[]).filter(isAdaptive);
+    const pending=all.filter(t=>!t.done);
+    const pool=pending.length?pending:all;
+    const reviews=pool.filter(t=>['recent','combat'].includes(t.item&&t.item.kind));
+    const d1=reviews.find(t=>t.item.kind==='recent')||reviews[0]||null;
+    const errors=reviews.find(t=>t.item.kind==='combat'&&t.id!==d1?.id)||reviews.find(t=>t.id!==d1?.id)||null;
+    return {d1,errors};
+  }
+
+  function taskRowMarkup(t,label,number){
+    if(!t)return '';
+    const done=t.done;
+    const action=done?'Reabrir':(t.item&&t.item.dsoBlocks?'Ver aula':'Abrir');
+    return '<li class="ui-task'+(done?' done':'')+'"><span class="ui-task-state">'+(done?'✓':number)+'</span><div class="ui-task-copy"><strong>'+esc(label||t.title)+'</strong><small>'+esc(t.item&&t.item.topic?t.item.topic:t.subtitle||'Revisão adaptativa')+'</small></div><button type="button" class="ui-task-action" data-ui-task="'+esc(t.id)+'">'+action+'</button></li>';
+  }
+
   function radarMarkup(data){
     const radar=buildTopicRadar(data);
     const top=radar.slice(0,5);
@@ -93,6 +136,7 @@
     let data;
     try { data=window.PmalInterface.taskData(); } catch(e) { return; }
     const selected=selectMaster(data);
+    const support=dailySupport(data);
     const reading=(data.tasks||[]).find(t=>t.type==='reading');
 
     let banner=home.querySelector('.master-banner');
@@ -103,58 +147,47 @@
       if(head) head.after(banner); else home.prepend(banner);
     }
 
-    const names=selected.map(t=>esc(t.title)).join(' + ') || 'Seleção adaptativa';
+    const names=selected.map(t=>esc(t.title)).join(' · ') || 'Seleção adaptativa';
     banner.innerHTML=
-      '<h2>🧠 Cronograma de masterização</h2>'+
-      '<p>Este cronograma é independente do DSO: prioriza seus erros, reincidências, incidência da Cebraspe e cobertura do edital. O DSO entra como fonte de questões e comentários.</p>'+
+      '<h2>🧠 Plano de hoje</h2>'+
+      '<p>O sistema escolhe <b>3 matérias principais</b>. Antes delas, você faz a revisão D-1 e transforma seus erros em aprendizado. O restante entra apenas quando for necessário.</p>'+
       '<div class="master-badges">'+
-        '<span class="master-badge">'+PLAN.targetQuestions+' questões/dia · meta</span>'+
-        '<span class="master-badge">1–3 matérias</span>'+
+        '<span class="master-badge">3 matérias</span>'+
+        '<span class="master-badge">Revisão D-1</span>'+
+        '<span class="master-badge">Aprendizado dos erros</span>'+
         '<span class="master-badge">Português diário</span>'+
-        '<span class="master-badge">Cebraspe prioritária</span>'+
+        '<span class="master-badge">Lei seca</span>'+
       '</div>'+
       '<div class="master-grid">'+
-        '<div class="master-step"><b>🔁 D-1</b><span>Erros e dúvidas do dia anterior primeiro.</span></div>'+
-        '<div class="master-step"><b>🔥 Prioridade</b><span>Reincidência + fraqueza + incidência pesam mais.</span></div>'+
-        '<div class="master-step"><b>📚 Cobertura</b><span>Assuntos consolidados entram em manutenção para abrir espaço ao edital.</span></div>'+
+        '<div class="master-step"><b>1 · 🔁 D-1</b><span>'+esc(support.d1?'Revisar os erros e dúvidas de ontem.':'Sem revisão pendente.')+'</span></div>'+
+        '<div class="master-step"><b>2 · 🧠 Erros</b><span>'+esc(support.errors?'Entender o erro + comentário + questões semelhantes.':'Sem bloco extra de erros hoje.')+'</span></div>'+
+        '<div class="master-step"><b>3 · 📚 Matérias</b><span>'+names+'</span></div>'+
       '</div>'+radarMarkup(data)+readingHistoryMarkup();
 
     const title=home.querySelector('.ui-page-head h1');
     const sub=home.querySelector('.ui-page-head p');
     if(title) title.textContent='Sua preparação PMAL';
-    if(sub) sub.textContent='Masterização diária · '+names;
+    if(sub) sub.textContent='Plano adaptativo · '+names;
 
     const heading=home.querySelector('.ui-section-heading');
     if(heading){
       const h=heading.querySelector('h2'); const sp=heading.querySelector('span');
-      if(h) h.textContent='Plano de masterização de hoje';
-      if(sp) sp.textContent=selected.length+' matéria(s) prioritária(s)';
+      if(h) h.textContent='Plano de hoje';
+      if(sp) sp.textContent='3 matérias + revisão + erros + lei seca';
     }
 
-    // Reordena a lista principal para mostrar somente o núcleo da masterização + lei seca.
     const list=home.querySelector('ol.ui-task-list');
     if(list){
-      const rows=Array.from(home.querySelectorAll('li.ui-task'));
-      const byId=new Map();
-      rows.forEach(r=>{const b=r.querySelector('[data-ui-task]'); if(b) byId.set(b.dataset.uiTask,r);});
       list.innerHTML='';
       let n=1;
-      selected.forEach(t=>{
-        const row=byId.get(t.id);
-        if(row){ list.appendChild(row); n++; }
-      });
-      if(reading){
-        const row=byId.get(reading.id);
-        if(row) list.appendChild(row);
-      }
-      if(PLAN.portugueseDaily && !selected.some(isPortuguese)){
-        const li=document.createElement('li');
-        li.className='ui-task';
-        li.innerHTML='<span class="ui-task-state">'+n+'</span><div class="ui-task-copy"><strong>Português diário</strong><small>15–20 questões · priorizar seus pontos fracos</small></div><button type="button" class="ui-task-action" data-ui-route="practice">Abrir</button>';
-        list.appendChild(li);
-      }
+      if(support.d1){ list.insertAdjacentHTML('beforeend',taskRowMarkup(support.d1,'🔁 Revisão D-1 · erros de ontem',n++)); }
+      if(support.errors){ list.insertAdjacentHTML('beforeend',taskRowMarkup(support.errors,'🧠 Aprendizado dos erros · entender + fixar',n++)); }
+      selected.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,'📚 '+t.title,n++)); });
+      if(reading){ list.insertAdjacentHTML('beforeend',taskRowMarkup(reading,'⚖️ Lei seca · leitura do dia',n++)); }
+      const extras=(data.tasks||[]).filter(t=>['sim','essay'].includes(t.type));
+      extras.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,t.type==='essay'?'✍️ Redação':'📝 Simulado CEBRASPE',n++)); });
       const note=home.querySelector('.ui-note');
-      if(note) note.innerHTML='📌 Meta: 80–100+ questões bem corrigidas · revisão D-1 · lei seca · 1–3 matérias. Sem dívida de estudo.';
+      if(note) note.innerHTML='📌 Núcleo do dia: revisão D-1 → aprendizado dos erros → 3 matérias → lei seca. Meta de 80–100+ questões bem corrigidas, sem transformar as opções extras em novas matérias.';
     }
   }
 
