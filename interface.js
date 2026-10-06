@@ -5,7 +5,7 @@
   'use strict';
 
   const PLAN = {
-    version: '2026.10.05-masterizacao-4',
+    version: '2026.10.06-masterizacao-6',
     maxSubjects: 3,
     portugueseDaily: true,
     targetQuestions: 100,
@@ -63,39 +63,6 @@
     return (hash+day)%17;
   }
 
-  // Seleção própria: cobertura + incidência + fraqueza/reincidência, sem usar dsoBlocks.
-  function selectMaster(data){
-    const all=(data.tasks||[]).filter(t=>isAdaptive(t)&&!isDso(t));
-    const pending=all.filter(t=>!t.done);
-    const pool=pending.length?pending:all;
-    const chosen=[];
-    const used=new Set();
-
-    const port=pool.find(isPortuguese)||all.find(isPortuguese);
-    if(port){ chosen.push(port); used.add(norm(port.title)); }
-
-    const ranked=pool
-      .filter(t=>!isPortuguese(t))
-      .sort((a,b)=>(priority(b)+rotationBonus(b))-(priority(a)+rotationBonus(a)));
-
-    for(const t of ranked){
-      if(chosen.length>=PLAN.maxSubjects) break;
-      const key=norm(t.title);
-      if(!used.has(key)){ chosen.push(t); used.add(key); }
-    }
-
-    // Se não houver Português disponível no histórico, completa até 3 matérias.
-    if(!port){
-      for(const t of ranked){
-        if(chosen.length>=PLAN.maxSubjects) break;
-        const key=norm(t.title);
-        if(!used.has(key)){ chosen.push(t); used.add(key); }
-      }
-    }
-    return chosen;
-  }
-
-
   /* Evolução 6 — radar real baseado no histórico efetivo de questões. */
   const TOPIC_WEIGHTS={combat:140,recent:118,incidence:104,maintenance:62,math:60};
   const INCIDENCE_HINTS={'lingua portuguesa':['sintaxe','concordancia','regencia','crase','pontuacao','pronomes','interpretacao'],'direito administrativo':['atos administrativos','poderes administrativos','agentes publicos','principios','licitacoes','responsabilidade civil'],'direito constitucional':['direitos fundamentais','organizacao do estado','administracao publica','controle de constitucionalidade','seguranca publica'],'direito penal':['teoria do crime','ilicitude','culpabilidade','concurso de pessoas','penas'],'direito processual penal':['inquerito','acao penal','provas','prisao','competencia'],'direito penal militar':['teoria do crime','estado de necessidade','excesso','concurso de pessoas'],'direito processual penal militar':['inquerito policial militar','acao penal','prisao','competencia','provas'],'direitos humanos':['sistema interamericano','pacto de san jose','tratados'],'legislacao penal especial':['lei de drogas','estatuto do desarmamento','maria da penha','abuso de autoridade'],'nocoes de informatica':['windows','seguranca da informacao','redes','internet','office','arquivos','forense computacional']};
@@ -112,7 +79,7 @@
     const top=radar.slice(0,5);
     const total=radar.length, consolidated=radar.filter(x=>x.level==='🟢 Consolidado').length;
     const coverage=total?Math.round(consolidated/total*100):0;
-    return '<section class="master-radar"><div class="master-radar-head"><div><h3>🎯 Radar de masterização</h3><p>O motor prioriza tópico + desempenho + reincidência + incidência.</p></div><strong>'+coverage+'% consolidados</strong></div>'+
+    return '<section class="master-radar"><div class="master-radar-head"><div><h3>🎯 Radar de masterização</h3><p>O motor prioriza tópico + desempenho real + reincidência + incidência do banco.</p></div><strong>'+coverage+'% consolidados</strong></div>'+
       (top.length?top.map(x=>'<div class="radar-row"><div><b>'+esc(x.level)+' · '+esc(x.name)+'</b><small>'+x.items+' bloco(s)'+(x.accuracy!=null?' · '+x.accuracy+'% de aproveitamento':'')+'</small></div><span>'+Math.round(x.score)+'</span></div>').join(''):'<p class="master-empty">O radar será preenchido conforme o histórico gerar tópicos.</p>')+
       '</section>';
   }
