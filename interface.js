@@ -5,7 +5,7 @@
   'use strict';
 
   const PLAN = {
-    version: '2026.10.06-masterizacao-8',
+    version: '2026.10.07-masterizacao-9',
     maxSubjects: 3,
     portugueseDaily: true,
     targetQuestions: 100,
@@ -79,23 +79,43 @@
     const pool=pending.length?pending:all;
     const candidates=pool.filter(t=>!['combat','recent'].includes(t.item&&t.item.kind));
     const chosen=[],usedSubjects=new Set(),usedTopics=new Set();
-    const port=candidates.find(isPortuguese)||all.find(isPortuguese);
-    if(port){chosen.push(port);usedSubjects.add(norm(port.title));usedTopics.add(norm(topicName(port)));}
     const radar=buildTopicRadar({tasks:pool});
+
+    // O núcleo é composto por 3 PARES: matéria + assunto.
+    // Cada par deve ser de uma matéria diferente; o radar escolhe o assunto.
+    const port=candidates.filter(isPortuguese).sort((a,b)=>
+      (topicScore(b,radar)+priority(b)+rotationBonus(b))-
+      (topicScore(a,radar)+priority(a)+rotationBonus(a))
+    )[0];
+    if(port){
+      chosen.push(port);
+      usedSubjects.add(norm(port.title));
+      usedTopics.add(topicKey(port.title,topicName(port)));
+    }
+
     const ranked=candidates.filter(t=>!isPortuguese(t)).sort((a,b)=>
       (topicScore(b,radar)+priority(b)+rotationBonus(b))-
       (topicScore(a,radar)+priority(a)+rotationBonus(a))
     );
+
+    // Primeiro garante matérias diferentes.
     for(const t of ranked){
       if(chosen.length>=PLAN.maxSubjects)break;
-      const tk=norm(topicName(t)),sk=norm(t.title);
-      if(usedTopics.has(tk)||usedSubjects.has(sk))continue;
-      chosen.push(t);usedTopics.add(tk);usedSubjects.add(sk);
+      const sk=norm(t.title), tk=topicKey(t.title,topicName(t));
+      if(usedSubjects.has(sk)||usedTopics.has(tk))continue;
+      chosen.push(t);usedSubjects.add(sk);usedTopics.add(tk);
     }
+
+    // Fallback: se faltou algum bloco, permite outra matéria apenas se houver
+    // um assunto diferente e útil, mantendo o limite de 3 blocos.
     for(const t of ranked){
       if(chosen.length>=PLAN.maxSubjects)break;
-      const sk=norm(t.title);
-      if(!usedSubjects.has(sk)){chosen.push(t);usedSubjects.add(sk);}
+      const tk=topicKey(t.title,topicName(t));
+      if(!usedTopics.has(tk)){
+        chosen.push(t);
+        usedSubjects.add(norm(t.title));
+        usedTopics.add(tk);
+      }
     }
     return chosen.slice(0,PLAN.maxSubjects);
   }
@@ -114,7 +134,9 @@
     if(!t)return '';
     const done=t.done;
     const action=done?'Reabrir':(t.item&&t.item.dsoBlocks?'Ver aula':'Abrir');
-    return '<li class="ui-task'+(done?' done':'')+'"><span class="ui-task-state">'+(done?'✓':number)+'</span><div class="ui-task-copy"><strong>'+esc(label||t.title)+'</strong><small>'+esc(t.item&&t.item.topic?t.item.topic:t.subtitle||'Revisão adaptativa')+'</small></div><button type="button" class="ui-task-action" data-ui-task="'+esc(t.id)+'">'+action+'</button></li>';
+    const topic=t.item&&topicName(t);
+    const display=label||((t.title||'Matéria')+(topic&&topic!==t.title?' — '+topic:''));
+    return '<li class="ui-task'+(done?' done':'')+'"><span class="ui-task-state">'+(done?'✓':number)+'</span><div class="ui-task-copy"><strong>'+esc(display)+'</strong><small>'+esc(t.subtitle||'Bloco adaptativo')+'</small></div><button type="button" class="ui-task-action" data-ui-task="'+esc(t.id)+'">'+action+'</button></li>';
   }
 
   function radarMarkup(data){
@@ -147,12 +169,12 @@
       if(head) head.after(banner); else home.prepend(banner);
     }
 
-    const names=selected.map(t=>esc(t.title)).join(' · ') || 'Seleção adaptativa';
+    const names=selected.map(t=>esc(t.title)+' — '+esc(topicName(t))).join(' · ') || 'Seleção adaptativa';
     banner.innerHTML=
       '<h2>🧠 Plano de hoje</h2>'+
-      '<p>O sistema escolhe <b>3 matérias principais</b>. Antes delas, você faz a revisão D-1 e transforma seus erros em aprendizado. O restante entra apenas quando for necessário.</p>'+
+      '<p>O sistema escolhe <b>3 blocos de matéria + assunto</b>. Ex.: Português — Sintaxe. Antes deles, você faz a revisão D-1 e transforma seus erros em aprendizado.</p>'+
       '<div class="master-badges">'+
-        '<span class="master-badge">3 matérias</span>'+
+        '<span class="master-badge">3 matérias + assuntos</span>'+
         '<span class="master-badge">Revisão D-1</span>'+
         '<span class="master-badge">Aprendizado dos erros</span>'+
         '<span class="master-badge">Português diário</span>'+
@@ -161,7 +183,7 @@
       '<div class="master-grid">'+
         '<div class="master-step"><b>1 · 🔁 D-1</b><span>'+esc(support.d1?'Revisar os erros e dúvidas de ontem.':'Sem revisão pendente.')+'</span></div>'+
         '<div class="master-step"><b>2 · 🧠 Erros</b><span>'+esc(support.errors?'Entender o erro + comentário + questões semelhantes.':'Sem bloco extra de erros hoje.')+'</span></div>'+
-        '<div class="master-step"><b>3 · 📚 Matérias</b><span>'+names+'</span></div>'+
+        '<div class="master-step"><b>3 · 📚 Matéria + assunto</b><span>'+names+'</span></div>'+
       '</div>'+radarMarkup(data)+readingHistoryMarkup();
 
     const title=home.querySelector('.ui-page-head h1');
@@ -173,7 +195,7 @@
     if(heading){
       const h=heading.querySelector('h2'); const sp=heading.querySelector('span');
       if(h) h.textContent='Plano de hoje';
-      if(sp) sp.textContent='3 matérias + revisão + erros + lei seca';
+      if(sp) sp.textContent='3 matérias/assuntos + revisão + erros + lei seca';
     }
 
     const list=home.querySelector('ol.ui-task-list');
@@ -182,12 +204,12 @@
       let n=1;
       if(support.d1){ list.insertAdjacentHTML('beforeend',taskRowMarkup(support.d1,'🔁 Revisão D-1 · erros de ontem',n++)); }
       if(support.errors){ list.insertAdjacentHTML('beforeend',taskRowMarkup(support.errors,'🧠 Aprendizado dos erros · entender + fixar',n++)); }
-      selected.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,'📚 '+t.title,n++)); });
+      selected.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,'📚 '+t.title+' — '+topicName(t),n++)); });
       if(reading){ list.insertAdjacentHTML('beforeend',taskRowMarkup(reading,'⚖️ Lei seca · leitura do dia',n++)); }
       const extras=(data.tasks||[]).filter(t=>['sim','essay'].includes(t.type));
       extras.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,t.type==='essay'?'✍️ Redação':'📝 Simulado CEBRASPE',n++)); });
       const note=home.querySelector('.ui-note');
-      if(note) note.innerHTML='📌 Núcleo do dia: revisão D-1 → aprendizado dos erros → 3 matérias → lei seca. Meta de 80–100+ questões bem corrigidas, sem transformar as opções extras em novas matérias.';
+      if(note) note.innerHTML='📌 Núcleo do dia: revisão D-1 → aprendizado dos erros → 3 matérias + assuntos → lei seca. Meta de 80–100+ questões bem corrigidas, sem transformar as opções extras em novas matérias.';
     }
   }
 
