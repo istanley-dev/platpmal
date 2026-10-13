@@ -5,7 +5,7 @@
   'use strict';
 
   const PLAN = {
-    version: '2026.10.07-masterizacao-9',
+    version: '2026.10.13-mini-simulado-misto',
     maxSubjects: 3,
     portugueseDaily: true,
     targetQuestions: 100,
@@ -78,46 +78,69 @@
     const pending=all.filter(t=>!t.done);
     const pool=pending.length?pending:all;
     const candidates=pool.filter(t=>!['combat','recent'].includes(t.item&&t.item.kind));
-    const chosen=[],usedSubjects=new Set(),usedTopics=new Set();
-    const radar=buildTopicRadar({tasks:pool});
+    const chosen=[],usedSubjects=new Set();
+    const radar=buildTopicRadar({tasks:all});
 
-    // O núcleo é composto por 3 PARES: matéria + assunto.
-    // Cada par deve ser de uma matéria diferente; o radar escolhe o assunto.
-    const port=candidates.filter(isPortuguese).sort((a,b)=>
-      (topicScore(b,radar)+priority(b)+rotationBonus(b))-
-      (topicScore(a,radar)+priority(a)+rotationBonus(a))
-    )[0];
-    if(port){
-      chosen.push(port);
-      usedSubjects.add(norm(port.title));
-      usedTopics.add(topicKey(port.title,topicName(port)));
-    }
-
-    const ranked=candidates.filter(t=>!isPortuguese(t)).sort((a,b)=>
+    // O radar escolhe matérias prioritárias; o tópico fraco influencia o
+    // mini-simulado, sem limitar todo o bloco a um assunto.
+    const rankedAll=candidates.slice().sort((a,b)=>
       (topicScore(b,radar)+priority(b)+rotationBonus(b))-
       (topicScore(a,radar)+priority(a)+rotationBonus(a))
     );
-
-    // Primeiro garante matérias diferentes.
-    for(const t of ranked){
-      if(chosen.length>=PLAN.maxSubjects)break;
-      const sk=norm(t.title), tk=topicKey(t.title,topicName(t));
-      if(usedSubjects.has(sk)||usedTopics.has(tk))continue;
-      chosen.push(t);usedSubjects.add(sk);usedTopics.add(tk);
+    const port=all.filter(t=>isPortuguese(t)&&!['combat','recent'].includes(t.item&&t.item.kind)).sort((a,b)=>
+      (topicScore(b,radar)+priority(b)+rotationBonus(b))-
+      (topicScore(a,radar)+priority(a)+rotationBonus(a))
+    )[0]||rankedAll.find(isPortuguese);
+    if(port){
+      chosen.push(port);
+      usedSubjects.add(norm(port.title));
     }
 
-    // Fallback: se faltou algum bloco, permite outra matéria apenas se houver
-    // um assunto diferente e útil, mantendo o limite de 3 blocos.
-    for(const t of ranked){
+    // Uma sessão por matéria, representada pelo tópico mais prioritário.
+    for(const t of rankedAll){
       if(chosen.length>=PLAN.maxSubjects)break;
-      const tk=topicKey(t.title,topicName(t));
-      if(!usedTopics.has(tk)){
-        chosen.push(t);
-        usedSubjects.add(norm(t.title));
-        usedTopics.add(tk);
-      }
+      const sk=norm(t.title);
+      if(usedSubjects.has(sk))continue;
+      chosen.push(t);usedSubjects.add(sk);
     }
     return chosen.slice(0,PLAN.maxSubjects);
+  }
+
+  function mixedSubjectPool(subject,radar){
+    const bank=(window.QQ||[]).filter(q=>q&&q.m===subject&&!q.missingContext&&!q.reviewOnly&&q.scope!=='review_only'&&
+      (typeof window.questionUsable!=='function'||window.questionUsable(q)));
+    if(!bank.length)return [];
+    const byTopic=new Map();
+    bank.forEach(q=>{
+      const name=String(typeof window.topico==='function'?window.topico(q.a):q.a||'Assunto não identificado').trim()||'Assunto não identificado';
+      const key=topicKey(subject,name);
+      if(!byTopic.has(key)){
+        const metric=radar.find(x=>topicKey(x.subject,x.name)===key);
+        byTopic.set(key,{score:metric?metric.score:50,questions:[]});
+      }
+      byTopic.get(key).questions.push(q);
+    });
+    const topics=[...byTopic.values()].sort((a,b)=>b.score-a.score);
+    const limit=Math.min(12,bank.length),pool=[],used=new Set();
+    const recent=new Set((window.S&&Array.isArray(S.ha)?S.ha:[]).slice(-50).map(x=>x.id));
+    // Reserve places across topics, then distribute the rest by radar weight.
+    topics.slice(0,Math.min(topics.length,Math.max(3,Math.ceil(limit/2)))).forEach(t=>{
+      const options=(typeof window.getSmartPool==='function'?window.getSmartPool(t.questions):t.questions).filter(q=>!used.has(q.id));
+      if(options.length){const q=options[0];pool.push(q);used.add(q.id);}
+    });
+    while(pool.length<limit){
+      const available=topics.filter(t=>t.questions.some(q=>!used.has(q.id)));
+      if(!available.length)break;
+      const min=Math.min(...available.map(t=>t.score));
+      const weights=available.map(t=>Math.max(1,t.score-min+20));
+      let pick=Math.random()*weights.reduce((a,b)=>a+b,0),topic=available[0];
+      for(let i=0;i<available.length;i++){pick-=weights[i];if(pick<=0){topic=available[i];break;}}
+      const options=(typeof window.getSmartPool==='function'?window.getSmartPool(topic.questions):topic.questions).filter(q=>!used.has(q.id));
+      const q=options.find(x=>!recent.has(x.id))||options[0];
+      if(!q)break;
+      pool.push(q);used.add(q.id);
+    }
+    return pool.sort(()=>Math.random()-.5);
   }
 
   function dailySupport(data){
@@ -158,6 +181,7 @@
     let data;
     try { data=window.PmalInterface.taskData(); } catch(e) { return; }
     const selected=selectMaster(data);
+    window.__masterMixedTaskIds=new Set(selected.map(t=>t.id));
     const support=dailySupport(data);
     const reading=(data.tasks||[]).find(t=>t.type==='reading');
 
@@ -169,12 +193,12 @@
       if(head) head.after(banner); else home.prepend(banner);
     }
 
-    const names=selected.map(t=>esc(t.title)+' — '+esc(topicName(t))).join(' · ') || 'Seleção adaptativa';
+    const names=selected.map(t=>esc(t.title)).join(' · ') || 'Seleção adaptativa';
     banner.innerHTML=
       '<h2>🧠 Plano de hoje</h2>'+
-      '<p>O sistema escolhe <b>3 blocos de matéria + assunto</b>. Ex.: Português — Sintaxe. Antes deles, você faz a revisão D-1 e transforma seus erros em aprendizado.</p>'+
+      '<p>O sistema escolhe <b>3 matérias prioritárias</b>. Cada bloco abre um mini-simulado misto entre assuntos da matéria, com peso maior para tópicos fracos no radar. Antes deles, você faz a revisão D-1 e transforma seus erros em aprendizado.</p>'+
       '<div class="master-badges">'+
-        '<span class="master-badge">3 matérias + assuntos</span>'+
+        '<span class="master-badge">3 matérias · mini-simulados mistos</span>'+
         '<span class="master-badge">Revisão D-1</span>'+
         '<span class="master-badge">Aprendizado dos erros</span>'+
         '<span class="master-badge">Português diário</span>'+
@@ -183,7 +207,7 @@
       '<div class="master-grid">'+
         '<div class="master-step"><b>1 · 🔁 D-1</b><span>'+esc(support.d1?'Revisar os erros e dúvidas de ontem.':'Sem revisão pendente.')+'</span></div>'+
         '<div class="master-step"><b>2 · 🧠 Erros</b><span>'+esc(support.errors?'Entender o erro + comentário + questões semelhantes.':'Sem bloco extra de erros hoje.')+'</span></div>'+
-        '<div class="master-step"><b>3 · 📚 Matéria + assunto</b><span>'+names+'</span></div>'+
+        '<div class="master-step"><b>3 · 📚 Matérias do dia</b><span>'+names+'</span></div>'+
       '</div>'+radarMarkup(data)+readingHistoryMarkup();
 
     const title=home.querySelector('.ui-page-head h1');
@@ -195,7 +219,7 @@
     if(heading){
       const h=heading.querySelector('h2'); const sp=heading.querySelector('span');
       if(h) h.textContent='Plano de hoje';
-      if(sp) sp.textContent='3 matérias/assuntos + revisão + erros + lei seca';
+      if(sp) sp.textContent='3 matérias + mini-simulados mistos + revisão + erros + lei seca';
     }
 
     const list=home.querySelector('ol.ui-task-list');
@@ -204,12 +228,12 @@
       let n=1;
       if(support.d1){ list.insertAdjacentHTML('beforeend',taskRowMarkup(support.d1,'🔁 Revisão D-1 · erros de ontem',n++)); }
       if(support.errors){ list.insertAdjacentHTML('beforeend',taskRowMarkup(support.errors,'🧠 Aprendizado dos erros · entender + fixar',n++)); }
-      selected.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,'📚 '+t.title+' — '+topicName(t),n++)); });
+      selected.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,'📚 '+t.title+' · mini-simulado misto',n++)); });
       if(reading){ list.insertAdjacentHTML('beforeend',taskRowMarkup(reading,'⚖️ Lei seca · leitura do dia',n++)); }
       const extras=(data.tasks||[]).filter(t=>['sim','essay'].includes(t.type));
       extras.forEach(t=>{ list.insertAdjacentHTML('beforeend',taskRowMarkup(t,t.type==='essay'?'✍️ Redação':'📝 Simulado CEBRASPE',n++)); });
       const note=home.querySelector('.ui-note');
-      if(note) note.innerHTML='📌 Núcleo do dia: revisão D-1 → aprendizado dos erros → 3 matérias + assuntos → lei seca. Meta de 80–100+ questões bem corrigidas, sem transformar as opções extras em novas matérias.';
+      if(note) note.innerHTML='📌 Núcleo do dia: revisão D-1 → aprendizado dos erros → 3 matérias em mini-simulados mistos → lei seca. O radar aumenta o peso dos tópicos fracos. Meta de 80–100+ questões bem corrigidas.';
     }
   }
 
@@ -295,6 +319,23 @@
   function afterCore(){
     style();
     installReadingPersistence();
+    if(!window.__masterMixedLaunchInstalled){
+      window.__masterMixedLaunchInstalled=true;
+      document.addEventListener('click',function(event){
+        const button=event.target.closest('[data-ui-task]');
+        if(!button||!window.__masterMixedTaskIds||!window.__masterMixedTaskIds.has(button.dataset.uiTask))return;
+        event.preventDefault();event.stopImmediatePropagation();
+        const data=window.PmalInterface.taskData();
+        if(data.date!==window.localDateKey(new Date())){window.PmalInterface.renderToday();window.toast('O plano foi atualizado para hoje.');return;}
+        const task=data.tasks.find(t=>t.id===button.dataset.uiTask);
+        if(!task)return;
+        window.S._adaptiveDisplay={date:data.date,items:data.ordered};
+        window.S._adaptiveContext=null;window.S._theoryContext=null;
+        const pool=mixedSubjectPool(task.title,buildTopicRadar(data));
+        if(!pool.length){window.toast('Sem questões disponíveis para esta matéria.');return;}
+        window.startAdaptiveQuestionPool(task.item,pool);
+      },true);
+    }
     const oldSv=window.sv;
     if(typeof oldSv==='function' && !window.__masterSvWrapped){
       window.__masterSvWrapped=true;

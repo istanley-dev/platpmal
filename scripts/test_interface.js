@@ -81,17 +81,20 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   assert($('ui-week').children.length === 7);
   click('#ui-week button'); assert.equal($('ui-week-detail').hidden, false);
 
-  // The selected displayed task is resolved independently of Cronograma's index order.
+  // A selected daily subject launches a mixed mini-simulado weighted by the topic radar.
   const today = w.PmalInterface.taskData();
-  const target = today.tasks.find(t => t.type==='adaptive' && !t.item.dsoBlocks);
+  const targetId = [...w.__masterMixedTaskIds][0];
+  const target = today.tasks.find(t => t.id===targetId);
   if (target) {
     let called;
-    const old = w.runAdaptiveItem;
-    w.runAdaptiveItem = i => { called = w.S._adaptiveDisplay.items[i]; };
+    const old = w.startAdaptiveQuestionPool;
+    w.startAdaptiveQuestionPool = (item,pool) => { called = {item,pool}; };
     click('[data-ui-task="'+target.id+'"]');
-    assert.equal(called.subject, target.item.subject);
-    assert.equal(called.kind, target.item.kind);
-    w.runAdaptiveItem = old;
+    assert.equal(called.item.subject, target.item.subject);
+    assert(called.pool.length <= 12 && called.pool.length > 0);
+    assert(called.pool.every(q => q.m===target.title));
+    assert(new Set(called.pool.map(q => w.topico(q.a))).size > 1, 'The subject mini-simulado mixes topics');
+    w.startAdaptiveQuestionPool = old;
   }
   w.PmalInterface.navigate('practice');
   assert.equal(d.querySelector('.bnav [aria-current="page"]').dataset.n, 'practice');
