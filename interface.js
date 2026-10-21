@@ -353,6 +353,15 @@
   }
 
   function loadCore(){
+    // O banco complementar precisa ser carregado antes da interface ficar disponível
+    // para que as questões estejam no pool desde a primeira sessão.
+    const bank=document.createElement('script');
+    bank.src='pmma-adapted-bank.js?v=20261021';
+    bank.onload=loadInterfaceCore;
+    bank.onerror=()=>{console.error('[PMAL] Falha ao carregar banco complementar PMMA');loadInterfaceCore();};
+    document.head.appendChild(bank);
+  }
+  function loadInterfaceCore(){
     const s=document.createElement('script');
     s.src='interface-core.js?v=20261005-masterizacao-lei-seca';
     s.onload=afterCore;
