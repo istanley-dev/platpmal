@@ -353,22 +353,25 @@
   }
 
   function loadCore(){
-    // O banco complementar precisa ser carregado antes da interface ficar disponível
-    // para que as questões estejam no pool desde a primeira sessão.
-    const bank=document.createElement('script');
-    bank.src='pmma-adapted-bank.js?v=20261021';
-    bank.onload=loadInterfaceCore;
-    bank.onerror=()=>{console.error('[PMAL] Falha ao carregar banco complementar PMMA');loadInterfaceCore();};
-    document.head.appendChild(bank);
-  }
-  function loadInterfaceCore(){
     const s=document.createElement('script');
     s.src='interface-core.js?v=20261005-masterizacao-lei-seca';
     s.onload=afterCore;
     s.onerror=()=>console.error('[PMAL] Falha ao carregar interface-core.js');
     document.head.appendChild(s);
   }
+  function loadBank(){
+    // Começa a carregar durante a análise do HTML, não só depois do DOMContentLoaded.
+    // A interface visual só é inicializada após o banco estar no pool de questões.
+    const bank=document.createElement('script');
+    bank.src='pmma-adapted-bank.js?v=20261021';
+    const continueWhenReady=()=>{
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',loadCore,{once:true});
+      else loadCore();
+    };
+    bank.onload=continueWhenReady;
+    bank.onerror=()=>{console.error('[PMAL] Falha ao carregar banco complementar PMMA');continueWhenReady();};
+    document.head.appendChild(bank);
+  }
 
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',loadCore,{once:true});
-  else loadCore();
+  loadBank();
 })();
