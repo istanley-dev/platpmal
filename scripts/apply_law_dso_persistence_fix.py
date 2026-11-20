@@ -26,15 +26,23 @@ save_add = (
     "lawDsoReadingV3:S.lawDsoReadingV3||{},legacyEids:"
 )
 
-if s.count(load_add) == 1 and s.count(save_add) == 1:
+ls_start = s.find("function LS(){")
+ss_start = s.find("function SS(){", ls_start)
+ss_end = s.find("// ══════════", ss_start)
+if ls_start < 0 or ss_start < 0 or ss_end < 0:
+    raise SystemExit("ABORTADO: funções LS()/SS() não localizadas.")
+ls_part = s[ls_start:ss_start]
+ss_part = s[ss_start:ss_end]
+if load_add in ls_part and save_add in ss_part:
     print("Persistência canônica do Banco de Leis já instalada.")
-elif s.count(load_anchor) == 1 and s.count(save_anchor) == 1:
-    s = s.replace(load_anchor, load_add, 1)
-    s = s.replace(save_anchor, save_add, 1)
+elif ls_part.count(load_anchor) == 1 and ss_part.count(save_anchor) == 1:
+    ls_part = ls_part.replace(load_anchor, load_add, 1)
+    ss_part = ss_part.replace(save_anchor, save_add, 1)
+    s = s[:ls_start] + ls_part + ss_part + s[ss_end:]
 else:
     raise SystemExit(
-        "ABORTADO: não foi possível localizar exatamente os pontos de LS()/SS(). "
-        f"load_anchor={s.count(load_anchor)}, save_anchor={s.count(save_anchor)}"
+        "ABORTADO: pontos de LS()/SS() divergentes. "
+        f"load_anchor={ls_part.count(load_anchor)}, save_anchor={ss_part.count(save_anchor)}"
     )
 
 checks = [
