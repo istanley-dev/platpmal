@@ -10,7 +10,7 @@ if MARKER in src:
     raise SystemExit(0)
 
 required = [
-    "function completeDsoLawDay",
+    "window.completeDsoLawDay=function",
     "lawDsoReadingV3",
     "function pmalDsoEnsure",
 ]
