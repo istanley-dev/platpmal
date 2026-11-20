@@ -1571,14 +1571,14 @@ var apiKey='';
 function LS(){
   try{
     const d=localStorage.getItem('pmal26');
-    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:DATA_ALVO_PROVA};if(!S.plan.examDate)S.plan.examDate=DATA_ALVO_PROVA;S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.reviewSessions=p.reviewSessions||{};S.studyHistory=p.studyHistory||{};S.adaptiveReview=p.adaptiveReview||{completed:{},deferred:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};if(!S.adaptiveReview.deferred)S.adaptiveReview.deferred={};S.lawMemory=p.lawMemory||{cards:{},daily:{}};if(!S.lawMemory.cards)S.lawMemory.cards={};if(!S.lawMemory.daily)S.lawMemory.daily={};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
+    if(d){const p=JSON.parse(d);S.ha=p.ha||[];S.eids=new Set(p.eids||[]);S.AS=p.AS||{};S.round=p.round||0;S.log=p.log||[];S.metas=p.metas||{};S.xp=p.xp||0;S.streak=p.streak||0;S.lastDay=p.lastDay||'';S.plan=p.plan||{examDate:DATA_ALVO_PROVA};if(!S.plan.examDate)S.plan.examDate=DATA_ALVO_PROVA;S.daily=p.daily||{d:'',q:0,rev:false,sim:false,red:false,metas:0,bonus:false,diaAnterior:false,leisFeitas:false};if(S.daily.diaAnterior===undefined)S.daily.diaAnterior=false;if(S.daily.leisFeitas===undefined)S.daily.leisFeitas=false;S.bibLidos=p.bibLidos||{};S.leituraDia=p.leituraDia||{d:'',keys:[],inReview:false};S.flash=p.flash||{cards:{}};S.weekly=p.weekly||{lastDone:0};S.reviewSessions=p.reviewSessions||{};S.studyHistory=p.studyHistory||{};S.adaptiveReview=p.adaptiveReview||{completed:{},deferred:{}};if(!S.adaptiveReview.completed)S.adaptiveReview.completed={};if(!S.adaptiveReview.deferred)S.adaptiveReview.deferred={};S.lawMemory=p.lawMemory||{cards:{},daily:{}};S.lawDso=p.lawDso||{version:1,cycle:1,day:1,round:1,history:{}};S.lawDsoReadingV3=p.lawDsoReadingV3||{};if(!S.lawMemory.cards)S.lawMemory.cards={};if(!S.lawMemory.daily)S.lawMemory.daily={};S.legacyEids=new Set(p.legacyEids||[]);S.legacyTopics=p.legacyTopics||{};S.legacySummary=p.legacySummary||null;S.cycleId=p.cycleId||'ciclo1';}
     apiKey=localStorage.getItem('pmal26_key')||'';
     if(apiKey)document.getElementById('inp-key').value=apiKey;
     loadGenQs();
   }catch(e){}
 }
 function SS(){
-  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions,studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{},deferred:{}},lawMemory:S.lawMemory||{cards:{},daily:{}},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
+  try{localStorage.setItem('pmal26',JSON.stringify({ha:S.ha,eids:[...S.eids],AS:S.AS,round:S.round,log:S.log.slice(-500),metas:S.metas,xp:S.xp,streak:S.streak,lastDay:S.lastDay,plan:S.plan,daily:S.daily,bibLidos:S.bibLidos,leituraDia:S.leituraDia,flash:S.flash,weekly:S.weekly,reviewSessions:S.reviewSessions,studyHistory:S.studyHistory||{},adaptiveReview:S.adaptiveReview||{completed:{},deferred:{}},lawMemory:S.lawMemory||{cards:{},daily:{}},lawDso:S.lawDso||{version:1,cycle:1,day:1,round:1,history:{}},lawDsoReadingV3:S.lawDsoReadingV3||{},legacyEids:[...S.legacyEids],legacyTopics:S.legacyTopics,legacySummary:S.legacySummary,cycleId:S.cycleId}));}catch(e){}
 }
 
 // ══════════ SISTEMA INTELIGENTE DE ALERTA / REVISÃO / REFORÇO ══════════
@@ -7070,76 +7070,6 @@ setTimeout(function(){if(typeof renderLeituraDia==='function')renderLeituraDia()
 
 <script src="interface.js?v=20260908"></script>
 
-<!-- PMAL_LAW_DSO_PERSISTENCE_V1 -->
-<script>
-(function () {
-  'use strict';
-  var KEY = 'pmal26_law_dso_persistence_v1';
-  var installed = false;
-
-  function currentState() {
-    try { return typeof S !== 'undefined' && S && typeof S === 'object' ? S : null; }
-    catch (e) { return null; }
-  }
-
-  function persistLawState() {
-    var state = currentState();
-    if (!state) return;
-    var payload = {
-      version: 1,
-      savedAt: Date.now(),
-      lawDso: state.lawDso || null,
-      lawDsoReadingV3: state.lawDsoReadingV3 || null,
-      leituraDia: state.leituraDia || null
-    };
-    try { localStorage.setItem(KEY, JSON.stringify(payload)); }
-    catch (e) { console.warn('Não foi possível salvar o progresso do Banco de Leis:', e); }
-  }
-
-  function restoreLawState() {
-    var state = currentState();
-    if (!state) return false;
-    try {
-      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
-      if (!saved || saved.version !== 1) return false;
-      if (saved.lawDso && typeof saved.lawDso === 'object') state.lawDso = saved.lawDso;
-      if (saved.lawDsoReadingV3 && typeof saved.lawDsoReadingV3 === 'object') state.lawDsoReadingV3 = saved.lawDsoReadingV3;
-      if (saved.leituraDia && typeof saved.leituraDia === 'object') state.leituraDia = saved.leituraDia;
-      return true;
-    } catch (e) {
-      console.warn('Não foi possível recuperar o progresso do Banco de Leis:', e);
-      return false;
-    }
-  }
-
-  if (installed) return;
-  installed = true;
-
-  // O estado principal já foi inicializado neste ponto; restaura antes do render
-  // agendado da Meta de Leitura e mantém um espelho independente do salvamento geral.
-  restoreLawState();
-
-  if (typeof SS === 'function' && !SS.__lawDsoPersistenceWrapped) {
-    var originalSS = SS;
-    var wrappedSS = function () {
-      var result = originalSS.apply(this, arguments);
-      persistLawState();
-      return result;
-    };
-    wrappedSS.__lawDsoPersistenceWrapped = true;
-    SS = wrappedSS;
-  }
-
-  window.addEventListener('pagehide', persistLawState);
-  document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') persistLawState();
-  });
-
-  // Atualiza o espelho após restaurar, sem modificar o histórico recuperado.
-  persistLawState();
-})();
-</script>
-<!-- /PMAL_LAW_DSO_PERSISTENCE_V1 -->
 
 </body>
 </html>
