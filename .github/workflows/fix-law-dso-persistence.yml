@@ -26,20 +26,19 @@ jobs:
           from pathlib import Path
           s=Path('index.html').read_text(encoding='utf-8')
           required=[
-            'PMAL_LAW_DSO_PERSISTENCE_V1',
-            "var KEY = 'pmal26_law_dso_persistence_v1'",
-            'state.lawDso = saved.lawDso',
-            'state.lawDsoReadingV3 = saved.lawDsoReadingV3',
-            'var originalSS = SS',
-            'SS = wrappedSS',
-            'window.addEventListener(\'pagehide\', persistLawState)',
+            'S.lawDso=p.lawDso||',
+            'S.lawDsoReadingV3=p.lawDsoReadingV3||',
+            'lawDso:S.lawDso||',
+            'lawDsoReadingV3:S.lawDsoReadingV3||',
+            'function LS(){',
+            'function SS(){',
             'window.completeDsoLawDay=function'
           ]
           missing=[x for x in required if x not in s]
           if missing: raise SystemExit('Patch incompleto: '+', '.join(missing))
-          if s.count('PMAL_LAW_DSO_PERSISTENCE_V1') != 2:
-              raise SystemExit('Marcadores da persistência ausentes ou duplicados.')
-          print('OK: persistência lateral instalada; código do avanço preservado.')
+          if 'PMAL_LAW_DSO_PERSISTENCE_V1' in s:
+              raise SystemExit('Persistência auxiliar antiga ainda presente.')
+          print('OK: LS()/SS() persistem o ciclo e a leitura no armazenamento principal.')
           PY
 
       - name: Commit and publish
