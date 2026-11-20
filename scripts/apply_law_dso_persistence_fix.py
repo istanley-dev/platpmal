@@ -96,7 +96,7 @@ if pos < 0:
     raise SystemExit("ABORTADO: </body> não encontrado; nenhum arquivo foi alterado.")
 
 patched = src[:pos] + snippet + "\n" + src[pos:]
-if patched.count(MARKER) != 1 or "SS.__lawDsoPersistenceWrapped" not in patched:
+if patched.count(MARKER) != 2 or "SS.__lawDsoPersistenceWrapped" not in patched:
     raise SystemExit("ABORTADO: verificação estática da persistência falhou.")
 
 P.write_text(patched, encoding="utf-8")
