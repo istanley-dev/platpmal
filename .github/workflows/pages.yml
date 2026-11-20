@@ -21,6 +21,11 @@ jobs:
       - name: Baixar o site
         uses: actions/checkout@v4
 
+      - name: Corrigir persistência do Banco de Leis no armazenamento principal
+        run: python3 scripts/apply_law_dso_persistence_fix.py
+
+      - name: Corrigir persistência do Banco de Leis no armazenamento principal
+        run: python3 scripts/apply_law_dso_persistence_fix.py
       - name: Aplicar Central de Revisão no artefato
         run: python scripts/apply_review_hub_v1.py
 
@@ -69,6 +74,9 @@ jobs:
               if not cards or len(cards) != x.get('articleCount') or len(cards) != d.get('articleCount'):
                   raise SystemExit(f'BLOQUEADO: cobertura divergente em {p}')
           html=(root/'index.html').read_text(encoding='utf-8')
+          for needle in ('S.lawDso=p.lawDso||','S.lawDsoReadingV3=p.lawDsoReadingV3||','lawDso:S.lawDso||','lawDsoReadingV3:S.lawDsoReadingV3||'):
+              if needle not in html: raise SystemExit(f'BLOQUEADO: persistência canônica ausente ({needle})')
+          if 'PMAL_LAW_DSO_PERSISTENCE_V1' in html: raise SystemExit('BLOQUEADO: persistência auxiliar antiga ainda presente')
           for needle in ('PMAL_DSO_READING_CARDS_V3_START','PMAL_DSO_STATIC_BANK_V5','static-integral-law-bank'):
               if needle not in html: raise SystemExit(f'BLOQUEADO: UI da Meta de Leitura incompleta ({needle})')
           if 'PMAL_DSO_FULL_LAW_READER_V2_START' in html:
