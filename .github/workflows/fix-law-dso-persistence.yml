@@ -33,7 +33,7 @@ jobs:
             'var originalSS = SS',
             'SS = wrappedSS',
             'window.addEventListener(\'pagehide\', persistLawState)',
-            'function completeDsoLawDay'
+            'window.completeDsoLawDay=function'
           ]
           missing=[x for x in required if x not in s]
           if missing: raise SystemExit('Patch incompleto: '+', '.join(missing))
