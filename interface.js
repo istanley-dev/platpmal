@@ -316,9 +316,33 @@
     setInterval(()=>{if(document.getElementById('leitura-card'))saveProgress();},3000);
   }
 
+  /* Persistência do Banco de Leis: a última SS do index.html era redefinida
+     por uma camada posterior e descartava lawDso/lawDsoReadingV3. Esta camada
+     é carregada depois do motor principal e preserva esses dois campos no estado final. */
+  function installLawCyclePersistence(){
+    if(window.__lawCyclePersistenceInstalled || typeof window.SS!=='function') return;
+    const originalSave=window.SS;
+    window.SS=function(){
+      const result=originalSave.apply(this,arguments);
+      try{
+        const raw=localStorage.getItem('pmal26')||'{}';
+        const saved=JSON.parse(raw);
+        const state=window.S;
+        if(state && state.lawDso) saved.lawDso=state.lawDso;
+        if(state && state.lawDsoReadingV3) saved.lawDsoReadingV3=state.lawDsoReadingV3;
+        localStorage.setItem('pmal26',JSON.stringify(saved));
+      }catch(error){
+        console.error('[PMAL] Não foi possível preservar o ciclo do Banco de Leis:',error);
+      }
+      return result;
+    };
+    window.__lawCyclePersistenceInstalled=true;
+  }
+
   function afterCore(){
     style();
     installReadingPersistence();
+    installLawCyclePersistence();
     if(!window.__masterMixedLaunchInstalled){
       window.__masterMixedLaunchInstalled=true;
       document.addEventListener('click',function(event){
